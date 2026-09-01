@@ -1,36 +1,41 @@
 # Bar
 
-Two halves of one site, built out of a mixology qualification and the
-drinks that came after it.
+A cocktail course and a shelf of my own drinks, on one site.
 
-- **Barbook** - everything behind a bar and what to do with it, in 37
-  chapters across nine parts: how every spirit is made and what separates
-  them, what beer actually is, the seven methods, ice, glassware, tools,
-  service, and the handful of structures almost every cocktail turns out
-  to be. Plus a spirit explorer, a searchable glossary, a balance
-  calculator and a dilution tool.
-- **Backbar** - my own creations, each with the full build in
-  millilitres, the method as steps, and a note on why it is put together
-  that way.
+**Barbook** is everything behind a bar and what to do with it: how every
+spirit is made and what separates one from the next, what beer actually
+is, the seven methods, ice, glassware, tools, service, and the handful of
+structures almost every cocktail turns out to be. Thirty-seven chapters.
 
-It is here in case it is useful to anyone else. Nothing a reader enters
-is uploaded, and there is nothing to sign in to.
+**Backbar** is the drinks I have made up, each with the full build in
+millilitres, the method as steps, and a note on why it is put together
+that way.
 
-## How far to trust it
+Nothing a reader types is uploaded and there is nothing to sign in to.
 
-I did a cocktail course. I have never worked a licensed shift, and the
-qualification is from 2022, so parts of it were already behind by the
-time I wrote this up.
+---
 
-Where a chapter goes past what I was actually taught, it says so. Where I
-have written something down and cannot verify it, that is marked too -
-those are the dashed boxes, and there are a fair few of them. The
-[Serving responsibly](lib/content/chapters/service.ts) chapter carries
-the strongest warning: it covers New Zealand licensing law, I hold no
-Licence Controller Qualification, and anyone actually serving alcohol
-should do the one-day course rather than read mine.
+## What to distrust
 
-## Running it
+I did a mixology qualification in 2022. I have never worked a licensed
+shift, and parts of the course were already behind by the time I wrote
+them up.
+
+Where a chapter goes past what I was taught it says so at the top. Where
+a figure is one I wrote in a margin and cannot verify, it is marked in
+place rather than quietly dropped — eighteen of the thirty-seven carry
+one of those. The contents page prints the count, because a book that
+hides how provisional it is has told you something false before you have
+read a word.
+
+The heaviest warning is on **Serving responsibly**. It covers New Zealand
+licensing law, I hold no Licence Controller Qualification, and anyone
+actually serving alcohol should do the one-day course rather than read
+mine.
+
+---
+
+## Getting it running
 
 ```bash
 npm install
@@ -40,71 +45,84 @@ npm install
 npm run dev
 ```
 
-Then <http://localhost:3008>.
+<http://localhost:3008>
 
-## Refreshing the shelf
+## Getting the drinks
 
-Backbar renders from a committed snapshot rather than from a live API,
-for the same reason the wine site does: this is a static, public site and
-it cannot carry a personal API token. Bar Assistant holds the truth; the
-snapshot is a deliberate copy of it.
-
-```bash
-cp .env.example .env.local   # fill in the four BA_ values
-```
+Backbar renders from a committed snapshot, not a live API. Bar Assistant
+holds the truth; this is a deliberate copy of it, because the site is
+static and public and cannot carry a personal token.
 
 ```bash
+cp .env.example .env.local   # four BA_ values
 npm run pull
 ```
 
 That rewrites `lib/content/backbar-snapshot.ts`. Commit it. The built
 site makes no requests and needs none of those variables to run or
-deploy - they exist for the pull script alone.
+deploy — they exist for the pull script alone.
 
-The recipes are reproduced exactly as authored. Nothing in the pipeline
+Recipes are reproduced exactly as authored. Nothing in the pipeline
 rewords, reorders or adjusts a measure.
 
-## Layout
+---
 
-| | |
-|---|---|
-| `app/` | Routes. `/` is the front door, `/book` and `/backbar` the two halves. |
-| `lib/content/chapters/` | The 37 chapters, as typed data rather than markup. |
-| `lib/content/backbar-snapshot.ts` | Generated. The shelf, from Bar Assistant. |
-| `lib/types.ts` | The `Block` union every chapter body is built from. |
-| `lib/config.ts` | Feature flags, and the table that names and colours the two halves. |
-| `lib/mark.ts` | The mark's geometry, shared by the logo and the landing animation. |
-| `components/` | The shell, the tools, and the mark. |
-| `scripts/pull-backbar.mjs` | Bar Assistant → snapshot. |
-| `_course/` | Photographs of the course workbook. Source for the writing, not site content; gitignored. |
+## How it is put together
 
-Content is structured data, not JSX: a chapter body is an ordered list of
-typed blocks (`p`, `h`, `list`, `steps`, `table`, `note`, `unsure`,
-`quote`, `spec`, `tool`), so a spec sheet or an embedded calculator can
-sit inline with prose without any HTML parsing.
+Chapters are **data, not markup**. A chapter body is an ordered list of
+typed blocks — `p`, `h`, `list`, `steps`, `table`, `note`, `unsure`,
+`quote`, `spec`, `tool` — so a spec sheet or a working calculator drops
+inline between two paragraphs with no HTML parsing anywhere.
 
-The `spec` block and the Backbar pages render through the same
-`SpecSheet` component, so a classic printed inside a chapter and a drink
-on the shelf cannot drift apart visually.
+The **spec sheet** is the one component shared between a classic printed
+inside a chapter and a drink on the shelf, which is why the two can never
+drift apart visually.
+
+Every **tool exists twice**: embedded in the chapter that explains it,
+and standing alone at its own route for when you already know what you
+want. Same component both times.
+
+### Where things are
+
+    app/                      routes; / is the cover, /book and /backbar the halves
+    app/globals.css           the whole design system
+    components/               the frame, the marks, the tools
+    lib/schema.ts             the Block union every chapter is built from
+    lib/site.ts               the two halves, and the switches
+    lib/geometry.ts           the mark, shared by the logo and the cover
+    lib/content/chapters/     the thirty-seven, as typed data
+    lib/content/*-snapshot.ts generated; do not edit
+    scripts/pull-backbar.mjs  Bar Assistant to snapshot
+    _course/                  photographs of the workbook. Source for the
+                              writing, not site content. Gitignored.
+
+## The look
+
+A printed cocktail menu: bright card stock, Bodoni for the names, wide
+small caps for the labels, hairline rules, and measures running to the
+right edge behind dot leaders. Two spot colours on black — an ink blue
+for the half you read, a bitters red for the half you pour — because
+that is how a menu of this kind was actually printed.
+
+Every colour is measured rather than picked. Each text weight clears
+4.5:1 on both grounds, and the six flavour fills are derived at a single
+luminance so one value works in both themes and still takes a pale label.
 
 ## The mark
 
 A cocktail glass split down the middle, so it reads as both a glass and
-an open book - Barbook is the two halves swung apart, Backbar is the same
-shape closed onto its stem. Shutting the book is the glass, which is why
-the landing page can morph between them without any path-matching: both
-states keep identical path commands and only their numbers move.
+an open book. Barbook is the two halves swung apart; Backbar is the same
+shape closed onto its stem. Three size tiers, because below about 20px
+the valley between the pages falls under a rendered pixel and the halves
+weld into a plain triangle — so as it shrinks the pages lean further
+apart and the spine thickens, until the smallest tier drops the spine
+altogether.
 
-It is drawn in three size tiers, because at favicon size the valley
-between the pages falls under a rendered pixel and the two halves weld
-into a plain triangle. As the mark shrinks the pages lean further apart
-and the spine thickens, until the smallest tier drops the spine and
-carries the split on one wide gap.
+## Where it is up to
 
-## State of it
+Builds to 57 static routes. Quizzes and reading progress are written and
+switched off in `lib/site.ts`; this is meant to be consulted rather than
+completed.
 
-Builds to 58 static routes. Quizzes and reading progress are written but
-switched off behind flags in `lib/config.ts` - this is meant to be
-consulted rather than completed.
-
-See [ROADMAP.md](ROADMAP.md) for what is still owed.
+[ROADMAP.md](ROADMAP.md) has what is still owed, and
+[REDIRECTS.md](REDIRECTS.md) covers pointing the old cocktails site here.

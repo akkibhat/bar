@@ -94,7 +94,7 @@ my own notes, or a bottle I have actually poured.
   Until then the promise is running ahead of the data. The alternative is
   to soften the line back to something the descriptions already deliver.
 
-- **A drinks journal.** `useJournal` and the `DrinkNote` type are written
+- **A drinks journal.** `useNotes` and the `DrinkNote` type are written
   and nothing renders them. The idea is a note against a drink after
   making it - what you would change next time - kept in the browser the
   way the wine site's tasting journal is.
