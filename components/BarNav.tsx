@@ -7,7 +7,7 @@ import { LogoMark } from './Logo';
 import { PARTS } from '@/lib/content/parts';
 import { chaptersInPart } from '@/lib/content/course';
 import { SECTIONS } from '@/lib/config';
-import { useTheme } from '@/lib/storage';
+import ThemeToggle from './ThemeToggle';
 
 /**
  * The bar across the top, and the contents that fold out of it.
@@ -232,27 +232,3 @@ const TOOLS: { href: string; label: string }[] = [
   { href: '/glossary', label: 'Glossary' },
 ];
 
-/**
- * Light/dark switch. Writes the choice to localStorage and stamps it on
- * the root element; the inline script in the layout replays it on the
- * next load before paint.
- *
- * Set as a symbol rather than a word because it sits in a row of two
- * wordmarks and a label, and a fourth piece of text there reads as a
- * fourth destination.
- */
-function ThemeToggle() {
-  const { theme, toggle } = useTheme();
-
-  return (
-    <button
-      onClick={toggle}
-      className="px-2 py-2 t-ui"
-      style={{ color: 'var(--ink-faint)', lineHeight: 1 }}
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-      suppressHydrationWarning
-    >
-      {theme === 'dark' ? '☾' : '☀'}
-    </button>
-  );
-}
