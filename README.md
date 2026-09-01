@@ -3,11 +3,13 @@
 Two halves of one site, built out of a mixology qualification and the
 drinks that came after it.
 
-- **Barbook** — 37 chapters across nine parts: the back bar bottle by
-  bottle, the seven methods, glassware, service, and the classics written
-  as specs. Plus a spirit explorer, a searchable glossary, a balance
+- **Barbook** — everything behind a bar and what to do with it, in 37
+  chapters across nine parts: how every spirit is made and what separates
+  them, what beer actually is, the seven methods, ice, glassware, tools,
+  service, and the handful of structures almost every cocktail turns out
+  to be. Plus a spirit explorer, a searchable glossary, a balance
   calculator and a dilution tool.
-- **Backbar** — the drinks I have made up, each with the full build in
+- **Backbar** — my own creations, each with the full build in
   millilitres, the method as steps, and a note on why it is put together
   that way.
 

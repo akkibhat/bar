@@ -48,7 +48,7 @@ export default function FrontDoor() {
           Bar<span style={{ color: 'var(--accent)' }}>book</span>
         </>
       ),
-      line: 'Spirits, technique and the classics — plus the parts the qualification skipped.',
+      line: 'Everything behind a bar — spirits, beer, tools, technique — and how to build a drink out of it.',
       count: `${CHAPTER_COUNT} chapters`,
     },
     {
@@ -59,7 +59,7 @@ export default function FrontDoor() {
           <span style={{ color: 'var(--accent)' }}>Back</span>bar
         </>
       ),
-      line: 'My own, written out the way a spec goes down behind a bar.',
+      line: 'My own creations, written out the way a spec goes down behind a bar.',
       count: `${SHELF.length} drinks`,
     },
   ];
@@ -74,9 +74,11 @@ export default function FrontDoor() {
         <h1 className="door-title t-h2 sm:t-h1">{OWNER}&rsquo;s Bar</h1>
         {/* Not "one half is X, the other is Y" - that sentence is the
             wine site's, and reaching for it here was most of why this
-            page read as a reskin. This one just says what the place is. */}
+            page read as a reskin. This one just says what the place is,
+            and says "a bar" rather than "a cocktail course", because the
+            book covers the whole of what is behind one. */}
         <p className="label-ui mt-3" style={{ color: 'var(--ink-faint)' }}>
-          A cocktail course, and the drinks that came out of it
+          How a bar works, and what I have made with it
         </p>
       </header>
 

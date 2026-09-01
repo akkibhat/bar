@@ -10,7 +10,11 @@ import { GLOSSARY } from '@/lib/glossary';
 import { SPIRITS } from '@/lib/spirits';
 import { FAMILIES } from '@/lib/content/families';
 
-export const metadata: Metadata = { title: 'Barbook' };
+export const metadata: Metadata = {
+  title: 'Barbook',
+  description:
+    'What is behind a bar and what to do with it: spirits, beer, tools, technique, service, and the structures almost every cocktail turns out to be.',
+};
 
 /**
  * Barbook: an opening statement, the tools, and the contents.
@@ -74,18 +78,27 @@ export default function BookPage() {
         <hr className="rule-double my-6" />
 
         <p className="t-lead leading-relaxed max-w-[34rem]">
-          A mixology qualification, written up properly — every bottle on the
-          back bar, the seven methods, the glassware, and the classics as
-          specs. Plus the parts the course left out, which turned out to be
-          the parts that made the rest make sense.
+          What is behind a bar, and what to do with it. How every spirit is
+          made and what separates one from the next, what beer actually is,
+          the seven methods, the glassware, the service — and the handful of
+          structures almost every cocktail turns out to be.
         </p>
 
         <p
           className="t-base mt-4 max-w-[34rem]"
           style={{ color: 'var(--ink-soft)' }}
         >
-          Written in the order it made sense to learn it, but you can start
-          anywhere. <span className="nums">{CHAPTER_COUNT}</span> chapters, and{' '}
+          Written up from a mixology qualification, with the parts it skipped
+          filled in — which turned out to be the parts that made the rest make
+          sense. In the order it made sense to learn it, but you can start
+          anywhere.
+        </p>
+
+        <p
+          className="t-base mt-4 max-w-[34rem]"
+          style={{ color: 'var(--ink-soft)' }}
+        >
+          <span className="nums">{CHAPTER_COUNT}</span> chapters, and{' '}
           <span className="nums">{open}</span> of them still carry something I
           need to check or write from my own notes. Those are marked in place
           rather than quietly left out.

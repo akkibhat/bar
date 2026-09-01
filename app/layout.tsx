@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     template: '%s - Bar',
   },
   description:
-    'A cocktail course written up from a mixology qualification, and the drinks I have made up since. Techniques, spirits, glassware and the classics, plus my own specs.',
+    'Everything behind a bar and what to do with it — spirits, beer, tools, technique, and the structures almost every cocktail turns out to be. Plus my own creations, with the full build.',
 };
 
 /**
