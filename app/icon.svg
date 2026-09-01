@@ -8,11 +8,12 @@
     that survives is the one worth shipping here.
 
     Colours are literal rather than theme tokens: a favicon is fetched
-    outside the page and has no stylesheet to read them from. This is the
-    light-theme amber, which holds up on both a light and a dark browser
+    outside the page and has no stylesheet to read them from. It takes
+    the shelf's red, because the glass is the shelf's variant of the
+    mark, and red holds up against both a light and a dark browser
     chrome.
   -->
-  <g fill="#8a5717">
+  <g fill="#9d2530">
     <path d="M16,24 L104,24 L60,94 Z"/>
     <rect x="56.5" y="94" width="7" height="42"/>
     <rect x="34" y="136" width="52" height="8" rx="3"/>

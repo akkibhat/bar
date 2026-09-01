@@ -30,8 +30,9 @@ export default function SectionTitle({ section }: { section: SectionKey }) {
       className="mb-1"
       aria-label={sectionName(section)}
       /* Both the mark and the wordmark take the half's accent. Without
-         this they fall back to the root default, which is amber - right
-         for the book by coincidence and wrong for the shelf. */
+         this they fall back to the root default, which is the book's
+         blue - right for the book by coincidence and wrong for the
+         shelf. */
       style={{
         ['--logo-pour' as string]: accent,
         ['--logo-glass' as string]: accent,

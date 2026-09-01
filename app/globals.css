@@ -158,23 +158,27 @@
 /* =====================================================================
    Palette - "Back Bar"
 
-   Bright card stock with brass and plum printed on it. Every value
+   Bright card stock, printed in two colours: ink blue and a bitters red. Every value
    measured rather than chosen by eye. The one that needed splitting is
    brass: it is a fill weight at 3.26:1 and fails for text, so --brass is
    fill only and --brass-deep is the text weight at 5.92:1.
 
-   WHY THE SHELF IS PLUM AND NOT RED
+   WHY THE BOOK IS BLUE
 
-   It was a bitters red, and the two accents then sat 39 degrees apart on
-   the colour wheel - both in the red-orange family, and hard to tell
-   apart at a glance. That is the job these two colours exist to do: the
-   wine site's pair are 177 degrees apart, near-complementary, and you
-   always know which half you are in before reading a word.
+   It was a gold, and that gold was the collision. The wine site's
+   tussock is #b3823a and this was #b8822e - one degree apart in hue and
+   thirteen units apart in RGB, which is to say the same colour. Its
+   lifted dark variant was the same story. Anyone who had seen that site
+   would have recognised the palette before reading a word.
 
-   Plum is 87 degrees off the amber, more than double the old separation
-   and a plainly different family. It avoids the wine site's green, and
-   it is bar-native rather than arbitrary - cassis, Chambord, the amari,
-   and the butterfly pea in the Filthy Mistress.
+   So the book takes ink blue instead, which is 154 units from tussock,
+   114 from garnet and clear of pounamu. It also earns its place rather
+   than merely avoiding something: black plus one spot colour is how a
+   menu of this kind was actually printed, and blue for the half you read
+   against red for the half you pour is a two-colour press job.
+
+   The red stays. It sits 136 degrees off the blue, so the two halves are
+   still tellable apart at a glance.
 
    WHY THE GROUND IS THIS BRIGHT
 
@@ -204,8 +208,8 @@
   --press-faint:      #6d675e;   /*  5.46:1  AA   */
 
   /* Accents */
-  --amber:            #8a5717;   /*  5.92:1  AA   primary, Barbook   */
-  --plum:             #6f2f68;   /*  8.97:1  AAA  secondary, Backbar */
+  --ink-blue:         #334e7d;   /*  8.10:1  AAA  primary, Barbook   */
+  --bitters:          #9d2530;   /*  7.47:1  AA   secondary, Backbar */
   --brass:            #b8822e;   /*  3.26:1  FILL ONLY - never text  */
   --brass-deep:       #8a5717;   /*  5.92:1  AA   the text weight    */
 
@@ -220,19 +224,19 @@
   --ink:          var(--press);
   --ink-soft:     var(--press-soft);
   --ink-faint:    var(--press-faint);
-  --accent-book:  var(--amber);
-  --accent-shelf: var(--plum);
-  --amber-bright: #a76c22;
+  --accent-book:  var(--ink-blue);
+  --accent-shelf: var(--bitters);
+  --book-bright:  #41609a;
   --gold:         var(--brass-deep);
   --rule:         var(--hairline);
   --rule-strong:  var(--hairline-strong);
-  --wash:         rgba(138, 87, 23, 0.10);
+  --wash:         rgba(51, 78, 125, 0.10);
   --shadow:       rgba(26, 22, 19, 0.07);
 
   /* ---- The mark ---------------------------------------------------- */
-  --logo-glass:   var(--amber);
-  --logo-pour:    var(--plum);
-  --logo-word:    var(--amber);
+  --logo-glass:   var(--ink-blue);
+  --logo-pour:    var(--bitters);
+  --logo-word:    var(--ink-blue);
 
   /* Height of the section bar. The book sidebar sticks directly beneath
      it and the two numbers have to agree, so there is one value here
@@ -253,25 +257,25 @@
     --press-soft:       #a09889;   /*  6.64:1  AA  */
     --press-faint:      #918a7c;   /*  5.54:1  AA  */
 
-    /* Full amber is under 2:1 here and vanishes; lifted to a brass that
-       clears AAA while staying the same hue. */
-    --amber:            #dda94f;   /*  8.92:1  AAA */
-    --plum:             #cf95c6;   /*  7.93:1  AAA */
+    /* The light-theme blue is under 2:1 here and vanishes; lifted until
+       it clears AAA while holding its hue. */
+    --ink-blue:         #9db4e0;   /*  9.07:1  AAA */
+    --bitters:          #e0616b;   /*  5.51:1  AA  */
     --brass:            #dda94f;
     --brass-deep:       #dda94f;
 
     --hairline:         #2e2a25;
     --hairline-strong:  #4a443c;
 
-    --amber-bright:     #ecc077;
-    --wash:             rgba(221, 169, 79, 0.13);
+    --book-bright:      #b8c9e9;
+    --wash:             rgba(157, 180, 224, 0.13);
     --shadow:           rgba(0, 0, 0, 0.5);
 
     /* The mark's pour runs deeper than text is allowed to: it clears the
        3:1 WCAG asks of a graphic but not the 4.5:1 it asks of text, so
        in dark mode alone the pour and the wordmark diverge. */
-    --logo-pour:    #b96faf;
-    --logo-word:    var(--amber);
+    --logo-pour:    #c8434f;
+    --logo-word:    var(--ink-blue);
 
     --ok:       #6aab99;
     --caution:  #d7a95e;
@@ -292,20 +296,20 @@
   --press-soft:       #a09889;
   --press-faint:      #918a7c;
 
-  --amber:            #dda94f;
-  --plum:             #cf95c6;
+  --ink-blue:         #9db4e0;
+  --bitters:          #e0616b;
   --brass:            #dda94f;
   --brass-deep:       #dda94f;
 
   --hairline:         #2e2a25;
   --hairline-strong:  #4a443c;
 
-  --amber-bright:     #ecc077;
-  --wash:             rgba(221, 169, 79, 0.13);
+  --book-bright:      #b8c9e9;
+  --wash:             rgba(157, 180, 224, 0.13);
   --shadow:           rgba(0, 0, 0, 0.5);
 
-  --logo-pour:    #b96faf;
-  --logo-word:    var(--amber);
+  --logo-pour:    #c8434f;
+  --logo-word:    var(--ink-blue);
 
   --ok:       #6aab99;
   --caution:  #d7a95e;
@@ -544,8 +548,8 @@ button.card:hover {
   color: var(--paper-raised);
 }
 .btn-primary:hover {
-  background: var(--amber-bright);
-  border-color: var(--amber-bright);
+  background: var(--book-bright);
+  border-color: var(--book-bright);
 }
 .btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
@@ -774,8 +778,8 @@ button.card:hover {
 
 /* Pointing at a half floods it with its own accent, faintly. Mixed from
    the door's own `--accent` rather than the shared `--wash`, so the
-   shelf tints plum and the book tints amber - washing both in the
-   same amber would say the two halves are the same thing. */
+   shelf tints red and the book tints blue - washing both in the same
+   colour would say the two halves are the same thing. */
 .door:hover,
 .door:focus-visible {
   background: color-mix(in srgb, var(--accent) 8%, transparent);

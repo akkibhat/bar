@@ -42,11 +42,11 @@ export type SectionKey = 'book' | 'shelf';
  * Everything that differs between the two halves, in one table.
  *
  * `accent` is a CSS custom property rather than a colour, so a half can
- * be recoloured by editing this line alone. Barbook carries amber - the
- * colour of an aged spirit under a bar light - and Backbar carries plum,
- * for cassis and the amari. They are 87 degrees apart on the wheel,
- * which is the point: you should know which half you are in before
- * reading a word.
+ * be recoloured by editing this line alone. Barbook carries ink blue and
+ * Backbar a bitters red - black plus two spot colours, the way a menu of
+ * this kind was actually printed. They sit 136 degrees apart on the
+ * wheel, which is the point: you should know which half you are in
+ * before reading a word.
  *
  * The naming follows the wine site's: one root word, a suffix that
  * changes, and routes that spell the wordmark out in the address bar.
