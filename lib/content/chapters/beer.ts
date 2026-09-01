@@ -5,7 +5,7 @@ import type { Chapter } from '../../types';
  *
  * None of this is from the cocktail workbook, which mentioned beer twice
  * and only as a mixer. It is here because a bar pours far more of it than
- * it pours cocktails, and because the vocabulary is genuinely useful:
+ * it pours cocktails, and because the vocabulary carries over:
  * malt, yeast and fermentation temperature explain most of what is on a
  * tap list, and they are the same three levers that decide what comes off
  * a still in Part I.
@@ -26,7 +26,7 @@ export const BEER: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Beer is fermented grain — nearly always malted barley — flavoured with hops. Four ingredients do essentially all of it, and each is a dial you can turn independently, which is why a handful of inputs produce hundreds of styles.',
+        text: 'Beer is fermented grain — nearly always malted barley — flavoured with hops. Four ingredients do nearly all of it, and each is a dial you can turn independently, which is why a handful of inputs produce hundreds of styles.',
       },
       {
         kind: 'list',
@@ -106,7 +106,7 @@ export const BEER: Chapter[] = [
       {
         kind: 'unsure',
         title: 'Mine to write',
-        text: 'TODO: New Zealand hops are a genuine speciality — Nelson Sauvin, Riwaka, Motueka — and NZ craft brewing deserves better than a bullet from me. Worth writing this from breweries I have actually drunk rather than from a list.',
+        text: 'TODO: New Zealand hops are a genuine speciality — Nelson Sauvin, Riwaka, Motueka — and NZ craft brewing deserves better than a bullet from me. Write it from breweries I have drunk, not from a list.',
       },
     ],
   },

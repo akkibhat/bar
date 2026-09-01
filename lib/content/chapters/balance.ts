@@ -110,7 +110,7 @@ export const BALANCE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The families are sorted by what holds the drink together, not by which spirit is in it. That is the move that makes them useful: a Negroni and a Boulevardier are the same drink, and no ingredient-based sorting will ever tell you that.',
+        text: 'The families are sorted by what holds the drink together, not by which spirit is in it. A Negroni and a Boulevardier are the same drink, and no ingredient-based sorting will ever tell you so.',
       },
       { kind: 'tool', tool: 'families' },
       { kind: 'h', text: 'Reading the table' },
@@ -161,7 +161,7 @@ export const BALANCE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Sugar does not dissolve in a cold drink. That is the entire reason syrup exists — dissolve it in advance, in hot water, and it mixes in a shaker instead of sitting on the bottom of the glass.',
+        text: 'Sugar does not dissolve in a cold drink. Syrup exists to get around that: dissolve it in advance, in hot water, and it mixes in a shaker instead of sitting on the bottom of the glass.',
       },
       { kind: 'h', text: 'Simple syrup' },
       {
@@ -178,7 +178,7 @@ export const BALANCE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Rich syrup keeps longer, because the sugar concentration itself is what stops things growing in it, and it takes up half the fridge space. If a spec was written for 1 : 1 and you have rich, halve the quantity and add a splash of water back.',
+        text: 'Rich syrup keeps longer, because the sugar concentration itself stops things growing in it, and it takes up half the fridge space. If a spec was written for 1 : 1 and you have rich, halve the quantity and add a splash of water back.',
       },
       {
         kind: 'note',

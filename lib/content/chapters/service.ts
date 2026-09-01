@@ -177,7 +177,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The workbook listed six things that make a bartender worth employing. None of them is about making drinks, which is the point it was making.',
+        text: 'The workbook listed six things that make a bartender worth employing. None of them is about making drinks.',
       },
       {
         kind: 'list',
@@ -186,20 +186,20 @@ export const SERVICE: Chapter[] = [
           '**Calm under pressure.** Things go wrong at the busiest moment, because that is when there are most things to go wrong. Being visibly rattled spreads down the queue.',
           '**Friendly and outgoing.** A large part of the job is talking to people. It is also the selling half — nobody buys a second round from someone who seems to want them gone.',
           '**Consistency.** Same drink, same way, every time, whether it is the first of the night or the last. This is the one that actually separates people.',
-          '**Cleanliness.** The bar, the tools, the glassware, before, during and after. It is a health requirement and it is also the thing every guest silently judges.',
+          '**Cleanliness.** The bar, the tools, the glassware, before, during and after. A health requirement, and the thing every guest silently judges.',
           '**Trustworthiness.** You handle the till, the stock and the free pours. A bar runs on being able to leave someone alone with all three.',
         ],
       },
       { kind: 'h', text: 'Selling without being a salesman' },
       {
         kind: 'p',
-        text: 'About a third of people walking into a bar have not decided what they want. That is not an opportunity to push the expensive bottle — it is a chance to ask two questions and put the right drink in front of them, which is what makes them come back.',
+        text: 'About a third of people walking into a bar have not decided what they want. That is not an opportunity to push the expensive bottle. Ask two questions and put the right drink in front of them, and they come back.',
       },
       {
         kind: 'list',
         items: [
           '**Upsell within the brand they already chose.** If someone asks for a gin and tonic, offering a gin they might like better is a service. Steering them to whatever carries the best margin is not, and people can tell.',
-          '**Signature serves.** One or two drinks that only this bar makes. They are what gets described to someone else later, which is the only marketing that works.',
+          '**Signature serves.** One or two drinks that only this bar makes. They are what gets described to someone else later.',
           '**Seasonal serves.** Hot drinks in winter, long ones with crushed ice in summer. Often the same base spirit dressed differently, which costs nothing and reads as effort.',
         ],
       },

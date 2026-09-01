@@ -4,7 +4,7 @@ import type { Chapter } from '../../types';
  * Part I - Foundations.
  *
  * Four chapters that install the vocabulary everything later depends on:
- * what the word cocktail actually covers, where the drink came from, how
+ * what the word cocktail covers, where the drink came from, how
  * every bottle on the back bar is made, and how to taste one so the rest
  * of the book has something to attach to.
  *
@@ -30,7 +30,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The useful version is narrower. Almost every drink worth making is a **spirit base**, something to **sweeten**, something to **sharpen**, and something to **season**. Once you can see those four jobs in a recipe you can read a spec you have never met and guess what it will taste like, and you can fix one that has come out wrong, because you know which of the four to move.',
+        text: 'The useful version is narrower. Almost every drink you would want to make is a **spirit base**, something to **sweeten**, something to **sharpen**, and something to **season**. Once you can see those four jobs in a recipe you can read a spec you have never met and guess what it will taste like, and you can fix one that has come out wrong, because you know which of the four to move.',
       },
       {
         kind: 'note',
@@ -49,7 +49,7 @@ export const FOUNDATIONS: Chapter[] = [
       { kind: 'h', text: 'What the definition leaves out' },
       {
         kind: 'p',
-        text: 'Nothing in the definition mentions balance, which is the only thing that actually decides whether a drink is any good. Two bartenders can follow the same four-part shape and produce a drink you want another of and a drink you do not finish. That gap is what Part IV is about, and it is the single biggest thing missing from the course I took.',
+        text: 'Nothing in the definition mentions balance, and balance decides whether a drink is any good. Two bartenders can follow the same four-part shape and produce a drink you want another of and a drink you do not finish. That gap is what Part IV is about, and it is the single biggest thing missing from the course I took.',
       },
       {
         kind: 'quote',
@@ -58,7 +58,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'That 1806 definition is the first one in print, and it is better than the modern one. Spirit, sugar, water, bitters — it names all four jobs, and the water is the part people forget, because it arrives on its own from the ice while you are shaking.',
+        text: 'That 1806 definition is the first in print, and it is the better of the two. Spirit, sugar, water, bitters — it names all four jobs, and the water is the part people forget, because it arrives on its own from the ice while you are shaking.',
       },
     ],
   },
@@ -75,7 +75,7 @@ export const FOUNDATIONS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The word turns up in print in 1806, in a New York paper called *The Balance and Columbian Repository*, answering a reader who had asked what a cock-tail was. The answer — spirits, sugar, water and bitters — describes what we would now call an Old Fashioned, which is a good joke on everyone who thinks the Old Fashioned is a variation on something. It is the original. Everything else is the variation.',
+        text: 'The word turns up in print in 1806, in a New York paper called *The Balance and Columbian Repository*, answering a reader who had asked what a cock-tail was. The answer — spirits, sugar, water and bitters — describes an Old Fashioned. That drink is not a variation on anything; it is the original, and everything else is the variation.',
       },
       { kind: 'h', text: 'Prohibition, and what it did to the drinks' },
       {
@@ -97,12 +97,12 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'What turned it round was a return to fresh citrus, real ice and pre-Prohibition recipe books. That is roughly where we still are: the modern craft bar is, in method, a reconstruction of the 1890s with better refrigeration.',
+        text: 'What turned it round was a return to fresh citrus, real ice and pre-Prohibition recipe books. That is roughly where it has stayed. A modern craft bar is, in method, a reconstruction of the 1890s with better refrigeration.',
       },
       {
         kind: 'unsure',
         title: 'Mine to write',
-        text: 'TODO: the course notes stop at the 1980s and say nothing about New Zealand. Worth a paragraph on how drinking here actually went — the licensing changes, when cocktail bars turned up in Auckland and Wellington, and what a bar list looked like before that. I do not know this well enough to write it yet.',
+        text: 'TODO: the course notes stop at the 1980s and say nothing about New Zealand. Needs a paragraph on how drinking here went: the licensing changes, when cocktail bars turned up in Auckland and Wellington, and what a bar list looked like before that. I do not know this well enough to write it yet.',
       },
     ],
   },
@@ -132,7 +132,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The thing worth holding on to: **every spirit leaves the still clear and dry.** Colour is wood, or caramel added afterwards. Sweetness is sugar added afterwards. A dark rum and a white rum can be the same distillate with different post-processing, and knowing that stops you paying for colour.',
+        text: 'One thing to hold on to: **every spirit leaves the still clear and dry.** Colour is wood, or caramel added afterwards. Sweetness is sugar added afterwards. A dark rum and a white rum can be the same distillate with different post-processing, and knowing that stops you paying for colour.',
       },
       { kind: 'h', text: 'Two kinds of still' },
       {
@@ -171,13 +171,13 @@ export const FOUNDATIONS: Chapter[] = [
       {
         kind: 'note',
         title: 'Who actually owns the shelf',
-        text: 'Most of the back bar belongs to a handful of companies — Diageo, Pernod Ricard and LVMH between them own an enormous share of the brands you can name. Worth knowing when a rep tells you a category is having a moment.',
+        text: 'Most of the back bar belongs to a handful of companies — Diageo, Pernod Ricard and LVMH between them own an enormous share of the brands you can name. Useful when a rep tells you a category is having a moment.',
       },
       { kind: 'tool', tool: 'abv' },
       {
         kind: 'unsure',
         title: 'Check against my notes',
-        text: 'TODO: my margin note says bourbon is "distilled at 160 proof, barrelled at 125, no colouring added, new charred oak". Those are the US legal maxima rather than what any given distiller does. Worth confirming before I state them as fact, and worth checking whether the 57% corn figure I wrote down should be 51%, which is the number the standard actually uses.',
+        text: 'TODO: my margin note says bourbon is "distilled at 160 proof, barrelled at 125, no colouring added, new charred oak". Those are the US legal maxima rather than what any given distiller does. Confirm both before I state them as fact. The 57% corn figure I wrote down should probably be 51%, which is the number the standard uses.',
       },
     ],
   },
@@ -204,7 +204,7 @@ export const FOUNDATIONS: Chapter[] = [
           'Pour a small measure and leave it a minute. Room temperature, not chilled: cold shuts down aroma, which is why vodka out of the freezer tastes of nothing.',
           'Look. Colour tells you about wood, and only about wood — and it can have come out of a caramel bottle, so it is the weakest signal on the page.',
           'Nose it with your mouth slightly open, holding the glass below your chin and bringing it up gently. Do not stick your nose in the glass. Short sniffs, then rest — the nose fatigues within seconds at this strength.',
-          'Take a small sip and let it coat everything before you swallow. The first sip mostly registers as heat; that is normal, and the second and third are where the flavour actually is.',
+          'Take a small sip and let it coat everything before you swallow. The first sip mostly registers as heat; that is normal, and the second and third sips are where the flavour is.',
           'Then add a few drops of water and go again. This is the step people skip. Water drops the strength, breaks the surface tension and releases aromatics the alcohol was holding down. A cask-strength whisky can change completely.',
         ],
       },
@@ -212,7 +212,7 @@ export const FOUNDATIONS: Chapter[] = [
       { kind: 'h', text: 'What to actually ask' },
       {
         kind: 'p',
-        text: 'Naming fruits is the least useful thing you can do at first and the thing everyone reaches for. Better questions, in order:',
+        text: 'Naming fruits is what everyone reaches for first, and it helps least. Better questions, in order:',
       },
       {
         kind: 'list',

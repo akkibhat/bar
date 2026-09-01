@@ -75,7 +75,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Flaming' },
       {
         kind: 'p',
-        text: 'Setting a high-proof spirit alight, which caramelises sugar and changes the aroma. It has a real use — flaming an orange twist over a drink genuinely alters what it smells like — and a lot of theatrical uses that do not improve anything.',
+        text: 'Setting a high-proof spirit alight, which caramelises sugar and changes the aroma. It has one real use: flaming an orange twist over a drink changes what it smells like. The rest is theatre.',
       },
       {
         kind: 'note',
@@ -120,7 +120,7 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'note',
         title: 'Fill the glass',
-        text: 'A half-filled highball melts faster than a full one, not slower. Less ice means each piece takes more heat, so it melts quicker and the drink is warm and watery inside ten minutes. More ice is less dilution. This is the most counter-intuitive fact behind a bar and the most useful.',
+        text: 'A half-filled highball melts faster than a full one, not slower. Less ice means each piece takes more heat, so it melts quicker and the drink is warm and watery inside ten minutes. More ice is less dilution. It is the least intuitive thing behind a bar, and among the most useful.',
       },
       { kind: 'h', text: 'Clear ice' },
       {
@@ -155,7 +155,7 @@ export const TECHNIQUE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Consistency is what separates a bar from a kitchen where someone is guessing. A guest who liked a drink last week is ordering the same drink, and the only way to give them one is to measure.',
+        text: 'Consistency separates a bar from a kitchen where someone is guessing. A guest who liked a drink last week is ordering the same drink, and the only way to give them one is to measure.',
       },
       { kind: 'h', text: 'Jiggers' },
       {
@@ -201,7 +201,7 @@ export const TECHNIQUE: Chapter[] = [
     title: 'Texture: egg, aquafaba and dairy',
     minutes: 4,
     standfirst:
-      'Egg white is in four recipes in this book. How to actually use it, and what to do instead.',
+      'Egg white is in four recipes in this book. How to use it, and what to use instead.',
     body: [
       {
         kind: 'p',
@@ -239,7 +239,7 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'unsure',
         title: 'Not from the course',
-        text: 'The workbook has egg white in four specs and my own margin note about aquafaba, but no technique for either. TODO: I have written 20–25 ml for aquafaba from general practice and have not measured it against a real egg white side by side. Worth actually testing before I state it as the conversion.',
+        text: 'The workbook has egg white in four specs and my own margin note about aquafaba, but no technique for either. TODO: I have written 20–25 ml for aquafaba from general practice and have not measured it against a real egg white side by side. Test it before I state it as the conversion.',
       },
     ],
   },

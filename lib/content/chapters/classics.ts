@@ -190,7 +190,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Lemon juice', amount: '30 ml' },
           ],
           garnish: 'Traditionally none, but a lemon zest is good',
-          note: 'Four equal parts over an absinthe rinse. Dangerously easy to drink, which is the joke in the name.',
+          note: 'Four equal parts over an absinthe rinse, and easier to drink than four equal parts of anything ought to be.',
         },
       },
       {
@@ -317,7 +317,7 @@ export const CLASSICS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Everything here is stirred, because everything here is clear and alcoholic. Three of them are the same drink — Negroni, Contessa and Boulevardier are equal-parts builds that swap one bottle each, which is the clearest demonstration in the book that the families are real.',
+        text: 'Everything here is stirred, because everything here is clear and alcoholic. Negroni, Contessa and Boulevardier are the same drink with one bottle swapped each time. Read them together and the families stop being a theory.',
       },
       {
         kind: 'spec',

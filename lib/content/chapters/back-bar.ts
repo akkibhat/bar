@@ -31,7 +31,7 @@ export const BACK_BAR: Chapter[] = [
       { kind: 'h', text: 'Vodka' },
       {
         kind: 'p',
-        text: 'Vodka is distilled to 90–96% and filtered specifically to strip flavour out. It is unaged and, in the ideal that the category sells itself on, tastes of nothing. That is a genuine engineering achievement and also the reason it is the least interesting bottle on the shelf to talk about.',
+        text: 'Vodka is distilled to 90–96% and filtered specifically to strip flavour out. It is unaged and, in the ideal that the category sells itself on, tastes of nothing. That is a real engineering achievement, and it also makes vodka the least interesting bottle on the shelf to talk about.',
       },
       {
         kind: 'p',
@@ -45,7 +45,7 @@ export const BACK_BAR: Chapter[] = [
       { kind: 'h', text: 'Gin' },
       {
         kind: 'p',
-        text: 'Gin is that same neutral spirit redistilled with botanicals. **Juniper has to lead** — that is the legal definition and the only thing every gin has in common. Around it sit coriander, angelica root, citrus peel, orris root, cardamom, liquorice, and whatever else the distiller fancies.',
+        text: 'Gin is that same neutral spirit redistilled with botanicals. **Juniper has to lead** — that is the legal definition, and the only thing every gin has in common. Around it sit coriander, angelica root, citrus peel, orris root, cardamom, liquorice, and whatever else the distiller fancies.',
       },
       {
         kind: 'p',
@@ -63,7 +63,7 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'unsure',
         title: 'Mine to fill in',
-        text: 'TODO: New Zealand gin is having a decade and the course said nothing about it. Worth naming the ones actually worth pouring and what native botanicals — horopito, kawakawa, manuka — do to a G&T. I should write this from bottles I have poured rather than from a shop list.',
+        text: 'TODO: New Zealand gin is having a decade and the course said nothing about it. Name the ones I would pour, and what horopito, kawakawa and manuka do to a G&T. From bottles I have poured, not from a shop list.',
       },
     ],
   },
@@ -129,7 +129,7 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'unsure',
         title: 'Check before quoting',
-        text: 'TODO: my notes have "barrel 760–800% of task" and "72% evaporate per year", which are both garbled — the numbers I have written down do not match any figure I can find. The 2%-a-year evaporation above is the standard one. Worth finding what I actually meant, and worth confirming what the Japanese producers do with mizunara before I write about it.',
+        text: 'TODO: my notes have "barrel 760–800% of task" and "72% evaporate per year", which are both garbled — the numbers I have written down do not match any figure I can find. The 2%-a-year evaporation above is the standard one. Find what I meant. Also confirm what the Japanese producers do with mizunara before I write about it.',
       },
     ],
   },
@@ -150,7 +150,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The course taught rum in three colours, and that framing is worth learning and then distrusting.',
+        text: 'The course taught rum in three colours. Learn the framing, then distrust it.',
       },
       {
         kind: 'list',
@@ -163,12 +163,12 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'note',
         title: 'Why colour lies here more than anywhere',
-        text: 'Rum has almost no international category law. A white rum may have been aged for years and then filtered clear; a dark rum may be a young spirit with caramel in it. Two bottles of the same shade can be wildly different products, and unlike Scotch or bourbon there is no standard forcing the label to admit it. Producer and country tell you far more than colour does.',
+        text: 'Rum has almost no international category law. A white rum may have been aged for years and then filtered clear; a dark rum may be a young spirit with caramel in it. Two bottles of the same shade can be entirely different products, and no standard forces the label to admit it. Producer and country tell you more than colour does.',
       },
       {
         kind: 'unsure',
         title: 'Worth adding',
-        text: 'TODO: the course never mentioned that plenty of rum is sweetened after distillation, sometimes heavily, and that some producers are open about it while others are not. Also worth a line on the regional styles — Jamaican high-ester funk against Spanish-style *ron* — since that is the distinction that actually changes what a drink tastes like.',
+        text: 'TODO: the course never mentioned that plenty of rum is sweetened after distillation, sometimes heavily, and that some producers are open about it while others are not. Add a line on the regional styles: Jamaican high-ester funk against Spanish-style *ron*. That distinction changes what a drink tastes like more than colour does.',
       },
     ],
   },
@@ -189,7 +189,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Agave is not a cactus. It is a succulent, and the part that matters is the *piña* — the dense core left when the spines are cut away, which looks like a pineapple and weighs as much as a person. A blue agave takes somewhere between six and eight years to be worth harvesting, which makes this the only major spirit whose raw material is measured in years before fermentation even starts.',
+        text: 'Agave is not a cactus. It is a succulent, and the part that matters is the *piña* — the dense core left when the spines are cut away, which looks like a pineapple and weighs as much as a person. A blue agave takes six to eight years before it can be harvested. No other major spirit waits that long before fermentation even starts.',
       },
       {
         kind: 'p',
@@ -218,7 +218,7 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'unsure',
         title: 'Not from the course',
-        text: 'None of this chapter is from the workbook — it is assembled from category rules and general reading. I have not visited a distillery and I am not confident enough on the sustainability argument around agave supply to write it. Worth verifying the ageing bands against a current source before relying on them.',
+        text: 'None of this chapter is from the workbook — it is assembled from category rules and general reading. I have not visited a distillery and I am not confident enough on the sustainability argument around agave supply to write it. Verify the ageing bands against a current source before relying on them.',
       },
     ],
   },

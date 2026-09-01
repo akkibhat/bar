@@ -4,9 +4,8 @@ import type { Family } from '../types';
  * The six root structures almost every classic turns out to be.
  *
  * Sorted by what holds the drink together rather than by which spirit is
- * in it, which is the move that makes them useful: a Negroni and a
- * Boulevardier are the same drink, and no ingredient-based sorting will
- * ever say so.
+ * in it. A Negroni and a Boulevardier are the same drink, and no
+ * ingredient-based sorting will ever say so.
  *
  * The framework is the one set out in *Cocktail Codex*, which has become
  * the standard way of teaching drink structure. It is not mine and it was

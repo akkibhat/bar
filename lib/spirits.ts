@@ -235,7 +235,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 3,
     intensity: 3,
     notes: ['Baked apple', 'Orchard fruit', 'Oak'],
-    note: 'Underused, and a genuinely good swap into a lot of whisky drinks. An apple Old Fashioned made with Calvados works better than it has any right to.',
+    note: 'Underused, and a good swap into a lot of whisky drinks. An apple Old Fashioned made with Calvados works better than it has any right to.',
     drinkIt: 'Calvados Old Fashioned',
   },
 
@@ -281,7 +281,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 5,
     intensity: 4,
     notes: ['Blackcurrant', 'Deep', 'Jammy'],
-    note: 'Very sweet and very dark, so a small amount goes a long way and it will colour a whole drink.',
+    note: 'Very sweet and very dark. A small amount goes a long way, and it will colour a whole drink.',
     drinkIt: 'Kir Royale',
   },
 
