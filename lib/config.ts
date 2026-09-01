@@ -43,9 +43,10 @@ export type SectionKey = 'book' | 'shelf';
  *
  * `accent` is a CSS custom property rather than a colour, so a half can
  * be recoloured by editing this line alone. Barbook carries amber - the
- * colour of an aged spirit under a bar light - and Backbar carries
- * bitters red, so you can tell which half you are in before reading a
- * word.
+ * colour of an aged spirit under a bar light - and Backbar carries plum,
+ * for cassis and the amari. They are 87 degrees apart on the wheel,
+ * which is the point: you should know which half you are in before
+ * reading a word.
  *
  * The naming follows the wine site's: one root word, a suffix that
  * changes, and routes that spell the wordmark out in the address bar.
@@ -87,10 +88,10 @@ export function sectionName(key: SectionKey): string {
  * Which half a path belongs to.
  *
  * Only Backbar's own routes count. The tools sit at top level alongside
- * the glossary and wear the book's furniture, because they are things you
+ * the glossary and take the book's accent, because they are things you
  * look up while reading rather than part of the shelf - and counting them
- * as shelf would put the Backbar masthead over a page carrying the book's
- * sidebar, which is the shell contradicting itself.
+ * as shelf would light the Backbar link in the top bar while you were
+ * standing on a page belonging to the book.
  */
 export function sectionFor(pathname: string): SectionKey {
   return pathname.startsWith('/backbar') ? 'shelf' : 'book';
@@ -99,14 +100,13 @@ export function sectionFor(pathname: string): SectionKey {
 /**
  * Whose bar this is.
  *
- * Rendered as a handwritten kicker above the masthead lockup - a signed
- * name over a printed wordmark, which is what a bookplate is, and the
- * reason a personal project can carry a designed mark without looking
- * like a company.
+ * Set into the front door's masthead - "Akki's Bar" across the top of
+ * the page above a rule, the way a menu carries the name of the place.
+ * The possessive is what lets a personal project put its name up in a
+ * display face without reading as a company.
  *
- * It belongs to the masthead and the about copy only. At favicon and nav
- * sizes it is dropped rather than shrunk, since the mark alone already
- * carries the identity there.
+ * It belongs to that masthead alone. Everywhere else the two halves name
+ * themselves, and a third name in the row would just be noise.
  */
 export const OWNER = 'Akki';
 

@@ -57,17 +57,23 @@
   --measure:    34rem;
 }
 
-.t-micro   { font-size: var(--t-micro);   line-height: var(--lh-ui); }
-.t-caption { font-size: var(--t-caption); line-height: var(--lh-ui); }
-.t-ui      { font-size: var(--t-ui);      line-height: var(--lh-ui); }
-.t-base    { font-size: var(--t-base);    line-height: var(--lh-body); }
-.t-body    { font-size: var(--t-body);    line-height: var(--lh-body); }
-.t-lead    { font-size: var(--t-lead);    line-height: var(--lh-ui); }
-.t-h3      { font-size: var(--t-h3);      line-height: var(--lh-heading); }
-.t-h2      { font-size: var(--t-h2);      line-height: var(--lh-heading); }
-.t-h1      { font-size: var(--t-h1);      line-height: var(--lh-tight); }
-.t-display { font-size: var(--t-display); line-height: var(--lh-tight); }
-.t-hero    { font-size: var(--t-hero);    line-height: var(--lh-tight); }
+/* Declared with @utility rather than as plain classes so Tailwind's
+   variants apply to them. Written as `.t-display { ... }` these look
+   identical and work everywhere except behind a variant: `sm:t-display`
+   silently does nothing, because Tailwind only generates variants for
+   utilities it knows about. Several headings were asking for exactly
+   that and quietly staying at their base size. */
+@utility t-micro   { font-size: var(--t-micro);   line-height: var(--lh-ui); }
+@utility t-caption { font-size: var(--t-caption); line-height: var(--lh-ui); }
+@utility t-ui      { font-size: var(--t-ui);      line-height: var(--lh-ui); }
+@utility t-base    { font-size: var(--t-base);    line-height: var(--lh-body); }
+@utility t-body    { font-size: var(--t-body);    line-height: var(--lh-body); }
+@utility t-lead    { font-size: var(--t-lead);    line-height: var(--lh-ui); }
+@utility t-h3      { font-size: var(--t-h3);      line-height: var(--lh-heading); }
+@utility t-h2      { font-size: var(--t-h2);      line-height: var(--lh-heading); }
+@utility t-h1      { font-size: var(--t-h1);      line-height: var(--lh-tight); }
+@utility t-display { font-size: var(--t-display); line-height: var(--lh-tight); }
+@utility t-hero    { font-size: var(--t-hero);    line-height: var(--lh-tight); }
 
 /* Equal-width digits. This site is mostly columns of figures -
    millilitres, ABV, ratios, dilution - and they wobble without it. */
@@ -152,27 +158,56 @@
 /* =====================================================================
    Palette - "Back Bar"
 
-   Cream card stock under a warm light, with brass and bitters on it.
-   Every value measured rather than chosen by eye. The one that needed
-   splitting is brass: it is a fill weight at 3.05:1 and fails for text,
-   so --brass is fill only and --brass-deep is the text weight at 5.53:1.
+   Bright card stock with brass and plum printed on it. Every value
+   measured rather than chosen by eye. The one that needed splitting is
+   brass: it is a fill weight at 3.26:1 and fails for text, so --brass is
+   fill only and --brass-deep is the text weight at 5.92:1.
+
+   WHY THE SHELF IS PLUM AND NOT RED
+
+   It was a bitters red, and the two accents then sat 39 degrees apart on
+   the colour wheel - both in the red-orange family, and hard to tell
+   apart at a glance. That is the job these two colours exist to do: the
+   wine site's pair are 177 degrees apart, near-complementary, and you
+   always know which half you are in before reading a word.
+
+   Plum is 87 degrees off the amber, more than double the old separation
+   and a plainly different family. It avoids the wine site's green, and
+   it is bar-native rather than arbitrary - cassis, Chambord, the amari,
+   and the butterfly pea in the Filthy Mistress.
+
+   WHY THE GROUND IS THIS BRIGHT
+
+   It started as a warm cream at #f7f4ed, which measured 1.09:1 against
+   the wine site's #efeae0 - a nine percent difference in luminance and
+   the same warm cast. Two sites on what is recognisably the same paper.
+
+   Pulling it up to a near-white card widens that to 1.17:1 and, more to
+   the point, changes what kind of surface it is: the wine site is toned
+   journal paper, this is printed stock. It also suits the type. Bodoni's
+   hairlines want contrast under them, and they were losing definition on
+   the cream.
+
+   The two dark grounds sit closer in luminance, which is unavoidable -
+   everything dark is dark - but they differ in cast, cool blue-black
+   there against warm brown-black here, and that reads clearly.
    ===================================================================== */
 :root {
-  /* Ground - heavy cream stock */
-  --card-stock:       #f7f4ed;
-  --card-raised:      #fffdf8;
-  --card-sunk:        #ece7dc;
+  /* Ground - bright card stock */
+  --card-stock:       #fdfcf9;
+  --card-raised:      #ffffff;
+  --card-sunk:        #f0ece3;
 
   /* Ink - printed black, warm */
-  --press:            #1a1613;   /* 16.37:1  AAA  */
-  --press-soft:       #5c554c;   /*  6.69:1  AA   */
-  --press-faint:      #6d675e;   /*  5.10:1  AA   */
+  --press:            #1a1613;   /* 17.52:1  AAA  */
+  --press-soft:       #5c554c;   /*  7.16:1  AA   */
+  --press-faint:      #6d675e;   /*  5.46:1  AA   */
 
   /* Accents */
-  --amber:            #8a5717;   /*  5.53:1  AA   primary, Barbook   */
-  --bitters:          #9d2530;   /*  6.98:1  AA   secondary, Backbar */
-  --brass:            #b8822e;   /*  3.05:1  FILL ONLY - never text  */
-  --brass-deep:       #8a5717;   /*  5.53:1  AA   the text weight    */
+  --amber:            #8a5717;   /*  5.92:1  AA   primary, Barbook   */
+  --plum:             #6f2f68;   /*  8.97:1  AAA  secondary, Backbar */
+  --brass:            #b8822e;   /*  3.26:1  FILL ONLY - never text  */
+  --brass-deep:       #8a5717;   /*  5.92:1  AA   the text weight    */
 
   /* Rules */
   --hairline:         #ddd6c7;
@@ -186,7 +221,7 @@
   --ink-soft:     var(--press-soft);
   --ink-faint:    var(--press-faint);
   --accent-book:  var(--amber);
-  --accent-shelf: var(--bitters);
+  --accent-shelf: var(--plum);
   --amber-bright: #a76c22;
   --gold:         var(--brass-deep);
   --rule:         var(--hairline);
@@ -196,7 +231,7 @@
 
   /* ---- The mark ---------------------------------------------------- */
   --logo-glass:   var(--amber);
-  --logo-pour:    var(--bitters);
+  --logo-pour:    var(--plum);
   --logo-word:    var(--amber);
 
   /* Height of the section bar. The book sidebar sticks directly beneath
@@ -221,7 +256,7 @@
     /* Full amber is under 2:1 here and vanishes; lifted to a brass that
        clears AAA while staying the same hue. */
     --amber:            #dda94f;   /*  8.92:1  AAA */
-    --bitters:          #e0616b;   /*  5.51:1  AA  */
+    --plum:             #cf95c6;   /*  7.93:1  AAA */
     --brass:            #dda94f;
     --brass-deep:       #dda94f;
 
@@ -235,7 +270,7 @@
     /* The mark's pour runs deeper than text is allowed to: it clears the
        3:1 WCAG asks of a graphic but not the 4.5:1 it asks of text, so
        in dark mode alone the pour and the wordmark diverge. */
-    --logo-pour:    #c8434f;
+    --logo-pour:    #b96faf;
     --logo-word:    var(--amber);
 
     --ok:       #6aab99;
@@ -258,7 +293,7 @@
   --press-faint:      #918a7c;
 
   --amber:            #dda94f;
-  --bitters:          #e0616b;
+  --plum:             #cf95c6;
   --brass:            #dda94f;
   --brass-deep:       #dda94f;
 
@@ -269,7 +304,7 @@
   --wash:             rgba(221, 169, 79, 0.13);
   --shadow:           rgba(0, 0, 0, 0.5);
 
-  --logo-pour:    #c8434f;
+  --logo-pour:    #b96faf;
   --logo-word:    var(--amber);
 
   --ok:       #6aab99;
@@ -658,6 +693,122 @@ button.card:hover {
   background: var(--rule);
 }
 .meter span.on { background: var(--accent, var(--accent-book)); }
+
+/* =====================================================================
+   THE FRONT DOOR
+
+   Two full-bleed halves, floor to ceiling, split by one rule. Not a
+   centred masthead over two cards - that is how the wine site's landing
+   is built, and building it here produced the same page in different
+   fonts.
+
+   The split is vertical on a wide screen and stacks on a narrow one,
+   where "floor to ceiling" would leave each half a letterbox. Below the
+   breakpoint the halves size to their content instead.
+   ===================================================================== */
+/* The page is a masthead band over a split that takes whatever height is
+   left. A flex column rather than a min-height on the split itself:
+   `min-height: 100svh` on the grid alone left the halves sized to their
+   content, because nothing was telling them to stretch into it. */
+.door-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The masthead. A menu cover puts the name of the place across the top
+   in its own band, above a rule, and that is what makes it read as a
+   title rather than as a caption. */
+.door-mast {
+  text-align: center;
+  padding: var(--s-5xl) var(--s-4xl) var(--s-3xl);
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.door-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.door-split {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 48rem) {
+  .door-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.door {
+  display: flex;
+  align-items: center;
+  padding: var(--s-6xl) var(--s-5xl);
+  text-decoration: none;
+  /* The seam. One rule between the halves, and it turns with them: a
+     horizontal join when they are stacked, a vertical one when they sit
+     side by side. */
+  border-top: 1px solid var(--rule);
+  transition: background var(--m-settle) var(--ease);
+}
+.door:first-of-type {
+  border-top: 0;
+}
+
+@media (min-width: 48rem) {
+  .door {
+    padding: var(--s-7xl) var(--s-6xl);
+  }
+  .door:last-of-type {
+    border-top: 0;
+    border-left: 1px solid var(--rule);
+  }
+}
+
+/* Pointing at a half floods it with its own accent, faintly. Mixed from
+   the door's own `--accent` rather than the shared `--wash`, so the
+   shelf tints plum and the book tints amber - washing both in the
+   same amber would say the two halves are the same thing. */
+.door:hover,
+.door:focus-visible {
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.door-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 24rem;
+  margin-inline: auto;
+}
+
+/* The two halves are centred independently, so a description that runs
+   to three lines on one side and two on the other pushes every row out
+   of register across the seam - and a spread whose two columns do not
+   line up looks like a mistake rather than a layout.
+
+   Reserving three lines of depth on both sides is what a print designer
+   would do: the columns then share a height, so their centres agree and
+   every row lands level. It is a floor rather than a fixed height, so a
+   longer line still wraps rather than being clipped. */
+.door-line {
+  min-height: 5.9rem;
+}
+
+@media (max-width: 47.99rem) {
+  /* Stacked, there is no seam to line up across, and the reserved depth
+     would just be a gap under a two-line sentence. */
+  .door-line {
+    min-height: 0;
+  }
+}
 
 /* ---------------------------------------------------------------------
    Utility

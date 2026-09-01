@@ -13,28 +13,20 @@ import ThemeToggle from '@/components/ThemeToggle';
  * out of the way, because a front door wrapped in one half's own
  * navigation is not a front door.
  *
- * The theme switch is the one exception to that, and it is not a
- * contradiction: it is a preference rather than a destination, and a
- * reader who wants the dark version should not have to enter one of the
- * halves to find the control and then come back. It sits in the corner,
- * out of the centred masthead's way.
+ * The theme switch is the one exception, and it is not a contradiction:
+ * it is a preference rather than a destination, and a reader who wants
+ * the dark version should not have to enter one of the halves to find
+ * the control and come back.
  *
- * The masthead and the cards are one client component, since the mark
- * animates in response to which card the pointer is on. It takes no
- * props: the cards deliberately carry no counts, because a front door
- * that reports how many chapters there are is a syllabus rather than an
- * invitation.
+ * No container and no padding here. The halves are full-bleed, floor to
+ * ceiling, so anything wrapping them would put a margin around a page
+ * whose whole idea is that it has none.
  */
 export default function Home() {
   return (
-    <>
-      {/* Fixed to the viewport rather than the content column, so it
-          stays put on a page whose whole composition is centred. */}
-      <ThemeToggle className="fixed top-3 right-3 z-10 no-print" />
-
-      <div className="relative mx-auto max-w-[52rem] px-6 sm:px-10 py-14 lg:py-20">
-        <FrontDoor />
-      </div>
-    </>
+    <div className="relative">
+      <ThemeToggle className="absolute top-2 right-2 z-10 no-print" />
+      <FrontDoor />
+    </div>
   );
 }
