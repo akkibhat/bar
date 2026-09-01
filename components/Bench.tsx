@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Block } from '@/lib/types';
+import type { Block } from '@/lib/schema';
 import RatioTool from './RatioTool';
 import DilutionTool from './DilutionTool';
 import DrinkStrength from './DrinkStrength';
@@ -28,9 +28,9 @@ type ToolBlock = Extract<Block, { kind: 'tool' }>;
 const HOME: Partial<Record<ToolBlock['tool'], { href: string; label: string }>> =
   {
     ratio: { href: '/ratio', label: 'Balance calculator' },
-    dilution: { href: '/dilution', label: 'Dilution and ice' },
-    units: { href: '/units', label: 'Standard drinks' },
-    abv: { href: '/units', label: 'Standard drinks' },
+    dilution: { href: '/dilution', label: 'Strength and dilution' },
+    units: { href: '/dilution', label: 'Strength and dilution' },
+    abv: { href: '/dilution', label: 'Strength and dilution' },
     spiritFilter: { href: '/spirits', label: 'Spirit explorer' },
     families: { href: '/families', label: 'Cocktail families' },
     glassware: { href: '/glassware', label: 'Glassware' },

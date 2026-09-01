@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import { PARTS } from '@/lib/content/parts';
-import { CHAPTERS, CHAPTER_COUNT, chaptersInPart } from '@/lib/content/course';
-import { useProgress } from '@/lib/storage';
-import { PROGRESS_ENABLED } from '@/lib/config';
+import { CHAPTERS, CHAPTER_COUNT, chaptersIn } from '@/lib/content/book';
+import { useRead } from '@/lib/local';
+import { PROGRESS_ENABLED } from '@/lib/site';
 
 /**
  * The contents, set as the inside of a menu.
@@ -20,7 +20,7 @@ import { PROGRESS_ENABLED } from '@/lib/config';
  * printed, so it is rules and space.
  */
 export default function Contents() {
-  const { progress, ready, resetProgress } = useProgress();
+  const { progress, ready, resetProgress } = useRead();
 
   const done = PROGRESS_ENABLED && ready ? progress.done : [];
   const resume = CHAPTERS.find((c) => !done.includes(c.slug)) ?? CHAPTERS[0];
@@ -52,7 +52,7 @@ export default function Contents() {
       )}
 
       {PARTS.map((part) => {
-        const chapters = chaptersInPart(part.slug);
+        const chapters = chaptersIn(part.slug);
 
         return (
           <section key={part.slug} className="mb-12">

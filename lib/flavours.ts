@@ -1,4 +1,4 @@
-import type { FlavourFamily } from './types';
+import type { FlavourFamily } from './schema';
 
 /**
  * The flavour wheel: six families and the descriptors under them.
@@ -115,6 +115,6 @@ export const FLAVOURS: FlavourFamily[] = [
 ];
 
 /** Look up one family by slug. */
-export function findFlavour(slug: string): FlavourFamily | undefined {
+export function lookupFlavour(slug: string): FlavourFamily | undefined {
   return FLAVOURS.find((f) => f.slug === slug);
 }

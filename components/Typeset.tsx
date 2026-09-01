@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import type { Block } from '@/lib/types';
-import { inline } from '@/lib/markup';
+import type { Block } from '@/lib/schema';
+import { emphasise } from '@/lib/emphasis';
 import { headingsOf } from '@/lib/headings';
-import { findFamily } from '@/lib/content/families';
+import { lookupFamily } from '@/lib/content/families';
 import Rule from './Rule';
-import EmbeddedTool from './EmbeddedTool';
+import Bench from './Bench';
 import SpecSheet from './SpecSheet';
 
 /**
@@ -45,7 +45,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
   switch (block.kind) {
     /* -------------------------------------------------------------- */
     case 'p':
-      return <p>{inline(block.text)}</p>;
+      return <p>{emphasise(block.text)}</p>;
 
     /* -------------------------------------------------------------- */
     case 'h':
@@ -66,7 +66,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
     case 'descriptors':
       return (
         <p className="italic" style={{ color: 'var(--ink-soft)' }}>
-          {inline(block.text)}
+          {emphasise(block.text)}
         </p>
       );
 
@@ -82,7 +82,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
                 style={{ width: 5, height: 5, background: 'var(--accent-book)' }}
                 aria-hidden="true"
               />
-              <span>{inline(item)}</span>
+              <span>{emphasise(item)}</span>
             </li>
           ))}
         </ul>
@@ -101,7 +101,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
               >
                 {i + 1}
               </span>
-              <span>{inline(item)}</span>
+              <span>{emphasise(item)}</span>
             </li>
           ))}
         </ol>
@@ -116,7 +116,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
               {block.title}
             </p>
           )}
-          <p className="!mb-0 t-ui">{inline(block.text)}</p>
+          <p className="!mb-0 t-ui">{emphasise(block.text)}</p>
         </aside>
       );
 
@@ -131,7 +131,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
             {block.title ? ` - ${block.title}` : ''}
           </p>
           <p className="!mb-0 t-ui" style={{ color: 'var(--ink)' }}>
-            {inline(block.text)}
+            {emphasise(block.text)}
           </p>
         </aside>
       );
@@ -169,7 +169,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
               {block.rows.map((row, i) => (
                 <tr key={i}>
                   {row.map((cell, j) => (
-                    <td key={j}>{inline(cell)}</td>
+                    <td key={j}>{emphasise(cell)}</td>
                   ))}
                 </tr>
               ))}
@@ -181,7 +181,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
     /* -------------------------------------------------------------- */
     case 'spec': {
       const s = block.spec;
-      const family = s.family ? findFamily(s.family) : undefined;
+      const family = s.family ? lookupFamily(s.family) : undefined;
 
       return (
         <figure
@@ -232,7 +232,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
               className="t-caption mt-3 !mb-0 italic"
               style={{ color: 'var(--ink-soft)' }}
             >
-              {inline(s.note)}
+              {emphasise(s.note)}
             </p>
           )}
         </figure>
@@ -241,7 +241,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
 
     /* -------------------------------------------------------------- */
     case 'tool':
-      return <EmbeddedTool tool={block.tool} only={block.only} />;
+      return <Bench tool={block.tool} only={block.only} />;
 
     /* -------------------------------------------------------------- */
     default:

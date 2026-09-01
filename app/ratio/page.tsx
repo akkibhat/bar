@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import PageHeader from '@/components/PageHeader';
+import Masthead from '@/components/Masthead';
 import RatioTool from '@/components/RatioTool';
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RatioPage() {
   return (
     <div className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">
-      <PageHeader
+      <Masthead
         eyebrow="Tool"
         title="Balance"
         standfirst="Two parts spirit, one part citrus, one part sweet. Move the sliders and see what a build is actually doing."

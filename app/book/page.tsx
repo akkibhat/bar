@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import Contents from '@/components/Contents';
+import RunningOrder from '@/components/RunningOrder';
 import Fold from '@/components/Fold';
-import SectionTitle from '@/components/SectionTitle';
+import HalfTitle from '@/components/HalfTitle';
+import { BOOK } from '@/lib/site';
 import {
   CHAPTER_COUNT,
-  chaptersWithOpenQuestions,
-} from '@/lib/content/course';
+  chaptersStillOpen,
+} from '@/lib/content/book';
 import { GLOSSARY } from '@/lib/glossary';
 import { SPIRITS } from '@/lib/spirits';
 import { FAMILIES } from '@/lib/content/families';
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
  * embarrassment.
  */
 export default function BookPage() {
-  const open = chaptersWithOpenQuestions().length;
+  const open = chaptersStillOpen().length;
 
   const tools = [
     {
@@ -43,13 +44,8 @@ export default function BookPage() {
     },
     {
       href: '/dilution',
-      title: 'Dilution and ice',
-      body: 'What the ice does to the strength, and how much water a batch is missing.',
-    },
-    {
-      href: '/units',
-      title: 'Standard drinks',
-      body: 'Combined strength and standard drinks for any build.',
+      title: 'Strength and dilution',
+      body: 'What the ice does to the strength, how much water a batch is missing, and how many standard drinks are in the glass.',
     },
     {
       href: '/spirits',
@@ -74,7 +70,7 @@ export default function BookPage() {
       <header className="mb-14">
         <p className="label-ui mb-3">What I was taught, checked</p>
 
-        <SectionTitle section="book" />
+        <HalfTitle half={BOOK} />
 
         <hr className="rule-double my-6" />
 
@@ -159,7 +155,7 @@ export default function BookPage() {
         The book
       </h2>
 
-      <Contents />
+      <RunningOrder />
     </div>
   );
 }

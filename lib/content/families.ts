@@ -1,4 +1,4 @@
-import type { Family } from '../types';
+import type { Family } from '../schema';
 
 /**
  * The six root structures almost every classic turns out to be.
@@ -85,6 +85,6 @@ export const FAMILIES: Family[] = [
 ];
 
 /** Look up one family by slug. */
-export function findFamily(slug: string): Family | undefined {
+export function lookupFamily(slug: string): Family | undefined {
   return FAMILIES.find((f) => f.slug === slug);
 }

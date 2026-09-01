@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Bodoni_Moda, Jost, Lora } from 'next/font/google';
-import Shell from '@/components/Shell';
+import Frame from '@/components/Frame';
 import './globals.css';
 
 /**
@@ -107,7 +107,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body>
-        <Shell>{children}</Shell>
+        <Frame>{children}</Frame>
       </body>
     </html>
   );

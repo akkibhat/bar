@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import type { Chapter, Part } from '@/lib/types';
-import { useProgress } from '@/lib/storage';
-import { PROGRESS_ENABLED } from '@/lib/config';
+import type { Chapter, Part } from '@/lib/schema';
+import { useRead } from '@/lib/local';
+import { PROGRESS_ENABLED } from '@/lib/site';
 
 /**
  * The end of a chapter.
@@ -38,7 +38,7 @@ export default function ChapterFooter({
   prev?: Chapter;
   next?: Chapter;
 }) {
-  const { progress, ready, toggleDone } = useProgress();
+  const { progress, ready, toggleDone } = useRead();
   const done = PROGRESS_ENABLED && ready && progress.done.includes(slug);
 
   return (

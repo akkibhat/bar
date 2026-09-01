@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 import Rule from '@/components/Rule';
 import SpecSheet from '@/components/SpecSheet';
-import { SECTIONS } from '@/lib/config';
+import { SHELF_HALF } from '@/lib/site';
 import {
   SHELF,
   builtVolume,
-  findDrink,
+  lookupDrink,
   shelfOf,
   tagsOf,
   type ShelfDrink,
@@ -24,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const drink = findDrink(slug);
+  const drink = lookupDrink(slug);
   if (!drink) return {};
 
   return {
@@ -68,7 +68,7 @@ export default async function DrinkPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const drink = findDrink(slug);
+  const drink = lookupDrink(slug);
   if (!drink) notFound();
 
   /* Reached by a numeric id or Bar Assistant's raw "-N" slug - send it on
@@ -90,7 +90,7 @@ export default async function DrinkPage({
   return (
     <article
       className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16"
-      style={{ ['--accent' as string]: SECTIONS.shelf.accent }}
+      style={{ ['--accent' as string]: SHELF_HALF.accent }}
     >
       <script
         type="application/ld+json"

@@ -116,7 +116,7 @@ export function tags(): { name: string; count: number }[] {
  * suffix, or the numeric id - so a link shared before the suffix was
  * being stripped, or from the old site, still resolves rather than 404s.
  */
-export function findDrink(param: string): ShelfDrink | undefined {
+export function lookupDrink(param: string): ShelfDrink | undefined {
   return SHELF.find(
     (d) =>
       d.slug === param || d.rawSlug === param || String(d.id) === param,
@@ -128,7 +128,7 @@ export function findDrink(param: string): ShelfDrink | undefined {
  * ===================================================================== */
 
 /** The line of detail under a drink's name. */
-export function detailLine(drink: ShelfDrink): string {
+export function summaryLine(drink: ShelfDrink): string {
   return [drink.method, drink.glass, shelfOf(drink)]
     .filter(Boolean)
     .join(' · ');

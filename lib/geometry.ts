@@ -61,7 +61,7 @@ export const TIERS: Record<'full' | 'compact' | 'micro', Tier> = {
 };
 
 /** Pick a tier from the rendered height. */
-export function tierFor(size: number): Tier {
+export function tierAt(size: number): Tier {
   if (size < 20) return TIERS.micro;
   if (size < 40) return TIERS.compact;
   return TIERS.full;
@@ -201,7 +201,7 @@ export const GLASS_STATE: MarkState = {
  * The right half is the left one mirrored about the centre line, so the
  * morph only ever has to solve for one side.
  */
-export function pathsFor(s: MarkState): { left: string; right: string } {
+export function halvesAt(s: MarkState): { left: string; right: string } {
   const mirror = (x: number) => 2 * MID - x;
   return {
     left: `M${s.ox},${s.oy} L${s.ix},${s.iy} L${s.ix},${s.by} L${s.obx},${s.oby} Z`,
@@ -215,7 +215,7 @@ export function pathsFor(s: MarkState): { left: string; right: string } {
  * Eased cubic-out: quick to leave, slow to arrive, so the book looks like
  * it is settling shut rather than being snapped.
  */
-export function interpolate(t: number): MarkState {
+export function tween(t: number): MarkState {
   const e = 1 - Math.pow(1 - t, 3);
   const out = {} as MarkState;
   (Object.keys(BOOK_STATE) as (keyof MarkState)[]).forEach((k) => {

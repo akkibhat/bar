@@ -1,4 +1,4 @@
-import type { Block } from './types';
+import type { Block } from './schema';
 
 /**
  * The sub-headings inside a chapter, with a stable id for each.

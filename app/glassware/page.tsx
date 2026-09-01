@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import PageHeader from '@/components/PageHeader';
+import Masthead from '@/components/Masthead';
 import GlasswarePicker from '@/components/GlasswarePicker';
 import { GLASSES } from '@/lib/glassware';
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function GlasswarePage() {
   return (
     <div className="relative mx-auto max-w-[52rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">
-      <PageHeader
+      <Masthead
         eyebrow="Reference"
         title="Which glass"
         standfirst={`${GLASSES.length} glasses, filtered by how the drink is served - which is the thing you know first, and the thing everything else follows from.`}

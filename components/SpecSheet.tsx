@@ -1,4 +1,4 @@
-import type { SpecLine } from '@/lib/types';
+import type { SpecLine } from '@/lib/schema';
 
 /**
  * A drink's build, set the way it gets written down behind a bar:

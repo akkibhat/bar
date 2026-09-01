@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import PageHeader from '@/components/PageHeader';
+import Masthead from '@/components/Masthead';
 import FamiliesTable from '@/components/FamiliesTable';
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function FamiliesPage() {
   return (
     <div className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">
-      <PageHeader
+      <Masthead
         eyebrow="Reference"
         title="The six families"
         standfirst="Almost every drink in the book is one of six structures wearing different bottles. Learn the six and the list stops needing memorising."

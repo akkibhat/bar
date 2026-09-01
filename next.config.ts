@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
          drink lives now, under its same slug. */
       { source: '/menu', destination: '/backbar', permanent: true },
       { source: '/menu/:slug', destination: '/backbar/:slug', permanent: true },
+
+      /* Standard drinks used to have its own route. It is the same
+         calculation as dilution seen from the other end, so the two are
+         one page now. Permanent: the split was the mistake. */
+      { source: '/units', destination: '/dilution', permanent: true },
     ];
   },
 };

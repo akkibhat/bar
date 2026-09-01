@@ -1,5 +1,5 @@
-import FrontDoor from '@/components/FrontDoor';
-import ThemeToggle from '@/components/ThemeToggle';
+import Cover from '@/components/Cover';
+import Lights from '@/components/Lights';
 
 /**
  * The front door.
@@ -25,8 +25,8 @@ import ThemeToggle from '@/components/ThemeToggle';
 export default function Home() {
   return (
     <div className="relative">
-      <ThemeToggle className="absolute top-2 right-2 z-10 no-print" />
-      <FrontDoor />
+      <Lights className="absolute top-2 right-2 z-10 no-print" />
+      <Cover />
     </div>
   );
 }

@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LogoMark } from './Logo';
+import { GlassMark } from './Mark';
 import { PARTS } from '@/lib/content/parts';
-import { chaptersInPart } from '@/lib/content/course';
-import { SECTIONS } from '@/lib/config';
-import ThemeToggle from './ThemeToggle';
+import { chaptersIn } from '@/lib/content/book';
+import { HALVES } from '@/lib/site';
+import Lights from './Lights';
 
 /**
  * The bar across the top, and the contents that fold out of it.
@@ -23,11 +23,6 @@ import ThemeToggle from './ThemeToggle';
  * of parts, the way the inside spread of a menu is set - and the reading
  * column underneath gets the full width of the page.
  */
-
-const LINKS = [
-  { href: SECTIONS.book.href, label: 'Barbook', variant: 'book' as const },
-  { href: SECTIONS.shelf.href, label: 'Backbar', variant: 'shelf' as const },
-];
 
 export default function BarNav() {
   const pathname = usePathname();
@@ -68,20 +63,17 @@ export default function BarNav() {
             className="mr-3 flex items-center"
             style={{ opacity: pathname === '/' ? 1 : 0.75 }}
           >
-            <LogoMark size={22} variant="shelf" />
+            <GlassMark size={22} variant="shelf" />
           </Link>
 
-          {LINKS.map((l) => {
-            const active = pathname.startsWith(l.href);
-            const accent =
-              l.variant === 'shelf'
-                ? SECTIONS.shelf.accent
-                : SECTIONS.book.accent;
+          {HALVES.map((l) => {
+            const active = pathname.startsWith(l.at);
+            const accent = l.accent;
 
             return (
               <Link
-                key={l.href}
-                href={l.href}
+                key={l.id}
+                href={l.at}
                 aria-current={active ? 'page' : undefined}
                 className="px-3 py-1.5"
                 style={{
@@ -95,7 +87,7 @@ export default function BarNav() {
                   className="wordmark"
                   style={{ fontSize: 'var(--t-ui)', color: 'inherit' }}
                 >
-                  {l.variant === 'book' ? (
+                  {l.id === 'book' ? (
                     <>
                       Bar<span style={{ color: accent }}>book</span>
                     </>
@@ -110,7 +102,7 @@ export default function BarNav() {
           })}
 
           <div className="ml-auto flex items-center gap-1">
-            <ThemeToggle />
+            <Lights />
             {/* Hidden where the index column is on screen - two copies
                 of the same contents, one of them behind a click, is a
                 choice nobody needs to make. */}
@@ -165,7 +157,7 @@ export default function BarNav() {
                     </p>
                     <hr className="rule-hair mb-2" />
                     <ul>
-                      {chaptersInPart(part.slug).map((c) => {
+                      {chaptersIn(part.slug).map((c) => {
                         const active = pathname === `/book/${c.slug}`;
                         return (
                           <li key={c.slug}>
@@ -228,8 +220,7 @@ export default function BarNav() {
 const TOOLS: { href: string; label: string }[] = [
   { href: '/families', label: 'Cocktail families' },
   { href: '/ratio', label: 'Balance calculator' },
-  { href: '/dilution', label: 'Dilution and ice' },
-  { href: '/units', label: 'Standard drinks' },
+  { href: '/dilution', label: 'Strength and dilution' },
   { href: '/spirits', label: 'Spirit explorer' },
   { href: '/glassware', label: 'Glassware' },
   { href: '/glossary', label: 'Glossary' },

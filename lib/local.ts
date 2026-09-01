@@ -45,7 +45,7 @@ const CHANGE_EVENT = 'bar:storage';
 const snapshots = new Map<string, { raw: string | null; value: unknown }>();
 
 /** Subscribe to writes from this tab, and to writes from other tabs. */
-export function subscribe(onChange: () => void): () => void {
+export function watchStored(onChange: () => void): () => void {
   window.addEventListener(CHANGE_EVENT, onChange);
   window.addEventListener('storage', onChange);
   return () => {
@@ -55,7 +55,7 @@ export function subscribe(onChange: () => void): () => void {
 }
 
 /** Read and parse a key, reusing the cached object if nothing changed. */
-export function snapshot<T>(key: string, fallback: T): T {
+export function readStored<T>(key: string, fallback: T): T {
   let raw: string | null = null;
   try {
     raw = window.localStorage.getItem(key);
@@ -79,7 +79,7 @@ export function snapshot<T>(key: string, fallback: T): T {
 }
 
 /** Write a JSON value and notify subscribers. */
-export function write<T>(key: string, value: T): void {
+export function saveStored<T>(key: string, value: T): void {
   try {
     window.localStorage.setItem(key, JSON.stringify(value));
   } catch {
@@ -89,8 +89,8 @@ export function write<T>(key: string, value: T): void {
 }
 
 /** Read the current value outside of render, for update helpers. */
-export function readNow<T>(key: string, fallback: T): T {
-  return typeof window === 'undefined' ? fallback : snapshot(key, fallback);
+export function peek<T>(key: string, fallback: T): T {
+  return typeof window === 'undefined' ? fallback : readStored(key, fallback);
 }
 
 /**
@@ -99,7 +99,7 @@ export function readNow<T>(key: string, fallback: T): T {
  * "storage not loaded yet" from "storage loaded and empty".
  */
 const noopSubscribe = () => () => {};
-export function useHydrated(): boolean {
+export function useMounted(): boolean {
   return useSyncExternalStore(
     noopSubscribe,
     () => true,
@@ -125,28 +125,28 @@ const EMPTY_PROGRESS: Progress = { done: [], scores: {} };
  * Reading progress, with helpers to mark a chapter complete and to record
  * a quiz result.
  */
-export function useProgress() {
+export function useRead() {
   const progress = useSyncExternalStore(
-    subscribe,
-    () => snapshot(PROGRESS_KEY, EMPTY_PROGRESS),
+    watchStored,
+    () => readStored(PROGRESS_KEY, EMPTY_PROGRESS),
     () => EMPTY_PROGRESS,
   );
-  const ready = useHydrated();
+  const ready = useMounted();
 
   /** Mark a chapter finished, or unfinished if it already was. */
   const toggleDone = useCallback((slug: string) => {
-    const current = readNow(PROGRESS_KEY, EMPTY_PROGRESS);
+    const current = peek(PROGRESS_KEY, EMPTY_PROGRESS);
     const done = current.done.includes(slug)
       ? current.done.filter((s) => s !== slug)
       : [...current.done, slug];
-    write(PROGRESS_KEY, { ...current, done });
+    saveStored(PROGRESS_KEY, { ...current, done });
   }, []);
 
   /** Record a quiz result, keeping only the best score for that chapter. */
   const recordScore = useCallback((slug: string, score: number) => {
-    const current = readNow(PROGRESS_KEY, EMPTY_PROGRESS);
+    const current = peek(PROGRESS_KEY, EMPTY_PROGRESS);
     const best = Math.max(current.scores[slug] ?? 0, score);
-    write(PROGRESS_KEY, {
+    saveStored(PROGRESS_KEY, {
       ...current,
       scores: { ...current.scores, [slug]: best },
     });
@@ -154,7 +154,7 @@ export function useProgress() {
 
   /** Clear all progress. Used by the reset control on the contents page. */
   const resetProgress = useCallback(() => {
-    write(PROGRESS_KEY, EMPTY_PROGRESS);
+    saveStored(PROGRESS_KEY, EMPTY_PROGRESS);
   }, []);
 
   return { progress, ready, toggleDone, recordScore, resetProgress };
@@ -189,17 +189,17 @@ export type DrinkNote = {
 const EMPTY_JOURNAL: DrinkNote[] = [];
 
 /** The saved notes, newest first. */
-export function useJournal() {
+export function useNotes() {
   const notes = useSyncExternalStore(
-    subscribe,
-    () => snapshot(JOURNAL_KEY, EMPTY_JOURNAL),
+    watchStored,
+    () => readStored(JOURNAL_KEY, EMPTY_JOURNAL),
     () => EMPTY_JOURNAL,
   );
-  const ready = useHydrated();
+  const ready = useMounted();
 
   /** Save a new note to the front of the journal. */
   const saveNote = useCallback((note: Omit<DrinkNote, 'id' | 'savedAt'>) => {
-    const current = readNow(JOURNAL_KEY, EMPTY_JOURNAL);
+    const current = peek(JOURNAL_KEY, EMPTY_JOURNAL);
     const full: DrinkNote = {
       ...note,
       id:
@@ -208,14 +208,14 @@ export function useJournal() {
           : String(Date.now()),
       savedAt: new Date().toISOString(),
     };
-    write(JOURNAL_KEY, [full, ...current]);
+    saveStored(JOURNAL_KEY, [full, ...current]);
     return full;
   }, []);
 
   /** Remove one note by id. */
   const deleteNote = useCallback((id: string) => {
-    const current = readNow(JOURNAL_KEY, EMPTY_JOURNAL);
-    write(
+    const current = peek(JOURNAL_KEY, EMPTY_JOURNAL);
+    saveStored(
       JOURNAL_KEY,
       current.filter((n) => n.id !== id),
     );
@@ -256,7 +256,7 @@ function themeSnapshot(): 'light' | 'dark' {
     : 'light';
 }
 
-export function useTheme() {
+export function useLights() {
   const theme = useSyncExternalStore(
     themeSubscribe,
     themeSnapshot,

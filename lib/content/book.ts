@@ -1,4 +1,4 @@
-import type { Chapter } from '../types';
+import type { Chapter } from '../schema';
 import { FOUNDATIONS } from './chapters/foundations';
 import { BACK_BAR } from './chapters/back-bar';
 import { BEER } from './chapters/beer';
@@ -31,12 +31,12 @@ export const CHAPTERS: Chapter[] = [
 export const CHAPTER_COUNT = CHAPTERS.length;
 
 /** Every chapter belonging to one part, in order. */
-export function chaptersInPart(partSlug: string): Chapter[] {
+export function chaptersIn(partSlug: string): Chapter[] {
   return CHAPTERS.filter((c) => c.part === partSlug);
 }
 
 /** Look up a single chapter by slug. */
-export function findChapter(slug: string): Chapter | undefined {
+export function lookupChapter(slug: string): Chapter | undefined {
   return CHAPTERS.find((c) => c.slug === slug);
 }
 
@@ -44,7 +44,7 @@ export function findChapter(slug: string): Chapter | undefined {
  * The chapters immediately before and after a given one, for the
  * previous/next footer links. Either may be undefined at the ends.
  */
-export function neighbours(slug: string): { prev?: Chapter; next?: Chapter } {
+export function around(slug: string): { prev?: Chapter; next?: Chapter } {
   const i = CHAPTERS.findIndex((c) => c.slug === slug);
   if (i === -1) return {};
   return {
@@ -61,6 +61,6 @@ export function neighbours(slug: string): { prev?: Chapter; next?: Chapter } {
  * the honest version of a progress bar: it says how much of the book is
  * still provisional rather than how much of it you have read.
  */
-export function chaptersWithOpenQuestions(): Chapter[] {
+export function chaptersStillOpen(): Chapter[] {
   return CHAPTERS.filter((c) => c.body.some((b) => b.kind === 'unsure'));
 }

@@ -1,4 +1,4 @@
-import type { Part } from '../types';
+import type { Part } from '../schema';
 
 /**
  * The nine parts of the book, in reading order.
@@ -83,6 +83,6 @@ export const PARTS: Part[] = [
 ];
 
 /** Look up a part by slug. */
-export function findPart(slug: string): Part | undefined {
+export function lookupPart(slug: string): Part | undefined {
   return PARTS.find((p) => p.slug === slug);
 }

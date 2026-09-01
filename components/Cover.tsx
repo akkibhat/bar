@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { LogoMark } from './Logo';
-import { OWNER, SECTIONS } from '@/lib/config';
-import { CHAPTER_COUNT } from '@/lib/content/course';
+import { GlassMark } from './Mark';
+import { OWNER, HALVES } from '@/lib/site';
+import { CHAPTER_COUNT } from '@/lib/content/book';
 import { SHELF } from '@/lib/backbar';
 
 /**
@@ -38,10 +38,11 @@ import { SHELF } from '@/lib/backbar';
  * No client JavaScript. The hover is CSS, so this page ships none of its
  * own.
  */
-export default function FrontDoor() {
-  const halves = [
-    {
-      key: 'book' as const,
+export default function Cover() {
+  /* The landing copy, keyed to the shared half record so the route, the
+     name and the accent all still come from one place. */
+  const copy = {
+    book: {
       label: 'The book',
       name: (
         <>
@@ -51,8 +52,7 @@ export default function FrontDoor() {
       line: 'Everything behind a bar - spirits, beer, tools, technique - and how to build a drink out of it.',
       count: `${CHAPTER_COUNT} chapters`,
     },
-    {
-      key: 'shelf' as const,
+    shelf: {
       label: 'The shelf',
       name: (
         <>
@@ -67,7 +67,7 @@ export default function FrontDoor() {
       line: 'My own creations, with the measures, the method, and what I was after.',
       count: `${SHELF.length} drinks`,
     },
-  ];
+  } as const;
 
   return (
     <div className="door-page">
@@ -91,12 +91,12 @@ export default function FrontDoor() {
       </header>
 
       <div className="door-split">
-        {halves.map((half) => (
+        {HALVES.map((half) => (
           <Link
-            key={half.key}
-            href={SECTIONS[half.key].href}
+            key={half.id}
+            href={half.at}
             className="door"
-            style={{ ['--accent' as string]: SECTIONS[half.key].accent }}
+            style={{ ['--accent' as string]: half.accent }}
           >
             <span className="door-inner">
               <span
@@ -105,27 +105,27 @@ export default function FrontDoor() {
                   ['--logo-pour' as string]: 'var(--accent)',
                 }}
               >
-                <LogoMark size={34} variant={half.key} decorative />
+                <GlassMark size={34} variant={half.id} decorative />
               </span>
 
-              <span className="label-ui block mt-6 mb-2">{half.label}</span>
+              <span className="label-ui block mt-6 mb-2">{copy[half.id].label}</span>
 
               <span className="display block t-h1 sm:t-display leading-none mb-5">
-                {half.name}
+                {copy[half.id].name}
               </span>
 
               <span
                 className="door-line block t-lead leading-relaxed max-w-[22rem]"
                 style={{ color: 'var(--ink-soft)' }}
               >
-                {half.line}
+                {copy[half.id].line}
               </span>
 
               <span
                 className="label-ui block mt-auto pt-8 nums"
                 style={{ color: 'var(--accent)' }}
               >
-                {half.count}
+                {copy[half.id].count}
               </span>
             </span>
           </Link>

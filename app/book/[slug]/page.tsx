@@ -2,13 +2,13 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import {
   CHAPTERS,
-  chaptersInPart,
-  findChapter,
-  neighbours,
-} from '@/lib/content/course';
-import { findPart } from '@/lib/content/parts';
-import ChapterBody from '@/components/ChapterBody';
-import ChapterFooter from '@/components/ChapterFooter';
+  chaptersIn,
+  lookupChapter,
+  around,
+} from '@/lib/content/book';
+import { lookupPart } from '@/lib/content/parts';
+import Typeset from '@/components/Typeset';
+import Colophon from '@/components/Colophon';
 import ChapterKeys from '@/components/ChapterKeys';
 import ReadingLine from '@/components/ReadingLine';
 
@@ -23,7 +23,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const chapter = findChapter(slug);
+  const chapter = lookupChapter(slug);
   if (!chapter) return {};
   return { title: chapter.title, description: chapter.standfirst };
 }
@@ -52,12 +52,12 @@ export default async function ChapterPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const chapter = findChapter(slug);
+  const chapter = lookupChapter(slug);
   if (!chapter) notFound();
 
-  const part = findPart(chapter.part);
-  const siblings = chaptersInPart(chapter.part);
-  const { prev, next } = neighbours(slug);
+  const part = lookupPart(chapter.part);
+  const siblings = chaptersIn(chapter.part);
+  const { prev, next } = around(slug);
 
   return (
     <article className="mx-auto max-w-[42rem] px-6 sm:px-10 py-12 lg:py-20">
@@ -93,10 +93,10 @@ export default async function ChapterPage({
       </header>
 
       {/* ---- Body ------------------------------------------------ */}
-      <ChapterBody body={chapter.body} />
+      <Typeset body={chapter.body} />
 
       {/* ---- Footer ---------------------------------------------- */}
-      <ChapterFooter
+      <Colophon
         slug={chapter.slug}
         part={part}
         siblings={siblings}

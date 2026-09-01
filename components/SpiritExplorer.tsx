@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import { CATEGORY_LABEL, SPIRITS } from '@/lib/spirits';
-import type { Spirit, SpiritCategory } from '@/lib/types';
+import type { Spirit, SpiritCategory } from '@/lib/schema';
 
 /**
  * The spirit explorer.

@@ -1,4 +1,4 @@
-import type { Chapter } from '../../types';
+import type { Chapter } from '../../schema';
 
 /**
  * Part III - Beer.

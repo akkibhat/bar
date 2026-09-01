@@ -4,9 +4,9 @@ import {
   LOCKUP,
   openHalf,
   STEM,
-  tierFor,
+  tierAt,
   VIEW_BOX,
-} from '@/lib/mark';
+} from '@/lib/geometry';
 
 /**
  * The mark: a cocktail glass split down the middle, so it reads as both a
@@ -27,7 +27,7 @@ import {
  * inverts with the rest of the interface, and the gaps are transparent so
  * it sits on any surface.
  */
-export function LogoMark({
+export function GlassMark({
   size = 32,
   variant = 'book',
   decorative = false,
@@ -45,7 +45,7 @@ export function LogoMark({
   decorative?: boolean;
   className?: string;
 }) {
-  const t = tierFor(size);
+  const t = tierAt(size);
 
   return (
     <svg
@@ -131,7 +131,7 @@ export default function Logo({
   className?: string;
 }) {
   if (!wordmark)
-    return <LogoMark size={size} variant={suffix} className={className} />;
+    return <GlassMark size={size} variant={suffix} className={className} />;
 
   /**
    * The wordmark is sized from the mark, and the gap with it likewise.
@@ -151,7 +151,7 @@ export default function Logo({
         gap: size * LOCKUP.gap,
       }}
     >
-      <LogoMark size={size} variant={suffix} decorative />
+      <GlassMark size={size} variant={suffix} decorative />
       <span
         className="wordmark"
         style={{ fontSize: size * LOCKUP.word, lineHeight: 1 }}

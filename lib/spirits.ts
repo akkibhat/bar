@@ -1,4 +1,4 @@
-import type { Spirit, SpiritCategory } from './types';
+import type { Spirit, SpiritCategory } from './schema';
 
 /**
  * The back bar, as data.
@@ -376,6 +376,6 @@ export const CATEGORY_LABEL: Record<SpiritCategory, string> = {
 };
 
 /** Look up one spirit by slug. */
-export function findSpirit(slug: string): Spirit | undefined {
+export function lookupSpirit(slug: string): Spirit | undefined {
   return SPIRITS.find((s) => s.slug === slug);
 }

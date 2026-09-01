@@ -1,4 +1,4 @@
-import type { GlossaryCategory, GlossaryTerm } from './types';
+import type { GlossaryCategory, GlossaryTerm } from './schema';
 
 /**
  * The glossary.
@@ -398,6 +398,6 @@ export const CATEGORY_LABEL: Record<GlossaryCategory, string> = {
 };
 
 /** Look up one term by slug. */
-export function findTerm(slug: string): GlossaryTerm | undefined {
+export function lookupTerm(slug: string): GlossaryTerm | undefined {
   return GLOSSARY.find((t) => t.slug === slug);
 }

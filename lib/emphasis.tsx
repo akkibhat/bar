@@ -22,7 +22,7 @@ const PATTERN = /(\*\*|\*)(?!\s)(.+?)(?<!\s)\1/g;
  * Returns an array of nodes rather than a single element so the caller
  * decides the wrapping element (paragraph, list item, table cell).
  */
-export function inline(text: string): ReactNode[] {
+export function emphasise(text: string): ReactNode[] {
   const out: ReactNode[] = [];
   let lastIndex = 0;
   let key = 0;

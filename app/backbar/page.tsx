@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Rule from '@/components/Rule';
-import SectionTitle from '@/components/SectionTitle';
+import HalfTitle from '@/components/HalfTitle';
 import BackbarGrid from '@/components/BackbarGrid';
-import { FORMER_NAME, SECTIONS, sectionName } from '@/lib/config';
+import { BOOK, FORMER_NAME, SHELF_HALF } from '@/lib/site';
 import { PULLED_AT, SHELF } from '@/lib/backbar';
 
 export const metadata: Metadata = {
-  title: sectionName('shelf'),
+  title: SHELF_HALF.name,
   description:
     'Cocktails I have made up, with the full build in millilitres and a note on why each one is put together the way it is.',
 };
@@ -28,7 +28,7 @@ export default function BackbarPage() {
   return (
     <div
       className="relative mx-auto max-w-[52rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16"
-      style={{ ['--accent' as string]: SECTIONS.shelf.accent }}
+      style={{ ['--accent' as string]: SHELF_HALF.accent }}
     >
 
       {/* ---- Masthead -------------------------------------------- */}
@@ -37,7 +37,7 @@ export default function BackbarPage() {
           My own, and how they are built
         </p>
 
-        <SectionTitle section="shelf" />
+        <HalfTitle half={SHELF_HALF} />
         <Rule variant="double" className="mt-3" />
 
         <p className="t-lead leading-relaxed mt-6 max-w-[34rem]">
@@ -80,7 +80,7 @@ export default function BackbarPage() {
             className="wordmark"
             style={{ fontSize: 'inherit', color: 'inherit' }}
           >
-            Bar<span style={{ color: SECTIONS.book.accent }}>book</span>
+            Bar<span style={{ color: BOOK.accent }}>book</span>
           </span>
         </Link>{' '}
         covers the structures, the ratios and what every bottle is for.

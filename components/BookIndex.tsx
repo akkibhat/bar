@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { PARTS } from '@/lib/content/parts';
-import { chaptersInPart, findChapter } from '@/lib/content/course';
+import { chaptersIn, lookupChapter } from '@/lib/content/book';
 import { headingsOf } from '@/lib/headings';
 
 /**
@@ -38,7 +38,7 @@ export default function BookIndex() {
   const currentSlug = pathname.startsWith('/book/')
     ? pathname.slice('/book/'.length)
     : null;
-  const current = currentSlug ? findChapter(currentSlug) : undefined;
+  const current = currentSlug ? lookupChapter(currentSlug) : undefined;
   const headings = current ? headingsOf(current.body) : [];
 
   /**
@@ -102,7 +102,7 @@ export default function BookIndex() {
 
               {open && (
                 <ul>
-                  {chaptersInPart(part.slug).map((c) => {
+                  {chaptersIn(part.slug).map((c) => {
                     const here = c.slug === currentSlug;
                     return (
                       <li key={c.slug}>
@@ -220,8 +220,7 @@ export default function BookIndex() {
 const TOOLS: { href: string; label: string }[] = [
   { href: '/families', label: 'Cocktail families' },
   { href: '/ratio', label: 'Balance calculator' },
-  { href: '/dilution', label: 'Dilution and ice' },
-  { href: '/units', label: 'Standard drinks' },
+  { href: '/dilution', label: 'Strength and dilution' },
   { href: '/spirits', label: 'Spirit explorer' },
   { href: '/glassware', label: 'Glassware' },
   { href: '/glossary', label: 'Glossary' },

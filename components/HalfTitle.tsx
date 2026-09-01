@@ -1,5 +1,5 @@
-import Logo from './Logo';
-import { SECTIONS, sectionName, type SectionKey } from '@/lib/config';
+import Mark from './Mark';
+import type { Half } from '@/lib/site';
 
 /**
  * The masthead title on a half's own landing page.
@@ -18,8 +18,8 @@ import { SECTIONS, sectionName, type SectionKey } from '@/lib/config';
  * class on the lockup itself, since `Logo` sets its own `display` inline
  * and would win against Tailwind's.
  */
-export default function SectionTitle({ section }: { section: SectionKey }) {
-  const { accent } = SECTIONS[section];
+export default function HalfTitle({ half }: { half: Half }) {
+  const { accent } = half;
 
   /* Both lockups are hidden from assistive technology and the heading
      carries the name itself. `display: none` should keep the off-size one
@@ -28,7 +28,7 @@ export default function SectionTitle({ section }: { section: SectionKey }) {
   return (
     <h1
       className="mb-1"
-      aria-label={sectionName(section)}
+      aria-label={half.name}
       /* Both the mark and the wordmark take the half's accent. Without
          this they fall back to the root default, which is the book's
          blue - right for the book by coincidence and wrong for the
@@ -40,10 +40,10 @@ export default function SectionTitle({ section }: { section: SectionKey }) {
       }}
     >
       <span className="sm:hidden" aria-hidden="true">
-        <Logo size={46} suffix={section} />
+        <Mark size={46} suffix={half.id} />
       </span>
       <span className="hidden sm:block" aria-hidden="true">
-        <Logo size={68} suffix={section} />
+        <Mark size={68} suffix={half.id} />
       </span>
     </h1>
   );

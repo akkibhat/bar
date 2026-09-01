@@ -1,8 +1,8 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { CATEGORY_LABEL, GLOSSARY, findTerm } from '@/lib/glossary';
-import type { GlossaryCategory } from '@/lib/types';
+import { CATEGORY_LABEL, GLOSSARY, lookupTerm } from '@/lib/glossary';
+import type { GlossaryCategory } from '@/lib/schema';
 
 /**
  * The glossary, searchable by meaning as well as by name.
@@ -96,7 +96,7 @@ export default function GlossarySearch() {
                   >
                     See also{' '}
                     {t.seeAlso
-                      .map((s) => findTerm(s))
+                      .map((s) => lookupTerm(s))
                       .filter(Boolean)
                       .map((s, i, arr) => (
                         <span key={s!.slug}>

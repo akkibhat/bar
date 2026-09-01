@@ -1,6 +1,6 @@
 'use client';
 
-import { useTheme } from '@/lib/storage';
+import { useLights } from '@/lib/local';
 
 /**
  * Light/dark switch.
@@ -24,7 +24,7 @@ export default function ThemeToggle({
 }: {
   className?: string;
 }) {
-  const { theme, toggle } = useTheme();
+  const { theme, toggle } = useLights();
 
   return (
     <button

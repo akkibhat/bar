@@ -1,20 +1,36 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import PageHeader from '@/components/PageHeader';
+import Masthead from '@/components/Masthead';
 import DilutionTool from '@/components/DilutionTool';
+import DrinkStrength from '@/components/DrinkStrength';
 
 export const metadata: Metadata = {
-  title: 'Dilution and ice',
+  title: 'Strength and dilution',
   description:
-    'What ice does to the strength of a drink, and how much water a batch is missing.',
+    'What ice does to a drink, how much water a batch is missing, and how many standard drinks are in the glass.',
 };
 
+/**
+ * Strength and dilution, on one page.
+ *
+ * These were two routes - `/dilution` for what the ice does, `/units` for
+ * standard drinks - and splitting them was wrong, because they are one
+ * calculation looked at from two ends. The water the ice adds is exactly
+ * what moves a build from its mixed strength to its served strength, and
+ * the number of standard drinks does not move at all, because dilution
+ * adds water rather than removing alcohol.
+ *
+ * Apart, those two facts are trivia. Together on one page they are the
+ * point: a drink gets weaker and no safer.
+ *
+ * `/units` redirects here, in `next.config.ts`.
+ */
 export default function DilutionPage() {
   return (
-    <div className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">
-      <PageHeader
+    <div className="mx-auto max-w-[46rem] px-6 sm:px-10 py-12 lg:py-20">
+      <Masthead
         eyebrow="Tool"
-        title="Dilution"
+        title="Strength and dilution"
         standfirst="There is no chilling without dilution and no dilution without chilling. The water is part of the recipe whether or not the recipe mentions it."
       />
 
@@ -27,7 +43,31 @@ export default function DilutionPage() {
         useful tool.
       </p>
 
-      <p className="t-caption mt-4" style={{ color: 'var(--ink-soft)' }}>
+      <hr className="rule-double my-10" />
+
+      <h2 className="display t-h2 leading-none mb-3">How strong is it</h2>
+
+      <p className="t-base mb-2 max-w-[34rem]">
+        Add each pour and its strength. Percentages do not average, so this
+        sums the actual alcohol rather than the labels.
+      </p>
+
+      <DrinkStrength />
+
+      <p className="t-base max-w-[34rem]">
+        A New Zealand standard drink is <strong>10 g of pure alcohol</strong>.
+        Ethanol weighs 0.789 g per millilitre, so a 30 ml pour of a 40% spirit
+        works out at 0.95 of one - the figure worth sanity-checking against.
+      </p>
+
+      <p className="t-base mt-4 max-w-[34rem]">
+        Dilution changes the strength but not the count. The alcohol is all
+        still in the glass; there is just more water around it. That is why
+        these two sit on one page: a diluted drink is weaker and not one unit
+        safer.
+      </p>
+
+      <p className="t-caption mt-8" style={{ color: 'var(--ink-soft)' }}>
         <Link href="/book/ice" style={{ color: 'var(--accent-book)' }}>
           The ice chapter
         </Link>{' '}
