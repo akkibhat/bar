@@ -1,0 +1,25 @@
+node_modules
+.next
+out
+build
+.DS_Store
+*.pem
+npm-debug.log*
+.env*
+!.env.example
+next-env.d.ts
+.vercel
+*.tsbuildinfo
+
+# Working documents: design explorations and editorial scratch. Not part of
+# the build.
+_workings/
+
+# Photographs of the course workbook. These are the source the chapters were
+# written from, not site content — nothing in `app/` or `public/` references
+# them, and they are 50 MB of phone photos, so they stay on disk rather than
+# in the history. Keep a copy somewhere backed up.
+_course/
+
+# Local editor and tooling config.
+.claude/

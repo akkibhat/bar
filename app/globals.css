@@ -1,0 +1,707 @@
+@import "tailwindcss";
+
+/* =====================================================================
+   THE MENU DESIGN SYSTEM
+
+   The visual language is a printed cocktail menu: heavy cream stock,
+   a high-contrast didone for the names, small caps set wide, hairline
+   rules, and measures running to the right edge behind dot leaders.
+
+   That is a deliberate departure from the wine site, which is a kept
+   journal - warm paper, handwriting, ring stains, tipped-in index
+   cards. The two are siblings in structure and argument, not in
+   appearance: a cellar is somewhere you write things down, and a bar is
+   somewhere things are printed, set and handed over. Nothing here is in
+   a hand, nothing is drawn wobbly, and no surface pretends to be paper
+   with a texture on it.
+
+   What the two do share is the type scale, the spacing scale and the
+   motion values, because those are engineering rather than voice.
+   ===================================================================== */
+
+@theme {
+  /* Typefaces are injected by next/font in app/layout.tsx, which sets
+     the matching variables on :root. */
+  --font-display: var(--font-bodoni), "Bodoni MT", Didot, Georgia, serif;
+  --font-body: var(--font-lora), Georgia, serif;
+  --font-ui: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* =====================================================================
+   TYPE SCALE
+
+   Eleven steps, in rem against a 16px root. Body prose renders at 18px.
+   Naming the size at the call site (`t-body`, `t-caption`) rather than
+   picking a number is what stops a codebase drifting into thirty
+   near-identical sizes.
+   ===================================================================== */
+:root {
+  --t-micro:    0.78rem;   /* 12.5px  small-caps labels, eyebrows       */
+  --t-caption:  0.9rem;    /* 14.4px  captions, chips, spec amounts     */
+  --t-ui:       1rem;      /* 16.0px  buttons, nav, secondary text      */
+  --t-base:     1.0625rem; /* 17.0px  dense body - cards, notes         */
+  --t-body:     1.125rem;  /* 18.0px  chapter prose. The default.       */
+  --t-lead:     1.2rem;    /* 19.2px  standfirsts, pull quotes          */
+  --t-h3:       1.5rem;    /* 24.0px  sub-headings                      */
+  --t-h2:       1.875rem;  /* 30.0px  section headings                  */
+  --t-h1:       2.6rem;    /* 41.6px  chapter titles                    */
+  --t-display:  3.4rem;    /* 54.4px  page titles                       */
+  --t-hero:     4.6rem;    /* 73.6px  landing only                      */
+
+  --lh-tight:   1.08;
+  --lh-heading: 1.16;
+  --lh-ui:      1.45;
+  --lh-body:    1.68;
+
+  /* The reading measure - about 68 characters. */
+  --measure:    34rem;
+}
+
+.t-micro   { font-size: var(--t-micro);   line-height: var(--lh-ui); }
+.t-caption { font-size: var(--t-caption); line-height: var(--lh-ui); }
+.t-ui      { font-size: var(--t-ui);      line-height: var(--lh-ui); }
+.t-base    { font-size: var(--t-base);    line-height: var(--lh-body); }
+.t-body    { font-size: var(--t-body);    line-height: var(--lh-body); }
+.t-lead    { font-size: var(--t-lead);    line-height: var(--lh-ui); }
+.t-h3      { font-size: var(--t-h3);      line-height: var(--lh-heading); }
+.t-h2      { font-size: var(--t-h2);      line-height: var(--lh-heading); }
+.t-h1      { font-size: var(--t-h1);      line-height: var(--lh-tight); }
+.t-display { font-size: var(--t-display); line-height: var(--lh-tight); }
+.t-hero    { font-size: var(--t-hero);    line-height: var(--lh-tight); }
+
+/* Equal-width digits. This site is mostly columns of figures -
+   millilitres, ABV, ratios, dilution - and they wobble without it. */
+.nums { font-variant-numeric: tabular-nums; }
+
+/* =====================================================================
+   SPACING SCALE
+   ===================================================================== */
+:root {
+  --s-hair:  0.125rem;  /*  2px  */
+  --s-3xs:   0.25rem;   /*  4px  */
+  --s-2xs:   0.375rem;  /*  6px  */
+  --s-xs:    0.5rem;    /*  8px  */
+  --s-sm:    0.625rem;  /* 10px  */
+  --s-md:    0.75rem;   /* 12px  */
+  --s-lg:    0.875rem;  /* 14px  */
+  --s-xl:    1rem;      /* 16px  */
+  --s-2xl:   1.25rem;   /* 20px  */
+  --s-3xl:   1.5rem;    /* 24px  */
+  --s-4xl:   2rem;      /* 32px  */
+  --s-5xl:   2.5rem;    /* 40px  */
+  --s-6xl:   3rem;      /* 48px  */
+  --s-7xl:   4rem;      /* 64px  */
+}
+
+/* =====================================================================
+   FLAVOUR FAMILIES
+
+   Six categorical fills for the flavour wheel and the tasting chips.
+   Each is a fill with a pale label on it, so each carries three
+   constraints at once:
+
+     fill vs the light ground   >= 3:1
+     fill vs the dark ground    >= 3:1
+     label on the fill          >= 4.5:1
+
+   Solving those together brackets the luminance tightly, so all six are
+   derived at one target luminance and differ only in hue. That is the
+   right shape for categorical colour - a family heavier than its
+   neighbours reads as more important - and one value then serves both
+   themes, so there is no dark variant to keep in step.
+   ===================================================================== */
+:root {
+  --flavour-fruit:   #c1394a;
+  --flavour-botanic: #3a7a33;
+  --flavour-wood:    #96602c;
+  --flavour-spice:   #a1552a;
+  --flavour-sweet:   #8a5a9c;
+  --flavour-earth:   #6c7026;
+  --flavour-label:   #f8f5ee;
+}
+
+/* =====================================================================
+   SEMANTIC COLOUR
+
+   Kept distinct from the brand accents on purpose. Amber is the primary
+   and carries headings, links and the mark, so it cannot also mean
+   "caution" - the two readings would collide on every page.
+   ===================================================================== */
+:root {
+  --ok:       #2c5d52;   /* 6.84:1  balanced, in range     */
+  --caution:  #8a6320;   /* 4.92:1  approaching a limit    */
+  --alert:    #a33a22;   /* 6.00:1  over a limit           */
+  --info:     #38678c;   /* 5.48:1  neutral notices        */
+}
+
+/* =====================================================================
+   MOTION
+
+   Four durations, one curve. This is a reading surface, so motion exists
+   to confirm that something responded - never to entertain. All of it is
+   suppressed under reduced-motion.
+   ===================================================================== */
+:root {
+  --m-instant: 0.09s;
+  --m-quick:   0.14s;
+  --m-settle:  0.24s;
+  --m-slow:    0.5s;
+  --ease: cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+/* =====================================================================
+   Palette - "Back Bar"
+
+   Cream card stock under a warm light, with brass and bitters on it.
+   Every value measured rather than chosen by eye. The one that needed
+   splitting is brass: it is a fill weight at 3.05:1 and fails for text,
+   so --brass is fill only and --brass-deep is the text weight at 5.53:1.
+   ===================================================================== */
+:root {
+  /* Ground - heavy cream stock */
+  --card-stock:       #f7f4ed;
+  --card-raised:      #fffdf8;
+  --card-sunk:        #ece7dc;
+
+  /* Ink - printed black, warm */
+  --press:            #1a1613;   /* 16.37:1  AAA  */
+  --press-soft:       #5c554c;   /*  6.69:1  AA   */
+  --press-faint:      #6d675e;   /*  5.10:1  AA   */
+
+  /* Accents */
+  --amber:            #8a5717;   /*  5.53:1  AA   primary, Barbook   */
+  --bitters:          #9d2530;   /*  6.98:1  AA   secondary, Backbar */
+  --brass:            #b8822e;   /*  3.05:1  FILL ONLY - never text  */
+  --brass-deep:       #8a5717;   /*  5.53:1  AA   the text weight    */
+
+  /* Rules */
+  --hairline:         #ddd6c7;
+  --hairline-strong:  #b3a894;
+
+  /* ---- Aliases the components use ---------------------------------- */
+  --paper:        var(--card-stock);
+  --paper-raised: var(--card-raised);
+  --paper-sunk:   var(--card-sunk);
+  --ink:          var(--press);
+  --ink-soft:     var(--press-soft);
+  --ink-faint:    var(--press-faint);
+  --accent-book:  var(--amber);
+  --accent-shelf: var(--bitters);
+  --amber-bright: #a76c22;
+  --gold:         var(--brass-deep);
+  --rule:         var(--hairline);
+  --rule-strong:  var(--hairline-strong);
+  --wash:         rgba(138, 87, 23, 0.10);
+  --shadow:       rgba(26, 22, 19, 0.07);
+
+  /* ---- The mark ---------------------------------------------------- */
+  --logo-glass:   var(--amber);
+  --logo-pour:    var(--bitters);
+  --logo-word:    var(--amber);
+
+  /* Height of the section bar. The book sidebar sticks directly beneath
+     it and the two numbers have to agree, so there is one value here
+     rather than a guess in each file. */
+  --nav-h: 3.7rem;
+
+  color-scheme: light;
+}
+
+/* System preference, unless an explicit light choice is stamped on. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --card-stock:       #12100e;
+    --card-raised:      #1b1815;
+    --card-sunk:        #0b0a09;
+
+    --press:            #f0e9dd;   /* 15.73:1  AAA */
+    --press-soft:       #a09889;   /*  6.64:1  AA  */
+    --press-faint:      #918a7c;   /*  5.54:1  AA  */
+
+    /* Full amber is under 2:1 here and vanishes; lifted to a brass that
+       clears AAA while staying the same hue. */
+    --amber:            #dda94f;   /*  8.92:1  AAA */
+    --bitters:          #e0616b;   /*  5.51:1  AA  */
+    --brass:            #dda94f;
+    --brass-deep:       #dda94f;
+
+    --hairline:         #2e2a25;
+    --hairline-strong:  #4a443c;
+
+    --amber-bright:     #ecc077;
+    --wash:             rgba(221, 169, 79, 0.13);
+    --shadow:           rgba(0, 0, 0, 0.5);
+
+    /* The mark's pour runs deeper than text is allowed to: it clears the
+       3:1 WCAG asks of a graphic but not the 4.5:1 it asks of text, so
+       in dark mode alone the pour and the wordmark diverge. */
+    --logo-pour:    #c8434f;
+    --logo-word:    var(--amber);
+
+    --ok:       #6aab99;
+    --caution:  #d7a95e;
+    --alert:    #e8836a;
+    --info:     #7fb0d1;
+
+    color-scheme: dark;
+  }
+}
+
+/* Explicit dark choice wins in both directions. */
+:root[data-theme='dark'] {
+  --card-stock:       #12100e;
+  --card-raised:      #1b1815;
+  --card-sunk:        #0b0a09;
+
+  --press:            #f0e9dd;
+  --press-soft:       #a09889;
+  --press-faint:      #918a7c;
+
+  --amber:            #dda94f;
+  --bitters:          #e0616b;
+  --brass:            #dda94f;
+  --brass-deep:       #dda94f;
+
+  --hairline:         #2e2a25;
+  --hairline-strong:  #4a443c;
+
+  --amber-bright:     #ecc077;
+  --wash:             rgba(221, 169, 79, 0.13);
+  --shadow:           rgba(0, 0, 0, 0.5);
+
+  --logo-pour:    #c8434f;
+  --logo-word:    var(--amber);
+
+  --ok:       #6aab99;
+  --caution:  #d7a95e;
+  --alert:    #e8836a;
+  --info:     #7fb0d1;
+
+  color-scheme: dark;
+}
+
+/* ---------------------------------------------------------------------
+   Base document
+
+   No paper texture. The wine site puts an SVG noise filter behind
+   everything to make it read as a journal page; a menu is printed on
+   stock that is flat, and faking a grain here would be borrowing the
+   other site's voice.
+   --------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--t-body);
+  line-height: var(--lh-body);
+}
+
+::selection {
+  background: var(--wash);
+  color: var(--ink);
+}
+
+/* =====================================================================
+   DISPLAY TYPE
+
+   Bodoni is a didone: the thick strokes are very thick and the hairlines
+   are very thin, and that ratio is what makes it read as a menu rather
+   than as a document. It is also what makes it fragile - below about
+   20px the hairlines drop under a rendered pixel and the letterforms
+   break up, so `.display` is for headings only. Anything small that
+   needs emphasis uses the interface face instead.
+
+   Optical sizing is on, so the face thins its own hairlines as it grows
+   rather than scaling them linearly.
+   ===================================================================== */
+.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: -0.005em;
+  line-height: var(--lh-heading);
+}
+
+/* The wordmark. Same face as the headings, tightened, because a name set
+   at the same tracking as a sentence reads as a sentence. */
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+/* =====================================================================
+   RULES
+
+   A printed menu separates things with rules, and the rules mean
+   different amounts. Three weights, used consistently:
+
+     .rule-hair    a hairline. Between rows, under a sub-heading.
+     .rule-double  two lines with air between. Above a section.
+     .rule-stub    a short heavy stub. Under a title, as a full stop.
+
+   These replace the hand-drawn wobbly underline the wine site uses,
+   which is the single most recognisable thing about it.
+   ===================================================================== */
+.rule-hair {
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.rule-double {
+  border: 0;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  height: 3px;
+}
+
+.rule-stub {
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  background: var(--accent, var(--accent-book));
+}
+
+/* ---------------------------------------------------------------------
+   Prose. Applied to a rendered chapter body.
+   --------------------------------------------------------------------- */
+.prose-paper p {
+  margin: 0 0 1.1rem;
+  max-width: var(--measure);
+}
+.prose-paper strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.prose-paper em { font-style: italic; }
+
+.prose-paper a {
+  color: var(--accent-book);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.prose-paper a:hover { background: var(--wash); }
+
+/* ---------------------------------------------------------------------
+   Surfaces
+
+   Flat. The wine site's cards are index cards tipped into a notebook and
+   carry a hard offset shadow to say so; these are panels ruled onto a
+   printed page, so they get a hairline and nothing else. The only
+   surface that lifts at all is one being pointed at.
+   --------------------------------------------------------------------- */
+.card {
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  transition: border-color var(--m-quick) var(--ease);
+}
+a.card:hover,
+button.card:hover {
+  border-color: var(--rule-strong);
+}
+
+.sunk {
+  background: var(--paper-sunk);
+  border-color: var(--rule);
+}
+
+/* An aside. A rule above and below rather than a box, which is how a
+   printed page sets one off without spending a border on it. */
+.note-block {
+  border-top: 2px solid var(--accent, var(--accent-book));
+  border-bottom: 1px solid var(--rule);
+  background: transparent;
+}
+
+/* Something not settled, or something still owed. Dashed on purpose: the
+   border itself should read as provisional, which is the one thing a
+   solid rule cannot say. */
+.unsure-block {
+  border-top: 2px dashed var(--caution);
+  border-bottom: 1px dashed var(--rule);
+  background: transparent;
+}
+
+/* ---------------------------------------------------------------------
+   Controls, drawn as print rather than as system widgets
+   --------------------------------------------------------------------- */
+
+/* Chips. Squared rather than pill-shaped - a menu has no rounded
+   corners on it anywhere, and this is the detail that most gives away a
+   default component library. */
+.chip {
+  font-family: var(--font-ui);
+  font-size: var(--t-caption);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-soft);
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--m-quick) var(--ease);
+  line-height: 1.4;
+}
+.chip:hover {
+  border-color: var(--ink-soft);
+  color: var(--ink);
+}
+.chip[aria-pressed='true'] {
+  background: var(--accent, var(--accent-book));
+  border-color: var(--accent, var(--accent-book));
+  color: var(--paper-raised);
+}
+
+/* Range inputs, drawn as a ruled line with a square handle. */
+.ink-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1px;
+  background: var(--rule-strong);
+  cursor: pointer;
+}
+.ink-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  background: var(--accent, var(--accent-book));
+  border: 2px solid var(--paper);
+}
+.ink-range::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  border-radius: 0;
+  background: var(--accent, var(--accent-book));
+  border: 2px solid var(--paper);
+}
+.ink-range:focus-visible {
+  outline: 2px solid var(--accent, var(--accent-book));
+  outline-offset: 4px;
+}
+
+/* Buttons. Square, and the primary one is a solid block of the accent. */
+.btn {
+  font-family: var(--font-ui);
+  font-size: var(--t-ui);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--rule-strong);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all var(--m-quick) var(--ease);
+}
+.btn:hover { border-color: var(--ink-soft); }
+.btn-primary {
+  background: var(--accent, var(--accent-book));
+  border-color: var(--accent, var(--accent-book));
+  color: var(--paper-raised);
+}
+.btn-primary:hover {
+  background: var(--amber-bright);
+  border-color: var(--amber-bright);
+}
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Text inputs, drawn as a ruled line rather than a box. */
+.ink-input {
+  font-family: var(--font-body);
+  font-size: var(--t-base);
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--rule-strong);
+  padding: 0.35rem 0.1rem;
+  width: 100%;
+}
+.ink-input::placeholder { color: var(--ink-faint); font-style: italic; }
+.ink-input:focus {
+  outline: none;
+  border-bottom-color: var(--accent, var(--accent-book));
+}
+
+/* =====================================================================
+   SMALL CAPS
+
+   The workhorse of the whole design. A menu labels everything -
+   GLASS, METHOD, GARNISH - in small caps set wide, and that single
+   device does most of the structural work that headings would otherwise
+   have to do.
+
+   Tracking is 0.16em rather than the usual 0.1: wide enough to read as
+   deliberate letterspacing rather than as a font that happens to be
+   uppercase.
+   ===================================================================== */
+.label-ui {
+  font-family: var(--font-ui);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+}
+
+/* ---------------------------------------------------------------------
+   Tables, set as ruled ledger rows rather than boxed grids
+   --------------------------------------------------------------------- */
+.ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-ui);
+  font-variant-numeric: tabular-nums;
+}
+.ledger th {
+  font-family: var(--font-ui);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent, var(--accent-book));
+  text-align: left;
+  padding: 0 0.9rem 0.5rem 0;
+  border-bottom: 1px solid var(--rule-strong);
+  vertical-align: bottom;
+}
+.ledger td {
+  padding: 0.6rem 0.9rem 0.6rem 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+.ledger tr:last-child td { border-bottom: 0; }
+.ledger td:last-child, .ledger th:last-child { padding-right: 0; }
+
+/* =====================================================================
+   THE SPEC SHEET
+
+   A drink's build, set the way it goes down behind a bar: the
+   ingredient on the left, the measure hard right, dot leaders running
+   between them so the eye can cross the gap without losing its line.
+
+   This is the signature of the site and the one thing carried over
+   intact from the cocktail site that came before it. The format is not
+   improvable - it is how a spec has been written since printed menus.
+   ===================================================================== */
+.spec {
+  list-style: none;
+  margin: 0 0 var(--s-3xl);
+  padding: 0;
+  max-width: 30rem;
+}
+
+.spec__line {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-xs);
+  padding: 0.42rem 0;
+}
+
+.spec__name {
+  font-size: var(--t-base);
+  color: var(--ink);
+}
+
+/* The leader. A repeating radial gradient rather than a row of full
+   stops, so the dots stay evenly spaced at any width and never wrap. */
+.spec__leader {
+  flex: 1 1 auto;
+  min-width: var(--s-3xl);
+  height: 1px;
+  align-self: flex-end;
+  margin-bottom: 0.34rem;
+  background-image: radial-gradient(
+    circle closest-side,
+    var(--rule-strong) 99%,
+    transparent 100%
+  );
+  background-size: 6px 2px;
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+.spec__amount {
+  font-family: var(--font-ui);
+  font-size: var(--t-caption);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  color: var(--accent, var(--accent-shelf));
+  white-space: nowrap;
+}
+
+/* An ingredient the drink can do without, and what to reach for when the
+   named bottle is not on the shelf. */
+.spec__optional,
+.spec__sub {
+  font-family: var(--font-ui);
+  font-size: var(--t-micro);
+  color: var(--ink-faint);
+  margin-left: var(--s-xs);
+}
+.spec__optional { font-style: italic; }
+
+/* ---------------------------------------------------------------------
+   Meters, used for the spirit structure bars
+   --------------------------------------------------------------------- */
+.meter { display: flex; gap: 3px; font-variant-numeric: tabular-nums; }
+.meter span {
+  width: 14px; height: 4px;
+  background: var(--rule);
+}
+.meter span.on { background: var(--accent, var(--accent-book)); }
+
+/* ---------------------------------------------------------------------
+   Utility
+   --------------------------------------------------------------------- */
+.rule-h { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+
+/* Respect a reader's motion preference throughout. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Keyboard focus is always visible, in the section accent rather than
+   the browser's blue. */
+:focus-visible {
+  outline: 2px solid var(--accent, var(--accent-book));
+  outline-offset: 2px;
+}
+
+/* The way back from a tool embedded in a chapter to its own page. Quiet
+   until hovered, because it is an offer rather than an instruction. */
+.tool-home {
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule-strong);
+  transition: color var(--m-quick) var(--ease),
+              border-color var(--m-quick) var(--ease);
+}
+.tool-home:hover {
+  color: var(--accent, var(--accent-book)) !important;
+  border-color: var(--accent, var(--accent-book));
+}
+
+/* ---------------------------------------------------------------------
+   Print. A recipe should come off a printer as something you can stand a
+   glass on, which means no navigation and no dark ground.
+   --------------------------------------------------------------------- */
+@media print {
+  nav, .no-print { display: none !important; }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .card { border-color: #ccc; }
+}
