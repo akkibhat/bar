@@ -161,6 +161,11 @@ export default function BookIndex() {
                 >
                   Behind the bar
                 </span>
+                {/* The parts name themselves - "The classics" needs no
+                    gloss. This one does not, so shut it says how many
+                    things are inside rather than nothing at all. The
+                    column is 15rem, so it is a count and not a sentence. */}
+                <span className="book-index__hint">{TOOLS.length} tools</span>
                 <span className="book-index__mark" aria-hidden="true">
                   {open ? '−' : '+'}
                 </span>

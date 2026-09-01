@@ -967,6 +967,15 @@ button.card:hover {
   color: var(--ink);
 }
 
+/* What is inside a shut section, where the name alone does not say. */
+.book-index__hint {
+  font-family: var(--font-body);
+  font-size: var(--t-micro);
+  font-style: italic;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
 /* The open/closed marker. A plus and a minus rather than a chevron: a
    rotating arrow is an application affordance, and this column is
    pretending to be printed. */
