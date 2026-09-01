@@ -1,9 +1,16 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { CHAPTERS, findChapter, neighbours } from '@/lib/content/course';
+import {
+  CHAPTERS,
+  chaptersInPart,
+  findChapter,
+  neighbours,
+} from '@/lib/content/course';
 import { findPart } from '@/lib/content/parts';
 import ChapterBody from '@/components/ChapterBody';
 import ChapterFooter from '@/components/ChapterFooter';
+import ChapterKeys from '@/components/ChapterKeys';
+import ReadingLine from '@/components/ReadingLine';
 
 /** Pre-render every chapter at build time. */
 export function generateStaticParams() {
@@ -49,10 +56,16 @@ export default async function ChapterPage({
   if (!chapter) notFound();
 
   const part = findPart(chapter.part);
+  const siblings = chaptersInPart(chapter.part);
   const { prev, next } = neighbours(slug);
 
   return (
     <article className="mx-auto max-w-[42rem] px-6 sm:px-10 py-12 lg:py-20">
+      <ReadingLine />
+      <ChapterKeys
+        prev={prev && `/book/${prev.slug}`}
+        next={next && `/book/${next.slug}`}
+      />
       {/* ---- Header, set as a menu section ---------------------- */}
       <header className="text-center mb-12">
         <hr className="rule-double mb-6" />
@@ -83,7 +96,13 @@ export default async function ChapterPage({
       <ChapterBody body={chapter.body} />
 
       {/* ---- Footer ---------------------------------------------- */}
-      <ChapterFooter slug={chapter.slug} prev={prev} next={next} />
+      <ChapterFooter
+        slug={chapter.slug}
+        part={part}
+        siblings={siblings}
+        prev={prev}
+        next={next}
+      />
     </article>
   );
 }

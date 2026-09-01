@@ -1,27 +1,40 @@
 'use client';
 
 import Link from 'next/link';
-import type { Chapter } from '@/lib/types';
+import type { Chapter, Part } from '@/lib/types';
 import { useProgress } from '@/lib/storage';
 import { PROGRESS_ENABLED } from '@/lib/config';
 
 /**
- * The end of a chapter: a control to mark it finished, and links to the
- * chapters either side of it.
+ * The end of a chapter.
  *
- * The completion control is deliberately manual rather than triggered by
- * scrolling to the bottom. Scroll-based completion marks things read that
- * were only scrolled past, which makes the figure meaningless.
+ * Not just previous and next. Finishing a chapter is the moment you are
+ * most likely to want another one, so the whole of the current part is
+ * listed here with your place in it marked - which is most of what a
+ * sidebar is for, delivered at the point of use and costing nothing on
+ * every other screen.
  *
- * With PROGRESS_ENABLED off the control is not rendered at all, leaving
- * the footer as pure navigation.
+ * That is the trade this site makes against the wine site's permanent
+ * rail: navigation where you need it rather than navigation you scroll
+ * past. Cross-part jumps go through the Contents fold-out in the top bar,
+ * and the arrow keys move one chapter at a time without any of it.
+ *
+ * The rows reuse the spec-sheet leaders, so the part index at the foot of
+ * a chapter is set the same way as the contents page and as a drink's
+ * build. One device, used everywhere.
  */
 export default function ChapterFooter({
   slug,
+  part,
+  siblings,
   prev,
   next,
 }: {
   slug: string;
+  /** The part this chapter belongs to, for the heading. */
+  part?: Part;
+  /** Every chapter in that part, in order, including this one. */
+  siblings: Chapter[];
   prev?: Chapter;
   next?: Chapter;
 }) {
@@ -29,75 +42,147 @@ export default function ChapterFooter({
   const done = PROGRESS_ENABLED && ready && progress.done.includes(slug);
 
   return (
-    <footer className="mt-12">
+    <footer className="mt-14">
       {PROGRESS_ENABLED && (
-        <div className="card px-5 py-4 mb-6 flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <p className="display t-h3 leading-none mb-0.5">
-              {done ? 'Finished' : 'Finished this one?'}
-            </p>
-            <p className="t-caption" style={{ color: 'var(--ink-soft)' }}>
-              {done
-                ? 'Marked complete in your progress.'
-                : 'Marking it keeps your progress honest.'}
-            </p>
-          </div>
+        <p className="label-ui mb-8 flex items-center gap-4">
+          <span>{done ? 'Marked read' : 'Finished this one?'}</span>
           <button
-            className={done ? 'btn' : 'btn btn-primary'}
             onClick={() => toggleDone(slug)}
+            style={{ color: 'var(--accent-book)' }}
             suppressHydrationWarning
           >
-            {done ? '✓ Complete — undo' : 'Mark complete'}
+            {done ? 'Undo' : 'Mark it read'}
           </button>
-        </div>
+        </p>
       )}
 
+      {/* ---- The rest of this part ------------------------------- */}
+      {siblings.length > 1 && part && (
+        <section className="mb-10">
+          <div className="flex items-baseline gap-3">
+            <span
+              className="display t-h3 leading-none nums"
+              style={{ color: 'var(--accent-book)' }}
+            >
+              {part.numeral}
+            </span>
+            <h2 className="label-ui" style={{ fontSize: 'var(--t-caption)' }}>
+              {part.title}
+            </h2>
+          </div>
+
+          <hr className="rule-double my-3" />
+
+          <ul>
+            {siblings.map((c) => {
+              const here = c.slug === slug;
+              return (
+                <li key={c.slug}>
+                  {here ? (
+                    /* The current chapter is listed but not a link -
+                       a link to the page you are standing on is a dead
+                       control, and marking it is the whole point. */
+                    <p className="spec__line" aria-current="page">
+                      <span
+                        className="spec__name"
+                        style={{ color: 'var(--accent-book)' }}
+                      >
+                        {c.title}
+                      </span>
+                      <span className="spec__leader" aria-hidden="true" />
+                      <span
+                        className="spec__amount"
+                        style={{ color: 'var(--accent-book)' }}
+                      >
+                        you are here
+                      </span>
+                    </p>
+                  ) : (
+                    <Link
+                      href={`/book/${c.slug}`}
+                      className="spec__line"
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <span className="spec__name">{c.title}</span>
+                      <span className="spec__leader" aria-hidden="true" />
+                      <span
+                        className="spec__amount"
+                        style={{ color: 'var(--ink-faint)' }}
+                      >
+                        {c.minutes} min
+                      </span>
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
+      {/* ---- Across the parts ------------------------------------ */}
       <nav
-        className="flex flex-wrap gap-3 justify-between"
+        className="flex flex-wrap gap-6 justify-between"
         aria-label="Chapter navigation"
+        style={{ borderTop: '1px solid var(--rule)', paddingTop: '1.5rem' }}
       >
         {prev ? (
           <Link
             href={`/book/${prev.slug}`}
-            className="card px-4 py-3 flex-1 min-w-[14rem]"
+            className="flex-1 min-w-[12rem]"
+            style={{ textDecoration: 'none' }}
           >
-            <span className="label-ui">← Previous</span>
-            <span className="display t-h3 block leading-tight mt-0.5">
+            <span className="label-ui block mb-1">← Previous</span>
+            <span className="display t-h3 leading-tight block">
               {prev.title}
             </span>
           </Link>
         ) : (
-          <span className="flex-1 min-w-[14rem]" />
+          <span className="flex-1 min-w-[12rem]" />
         )}
 
         {next ? (
           <Link
             href={`/book/${next.slug}`}
-            className="card px-4 py-3 flex-1 min-w-[14rem] text-right"
+            className="flex-1 min-w-[12rem] text-right"
+            style={{ textDecoration: 'none' }}
           >
-            <span className="label-ui">Next →</span>
-            <span className="display t-h3 block leading-tight mt-0.5">
+            <span className="label-ui block mb-1">Next →</span>
+            <span className="display t-h3 leading-tight block">
               {next.title}
             </span>
           </Link>
         ) : (
           /* The last chapter hands over to the other half rather than
              back to the contents. The book ends by pointing at what came
-             out of it, which is the whole argument of the site. */
+             out of it, which is the argument of the whole site. */
           <Link
             href="/backbar"
-            className="card px-4 py-3 flex-1 min-w-[14rem] text-right"
-            style={{ ['--accent' as string]: 'var(--accent-shelf)' }}
+            className="flex-1 min-w-[12rem] text-right"
+            style={{
+              textDecoration: 'none',
+              ['--accent' as string]: 'var(--accent-shelf)',
+            }}
           >
-            <span className="label-ui" style={{ color: 'var(--accent)' }}>
+            <span
+              className="label-ui block mb-1"
+              style={{ color: 'var(--accent)' }}
+            >
               The end →
             </span>
-            <span className="display t-h3 block leading-tight mt-0.5">
+            <span className="display t-h3 leading-tight block">
               See what came of it
             </span>
           </Link>
         )}
       </nav>
+
+      <p
+        className="label-ui mt-6 no-print"
+        style={{ color: 'var(--ink-faint)' }}
+      >
+        ← and → move between chapters
+      </p>
     </footer>
   );
 }

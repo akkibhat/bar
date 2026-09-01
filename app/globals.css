@@ -815,6 +815,29 @@ button.card:hover {
 }
 
 /* ---------------------------------------------------------------------
+   The reading line
+
+   Two pixels across the top of the viewport, filling as you move down a
+   chapter. It sits above the sticky nav rather than under it, because a
+   progress line interrupted by a bar is not a progress line.
+   --------------------------------------------------------------------- */
+.reading-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.reading-line__fill {
+  height: 100%;
+  width: 0;
+  background: var(--accent, var(--accent-book));
+}
+
+/* ---------------------------------------------------------------------
    Utility
    --------------------------------------------------------------------- */
 .rule-h { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
