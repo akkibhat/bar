@@ -814,6 +814,100 @@ button.card:hover {
   }
 }
 
+/* =====================================================================
+   THE BOOK INDEX
+
+   The contents, permanently on screen on a wide window. Set as a printed
+   index rather than as application navigation: no panel, no sunk
+   background, no status dot against every line - the same paper as the
+   page, divided from it by one hairline, in small type.
+
+   It sits in the right margin. The same column on the left reads as
+   navigation - which is the association worth avoiding - where on the
+   right it reads as an index, and the reading column keeps the left edge
+   the eye returns to on every line.
+   ===================================================================== */
+.book-layout {
+  display: block;
+}
+
+@media (min-width: 64rem) {
+  .book-layout {
+    display: grid;
+    align-items: start;
+    min-height: calc(100vh - var(--nav-h));
+  }
+  .book-layout {
+    grid-template-columns: minmax(0, 1fr) 15rem;
+  }
+  /* The index is placed into the second column rather than reordered in
+     the markup, so it stays before the content in DOM order - a screen
+     reader meets the contents first, which is where it belongs. */
+  .book-index {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .book-layout > main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.book-index {
+  display: none;
+}
+
+@media (min-width: 64rem) {
+  .book-index {
+    display: block;
+    position: sticky;
+    top: var(--nav-h);
+    max-height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+    /* One hairline, on the side facing the reading column. */
+    border-left: 1px solid var(--rule);
+  }
+}
+
+.book-index__inner {
+  padding: var(--s-5xl) var(--s-3xl);
+}
+
+.book-index__chapter {
+  display: block;
+  font-size: var(--t-caption);
+  line-height: 1.4;
+  padding: 0.18rem 0;
+  text-decoration: none;
+  transition: color var(--m-quick) var(--ease);
+}
+.book-index__chapter:hover {
+  color: var(--ink) !important;
+}
+
+/* The sections of the chapter you are in. Indented under it and set
+   smaller, so the column reads as one list with a detail opened rather
+   than as two lists interleaved. */
+.book-index__sections {
+  margin: 0.15rem 0 0.4rem 0;
+  padding-left: var(--s-md);
+  border-left: 1px solid var(--rule);
+}
+
+.book-index__section {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: var(--t-micro);
+  line-height: 1.35;
+  padding: 0.14rem 0;
+  color: var(--ink-faint);
+  text-decoration: none;
+  transition: color var(--m-quick) var(--ease);
+}
+.book-index__section:hover {
+  color: var(--accent-book);
+}
+
 /* ---------------------------------------------------------------------
    The reading line
 

@@ -111,8 +111,11 @@ export default function BarNav() {
 
           <div className="ml-auto flex items-center gap-1">
             <ThemeToggle />
+            {/* Hidden where the index column is on screen — two copies
+                of the same contents, one of them behind a click, is a
+                choice nobody needs to make. */}
             <button
-              className="label-ui px-3 py-2"
+              className="label-ui px-3 py-2 lg:hidden"
               aria-expanded={open}
               aria-controls="contents-panel"
               onClick={() => setOpen((v) => !v)}

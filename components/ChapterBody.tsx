@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Block } from '@/lib/types';
 import { inline } from '@/lib/markup';
+import { headingsOf } from '@/lib/headings';
 import { findFamily } from '@/lib/content/families';
 import Rule from './Rule';
 import EmbeddedTool from './EmbeddedTool';
@@ -12,16 +13,35 @@ import SpecSheet from './SpecSheet';
  * stays small and every chapter looks consistent.
  */
 export default function ChapterBody({ body }: { body: Block[] }) {
+  /* Headings are numbered here rather than in the block loop so the ids
+     match what `BookIndex` links to - both derive them from the same
+     function over the same body, which is the only way two components
+     can agree on a slug without one of them guessing.
+     
+     Resolved into a lookup before rendering rather than counted inside
+     the map: a counter reassigned from inside the callback is mutable
+     state living across a render, which breaks if React replays the
+     render and is flagged as such. */
+  const ids = new Map<number, string>();
+  const headings = headingsOf(body);
+  let nth = 0;
+  body.forEach((block, i) => {
+    if (block.kind === 'h') {
+      ids.set(i, headings[nth]?.id ?? '');
+      nth += 1;
+    }
+  });
+
   return (
     <div className="prose-paper">
       {body.map((block, i) => (
-        <BlockView key={i} block={block} />
+        <BlockView key={i} block={block} id={ids.get(i)} />
       ))}
     </div>
   );
 }
 
-function BlockView({ block }: { block: Block }) {
+function BlockView({ block, id }: { block: Block; id?: string }) {
   switch (block.kind) {
     /* -------------------------------------------------------------- */
     case 'p':
@@ -31,7 +51,12 @@ function BlockView({ block }: { block: Block }) {
     case 'h':
       return (
         <div className="mt-8 mb-3">
-          <h2 className="display t-h2 mb-1">{block.text}</h2>
+          {/* scroll-mt keeps the heading clear of the sticky bar when
+              the index jumps to it; without it the target lands
+              underneath the nav. */}
+          <h2 id={id} className="display t-h2 mb-1 scroll-mt-24">
+            {block.text}
+          </h2>
           {/* Alternate the rule so repeated headings do not look stamped. */}
           <Rule variant="hair" width={200} />
         </div>
