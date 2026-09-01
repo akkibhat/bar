@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import Contents from '@/components/Contents';
+import Fold from '@/components/Fold';
 import SectionTitle from '@/components/SectionTitle';
 import {
   CHAPTER_COUNT,
@@ -80,7 +81,7 @@ export default function BookPage() {
         <p className="t-lead leading-relaxed max-w-[34rem]">
           What is behind a bar, and what to do with it. How every spirit is
           made and what separates one from the next, what beer actually is,
-          the seven methods, the glassware, the service — and the handful of
+          the seven methods, the glassware, the service - and the handful of
           structures almost every cocktail turns out to be.
         </p>
 
@@ -89,7 +90,7 @@ export default function BookPage() {
           style={{ color: 'var(--ink-soft)' }}
         >
           Written up from a mixology qualification, with the parts it skipped
-          filled in — which turned out to be the parts that made the rest make
+          filled in - which turned out to be the parts that made the rest make
           sense. In the order it made sense to learn it, but you can start
           anywhere.
         </p>
@@ -106,35 +107,51 @@ export default function BookPage() {
       </header>
 
       {/* ---- Behind the bar --------------------------------------
-          Ruled rows rather than a grid of boxes, matching the contents
-          below it and the spec sheets throughout. */}
-      <section className="mb-14">
-        <h2 className="label-ui" style={{ fontSize: 'var(--t-caption)' }}>
-          Behind the bar
-        </h2>
-        <hr className="rule-double my-3" />
+          Folded shut by default. Someone arriving at the contents is
+          looking for a chapter, and seven tools with a line of
+          description each pushed the book itself below the fold.
 
-        <ul>
-          {tools.map((t) => (
-            <li key={t.href}>
-              <Link
-                href={t.href}
-                className="block py-3"
-                style={{
-                  borderBottom: '1px solid var(--rule)',
-                  textDecoration: 'none',
-                }}
-              >
-                <span className="display t-h3 leading-none block mb-1">
-                  {t.title}
-                </span>
-                <span className="t-caption" style={{ color: 'var(--ink-soft)' }}>
-                  {t.body}
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+          Ruled rows rather than a grid of boxes, matching the contents
+          under it and the spec sheets throughout. */}
+      <section className="mb-14">
+        <Fold
+          label="Behind the bar"
+          hint={`${tools.length} calculators and references`}
+        >
+          <p
+            className="t-base mb-4 max-w-[34rem]"
+            style={{ color: 'var(--ink-soft)' }}
+          >
+            For working something out rather than reading about it. Each one
+            also sits inside the chapter it belongs to, so there is no need to
+            come here first.
+          </p>
+
+          <ul>
+            {tools.map((t) => (
+              <li key={t.href}>
+                <Link
+                  href={t.href}
+                  className="block py-3"
+                  style={{
+                    borderBottom: '1px solid var(--rule)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <span className="display t-h3 leading-none block mb-1">
+                    {t.title}
+                  </span>
+                  <span
+                    className="t-caption"
+                    style={{ color: 'var(--ink-soft)' }}
+                  >
+                    {t.body}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Fold>
       </section>
 
       {/* ---- Contents -------------------------------------------- */}

@@ -129,9 +129,10 @@
 /* =====================================================================
    SEMANTIC COLOUR
 
-   Kept distinct from the brand accents on purpose. Amber is the primary
-   and carries headings, links and the mark, so it cannot also mean
-   "caution" - the two readings would collide on every page.
+   Kept distinct from the brand accents on purpose. The book's blue
+   carries headings, links and the mark, so it cannot also mean "info",
+   and the shelf's red cannot also mean "alert" - those readings would
+   collide on every page that used both.
    ===================================================================== */
 :root {
   --ok:       #2c5d52;   /* 6.84:1  balanced, in range     */
@@ -158,10 +159,10 @@
 /* =====================================================================
    Palette - "Back Bar"
 
-   Bright card stock, printed in two colours: ink blue and a bitters red. Every value
-   measured rather than chosen by eye. The one that needed splitting is
-   brass: it is a fill weight at 3.26:1 and fails for text, so --brass is
-   fill only and --brass-deep is the text weight at 5.92:1.
+   Bright card stock, printed in two colours: an ink blue and a bitters
+   red. Every value measured rather than chosen by eye. The one that
+   needed splitting is brass: it is a fill weight at 3.26:1 and fails for
+   text, so --brass is fill only and --brass-deep is the text weight.
 
    WHY THE BOOK IS BLUE
 
@@ -871,6 +872,111 @@ button.card:hover {
 
 .book-index__inner {
   padding: var(--s-5xl) var(--s-3xl);
+}
+
+/* =====================================================================
+   FOLD
+
+   A collapsible section on `<details>`. The default marker is a
+   disclosure triangle drawn by the browser, which is the one piece of
+   chrome on this site nobody chose - so it is removed and replaced with
+   a plus and a minus in the interface face, matching the index column.
+   ===================================================================== */
+.fold__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-xs);
+  cursor: pointer;
+  list-style: none;
+  /* The double rule lives on the summary so it survives the section
+     being shut. Drawn as one border plus a pseudo-element rather than as
+     an `<hr>`: anything inside `details` that is not the summary is
+     hidden when closed, which took the rule with it. */
+  position: relative;
+  padding-bottom: var(--s-xs);
+  border-bottom: 1px solid var(--rule-strong);
+}
+.fold__head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1px;
+  background: var(--rule-strong);
+}
+
+.fold__body {
+  padding-top: var(--s-3xl);
+}
+/* Safari draws the triangle through a pseudo-element that
+   `list-style: none` alone does not reach. */
+.fold__head::-webkit-details-marker {
+  display: none;
+}
+
+/* The one-line summary of what is inside, sitting beside the label so a
+   closed section still says what it holds. Drops away on a narrow screen,
+   where it would wrap under the label and stop reading as one line. */
+.fold__hint {
+  font-family: var(--font-body);
+  font-size: var(--t-caption);
+  font-style: italic;
+  color: var(--ink-faint);
+  display: none;
+}
+@media (min-width: 34rem) {
+  .fold__hint {
+    display: inline;
+  }
+}
+
+.fold__mark {
+  margin-left: auto;
+  font-family: var(--font-ui);
+  font-size: var(--t-caption);
+  line-height: 1;
+  color: var(--ink-faint);
+  transition: color var(--m-quick) var(--ease);
+}
+.fold__head:hover .fold__mark {
+  color: var(--ink);
+}
+
+.fold .fold__when-open,
+.fold[open] .fold__when-closed {
+  display: none;
+}
+.fold[open] .fold__when-open {
+  display: inline;
+}
+
+/* A part heading, which is also its toggle. The whole row is the target
+   rather than the little marker, since a 12px glyph is not something to
+   ask anyone to hit. */
+.book-index__head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--s-xs);
+  width: 100%;
+  padding: 0 0 0.25rem;
+  text-align: left;
+  cursor: pointer;
+}
+.book-index__head:hover .book-index__mark {
+  color: var(--ink);
+}
+
+/* The open/closed marker. A plus and a minus rather than a chevron: a
+   rotating arrow is an application affordance, and this column is
+   pretending to be printed. */
+.book-index__mark {
+  margin-left: auto;
+  font-family: var(--font-ui);
+  font-size: var(--t-caption);
+  line-height: 1;
+  color: var(--ink-faint);
+  transition: color var(--m-quick) var(--ease);
 }
 
 .book-index__chapter {
