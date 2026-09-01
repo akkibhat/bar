@@ -67,6 +67,33 @@ my own notes, or a bottle I have actually poured.
 
 ### Worth doing
 
+- **Write the intent into the descriptions.** *(Bar Assistant, not code.)*
+  The front door now promises "the measures, the method, and what I was
+  after". The first two are solid — the specs and steps come across
+  intact. The third mostly does not.
+
+  Bar Assistant has no field for intent, so the only place it can live is
+  `description`, and seven of the eight there are flavour summaries
+  rather than reasons: *"A crisp, refreshing Collins with bright lemon,
+  botanical gin and a warming ginger finish."* That is back-of-menu copy.
+  It says what the drink tastes like, which the spec underneath already
+  implies.
+
+  **Filthy Mistress is the one that does it properly:** *"Smoky, sweet and
+  quietly vicious. The butterfly pea syrup goes in blue and turns violet
+  the moment the lime hits it. Tabasco does the rest."* That has a voice,
+  and it explains the idea the drink was built around.
+
+  Two things to do:
+
+  1. **Espresso Martini has no description at all**, so that page shows
+     nothing where the copy promises something. It needs one either way.
+  2. Rewrite the other six in the Filthy Mistress register — what you
+     were going for, or the one decision the drink turns on.
+
+  Until then the promise is running ahead of the data. The alternative is
+  to soften the line back to something the descriptions already deliver.
+
 - **A drinks journal.** `useJournal` and the `DrinkNote` type are written
   and nothing renders them. The idea is a note against a drink after
   making it — what you would change next time — kept in the browser the

@@ -59,7 +59,12 @@ export default function FrontDoor() {
           <span style={{ color: 'var(--accent)' }}>Back</span>bar
         </>
       ),
-      line: 'My own creations, written out the way a spec goes down behind a bar.',
+      /* "What I was after" is a promise the data only half keeps: the
+         only free-text field the snapshot carries is Bar Assistant's
+         `description`, and most of those are flavour summaries rather
+         than intent. See ROADMAP - it is a writing job in Bar Assistant,
+         not a code one. */
+      line: 'My own creations, with the measures, the method, and what I was after.',
       count: `${SHELF.length} drinks`,
     },
   ];
@@ -77,8 +82,11 @@ export default function FrontDoor() {
             page read as a reskin. This one just says what the place is,
             and says "a bar" rather than "a cocktail course", because the
             book covers the whole of what is behind one. */}
-        <p className="label-ui mt-3" style={{ color: 'var(--ink-faint)' }}>
-          How a bar works, and what I have made with it
+        <p
+          className="label-ui mt-3 mx-auto max-w-[30rem]"
+          style={{ color: 'var(--ink-faint)' }}
+        >
+          Learning how a bar works, and the drinks that came out of it
         </p>
       </header>
 
