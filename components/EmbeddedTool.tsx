@@ -18,7 +18,7 @@ import FamiliesTable from './FamiliesTable';
  * they are something you keep open while working. Same component in both
  * places, so they cannot drift.
  *
- * The link underneath is quiet by design — it is an offer rather than an
+ * The link underneath is quiet by design - it is an offer rather than an
  * instruction, and a reader mid-chapter should not be pulled out of it.
  */
 

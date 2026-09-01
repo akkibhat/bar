@@ -165,7 +165,7 @@ export default function DrinkStrength() {
 
       <p className="t-caption mt-3" style={{ color: 'var(--ink-faint)' }}>
         A standard drink in New Zealand is 10 g of pure alcohol. Dilution
-        changes the strength but not the number of standard drinks — the
+        changes the strength but not the number of standard drinks - the
         alcohol is all still there.
       </p>
     </div>

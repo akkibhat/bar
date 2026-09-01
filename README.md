@@ -3,13 +3,13 @@
 Two halves of one site, built out of a mixology qualification and the
 drinks that came after it.
 
-- **Barbook** — everything behind a bar and what to do with it, in 37
+- **Barbook** - everything behind a bar and what to do with it, in 37
   chapters across nine parts: how every spirit is made and what separates
   them, what beer actually is, the seven methods, ice, glassware, tools,
   service, and the handful of structures almost every cocktail turns out
   to be. Plus a spirit explorer, a searchable glossary, a balance
   calculator and a dilution tool.
-- **Backbar** — my own creations, each with the full build in
+- **Backbar** - my own creations, each with the full build in
   millilitres, the method as steps, and a note on why it is put together
   that way.
 
@@ -23,7 +23,7 @@ qualification is from 2022, so parts of it were already behind by the
 time I wrote this up.
 
 Where a chapter goes past what I was actually taught, it says so. Where I
-have written something down and cannot verify it, that is marked too —
+have written something down and cannot verify it, that is marked too -
 those are the dashed boxes, and there are a fair few of them. The
 [Serving responsibly](lib/content/chapters/service.ts) chapter carries
 the strongest warning: it covers New Zealand licensing law, I hold no
@@ -59,7 +59,7 @@ npm run pull
 
 That rewrites `lib/content/backbar-snapshot.ts`. Commit it. The built
 site makes no requests and needs none of those variables to run or
-deploy — they exist for the pull script alone.
+deploy - they exist for the pull script alone.
 
 The recipes are reproduced exactly as authored. Nothing in the pipeline
 rewords, reorders or adjusts a measure.
@@ -90,7 +90,7 @@ on the shelf cannot drift apart visually.
 ## The mark
 
 A cocktail glass split down the middle, so it reads as both a glass and
-an open book — Barbook is the two halves swung apart, Backbar is the same
+an open book - Barbook is the two halves swung apart, Backbar is the same
 shape closed onto its stem. Shutting the book is the glass, which is why
 the landing page can morph between them without any path-matching: both
 states keep identical path commands and only their numbers move.
@@ -104,7 +104,7 @@ carries the split on one wide gap.
 ## State of it
 
 Builds to 58 static routes. Quizzes and reading progress are written but
-switched off behind flags in `lib/config.ts` — this is meant to be
+switched off behind flags in `lib/config.ts` - this is meant to be
 consulted rather than completed.
 
 See [ROADMAP.md](ROADMAP.md) for what is still owed.

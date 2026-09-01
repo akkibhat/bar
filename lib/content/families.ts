@@ -44,7 +44,7 @@ export const FAMILIES: Family[] = [
     formula: 'Spirit + citrus + sweetener',
     ratio: '2 : 1 : 1, or 2 : 1 : 0.75 for something drier',
     about:
-      'The sour. The most productive structure in the book and the one the ratio chapter is about — citrus for freshness, sugar to hold the acid level, spirit underneath. Shaken, because citrus and sugar need the aeration.',
+      'The sour. The most productive structure in the book and the one the ratio chapter is about - citrus for freshness, sugar to hold the acid level, spirit underneath. Shaken, because citrus and sugar need the aeration.',
     archetype: 'Daiquiri',
     members: ['Daiquiri', 'Whiskey Sour', 'Gimlet', 'Pisco Sour', 'Clover Club', 'Tom Collins'],
     method: 'Shake and strain',

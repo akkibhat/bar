@@ -73,7 +73,7 @@ const COLLECTION_ID = process.env.BA_COLLECTION_ID ?? '';
 if (!BASE_URL || !TOKEN || !COLLECTION_ID) {
   console.error(
     'Missing configuration. Set BA_API_URL, BA_API_TOKEN and\n' +
-      'BA_COLLECTION_ID in .env.local — see .env.example for where each\n' +
+      'BA_COLLECTION_ID in .env.local - see .env.example for where each\n' +
       'value comes from.',
   );
   process.exit(1);

@@ -34,25 +34,25 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Strong** — the base spirit. Sets the weight of the drink and how much of everything else it can carry.',
-          '**Sweet** — syrup, liqueur, sugar. Softens acid and alcohol, and adds body: sugar makes a drink feel thicker as well as taste sweeter.',
-          '**Sour** — citrus, almost always lemon or lime. Cuts sweetness, and is the single largest reason a drink tastes fresh.',
-          '**Bitter** — bitters, amari, or the botanical edge in gin. Stops sweet and sour resolving into something flat and gives the drink a spine.',
+          '**Strong** - the base spirit. Sets the weight of the drink and how much of everything else it can carry.',
+          '**Sweet** - syrup, liqueur, sugar. Softens acid and alcohol, and adds body: sugar makes a drink feel thicker as well as taste sweeter.',
+          '**Sour** - citrus, almost always lemon or lime. Cuts sweetness, and is the single largest reason a drink tastes fresh.',
+          '**Bitter** - bitters, amari, or the botanical edge in gin. Stops sweet and sour resolving into something flat and gives the drink a spine.',
         ],
       },
       { kind: 'h', text: 'The ratio worth memorising' },
       {
         kind: 'p',
-        text: 'The sour template is **2 : 1 : 1** — two parts spirit, one part citrus, one part sweetener. In millilitres that is 60 : 30 : 30, or the 45 : 22.5 : 22.5 that a smaller drink uses.',
+        text: 'The sour template is **2 : 1 : 1** - two parts spirit, one part citrus, one part sweetener. In millilitres that is 60 : 30 : 30, or the 45 : 22.5 : 22.5 that a smaller drink uses.',
       },
       {
         kind: 'p',
-        text: 'Go back through the workbook specs with that in your head and it is everywhere. The Daiquiri is 60 rum, 20 lime, 20 sugar — near enough. The Margarita is 60 : 25 : 30. The Whiskey Sour is 45 : 25 : 20. The White Lady is 40 gin, 30 Cointreau, 20 lemon, where the Cointreau is doing the sweetening. Same drink, four bottles.',
+        text: 'Go back through the workbook specs with that in your head and it is everywhere. The Daiquiri is 60 rum, 20 lime, 20 sugar - near enough. The Margarita is 60 : 25 : 30. The Whiskey Sour is 45 : 25 : 20. The White Lady is 40 gin, 30 Cointreau, 20 lemon, where the Cointreau is doing the sweetening. Same drink, four bottles.',
       },
       {
         kind: 'note',
         title: 'The drier version',
-        text: 'Plenty of modern bars run 2 : 1 : 0.75 instead — the same spirit and citrus with a quarter less sugar. It makes a sharper, more spirit-forward drink. If a sour tastes flabby to you, that is the first thing to try, before touching anything else.',
+        text: 'Plenty of modern bars run 2 : 1 : 0.75 instead - the same spirit and citrus with a quarter less sugar. It makes a sharper, more spirit-forward drink. If a sour tastes flabby to you, that is the first thing to try, before touching anything else.',
       },
       { kind: 'tool', tool: 'ratio' },
       { kind: 'h', text: 'What moves the ratio' },
@@ -78,7 +78,7 @@ export const BALANCE: Chapter[] = [
           ['Flabby, dull', 'Not enough acid', 'Add 5 ml citrus before touching anything else'],
           ['Cloying', 'Too much sweet, or not enough bitter', 'Add citrus, or 2 dashes of bitters'],
           ['Thin, watery', 'Over-diluted, or under-built', 'Less shaking, colder ice, or more of everything but water'],
-          ['Sharp but hollow', 'Acid without body', 'Add syrup — sugar carries weight, not just sweetness'],
+          ['Sharp but hollow', 'Acid without body', 'Add syrup - sugar carries weight, not just sweetness'],
         ],
       },
       {
@@ -106,7 +106,7 @@ export const BALANCE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The classics chapter at the end of this book holds about twenty-five recipes. Presented as a list, that is twenty-five things to remember. Presented as structures, it is six — and the six generate far more than twenty-five.',
+        text: 'The classics chapter at the end of this book holds about twenty-five recipes. Presented as a list, that is twenty-five things to remember. Presented as structures, it is six - and the six generate far more than twenty-five.',
       },
       {
         kind: 'p',
@@ -135,7 +135,7 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'steps',
         items: [
-          'Pick a family — decide what shape of drink you want before you decide what goes in it.',
+          'Pick a family - decide what shape of drink you want before you decide what goes in it.',
           'Choose the base spirit.',
           'Fill the other roles with things that belong beside it. The family says what the roles are.',
           'Build it at the family\'s standard ratio.',
@@ -189,12 +189,12 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Rich demerara** — 2 : 1 with demerara sugar. Molasses character. Goes into anything aged: Old Fashioned, tiki, rum drinks.',
-          '**Honey syrup** — 3 : 1 honey to warm water, because neat honey seizes in a cold shaker.',
-          '**Agave syrup** — thin it the same way. The default sweetener for tequila and mezcal drinks.',
-          '**Grenadine** — pomegranate, not the red chemical sweetener sold under the name. Equal parts pomegranate juice and sugar. Genuinely worth making.',
-          '**Orgeat** — almond and orange flower. Fiddly, and the thing that makes a Mai Tai taste like a Mai Tai.',
-          '**Oleo saccharum** — citrus peels buried in sugar for a few hours. The sugar draws the oil out of the peel and you get an intensely citrus syrup from fruit you were going to throw away.',
+          '**Rich demerara** - 2 : 1 with demerara sugar. Molasses character. Goes into anything aged: Old Fashioned, tiki, rum drinks.',
+          '**Honey syrup** - 3 : 1 honey to warm water, because neat honey seizes in a cold shaker.',
+          '**Agave syrup** - thin it the same way. The default sweetener for tequila and mezcal drinks.',
+          '**Grenadine** - pomegranate, not the red chemical sweetener sold under the name. Equal parts pomegranate juice and sugar. Genuinely worth making.',
+          '**Orgeat** - almond and orange flower. Fiddly, and the thing that makes a Mai Tai taste like a Mai Tai.',
+          '**Oleo saccharum** - citrus peels buried in sugar for a few hours. The sugar draws the oil out of the peel and you get an intensely citrus syrup from fruit you were going to throw away.',
         ],
       },
       { kind: 'h', text: 'Keeping them' },
@@ -205,12 +205,12 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'note',
         title: 'Citrus is a house ingredient too',
-        text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more — this is one of the few places where doing it properly costs real time and there is no way around it.',
+        text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more - this is one of the few places where doing it properly costs real time and there is no way around it.',
       },
       {
         kind: 'unsure',
         title: 'Not from the course',
-        text: 'The workbook calls for sugar syrup in most of its specs and never defines it, so this is written from outside. TODO: my note on clear ice — hot water, chilly bin, freeze 24 hours, carve — belongs in the ice chapter, but the same directional-freezing trick works for anything you want clear and I have not tested that.',
+        text: 'The workbook calls for sugar syrup in most of its specs and never defines it, so this is written from outside. TODO: my note on clear ice - hot water, chilly bin, freeze 24 hours, carve - belongs in the ice chapter, but the same directional-freezing trick works for anything you want clear and I have not tested that.',
       },
     ],
   },

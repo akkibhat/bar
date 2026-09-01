@@ -61,14 +61,14 @@ export const CLASSICS: Chapter[] = [
           method: 'Shake and strain',
           family: 'daiquiri',
           spec: [
-            { name: 'Bourbon', amount: '45 ml', substitutes: ['Any spirit — the template holds'] },
+            { name: 'Bourbon', amount: '45 ml', substitutes: ['Any spirit - the template holds'] },
             { name: 'Lemon juice', amount: '25 ml' },
             { name: 'Sugar syrup', amount: '20 ml' },
             { name: 'Egg white', amount: '1', optional: true, substitutes: ['20–25 ml aquafaba'] },
             { name: 'Angostura bitters', amount: '2 dash' },
           ],
           garnish: 'Lemon wedge',
-          note: 'The bitters go in the shaker; the workbook also has them coating the rocks glass. With egg white, dry shake first — see the texture chapter.',
+          note: 'The bitters go in the shaker; the workbook also has them coating the rocks glass. With egg white, dry shake first - see the texture chapter.',
         },
       },
       {
@@ -137,7 +137,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Lime juice', amount: '25 ml' },
           ],
           garnish: 'Salt rim and lime',
-          note: 'Salt the rim before chilling the glass, not after — salt will not stick to a frosted rim. Rim only half, so the guest can choose.',
+          note: 'Salt the rim before chilling the glass, not after - salt will not stick to a frosted rim. Rim only half, so the guest can choose.',
         },
       },
       {
@@ -209,7 +209,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Egg white', amount: '1' },
           ],
           garnish: 'Raspberries',
-          note: 'Not printed in the workbook — this one is off my own notes from the session.',
+          note: 'Not printed in the workbook - this one is off my own notes from the session.',
         },
       },
     ],
@@ -300,7 +300,7 @@ export const CLASSICS: Chapter[] = [
       {
         kind: 'note',
         title: 'The margin note that went somewhere',
-        text: 'My note against this page says butterfly pea flower changes colour with pH, so citrus turns it from blue to violet in the glass. That one did get built — it is the Filthy Mistress on the shelf, where the lime does the work at the table.',
+        text: 'My note against this page says butterfly pea flower changes colour with pH, so citrus turns it from blue to violet in the glass. That one did get built - it is the Filthy Mistress on the shelf, where the lime does the work at the table.',
       },
     ],
   },
@@ -351,7 +351,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Olive brine', amount: 'A dash', optional: true, substitutes: ['For a Dirty Martini'] },
           ],
           garnish: 'Olive, or a lemon twist',
-          note: 'The workbook calls this an English Martini. Everything depends on the vermouth being fresh — see the fortified wine chapter.',
+          note: 'The workbook calls this an English Martini. Everything depends on the vermouth being fresh - see the fortified wine chapter.',
         },
       },
       {
@@ -367,7 +367,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Sweet red vermouth', amount: '20 ml' },
             { name: 'Angostura bitters', amount: '4 dash' },
           ],
-          garnish: 'Cherries or orange zest — lemon for a Rob Roy',
+          garnish: 'Cherries or orange zest - lemon for a Rob Roy',
         },
       },
       {
@@ -437,7 +437,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Salt and pepper', amount: 'To taste' },
           ],
           garnish: 'Celery, lemon, whatever else is going',
-          note: 'The outlier on this page — not stirred, not clear, and not really a family. It is here because nothing else in the book is like it either.',
+          note: 'The outlier on this page - not stirred, not clear, and not really a family. It is here because nothing else in the book is like it either.',
         },
       },
     ],
@@ -455,7 +455,7 @@ export const CLASSICS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'These come after the plates have gone. Three of the four are the Flip family — something rich giving the drink body rather than flavour — and all four are sweeter than anything else in this part.',
+        text: 'These come after the plates have gone. Three of the four are the Flip family - something rich giving the drink body rather than flavour - and all four are sweeter than anything else in this part.',
       },
       {
         kind: 'spec',
@@ -472,7 +472,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Sugar', amount: '1 tsp', optional: true },
           ],
           garnish: 'Three coffee beans',
-          note: 'The espresso has to be fresh and hot going in — that is where the foam comes from. Cold coffee gives a flat drink with no head.',
+          note: 'The espresso has to be fresh and hot going in - that is where the foam comes from. Cold coffee gives a flat drink with no head.',
         },
       },
       {
@@ -526,7 +526,7 @@ export const CLASSICS: Chapter[] = [
       {
         kind: 'note',
         title: 'If you are lighting it',
-        text: 'The Grand Marnier on top is what burns. Light it, let it go a few seconds, and put it out before it is handed over — a hot glass rim burns lips, and the drink is not improved by being on fire for longer.',
+        text: 'The Grand Marnier on top is what burns. Light it, let it go a few seconds, and put it out before it is handed over - a hot glass rim burns lips, and the drink is not improved by being on fire for longer.',
       },
     ],
   },

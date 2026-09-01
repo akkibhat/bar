@@ -8,7 +8,7 @@ import { FAMILIES } from '@/lib/content/families';
  *
  * Collapsed it is a formula per family, which is the thing worth
  * memorising. Expanded it gives the ratio, what the family is for, and
- * which drinks in the book belong to it — so the same component works as
+ * which drinks in the book belong to it - so the same component works as
  * a glance and as a reference.
  *
  * Open state is a single slug rather than a set: these are alternatives
@@ -52,7 +52,7 @@ export default function FamiliesTable() {
                   </span>
 
                   <span className="grid sm:grid-cols-2 gap-3">
-                    <Fact label="Starts at" value={f.ratio ?? '—'} />
+                    <Fact label="Starts at" value={f.ratio ?? '–'} />
                     <Fact label="Method" value={f.method} />
                   </span>
 

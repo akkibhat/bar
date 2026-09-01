@@ -59,7 +59,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     term: 'Rinse',
     category: 'technique',
     definition:
-      'Coating the inside of a glass with a small amount of a strong ingredient — usually absinthe — and discarding the excess, so it seasons the drink by aroma alone.',
+      'Coating the inside of a glass with a small amount of a strong ingredient - usually absinthe - and discarding the excess, so it seasons the drink by aroma alone.',
   },
   {
     slug: 'shake',
@@ -148,7 +148,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     term: 'Muddler',
     category: 'tool',
     definition:
-      'A blunt pestle for pressing fruit and herbs. Flat-headed rather than toothed — teeth shred mint instead of pressing it.',
+      'A blunt pestle for pressing fruit and herbs. Flat-headed rather than toothed - teeth shred mint instead of pressing it.',
     seeAlso: ['muddle'],
   },
   {
@@ -259,7 +259,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     term: 'Balance',
     category: 'structure',
     definition:
-      'The state in which no single element — sweet, sour, strong or bitter — arrives on its own. The only thing that decides whether a drink is good.',
+      'The state in which no single element - sweet, sour, strong or bitter - arrives on its own. The only thing that decides whether a drink is good.',
     seeAlso: ['sour', 'dilution'],
   },
   {
@@ -283,7 +283,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     term: 'Sour',
     category: 'structure',
     definition:
-      'The family of spirit, citrus and sweetener, usually around 2:1:1. The most productive structure there is — Daiquiri, Margarita, Whiskey Sour and most of Part VIII.',
+      'The family of spirit, citrus and sweetener, usually around 2:1:1. The most productive structure there is - Daiquiri, Margarita, Whiskey Sour and most of Part VIII.',
     seeAlso: ['balance'],
   },
   {

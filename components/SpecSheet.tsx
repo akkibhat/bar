@@ -26,7 +26,7 @@ export default function SpecSheet({ lines }: { lines: SpecLine[] }) {
           {/* Decorative: the leader is a visual bridge, and reading it out
               as a row of dots helps nobody. */}
           <span className="spec__leader" aria-hidden="true" />
-          <span className="spec__amount">{line.amount ?? '—'}</span>
+          <span className="spec__amount">{line.amount ?? '–'}</span>
         </li>
       ))}
     </ul>

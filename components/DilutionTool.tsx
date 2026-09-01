@@ -42,7 +42,7 @@ const METHODS = [
     id: 'batch',
     label: 'Batched, no ice',
     dilution: 0,
-    hint: 'None at all — which is the trap. Add the water yourself.',
+    hint: 'None at all - which is the trap. Add the water yourself.',
   },
 ] as const;
 

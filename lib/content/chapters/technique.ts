@@ -26,7 +26,7 @@ export const TECHNIQUE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Seven ways to combine a drink. Most recipes use one; a few use two. The choice is not stylistic — each method chills, dilutes and aerates by a different amount, and those are the three things that decide what lands in the glass.',
+        text: 'Seven ways to combine a drink. Most recipes use one; a few use two. The choice is not stylistic - each method chills, dilutes and aerates by a different amount, and those are the three things that decide what lands in the glass.',
       },
       { kind: 'h', text: 'Shaking' },
       {
@@ -49,13 +49,13 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'note',
         title: 'The whole decision, in one line',
-        text: 'If everything in the glass is clear and alcoholic, stir it. If anything in it is cloudy — juice, cream, egg, syrup — shake it. There is no third case worth worrying about.',
+        text: 'If everything in the glass is clear and alcoholic, stir it. If anything in it is cloudy - juice, cream, egg, syrup - shake it. There is no third case worth worrying about.',
       },
       { kind: 'tool', tool: 'method' },
       { kind: 'h', text: 'Muddling' },
       {
         kind: 'p',
-        text: 'Pressing fruit or herbs to release what is in them, with a muddler, in the bottom of the glass or the shaker. Fruit takes real pressure. **Herbs do not** — mint should be pressed just enough to release its oil, and grinding it releases chlorophyll instead, which is bitter and tastes of lawn. A firm press and a twist is enough.',
+        text: 'Pressing fruit or herbs to release what is in them, with a muddler, in the bottom of the glass or the shaker. Fruit takes real pressure. **Herbs do not** - mint should be pressed just enough to release its oil, and grinding it releases chlorophyll instead, which is bitter and tastes of lawn. A firm press and a twist is enough.',
       },
       { kind: 'h', text: 'Building' },
       {
@@ -101,7 +101,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'That is worth sitting with, because it kills a common instinct. You cannot shake a drink "just to chill it" and avoid watering it down. The cold *comes from* the ice melting — melting is what absorbs the heat. A shaken drink finishes around 20–25% water by volume, and that water is part of the recipe whether or not the recipe mentions it.',
+        text: 'That is worth sitting with, because it kills a common instinct. You cannot shake a drink "just to chill it" and avoid watering it down. The cold *comes from* the ice melting - melting is what absorbs the heat. A shaken drink finishes around 20–25% water by volume, and that water is part of the recipe whether or not the recipe mentions it.',
       },
       { kind: 'tool', tool: 'dilution' },
       { kind: 'h', text: 'Size, and why it matters' },
@@ -112,9 +112,9 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Cubes** — the default. Shaking, stirring, and filling a highball.',
-          '**One large cube or sphere** — for a short drink you will hold for twenty minutes. Less surface area for the same cooling, so an Old Fashioned does not turn to water halfway down.',
-          '**Crushed** — fast chilling and heavy dilution, wanted in a Julep, a Mojito, a Caipirinha and most tiki. Never in a shaker.',
+          '**Cubes** - the default. Shaking, stirring, and filling a highball.',
+          '**One large cube or sphere** - for a short drink you will hold for twenty minutes. Less surface area for the same cooling, so an Old Fashioned does not turn to water halfway down.',
+          '**Crushed** - fast chilling and heavy dilution, wanted in a Julep, a Mojito, a Caipirinha and most tiki. Never in a shaker.',
         ],
       },
       {
@@ -125,12 +125,12 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Clear ice' },
       {
         kind: 'p',
-        text: 'Cloudy ice is cloudy because of dissolved air and minerals that get trapped as water freezes inwards from every side at once. Clear ice is frozen *directionally* — from one side only — so the trapped air is pushed ahead of the freezing front and ends up in the last part to freeze, which you cut off.',
+        text: 'Cloudy ice is cloudy because of dissolved air and minerals that get trapped as water freezes inwards from every side at once. Clear ice is frozen *directionally* - from one side only - so the trapped air is pushed ahead of the freezing front and ends up in the last part to freeze, which you cut off.',
       },
       {
         kind: 'steps',
         items: [
-          'Fill an insulated container — a chilly bin with the lid off works — with hot water. Hot rather than cold, because it holds less dissolved air to begin with.',
+          'Fill an insulated container - a chilly bin with the lid off works - with hot water. Hot rather than cold, because it holds less dissolved air to begin with.',
           'Put it in the freezer uncovered. The insulation on the sides and base forces it to freeze from the top down.',
           'Leave it about 24 hours, until roughly three-quarters frozen.',
           'Tip out the unfrozen water underneath, which is where all the cloudiness has gone, and carve the clear slab into cubes.',
@@ -138,7 +138,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'It is entirely cosmetic and it looks very good. Clear ice does not melt meaningfully slower than cloudy ice of the same size, whatever people say — the difference is trapped air, not density.',
+        text: 'It is entirely cosmetic and it looks very good. Clear ice does not melt meaningfully slower than cloudy ice of the same size, whatever people say - the difference is trapped air, not density.',
       },
     ],
   },
@@ -160,7 +160,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Jiggers' },
       {
         kind: 'p',
-        text: 'A jigger is a two-sided measure. New Zealand pours in millilitres, and the pairs worth owning are 30/15 and 45/22.5 — between them they cover almost every spec in this book, and the halves matter because a lot of recipes call for 22.5.',
+        text: 'A jigger is a two-sided measure. New Zealand pours in millilitres, and the pairs worth owning are 30/15 and 45/22.5 - between them they cover almost every spec in this book, and the halves matter because a lot of recipes call for 22.5.',
       },
       {
         kind: 'p',
@@ -213,7 +213,7 @@ export const TECHNIQUE: Chapter[] = [
         items: [
           'Combine everything in the shaker **without ice** and shake hard for about ten seconds. No ice is the whole point: the proteins denature and foam far better warm, and ice would chill the mixture before the foam forms.',
           'Add ice and shake again, the normal way, to chill and dilute.',
-          'Double strain into the glass — through the hawthorne and a fine sieve — to catch any chalaza.',
+          'Double strain into the glass - through the hawthorne and a fine sieve - to catch any chalaza.',
           'Let it settle for a few seconds. The foam separates and sits up on its own.',
         ],
       },
@@ -225,7 +225,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Aquafaba' },
       {
         kind: 'p',
-        text: 'The liquid from a tin of chickpeas. It foams almost identically, and about 20–25 ml stands in for one egg white. Vegan, no allergen, and it keeps in the fridge for several days. Rinse the tin liquid choice matters — use unsalted if you can, and it tastes of nothing in a finished drink.',
+        text: 'The liquid from a tin of chickpeas. It foams almost identically, and about 20–25 ml stands in for one egg white. Vegan, no allergen, and it keeps in the fridge for several days. Rinse the tin liquid choice matters - use unsalted if you can, and it tastes of nothing in a finished drink.',
       },
       { kind: 'h', text: 'Safety, plainly' },
       {

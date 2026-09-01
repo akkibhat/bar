@@ -27,7 +27,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Most guests order in a shorthand that is completely standard and almost never explained. Getting it right is not pedantry — "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
+        text: 'Most guests order in a shorthand that is completely standard and almost never explained. Getting it right is not pedantry - "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
       },
       {
         kind: 'table',
@@ -44,7 +44,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'note',
         title: 'Up and neat are not the same',
-        text: '**Neat** is the spirit as it comes, at room temperature, no ice at any point. **Up** has been chilled — shaken or stirred with ice — then strained into a glass with no ice in it. One is warm, one is very cold, and both arrive without ice in the glass, which is why they get confused.',
+        text: '**Neat** is the spirit as it comes, at room temperature, no ice at any point. **Up** has been chilled - shaken or stirred with ice - then strained into a glass with no ice in it. One is warm, one is very cold, and both arrive without ice in the glass, which is why they get confused.',
       },
       { kind: 'h', text: 'Named mixed drinks' },
       {
@@ -70,7 +70,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'A garnish is not decoration. A lemon twist is oil sprayed across the surface of the drink, and it changes what the first mouthful smells like — which is most of what it tastes like. Follow the spec: if a recipe says twist, a wedge is a different drink.',
+        text: 'A garnish is not decoration. A lemon twist is oil sprayed across the surface of the drink, and it changes what the first mouthful smells like - which is most of what it tastes like. Follow the spec: if a recipe says twist, a wedge is a different drink.',
       },
       { kind: 'h', text: 'The standard cuts' },
       {
@@ -98,7 +98,7 @@ export const SERVICE: Chapter[] = [
           'Wash fruit before prep, always.',
           'Store cut fruit in a sealed container in the fridge.',
           'Store whole fruit cold, dry, dark, and off the floor.',
-          'Never leave garnishes sitting submerged in water — it leaches them and they go limp.',
+          'Never leave garnishes sitting submerged in water - it leaches them and they go limp.',
           'To refresh, cover briefly with soda water and drain immediately.',
           'Refuse poor fruit. A tired lime makes a tired garnish and there is no technique that rescues it.',
         ],
@@ -134,20 +134,20 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Carton juice** — once opened, fridge, use within two days. Bubbling or fizzing means it has started fermenting; that is the signal to bin it.',
-          '**Fresh citrus** — squeeze as needed. Lime turns brown and dull within hours and is noticeably worse the same evening. Pre-squeeze only what a busy shift will actually use, in a labelled container.',
+          '**Carton juice** - once opened, fridge, use within two days. Bubbling or fizzing means it has started fermenting; that is the signal to bin it.',
+          '**Fresh citrus** - squeeze as needed. Lime turns brown and dull within hours and is noticeably worse the same evening. Pre-squeeze only what a busy shift will actually use, in a labelled container.',
           '**Never mix old stock into new.** It drags the whole container down to the age of the oldest thing in it.',
         ],
       },
       { kind: 'h', text: 'Dairy' },
       {
         kind: 'p',
-        text: 'Half and half — 50/50 milk and single cream — keeps about two days, in the fridge or the ice chest. Clotting is the obvious sign it has gone; the smell is the earlier one.',
+        text: 'Half and half - 50/50 milk and single cream - keeps about two days, in the fridge or the ice chest. Clotting is the obvious sign it has gone; the smell is the earlier one.',
       },
       { kind: 'h', text: 'Minerals and mixers' },
       {
         kind: 'p',
-        text: 'Cola, lemonade, soda water, mineral water, tonic, ginger ale, ginger beer. **Check the fizz before service**, especially from large bottles — a flat tonic is a wasted gin, and you cannot tell by looking.',
+        text: 'Cola, lemonade, soda water, mineral water, tonic, ginger ale, ginger beer. **Check the fizz before service**, especially from large bottles - a flat tonic is a wasted gin, and you cannot tell by looking.',
       },
       {
         kind: 'p',
@@ -156,7 +156,7 @@ export const SERVICE: Chapter[] = [
       { kind: 'h', text: 'Serving the soft drinks properly' },
       {
         kind: 'p',
-        text: 'Non-alcoholic drinks are served long, in a tall glass, with ice, and garnished to the same standard as everything else. The workbook\'s phrase for this is that even a glass of water should be **dressed** — and it is the right instinct. Someone not drinking should not be able to tell from the glass in their hand.',
+        text: 'Non-alcoholic drinks are served long, in a tall glass, with ice, and garnished to the same standard as everything else. The workbook\'s phrase for this is that even a glass of water should be **dressed** - and it is the right instinct. Someone not drinking should not be able to tell from the glass in their hand.',
       },
       {
         kind: 'p',
@@ -184,7 +184,7 @@ export const SERVICE: Chapter[] = [
         items: [
           '**Memory.** Every drink on the list, plus who ordered what, plus which tab it goes on, plus the regulars\' names. All at once, all night.',
           '**Calm under pressure.** Things go wrong at the busiest moment, because that is when there are most things to go wrong. Being visibly rattled spreads down the queue.',
-          '**Friendly and outgoing.** A large part of the job is talking to people. It is also the selling half — nobody buys a second round from someone who seems to want them gone.',
+          '**Friendly and outgoing.** A large part of the job is talking to people. It is also the selling half - nobody buys a second round from someone who seems to want them gone.',
           '**Consistency.** Same drink, same way, every time, whether it is the first of the night or the last. This is the one that actually separates people.',
           '**Cleanliness.** The bar, the tools, the glassware, before, during and after. A health requirement, and the thing every guest silently judges.',
           '**Trustworthiness.** You handle the till, the stock and the free pours. A bar runs on being able to leave someone alone with all three.',
@@ -206,7 +206,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'unsure',
         title: 'Mine to add',
-        text: 'TODO: my margin note here just says "buy local?" against the upselling page. I think that was about stocking New Zealand spirits over imported ones and being able to say why. Worth writing properly — it is the most defensible kind of upsell there is.',
+        text: 'TODO: my margin note here just says "buy local?" against the upselling page. I think that was about stocking New Zealand spirits over imported ones and being able to say why. Worth writing properly - it is the most defensible kind of upsell there is.',
       },
     ],
   },
@@ -237,13 +237,13 @@ export const SERVICE: Chapter[] = [
           '**Do not serve minors.** The purchase age is 18, and acceptable identification is limited to a passport, a NZ driver licence, a Kiwi Access card, or a HANZ 18+ card.',
           '**Provide free drinking water**, low- and non-alcoholic options, and substantial food.',
           '**Help people get home.** Numbers for taxis, and not turning someone out of the door who plainly should not be driving.',
-          '**Watch for the signs** — slurred speech, unsteadiness, repetition, becoming loud or argumentative, ordering rounds faster than the last ones are finished.',
+          '**Watch for the signs** - slurred speech, unsteadiness, repetition, becoming loud or argumentative, ordering rounds faster than the last ones are finished.',
         ],
       },
       {
         kind: 'note',
         title: 'Refusing early is easier than refusing late',
-        text: 'Cutting someone off at the point they are visibly drunk is a confrontation. Slowing the pace two rounds earlier — water alongside, a longer drink, food offered — usually means the confrontation never happens. Everyone who has worked a bar says this and it is not in the workbook.',
+        text: 'Cutting someone off at the point they are visibly drunk is a confrontation. Slowing the pace two rounds earlier - water alongside, a longer drink, food offered - usually means the confrontation never happens. Everyone who has worked a bar says this and it is not in the workbook.',
       },
       {
         kind: 'unsure',

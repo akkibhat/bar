@@ -111,7 +111,7 @@ export default function BarNav() {
 
           <div className="ml-auto flex items-center gap-1">
             <ThemeToggle />
-            {/* Hidden where the index column is on screen — two copies
+            {/* Hidden where the index column is on screen - two copies
                 of the same contents, one of them behind a click, is a
                 choice nobody needs to make. */}
             <button

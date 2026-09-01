@@ -177,7 +177,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 2,
     intensity: 4,
     notes: ['Cooked agave', 'Pepper', 'Citrus', 'Mineral'],
-    note: 'Unaged, and the clearest view of what agave actually tastes like. Check the label says 100% agave — anything else is up to 49% other sugars and is where bad tequila memories come from.',
+    note: 'Unaged, and the clearest view of what agave actually tastes like. Check the label says 100% agave - anything else is up to 49% other sugars and is where bad tequila memories come from.',
     drinkIt: 'Margarita',
   },
   {
@@ -207,7 +207,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 3,
     intensity: 3,
     notes: ['Dried fruit', 'Vanilla', 'Oak', 'Floral'],
-    note: 'Twice pot-distilled and aged in French oak. VS is two years, VSOP four, XO ten — and each describes the youngest spirit in the blend rather than the average.',
+    note: 'Twice pot-distilled and aged in French oak. VS is two years, VSOP four, XO ten - and each describes the youngest spirit in the blend rather than the average.',
     drinkIt: 'Sidecar',
   },
   {
@@ -252,7 +252,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 4,
     intensity: 3,
     notes: ['Orange peel', 'Bitter edge', 'Clean sweetness'],
-    note: 'The workhorse of the Sidecar family — it sweetens and flavours in one move, which is why so many drinks have no syrup in them. Strength varies enormously between brands and that changes the balance.',
+    note: 'The workhorse of the Sidecar family - it sweetens and flavours in one move, which is why so many drinks have no syrup in them. Strength varies enormously between brands and that changes the balance.',
     drinkIt: 'Margarita',
   },
   {
@@ -298,7 +298,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 1,
     intensity: 2,
     notes: ['Herbal', 'Dry', 'Faintly bitter', 'Wine'],
-    note: 'It is wine, so it oxidises. Keep it in the fridge and finish it within a month — a tired bottle is the single most common reason a home Martini tastes flat.',
+    note: 'It is wine, so it oxidises. Keep it in the fridge and finish it within a month - a tired bottle is the single most common reason a home Martini tastes flat.',
     drinkIt: 'Martini',
   },
   {
@@ -329,7 +329,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 3,
     intensity: 5,
     notes: ['Bitter orange', 'Rhubarb', 'Gentian'],
-    note: 'The loudest thing on the shelf and the reason equal-parts drinks work — it is assertive enough to hold its third against a full-strength spirit.',
+    note: 'The loudest thing on the shelf and the reason equal-parts drinks work - it is assertive enough to hold its third against a full-strength spirit.',
     drinkIt: 'Negroni',
   },
   {
@@ -343,7 +343,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 4,
     intensity: 3,
     notes: ['Orange', 'Rhubarb', 'Gentle bitterness'],
-    note: 'About half the strength of Campari and noticeably sweeter. Not a like-for-like substitute — a Contessa is a lighter drink than a Negroni, not the same one.',
+    note: 'About half the strength of Campari and noticeably sweeter. Not a like-for-like substitute - a Contessa is a lighter drink than a Negroni, not the same one.',
     drinkIt: 'Aperol Spritz',
   },
   {
@@ -357,7 +357,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 1,
     intensity: 5,
     notes: ['Clove', 'Cinnamon', 'Gentian', 'Bitter bark'],
-    note: 'Used in dashes, not measures. Bitterness is structural — it gives sweet and sour something to push against, the way salt does in food. A bottle outlasts everything else on the shelf.',
+    note: 'Used in dashes, not measures. Bitterness is structural - it gives sweet and sour something to push against, the way salt does in food. A bottle outlasts everything else on the shelf.',
     drinkIt: 'Old Fashioned',
   },
 ];

@@ -128,7 +128,7 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
               signal cannot be lost behind a specific heading. */}
           <p className="label-ui mb-2" style={{ color: 'var(--caution)' }}>
             Still to do
-            {block.title ? ` — ${block.title}` : ''}
+            {block.title ? ` - ${block.title}` : ''}
           </p>
           <p className="!mb-0 t-ui" style={{ color: 'var(--ink)' }}>
             {inline(block.text)}

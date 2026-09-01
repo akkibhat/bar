@@ -16,7 +16,7 @@ export default function GlasswarePage() {
       <PageHeader
         eyebrow="Reference"
         title="Which glass"
-        standfirst={`${GLASSES.length} glasses, filtered by how the drink is served — which is the thing you know first, and the thing everything else follows from.`}
+        standfirst={`${GLASSES.length} glasses, filtered by how the drink is served - which is the thing you know first, and the thing everything else follows from.`}
       />
 
       <GlasswarePicker />

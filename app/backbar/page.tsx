@@ -41,7 +41,7 @@ export default function BackbarPage() {
         <Rule variant="double" className="mt-3" />
 
         <p className="t-lead leading-relaxed mt-6 max-w-[34rem]">
-          My own creations — {SHELF.length} of them — with the full build in
+          My own creations - {SHELF.length} of them - with the full build in
           millilitres, the method as steps, and a note on why each one is put
           together the way it is. Some are riffs on a classic; some started as
           an idea about one ingredient.

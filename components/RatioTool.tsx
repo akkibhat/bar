@@ -139,9 +139,9 @@ export default function RatioTool() {
             <span className="nums">{Math.round(result.sweetShare)}%</span> of
             the build.{' '}
             {result.sweetShare > 30
-              ? 'High — expect it to read sweet.'
+              ? 'High - expect it to read sweet.'
               : result.sweetShare < 15
-                ? 'Low — expect it to read sharp.'
+                ? 'Low - expect it to read sharp.'
                 : 'In the usual range.'}
           </p>
         </div>

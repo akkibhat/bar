@@ -96,12 +96,12 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       {
         kind: 'note',
         title: 'Build it like a cocktail',
-        text: 'Same families, same ratios. A zero-proof sour is still 2 : 1 : 1 — the two parts are just tea, or a distilled non-alcoholic spirit, instead of gin. Shake it, strain it, serve it in the same glass with the same garnish.',
+        text: 'Same families, same ratios. A zero-proof sour is still 2 : 1 : 1 - the two parts are just tea, or a distilled non-alcoholic spirit, instead of gin. Shake it, strain it, serve it in the same glass with the same garnish.',
       },
       { kind: 'h', text: 'The bottles' },
       {
         kind: 'p',
-        text: 'There is now a real shelf of non-alcoholic spirits, aperitifs and even bitters. Quality varies enormously and price does not track it. They are worth having for the guest who wants the ritual of a Negroni without the alcohol, and they are not required — tea, citrus and a good tonic will get most of the way there.',
+        text: 'There is now a real shelf of non-alcoholic spirits, aperitifs and even bitters. Quality varies enormously and price does not track it. They are worth having for the guest who wants the ritual of a Negroni without the alcohol, and they are not required - tea, citrus and a good tonic will get most of the way there.',
       },
       {
         kind: 'unsure',
@@ -128,13 +128,13 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       { kind: 'h', text: 'Fat-washing' },
       {
         kind: 'p',
-        text: 'Alcohol dissolves the flavour compounds in fat. So: melt a fat into a spirit — browned butter, bacon fat, toasted sesame oil, coconut — leave it to sit, then freeze it. The fat solidifies and lifts out, and what is left is a clear spirit tasting of it.',
+        text: 'Alcohol dissolves the flavour compounds in fat. So: melt a fat into a spirit - browned butter, bacon fat, toasted sesame oil, coconut - leave it to sit, then freeze it. The fat solidifies and lifts out, and what is left is a clear spirit tasting of it.',
       },
       {
         kind: 'steps',
         items: [
           'Combine roughly 30–50 ml of melted fat with 500 ml of spirit.',
-          'Leave at room temperature for a few hours, stirring occasionally. Room temperature rather than warm — heat drives off the top notes of the spirit you are trying to keep.',
+          'Leave at room temperature for a few hours, stirring occasionally. Room temperature rather than warm - heat drives off the top notes of the spirit you are trying to keep.',
           'Freeze overnight.',
           'Lift off the solid cap and strain through a coffee filter.',
         ],

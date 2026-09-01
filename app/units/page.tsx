@@ -22,7 +22,7 @@ export default function UnitsPage() {
       <p className="t-base max-w-[34rem]">
         A New Zealand standard drink is <strong>10 g of pure alcohol</strong>.
         Ethanol weighs 0.789 g per millilitre, so a 30 ml pour of a 40% spirit
-        works out at 0.95 of one — which is the figure this is worth
+        works out at 0.95 of one - which is the figure this is worth
         sanity-checking against.
       </p>
 

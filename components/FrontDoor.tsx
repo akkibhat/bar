@@ -48,7 +48,7 @@ export default function FrontDoor() {
           Bar<span style={{ color: 'var(--accent)' }}>book</span>
         </>
       ),
-      line: 'Everything behind a bar — spirits, beer, tools, technique — and how to build a drink out of it.',
+      line: 'Everything behind a bar - spirits, beer, tools, technique - and how to build a drink out of it.',
       count: `${CHAPTER_COUNT} chapters`,
     },
     {

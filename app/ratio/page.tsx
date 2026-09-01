@@ -21,7 +21,7 @@ export default function RatioPage() {
       <RatioTool />
 
       <p className="t-base max-w-[34rem]">
-        There is no correct ratio — a drier palate genuinely wants less sugar,
+        There is no correct ratio - a drier palate genuinely wants less sugar,
         and how ripe your limes are moves the answer week to week. So this
         names the template a build is nearest rather than marking it right or
         wrong, and only warns when a drink sits far enough outside all of them

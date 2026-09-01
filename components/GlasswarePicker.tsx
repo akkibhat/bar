@@ -7,7 +7,7 @@ import { GLASSES, SERVE_LABEL, type Serve } from '@/lib/glassware';
  * Which glass.
  *
  * Filters on how the drink is served, because that is the thing you know
- * first — long, short, up — and every other property of the glass follows
+ * first - long, short, up - and every other property of the glass follows
  * from it.
  */
 const SERVES: Serve[] = ['up', 'short', 'long', 'hot', 'shot'];

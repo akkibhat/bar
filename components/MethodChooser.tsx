@@ -5,8 +5,8 @@ import { useState } from 'react';
 /**
  * Shake or stir.
  *
- * The rule is one line long — if anything in the glass is cloudy, shake
- * it; if everything is clear and alcoholic, stir it — but it is easier to
+ * The rule is one line long - if anything in the glass is cloudy, shake
+ * it; if everything is clear and alcoholic, stir it - but it is easier to
  * believe once you have poked at it, so this asks about the build and
  * gives the answer with the reason attached.
  *
@@ -80,14 +80,14 @@ export default function MethodChooser() {
               ) : (
                 <>
                   Everything here is clear and alcoholic. Shaking would cloud
-                  it and chip ice into it, so stir instead — about thirty
+                  it and chip ice into it, so stir instead - about thirty
                   seconds over cubed ice.
                 </>
               )}
             </p>
             {hasEgg && (
               <p className="t-caption mt-2" style={{ color: 'var(--caution)' }}>
-                With egg or aquafaba, dry shake first — without ice — then add
+                With egg or aquafaba, dry shake first - without ice - then add
                 ice and shake again.
               </p>
             )}

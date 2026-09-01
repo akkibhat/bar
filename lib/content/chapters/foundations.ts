@@ -26,7 +26,7 @@ export const FOUNDATIONS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'A cocktail is a mixed drink of two or more ingredients, served at any time, long or short. That is the definition I was given, and it is so wide it takes in a gin and tonic, a Negroni and a glass of orange juice with a dash of something in it. Which is fair enough — the word has been stretched for two hundred years and is not going to snap back now.',
+        text: 'A cocktail is a mixed drink of two or more ingredients, served at any time, long or short. That is the definition I was given, and it is so wide it takes in a gin and tonic, a Negroni and a glass of orange juice with a dash of something in it. Which is fair enough - the word has been stretched for two hundred years and is not going to snap back now.',
       },
       {
         kind: 'p',
@@ -40,7 +40,7 @@ export const FOUNDATIONS: Chapter[] = [
       { kind: 'h', text: 'Long, short, and the words in between' },
       {
         kind: 'p',
-        text: 'A **short** drink is spirit-forward and served in a small glass — a Negroni, an Old Fashioned, a Martini. It is mostly alcohol and it is meant to be sipped. A **long** drink is the same idea diluted with a mixer and served over ice in a tall glass — a Collins, a mule, a highball. Same base, different pace.',
+        text: 'A **short** drink is spirit-forward and served in a small glass - a Negroni, an Old Fashioned, a Martini. It is mostly alcohol and it is meant to be sipped. A **long** drink is the same idea diluted with a mixer and served over ice in a tall glass - a Collins, a mule, a highball. Same base, different pace.',
       },
       {
         kind: 'p',
@@ -58,7 +58,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'That 1806 definition is the first in print, and it is the better of the two. Spirit, sugar, water, bitters — it names all four jobs, and the water is the part people forget, because it arrives on its own from the ice while you are shaking.',
+        text: 'That 1806 definition is the first in print, and it is the better of the two. Spirit, sugar, water, bitters - it names all four jobs, and the water is the part people forget, because it arrives on its own from the ice while you are shaking.',
       },
     ],
   },
@@ -75,7 +75,7 @@ export const FOUNDATIONS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The word turns up in print in 1806, in a New York paper called *The Balance and Columbian Repository*, answering a reader who had asked what a cock-tail was. The answer — spirits, sugar, water and bitters — describes an Old Fashioned. That drink is not a variation on anything; it is the original, and everything else is the variation.',
+        text: 'The word turns up in print in 1806, in a New York paper called *The Balance and Columbian Repository*, answering a reader who had asked what a cock-tail was. The answer - spirits, sugar, water and bitters - describes an Old Fashioned. That drink is not a variation on anything; it is the original, and everything else is the variation.',
       },
       { kind: 'h', text: 'Prohibition, and what it did to the drinks' },
       {
@@ -84,7 +84,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'That pushed the whole trade from whiskey towards gin, because gin needs no ageing — you can make something gin-shaped in days, where a bourbon needs years in wood. And it pushed recipes towards heavy juice and sugar, whose job was to bury the taste of what was underneath. A lot of drinks we now think of as classics were designed as camouflage.',
+        text: 'That pushed the whole trade from whiskey towards gin, because gin needs no ageing - you can make something gin-shaped in days, where a bourbon needs years in wood. And it pushed recipes towards heavy juice and sugar, whose job was to bury the taste of what was underneath. A lot of drinks we now think of as classics were designed as camouflage.',
       },
       {
         kind: 'p',
@@ -119,7 +119,7 @@ export const FOUNDATIONS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Every spirit starts as something sugary and wet. Yeast eats the sugar and gives off alcohol and carbon dioxide, which gets you to roughly 8% — beer or wine, depending on what you started with. Distillation then concentrates that. It does not create alcohol; it separates what is already there.',
+        text: 'Every spirit starts as something sugary and wet. Yeast eats the sugar and gives off alcohol and carbon dioxide, which gets you to roughly 8% - beer or wine, depending on what you started with. Distillation then concentrates that. It does not create alcohol; it separates what is already there.',
       },
       {
         kind: 'steps',
@@ -137,7 +137,7 @@ export const FOUNDATIONS: Chapter[] = [
       { kind: 'h', text: 'Two kinds of still' },
       {
         kind: 'p',
-        text: 'A **pot still** is a batch process: fill it, run it, empty it, start again. It is inefficient and it is deliberately so — a single pass gets you to around 25–30%, so most pot-distilled spirits go through twice, landing near 75% before dilution. Because the separation is imperfect, plenty of heavier compounds come across with the alcohol, and those are flavour. Pot stills make characterful spirits: single malt, cognac, aged rum.',
+        text: 'A **pot still** is a batch process: fill it, run it, empty it, start again. It is inefficient and it is deliberately so - a single pass gets you to around 25–30%, so most pot-distilled spirits go through twice, landing near 75% before dilution. Because the separation is imperfect, plenty of heavier compounds come across with the alcohol, and those are flavour. Pot stills make characterful spirits: single malt, cognac, aged rum.',
       },
       {
         kind: 'p',
@@ -156,14 +156,14 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Most spirits are bottled somewhere between 37.5% and 40%, which means the distiller has added water — a lot of it. What you buy is a deliberate dilution of something much stronger.',
+        text: 'Most spirits are bottled somewhere between 37.5% and 40%, which means the distiller has added water - a lot of it. What you buy is a deliberate dilution of something much stronger.',
       },
       { kind: 'h', text: 'After the still' },
       {
         kind: 'list',
         items: [
           '**Maturation.** Time in wood. Takes colour, tannin, vanilla and spice out of the barrel and rounds off the harsh edges. Legally required for some categories, forbidden for others.',
-          '**Colouring.** Caramel, usually E150a. Legal nearly everywhere and used more than labels admit — it makes batches match.',
+          '**Colouring.** Caramel, usually E150a. Legal nearly everywhere and used more than labels admit - it makes batches match.',
           '**Sweetening.** Sugar or syrup. Common in rum and in anything calling itself a liqueur.',
           '**Dilution.** Pure water down to bottling strength.',
         ],
@@ -171,7 +171,7 @@ export const FOUNDATIONS: Chapter[] = [
       {
         kind: 'note',
         title: 'Who actually owns the shelf',
-        text: 'Most of the back bar belongs to a handful of companies — Diageo, Pernod Ricard and LVMH between them own an enormous share of the brands you can name. Useful when a rep tells you a category is having a moment.',
+        text: 'Most of the back bar belongs to a handful of companies - Diageo, Pernod Ricard and LVMH between them own an enormous share of the brands you can name. Useful when a rep tells you a category is having a moment.',
       },
       { kind: 'tool', tool: 'abv' },
       {
@@ -200,10 +200,10 @@ export const FOUNDATIONS: Chapter[] = [
       {
         kind: 'steps',
         items: [
-          'Use a glass that narrows at the top — a copita, a small wine glass, a snifter at a push. A tumbler throws everything straight up your nose at full strength.',
+          'Use a glass that narrows at the top - a copita, a small wine glass, a snifter at a push. A tumbler throws everything straight up your nose at full strength.',
           'Pour a small measure and leave it a minute. Room temperature, not chilled: cold shuts down aroma, which is why vodka out of the freezer tastes of nothing.',
-          'Look. Colour tells you about wood, and only about wood — and it can have come out of a caramel bottle, so it is the weakest signal on the page.',
-          'Nose it with your mouth slightly open, holding the glass below your chin and bringing it up gently. Do not stick your nose in the glass. Short sniffs, then rest — the nose fatigues within seconds at this strength.',
+          'Look. Colour tells you about wood, and only about wood - and it can have come out of a caramel bottle, so it is the weakest signal on the page.',
+          'Nose it with your mouth slightly open, holding the glass below your chin and bringing it up gently. Do not stick your nose in the glass. Short sniffs, then rest - the nose fatigues within seconds at this strength.',
           'Take a small sip and let it coat everything before you swallow. The first sip mostly registers as heat; that is normal, and the second and third sips are where the flavour is.',
           'Then add a few drops of water and go again. This is the step people skip. Water drops the strength, breaks the surface tension and releases aromatics the alcohol was holding down. A cask-strength whisky can change completely.',
         ],
@@ -232,7 +232,7 @@ export const FOUNDATIONS: Chapter[] = [
       {
         kind: 'unsure',
         title: 'Written from outside the course',
-        text: 'This chapter is not from the workbook — the qualification never covered tasting method, only product facts. It is assembled from how spirits judging is normally run and from what carries over from wine tasting. Treat it as a working method rather than as something I was taught and examined on.',
+        text: 'This chapter is not from the workbook - the qualification never covered tasting method, only product facts. It is assembled from how spirits judging is normally run and from what carries over from wine tasting. Treat it as a working method rather than as something I was taught and examined on.',
       },
     ],
   },

@@ -3,7 +3,7 @@
  *
  * The glassware chapter sets these out as reading tables with capacities;
  * this is the same set keyed for the picker, which answers a different
- * question — "what should this go in" rather than "what is that called".
+ * question - "what should this go in" rather than "what is that called".
  *
  * `serve` is the axis the picker filters on, because that is what a
  * bartender actually knows first: the drink is long, or short, or served
@@ -69,7 +69,7 @@ export const GLASSES: Glass[] = [
     name: 'Snifter',
     serve: 'short',
     holds: [250, 500],
-    why: 'The bowl collects aroma and the stem keeps your hand from warming it — though cupping it deliberately is the point with a cognac.',
+    why: 'The bowl collects aroma and the stem keeps your hand from warming it - though cupping it deliberately is the point with a cognac.',
     drinks: ['Cognac and aged spirits, neat'],
   },
   {

@@ -26,13 +26,13 @@ export const BEER: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Beer is fermented grain — nearly always malted barley — flavoured with hops. Four ingredients do nearly all of it, and each is a dial you can turn independently, which is why a handful of inputs produce hundreds of styles.',
+        text: 'Beer is fermented grain - nearly always malted barley - flavoured with hops. Four ingredients do nearly all of it, and each is a dial you can turn independently, which is why a handful of inputs produce hundreds of styles.',
       },
       {
         kind: 'list',
         items: [
-          '**Water.** Boring and decisive. Mineral content changes how bitterness reads, which is why Burton pale ales are hoppy and Pilsen lagers are soft — the towns had different water long before anyone knew why it mattered.',
-          '**Malt.** Barley, germinated then kilned. The kilning is the dial: pale malt gives bready sweetness, medium gives caramel and toffee, and roasted-to-black gives coffee and chocolate. **Malt is where beer colour comes from** — not from strength, and not from the yeast.',
+          '**Water.** Boring and decisive. Mineral content changes how bitterness reads, which is why Burton pale ales are hoppy and Pilsen lagers are soft - the towns had different water long before anyone knew why it mattered.',
+          '**Malt.** Barley, germinated then kilned. The kilning is the dial: pale malt gives bready sweetness, medium gives caramel and toffee, and roasted-to-black gives coffee and chocolate. **Malt is where beer colour comes from** - not from strength, and not from the yeast.',
           '**Hops.** The seasoning. Bitterness to balance malt sweetness, plus aroma. Boiled early they give bitterness and lose aroma; added late or after fermentation they give aroma and almost no bitterness. That timing split is most of what separates a bitter old-school IPA from a modern juicy one.',
           '**Yeast.** Eats the sugar, makes alcohol, and throws off flavour compounds while doing it. The single biggest fork in the road, and the subject of the next chapter.',
         ],
@@ -40,7 +40,7 @@ export const BEER: Chapter[] = [
       {
         kind: 'note',
         title: 'Colour is malt, not strength',
-        text: 'A dark beer is not necessarily strong, heavy or high in alcohol. Guinness is about 4.2% — lighter than a lot of pale lagers. The colour came out of a kiln, and nothing else follows from it.',
+        text: 'A dark beer is not necessarily strong, heavy or high in alcohol. Guinness is about 4.2% - lighter than a lot of pale lagers. The colour came out of a kiln, and nothing else follows from it.',
       },
       { kind: 'h', text: 'How it is made' },
       {
@@ -71,7 +71,7 @@ export const BEER: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The whole of beer divides in two, and the dividing line is which yeast and how cold. Everything else — colour, strength, hop character — cuts across both.',
+        text: 'The whole of beer divides in two, and the dividing line is which yeast and how cold. Everything else - colour, strength, hop character - cuts across both.',
       },
       {
         kind: 'table',
@@ -96,17 +96,17 @@ export const BEER: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Pilsner** — pale lager, crisp, noticeably hoppy. The template most mass-market lager is a faded copy of.',
-          '**Pale ale and IPA** — hop-forward ales. IPA is stronger and more bitter historically; the modern hazy version trades bitterness for aroma and reads almost like juice.',
-          '**Stout and porter** — dark ales from roasted malt. Coffee, chocolate, sometimes a dry mineral finish.',
-          '**Wheat beer** — a large share of wheat alongside barley. Hazy, soft, and in the German version strongly banana-and-clove from the yeast.',
-          '**Sour** — deliberately acidified, by wild yeast or bacteria. The closest beer gets to wine, and the one to put in front of someone who says they do not like beer.',
+          '**Pilsner** - pale lager, crisp, noticeably hoppy. The template most mass-market lager is a faded copy of.',
+          '**Pale ale and IPA** - hop-forward ales. IPA is stronger and more bitter historically; the modern hazy version trades bitterness for aroma and reads almost like juice.',
+          '**Stout and porter** - dark ales from roasted malt. Coffee, chocolate, sometimes a dry mineral finish.',
+          '**Wheat beer** - a large share of wheat alongside barley. Hazy, soft, and in the German version strongly banana-and-clove from the yeast.',
+          '**Sour** - deliberately acidified, by wild yeast or bacteria. The closest beer gets to wine, and the one to put in front of someone who says they do not like beer.',
         ],
       },
       {
         kind: 'unsure',
         title: 'Mine to write',
-        text: 'TODO: New Zealand hops are a genuine speciality — Nelson Sauvin, Riwaka, Motueka — and NZ craft brewing deserves better than a bullet from me. Write it from breweries I have drunk, not from a list.',
+        text: 'TODO: New Zealand hops are a genuine speciality - Nelson Sauvin, Riwaka, Motueka - and NZ craft brewing deserves better than a bullet from me. Write it from breweries I have drunk, not from a list.',
       },
     ],
   },
@@ -132,7 +132,7 @@ export const BEER: Chapter[] = [
           'Start with a clean, cool, wet glass. A glass out of a hot washer kills the head instantly, and any grease left on it does the same.',
           'Hold it at about 45° and open the tap fully. A half-opened tap makes foam, not beer.',
           'Straighten the glass as it fills so the last of the pour lands in the middle and builds the head.',
-          'Finish with two or three fingers of foam. It is not waste — the head holds the aroma, and a flat beer smells of nothing.',
+          'Finish with two or three fingers of foam. It is not waste - the head holds the aroma, and a flat beer smells of nothing.',
         ],
       },
       {
@@ -147,21 +147,21 @@ export const BEER: Chapter[] = [
       { kind: 'h', text: 'Beer in a cocktail' },
       {
         kind: 'p',
-        text: 'Beer works in a drink for the same reason soda does — it brings carbonation and dilution — with the difference that it also brings bitterness and malt sweetness of its own, so it can do a liqueur\'s job as well as a mixer\'s.',
+        text: 'Beer works in a drink for the same reason soda does - it brings carbonation and dilution - with the difference that it also brings bitterness and malt sweetness of its own, so it can do a liqueur\'s job as well as a mixer\'s.',
       },
       {
         kind: 'list',
         items: [
-          '**Michelada** — lager, lime, hot sauce and salt. A Bloody Mary\'s lighter relative and a better hangover drink.',
-          '**Shandy or radler** — beer and lemonade, roughly half and half.',
-          '**Black Velvet** — stout and sparkling wine, layered.',
-          '**Beer as the top** — any sour built long and finished with beer instead of soda. A pale ale over a gin sour works better than it sounds.',
+          '**Michelada** - lager, lime, hot sauce and salt. A Bloody Mary\'s lighter relative and a better hangover drink.',
+          '**Shandy or radler** - beer and lemonade, roughly half and half.',
+          '**Black Velvet** - stout and sparkling wine, layered.',
+          '**Beer as the top** - any sour built long and finished with beer instead of soda. A pale ale over a gin sour works better than it sounds.',
         ],
       },
       {
         kind: 'note',
         title: 'Add it last, and never shake it',
-        text: 'Carbonation and a sealed shaker do not mix — at best you lose the fizz, at worst the tin comes apart. Build the rest of the drink, then top with beer and fold it through with a bar spoon.',
+        text: 'Carbonation and a sealed shaker do not mix - at best you lose the fizz, at worst the tin comes apart. Build the rest of the drink, then top with beer and fold it through with a bar spoon.',
       },
       {
         kind: 'unsure',

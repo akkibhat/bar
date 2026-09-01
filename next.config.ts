@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       /* The old site's menu index and its recipe pages. Permanent (308),
-         because those addresses are not coming back — Backbar is where a
+         because those addresses are not coming back - Backbar is where a
          drink lives now, under its same slug. */
       { source: '/menu', destination: '/backbar', permanent: true },
       { source: '/menu/:slug', destination: '/backbar/:slug', permanent: true },

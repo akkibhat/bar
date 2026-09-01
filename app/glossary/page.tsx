@@ -15,7 +15,7 @@ export default function GlossaryPage() {
       <PageHeader
         eyebrow="Reference"
         title="Glossary"
-        standfirst={`${GLOSSARY.length} terms. Search the meaning as well as the word — the common case is remembering what something does and not what it is called.`}
+        standfirst={`${GLOSSARY.length} terms. Search the meaning as well as the word - the common case is remembering what something does and not what it is called.`}
       />
       <GlossarySearch />
     </div>

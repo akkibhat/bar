@@ -13,7 +13,7 @@ already exist.
 | `/menu` | `/backbar` |
 | `/menu/:slug` | `/backbar/:slug` |
 
-The slugs are unchanged, because both sites derive them the same way —
+The slugs are unchanged, because both sites derive them the same way -
 Bar Assistant's slug with its trailing `-N` revision counter stripped. So
 `/menu/black-magic-margarita` lands on
 `/backbar/black-magic-margarita` and no link needs rewriting by hand.
@@ -50,7 +50,7 @@ splitting it.
 
 ## The name
 
-The old site was branded **Entre Deux Verres**. That name is retired —
+The old site was branded **Entre Deux Verres**. That name is retired -
 it survives as a line on the Backbar masthead saying where the drinks
 were published before, and as the `source` field Bar Assistant stamps
 into every recipe, which is what the pull script reads to tell my own

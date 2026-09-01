@@ -2,7 +2,7 @@
 
 What is still owed, roughly in the order it is worth doing.
 
-The dashed boxes in the book are the authoritative list — this file is a
+The dashed boxes in the book are the authoritative list - this file is a
 summary of them plus the things that are about the site rather than the
 writing. Every item marked **mine** needs something only I can supply:
 my own notes, or a bottle I have actually poured.
@@ -32,33 +32,33 @@ my own notes, or a bottle I have actually poured.
 
 ### Mine to write
 
-- **New Zealand drinking history** *(A short history)* — the licensing
+- **New Zealand drinking history** *(A short history)* - the licensing
   changes, when cocktail bars actually arrived here, what a bar list
   looked like before that.
-- **New Zealand gin** *(Vodka and gin)* — which ones are worth pouring,
+- **New Zealand gin** *(Vodka and gin)* - which ones are worth pouring,
   and what horopito, kawakawa and mānuka do to a G&T. From bottles I have
   poured, not from a shop list.
-- **New Zealand hops and craft brewing** *(Ale and lager)* — Nelson
+- **New Zealand hops and craft brewing** *(Ale and lager)* - Nelson
   Sauvin, Riwaka, Motueka, and breweries I have actually drunk.
-- **Rum sweetening and regional styles** *(Rum)* — added sugar after
+- **Rum sweetening and regional styles** *(Rum)* - added sugar after
   distillation, and Jamaican high-ester funk against Spanish-style *ron*.
-- **Buying local** *(Being the bartender)* — my margin note just says
+- **Buying local** *(Being the bartender)* - my margin note just says
   "buy local?" against the upselling page. It is the most defensible kind
   of upsell there is and deserves a proper paragraph.
-- **Bar operations** *(The bar itself)* — opening and closing, par
+- **Bar operations** *(The bar itself)* - opening and closing, par
   levels, stocktake, wastage. None of it is there.
 
 ### Written from outside the course, and thin because of it
 
-- **Beer service** *(Beer behind the bar)* — line cleaning, keg handling,
+- **Beer service** *(Beer behind the bar)* - line cleaning, keg handling,
   cellar temperature. I have never run a tap system. This either needs
   someone who has, or it should say less.
-- **Fat-washing and clarification** *(Modern technique)* — described from
+- **Fat-washing and clarification** *(Modern technique)* - described from
   reading. I have not done either. The quantities are other people's
   starting points.
-- **Low and no** *(Low and no)* — method only. Nothing zero-proof has
+- **Low and no** *(Low and no)* - method only. Nothing zero-proof has
   gone on the shelf yet.
-- **Agave** — assembled from category rules. Verify the ageing bands
+- **Agave** - assembled from category rules. Verify the ageing bands
   against a current source.
 
 ---
@@ -69,7 +69,7 @@ my own notes, or a bottle I have actually poured.
 
 - **Write the intent into the descriptions.** *(Bar Assistant, not code.)*
   The front door now promises "the measures, the method, and what I was
-  after". The first two are solid — the specs and steps come across
+  after". The first two are solid - the specs and steps come across
   intact. The third mostly does not.
 
   Bar Assistant has no field for intent, so the only place it can live is
@@ -88,7 +88,7 @@ my own notes, or a bottle I have actually poured.
 
   1. **Espresso Martini has no description at all**, so that page shows
      nothing where the copy promises something. It needs one either way.
-  2. Rewrite the other six in the Filthy Mistress register — what you
+  2. Rewrite the other six in the Filthy Mistress register - what you
      were going for, or the one decision the drink turns on.
 
   Until then the promise is running ahead of the data. The alternative is
@@ -96,7 +96,7 @@ my own notes, or a bottle I have actually poured.
 
 - **A drinks journal.** `useJournal` and the `DrinkNote` type are written
   and nothing renders them. The idea is a note against a drink after
-  making it — what you would change next time — kept in the browser the
+  making it - what you would change next time - kept in the browser the
   way the wine site's tasting journal is.
 - **Photographs on the shelf.** Bar Assistant has an image field and
   every one of the eight is empty. If drinks get shot, the pull script
