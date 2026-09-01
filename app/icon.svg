@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 16 120 136" width="120" height="136">
+  <!--
+    The favicon.
+
+    The closed state of the mark - the bowl of a glass on its stem -
+    rather than the open book. At 16px the valley between the two pages
+    is well under a pixel and the split disappears anyway, so the shape
+    that survives is the one worth shipping here.
+
+    Colours are literal rather than theme tokens: a favicon is fetched
+    outside the page and has no stylesheet to read them from. This is the
+    light-theme amber, which holds up on both a light and a dark browser
+    chrome.
+  -->
+  <g fill="#8a5717">
+    <path d="M16,24 L104,24 L60,94 Z"/>
+    <rect x="56.5" y="94" width="7" height="42"/>
+    <rect x="34" y="136" width="52" height="8" rx="3"/>
+  </g>
+</svg>
