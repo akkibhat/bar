@@ -1,0 +1,260 @@
+import type { Chapter } from '../../types';
+
+/**
+ * Part VII - Service.
+ *
+ * The half of the job that is about people rather than liquid. The
+ * workbook was good on the mechanics - how a drink is asked for, how
+ * garnish is prepped and stored, what makes a bartender worth employing -
+ * and had one large hole in it, which is that it never mentioned the law.
+ *
+ * A hospitality qualification taught in New Zealand sits underneath the
+ * Sale and Supply of Alcohol Act, and refusing service is a legal duty
+ * rather than a judgement call. That gets its own chapter at the end,
+ * written from outside the course, with a standing note that I am not the
+ * right person to be anyone's authority on it.
+ */
+export const SERVICE: Chapter[] = [
+  /* ================================================================== */
+  {
+    slug: 'taking-the-order',
+    part: 'service',
+    n: 26,
+    title: 'Taking the order',
+    minutes: 4,
+    standfirst:
+      'Neat, up, on the rocks, short, long. Five phrases that decide the glass, the ice and the pour.',
+    body: [
+      {
+        kind: 'p',
+        text: 'Most guests order in a shorthand that is completely standard and almost never explained. Getting it right is not pedantry — "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
+      },
+      {
+        kind: 'table',
+        head: ['They say', 'Glass', 'Ice', 'You pour'],
+        rows: [
+          ['**Long**', 'Highball', 'Filled', 'Spirit first, then mixer'],
+          ['**Short, on the rocks**', 'Rocks', 'Half to two-thirds full', 'Spirit first, splash of mixer'],
+          ['**Neat**', 'Rocks', 'None', 'Spirit only, at room temperature'],
+          ['**On the rocks**', 'Rocks', 'Over ice', 'Spirit only, poured over'],
+          ['**Straight up** / **up**', 'Coupe or Martini', 'None in the glass', 'Chilled first, then strained in'],
+          ['**Shot**', 'Shot', 'None', 'Spirit only, to the brim or the line'],
+        ],
+      },
+      {
+        kind: 'note',
+        title: 'Up and neat are not the same',
+        text: '**Neat** is the spirit as it comes, at room temperature, no ice at any point. **Up** has been chilled — shaken or stirred with ice — then strained into a glass with no ice in it. One is warm, one is very cold, and both arrive without ice in the glass, which is why they get confused.',
+      },
+      { kind: 'h', text: 'Named mixed drinks' },
+      {
+        kind: 'p',
+        text: 'A few spirit-and-mixer combinations have their own names, and using them is faster than describing them. Rum and coke with a lime wedge is a **Cuba Libre**. Vodka and orange is a **Screwdriver**. Whisky and dry ginger is a **Highball** in the specific sense.',
+      },
+      {
+        kind: 'p',
+        text: 'When the order is ambiguous, ask once and remember the answer. "Gin and tonic" does not say which gin, and a guest who wanted the good one and got the rail one will not order a second.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  {
+    slug: 'garnish',
+    part: 'service',
+    n: 27,
+    title: 'Garnish',
+    minutes: 5,
+    standfirst:
+      'The last thing you do and the first thing they see. Also the thing most likely to be a day old.',
+    body: [
+      {
+        kind: 'p',
+        text: 'A garnish is not decoration. A lemon twist is oil sprayed across the surface of the drink, and it changes what the first mouthful smells like — which is most of what it tastes like. Follow the spec: if a recipe says twist, a wedge is a different drink.',
+      },
+      { kind: 'h', text: 'The standard cuts' },
+      {
+        kind: 'table',
+        head: ['Cut', 'From', 'Keeps'],
+        rows: [
+          ['**Lime squeeze**', 'One-sixth of a fresh lime', '1 day'],
+          ['**Lemon squeeze**', 'One-eighth of a fresh lemon', '1 day'],
+          ['**Orange wedge**', 'One-eighth of a fresh orange', '1 day'],
+          ['**Flag**', 'Half an orange slice, usually with a cherry', '1 day'],
+          ['**Twist**', 'A strip of peel, as little pith as possible', 'Cut to order'],
+          ['**Cherry**', 'Maraschino, bright red', 'Kept submerged in its own liquid'],
+        ],
+      },
+      {
+        kind: 'note',
+        title: 'A twist is squeezed, not dropped',
+        text: 'Hold the peel skin-side down over the glass and pinch it, so the oil sprays across the surface. Then wipe it round the rim and drop it in. Dropping it in without squeezing wastes the only thing it was there for.',
+      },
+      { kind: 'h', text: 'Keeping it' },
+      {
+        kind: 'list',
+        items: [
+          'Cut fresh before each shift. Fresh for each drink if there is time.',
+          'Wash fruit before prep, always.',
+          'Store cut fruit in a sealed container in the fridge.',
+          'Store whole fruit cold, dry, dark, and off the floor.',
+          'Never leave garnishes sitting submerged in water — it leaches them and they go limp.',
+          'To refresh, cover briefly with soda water and drain immediately.',
+          'Refuse poor fruit. A tired lime makes a tired garnish and there is no technique that rescues it.',
+        ],
+      },
+      { kind: 'h', text: 'Beyond fruit' },
+      {
+        kind: 'p',
+        text: 'Salt, pepper, Tabasco, Worcestershire sauce, Angostura, paprika, cinnamon, nutmeg, coffee beans, tea leaves, basil, mint, egg. A Bloody Mary uses half that list on its own.',
+      },
+      {
+        kind: 'note',
+        title: 'Less is more',
+        text: 'A garnish that has to be dismantled before the guest can drink is a garnish that has gone wrong. If it does not add aroma, flavour or a clear signal about what the drink is, it is in the way.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  {
+    slug: 'mixers-and-the-soft-side',
+    part: 'service',
+    n: 28,
+    title: 'Mixers and the soft side',
+    minutes: 4,
+    standfirst:
+      'Juice, soda and dairy, all of which go off faster than anything else behind the bar.',
+    body: [
+      {
+        kind: 'p',
+        text: 'Everything on this page has a shelf life measured in days, which makes it the part of the bar most likely to spoil a drink made correctly out of good spirits.',
+      },
+      { kind: 'h', text: 'Juice' },
+      {
+        kind: 'list',
+        items: [
+          '**Carton juice** — once opened, fridge, use within two days. Bubbling or fizzing means it has started fermenting; that is the signal to bin it.',
+          '**Fresh citrus** — squeeze as needed. Lime turns brown and dull within hours and is noticeably worse the same evening. Pre-squeeze only what a busy shift will actually use, in a labelled container.',
+          '**Never mix old stock into new.** It drags the whole container down to the age of the oldest thing in it.',
+        ],
+      },
+      { kind: 'h', text: 'Dairy' },
+      {
+        kind: 'p',
+        text: 'Half and half — 50/50 milk and single cream — keeps about two days, in the fridge or the ice chest. Clotting is the obvious sign it has gone; the smell is the earlier one.',
+      },
+      { kind: 'h', text: 'Minerals and mixers' },
+      {
+        kind: 'p',
+        text: 'Cola, lemonade, soda water, mineral water, tonic, ginger ale, ginger beer. **Check the fizz before service**, especially from large bottles — a flat tonic is a wasted gin, and you cannot tell by looking.',
+      },
+      {
+        kind: 'p',
+        text: 'Mixers must be cold before they go in. A cold mixer over ice stays fizzy; a room-temperature one foams up, goes flat, and melts the ice while it is doing it.',
+      },
+      { kind: 'h', text: 'Serving the soft drinks properly' },
+      {
+        kind: 'p',
+        text: 'Non-alcoholic drinks are served long, in a tall glass, with ice, and garnished to the same standard as everything else. The workbook\'s phrase for this is that even a glass of water should be **dressed** — and it is the right instinct. Someone not drinking should not be able to tell from the glass in their hand.',
+      },
+      {
+        kind: 'p',
+        text: 'That matters more now than it did when the course was written, and the zero-proof chapter in Part IX picks it up properly.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  {
+    slug: 'being-the-bartender',
+    part: 'service',
+    n: 29,
+    title: 'Being the bartender',
+    minutes: 4,
+    standfirst:
+      'Six qualities off the course, and the selling that comes with the job.',
+    body: [
+      {
+        kind: 'p',
+        text: 'The workbook listed six things that make a bartender worth employing. None of them is about making drinks, which is the point it was making.',
+      },
+      {
+        kind: 'list',
+        items: [
+          '**Memory.** Every drink on the list, plus who ordered what, plus which tab it goes on, plus the regulars\' names. All at once, all night.',
+          '**Calm under pressure.** Things go wrong at the busiest moment, because that is when there are most things to go wrong. Being visibly rattled spreads down the queue.',
+          '**Friendly and outgoing.** A large part of the job is talking to people. It is also the selling half — nobody buys a second round from someone who seems to want them gone.',
+          '**Consistency.** Same drink, same way, every time, whether it is the first of the night or the last. This is the one that actually separates people.',
+          '**Cleanliness.** The bar, the tools, the glassware, before, during and after. It is a health requirement and it is also the thing every guest silently judges.',
+          '**Trustworthiness.** You handle the till, the stock and the free pours. A bar runs on being able to leave someone alone with all three.',
+        ],
+      },
+      { kind: 'h', text: 'Selling without being a salesman' },
+      {
+        kind: 'p',
+        text: 'About a third of people walking into a bar have not decided what they want. That is not an opportunity to push the expensive bottle — it is a chance to ask two questions and put the right drink in front of them, which is what makes them come back.',
+      },
+      {
+        kind: 'list',
+        items: [
+          '**Upsell within the brand they already chose.** If someone asks for a gin and tonic, offering a gin they might like better is a service. Steering them to whatever carries the best margin is not, and people can tell.',
+          '**Signature serves.** One or two drinks that only this bar makes. They are what gets described to someone else later, which is the only marketing that works.',
+          '**Seasonal serves.** Hot drinks in winter, long ones with crushed ice in summer. Often the same base spirit dressed differently, which costs nothing and reads as effort.',
+        ],
+      },
+      {
+        kind: 'unsure',
+        title: 'Mine to add',
+        text: 'TODO: my margin note here just says "buy local?" against the upselling page. I think that was about stocking New Zealand spirits over imported ones and being able to say why. Worth writing properly — it is the most defensible kind of upsell there is.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  {
+    slug: 'serving-responsibly',
+    part: 'service',
+    n: 30,
+    title: 'Serving responsibly',
+    minutes: 5,
+    standfirst:
+      'The largest hole in the course I took. In New Zealand this part is law, not judgement.',
+    body: [
+      {
+        kind: 'p',
+        text: 'The workbook covers upselling, garnish shelf life and how to hold a glass, and says nothing at all about refusing service, checking identification, or the legislation the whole trade sits under. That is a strange omission for a hospitality qualification, and it is the one gap in this book I would not want anyone to work from.',
+      },
+      {
+        kind: 'p',
+        text: 'In New Zealand the governing legislation is the **Sale and Supply of Alcohol Act 2012**. Anyone managing the sale or supply of alcohol on a licensed premises needs a **Licence Controller Qualification**, which covers the Act itself and host responsibility, and a Manager\'s Certificate issued by the local council on the strength of it.',
+      },
+      { kind: 'h', text: 'What host responsibility actually asks' },
+      {
+        kind: 'list',
+        items: [
+          '**Do not serve anyone already intoxicated.** This is an offence, and it is the server\'s as well as the licensee\'s.',
+          '**Do not serve minors.** The purchase age is 18, and acceptable identification is limited to a passport, a NZ driver licence, a Kiwi Access card, or a HANZ 18+ card.',
+          '**Provide free drinking water**, low- and non-alcoholic options, and substantial food.',
+          '**Help people get home.** Numbers for taxis, and not turning someone out of the door who plainly should not be driving.',
+          '**Watch for the signs** — slurred speech, unsteadiness, repetition, becoming loud or argumentative, ordering rounds faster than the last ones are finished.',
+        ],
+      },
+      {
+        kind: 'note',
+        title: 'Refusing early is easier than refusing late',
+        text: 'Cutting someone off at the point they are visibly drunk is a confrontation. Slowing the pace two rounds earlier — water alongside, a longer drink, food offered — usually means the confrontation never happens. Everyone who has worked a bar says this and it is not in the workbook.',
+      },
+      {
+        kind: 'unsure',
+        title: 'Do not rely on this chapter',
+        text: 'I hold no Licence Controller Qualification and I have never worked a licensed shift. This is written from the legislation and the published outline of what the LCQ covers, because a book about bartending that skips it entirely is worse than one that covers it imperfectly. Anyone actually serving alcohol in New Zealand should do the LCQ, which is a one-day course, rather than reading this.',
+      },
+      {
+        kind: 'unsure',
+        title: 'Mine to check',
+        text: 'TODO: find out whether responsible service was taught as a separate module of the course and simply is not in the pages I photographed. If it was, my own notes from it should replace most of this chapter.',
+      },
+    ],
+  },
+];
