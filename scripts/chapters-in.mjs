@@ -274,6 +274,17 @@ for (const block of parsed) {
       const next = textOf(block);
       if (next === null) skips.push(`${label} - empty`);
       else swap(file, old.text, next, label);
+
+      /* A note's title rides on the anchor line rather than sitting in
+         the body, so it has to be swapped separately. Without this an
+         edited title looks applied - the Markdown holds it, and nothing
+         is reported - and then the next export quietly writes the old
+         one back over it. */
+      if (block.extra.startsWith('TITLE ') && old.title) {
+        const title = block.extra.slice('TITLE '.length).trim();
+        if (title) swap(file, old.title, title, `${label} title`);
+        else skips.push(`${label} - title emptied; put it back or drop it in TypeScript`);
+      }
       break;
     }
 
