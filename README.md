@@ -65,6 +65,29 @@ deploy — they exist for the pull script alone.
 Recipes are reproduced exactly as authored. Nothing in the pipeline
 rewords, reorders or adjusts a measure.
 
+## Editing the chapters
+
+The prose lives as strings inside typed arrays, which is the right shape
+for the site and an awkward one to write in. So it comes out to Markdown,
+gets edited there, and goes back in.
+
+```bash
+npm run chapters:out              # 37 files into _workings/chapters/
+npm run chapters:in -- --dry-run  # say what would change
+npm run chapters:in               # do it
+```
+
+One file per chapter, numbered by reading order: `07-rum.md`,
+`13-what-beer-is.md`. Each block carries an HTML comment naming its
+chapter and index, which is how an edit finds its way home; leave those
+alone. Tables, specs and embedded tools export marked READ-ONLY and are
+ignored coming back, as is adding or deleting a block. Do those in
+TypeScript.
+
+Nothing is rewritten wholesale. The importer swaps one string literal at
+a time, having first checked it appears exactly once, and refuses rather
+than guesses if it does not.
+
 ---
 
 ## How it is put together
@@ -93,6 +116,9 @@ want. Same component both times.
     lib/content/chapters/     the thirty-seven, as typed data
     lib/content/*-snapshot.ts generated; do not edit
     scripts/pull-backbar.mjs  Bar Assistant to snapshot
+    scripts/chapters-*.mjs    chapters out to Markdown and back
+    _workings/                editorial scratch, and the Markdown the
+                              chapters export to. Gitignored.
     _course/                  photographs of the workbook. Source for the
                               writing, not site content. Gitignored.
 
