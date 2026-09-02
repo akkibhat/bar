@@ -1,7 +1,7 @@
 import type { Family } from '../schema';
 
 /**
- * The six root structures almost every classic turns out to be.
+ * The six root structures behind almost every classic.
  *
  * Sorted by what holds the drink together rather than by which spirit is
  * in it. A Negroni and a Boulevardier are the same drink, and no

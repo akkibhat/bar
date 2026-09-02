@@ -15,14 +15,14 @@ import { FAMILIES } from '@/lib/content/families';
 export const metadata: Metadata = {
   title: 'Barbook',
   description:
-    'What is behind a bar and what to do with it: spirits, beer, tools, technique, service, and the structures almost every cocktail turns out to be.',
+    'What is behind a bar and what to do with it: spirits, beer, tools, technique, service, and the six structures most cocktails are built on.',
 };
 
 /**
  * Barbook: an opening statement, the tools, and the contents.
  *
  * The open-questions count at the foot is the honest version of a
- * progress meter. Reading progress is switched off in `lib/config.ts`
+ * progress meter. Reading progress is switched off in `lib/site.ts`
  * because this is a reference rather than a course to complete - but how
  * much of the book is still provisional is a real number and worth
  * printing, because it is what makes the gaps a feature rather than an
@@ -35,7 +35,7 @@ export default function BookPage() {
     {
       href: '/families',
       title: 'Cocktail families',
-      body: `The ${FAMILIES.length} structures almost every drink in the book turns out to be.`,
+      body: `The ${FAMILIES.length} structures behind almost every drink in the book.`,
     },
     {
       href: '/ratio',
@@ -50,7 +50,7 @@ export default function BookPage() {
     {
       href: '/spirits',
       title: 'Spirit explorer',
-      body: `${SPIRITS.length} bottles, filterable by shelf, sortable by how sweet and how loud they run.`,
+      body: `${SPIRITS.length} bottles, filterable by shelf, sortable by sweetness and intensity.`,
     },
     {
       href: '/glassware',
@@ -76,9 +76,8 @@ export default function BookPage() {
 
         <p className="t-lead leading-relaxed max-w-[34rem]">
           What is behind a bar, and what to do with it. How every spirit is
-          made and what separates one from the next, what beer actually is,
-          the seven methods, the glassware, the service - and the handful of
-          structures almost every cocktail turns out to be.
+          made, what beer is, the seven methods, the glassware, the service,
+          and the six structures most cocktails are built on.
         </p>
 
         <p
@@ -86,9 +85,7 @@ export default function BookPage() {
           style={{ color: 'var(--ink-soft)' }}
         >
           Written up from a mixology qualification, with the parts it skipped
-          filled in - which turned out to be the parts that made the rest make
-          sense. In the order it made sense to learn it, but you can start
-          anywhere.
+          filled in. In reading order, but you can start anywhere.
         </p>
 
         <p
@@ -97,8 +94,8 @@ export default function BookPage() {
         >
           <span className="nums">{CHAPTER_COUNT}</span> chapters, and{' '}
           <span className="nums">{open}</span> of them still carry something I
-          need to check or write from my own notes. Those are marked in place
-          rather than quietly left out.
+          need to check or write up from my own notes. Those are marked where they
+          sit.
         </p>
       </header>
 

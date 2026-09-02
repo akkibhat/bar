@@ -6,7 +6,7 @@ import FamiliesTable from '@/components/FamiliesTable';
 export const metadata: Metadata = {
   title: 'Cocktail families',
   description:
-    'The six root structures almost every classic turns out to be, sorted by what holds the drink together rather than by which spirit is in it.',
+    'The six root structures behind almost every classic, sorted by what holds the drink together rather than by which spirit is in it.',
 };
 
 export default function FamiliesPage() {

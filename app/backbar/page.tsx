@@ -22,7 +22,7 @@ export const metadata: Metadata = {
  *
  * The page carries the shelf's accent as a local custom property, taken
  * from the section table, so recolouring this half is a one-line edit in
- * `lib/config.ts` rather than a sweep through the markup.
+ * `lib/site.ts` rather than a sweep through the markup.
  */
 export default function BackbarPage() {
   return (
@@ -52,7 +52,7 @@ export default function BackbarPage() {
           style={{ color: 'var(--ink-soft)' }}
         >
           Published as <em>{FORMER_NAME}</em> until this site put the two
-          halves together. Same drinks, same specs, one address.
+          halves together. Same drinks, same specs.
         </p>
       </header>
 

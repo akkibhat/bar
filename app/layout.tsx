@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     template: '%s - Bar',
   },
   description:
-    'Everything behind a bar and what to do with it - spirits, beer, tools, technique, and the structures almost every cocktail turns out to be. Plus my own creations, with the full build.',
+    'Everything behind a bar and what to do with it - spirits, beer, tools, technique, and the six structures most cocktails are built on. Plus my own creations, with the full build.',
 };
 
 /**

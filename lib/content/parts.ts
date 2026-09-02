@@ -36,21 +36,21 @@ export const PARTS: Part[] = [
     slug: 'beer',
     title: 'Beer',
     blurb:
-      'The other thing a bar pours, and the one the cocktail course skipped almost entirely.',
+      'The other thing a bar pours, and the one the course skipped.',
   },
   {
     numeral: 'IV',
     slug: 'balance',
     title: 'Balance and structure',
     blurb:
-      'The part nobody taught me: why the recipes work, and the six shapes almost every drink turns out to be.',
+      'The part nobody taught me: why the recipes work, and the six shapes behind them.',
   },
   {
     numeral: 'V',
     slug: 'technique',
     title: 'Technique',
     blurb:
-      'Shaking, stirring, ice, measuring, and what actually happens to a drink while you are doing it.',
+      'Shaking, stirring, ice, measuring, and what each one does to the drink.',
   },
   {
     numeral: 'VI',
@@ -64,7 +64,7 @@ export const PARTS: Part[] = [
     slug: 'service',
     title: 'Service',
     blurb:
-      'Taking the order, finishing the drink, and the parts of the job that are about people rather than liquid.',
+      'Taking the order, finishing the drink, and the parts of the job that are about people.',
   },
   {
     numeral: 'VIII',
