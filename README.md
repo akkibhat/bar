@@ -23,7 +23,7 @@ them up.
 
 Where a chapter goes past what I was taught it says so at the top. Where
 a figure is one I wrote in a margin and cannot verify, it is marked in
-place rather than quietly dropped — eighteen of the thirty-seven carry
+place rather than quietly dropped - eighteen of the thirty-seven carry
 one of those. The contents page prints the count, because a book that
 hides how provisional it is has told you something false before you have
 read a word.
@@ -60,7 +60,7 @@ npm run pull
 
 That rewrites `lib/content/backbar-snapshot.ts`. Commit it. The built
 site makes no requests and needs none of those variables to run or
-deploy — they exist for the pull script alone.
+deploy - they exist for the pull script alone.
 
 Recipes are reproduced exactly as authored. Nothing in the pipeline
 rewords, reorders or adjusts a measure.
@@ -93,8 +93,8 @@ than guesses if it does not.
 ## How it is put together
 
 Chapters are **data, not markup**. A chapter body is an ordered list of
-typed blocks — `p`, `h`, `list`, `steps`, `table`, `note`, `unsure`,
-`quote`, `spec`, `tool` — so a spec sheet or a working calculator drops
+typed blocks - `p`, `h`, `list`, `steps`, `table`, `note`, `unsure`,
+`quote`, `spec`, `tool` - so a spec sheet or a working calculator drops
 inline between two paragraphs with no HTML parsing anywhere.
 
 The **spec sheet** is the one component shared between a classic printed
@@ -126,8 +126,8 @@ want. Same component both times.
 
 A printed cocktail menu: bright card stock, Bodoni for the names, wide
 small caps for the labels, hairline rules, and measures running to the
-right edge behind dot leaders. Two spot colours on black — an ink blue
-for the half you read, a bitters red for the half you pour — because
+right edge behind dot leaders. Two spot colours on black - an ink blue
+for the half you read, a bitters red for the half you pour - because
 that is how a menu of this kind was actually printed.
 
 Every colour is measured rather than picked. Each text weight clears
@@ -140,7 +140,7 @@ A cocktail glass split down the middle, so it reads as both a glass and
 an open book. Barbook is the two halves swung apart; Backbar is the same
 shape closed onto its stem. Three size tiers, because below about 20px
 the valley between the pages falls under a rendered pixel and the halves
-weld into a plain triangle — so as it shrinks the pages lean further
+weld into a plain triangle - so as it shrinks the pages lean further
 apart and the spine thickens, until the smallest tier drops the spine
 altogether.
 

@@ -16,7 +16,7 @@ next-env.d.ts
 _workings/
 
 # Photographs of the course workbook. These are the source the chapters were
-# written from, not site content — nothing in `app/` or `public/` references
+# written from, not site content - nothing in `app/` or `public/` references
 # them, and they are 50 MB of phone photos, so they stay on disk rather than
 # in the history. Keep a copy somewhere backed up.
 _course/
