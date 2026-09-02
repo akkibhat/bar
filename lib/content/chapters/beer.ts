@@ -22,7 +22,7 @@ export const BEER: Chapter[] = [
     title: 'What beer is',
     minutes: 5,
     standfirst:
-      'Four ingredients, and each one is a dial. Get these and a tap list stops being a wall of names.',
+      'Water, malt, hops, yeast, and what each one changes.',
     body: [
       {
         kind: 'p',
@@ -67,7 +67,7 @@ export const BEER: Chapter[] = [
     title: 'Ale and lager',
     minutes: 5,
     standfirst:
-      'Every beer is one or the other, and the difference is a few degrees of temperature.',
+      'Two yeasts, two temperatures. Enough to place any beer on a tap list.',
     body: [
       {
         kind: 'p',
@@ -119,7 +119,7 @@ export const BEER: Chapter[] = [
     title: 'Beer behind the bar',
     minutes: 4,
     standfirst:
-      'Pouring it, keeping the lines clean, and the drinks that put beer in a cocktail.',
+      'The pour, line cleaning, and the cocktails that use beer.',
     body: [
       {
         kind: 'p',

@@ -21,7 +21,7 @@ export const KIT: Chapter[] = [
     title: 'Glassware',
     minutes: 5,
     standfirst:
-      'Seventeen glasses and what goes in them. The shape is doing a job, not decorating one.',
+      'Seventeen glasses, grouped by shape, and what each is for.',
     body: [
       {
         kind: 'p',
@@ -94,7 +94,7 @@ export const KIT: Chapter[] = [
     title: 'Tools',
     minutes: 5,
     standfirst:
-      'What is on the mat, what each thing is for, and the short list worth owning first.',
+      'What is on the mat, what it does, and what to buy first.',
     body: [
       {
         kind: 'p',
@@ -151,7 +151,7 @@ export const KIT: Chapter[] = [
     title: 'The bar itself',
     minutes: 4,
     standfirst:
-      'Every bar is laid out slightly differently and they are all laid out on the same principle.',
+      'Speed rail, stations, barback. Why every bar is laid out the same way.',
     body: [
       {
         kind: 'p',

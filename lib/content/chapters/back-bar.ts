@@ -22,7 +22,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Vodka and gin',
     minutes: 4,
     standfirst:
-      'The same neutral spirit twice. One is left alone and one has a hedge thrown at it.',
+      'One neutral spirit, two directions. What each has to do to be called that.',
     body: [
       {
         kind: 'p',
@@ -76,7 +76,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Whisky',
     minutes: 6,
     standfirst:
-      'Grain, wood and time. Where the E goes, and what a label is actually promising.',
+      'Malt and grain, wood and time. What the label promises.',
     body: [
       {
         kind: 'p',
@@ -142,7 +142,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Rum',
     minutes: 4,
     standfirst:
-      'Sugarcane, and the least regulated shelf in the bar. Colour tells you almost nothing.',
+      'Cane spirit, and the loosest rules on the shelf. Colour tells you little.',
     body: [
       {
         kind: 'p',
@@ -181,7 +181,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Agave: tequila and mezcal',
     minutes: 5,
     standfirst:
-      'The shelf the course skipped, while teaching the Margarita. A plant that takes years to be ready and a spirit that is mostly misunderstood.',
+      'Not on the course, though the Margarita was. Agave, tequila and mezcal.',
     body: [
       {
         kind: 'p',
@@ -231,7 +231,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Brandy',
     minutes: 5,
     standfirst:
-      'Distilled fruit. Cognac is the famous one, and the rest of the family is more interesting than it gets credit for.',
+      'Distilled fruit. Cognac and Armagnac, then the fruit brandies.',
     body: [
       {
         kind: 'p',
@@ -285,7 +285,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Liqueurs',
     minutes: 5,
     standfirst:
-      'A spirit, sugar, and something to taste of. The most crowded shelf, and the one that does the most work in a recipe.',
+      'Spirit, sugar, flavour. The crowded shelf, and the ones recipes keep asking for.',
     body: [
       {
         kind: 'p',
@@ -340,7 +340,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Aperitifs, digestifs and fortified wine',
     minutes: 5,
     standfirst:
-      'The bottles that bracket a meal, and the wines with spirit added. Half the modern bar list is built out of this shelf.',
+      'Vermouth, amaro, sherry, port. Where most of a modern bar list comes from.',
     body: [
       {
         kind: 'p',
@@ -384,7 +384,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Bitters',
     minutes: 4,
     standfirst:
-      'In the 1806 definition, in half the recipes in this book, and listed in the course workbook under condiments with no explanation at all.',
+      'In the 1806 definition and half these recipes. The workbook filed them under condiments.',
     body: [
       {
         kind: 'p',

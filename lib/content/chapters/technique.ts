@@ -22,7 +22,7 @@ export const TECHNIQUE: Chapter[] = [
     title: 'The seven methods',
     minutes: 6,
     standfirst:
-      'Shake, stir, muddle, blend, build, layer, flame. What each is for, and the one rule that decides between the first two.',
+      'Shake, stir, muddle, build, layer, blend, flame. What each is for.',
     body: [
       {
         kind: 'p',
@@ -93,7 +93,7 @@ export const TECHNIQUE: Chapter[] = [
     title: 'Ice',
     minutes: 5,
     standfirst:
-      'The ingredient in most of the glass and the one nobody costs. Chilling and dilution are the same event.',
+      'Size, dilution and clear ice. Chilling and watering down are one event.',
     body: [
       {
         kind: 'p',
@@ -151,7 +151,7 @@ export const TECHNIQUE: Chapter[] = [
     title: 'The pour',
     minutes: 4,
     standfirst:
-      'Measuring, and why the same drink twice is the whole job.',
+      'Jiggers, free pouring, and the rest of the perfect serve.',
     body: [
       {
         kind: 'p',
@@ -201,7 +201,7 @@ export const TECHNIQUE: Chapter[] = [
     title: 'Texture: egg, aquafaba and dairy',
     minutes: 4,
     standfirst:
-      'Egg white is in four recipes in this book. How to use it, and what to use instead.',
+      'Egg white, the dry shake, aquafaba, and the safety side.',
     body: [
       {
         kind: 'p',

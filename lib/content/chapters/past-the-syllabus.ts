@@ -22,7 +22,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
     title: 'Batching and scaling',
     minutes: 5,
     standfirst:
-      'Making twelve drinks at once without making twelve drinks. Mostly arithmetic, with one thing that catches everyone.',
+      'Twelve drinks at once. The arithmetic, and the dilution everyone forgets.',
     body: [
       {
         kind: 'p',
@@ -68,7 +68,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
     title: 'Low and no',
     minutes: 5,
     standfirst:
-      'The workbook filed this under juices and mixers. It is a category now, and it is growing faster than anything else behind the bar.',
+      'Zero-proof and low-ABV. What makes one work, and the bottles worth having.',
     body: [
       {
         kind: 'p',
@@ -119,7 +119,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
     title: 'Modern technique, and waste',
     minutes: 5,
     standfirst:
-      'Fat-washing, clarification, and the realisation that a bar throws away most of what it buys.',
+      'Fat-washing, clarification, and what a bar throws away.',
     body: [
       {
         kind: 'p',

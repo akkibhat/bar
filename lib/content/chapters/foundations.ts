@@ -22,7 +22,7 @@ export const FOUNDATIONS: Chapter[] = [
     title: 'What a cocktail is',
     minutes: 4,
     standfirst:
-      'A definition loose enough to be useless, and the four-part shape hiding underneath it.',
+      'The definition, and the four parts a drink is built from.',
     body: [
       {
         kind: 'p',
@@ -71,7 +71,7 @@ export const FOUNDATIONS: Chapter[] = [
     title: 'A short history',
     minutes: 4,
     standfirst:
-      'Two centuries in one page: a newspaper definition, a drought, a long bad patch, and the recovery.',
+      '1806 to now: the first definition, Prohibition, the lean years, the revival.',
     body: [
       {
         kind: 'p',
@@ -115,7 +115,7 @@ export const FOUNDATIONS: Chapter[] = [
     title: 'From ferment to still',
     minutes: 6,
     standfirst:
-      'Every bottle on the back bar is the same four steps. What separates them is where you stop and what you do next.',
+      'Sugar, ferment, distil, finish. Pot and column stills, and what happens after.',
     body: [
       {
         kind: 'p',
@@ -190,7 +190,7 @@ export const FOUNDATIONS: Chapter[] = [
     title: 'Tasting spirits',
     minutes: 5,
     standfirst:
-      'Not on the course, and the rest of the book is unusable without it. How to get information out of a glass at 40%.',
+      'Not on the course. A method for tasting at 40%, and what to ask.',
     body: [
       {
         kind: 'p',

@@ -23,7 +23,7 @@ export const SERVICE: Chapter[] = [
     title: 'Taking the order',
     minutes: 4,
     standfirst:
-      'Neat, up, on the rocks, short, long. Five phrases that decide the glass, the ice and the pour.',
+      'Neat, up, on the rocks, short, long. What each asks for.',
     body: [
       {
         kind: 'p',
@@ -66,7 +66,7 @@ export const SERVICE: Chapter[] = [
     title: 'Garnish',
     minutes: 5,
     standfirst:
-      'The last thing you do and the first thing they see. Also the thing most likely to be a day old.',
+      'The standard cuts, how to keep them, and what else works.',
     body: [
       {
         kind: 'p',
@@ -124,7 +124,7 @@ export const SERVICE: Chapter[] = [
     title: 'Mixers and the soft side',
     minutes: 4,
     standfirst:
-      'Juice, soda and dairy, all of which go off faster than anything else behind the bar.',
+      'Juice, dairy, soda. The shortest shelf life behind the bar.',
     body: [
       {
         kind: 'p',
@@ -173,7 +173,7 @@ export const SERVICE: Chapter[] = [
     title: 'Being the bartender',
     minutes: 4,
     standfirst:
-      'Six qualities off the course, and the selling that comes with the job.',
+      'Six qualities off the course, and selling without being a salesman.',
     body: [
       {
         kind: 'p',
@@ -219,7 +219,7 @@ export const SERVICE: Chapter[] = [
     title: 'Serving responsibly',
     minutes: 5,
     standfirst:
-      'The largest hole in the course I took. In New Zealand this part is law, not judgement.',
+      'Host responsibility in New Zealand, and what the law asks of you.',
     body: [
       {
         kind: 'p',

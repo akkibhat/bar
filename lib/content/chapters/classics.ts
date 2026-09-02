@@ -28,7 +28,7 @@ export const CLASSICS: Chapter[] = [
     title: 'The sours',
     minutes: 7,
     standfirst:
-      'Spirit, citrus, sweet. Nine drinks that are all the same drink, which is the point.',
+      'Spirit, citrus, sweet. Ten drinks off one template.',
     body: [
       {
         kind: 'p',
@@ -223,7 +223,7 @@ export const CLASSICS: Chapter[] = [
     title: 'Muddled and built',
     minutes: 5,
     standfirst:
-      'Made in the glass, over crushed ice, with something pressed in the bottom of it.',
+      'Four drinks made in the glass, over crushed ice.',
     body: [
       {
         kind: 'p',
@@ -313,7 +313,7 @@ export const CLASSICS: Chapter[] = [
     title: 'Stirred and spirit-forward',
     minutes: 6,
     standfirst:
-      'No citrus, no shaking, nothing cloudy. The drinks where the spirit is the subject.',
+      'No citrus, no shaking. Seven drinks, starting with the Old Fashioned.',
     body: [
       {
         kind: 'p',
@@ -451,7 +451,7 @@ export const CLASSICS: Chapter[] = [
     title: 'After dinner',
     minutes: 4,
     standfirst:
-      'Rich, sweet and mostly dessert. The Flip family, plus one shot that gets set on fire.',
+      'Coffee, cream and chocolate. The Flip family, plus the B52.',
     body: [
       {
         kind: 'p',

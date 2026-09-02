@@ -25,7 +25,7 @@ export const BALANCE: Chapter[] = [
     title: 'Balance',
     minutes: 6,
     standfirst:
-      'Sweet, sour, strong, bitter. The four forces in every glass, and the ratio that resolves them.',
+      'Sweet, sour, strong, bitter. The ratio to memorise, and how to fix a drink.',
     body: [
       {
         kind: 'p',
@@ -102,7 +102,7 @@ export const BALANCE: Chapter[] = [
     title: 'The six families',
     minutes: 6,
     standfirst:
-      'Almost every drink in this book is one of six structures wearing different bottles. Learn the six and the list stops needing memorising.',
+      'Six structures that cover almost every drink here, and how to build on them.',
     body: [
       {
         kind: 'p',
@@ -157,7 +157,7 @@ export const BALANCE: Chapter[] = [
     title: 'Syrups and house ingredients',
     minutes: 5,
     standfirst:
-      'Every recipe in the workbook calls for sugar syrup. None of them says what it is or how to make it.',
+      'Simple syrup and the rest. What the workbook asks for and never explains.',
     body: [
       {
         kind: 'p',
