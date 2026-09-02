@@ -69,7 +69,7 @@ export const GLASSES: Glass[] = [
     name: 'Snifter',
     serve: 'short',
     holds: [250, 500],
-    why: 'The bowl collects aroma and the stem keeps your hand from warming it - though cupping it deliberately is the point with a cognac.',
+    why: 'The bowl collects aroma and the stem keeps your hand from warming it, though a cognac is often cupped deliberately to warm it.',
     drinks: ['Cognac and aged spirits, neat'],
   },
   {

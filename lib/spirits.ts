@@ -177,7 +177,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 2,
     intensity: 4,
     notes: ['Cooked agave', 'Pepper', 'Citrus', 'Mineral'],
-    note: 'Unaged, and the clearest view of what agave actually tastes like. Check the label says 100% agave - anything else is up to 49% other sugars and is where bad tequila memories come from.',
+    note: 'Unaged, and the clearest view of what agave tastes like. Check the label says 100% agave - anything else is up to 49% other sugars and is where bad tequila memories come from.',
     drinkIt: 'Margarita',
   },
   {

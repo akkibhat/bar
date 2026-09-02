@@ -69,7 +69,7 @@ export const FLAVOURS: FlavourFamily[] = [
     name: 'Spice',
     colour: 'var(--flavour-spice)',
     meaning:
-      'Can arrive from either direction - rye grain brings pepper on its own, and a cask brings clove and cinnamon. Worth working out which before drawing a conclusion.',
+      'Can arrive from either direction - rye grain brings pepper on its own, and a cask brings clove and cinnamon. Work out which before drawing a conclusion.',
     descriptors: [
       'Black pepper',
       'Clove',
