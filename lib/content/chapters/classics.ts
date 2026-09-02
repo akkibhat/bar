@@ -223,11 +223,11 @@ export const CLASSICS: Chapter[] = [
     title: 'Muddled and built',
     minutes: 5,
     standfirst:
-      'Four drinks made in the glass, over crushed ice.',
+      'Four drinks built in the glass, three of them muddled over crushed ice.',
     body: [
       {
         kind: 'p',
-        text: 'These are sours built in the serving glass rather than shaken, with fresh fruit doing the acid instead of juice. All three want crushed ice, and all three are better with the sugar added before the ice rather than after.',
+        text: 'These are sours built in the serving glass rather than shaken, with fresh fruit doing the acid instead of juice. The three muddled ones want crushed ice, and all of them are better with the sugar added before the ice rather than after.',
       },
       {
         kind: 'spec',
@@ -317,7 +317,7 @@ export const CLASSICS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Everything here is stirred, because everything here is clear and alcoholic. Negroni, Contessa and Boulevardier are the same drink with one bottle swapped each time. Read them together and the families stop being a theory.',
+        text: 'Everything here is stirred, because everything here is clear and alcoholic. Negroni, Contessa and Boulevardier are the same drink with one bottle swapped each time. Read them together and Part IV\'s families are easy to see.',
       },
       {
         kind: 'spec',
@@ -526,7 +526,7 @@ export const CLASSICS: Chapter[] = [
       {
         kind: 'note',
         title: 'If you are lighting it',
-        text: 'The Grand Marnier on top is what burns. Light it, let it go a few seconds, and put it out before it is handed over - a hot glass rim burns lips, and the drink is not improved by being on fire for longer.',
+        text: 'The Grand Marnier on top is what burns. Light it, let it go a few seconds, and put it out before it is handed over - a hot glass rim burns lips, and there is no benefit to letting it burn longer.',
       },
     ],
   },

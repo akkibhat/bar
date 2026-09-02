@@ -26,30 +26,30 @@ export const FOUNDATIONS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'A cocktail is a mixed drink of two or more ingredients, served at any time, long or short. That is the definition I was given, and it is so wide it takes in a gin and tonic, a Negroni and a glass of orange juice with a dash of something in it. Which is fair enough - the word has been stretched for two hundred years and is not going to snap back now.',
+        text: 'A cocktail is a mixed drink of two or more ingredients, served at any time, long or short. That is the definition I was given, and it is so wide it takes in a gin and tonic, a Negroni and a glass of orange juice with a dash of something in it. The word has been stretched for two hundred years and is not going to snap back now.',
       },
       {
         kind: 'p',
-        text: 'The useful version is narrower. Almost every drink you would want to make is a **spirit base**, something to **sweeten**, something to **sharpen**, and something to **season**. Once you can see those four jobs in a recipe you can read a spec you have never met and guess what it will taste like, and you can fix one that has come out wrong, because you know which of the four to move.',
+        text: 'The useful version is narrower. Almost every drink you would want to make is a **spirit base**, something to **sweeten**, something to **sharpen**, and something to **season**. Once you can see those four jobs in a recipe you can guess what an unfamiliar spec will taste like, and fix one that has come out wrong, because you know which of the four to move.',
       },
       {
         kind: 'note',
         title: 'The shape, in the order it gets built',
-        text: 'Base spirit, then liqueur or syrup, then mixer or juice, then citrus and bitters. That is the running order I wrote in the margin during the first session and it has held up: it is roughly the order of expense, roughly the order of volume, and exactly the order that lets you taste as you go.',
+        text: 'Base spirit, then liqueur or syrup, then mixer or juice, then citrus and bitters. That is the running order I wrote in the margin during the first session and it has held up. It is roughly the order of expense and of volume, and it lets you taste as you go.',
       },
       { kind: 'h', text: 'Long, short, and the words in between' },
       {
         kind: 'p',
-        text: 'A **short** drink is spirit-forward and served in a small glass - a Negroni, an Old Fashioned, a Martini. It is mostly alcohol and it is meant to be sipped. A **long** drink is the same idea diluted with a mixer and served over ice in a tall glass - a Collins, a mule, a highball. Same base, different pace.',
+        text: 'A **short** drink is spirit-forward and served in a small glass - a Negroni, an Old Fashioned, a Martini. It is mostly alcohol and it is meant to be sipped. A **long** drink is the same idea diluted with a mixer and served over ice in a tall glass - a Collins, a mule, a highball.',
       },
       {
         kind: 'p',
-        text: 'A **mocktail** is the same construction with the alcohol left out. The course treated it as an afterthought. It is not one any more, and it gets its own chapter later.',
+        text: 'A **mocktail** is the same construction with the alcohol left out. The course treated it as an afterthought. That is no longer true, and it gets its own chapter later.',
       },
       { kind: 'h', text: 'What the definition leaves out' },
       {
         kind: 'p',
-        text: 'Nothing in the definition mentions balance, and balance decides whether a drink is any good. Two bartenders can follow the same four-part shape and produce a drink you want another of and a drink you do not finish. That gap is what Part IV is about, and it is the single biggest thing missing from the course I took.',
+        text: 'Nothing in the definition mentions balance, and balance decides whether a drink is any good. Two bartenders can follow the same four-part shape and produce a drink you want another of and a drink you do not finish. That gap is what Part IV is about. It is the biggest thing missing from the course I took.',
       },
       {
         kind: 'quote',
@@ -75,7 +75,7 @@ export const FOUNDATIONS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The word turns up in print in 1806, in a New York paper called *The Balance and Columbian Repository*, answering a reader who had asked what a cock-tail was. The answer - spirits, sugar, water and bitters - describes an Old Fashioned. That drink is not a variation on anything; it is the original, and everything else is the variation.',
+        text: 'The word turns up in print in 1806, in a New York paper called *The Balance and Columbian Repository*, answering a reader who had asked what a cock-tail was. The answer - spirits, sugar, water and bitters - describes an Old Fashioned. That drink is the original. Everything else is a variation on it.',
       },
       { kind: 'h', text: 'Prohibition, and what it did to the drinks' },
       {
@@ -93,7 +93,7 @@ export const FOUNDATIONS: Chapter[] = [
       { kind: 'h', text: 'The long bad patch' },
       {
         kind: 'p',
-        text: 'Cocktails fell away through the late sixties and seventies, as other things competed for the same evening. The eighties brought them back, but with sour mix out of a gun and a lot of vodka standing in for gin, because vodka tastes of nothing and nothing is easy to sell.',
+        text: 'Cocktails fell away through the late sixties and seventies, as other things competed for the same evening. The eighties brought them back, but with sour mix out of a gun and a lot of vodka standing in for gin, because vodka tastes of nothing, which is easy to sell.',
       },
       {
         kind: 'p',
@@ -137,7 +137,7 @@ export const FOUNDATIONS: Chapter[] = [
       { kind: 'h', text: 'Two kinds of still' },
       {
         kind: 'p',
-        text: 'A **pot still** is a batch process: fill it, run it, empty it, start again. It is inefficient and it is deliberately so - a single pass gets you to around 25–30%, so most pot-distilled spirits go through twice, landing near 75% before dilution. Because the separation is imperfect, plenty of heavier compounds come across with the alcohol, and those are flavour. Pot stills make characterful spirits: single malt, cognac, aged rum.',
+        text: 'A **pot still** is a batch process: fill it, run it, empty it, start again. It is inefficient on purpose. A single pass gets you to around 25–30%, so most pot-distilled spirits go through twice, landing near 75% before dilution. Because the separation is imperfect, plenty of heavier compounds come across with the alcohol, and those are flavour. Pot stills make characterful spirits: single malt, cognac, aged rum.',
       },
       {
         kind: 'p',
@@ -212,7 +212,7 @@ export const FOUNDATIONS: Chapter[] = [
       { kind: 'h', text: 'What to actually ask' },
       {
         kind: 'p',
-        text: 'Naming fruits is what everyone reaches for first, and it helps least. Better questions, in order:',
+        text: 'Naming fruits is what everyone reaches for first, and it is the least useful. Better questions, in order:',
       },
       {
         kind: 'list',

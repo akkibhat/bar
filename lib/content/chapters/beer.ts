@@ -31,10 +31,10 @@ export const BEER: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Water.** Boring and decisive. Mineral content changes how bitterness reads, which is why Burton pale ales are hoppy and Pilsen lagers are soft - the towns had different water long before anyone knew why it mattered.',
+          '**Water.** Mineral content changes how bitterness reads, which is why Burton pale ales are hoppy and Pilsen lagers are soft - the towns had different water long before anyone knew why it mattered.',
           '**Malt.** Barley, germinated then kilned. The kilning is the dial: pale malt gives bready sweetness, medium gives caramel and toffee, and roasted-to-black gives coffee and chocolate. **Malt is where beer colour comes from** - not from strength, and not from the yeast.',
           '**Hops.** The seasoning. Bitterness to balance malt sweetness, plus aroma. Boiled early they give bitterness and lose aroma; added late or after fermentation they give aroma and almost no bitterness. That timing split is most of what separates a bitter old-school IPA from a modern juicy one.',
-          '**Yeast.** Eats the sugar, makes alcohol, and throws off flavour compounds while doing it. The single biggest fork in the road, and the subject of the next chapter.',
+          '**Yeast.** Eats the sugar, makes alcohol, and throws off flavour compounds while doing it. The biggest single difference between beers, and the subject of the next chapter.',
         ],
       },
       {
@@ -54,7 +54,7 @@ export const BEER: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Compare that to Part I and the shape is familiar. Beer is the fermented wash a grain whisky would be distilled from, stopped one step early and hopped. That is not a coincidence and it is a good way to hold the two categories in the same head.',
+        text: 'Compare that to Part I and the shape is familiar. Beer is the fermented wash a grain whisky would be distilled from, stopped one step early and hopped. That is not a coincidence, and it is a useful way to connect the two.',
       },
     ],
   },
@@ -86,7 +86,7 @@ export const BEER: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Warm yeast is busy yeast: it throws off esters and phenols, which land as banana, pear, clove and pepper. Cold yeast works slowly and quietly and leaves very little of itself behind. That is why a lager tastes clean and a Belgian ale tastes of fruit nobody added.',
+        text: 'Warm yeast is more active: it throws off esters and phenols, which land as banana, pear, clove and pepper. Cold yeast works slowly and quietly and leaves very little of itself behind. That is why a lager tastes clean and a Belgian ale tastes of fruit nobody added.',
       },
       {
         kind: 'p',
@@ -96,7 +96,7 @@ export const BEER: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Pilsner** - pale lager, crisp, noticeably hoppy. The template most mass-market lager is a faded copy of.',
+          '**Pilsner** - pale lager, crisp, noticeably hoppy. The template most mass-market lager copies.',
           '**Pale ale and IPA** - hop-forward ales. IPA is stronger and more bitter historically; the modern hazy version trades bitterness for aroma and reads almost like juice.',
           '**Stout and porter** - dark ales from roasted malt. Coffee, chocolate, sometimes a dry mineral finish.',
           '**Wheat beer** - a large share of wheat alongside barley. Hazy, soft, and in the German version strongly banana-and-clove from the yeast.',

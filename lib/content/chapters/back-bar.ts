@@ -26,12 +26,12 @@ export const BACK_BAR: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'These two belong together because they start in the same place: a high-strength neutral spirit off a column still, usually from grain, sometimes from potato or beet. What happens next is the entire difference.',
+        text: 'These two belong together because they start in the same place: a high-strength neutral spirit off a column still, usually from grain, sometimes from potato or beet. What happens next is the difference.',
       },
       { kind: 'h', text: 'Vodka' },
       {
         kind: 'p',
-        text: 'Vodka is distilled to 90–96% and filtered specifically to strip flavour out. It is unaged and, in the ideal that the category sells itself on, tastes of nothing. That is a real engineering achievement, and it also makes vodka the least interesting bottle on the shelf to talk about.',
+        text: 'Vodka is distilled to 90–96% and filtered specifically to strip flavour out. It is unaged and, in the ideal that the category sells itself on, tastes of nothing. That is an engineering achievement, and it also leaves little to say about the bottle.',
       },
       {
         kind: 'p',
@@ -40,7 +40,7 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'note',
         title: 'Where it earns its place',
-        text: 'Vodka is the right answer when you want the other ingredients to be the drink. An Espresso Martini works because nothing argues with the coffee. Substituting gin there does not make it more interesting, it makes it a different and worse drink.',
+        text: 'Vodka is the right answer when you want the other ingredients to be the drink. An Espresso Martini works because nothing argues with the coffee. Substituting gin makes a different drink, and a worse one.',
       },
       { kind: 'h', text: 'Gin' },
       {
@@ -57,7 +57,7 @@ export const BACK_BAR: Chapter[] = [
           '**London Dry** - the dry, juniper-forward benchmark. A method rather than a place: nothing may be added after distillation but water. This is what a recipe means when it just says "gin".',
           '**Plymouth** - softer, earthier, slightly sweeter. A protected name from one distillery.',
           '**Old Tom** - lightly sweetened, the historical style. What a Tom Collins was originally built on.',
-          '**New Western / contemporary** - juniper present but pulled back in favour of citrus or floral botanicals. Fine in its own right, and it will change a Martini underneath you.',
+          '**New Western / contemporary** - juniper present but pulled back in favour of citrus or floral botanicals. Fine in its own right, and it will change a Martini.',
         ],
       },
       {
@@ -84,7 +84,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The spelling is the easiest thing to get right and the thing people fuss over most. **Scotland, Canada and Japan write whisky. Ireland and the United States write whiskey.** The reliable memory aid: countries with an E in the name tend to use the E. Jameson is the exception that proves nothing, since Ireland has one.',
+        text: 'The spelling gets fussed over more than it deserves. **Scotland, Canada and Japan write whisky. Ireland and the United States write whiskey.** The memory aid: countries with an E in the name tend to use the E.',
       },
       { kind: 'h', text: 'Malt and grain' },
       {
@@ -146,11 +146,11 @@ export const BACK_BAR: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Rum is distilled from sugarcane - either from molasses, the thick residue left after sugar is crystallised out, or from fresh-pressed cane juice. Molasses is the usual route and gives the deep, slightly funky character most people mean by rum. Fresh juice gives *rhum agricole*, mostly from Martinique, which tastes grassy and vegetal and surprises people expecting sweetness.',
+        text: 'Rum is distilled from sugarcane - either from molasses, the thick residue left after sugar is crystallised out, or from fresh-pressed cane juice. Molasses is the usual route and gives the deep, slightly funky character most people mean by rum. Fresh juice gives *rhum agricole*, mostly from Martinique, which tastes grassy and vegetal rather than sweet.',
       },
       {
         kind: 'p',
-        text: 'The course taught rum in three colours. Learn the framing, then distrust it.',
+        text: 'The course taught rum in three colours. The framing is worth knowing, and it does not tell you much.',
       },
       {
         kind: 'list',
@@ -193,7 +193,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The sugar in agave is stored as inulin, which yeast cannot eat, so the piñas are cooked to break it down. **How they are cooked is the whole difference between tequila and mezcal.** Tequila steams them in ovens or autoclaves. Mezcal roasts them in a pit lined with hot rocks and covered over, which is where the smoke comes from - it is not a peat-style drying step, it is the cooking itself.',
+        text: 'The sugar in agave is stored as inulin, which yeast cannot eat, so the piñas are cooked to break it down. **How they are cooked is the main difference between tequila and mezcal.** Tequila steams them in ovens or autoclaves. Mezcal roasts them in a pit lined with hot rocks and covered over, which is where the smoke comes from - it is not a peat-style drying step, it is the cooking itself.',
       },
       {
         kind: 'table',
@@ -209,7 +209,7 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'note',
         title: 'The one thing to check on a label',
-        text: 'If the bottle does not say **100% agave**, it is a *mixto* - legally up to 49% of the fermentable sugar can come from somewhere else, usually cane. That is the stuff behind most bad memories of tequila. The difference in a Margarita is not subtle.',
+        text: 'If the bottle does not say **100% agave**, it is a *mixto* - legally up to 49% of the fermentable sugar can come from somewhere else, usually cane. That is behind most bad memories of tequila. The difference in a Margarita is obvious.',
       },
       {
         kind: 'p',
@@ -235,7 +235,7 @@ export const BACK_BAR: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Brandy is distilled wine. Widen that to distilled fruit and you take in most of the family - apple, pear, plum, cherry. It is the oldest of the mixing spirits and it spent most of the twentieth century being thought of as something a grandfather drinks, which is unfair to it.',
+        text: 'Brandy is distilled wine. Widen that to distilled fruit and you take in most of the family - apple, pear, plum, cherry. It is the oldest of the mixing spirits and spent most of the twentieth century being thought of as something a grandfather drinks.',
       },
       { kind: 'h', text: 'The grape ones' },
       {
@@ -268,7 +268,7 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'note',
         title: 'Serving it',
-        text: 'A snifter, at room temperature or barely warmed in the hand. Not set on fire, not heated over a flame - that boils off the aromatics you paid for. Ice and a splash of water is a perfectly respectable way to drink one and nobody in Cognac would mind.',
+        text: 'A snifter, at room temperature or barely warmed in the hand. Not set on fire, not heated over a flame - that boils off the aromatics. Ice and a splash of water is a perfectly respectable way to drink one.',
       },
       {
         kind: 'p',
@@ -289,7 +289,7 @@ export const BACK_BAR: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'A liqueur is a spirit that has been sweetened and flavoured. That is the whole definition. Most use a neutral base so the flavouring is the point; some use brandy, whisky or rum, and those tend to be the ones with a house secret attached.',
+        text: 'A liqueur is a spirit that has been sweetened and flavoured. That is the definition. Most use a neutral base so the flavouring carries the bottle; some use brandy, whisky or rum, and those tend to be the older proprietary ones.',
       },
       {
         kind: 'p',
@@ -353,7 +353,7 @@ export const BACK_BAR: Chapter[] = [
       { kind: 'h', text: 'Fortified wine' },
       {
         kind: 'p',
-        text: 'Fortified wine is wine with a spirit - usually grape spirit - added to it. That raises the strength to roughly 15–22%, and if it is added *during* fermentation it also kills the yeast early, leaving the unfermented sugar behind. Which is why the sweet ones are sweet: the sweetness was never fermented out.',
+        text: 'Fortified wine is wine with a spirit - usually grape spirit - added to it. That raises the strength to roughly 15–22%, and if it is added *during* fermentation it also kills the yeast early, leaving the unfermented sugar behind. That is why the sweet ones are sweet: the sugar was never fermented out.',
       },
       {
         kind: 'list',
@@ -367,11 +367,11 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'note',
         title: 'The mistake everyone makes',
-        text: 'Vermouth is treated like a spirit and kept on the back bar at room temperature for a year. It is a wine. An oxidised bottle is the single most common reason a home Martini or Manhattan tastes flat and slightly stale, and no amount of good gin fixes it.',
+        text: 'Vermouth is treated like a spirit and kept on the back bar at room temperature for a year. It is a wine. An oxidised bottle is the most common reason a home Martini or Manhattan tastes flat and slightly stale. Good gin does not fix it.',
       },
       {
         kind: 'p',
-        text: 'The bitter aperitifs - Campari, Aperol, and the amari behind them - are their own small world, and they carry the Negroni, the Boulevardier, the Contessa and the spritz between them. They are covered properly in the next chapter, since bitterness is a structural ingredient rather than a flavour you add at the end.',
+        text: 'The bitter aperitifs - Campari, Aperol, and the amari behind them - are a category of their own, and they carry the Negroni, the Boulevardier, the Contessa and the spritz. They are covered properly in the next chapter, since bitterness is a structural ingredient rather than a flavour you add at the end.',
       },
     ],
   },
@@ -392,7 +392,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'They exist because bitterness is a structural element, not a flavour. Sweet and sour can balance each other into something flat and cloying; a few dashes of bitters give the drink an edge to push against and pull the other elements into focus. The usual analogy is salt in cooking, and it is a good one - you do not taste it as itself, you notice its absence.',
+        text: 'They exist because bitterness is a structural element, not a flavour. Sweet and sour can balance each other into something flat and cloying; a few dashes of bitters give the drink an edge and pull the other elements into focus. The usual analogy is salt in cooking, and it is a good one - you do not taste it as itself, you notice its absence.',
       },
       {
         kind: 'list',
@@ -410,7 +410,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'A bottle of Angostura will outlive most of the bar - it is roughly 45% alcohol and used a few drops at a time. The distinctive oversized paper label is a printing error nobody ever corrected.',
+        text: 'A bottle of Angostura lasts for years - it is roughly 45% alcohol and used a few drops at a time. The distinctive oversized paper label is a printing error nobody ever corrected.',
       },
       {
         kind: 'unsure',

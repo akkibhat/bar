@@ -26,7 +26,7 @@ export const TECHNIQUE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Seven ways to combine a drink. Most recipes use one; a few use two. The choice is not stylistic - each method chills, dilutes and aerates by a different amount, and those are the three things that decide what lands in the glass.',
+        text: 'Seven ways to combine a drink. Most recipes use one; a few use two. The choice is not stylistic - each method chills, dilutes and aerates by a different amount, and those three decide how the drink comes out.',
       },
       { kind: 'h', text: 'Shaking' },
       {
@@ -49,13 +49,13 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'note',
         title: 'The whole decision, in one line',
-        text: 'If everything in the glass is clear and alcoholic, stir it. If anything in it is cloudy - juice, cream, egg, syrup - shake it. There is no third case worth worrying about.',
+        text: 'If everything in the glass is clear and alcoholic, stir it. If anything in it is cloudy - juice, cream, egg, syrup - shake it. There is no third case.',
       },
       { kind: 'tool', tool: 'method' },
       { kind: 'h', text: 'Muddling' },
       {
         kind: 'p',
-        text: 'Pressing fruit or herbs to release what is in them, with a muddler, in the bottom of the glass or the shaker. Fruit takes real pressure. **Herbs do not** - mint should be pressed just enough to release its oil, and grinding it releases chlorophyll instead, which is bitter and tastes of lawn. A firm press and a twist is enough.',
+        text: 'Pressing fruit or herbs to release what is in them, with a muddler, in the bottom of the glass or the shaker. Fruit takes real pressure. **Herbs do not** - mint should be pressed just enough to release its oil, and grinding it releases chlorophyll instead, which is bitter and grassy. A firm press and a twist is enough.',
       },
       { kind: 'h', text: 'Building' },
       {
@@ -75,7 +75,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Flaming' },
       {
         kind: 'p',
-        text: 'Setting a high-proof spirit alight, which caramelises sugar and changes the aroma. It has one real use: flaming an orange twist over a drink changes what it smells like. The rest is theatre.',
+        text: 'Setting a high-proof spirit alight, which caramelises sugar and changes the aroma. It has one real use: flaming an orange twist over a drink changes the aroma. Beyond that it is display.',
       },
       {
         kind: 'note',
@@ -101,7 +101,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'That is worth sitting with, because it kills a common instinct. You cannot shake a drink "just to chill it" and avoid watering it down. The cold *comes from* the ice melting - melting is what absorbs the heat. A shaken drink finishes around 20–25% water by volume, and that water is part of the recipe whether or not the recipe mentions it.',
+        text: 'That rules out a common instinct. You cannot shake a drink "just to chill it" and avoid watering it down. The cold *comes from* the ice melting - melting is what absorbs the heat. A shaken drink finishes around 20–25% water by volume, and that water is part of the recipe whether or not the recipe mentions it.',
       },
       { kind: 'tool', tool: 'dilution' },
       { kind: 'h', text: 'Size, and why it matters' },
@@ -120,7 +120,7 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'note',
         title: 'Fill the glass',
-        text: 'A half-filled highball melts faster than a full one, not slower. Less ice means each piece takes more heat, so it melts quicker and the drink is warm and watery inside ten minutes. More ice is less dilution. It is the least intuitive thing behind a bar, and among the most useful.',
+        text: 'A half-filled highball melts faster than a full one, not slower. Less ice means each piece takes more heat, so it melts quicker and the drink is warm and watery inside ten minutes. More ice is less dilution. It is counter-intuitive and worth remembering.',
       },
       { kind: 'h', text: 'Clear ice' },
       {
@@ -155,7 +155,7 @@ export const TECHNIQUE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Consistency separates a bar from a kitchen where someone is guessing. A guest who liked a drink last week is ordering the same drink, and the only way to give them one is to measure.',
+        text: 'Consistency is what separates a bar from guesswork. A guest who liked a drink last week is ordering the same drink, and the only way to give them one is to measure.',
       },
       { kind: 'h', text: 'Jiggers' },
       {
@@ -169,7 +169,7 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'note',
         title: 'Free pouring',
-        text: 'Counting through a pour spout is a real skill and takes months of practice with a measured bottle to build. It is also the first thing to go when a bar is busy, which is exactly when consistency matters most. Measure.',
+        text: 'Counting through a pour spout is a real skill and takes months of practice with a measured bottle to build. It is also the first thing to go when a bar is busy, which is when consistency matters most. Use a jigger.',
       },
       { kind: 'h', text: 'The rest of the perfect serve' },
       {
@@ -188,7 +188,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'None of the five is difficult. All five going right at once, for every drink, on a busy night, is the job.',
+        text: 'None of the five is difficult. Doing all five for every drink on a busy night is.',
       },
     ],
   },
@@ -211,7 +211,7 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'steps',
         items: [
-          'Combine everything in the shaker **without ice** and shake hard for about ten seconds. No ice is the whole point: the proteins denature and foam far better warm, and ice would chill the mixture before the foam forms.',
+          'Combine everything in the shaker **without ice** and shake hard for about ten seconds. No ice matters here: the proteins denature and foam far better warm, and ice would chill the mixture before the foam forms.',
           'Add ice and shake again, the normal way, to chill and dilute.',
           'Double strain into the glass - through the hawthorne and a fine sieve - to catch any chalaza.',
           'Let it settle for a few seconds. The foam separates and sits up on its own.',
@@ -225,12 +225,12 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Aquafaba' },
       {
         kind: 'p',
-        text: 'The liquid from a tin of chickpeas. It foams almost identically, and about 20–25 ml stands in for one egg white. Vegan, no allergen, and it keeps in the fridge for several days. Rinse the tin liquid choice matters - use unsalted if you can, and it tastes of nothing in a finished drink.',
+        text: 'The liquid from a tin of chickpeas. It foams almost identically, and about 20–25 ml stands in for one egg white. Vegan, no allergen, and it keeps in the fridge for several days. Use unsalted if you can; it tastes of nothing in a finished drink.',
       },
       { kind: 'h', text: 'Safety, plainly' },
       {
         kind: 'p',
-        text: 'Raw egg carries a small salmonella risk. Fresh, refrigerated, in-date eggs, cracked to order and never left sitting in a pre-batch. The risk is genuinely low, and it is not zero, and anyone pregnant, elderly, very young or immunocompromised should be given the aquafaba version without having to ask. Say "contains raw egg" when you put it down.',
+        text: 'Raw egg carries a small salmonella risk. Fresh, refrigerated, in-date eggs, cracked to order and never left sitting in a pre-batch. The risk is low but not zero. Anyone pregnant, elderly, very young or immunocompromised should be given the aquafaba version without having to ask. Say "contains raw egg" when you put it down.',
       },
       {
         kind: 'p',

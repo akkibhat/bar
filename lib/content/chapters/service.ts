@@ -88,7 +88,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'note',
         title: 'A twist is squeezed, not dropped',
-        text: 'Hold the peel skin-side down over the glass and pinch it, so the oil sprays across the surface. Then wipe it round the rim and drop it in. Dropping it in without squeezing wastes the only thing it was there for.',
+        text: 'Hold the peel skin-side down over the glass and pinch it, so the oil sprays across the surface. Then wipe it round the rim and drop it in. Dropping it in without squeezing wastes the oil.',
       },
       { kind: 'h', text: 'Keeping it' },
       {
@@ -100,7 +100,7 @@ export const SERVICE: Chapter[] = [
           'Store whole fruit cold, dry, dark, and off the floor.',
           'Never leave garnishes sitting submerged in water - it leaches them and they go limp.',
           'To refresh, cover briefly with soda water and drain immediately.',
-          'Refuse poor fruit. A tired lime makes a tired garnish and there is no technique that rescues it.',
+          'Refuse poor fruit. A tired lime makes a tired garnish, and nothing rescues it.',
         ],
       },
       { kind: 'h', text: 'Beyond fruit' },
@@ -111,7 +111,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'note',
         title: 'Less is more',
-        text: 'A garnish that has to be dismantled before the guest can drink is a garnish that has gone wrong. If it does not add aroma, flavour or a clear signal about what the drink is, it is in the way.',
+        text: 'A garnish that has to be dismantled before the guest can drink has gone wrong. If it does not add aroma, flavour or a clear signal about what the drink is, it is in the way.',
       },
     ],
   },
@@ -128,7 +128,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Everything on this page has a shelf life measured in days, which makes it the part of the bar most likely to spoil a drink made correctly out of good spirits.',
+        text: 'Everything on this page has a shelf life measured in days. It is the most likely part of the bar to spoil an otherwise good drink.',
       },
       { kind: 'h', text: 'Juice' },
       {
@@ -183,11 +183,11 @@ export const SERVICE: Chapter[] = [
         kind: 'list',
         items: [
           '**Memory.** Every drink on the list, plus who ordered what, plus which tab it goes on, plus the regulars\' names. All at once, all night.',
-          '**Calm under pressure.** Things go wrong at the busiest moment, because that is when there are most things to go wrong. Being visibly rattled spreads down the queue.',
+          '**Calm under pressure.** Things go wrong at the busiest moment. Being visibly rattled spreads down the queue.',
           '**Friendly and outgoing.** A large part of the job is talking to people. It is also the selling half - nobody buys a second round from someone who seems to want them gone.',
-          '**Consistency.** Same drink, same way, every time, whether it is the first of the night or the last. This is the one that actually separates people.',
-          '**Cleanliness.** The bar, the tools, the glassware, before, during and after. A health requirement, and the thing every guest silently judges.',
-          '**Trustworthiness.** You handle the till, the stock and the free pours. A bar runs on being able to leave someone alone with all three.',
+          '**Consistency.** Same drink, same way, every time, whether it is the first of the night or the last. This is the one that separates people.',
+          '**Cleanliness.** The bar, the tools, the glassware, before, during and after. A health requirement, and the first thing a guest notices.',
+          '**Trustworthiness.** You handle the till, the stock and the free pours. A bar has to be able to leave someone alone with all three.',
         ],
       },
       { kind: 'h', text: 'Selling without being a salesman' },
@@ -199,7 +199,7 @@ export const SERVICE: Chapter[] = [
         kind: 'list',
         items: [
           '**Upsell within the brand they already chose.** If someone asks for a gin and tonic, offering a gin they might like better is a service. Steering them to whatever carries the best margin is not, and people can tell.',
-          '**Signature serves.** One or two drinks that only this bar makes. They are what gets described to someone else later.',
+          '**Signature serves.** One or two drinks that only this bar makes. They are what people describe to someone else later.',
           '**Seasonal serves.** Hot drinks in winter, long ones with crushed ice in summer. Often the same base spirit dressed differently, which costs nothing and reads as effort.',
         ],
       },
@@ -223,7 +223,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The workbook covers upselling, garnish shelf life and how to hold a glass, and says nothing at all about refusing service, checking identification, or the legislation the whole trade sits under. That is a strange omission for a hospitality qualification, and it is the one gap in this book I would not want anyone to work from.',
+        text: 'The workbook covers upselling, garnish shelf life and how to hold a glass, and says nothing at all about refusing service, checking identification, or the legislation the whole trade sits under. That is a strange omission for a hospitality qualification, and the one gap here I would not want anyone working from.',
       },
       {
         kind: 'p',

@@ -30,7 +30,7 @@ export const KIT: Chapter[] = [
       {
         kind: 'note',
         title: 'Hold it by the stem',
-        text: 'If it has a stem, hold the stem. If it does not, hold the bottom third. A hand wrapped round the bowl warms a drink that was chilled to almost freezing, and leaves prints on the one part of the service the guest looks at.',
+        text: 'If it has a stem, hold the stem. If it does not, hold the bottom third. A hand wrapped round the bowl warms a drink that was chilled to almost freezing, and leaves prints on the glass.',
       },
       { kind: 'h', text: 'Short and stemmed' },
       {
@@ -98,7 +98,7 @@ export const KIT: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'A working station is small. Almost everything below fits within one arm\'s reach of where you stand, because every step you take during service is a step you take a few hundred times a night.',
+        text: 'A working station is small. Almost everything below fits within one arm\'s reach of where you stand, because any step you take during service you take a few hundred times a night.',
       },
       { kind: 'h', text: 'Mixing' },
       {
@@ -165,13 +165,13 @@ export const KIT: Chapter[] = [
           '**Juices and perishables chilled and close.** Anything that goes in a drink cold has to be cold before it goes in.',
           '**Garnishes at hand and covered**, prepped for the shift.',
           '**Ice wells within reach of both hands.**',
-          '**Everything tidy, constantly.** Not a virtue - a speed requirement. You cannot find things in a mess at eleven on a Friday.',
+          '**Everything tidy, constantly.** It is a speed requirement. You cannot find things in a mess at eleven on a Friday.',
         ],
       },
       { kind: 'h', text: 'The speed rail' },
       {
         kind: 'p',
-        text: 'The trough of bottles directly in front of the station holds the pours that make up most of the night: the house gin, vodka, rum, whisky, tequila, triple sec, and the two vermouths. They are arranged in the same order every shift, so your hand learns where they are and you stop looking.',
+        text: 'The trough of bottles directly in front of the station holds the pours that make up most of the night: the house gin, vodka, rum, whisky, tequila, triple sec, and the two vermouths. They are arranged in the same order every shift, so you can find them without looking.',
       },
       { kind: 'h', text: 'The barback' },
       {

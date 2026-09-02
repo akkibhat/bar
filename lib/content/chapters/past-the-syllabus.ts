@@ -45,13 +45,13 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: '**Add the water to the batch.** A stirred drink finishes around 20–25% water by volume, and a shaken one a little more. So for a stirred batch, add water equal to roughly a fifth of the total and chill the whole thing in the fridge or freezer. Then it pours ready, over ice, and tastes like the drink it is supposed to be.',
+        text: '**Add the water to the batch.** A stirred drink finishes around 20–25% water by volume, and a shaken one a little more. So for a stirred batch, add water equal to roughly a fifth of the total and chill the whole thing in the fridge or freezer. Then it pours straight over ice and tastes right.',
       },
       { kind: 'tool', tool: 'dilution' },
       {
         kind: 'note',
         title: 'A Negroni for twelve',
-        text: '360 ml gin, 360 ml Campari, 360 ml sweet vermouth, plus about 220 ml water. That is 1.3 litres, which is twelve 110 ml pours. Bottle it, keep it in the fridge, pour over a large cube and add the orange zest at the glass. Nobody can tell.',
+        text: '360 ml gin, 360 ml Campari, 360 ml sweet vermouth, plus about 220 ml water. That is 1.3 litres, which is twelve 110 ml pours. Bottle it, keep it in the fridge, pour over a large cube and add the orange zest at the glass. Nobody can tell it was batched.',
       },
       {
         kind: 'p',
@@ -72,7 +72,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The course covered non-alcoholic drinks in a page about cordial shelf life, and its one good instinct was that a soft drink should be **dressed** to the same standard as everything else. That instinct has since become an industry.',
+        text: 'The course covered non-alcoholic drinks in a page about cordial shelf life, and its one good instinct was that a soft drink should be **dressed** to the same standard as everything else. It has since become a category in its own right.',
       },
       {
         kind: 'p',
@@ -88,7 +88,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
         items: [
           '**Acid.** The most important lever. Citrus, verjuice, or a splash of vinegar. Without it a zero-proof drink is flat and sweet.',
           '**Bitterness.** Strong tea, coffee, grapefruit, chinotto, or non-alcoholic aperitifs. This is what makes a drink read as adult.',
-          '**Tannin and body.** Over-brewed black tea is the cheapest trick behind the bar and does an astonishing amount of the work.',
+          '**Tannin and body.** Over-brewed black tea is the cheapest trick behind the bar and does a lot of the work.',
           '**Heat.** Ginger, chilli, pink peppercorn. Stands in for the alcohol\'s bite.',
           '**Salt.** A pinch, or a couple of drops of saline. Lifts everything, the same way it does in food.',
         ],
@@ -141,7 +141,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'A brown-butter bourbon Old Fashioned is the usual demonstration, and it is a good one.',
+        text: 'A brown-butter bourbon Old Fashioned is the usual demonstration.',
       },
       { kind: 'h', text: 'Clarification' },
       {
@@ -155,7 +155,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       { kind: 'h', text: 'Waste' },
       {
         kind: 'p',
-        text: 'A bar juices a case of limes and bins the husks, cuts garnish and bins the offcuts, and pours away what does not get drunk. Once you notice it, it is difficult to stop noticing.',
+        text: 'A bar juices a case of limes and bins the husks, cuts garnish and bins the offcuts, and pours away what does not get drunk. The volume adds up quickly.',
       },
       {
         kind: 'list',

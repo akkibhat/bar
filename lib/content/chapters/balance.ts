@@ -36,8 +36,8 @@ export const BALANCE: Chapter[] = [
         items: [
           '**Strong** - the base spirit. Sets the weight of the drink and how much of everything else it can carry.',
           '**Sweet** - syrup, liqueur, sugar. Softens acid and alcohol, and adds body: sugar makes a drink feel thicker as well as taste sweeter.',
-          '**Sour** - citrus, almost always lemon or lime. Cuts sweetness, and is the single largest reason a drink tastes fresh.',
-          '**Bitter** - bitters, amari, or the botanical edge in gin. Stops sweet and sour resolving into something flat and gives the drink a spine.',
+          '**Sour** - citrus, almost always lemon or lime. Cuts sweetness, and is the main reason a drink tastes fresh.',
+          '**Bitter** - bitters, amari, or the botanical edge in gin. Stops sweet and sour resolving into something flat, and gives the drink definition.',
         ],
       },
       { kind: 'h', text: 'The ratio worth memorising' },
@@ -47,7 +47,7 @@ export const BALANCE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Go back through the workbook specs with that in your head and it is everywhere. The Daiquiri is 60 rum, 20 lime, 20 sugar - near enough. The Margarita is 60 : 25 : 30. The Whiskey Sour is 45 : 25 : 20. The White Lady is 40 gin, 30 Cointreau, 20 lemon, where the Cointreau is doing the sweetening. Same drink, four bottles.',
+        text: 'Go back through the workbook specs with that in your head and it is everywhere. The Daiquiri is 60 rum, 20 lime, 20 sugar - near enough. The Margarita is 60 : 25 : 30. The Whiskey Sour is 45 : 25 : 20. The White Lady is 40 gin, 30 Cointreau, 20 lemon, where the Cointreau is doing the sweetening.',
       },
       {
         kind: 'note',
@@ -106,17 +106,17 @@ export const BALANCE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The classics chapter at the end of this book holds about twenty-five recipes. Presented as a list, that is twenty-five things to remember. Presented as structures, it is six - and the six generate far more than twenty-five.',
+        text: 'The classics chapter at the end of this book holds about twenty-five recipes. As a list, that is twenty-five things to remember. As structures, it is six, and the six cover far more than twenty-five drinks.',
       },
       {
         kind: 'p',
-        text: 'The families are sorted by what holds the drink together, not by which spirit is in it. A Negroni and a Boulevardier are the same drink, and no ingredient-based sorting will ever tell you so.',
+        text: 'The families are sorted by what holds the drink together, not by which spirit is in it. A Negroni and a Boulevardier are the same drink, and sorting by ingredient will not tell you that.',
       },
       { kind: 'tool', tool: 'families' },
       { kind: 'h', text: 'Reading the table' },
       {
         kind: 'p',
-        text: 'Take the **Old Fashioned**: spirit, a little sugar, bitters, ice, a twist. Swap bourbon for aged rum and it is still an Old Fashioned. Swap the sugar for maple and you have made a variation people put on menus. The structure absorbs the change.',
+        text: 'Take the **Old Fashioned**: spirit, a little sugar, bitters, ice, a twist. Swap bourbon for aged rum and it is still an Old Fashioned. Swap the sugar for maple and you have made a variation people put on menus.',
       },
       {
         kind: 'p',
@@ -166,7 +166,7 @@ export const BALANCE: Chapter[] = [
       { kind: 'h', text: 'Simple syrup' },
       {
         kind: 'p',
-        text: 'Sugar and water, warmed until clear. The ratio is a decision, not a given:',
+        text: 'Sugar and water, warmed until clear. Two ratios are in common use:',
       },
       {
         kind: 'table',
@@ -183,7 +183,7 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'note',
         title: 'It does not need boiling',
-        text: 'Warm water and stirring is enough. Boiling drives off water, so the syrup ends up stronger than intended and the ratio you carefully measured is no longer the ratio you have.',
+        text: 'Warm water and stirring is enough. Boiling drives off water, so the syrup ends up stronger than intended and the ratio is no longer what you measured.',
       },
       { kind: 'h', text: 'The others worth having' },
       {
@@ -193,7 +193,7 @@ export const BALANCE: Chapter[] = [
           '**Honey syrup** - 3 : 1 honey to warm water, because neat honey seizes in a cold shaker.',
           '**Agave syrup** - thin it the same way. The default sweetener for tequila and mezcal drinks.',
           '**Grenadine** - pomegranate, not the red chemical sweetener sold under the name. Equal parts pomegranate juice and sugar. Genuinely worth making.',
-          '**Orgeat** - almond and orange flower. Fiddly, and the thing that makes a Mai Tai taste like a Mai Tai.',
+          '**Orgeat** - almond and orange flower. Fiddly, and essential to a Mai Tai.',
           '**Oleo saccharum** - citrus peels buried in sugar for a few hours. The sugar draws the oil out of the peel and you get an intensely citrus syrup from fruit you were going to throw away.',
         ],
       },
@@ -205,7 +205,7 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'note',
         title: 'Citrus is a house ingredient too',
-        text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more - this is one of the few places where doing it properly costs real time and there is no way around it.',
+        text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more. Doing it properly costs real time, and there is no way around it.',
       },
       {
         kind: 'unsure',
