@@ -41,11 +41,19 @@
  *
  * WHAT IT WILL NOT TOUCH
  *
- * Anything the exporter marked READ-ONLY - tables, specs, tools. Those
- * are structure rather than prose and would not survive a round trip
- * through Markdown safely. Adding and deleting blocks is not supported
- * either: both renumber everything after them, and getting that wrong
- * moves prose between chapters. Do those in TypeScript.
+ * Anything the exporter marked READ-ONLY - specs and tools. A spec holds
+ * more fields than the export shows, so importing one back would drop
+ * the ones it cannot see; a tool is a component reference. Adding and
+ * deleting blocks is not supported either: both renumber everything
+ * after them, and getting that wrong moves prose between chapters. Do
+ * those in TypeScript.
+ *
+ * TABLES
+ *
+ * Tables do come back in. Edit the cells freely; keep the pipes, the
+ * header and the |---| line. Adding or removing a COLUMN is refused,
+ * because a column is structure and the source array would have to
+ * change shape - but adding, removing and rewriting rows all work.
  *
  * APOSTROPHES
  *
@@ -165,6 +173,42 @@ const itemsOf = (block) =>
   tidy(block.body)
     .filter((l) => /^\s*(?:[-*]|\d+\.)\s+/.test(l))
     .map((l) => l.replace(/^\s*(?:[-*]|\d+\.)\s+/, '').trim());
+
+/**
+ * A Markdown table read back into `head` and `rows`.
+ *
+ * Returns null rather than a half-parsed table if the shape is wrong -
+ * fewer than three lines, or a missing separator row. The caller checks
+ * the column counts, since that is the mistake worth naming precisely.
+ */
+function tableOf(block) {
+  const lines = tidy(block.body).filter((l) => l.trim().startsWith('|'));
+  if (lines.length < 3) return null;
+
+  const cells = (l) =>
+    l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+
+  if (!/^\|[\s|:-]+\|$/.test(lines[1].trim())) return null;
+
+  return { head: cells(lines[0]), rows: lines.slice(2).map(cells) };
+}
+
+/**
+ * A table as it is written in the source: the `head` line and the `rows`
+ * array together, as one literal.
+ *
+ * Together, because apart they are not unique - the glassware chapter
+ * has four tables sharing the header `['Glass', 'Holds', 'What goes in
+ * it']`, and swapping on that alone would rewrite the wrong one.
+ */
+function tableLiteral(head, rows, nl, pad) {
+  const arr = (xs) => `[${xs.map((x) => `'${lit(x)}'`).join(', ')}]`;
+  return (
+    `head: ${arr(head)},${nl}${pad.slice(2)}rows: [${nl}` +
+    rows.map((r) => `${pad}${arr(r)},`).join(nl) +
+    `${nl}${pad.slice(2)}]`
+  );
+}
 
 function quoteOf(block) {
   const lines = unQuote(tidy(block.body));
@@ -323,6 +367,53 @@ for (const block of parsed) {
         break;
       }
       next.forEach((n, i) => swap(file, old.items[i], n, `${label}[${i}]`));
+      break;
+    }
+
+    case 'table': {
+      const next = tableOf(block);
+      if (!next) {
+        skips.push(`${label} - could not read that as a table; keep the header and the |---| line`);
+        break;
+      }
+      if (next.head.length !== old.head.length) {
+        skips.push(
+          `${label} - the header has ${next.head.length} columns, the source has ${old.head.length}; adding or removing a column is a TypeScript job`,
+        );
+        break;
+      }
+      const bad = next.rows.findIndex((r) => r.length !== next.head.length);
+      if (bad !== -1) {
+        skips.push(
+          `${label} - row ${bad + 1} has ${next.rows[bad].length} cells and the header has ${next.head.length}; a stray or missing | does this`,
+        );
+        break;
+      }
+
+      /* Cells are short and repeat - "Yes", "30 ml" - so swapping them
+         one at a time would not be safely unique. The head and rows go
+         back as a single literal instead. */
+      const text = files.get(file);
+      const nl = text.includes('\r\n') ? '\r\n' : '\n';
+      const pad = ['          ', '        ', '            '].find((p) =>
+        text.includes(tableLiteral(old.head, old.rows, nl, p)),
+      );
+      if (!pad) {
+        skips.push(`${label} - the table could not be matched in ${file} to rewrite`);
+        break;
+      }
+      const oldLit = tableLiteral(old.head, old.rows, nl, pad);
+      const newLit = tableLiteral(next.head, next.rows, nl, pad);
+      if (oldLit === newLit) {
+        unchanged += 1;
+        break;
+      }
+      changes.push({
+        file,
+        needle: oldLit,
+        replacement: newLit,
+        label: `${label} (${old.rows.length} -> ${next.rows.length} rows)`,
+      });
       break;
     }
 

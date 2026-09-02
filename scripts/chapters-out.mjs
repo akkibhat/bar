@@ -28,11 +28,18 @@
  *
  * WHAT IS READ-ONLY
  *
- * Tables, drink specs and embedded tools export marked READ-ONLY and are
- * ignored on the way back in. A table is a grid, a spec is a set of
- * measurements, and a tool is a component reference - none of the three
- * survives a round trip through Markdown without inviting a silent
- * mangling of something structural. Edit those in TypeScript.
+ * Drink specs and embedded tools export marked READ-ONLY and are ignored
+ * on the way back in. A spec holds eight fields and this exports four of
+ * them, so importing one back would drop the ice, the garnish and the
+ * rest; a tool is a component reference with nothing in it to edit. Both
+ * are done in TypeScript.
+ *
+ * Tables are NOT read-only. A table is `head` and `rows` of plain
+ * strings, which is exactly what a Markdown table is, so it round-trips
+ * with nothing to lose - and about a tenth of the writing in this book
+ * lives inside one. Keep the pipes and the header line intact and the
+ * importer handles the rest; it refuses anything whose columns stop
+ * lining up.
  *
  * The chapter files are loaded rather than parsed: Node strips the types
  * and hands back the real arrays, so what is exported is exactly what
@@ -117,8 +124,8 @@ function renderBlock(slug, i, b, out) {
       break;
 
     case 'table':
-      readOnly += 1;
-      out.push(anchor(slug, i, 'table', 'READ-ONLY'), '');
+      editable += 1;
+      out.push(anchor(slug, i, 'table'), '');
       out.push(`| ${b.head.join(' | ')} |`);
       out.push(`|${b.head.map(() => '---').join('|')}|`);
       b.rows.forEach((r) => out.push(`| ${r.join(' | ')} |`));
