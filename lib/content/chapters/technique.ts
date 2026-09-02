@@ -48,7 +48,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'The whole decision, in one line',
+        title: 'Shake or stir',
         text: 'If everything in the glass is clear and alcoholic, stir it. If anything in it is cloudy - juice, cream, egg, syrup - shake it. There is no third case.',
       },
       { kind: 'tool', tool: 'method' },
@@ -138,7 +138,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'It is entirely cosmetic and it looks very good. Clear ice does not melt meaningfully slower than cloudy ice of the same size, whatever people say - the difference is trapped air, not density.',
+        text: 'It is cosmetic, and it looks good. Clear ice does not melt meaningfully slower than cloudy ice of the same size, whatever people say - the difference is trapped air, not density.',
       },
     ],
   },

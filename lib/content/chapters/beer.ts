@@ -92,7 +92,7 @@ export const BEER: Chapter[] = [
         kind: 'p',
         text: '*Lager* is German for "to store", which is the technique rather than a description of the beer. Lagering is cold conditioning, and it is the reason the category exists at all: it needed cellars cold enough to hold for weeks, so it stayed a regional Bavarian habit until refrigeration made it possible anywhere.',
       },
-      { kind: 'h', text: 'Worth being able to place' },
+      { kind: 'h', text: 'The styles to know' },
       {
         kind: 'list',
         items: [
@@ -137,7 +137,7 @@ export const BEER: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'The head is the point',
+        title: 'Why the head matters',
         text: 'A pour with no head has been served without its aroma. If someone asks for it filled to the brim, that is their call, but the flat, slightly stale character they may complain about later starts here.',
       },
       {

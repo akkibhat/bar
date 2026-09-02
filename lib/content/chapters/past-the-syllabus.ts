@@ -78,7 +78,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
         kind: 'p',
         text: 'Non-alcoholic drinks are one of the fastest-growing parts of the trade, and the useful detail is that the overwhelming majority of people buying them also buy alcohol. This is not an abstinence category. It is people alternating, or driving, or not drinking tonight, and they resent being handed a lemonade.',
       },
-      { kind: 'h', text: 'What actually makes a zero-proof drink work' },
+      { kind: 'h', text: 'What makes a zero-proof drink work' },
       {
         kind: 'p',
         text: 'Alcohol does three things a soft drink has to replace: it carries aroma, it adds body, and it provides a slight burn that stops sweetness cloying. Miss all three and you have made a cordial.',

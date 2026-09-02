@@ -299,7 +299,7 @@ export const CLASSICS: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'The margin note that went somewhere',
+        title: 'A margin note that got built',
         text: 'My note against this page says butterfly pea flower changes colour with pH, so citrus turns it from blue to violet in the glass. That one did get built - it is the Filthy Mistress on the shelf, where the lime does the work at the table.',
       },
     ],

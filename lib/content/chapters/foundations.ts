@@ -141,7 +141,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'A **column still** runs continuously, with the wash fed in at the top and vapour rising through a stack of plates. Each plate is effectively another distillation, so one pass can reach 95%+. That is very pure and correspondingly neutral. Column stills make vodka, most gin bases, and grain whisky.',
+        text: 'A **column still** runs continuously, with the wash fed in at the top and vapour rising through a stack of plates. Each plate is effectively another distillation, so one pass can reach 95%+. That is pure and correspondingly neutral. Column stills make vodka, most gin bases, and grain whisky.',
       },
       {
         kind: 'table',
@@ -170,7 +170,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'Who actually owns the shelf',
+        title: 'Who owns the shelf',
         text: 'Most of the back bar belongs to a handful of companies - Diageo, Pernod Ricard and LVMH between them own an enormous share of the brands you can name. Useful when a rep tells you a category is having a moment.',
       },
       { kind: 'tool', tool: 'abv' },
@@ -209,7 +209,7 @@ export const FOUNDATIONS: Chapter[] = [
         ],
       },
       { kind: 'tool', tool: 'flavourWheel' },
-      { kind: 'h', text: 'What to actually ask' },
+      { kind: 'h', text: 'What to ask' },
       {
         kind: 'p',
         text: 'Naming fruits is what everyone reaches for first, and it is the least useful. Better questions, in order:',

@@ -39,7 +39,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'Where it earns its place',
+        title: 'Where vodka is the right call',
         text: 'Vodka is the right answer when you want the other ingredients to be the drink. An Espresso Martini works because nothing argues with the coffee. Substituting gin makes a different drink, and a worse one.',
       },
       { kind: 'h', text: 'Gin' },
@@ -98,7 +98,7 @@ export const BACK_BAR: Chapter[] = [
           '**Grain whisky** - from any grain, column-distilled, lighter and cheaper.',
           '**Single malt** - malt whisky from one distillery. "Single" means one distillery, not one barrel and not one year.',
           '**Blended** - malt and grain mixed, usually across many distilleries. The blender\'s job is consistency: a bottle this year has to taste like a bottle last year.',
-          '**Single cask** - one barrel, bottled on its own. Genuinely one barrel.',
+          '**Single cask** - one barrel, bottled on its own. Here "single" does mean one barrel.',
         ],
       },
       {
@@ -162,8 +162,8 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'Why colour lies here more than anywhere',
-        text: 'Rum has almost no international category law. A white rum may have been aged for years and then filtered clear; a dark rum may be a young spirit with caramel in it. Two bottles of the same shade can be entirely different products, and no standard forces the label to admit it. Producer and country tell you more than colour does.',
+        title: 'What colour does not tell you',
+        text: 'Rum has almost no international category law. A white rum may have been aged for years and then filtered clear; a dark rum may be a young spirit with caramel in it. Two bottles of the same shade can be different products, and no standard forces the label to admit it. Producer and country tell you more than colour does.',
       },
       {
         kind: 'unsure',
@@ -250,7 +250,7 @@ export const BACK_BAR: Chapter[] = [
       { kind: 'h', text: 'The fruit ones' },
       {
         kind: 'p',
-        text: '**Calvados** is apple or pear brandy from Normandy - cider distilled and aged, and a genuinely good substitute in a lot of whisky drinks. Eaux-de-vie cover everything else: clear, unaged, intensely of their fruit.',
+        text: '**Calvados** is apple or pear brandy from Normandy - cider distilled and aged, and a good substitute in a lot of whisky drinks. Eaux-de-vie cover everything else: clear, unaged, intensely of their fruit.',
       },
       {
         kind: 'table',
@@ -360,7 +360,7 @@ export const BACK_BAR: Chapter[] = [
         items: [
           '**Sherry** - from Jerez in Spain, and drier than its reputation. Fino and manzanilla are bone dry and want serving cold; oloroso and cream sherries are richer. Fino goes into a Bloody Mary and improves it.',
           '**Vermouth** - aromatised wine, flavoured with botanicals. Dry (French) is pale and crisp; sweet or *rosso* (Italian) is red and spiced; bianco sits between them. It is wine, so **it goes off** - fridge, and finish it within a month.',
-          '**Port** - Portuguese and sweet. Ruby is young and fruity; tawny is wood-aged, nutty and dry-finishing; white port is made from white grapes and is genuinely good chilled with tonic. Vintage port is bottle-aged and can run thirty years.',
+          '**Port** - Portuguese and sweet. Ruby is young and fruity; tawny is wood-aged, nutty and dry-finishing; white port is made from white grapes and is good chilled with tonic. Vintage port is bottle-aged and can run thirty years.',
           '**Madeira** - from the island, and deliberately heated during maturation, which gives it a burnt, caramelised character and makes it almost indestructible once open.',
         ],
       },
@@ -405,7 +405,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'Bitters, amari, and why the words collide',
+        title: 'Bitters and amari are different things',
         text: 'Dashing bitters and bitter liqueurs are different things that share a name. Angostura goes in at 2–3 dashes. Campari and Aperol are *amari* - bitter liqueurs, sweetened, low enough in strength to pour by the 30 ml. Both bring bitterness; one is a seasoning and one is an ingredient.',
       },
       {

@@ -40,7 +40,7 @@ export const BALANCE: Chapter[] = [
           '**Bitter** - bitters, amari, or the botanical edge in gin. Stops sweet and sour resolving into something flat, and gives the drink definition.',
         ],
       },
-      { kind: 'h', text: 'The ratio worth memorising' },
+      { kind: 'h', text: 'The sour ratio' },
       {
         kind: 'p',
         text: 'The sour template is **2 : 1 : 1** - two parts spirit, one part citrus, one part sweetener. In millilitres that is 60 : 30 : 30, or the 45 : 22.5 : 22.5 that a smaller drink uses.',
@@ -185,14 +185,14 @@ export const BALANCE: Chapter[] = [
         title: 'It does not need boiling',
         text: 'Warm water and stirring is enough. Boiling drives off water, so the syrup ends up stronger than intended and the ratio is no longer what you measured.',
       },
-      { kind: 'h', text: 'The others worth having' },
+      { kind: 'h', text: 'The other syrups' },
       {
         kind: 'list',
         items: [
           '**Rich demerara** - 2 : 1 with demerara sugar. Molasses character. Goes into anything aged: Old Fashioned, tiki, rum drinks.',
           '**Honey syrup** - 3 : 1 honey to warm water, because neat honey seizes in a cold shaker.',
           '**Agave syrup** - thin it the same way. The default sweetener for tequila and mezcal drinks.',
-          '**Grenadine** - pomegranate, not the red chemical sweetener sold under the name. Equal parts pomegranate juice and sugar. Genuinely worth making.',
+          '**Grenadine** - pomegranate, not the red chemical sweetener sold under the name. Equal parts pomegranate juice and sugar, and much better than the bought one.',
           '**Orgeat** - almond and orange flower. Fiddly, and essential to a Mai Tai.',
           '**Oleo saccharum** - citrus peels buried in sugar for a few hours. The sugar draws the oil out of the peel and you get an intensely citrus syrup from fruit you were going to throw away.',
         ],

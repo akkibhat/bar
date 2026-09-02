@@ -27,7 +27,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Most guests order in a shorthand that is completely standard and almost never explained. Getting it right is not pedantry - "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
+        text: 'Most guests order in a shorthand that is standard and almost never explained. Getting it right is not pedantry - "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
       },
       {
         kind: 'table',
@@ -110,7 +110,7 @@ export const SERVICE: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'Less is more',
+        title: 'When a garnish is too much',
         text: 'A garnish that has to be dismantled before the guest can drink has gone wrong. If it does not add aroma, flavour or a clear signal about what the drink is, it is in the way.',
       },
     ],
@@ -135,7 +135,7 @@ export const SERVICE: Chapter[] = [
         kind: 'list',
         items: [
           '**Carton juice** - once opened, fridge, use within two days. Bubbling or fizzing means it has started fermenting; that is the signal to bin it.',
-          '**Fresh citrus** - squeeze as needed. Lime turns brown and dull within hours and is noticeably worse the same evening. Pre-squeeze only what a busy shift will actually use, in a labelled container.',
+          '**Fresh citrus** - squeeze as needed. Lime turns brown and dull within hours and is noticeably worse the same evening. Pre-squeeze only what a busy shift will use, in a labelled container.',
           '**Never mix old stock into new.** It drags the whole container down to the age of the oldest thing in it.',
         ],
       },
@@ -229,7 +229,7 @@ export const SERVICE: Chapter[] = [
         kind: 'p',
         text: 'In New Zealand the governing legislation is the **Sale and Supply of Alcohol Act 2012**. Anyone managing the sale or supply of alcohol on a licensed premises needs a **Licence Controller Qualification**, which covers the Act itself and host responsibility, and a Manager\'s Certificate issued by the local council on the strength of it.',
       },
-      { kind: 'h', text: 'What host responsibility actually asks' },
+      { kind: 'h', text: 'What host responsibility asks' },
       {
         kind: 'list',
         items: [
