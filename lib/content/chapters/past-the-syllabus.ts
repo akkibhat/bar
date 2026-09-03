@@ -26,7 +26,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The course teaches one drink at a time, which is right for an exam and wrong for having people over. Batching is how you make the same drink twenty times without standing at a shaker all evening.',
+        text: 'Recipes are written one drink at a time, which is right for learning them and wrong for having people over. Batching is how you make the same drink twenty times without standing at a shaker all evening.',
       },
       { kind: 'h', text: 'What batches and what doesn\'t' },
       {
@@ -72,7 +72,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The course covered non-alcoholic drinks in a page about cordial shelf life, and its one good instinct was that a soft drink should be **dressed** to the same standard as everything else. It has since become a category in its own right.',
+        text: 'Non-alcoholic drinks used to get a page on cordial shelf life, if they got one at all. The single good instinct in that was that a soft drink should be **dressed** to the same standard as everything else. It has since become a category in its own right.',
       },
       {
         kind: 'p',
@@ -105,7 +105,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Mine to write',
+        title: 'Nothing zero-proof on the shelf yet',
         text: 'TODO: I haven\'t put a proper zero-proof drink on the shelf yet. Everything here is method rather than something I have made and served. Worth building one for Backbar and finding out which of these levers actually matters most.',
       },
     ],
@@ -168,7 +168,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Not from the course, and not from my kitchen',
+        title: 'Neither of these have I done',
         text: 'TODO: I haven\'t fat-washed or clarified anything. Both descriptions are from reading rather than practice, and the quantities above are starting points other people use, not ones I have tested. Worth doing before either is recommended with any confidence.',
       },
       {

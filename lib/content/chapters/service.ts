@@ -222,7 +222,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The course covered upselling, garnish shelf life and how to hold a glass, and said nothing at all about refusing service, checking identification, or the legislation the whole trade sits under. That\'s a strange omission for a hospitality qualification, and the one gap here I wouldn\'t want anyone working from.',
+        text: 'Most of learning to tend a bar is about pouring drinks. The part that carries legal weight is about refusing them. In New Zealand this is not house policy or judgement - it is statute, and it binds the person holding the bottle as well as the person holding the licence.',
       },
       {
         kind: 'p',
@@ -242,7 +242,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'note',
         title: 'Refusing early is easier than refusing late',
-        text: 'Cutting someone off at the point they\'re visibly drunk is a confrontation. Slowing the pace two rounds earlier - water alongside, a longer drink, food offered - usually means the confrontation never happens. Everyone who has worked a bar says this, and it wasn\'t taught.',
+        text: 'Cutting someone off at the point they\'re visibly drunk is a confrontation. Slowing the pace two rounds earlier - water alongside, a longer drink, food offered - usually means the confrontation never happens. Everyone who has worked a bar knows it, and it almost never gets written down.',
       },
       {
         kind: 'note',
