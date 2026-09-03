@@ -8,6 +8,15 @@ import GlasswarePicker from './GlasswarePicker';
 import FlavourWheel from './FlavourWheel';
 import SpiritExplorer from './SpiritExplorer';
 import FamiliesTable from './FamiliesTable';
+import StillsFigure from './StillsFigure';
+import TastingGlasses from './TastingGlasses';
+import PeatSequence from './PeatSequence';
+import MolassesSequence from './MolassesSequence';
+import AgaveSequence from './AgaveSequence';
+import BrandsFigure from './BrandsFigure';
+import BrewSequence from './BrewSequence';
+import PourFigure from './PourFigure';
+import ShakerFigure from './ShakerFigure';
 
 /**
  * Renders a tool inside a chapter, and offers the way back out to its own
@@ -80,6 +89,26 @@ function render(tool: ToolBlock['tool'], only?: string) {
       return <SpiritExplorer only={only} />;
     case 'families':
       return <FamiliesTable />;
+    /* The figures. Drawn rather than computed, and with no page of
+       their own, so nothing appears in HOME for them. */
+    case 'stills':
+      return <StillsFigure />;
+    case 'tastingGlasses':
+      return <TastingGlasses />;
+    case 'peat':
+      return <PeatSequence />;
+    case 'molasses':
+      return <MolassesSequence />;
+    case 'agave':
+      return <AgaveSequence />;
+    case 'brands':
+      return <BrandsFigure />;
+    case 'brew':
+      return <BrewSequence />;
+    case 'pour':
+      return <PourFigure />;
+    case 'shaker':
+      return <ShakerFigure />;
     default:
       return null;
   }

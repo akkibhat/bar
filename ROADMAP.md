@@ -61,6 +61,36 @@ my own notes, or a bottle I have actually poured.
 - **Agave** - assembled from category rules. Verify the ageing bands
   against a current source.
 
+### Deferred, with a decision already taken
+
+- **The Daiquiri does not fit the ratio it demonstrates.** *(Balance,
+  and The sours)* Chapter 16 cites it as 60 : 20 : 20 to show 2 : 1 : 1,
+  but the spec is 60 ml rum, 20 ml lime and 2 bar spoons sugar - about
+  10 ml, so nearer 6 : 2 : 1. The recipe stays as it is for now. Settle
+  it in the IBA pass, where the same question comes up for the
+  Margarita, the Pisco Sour, the Mojito and the Boulevardier.
+
+- **The Negroni batch is under-diluted by its own rule.** *(Batching and
+  scaling)* The chapter says a stirred drink finishes at 20-25% water,
+  then adds 220 ml to 1080 ml of spirit, which is 17%. Hitting 20% needs
+  about 270 ml. Changing it changes the worked example.
+
+- **The glassware tool holds fourteen glasses; chapter 23 lists
+  seventeen.** *(Glassware, and lib/glassware.ts)* Three in the chapter
+  tables are not in the tool, so the standalone page is missing them.
+
+- **Write the intent into the Backbar descriptions.** *(Bar Assistant,
+  not code.)* Seven of the eight need rewriting so "what I was after" is
+  backed by something; the Espresso Martini has no description at all.
+
+- **The IBA pass.** *(`_workings/iba-comparison.md`)* All 25 drinks
+  checked against the IBA official recipes. 21 are on the list, 4 differ
+  materially - the Margarita, the Pisco Sour, the Mojito and the
+  Boulevardier - and 11 differ in small ways. The plan is an `iba` field
+  on `ChapterSpec` carrying the category and the official name where it
+  differs, shown on the spec sheet and linked. Paused deliberately;
+  do it in one pass once the writing is done.
+
 ---
 
 ## The site

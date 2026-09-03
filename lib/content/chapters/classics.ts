@@ -223,11 +223,11 @@ export const CLASSICS: Chapter[] = [
     title: 'Muddled and built',
     minutes: 5,
     standfirst:
-      'Four drinks built in the glass, three of them muddled over crushed ice.',
+      'Five drinks built in the glass, three of them muddled over crushed ice.',
     body: [
       {
         kind: 'p',
-        text: 'These are sours built in the serving glass rather than shaken, with fresh fruit doing the acid instead of juice. The three muddled ones want crushed ice, and all of them are better with the sugar added before the ice rather than after.',
+        text: 'These are drinks built in the serving glass rather than made in a shaker and poured out. The three muddled ones use fresh fruit for the acid instead of juice, want crushed ice, and are better with the sugar added before the ice rather than after. The last two are assembled in the glass without muddling anything.',
       },
       {
         kind: 'spec',
@@ -298,9 +298,29 @@ export const CLASSICS: Chapter[] = [
         },
       },
       {
+        kind: 'spec',
+        spec: {
+          name: 'Bloody Mary',
+          glass: 'Highball',
+          ice: 'Yes',
+          method: 'Shake and strain over fresh ice',
+          spec: [
+            { name: 'Vodka', amount: '60 ml' },
+            { name: 'Tomato juice', amount: '90 ml' },
+            { name: 'Lemon', amount: '1 squeeze' },
+            { name: 'Fino sherry or port', amount: '1 dash' },
+            { name: 'Tabasco', amount: 'To taste' },
+            { name: 'Worcestershire sauce', amount: '1 dash' },
+            { name: 'Salt and pepper', amount: 'To taste' },
+          ],
+          garnish: 'Celery, lemon, whatever else is going',
+          note: 'Built in the glass like the rest of this page, though it is rolled rather than muddled - passed between tins to mix it without whipping the tomato juice to froth.',
+        },
+      },
+      {
         kind: 'note',
         title: 'A margin note that got built',
-        text: 'My note against this page says butterfly pea flower changes colour with pH, so citrus turns it from blue to violet in the glass. That one did get built - it is the Filthy Mistress on the shelf, where the lime does the work at the table.',
+        text: 'My note against this page says butterfly pea flower changes colour with pH, so citrus turns it from blue to violet in the glass. That one did get built. It\'s the Filthy Mistress on the shelf, where the lime does the work at the table.',
       },
     ],
   },
@@ -313,11 +333,11 @@ export const CLASSICS: Chapter[] = [
     title: 'Stirred and spirit-forward',
     minutes: 6,
     standfirst:
-      'No citrus, no shaking. Seven drinks, starting with the Old Fashioned.',
+      'Spirit-forward, and mostly stirred. Six drinks, starting with the Old Fashioned.',
     body: [
       {
         kind: 'p',
-        text: 'Everything here is stirred, because everything here is clear and alcoholic. Negroni, Contessa and Boulevardier are the same drink with one bottle swapped each time. Read them together and Part IV\'s families are easy to see.',
+        text: 'Everything here is clear and alcoholic, and everything here is stirred - except the Old Fashioned, which is built in the glass. Negroni, Contessa and Boulevardier are the same drink with one bottle swapped each time. Read them together and Part IV\'s families are easy to see.',
       },
       {
         kind: 'spec',
@@ -420,26 +440,6 @@ export const CLASSICS: Chapter[] = [
           note: 'A Negroni with whiskey instead of gin. Richer, and it takes the Campari better than people expect.',
         },
       },
-      {
-        kind: 'spec',
-        spec: {
-          name: 'Bloody Mary',
-          glass: 'Highball',
-          ice: 'Yes',
-          method: 'Shake and strain over fresh ice',
-          spec: [
-            { name: 'Vodka', amount: '60 ml' },
-            { name: 'Tomato juice', amount: '90 ml' },
-            { name: 'Lemon', amount: '1 squeeze' },
-            { name: 'Fino sherry or port', amount: '1 dash' },
-            { name: 'Tabasco', amount: 'To taste' },
-            { name: 'Worcestershire sauce', amount: '1 dash' },
-            { name: 'Salt and pepper', amount: 'To taste' },
-          ],
-          garnish: 'Celery, lemon, whatever else is going',
-          note: 'The outlier on this page - not stirred, not clear, and not really a family. It is here because nothing else in the book is like it either.',
-        },
-      },
     ],
   },
 
@@ -525,8 +525,8 @@ export const CLASSICS: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'If you are lighting it',
-        text: 'The Grand Marnier on top is what burns. Light it, let it go a few seconds, and put it out before it is handed over - a hot glass rim burns lips, and there is no benefit to letting it burn longer.',
+        title: 'If you\'re lighting it',
+        text: 'The Grand Marnier on top is what burns. Light it, let it go a few seconds, and put it out before it\'s handed over, because a hot glass rim burns lips, and there\'s no benefit to letting it burn longer.',
       },
     ],
   },

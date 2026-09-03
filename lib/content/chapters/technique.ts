@@ -26,7 +26,7 @@ export const TECHNIQUE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Seven ways to combine a drink. Most recipes use one; a few use two. The choice is not stylistic - each method chills, dilutes and aerates by a different amount, and those three decide how the drink comes out.',
+        text: 'Seven ways to combine a drink. Most recipes use one; a few use two. The choice isn\'t stylistic, because each method chills, dilutes and aerates by a different amount, and those three decide how the drink comes out.',
       },
       { kind: 'h', text: 'Shaking' },
       {
@@ -35,7 +35,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The rule: **shake anything that will not go clear.** Citrus, juice, cream, egg, syrup. Those need the aeration and the emulsification, and they are already opaque, so nothing is lost.',
+        text: 'The rule: **shake anything that won\'t go clear.** Citrus, juice, cream, egg, syrup. Those need the aeration and the emulsification, and they\'re already opaque, so nothing is lost.',
       },
       { kind: 'h', text: 'Stirring' },
       {
@@ -49,18 +49,18 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'note',
         title: 'Shake or stir',
-        text: 'If everything in the glass is clear and alcoholic, stir it. If anything in it is cloudy - juice, cream, egg, syrup - shake it. There is no third case.',
+        text: 'If everything in the glass is clear and alcoholic, stir it. If anything in it\'s cloudy - juice, cream, egg, syrup - shake it. There\'s no third case.',
       },
       { kind: 'tool', tool: 'method' },
       { kind: 'h', text: 'Muddling' },
       {
         kind: 'p',
-        text: 'Pressing fruit or herbs to release what is in them, with a muddler, in the bottom of the glass or the shaker. Fruit takes real pressure. **Herbs do not** - mint should be pressed just enough to release its oil, and grinding it releases chlorophyll instead, which is bitter and grassy. A firm press and a twist is enough.',
+        text: 'Pressing fruit or herbs to release what\'s in them, with a muddler, in the bottom of the glass or the shaker. Fruit takes real pressure. **Herbs don\'t** - mint should be pressed just enough to release its oil, and grinding it releases chlorophyll instead, which is bitter and grassy. A firm press and a twist is enough.',
       },
       { kind: 'h', text: 'Building' },
       {
         kind: 'p',
-        text: 'Assembling in the glass it is served in, in order, usually over ice. Highballs and anything long. Spirit first, then mixer, so the pour of the mixer does the mixing.',
+        text: 'Assembling in the glass it\'s served in, in order, usually over ice. Highballs and anything long. Spirit first, then mixer, so the pour of the mixer does the mixing.',
       },
       { kind: 'h', text: 'Layering' },
       {
@@ -75,11 +75,11 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Flaming' },
       {
         kind: 'p',
-        text: 'Setting a high-proof spirit alight, which caramelises sugar and changes the aroma. It has one real use: flaming an orange twist over a drink changes the aroma. Beyond that it is display.',
+        text: 'Setting a high-proof spirit alight, which caramelises sugar and changes the aroma. It has one real use: flaming an orange twist over a drink changes the aroma. Beyond that it\'s display.',
       },
       {
         kind: 'note',
-        title: 'If you are going to do it',
+        title: 'If you\'re going to do it',
         text: 'Small quantity, warmed slightly so it lights, never poured from the bottle over an open flame, never handed to anyone while lit, and always put out before it reaches the guest. Nothing flammable above or beside it.',
       },
     ],
@@ -97,11 +97,11 @@ export const TECHNIQUE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Ice is an ingredient, and by volume it is usually the largest one. It does two things at once, and they cannot be separated: **there is no chilling without dilution, and no dilution without chilling.**',
+        text: 'Ice is an ingredient, and by volume it\'s usually the largest one. It does two things at once, and they can\'t be separated: **there is no chilling without dilution, and no dilution without chilling.**',
       },
       {
         kind: 'p',
-        text: 'That rules out a common instinct. You cannot shake a drink "just to chill it" and avoid watering it down. The cold *comes from* the ice melting - melting is what absorbs the heat. A shaken drink finishes around 20–25% water by volume, and that water is part of the recipe whether or not the recipe mentions it.',
+        text: 'That rules out a common instinct. You can\'t shake a drink "just to chill it" and avoid watering it down. The cold *comes from* the ice melting, because melting is what absorbs the heat. A shaken drink finishes at around a quarter water by volume, and that water is part of the recipe whether or not the recipe mentions it.',
       },
       { kind: 'tool', tool: 'dilution' },
       { kind: 'h', text: 'Size, and why it matters' },
@@ -113,14 +113,14 @@ export const TECHNIQUE: Chapter[] = [
         kind: 'list',
         items: [
           '**Cubes** - the default. Shaking, stirring, and filling a highball.',
-          '**One large cube or sphere** - for a short drink you will hold for twenty minutes. Less surface area for the same cooling, so an Old Fashioned does not turn to water halfway down.',
+          '**One large cube or sphere** - for a short drink you\'ll hold for twenty minutes. Less surface area for the same cooling, so an Old Fashioned doesn\'t turn to water halfway down.',
           '**Crushed** - fast chilling and heavy dilution, wanted in a Julep, a Mojito, a Caipirinha and most tiki. Never in a shaker.',
         ],
       },
       {
         kind: 'note',
         title: 'Fill the glass',
-        text: 'A half-filled highball melts faster than a full one, not slower. Less ice means each piece takes more heat, so it melts quicker and the drink is warm and watery inside ten minutes. More ice is less dilution. It is counter-intuitive and worth remembering.',
+        text: 'A half-filled highball melts faster than a full one, not slower. Less ice means each piece takes more heat, so it melts quicker and the drink is warm and watery inside ten minutes. More ice is less dilution. It\'s counter-intuitive and worth remembering.',
       },
       { kind: 'h', text: 'Clear ice' },
       {
@@ -138,7 +138,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'It is cosmetic, and it looks good. Clear ice does not melt meaningfully slower than cloudy ice of the same size, whatever people say - the difference is trapped air, not density.',
+        text: 'It\'s cosmetic, and it looks good. Clear ice doesn\'t melt meaningfully slower than cloudy ice of the same size, whatever people say. The difference is trapped air, not density.',
       },
     ],
   },
@@ -160,21 +160,21 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Jiggers' },
       {
         kind: 'p',
-        text: 'A jigger is a two-sided measure. New Zealand pours in millilitres, and the pairs worth owning are 30/15 and 45/22.5 - between them they cover almost every spec in this book, and the halves matter because a lot of recipes call for 22.5.',
+        text: 'A jigger is a two-sided measure. New Zealand pours in millilitres, and the pairs worth owning are 30/15 and 45/22.5. Between them they cover almost every spec in this book, and the halves matter because the smaller sour template is 45 : 22.5 : 22.5.',
       },
       {
         kind: 'p',
-        text: 'Fill to the brim, not to somewhere near it. A jigger measured by eye at nine-tenths full is not a measure, and the error compounds across four ingredients.',
+        text: 'Fill to the brim, not to somewhere near it. A jigger measured by eye at nine-tenths full isn\'t a measure, and the error compounds across four ingredients.',
       },
       {
         kind: 'note',
         title: 'Free pouring',
-        text: 'Counting through a pour spout is a real skill and takes months of practice with a measured bottle to build. It is also the first thing to go when a bar is busy, which is when consistency matters most. Use a jigger.',
+        text: 'Counting through a pour spout is a real skill and takes months of practice with a measured bottle to build. It\'s also the first thing to go when a bar is busy, which is when consistency matters most. Use a jigger.',
       },
       { kind: 'h', text: 'The rest of the perfect serve' },
       {
         kind: 'p',
-        text: 'The workbook lists five things and they are all correct:',
+        text: 'The course listed five things, and they\'re all right:',
       },
       {
         kind: 'list',
@@ -182,7 +182,7 @@ export const TECHNIQUE: Chapter[] = [
           '**The right glass**, cool and dry. Fill to the top two-thirds and hand it over by the base or stem.',
           '**Enough good ice.** Fill the glass. See the previous chapter.',
           '**An accurate pour.** Jigger, and pour in front of the guest with the label facing them.',
-          '**Good, cold mixers.** A warm tonic ruins a good gin and there is nothing to be done about it afterwards.',
+          '**Good, cold mixers.** A warm tonic ruins a good gin and there\'s nothing to be done about it afterwards.',
           '**A fresh garnish**, cut that shift.',
         ],
       },
@@ -205,7 +205,7 @@ export const TECHNIQUE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Egg white adds no flavour. What it adds is body and a dense white foam, from proteins unfolding under agitation and trapping air. It is the difference between a Whiskey Sour and a *good* Whiskey Sour, and the workbook lists it as optional without ever saying how to get it to work.',
+        text: 'Egg white adds no flavour. What it adds is body and a dense white foam, from proteins unfolding under agitation and trapping air. It\'s the difference between a Whiskey Sour and a *good* Whiskey Sour, and most recipes list it as optional without saying how to get it to work.',
       },
       { kind: 'h', text: 'The dry shake' },
       {
@@ -220,7 +220,7 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'note',
         title: 'Reverse dry shake',
-        text: 'Shake with ice first, strain the ice out, then shake the drink again without it. Slightly more work and a denser, more stable foam. Worth it for a drink you are photographing or one you want to hold its head for ten minutes.',
+        text: 'Shake with ice first, strain the ice out, then shake the drink again without it. Slightly more work and a denser, more stable foam. Worth it for a drink you\'re photographing or one you want to hold its head for ten minutes.',
       },
       { kind: 'h', text: 'Aquafaba' },
       {
@@ -234,12 +234,12 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: '**Dairy** behaves differently: cream adds weight and coats the mouth rather than foaming, and it mutes everything else, which is why cream drinks are usually built on strong flavours like coffee, cacao or mint. Citrus and cream will curdle unless there is enough sugar and speed to hold them, which is why a Ramos Gin Fizz has a reputation.',
+        text: '**Dairy** behaves differently: cream adds weight and coats the mouth rather than foaming, and it mutes everything else, which is why cream drinks are usually built on strong flavours like coffee, cacao or mint. Citrus and cream will curdle unless there\'s enough sugar and speed to hold them, which is why a Ramos Gin Fizz has a reputation.',
       },
       {
         kind: 'unsure',
         title: 'Not from the course',
-        text: 'The workbook has egg white in four specs and my own margin note about aquafaba, but no technique for either. TODO: I have written 20–25 ml for aquafaba from general practice and have not measured it against a real egg white side by side. Test it before I state it as the conversion.',
+        text: 'Four specs here use egg white, and I had a margin note about aquafaba, but no technique for either. TODO: I have written 20–25 ml for aquafaba from general practice and haven\'t measured it against a real egg white side by side. Test it before I state it as the conversion.',
       },
     ],
   },

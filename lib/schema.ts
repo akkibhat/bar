@@ -113,7 +113,18 @@ export type Block =
         | 'glassware'
         | 'flavourWheel'
         | 'spiritFilter'
-        | 'families';
+        | 'families'
+        /* The drawn figures. Not tools in the working sense - nothing to
+           put a number into - but they sit in the body the same way. */
+        | 'stills'
+        | 'tastingGlasses'
+        | 'peat'
+        | 'molasses'
+        | 'agave'
+        | 'brands'
+        | 'brew'
+        | 'pour'
+        | 'shaker';
       /** For `spiritFilter`: lock it to one category, hiding the control. */
       only?: string;
     };

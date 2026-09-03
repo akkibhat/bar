@@ -30,7 +30,7 @@ export const KIT: Chapter[] = [
       {
         kind: 'note',
         title: 'Hold it by the stem',
-        text: 'If it has a stem, hold the stem. If it does not, hold the bottom third. A hand wrapped round the bowl warms a drink that was chilled to almost freezing, and leaves prints on the glass.',
+        text: 'If it has a stem, hold the stem. If it doesn\'t, hold the bottom third. A hand wrapped round the bowl warms a drink that was chilled to almost freezing, and leaves prints on the glass.',
       },
       { kind: 'h', text: 'Short and stemmed' },
       {
@@ -94,7 +94,7 @@ export const KIT: Chapter[] = [
     title: 'Tools',
     minutes: 5,
     standfirst:
-      'What is on the mat, what it does, and what to buy first.',
+      'What\'s on the mat, what it does, and what to buy first.',
     body: [
       {
         kind: 'p',
@@ -105,7 +105,7 @@ export const KIT: Chapter[] = [
         kind: 'table',
         head: ['Tool', 'For'],
         rows: [
-          ['**Boston shaker**', 'Two tins, or a tin and a glass, that seal together. Shaking. More capacity and faster than a three-piece cobbler, and it will not freeze shut'],
+          ['**Boston shaker**', 'Two tins, or a tin and a glass, that seal together. Shaking. More capacity and faster than a three-piece cobbler, and it won\'t freeze shut'],
           ['**Mixing glass**', 'Stirring. Heavy-based, wide enough for a bar spoon to travel round the inside'],
           ['**Bar spoon**', 'Stirring, layering, and measuring - the bowl is about 5 ml. The twisted shaft lets it turn in your fingers without moving your wrist'],
           ['**Muddler**', 'Pressing fruit and herbs. Flat-headed, not toothed - teeth shred mint'],
@@ -137,8 +137,8 @@ export const KIT: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'If you are buying, buy these five first',
-        text: 'Boston shaker, jigger, hawthorne strainer, bar spoon, citrus press. That is under a hundred dollars and it makes every drink in Part VIII. The mixing glass can be the empty half of the shaker until it annoys you.',
+        title: 'If you\'re buying, buy these five first',
+        text: 'Boston shaker, jigger, hawthorne strainer, bar spoon, citrus press. That\'s under a hundred dollars and it makes every drink in Part VIII. The mixing glass can be the empty half of the shaker until it annoys you.',
       },
     ],
   },
@@ -155,33 +155,33 @@ export const KIT: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'A bar is a workstation designed around not moving. Anything used constantly is within reach without stepping; anything used occasionally is behind you. The layout differs between venues because the building does, but the rules underneath do not.',
+        text: 'A bar is a workstation designed around not moving. Anything used constantly is within reach without stepping; anything used occasionally is behind you. The layout differs between venues because the building does, but the rules underneath don\'t.',
       },
       {
         kind: 'list',
         items: [
           '**Glassware within reach of the station**, so making a drink never means walking.',
-          '**Spirits on the back bar**, facing out. They are the display as well as the stock, and the ones you pour most sit in the speed rail in front of you instead.',
+          '**Spirits on the back bar**, facing out. They\'re the display as well as the stock, and the ones you pour most sit in the speed rail in front of you instead.',
           '**Juices and perishables chilled and close.** Anything that goes in a drink cold has to be cold before it goes in.',
           '**Garnishes at hand and covered**, prepped for the shift.',
           '**Ice wells within reach of both hands.**',
-          '**Everything tidy, constantly.** It is a speed requirement. You cannot find things in a mess at eleven on a Friday.',
+          '**Everything tidy, constantly.** It\'s a speed requirement. You can\'t find things in a mess at eleven on a Friday.',
         ],
       },
       { kind: 'h', text: 'The speed rail' },
       {
         kind: 'p',
-        text: 'The trough of bottles directly in front of the station holds the pours that make up most of the night: the house gin, vodka, rum, whisky, tequila, triple sec, and the two vermouths. They are arranged in the same order every shift, so you can find them without looking.',
+        text: 'The trough of bottles directly in front of the station holds the pours that make up most of the night: the house gin, vodka, rum, whisky, tequila, triple sec, and the two vermouths. They\'re arranged in the same order every shift, so you can find them without looking.',
       },
       { kind: 'h', text: 'The barback' },
       {
         kind: 'p',
-        text: 'The barback restocks, cuts garnish, hauls ice, changes kegs and clears glassware. It is the job that decides whether a bar can survive a rush, and on a busy night it is more physically demanding than making the drinks.',
+        text: 'The barback restocks, cuts garnish, hauls ice, changes kegs and clears glassware. It\'s the job that decides whether a bar can survive a rush, and on a busy night it\'s more physically demanding than making the drinks.',
       },
       {
         kind: 'note',
         title: 'Crushed ice needs planning',
-        text: 'A Moscow Mule, a Julep, a Caipirinha and anything blended all want crushed ice, and crushing it to order in the middle of service does not work. Crush ahead and keep it in an insulated container.',
+        text: 'A Moscow Mule, a Julep, a Caipirinha and anything blended all want crushed ice, and crushing it to order in the middle of service doesn\'t work. Crush ahead and keep it in an insulated container.',
       },
       {
         kind: 'unsure',

@@ -27,7 +27,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Most guests order in a shorthand that is standard and almost never explained. Getting it right is not pedantry - "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
+        text: 'Most guests order in a shorthand that\'s standard and almost never explained. Getting it right isn\'t pedantry, because "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
       },
       {
         kind: 'table',
@@ -43,7 +43,7 @@ export const SERVICE: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'Up and neat are not the same',
+        title: 'Up and neat aren\'t the same',
         text: '**Neat** is the spirit as it comes, at room temperature, no ice at any point. **Up** has been chilled - shaken or stirred with ice - then strained into a glass with no ice in it. One is warm, one is very cold, and both arrive without ice in the glass, which is why they get confused.',
       },
       { kind: 'h', text: 'Named mixed drinks' },
@@ -53,7 +53,7 @@ export const SERVICE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'When the order is ambiguous, ask once and remember the answer. "Gin and tonic" does not say which gin, and a guest who wanted the good one and got the rail one will not order a second.',
+        text: 'When the order is ambiguous, ask once and remember the answer. "Gin and tonic" doesn\'t say which gin, and a guest who wanted the good one and got the rail one won\'t order a second.',
       },
     ],
   },
@@ -70,7 +70,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'A garnish is not decoration. A lemon twist is oil sprayed across the surface of the drink, and it changes what the first mouthful smells like - which is most of what it tastes like. Follow the spec: if a recipe says twist, a wedge is a different drink.',
+        text: 'A garnish is not decoration. A lemon twist is oil sprayed across the surface of the drink, and it changes what the first mouthful smells like, which is most of what it tastes like. Follow the spec: if a recipe says twist, a wedge is a different drink.',
       },
       { kind: 'h', text: 'The standard cuts' },
       {
@@ -94,11 +94,11 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          'Cut fresh before each shift. Fresh for each drink if there is time.',
+          'Cut fresh before each shift. Fresh for each drink if there\'s time.',
           'Wash fruit before prep, always.',
           'Store cut fruit in a sealed container in the fridge.',
           'Store whole fruit cold, dry, dark, and off the floor.',
-          'Never leave garnishes sitting submerged in water - it leaches them and they go limp.',
+          'Never leave garnishes sitting submerged in water, because it leaches them and they go limp.',
           'To refresh, cover briefly with soda water and drain immediately.',
           'Refuse poor fruit. A tired lime makes a tired garnish, and nothing rescues it.',
         ],
@@ -111,7 +111,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'note',
         title: 'When a garnish is too much',
-        text: 'A garnish that has to be dismantled before the guest can drink has gone wrong. If it does not add aroma, flavour or a clear signal about what the drink is, it is in the way.',
+        text: 'A garnish that has to be dismantled before the guest can drink has gone wrong. If it doesn\'t add aroma, flavour or a clear signal about what the drink is, it\'s in the way.',
       },
     ],
   },
@@ -128,13 +128,13 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Everything on this page has a shelf life measured in days. It is the most likely part of the bar to spoil an otherwise good drink.',
+        text: 'Everything on this page has a shelf life measured in days. It\'s the most likely part of the bar to spoil an otherwise good drink.',
       },
       { kind: 'h', text: 'Juice' },
       {
         kind: 'list',
         items: [
-          '**Carton juice** - once opened, fridge, use within two days. Bubbling or fizzing means it has started fermenting; that is the signal to bin it.',
+          '**Carton juice** - once opened, fridge, use within two days. Bubbling or fizzing means it has started fermenting; that\'s the signal to bin it.',
           '**Fresh citrus** - squeeze as needed. Lime turns brown and dull within hours and is noticeably worse the same evening. Pre-squeeze only what a busy shift will use, in a labelled container.',
           '**Never mix old stock into new.** It drags the whole container down to the age of the oldest thing in it.',
         ],
@@ -147,16 +147,16 @@ export const SERVICE: Chapter[] = [
       { kind: 'h', text: 'Minerals and mixers' },
       {
         kind: 'p',
-        text: 'Cola, lemonade, soda water, mineral water, tonic, ginger ale, ginger beer. **Check the fizz before service**, especially from large bottles - a flat tonic is a wasted gin, and you cannot tell by looking.',
+        text: 'Cola, lemonade, soda water, mineral water, tonic, ginger ale, ginger beer. **Check the fizz before service**, especially from large bottles, because a flat tonic is a wasted gin, and you can\'t tell by looking.',
       },
       {
         kind: 'p',
-        text: 'Mixers must be cold before they go in. A cold mixer over ice stays fizzy; a room-temperature one foams up, goes flat, and melts the ice while it is doing it.',
+        text: 'Mixers must be cold before they go in. A cold mixer over ice stays fizzy; a room-temperature one foams up, goes flat, and melts the ice while it\'s doing it.',
       },
       { kind: 'h', text: 'Serving the soft drinks properly' },
       {
         kind: 'p',
-        text: 'Non-alcoholic drinks are served long, in a tall glass, with ice, and garnished to the same standard as everything else. The workbook\'s phrase for this is that even a glass of water should be **dressed** - and it is the right instinct. Someone not drinking should not be able to tell from the glass in their hand.',
+        text: 'Non-alcoholic drinks are served long, in a tall glass, with ice, and garnished to the same standard as everything else. The phrase I was taught is that even a glass of water should be **dressed**, and that\'s the right instinct. Someone not drinking should not be able to tell from the glass in their hand.',
       },
       {
         kind: 'p',
@@ -177,15 +177,15 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The workbook listed six things that make a bartender worth employing. None of them is about making drinks.',
+        text: 'The course listed six things that make a bartender worth employing. None of them is about making drinks.',
       },
       {
         kind: 'list',
         items: [
           '**Memory.** Every drink on the list, plus who ordered what, plus which tab it goes on, plus the regulars\' names. All at once, all night.',
           '**Calm under pressure.** Things go wrong at the busiest moment. Being visibly rattled spreads down the queue.',
-          '**Friendly and outgoing.** A large part of the job is talking to people. It is also the selling half - nobody buys a second round from someone who seems to want them gone.',
-          '**Consistency.** Same drink, same way, every time, whether it is the first of the night or the last. This is the one that separates people.',
+          '**Friendly and outgoing.** A large part of the job is talking to people. It\'s also the selling half - nobody buys a second round from someone who seems to want them gone.',
+          '**Consistency.** Same drink, same way, every time, whether it\'s the first of the night or the last. This is the one that separates people.',
           '**Cleanliness.** The bar, the tools, the glassware, before, during and after. A health requirement, and the first thing a guest notices.',
           '**Trustworthiness.** You handle the till, the stock and the free pours. A bar has to be able to leave someone alone with all three.',
         ],
@@ -193,20 +193,20 @@ export const SERVICE: Chapter[] = [
       { kind: 'h', text: 'Selling without being a salesman' },
       {
         kind: 'p',
-        text: 'About a third of people walking into a bar have not decided what they want. That is not an opportunity to push the expensive bottle. Ask two questions and put the right drink in front of them, and they come back.',
+        text: 'About a third of people walking into a bar haven\'t decided what they want. That\'s not an opportunity to push the expensive bottle. Ask two questions and put the right drink in front of them, and they come back.',
       },
       {
         kind: 'list',
         items: [
-          '**Upsell within the brand they already chose.** If someone asks for a gin and tonic, offering a gin they might like better is a service. Steering them to whatever carries the best margin is not, and people can tell.',
-          '**Signature serves.** One or two drinks that only this bar makes. They are what people describe to someone else later.',
+          '**Upsell within the brand they already chose.** If someone asks for a gin and tonic, offering a gin they might like better is a service. Steering them to whatever carries the best margin isn\'t, and people can tell.',
+          '**Signature serves.** One or two drinks that only this bar makes. They\'re what people describe to someone else later.',
           '**Seasonal serves.** Hot drinks in winter, long ones with crushed ice in summer. Often the same base spirit dressed differently, which costs nothing and reads as effort.',
         ],
       },
       {
         kind: 'unsure',
         title: 'Mine to add',
-        text: 'TODO: my margin note here just says "buy local?" against the upselling page. I think that was about stocking New Zealand spirits over imported ones and being able to say why. Worth writing properly - it is the most defensible kind of upsell there is.',
+        text: 'TODO: my margin note here just says "buy local?" against the upselling page. I think that was about stocking New Zealand spirits over imported ones and being able to say why. Worth writing properly: it\'s the most defensible kind of upsell there is.',
       },
     ],
   },
@@ -223,7 +223,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The workbook covers upselling, garnish shelf life and how to hold a glass, and says nothing at all about refusing service, checking identification, or the legislation the whole trade sits under. That is a strange omission for a hospitality qualification, and the one gap here I would not want anyone working from.',
+        text: 'The course covered upselling, garnish shelf life and how to hold a glass, and said nothing at all about refusing service, checking identification, or the legislation the whole trade sits under. That\'s a strange omission for a hospitality qualification, and the one gap here I wouldn\'t want anyone working from.',
       },
       {
         kind: 'p',
@@ -233,7 +233,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Do not serve anyone already intoxicated.** This is an offence, and it is the server\'s as well as the licensee\'s.',
+          '**Do not serve anyone already intoxicated.** This is an offence, and it\'s the server\'s as well as the licensee\'s.',
           '**Do not serve minors.** The purchase age is 18, and acceptable identification is limited to a passport, a NZ driver licence, a Kiwi Access card, or a HANZ 18+ card.',
           '**Provide free drinking water**, low- and non-alcoholic options, and substantial food.',
           '**Help people get home.** Numbers for taxis, and not turning someone out of the door who plainly should not be driving.',
@@ -243,17 +243,17 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'note',
         title: 'Refusing early is easier than refusing late',
-        text: 'Cutting someone off at the point they are visibly drunk is a confrontation. Slowing the pace two rounds earlier - water alongside, a longer drink, food offered - usually means the confrontation never happens. Everyone who has worked a bar says this and it is not in the workbook.',
+        text: 'Cutting someone off at the point they\'re visibly drunk is a confrontation. Slowing the pace two rounds earlier - water alongside, a longer drink, food offered - usually means the confrontation never happens. Everyone who has worked a bar says this, and it wasn\'t taught.',
       },
       {
         kind: 'unsure',
-        title: 'Do not rely on this chapter',
+        title: 'Don\'t rely on this chapter',
         text: 'I hold no Licence Controller Qualification and I have never worked a licensed shift. This is written from the legislation and the published outline of what the LCQ covers, because a book about bartending that skips it entirely is worse than one that covers it imperfectly. Anyone actually serving alcohol in New Zealand should do the LCQ, which is a one-day course, rather than reading this.',
       },
       {
         kind: 'unsure',
         title: 'Mine to check',
-        text: 'TODO: find out whether responsible service was taught as a separate module of the course and simply is not in the pages I photographed. If it was, my own notes from it should replace most of this chapter.',
+        text: 'TODO: find out whether responsible service was taught as a separate module of the course and simply isn\'t in the pages I photographed. If it was, my own notes from it should replace most of this chapter.',
       },
     ],
   },

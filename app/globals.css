@@ -1092,3 +1092,290 @@ button.card:hover {
   }
   .card { border-color: #ccc; }
 }
+
+/* ---------------------------------------------------------------------
+   Figures. Drawn plates embedded in chapters - the stills, the tasting
+   glasses, and the three sequences. The drawing is SVG on the page's own
+   tokens so it follows the theme; the motion is CSS gated on `.run`,
+   which the wrapper adds when the plate scrolls into view and again on
+   Replay. Every animated element has its finished state in its base
+   rule, so a reader who has asked for reduced motion sees the completed
+   drawing rather than an empty one.
+   --------------------------------------------------------------------- */
+.figure-plate svg { display: block; width: 100%; height: auto; }
+
+/* Sizes are in SVG units and scale with the drawing, so they are set
+   larger than page type would be: the plate renders at roughly 1:1 in
+   the reading column and smaller on a phone. */
+.fig-ink         { stroke: var(--ink); fill: none; stroke-width: 2; }
+.fig-thin        { stroke: var(--ink-faint); fill: none; stroke-width: 1.4; }
+.fig-accent      { stroke: var(--accent-book); fill: none; stroke-width: 2.2; }
+.fig-fill-accent { fill: var(--accent-book); }
+.fig-fill-gold   { fill: var(--gold); }
+.fig-hatch       { stroke: var(--ink-faint); stroke-width: 0.8; opacity: 0.55; }
+.fig-t {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  fill: var(--ink-soft);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.fig-val {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.fig-name { font-family: var(--font-display); font-size: 20px; fill: var(--ink); }
+
+/* A CSS transform on an SVG element measures its origin against the
+   whole viewport unless told otherwise, so "center bottom" on the juice
+   meant the bottom of the drawing, not the bottom of the pan, and the
+   pan boiled down into the label underneath it. fill-box makes every
+   origin below relative to the element itself. */
+.peat-flame, .peat-smoke, .peat-phenol, .peat-mark,
+.mol-press, .mol-juice, .mol-steam, .mol-crystal, .mol-syrup,
+.agave-leaf, .agave-pina, .agave-steam, .agave-smoke {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.peat-flame { transform-origin: 50% 100%; }
+.mol-juice  { transform-origin: 50% 100%; }
+.mol-press  { transform-origin: 0% 50%; }
+.agave-leaf { transform-origin: 50% 100%; }
+
+.figure-replay {
+  background: transparent;
+  border: 1px solid var(--rule-strong);
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  color: var(--ink-soft);
+  transition: color var(--m-quick) var(--ease),
+              border-color var(--m-quick) var(--ease);
+}
+.figure-replay:hover { color: var(--ink); border-color: var(--ink-soft); }
+
+/* Peat. The phenols cross the whole line unchanged - that is the point. */
+.peat-smoke, .peat-phenol, .peat-mark { opacity: 0; }
+.figure-plate.run .peat-flame  { animation: fig-flicker 0.7s ease-in-out infinite alternate; }
+.figure-plate.run .peat-smoke  { animation: fig-rise 2.4s ease-out infinite; }
+.figure-plate.run .peat-s2     { animation-delay: 0.5s; }
+.figure-plate.run .peat-s3     { animation-delay: 1s; }
+.figure-plate.run .peat-phenol { animation: fig-carry 7s linear infinite; }
+.figure-plate.run .peat-p2     { animation-delay: 0.18s; }
+.figure-plate.run .peat-p3     { animation-delay: 0.36s; }
+.figure-plate.run .peat-mark   { animation: fig-land 7s linear infinite; }
+.figure-plate.run .peat-m1 { animation-delay: 1.2s; }
+.figure-plate.run .peat-m2 { animation-delay: 2.4s; }
+.figure-plate.run .peat-m3 { animation-delay: 3.6s; }
+.figure-plate.run .peat-m4 { animation-delay: 4.8s; }
+.figure-plate.run .peat-m5 { animation-delay: 6s; }
+
+/* Molasses. The pan boils down, the sugar leaves, the dark stays. */
+.mol-steam, .mol-crystal, .mol-syrup { opacity: 0; }
+.figure-plate.run .mol-press   { animation: fig-pressdown 6s ease-in-out infinite; }
+.figure-plate.run .mol-juice   { animation: fig-boildown 6s ease-in-out infinite; }
+.figure-plate.run .mol-steam   { animation: fig-steamup 1.8s ease-out infinite; }
+.figure-plate.run .mol-st2     { animation-delay: 0.6s; }
+.figure-plate.run .mol-st3     { animation-delay: 1.2s; }
+.figure-plate.run .mol-crystal { animation: fig-crystallise 6s ease-in-out infinite; }
+.figure-plate.run .mol-c2 { animation-delay: 0.12s; }
+.figure-plate.run .mol-c3 { animation-delay: 0.24s; }
+.figure-plate.run .mol-c4 { animation-delay: 0.36s; }
+.figure-plate.run .mol-syrup   { animation: fig-darken 6s ease-in-out infinite; }
+
+/* Agave. Spines come off, the core stays; then steam one way, smoke the other. */
+.agave-steam, .agave-smoke { opacity: 0; }
+.figure-plate.run .agave-leaf  { animation: fig-trim 6s ease-in-out infinite; }
+.figure-plate.run .agave-pina  { animation: fig-reveal 6s ease-in-out infinite; }
+.figure-plate.run .agave-steam { animation: fig-steamup 2s ease-out infinite; }
+.figure-plate.run .agave-st2   { animation-delay: 0.7s; }
+.figure-plate.run .agave-st3   { animation-delay: 1.4s; }
+.figure-plate.run .agave-smoke { animation: fig-rise 2.6s ease-out infinite; }
+.figure-plate.run .agave-sm2   { animation-delay: 0.9s; }
+
+@keyframes fig-flicker { from { transform: scaleY(0.86); } to { transform: scaleY(1.1); } }
+@keyframes fig-rise {
+  0%   { opacity: 0;    transform: translate(0, 0) scale(0.7); }
+  25%  { opacity: 0.55; }
+  100% { opacity: 0;    transform: translate(10px, -46px) scale(1.5); }
+}
+@keyframes fig-carry {
+  0%   { opacity: 0; transform: translateX(0); }
+  6%   { opacity: 1; }
+  92%  { opacity: 1; transform: translateX(632px); }
+  100% { opacity: 0; transform: translateX(632px); }
+}
+@keyframes fig-land {
+  0%, 100% { opacity: 0; }
+  8%, 88%  { opacity: 1; }
+}
+@keyframes fig-pressdown {
+  0%, 8%    { transform: rotate(-16deg); }
+  22%, 100% { transform: rotate(0deg); }
+}
+@keyframes fig-boildown {
+  0%, 25%   { transform: scaleY(1); }
+  62%, 100% { transform: scaleY(0.42); }
+}
+@keyframes fig-steamup {
+  0%   { opacity: 0;   transform: translate(0, 0) scale(0.6); }
+  30%  { opacity: 0.5; }
+  100% { opacity: 0;   transform: translate(6px, -32px) scale(1.4); }
+}
+@keyframes fig-crystallise {
+  0%, 40%   { opacity: 0; transform: translateY(0); }
+  55%       { opacity: 1; transform: translateY(0); }
+  72%       { opacity: 1; transform: translateY(-52px); }
+  80%, 100% { opacity: 0; transform: translateY(-52px); }
+}
+@keyframes fig-darken {
+  0%, 55%   { opacity: 0; }
+  78%, 100% { opacity: 1; }
+}
+@keyframes fig-trim {
+  0%, 12%   { opacity: 1; transform: scale(1); }
+  30%, 100% { opacity: 0.18; transform: scale(0.94); }
+}
+@keyframes fig-reveal {
+  0%, 12%   { opacity: 0.35; }
+  34%, 100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peat-smoke, .mol-steam, .mol-crystal, .agave-steam, .agave-smoke { opacity: 0; }
+  .peat-phenol { opacity: 1; transform: translateX(632px); }
+  .peat-mark, .mol-syrup { opacity: 1; }
+  .mol-juice { transform: scaleY(0.42); }
+  .agave-leaf { opacity: 0.18; }
+  .figure-plate.run .peat-flame, .figure-plate.run .peat-smoke,
+  .figure-plate.run .peat-phenol, .figure-plate.run .peat-mark,
+  .figure-plate.run .mol-press, .figure-plate.run .mol-juice,
+  .figure-plate.run .mol-steam, .figure-plate.run .mol-crystal,
+  .figure-plate.run .mol-syrup, .figure-plate.run .agave-leaf,
+  .figure-plate.run .agave-pina, .figure-plate.run .agave-steam,
+  .figure-plate.run .agave-smoke { animation: none; }
+  .figure-replay { display: none; }
+}
+
+/* The shelf. Bottles are paper until the control is pressed, then each
+   takes its owner's colour. Three categorical fills that already hold
+   contrast on both grounds: the book's blue, the brass, and the sweet
+   family purple from the flavour wheel. */
+.shelf-body {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1.6;
+  transition: fill var(--m-settle) var(--ease);
+}
+.shelf-label { fill: var(--paper); stroke: var(--ink-faint); stroke-width: 0.8; }
+.shelf-name {
+  font-family: var(--font-display);
+  font-size: 13px;
+  fill: var(--ink);
+  text-anchor: middle;
+}
+.shelf.revealed [data-owner="diageo"] .shelf-body { fill: var(--accent-book); }
+.shelf.revealed [data-owner="pernod"] .shelf-body { fill: var(--gold); }
+.shelf.revealed [data-owner="lvmh"]   .shelf-body { fill: var(--flavour-sweet); }
+.shelf-owner { opacity: 0; transition: opacity var(--m-settle) var(--ease); }
+.shelf.revealed .shelf-owner { opacity: 1; }
+
+/* Brewing. The liquid moves along the line and the hops drop in at the
+   boil, which is the step the chapter singles out. */
+.brew-flow, .brew-steam, .brew-hops, .brew-bubbles, .brew-fill, .brew-head {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.brew-steam { opacity: 0; }
+.brew-hops  { opacity: 0; }
+.brew-fill  { transform-origin: 50% 100%; }
+.figure-plate.run .brew-flow    { animation: fig-dash 3s linear infinite; }
+.figure-plate.run .brew-steam   { animation: fig-steamup 2s ease-out infinite; }
+.figure-plate.run .brew-b2      { animation-delay: 0.6s; }
+.figure-plate.run .brew-b3      { animation-delay: 1.2s; }
+.figure-plate.run .brew-hops    { animation: fig-drop 5s ease-in-out infinite; }
+.figure-plate.run .brew-bubbles { animation: fig-fizz 2.4s ease-in-out infinite; }
+.figure-plate.run .brew-fill    { animation: fig-pourfill 5s ease-in-out infinite; }
+
+@keyframes fig-dash { to { stroke-dashoffset: -32; } }
+@keyframes fig-drop {
+  0%, 14%   { opacity: 0; transform: translateY(-14px); }
+  26%, 44%  { opacity: 1; transform: translateY(0); }
+  56%, 100% { opacity: 0; transform: translateY(26px); }
+}
+@keyframes fig-fizz {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50%      { opacity: 1;   transform: translateY(-7px); }
+}
+@keyframes fig-pourfill {
+  0%, 30%   { transform: scaleY(0.2); }
+  70%, 100% { transform: scaleY(1); }
+}
+
+/* The shaker. Two outcomes, run together so the comparison is forced. */
+.burst-pour, .burst-tin, .burst-cap, .burst-parts,
+.fold-shake, .fold-strain, .fold-base, .fold-beer, .fold-spoon {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.burst-parts { opacity: 0; }
+.fold-beer   { opacity: 0; transform-origin: 50% 100%; }
+.fold-spoon  { opacity: 0; transform-origin: 50% 0%; }
+.figure-plate.run .burst-pour  { animation: fig-pourin 5s ease-in-out infinite; }
+.figure-plate.run .burst-tin   { animation: fig-shakethengo 5s ease-in-out infinite; }
+.figure-plate.run .burst-parts { animation: fig-blow 5s ease-in-out infinite; }
+.figure-plate.run .fold-shake  { animation: fig-shake 5s ease-in-out infinite; }
+.figure-plate.run .fold-strain { animation: fig-dash 3s linear infinite; }
+.figure-plate.run .fold-beer   { animation: fig-topup 5s ease-in-out infinite; }
+.figure-plate.run .fold-spoon  { animation: fig-stir 5s ease-in-out infinite; }
+
+@keyframes fig-pourin {
+  0%, 4%    { opacity: 1; transform: translate(0, 0); }
+  20%       { opacity: 1; transform: translate(0, 6px); }
+  26%, 100% { opacity: 0; transform: translate(0, 6px); }
+}
+@keyframes fig-shakethengo {
+  0%, 26%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  30%       { transform: translate(-4px, 0) rotate(-5deg); }
+  34%       { transform: translate(4px, 0) rotate(5deg); }
+  38%       { transform: translate(-4px, 0) rotate(-5deg); }
+  42%       { transform: translate(4px, 0) rotate(5deg); }
+  46%       { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  52%, 100% { opacity: 0; }
+}
+@keyframes fig-blow {
+  0%, 46%   { opacity: 0; transform: scale(0.5); }
+  54%       { opacity: 1; transform: scale(1); }
+  88%, 100% { opacity: 0; transform: scale(1.15); }
+}
+@keyframes fig-shake {
+  0%, 26%   { transform: translate(0, 0) rotate(0deg); }
+  30%       { transform: translate(-4px, 0) rotate(-5deg); }
+  34%       { transform: translate(4px, 0) rotate(5deg); }
+  38%       { transform: translate(-4px, 0) rotate(-5deg); }
+  42%       { transform: translate(4px, 0) rotate(5deg); }
+  46%, 100% { transform: translate(0, 0) rotate(0deg); }
+}
+@keyframes fig-topup {
+  0%, 58%   { opacity: 0; transform: scaleY(0); }
+  74%, 100% { opacity: 1; transform: scaleY(1); }
+}
+@keyframes fig-stir {
+  0%, 74%   { opacity: 0; transform: translateY(-10px) rotate(0deg); }
+  82%       { opacity: 1; transform: translateY(0) rotate(-9deg); }
+  90%       { opacity: 1; transform: translateY(0) rotate(9deg); }
+  96%, 100% { opacity: 0; transform: translateY(0) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brew-steam, .brew-hops, .burst-pour, .burst-parts, .fold-spoon { opacity: 0; }
+  .brew-fill { transform: scaleY(1); }
+  .fold-beer { opacity: 1; transform: scaleY(1); }
+  .figure-plate.run .brew-flow, .figure-plate.run .brew-steam,
+  .figure-plate.run .brew-hops, .figure-plate.run .brew-bubbles,
+  .figure-plate.run .brew-fill, .figure-plate.run .burst-pour,
+  .figure-plate.run .burst-tin, .figure-plate.run .burst-parts,
+  .figure-plate.run .fold-shake, .figure-plate.run .fold-strain,
+  .figure-plate.run .fold-beer, .figure-plate.run .fold-spoon { animation: none; }
+}

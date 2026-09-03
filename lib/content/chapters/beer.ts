@@ -31,8 +31,8 @@ export const BEER: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Water.** Mineral content changes how bitterness reads, which is why Burton pale ales are hoppy and Pilsen lagers are soft - the towns had different water long before anyone knew why it mattered.',
-          '**Malt.** Barley, germinated then kilned. The kilning is the dial: pale malt gives bready sweetness, medium gives caramel and toffee, and roasted-to-black gives coffee and chocolate. **Malt is where beer colour comes from** - not from strength, and not from the yeast.',
+          '**Water.** Mineral content changes how bitterness reads, which is why Burton pale ales are hoppy and Pilsen lagers are soft. The towns had different water long before anyone knew why it mattered.',
+          '**Malt.** Barley, germinated then kilned, which means dried with heat to stop it growing. How hard it is kilned is the dial: pale malt gives bready sweetness, medium gives caramel and toffee, and roasted-to-black gives coffee and chocolate. **Malt is where beer colour comes from** - not from strength, and not from the yeast.',
           '**Hops.** The seasoning. Bitterness to balance malt sweetness, plus aroma. Boiled early they give bitterness and lose aroma; added late or after fermentation they give aroma and almost no bitterness. That timing split is most of what separates a bitter old-school IPA from a modern juicy one.',
           '**Yeast.** Eats the sugar, makes alcohol, and throws off flavour compounds while doing it. The biggest single difference between beers, and the subject of the next chapter.',
         ],
@@ -40,9 +40,9 @@ export const BEER: Chapter[] = [
       {
         kind: 'note',
         title: 'Colour is malt, not strength',
-        text: 'A dark beer is not necessarily strong, heavy or high in alcohol. Guinness is about 4.2% - lighter than a lot of pale lagers. The colour came out of a kiln, and nothing else follows from it.',
+        text: 'A dark beer isn\'t necessarily strong, heavy or high in alcohol. Guinness is about 4.2% - lighter than a lot of pale lagers. The colour came out of a kiln, and nothing else follows from it.',
       },
-      { kind: 'h', text: 'How it is made' },
+      { kind: 'h', text: 'How it\'s made' },
       {
         kind: 'steps',
         items: [
@@ -54,8 +54,9 @@ export const BEER: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Compare that to Part I and the shape is familiar. Beer is the fermented wash a grain whisky would be distilled from, stopped one step early and hopped. That is not a coincidence, and it is a useful way to connect the two.',
+        text: 'Compare that to Part I and the shape is familiar. Beer is the fermented wash a grain whisky would be distilled from, stopped one step early and hopped. That\'s not a coincidence, and it\'s a useful way to connect the two.',
       },
+      { kind: 'tool', tool: 'brew' },
     ],
   },
 
@@ -86,21 +87,21 @@ export const BEER: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Warm yeast is more active: it throws off esters and phenols, which land as banana, pear, clove and pepper. Cold yeast works slowly and quietly and leaves very little of itself behind. That is why a lager tastes clean and a Belgian ale tastes of fruit nobody added.',
+        text: 'Warm yeast is more active: it throws off esters and phenols, which land as banana, pear, clove and pepper. Cold yeast works slowly and quietly and leaves very little of itself behind. That\'s why a lager tastes clean and a Belgian ale tastes of fruit nobody added.',
       },
       {
         kind: 'p',
-        text: '*Lager* is German for "to store", which is the technique rather than a description of the beer. Lagering is cold conditioning, and it is the reason the category exists at all: it needed cellars cold enough to hold for weeks, so it stayed a regional Bavarian habit until refrigeration made it possible anywhere.',
+        text: '*Lager* is German for "to store", which is the technique rather than a description of the beer. Lagering is cold conditioning, and it\'s the reason the category exists at all: it needed cellars cold enough to hold for weeks, so it stayed a regional Bavarian habit until refrigeration made it possible anywhere.',
       },
       { kind: 'h', text: 'The styles to know' },
       {
         kind: 'list',
         items: [
           '**Pilsner** - pale lager, crisp, noticeably hoppy. The template most mass-market lager copies.',
-          '**Pale ale and IPA** - hop-forward ales. IPA is stronger and more bitter historically; the modern hazy version trades bitterness for aroma and reads almost like juice.',
+          '**Pale ale and IPA** - hop-forward ales. IPA is stronger and more bitter historically; the modern hazy version trades bitterness for aroma and tastes almost like juice.',
           '**Stout and porter** - dark ales from roasted malt. Coffee, chocolate, sometimes a dry mineral finish.',
           '**Wheat beer** - a large share of wheat alongside barley. Hazy, soft, and in the German version strongly banana-and-clove from the yeast.',
-          '**Sour** - deliberately acidified, by wild yeast or bacteria. The closest beer gets to wine, and the one to put in front of someone who says they do not like beer.',
+          '**Sour** - deliberately acidified, by wild yeast or bacteria. The closest beer gets to wine, and the one to put in front of someone who says they don\'t like beer.',
         ],
       },
       {
@@ -123,7 +124,7 @@ export const BEER: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Most of what goes wrong with a beer happens after it leaves the brewery, and nearly all of it is fixable behind the bar.',
+        text: 'Most of what goes wrong with a beer happens after it leaves the brewery, and nearly all of it\'s fixable behind the bar.',
       },
       { kind: 'h', text: 'The pour' },
       {
@@ -132,13 +133,14 @@ export const BEER: Chapter[] = [
           'Start with a clean, cool, wet glass. A glass out of a hot washer kills the head instantly, and any grease left on it does the same.',
           'Hold it at about 45° and open the tap fully. A half-opened tap makes foam, not beer.',
           'Straighten the glass as it fills so the last of the pour lands in the middle and builds the head.',
-          'Finish with two or three fingers of foam. It is not waste - the head holds the aroma, and a flat beer smells of nothing.',
+          'Finish with two or three fingers of foam. It\'s not waste, because the head holds the aroma, and a flat beer smells of nothing.',
         ],
       },
+      { kind: 'tool', tool: 'pour' },
       {
         kind: 'note',
         title: 'Why the head matters',
-        text: 'A pour with no head has been served without its aroma. If someone asks for it filled to the brim, that is their call, but the flat, slightly stale character they may complain about later starts here.',
+        text: 'A pour with no head has been served without its aroma. If someone asks for it filled to the brim, that\'s their call, but that is why it goes flat and tastes stale sooner.',
       },
       {
         kind: 'p',
@@ -161,8 +163,9 @@ export const BEER: Chapter[] = [
       {
         kind: 'note',
         title: 'Add it last, and never shake it',
-        text: 'Carbonation and a sealed shaker do not mix - at best you lose the fizz, at worst the tin comes apart. Build the rest of the drink, then top with beer and fold it through with a bar spoon.',
+        text: 'Carbonation and a sealed shaker don\'t mix. At best you lose the fizz, at worst the tin comes apart. Build the rest of the drink, then top with beer and fold it through with a bar spoon.',
       },
+      { kind: 'tool', tool: 'shaker' },
       {
         kind: 'unsure',
         title: 'Not from the course, and not from experience either',
