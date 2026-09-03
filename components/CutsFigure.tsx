@@ -50,36 +50,42 @@ export default function CutsFigure() {
         {/* the flag: a pick through a cherry and a folded peel */}
         <text className="fig-t" x="404" y="22">the flag, on a pick</text>
 
-        {/* the pick, in the gaps where the fruit does not cover it */}
-        <g stroke="var(--ink-soft)" strokeWidth="3" fill="none" strokeLinecap="round">
-        <path d="M430 132 H466"/>
-        <path d="M550 132 H583"/>
-        <path d="M625 132 H660"/>
+        {/* The pick runs behind everything, so the fruit and the cherry
+        hide the lengths they cover and it reads as threaded through
+        both. The cut edge is bowed up into the slice, which brings its
+        two corners forward and leaves the notch the cherry sits in. */}
+        <path d="M424 160 H612" stroke="var(--ink-soft)" strokeWidth="3"
+        fill="none" strokeLinecap="round"/>
+        <circle cx="620" cy="160" r="7" fill="none" stroke="var(--ink-soft)" strokeWidth="3"/>
+
+        <defs>
+        <clipPath id="flag-slice"><path d="M456 160 A52 52 0 0 1 560 160 A72.5 72.5 0 0 0 456 160 Z"/></clipPath>
+        </defs>
+        <g clipPath="url(#flag-slice)">
+        <circle cx="508" cy="160" r="52" fill="var(--orange-rind)"/>
+        <circle cx="508" cy="160" r="44" fill="var(--pith)"/>
+        <circle cx="508" cy="160" r="39" fill="var(--orange-flesh)"/>
+        <g stroke="var(--pith)" strokeWidth="2.2" fill="none">
+        <path d="M508 160 L471.0 144.7"/>
+        <path d="M508 160 L479.7 131.7"/>
+        <path d="M508 160 L492.7 123.0"/>
+        <path d="M508 160 L508.0 120.0"/>
+        <path d="M508 160 L523.3 123.0"/>
+        <path d="M508 160 L536.3 131.7"/>
+        <path d="M508 160 L545.0 144.7"/>
         </g>
-        <circle cx="668" cy="132" r="8" fill="none" stroke="var(--ink-soft)" strokeWidth="3"/>
+        </g>
+        <path d="M456 160 A52 52 0 0 1 560 160 A72.5 72.5 0 0 0 456 160 Z" fill="none" stroke="var(--fruit-line)" strokeWidth="2"/>
 
-        <path d="M460 152 A48 48 0 0 1 556 152 Z" fill="var(--orange-rind)"/>
-        <path d="M467 152 A41 41 0 0 1 549 152 Z" fill="var(--pith)"/>
-        <path d="M473 152 A35 35 0 0 1 543 152 Z" fill="var(--orange-flesh)"/>
-        <path stroke="var(--pith)" strokeWidth="2.2" fill="none" d="M508 152 L475.7 138.6"/>
-        <path stroke="var(--pith)" strokeWidth="2.2" fill="none" d="M508 152 L483.3 127.3"/>
-        <path stroke="var(--pith)" strokeWidth="2.2" fill="none" d="M508 152 L494.6 119.7"/>
-        <path stroke="var(--pith)" strokeWidth="2.2" fill="none" d="M508 152 L508.0 117.0"/>
-        <path stroke="var(--pith)" strokeWidth="2.2" fill="none" d="M508 152 L521.4 119.7"/>
-        <path stroke="var(--pith)" strokeWidth="2.2" fill="none" d="M508 152 L532.7 127.3"/>
-        <path stroke="var(--pith)" strokeWidth="2.2" fill="none" d="M508 152 L540.3 138.6"/>
-        <path d="M460 152 A48 48 0 0 1 556 152 Z" fill="none" stroke="var(--fruit-line)" strokeWidth="2"/>
-        <path d="M460 152 h96" stroke="var(--fruit-line)" strokeWidth="2" fill="none"/>
-
-        <circle cx="604" cy="132" r="25" fill="var(--cherry)"/>
-        <circle cx="596" cy="123" r="7" fill="var(--pith)" opacity="0.3"/>
-        <circle cx="604" cy="132" r="25" fill="none" stroke="var(--fruit-line)" strokeWidth="2"/>
+        <circle cx="508" cy="164" r="22" fill="var(--cherry)"/>
+        <circle cx="501" cy="157" r="6" fill="var(--pith)" opacity="0.28"/>
+        <circle cx="508" cy="164" r="22" fill="none" stroke="var(--fruit-line)" strokeWidth="2"/>
 
         {/* the rim it sits across */}
-        <path d="M416 178 C470 202 600 202 664 178" stroke="var(--rule-strong)"
+        <path d="M416 198 C470 220 600 220 664 198" stroke="var(--rule-strong)"
         strokeWidth="2.4" fill="none"/>
 
-        <text className="fig-val" x="404" y="228">half a wheel and a cherry, on one pick</text>
+        <text className="fig-val" x="404" y="240">both ends of the wheel, and the cherry between</text>
 
         <path className="fig-thin" d="M16 246 h688"/>
         <text className="fig-t" x="16" y="270">and what comes off the board</text>
