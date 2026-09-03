@@ -85,11 +85,13 @@ export const SERVICE: Chapter[] = [
           ['**Cherry**', 'Maraschino, bright red', 'Kept submerged in its own liquid'],
         ],
       },
+      { kind: 'tool', tool: 'cuts' },
       {
         kind: 'note',
         title: 'A twist is squeezed, not dropped',
         text: 'Hold the peel skin-side down over the glass and pinch it, so the oil sprays across the surface. Then wipe it round the rim and drop it in. Dropping it in without squeezing wastes the oil.',
       },
+      { kind: 'tool', tool: 'twist' },
       { kind: 'h', text: 'Keeping it' },
       {
         kind: 'list',

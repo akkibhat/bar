@@ -122,6 +122,7 @@ export const BACK_BAR: Chapter[] = [
         kind: 'p',
         text: 'A barrel holds around 200 litres, and roughly 2% of it evaporates every year. That loss is called the angels\' share, and it compounds: a whisky sitting for twenty years has lost a serious fraction of the cask before anyone opens it. This is most of why old whisky is expensive. The rest is that the distiller has had money tied up in a warehouse for two decades.',
       },
+      { kind: 'tool', tool: 'angelsShare' },
       {
         kind: 'p',
         text: 'American whiskey must go into **new charred oak**, which is why bourbon is sweet, vanilla-heavy and quick to take colour. Scotch mostly goes into barrels that have already held something else - ex-bourbon casks, which the Americans can\'t legally reuse, and sherry butts, which give the dried-fruit character.',

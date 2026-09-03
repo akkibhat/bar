@@ -129,6 +129,7 @@ export const TECHNIQUE: Chapter[] = [
         title: 'Fill the glass',
         text: 'A half-filled highball melts faster than a full one, not slower. Less ice means each piece takes more heat, so it melts quicker and the drink is warm and watery inside ten minutes. More ice is less dilution. It\'s counter-intuitive and worth remembering.',
       },
+      { kind: 'tool', tool: 'fillGlass' },
       { kind: 'h', text: 'Clear ice' },
       {
         kind: 'p',
@@ -143,6 +144,7 @@ export const TECHNIQUE: Chapter[] = [
           'Tip out the unfrozen water underneath, which is where all the cloudiness has gone, and carve the clear slab into cubes.',
         ],
       },
+      { kind: 'tool', tool: 'clearIce' },
       {
         kind: 'p',
         text: 'It\'s cosmetic, and it looks good. Clear ice doesn\'t melt meaningfully slower than cloudy ice of the same size, whatever people say. The difference is trapped air, not density.',
@@ -224,6 +226,7 @@ export const TECHNIQUE: Chapter[] = [
           'Let it settle for a few seconds. The foam separates and sits up on its own.',
         ],
       },
+      { kind: 'tool', tool: 'dryShake' },
       {
         kind: 'note',
         title: 'Reverse dry shake',

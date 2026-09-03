@@ -42,6 +42,7 @@ export const BEER: Chapter[] = [
         title: 'Colour is malt, not strength',
         text: 'A dark beer isn\'t necessarily strong, heavy or high in alcohol. Guinness is about 4.2% - lighter than a lot of pale lagers. The colour came out of a kiln, and nothing else follows from it.',
       },
+      { kind: 'tool', tool: 'kiln' },
       { kind: 'h', text: 'How it\'s made' },
       {
         kind: 'steps',

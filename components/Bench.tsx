@@ -17,6 +17,15 @@ import BrandsFigure from './BrandsFigure';
 import BrewSequence from './BrewSequence';
 import PourFigure from './PourFigure';
 import ShakerFigure from './ShakerFigure';
+import RailFigure from './RailFigure';
+import SidecarFamily from './SidecarFamily';
+import TwistFigure from './TwistFigure';
+import CutsFigure from './CutsFigure';
+import FillGlassFigure from './FillGlassFigure';
+import ClearIceFigure from './ClearIceFigure';
+import AngelsShareFigure from './AngelsShareFigure';
+import DryShakeFigure from './DryShakeFigure';
+import KilnFigure from './KilnFigure';
 import MethodFigure from './MethodFigure';
 import { METHODS, type MethodKey } from './methodDrawings';
 
@@ -111,6 +120,24 @@ function render(tool: ToolBlock['tool'], only?: string) {
       return <PourFigure />;
     case 'shaker':
       return <ShakerFigure />;
+    case 'rail':
+      return <RailFigure />;
+    case 'sidecarFamily':
+      return <SidecarFamily />;
+    case 'twist':
+      return <TwistFigure />;
+    case 'cuts':
+      return <CutsFigure />;
+    case 'fillGlass':
+      return <FillGlassFigure />;
+    case 'clearIce':
+      return <ClearIceFigure />;
+    case 'angelsShare':
+      return <AngelsShareFigure />;
+    case 'dryShake':
+      return <DryShakeFigure />;
+    case 'kiln':
+      return <KilnFigure />;
     /* One component, seven drawings; `only` says which. An unknown key
        renders nothing rather than throwing, same as any other tool. */
     case 'methodStep':

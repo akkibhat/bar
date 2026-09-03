@@ -125,6 +125,15 @@ export type Block =
         | 'brew'
         | 'pour'
         | 'shaker'
+        | 'rail'
+        | 'sidecarFamily'
+        | 'twist'
+        | 'cuts'
+        | 'fillGlass'
+        | 'clearIce'
+        | 'angelsShare'
+        | 'dryShake'
+        | 'kiln'
         | 'methodStep';
       /**
        * A parameter for the tool named above. `spiritFilter` reads it

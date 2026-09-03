@@ -126,6 +126,7 @@ export const BALANCE: Chapter[] = [
         kind: 'p',
         text: 'The **Sidecar** is the family people miss: spirit, liqueur, citrus. It looks like a sour, but the sweetening is coming from a liqueur, which brings flavour as well as sugar. A Margarita is a Sidecar. So is a Cosmopolitan, and so is a White Lady.',
       },
+      { kind: 'tool', tool: 'sidecarFamily' },
       {
         kind: 'note',
         title: 'Where the six come from',
