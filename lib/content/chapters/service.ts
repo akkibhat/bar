@@ -228,6 +228,11 @@ export const SERVICE: Chapter[] = [
         kind: 'p',
         text: 'In New Zealand the governing legislation is the **Sale and Supply of Alcohol Act 2012**. Anyone managing the sale or supply of alcohol on a licensed premises needs a **Licence Controller Qualification**, which covers the Act itself and host responsibility, and a Manager\'s Certificate issued by the local council on the strength of it.',
       },
+      {
+        kind: 'note',
+        title: 'Auckland asks for more than the Act does',
+        text: 'The Act sets a floor, and a council can ask for more on top of it. Auckland Council has started requiring bar and front-of-house staff to hold **ServeWise** certification - not only the duty manager. That is a wider net than the national rule casts, since the Act puts its qualification requirement on whoever is managing the premises rather than on everyone pouring. Check what your own council asks for: it is not the same everywhere.',
+      },
       { kind: 'h', text: 'What host responsibility asks' },
       {
         kind: 'list',
