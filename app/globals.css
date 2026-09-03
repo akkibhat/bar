@@ -1483,7 +1483,10 @@ button.card:hover {
    offset is measured in the browser, not guessed. */
 .nav-half { display: inline-flex; align-items: baseline; gap: 0.4rem; }
 
-/* Measured, not guessed: with the two boxes baseline-aligned, the mark's
-   ink centre sat 3.77px above the wordmark's at a 16px nav. That is
-   0.235em, so it holds if the type scale moves. */
-.nav-mark { display: inline-block; transform: translateY(0.235em); }
+/* Measured, not guessed, and against the cap band rather than the whole
+   line. Two things were wrong before: the mark was 14-15px of ink beside
+   a 12px cap height, and it hung 2px below the baseline - and anything
+   dipping under a baseline reads as sinking, however well its centre
+   lines up. Sized to the cap height and centred on that band, the offset
+   comes out at 2.27px on a 16px nav, so 0.142em. */
+.nav-mark { display: inline-block; transform: translateY(0.142em); }

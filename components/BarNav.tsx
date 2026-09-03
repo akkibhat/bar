@@ -95,7 +95,7 @@ export default function BarNav() {
                     ['--logo-pour' as string]: accent,
                   }}
                 >
-                  <GlassMark size={17} variant={l.id} decorative />
+                  <GlassMark size={15} variant={l.id} decorative />
                 </span>
                 <span
                   className="wordmark"
