@@ -124,7 +124,7 @@ export const BALANCE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The **Sidecar** is the family people miss: spirit, liqueur, citrus. It looks like a sour, but the sweetening is coming from a liqueur, which brings flavour as well as sugar. A Margarita is a Sidecar. So is a Cosmopolitan, and so is a White Lady.',
+        text: 'The **Sidecar** is the family people miss: spirit, liqueur, citrus. It looks like a sour, but the sweetening is coming from a liqueur, which brings flavour as well as sugar. A Margarita is a Sidecar. So is a Cosmopolitan, and so is a White Lady.  (diagram/animation of how the three drinks are variations of the same idea)',
       },
       {
         kind: 'note',
@@ -183,7 +183,7 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'note',
         title: 'It doesn\'t need boiling',
-        text: 'Warm water and stirring is enough. Boiling drives off water, so the syrup ends up stronger than intended and the ratio is no longer what you measured.',
+        text: 'Warm water and stirring is enough. Boiling drives off water, so the syrup ends up stronger than intended and the ratio is no longer what you measured. (i have always used boiling as we usually have a boiling tap close by....)',
       },
       { kind: 'h', text: 'The other syrups' },
       {
@@ -191,7 +191,7 @@ export const BALANCE: Chapter[] = [
         items: [
           '**Rich demerara** - 2 : 1 with demerara sugar. Molasses character. Goes into anything aged: Old Fashioned, tiki, rum drinks.',
           '**Honey syrup** - 3 : 1 honey to warm water, because neat honey seizes in a cold shaker.',
-          '**Agave syrup** - thin it the same way. The default sweetener for tequila and mezcal drinks.',
+          '**Agave syrup** - thin it the same way(which way there are multiple ways listed...). The default sweetener for tequila and mezcal drinks.',
           '**Grenadine** - pomegranate, not the red chemical sweetener sold under the name. Equal parts pomegranate juice and sugar, and much better than the bought one.',
           '**Orgeat** - almond and orange flower. Fiddly, and essential to a Mai Tai.',
           '**Oleo saccharum** - citrus peels buried in sugar for a few hours. The sugar draws the oil out of the peel and you get an intensely citrus syrup from fruit you were going to throw away.',
@@ -205,7 +205,7 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'note',
         title: 'Citrus is a house ingredient too',
-        text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more. Doing it properly costs real time, and there\'s no way around it.',
+        text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more. Doing it properly costs real time, and there\'s no way around it. (note that bars almost exclusively use bottled juice, unless super fancy cocktail bar)',
       },
       {
         kind: 'unsure',

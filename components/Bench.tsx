@@ -17,6 +17,8 @@ import BrandsFigure from './BrandsFigure';
 import BrewSequence from './BrewSequence';
 import PourFigure from './PourFigure';
 import ShakerFigure from './ShakerFigure';
+import MethodFigure from './MethodFigure';
+import { METHODS, type MethodKey } from './methodDrawings';
 
 /**
  * Renders a tool inside a chapter, and offers the way back out to its own
@@ -109,6 +111,10 @@ function render(tool: ToolBlock['tool'], only?: string) {
       return <PourFigure />;
     case 'shaker':
       return <ShakerFigure />;
+    /* One component, seven drawings; `only` says which. An unknown key
+       renders nothing rather than throwing, same as any other tool. */
+    case 'methodStep':
+      return only && only in METHODS ? <MethodFigure method={only as MethodKey} /> : null;
     default:
       return null;
   }

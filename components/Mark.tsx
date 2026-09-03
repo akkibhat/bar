@@ -27,6 +27,47 @@ import {
  * inverts with the rest of the interface, and the gaps are transparent so
  * it sits on any surface.
  */
+/**
+ * The way home, as a door rather than a word.
+ *
+ * The nav already carries two wordmarks; a third word beside them reads
+ * as a third section rather than as the way out of both. A door also
+ * says what the landing page is - the cover, with a half behind each
+ * side - in a way a house or an arrow does not.
+ *
+ * Drawn on the same geometry as the glass mark: flat strokes, no
+ * rounding, `currentColor` so it takes the nav's own state colour.
+ */
+export function HomeMark({
+  size = 22,
+  className = '',
+}: {
+  size?: number;
+  className?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      aria-hidden="true"
+      focusable="false"
+      className={className}
+    >
+      {/* the frame */}
+      <path d="M5 21V8.6L12 3l7 5.6V21" strokeLinejoin="miter" />
+      {/* the threshold */}
+      <path d="M3.5 21h17" strokeLinecap="butt" />
+      {/* the door itself, and its handle */}
+      <path d="M9.6 21v-7.2h4.8V21" strokeLinejoin="miter" />
+      <path d="M13.1 17.4h.01" strokeLinecap="round" strokeWidth="2" />
+    </svg>
+  );
+}
+
 export function GlassMark({
   size = 32,
   variant = 'book',

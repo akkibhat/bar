@@ -48,6 +48,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { pendingEdits } from './chapters-md.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const OUT_DIR = path.join(ROOT, '_workings', 'chapters');
@@ -157,6 +158,49 @@ function renderBlock(slug, i, b, out) {
  * ------------------------------------------------------------------ */
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
+
+/* ------------------------------------------------------------------ *
+ * Refuse to overwrite unimported edits
+ *
+ * This script regenerates from the TypeScript, so anything written in
+ * the Markdown and not yet imported is destroyed by it. That has
+ * happened, and it cost four paragraphs. So before writing anything,
+ * read every file that is already here and ask the importer's question
+ * of it: does it say something the chapter does not? If so, stop -
+ * nothing is written, and the run names what it found.
+ *
+ * --force overrides, for when the edits are known to be unwanted.
+ * ------------------------------------------------------------------ */
+const FORCE = process.argv.includes('--force');
+
+if (!FORCE) {
+  const bySlug = new Map(chapters.map((c) => [c.slug, c]));
+  const blocked = [];
+
+  for (const name of fs.readdirSync(OUT_DIR).filter((n) => n.endsWith('.md'))) {
+    const md = fs.readFileSync(path.join(OUT_DIR, name), 'utf8');
+    const slug = (md.match(/<!--\s+([a-z0-9-]+):/) || [])[1];
+    const edits = pendingEdits(md, bySlug.get(slug));
+    if (edits.length) blocked.push({ name, edits });
+  }
+
+  if (blocked.length) {
+    const total = blocked.reduce((n, b) => n + b.edits.length, 0);
+    console.error(
+      `refusing to write: ${total} edit(s) in ${blocked.length} file(s) are not imported yet.`,
+    );
+    console.error('');
+    for (const b of blocked) {
+      console.error(`  ${b.name}`);
+      for (const e of b.edits) console.error(`      ${e}`);
+    }
+    console.error('');
+    console.error('  Run "npm run chapters:in" first, or');
+    console.error('  "npm run chapters:out -- --force" to discard them.');
+    console.error('  Nothing has been written.');
+    process.exit(1);
+  }
+}
 
 const before = new Set(
   fs.readdirSync(OUT_DIR).filter((n) => n.endsWith('.md')),

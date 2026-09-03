@@ -1379,3 +1379,100 @@ button.card:hover {
   .figure-plate.run .fold-shake, .figure-plate.run .fold-strain,
   .figure-plate.run .fold-beer, .figure-plate.run .fold-spoon { animation: none; }
 }
+
+/* The seven methods. Shared by both candidate figures - see
+   components/methodDrawings.tsx. Each animation shows the action and
+   ends on its outcome, so reduced motion still tells the story. */
+.mth-plate * { transform-box: fill-box; transform-origin: center; }
+.mth-shake, .mth-jiggle, .mth-cloud, .mth-spoon, .mth-press, .mth-fruit,
+.mth-b1, .mth-b2, .mth-b3, .mth-pour, .mth-l1, .mth-l2, .mth-l3,
+.mth-slush, .mth-blades, .mth-spark, .mth-flame { transform-box: fill-box; }
+
+.mth-cloud { opacity: 0.12; }
+.mth-jiggle { opacity: 0; }
+.mth-b1, .mth-b2, .mth-b3 { opacity: 0; }
+.mth-l1, .mth-l2, .mth-l3 { opacity: 0; }
+.mth-pour { opacity: 0; }
+.mth-spark { opacity: 0; }
+.mth-slush { opacity: 0.12; }
+.mth-press { transform-origin: 50% 0%; }
+.mth-blades { transform-origin: 50% 50%; }
+.mth-flame, .mth-burn { transform-origin: 50% 100%; }
+.mth-spoonwall, .mth-drip { transform-box: fill-box; }
+.mth-drip { opacity: 0; }
+
+.figure-plate.run .mth-shake  { animation: mth-shake 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-jiggle { animation: mth-lines 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-cloud  { animation: mth-cloud 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-spoon  { animation: mth-stir 3.4s linear infinite; }
+.figure-plate.run .mth-press  { animation: mth-press 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-fruit  { animation: mth-squash 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-pour   { animation: mth-pour 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-b1     { animation: mth-fill 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-b2     { animation: mth-fill 3.4s ease-in-out infinite 0.5s; }
+.figure-plate.run .mth-b3     { animation: mth-fill 3.4s ease-in-out infinite 1s; }
+.figure-plate.run .mth-l1     { animation: mth-settle 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-l2     { animation: mth-settle 3.4s ease-in-out infinite 0.6s; }
+.figure-plate.run .mth-l3     { animation: mth-settle 3.4s ease-in-out infinite 1.2s; }
+.figure-plate.run .mth-spoonwall { animation: mth-climb 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-drip      { animation: mth-drip 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-burn      { animation: fig-flicker 0.5s ease-in-out infinite alternate; }
+.figure-plate.run .mth-blades { animation: mth-spin 0.5s linear infinite; }
+.figure-plate.run .mth-slush  { animation: mth-cloud 3.4s ease-in-out infinite; }
+.figure-plate.run .mth-flame  { animation: fig-flicker 0.6s ease-in-out infinite alternate; }
+.figure-plate.run .mth-spark  { animation: mth-spark 3.4s ease-in-out infinite; }
+
+@keyframes mth-shake {
+  0%, 20%   { transform: translate(0, 0) rotate(0deg); }
+  28%       { transform: translate(-5px, 0) rotate(-6deg); }
+  36%       { transform: translate(5px, 0) rotate(6deg); }
+  44%       { transform: translate(-5px, 0) rotate(-6deg); }
+  52%       { transform: translate(5px, 0) rotate(6deg); }
+  60%, 100% { transform: translate(0, 0) rotate(0deg); }
+}
+@keyframes mth-lines { 0%, 22%, 62%, 100% { opacity: 0; } 30%, 54% { opacity: 1; } }
+@keyframes mth-cloud { 0%, 22% { opacity: 0.12; } 62%, 100% { opacity: 0.5; } }
+@keyframes mth-stir  { to { transform: rotate(360deg); } }
+@keyframes mth-press {
+  0%, 15%   { transform: translateY(0); }
+  40%       { transform: translateY(30px); }
+  65%, 100% { transform: translateY(0); }
+}
+@keyframes mth-squash {
+  0%, 20%   { transform: scaleY(1); }
+  42%, 60%  { transform: scaleY(0.55); }
+  80%, 100% { transform: scaleY(0.7); }
+}
+@keyframes mth-pour { 0%, 8% { opacity: 0; } 16%, 70% { opacity: 1; } 80%, 100% { opacity: 0; } }
+@keyframes mth-fill { 0%, 14% { opacity: 0; transform: scaleY(0); } 30%, 100% { opacity: 1; transform: scaleY(1); } }
+@keyframes mth-settle {
+  0%, 12%   { opacity: 0; transform: translateY(-14px); }
+  30%, 100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes mth-spin { to { transform: rotate(360deg); } }
+/* The spoon is lifted a band at a time rather than held still - that is
+   the part of layering people get wrong. */
+@keyframes mth-climb {
+  0%, 20%   { transform: translateY(44px); }
+  30%, 44%  { transform: translateY(22px); }
+  54%, 100% { transform: translateY(0); }
+}
+@keyframes mth-drip {
+  0%, 10%   { opacity: 0; }
+  16%, 62%  { opacity: 1; }
+  72%, 100% { opacity: 0; }
+}
+@keyframes mth-spark { 0%, 30% { opacity: 0; transform: scale(0.4); } 45% { opacity: 1; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.3); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .mth-cloud, .mth-slush { opacity: 0.5; }
+  .mth-b1, .mth-b2, .mth-b3, .mth-l1, .mth-l2, .mth-l3 { opacity: 1; }
+  .mth-jiggle, .mth-pour, .mth-spark, .mth-drip { opacity: 0; }
+  .mth-spoonwall { transform: translateY(0); }
+  .figure-plate.run .mth-plate * { animation: none !important; }
+}
+
+/* The way home. Quiet until hovered, like the tool links - it is an exit,
+   not one of the two destinations beside it. */
+.nav-home { transition: color var(--m-quick) var(--ease); }
+.nav-home:hover { color: var(--ink) !important; }

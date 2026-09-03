@@ -65,6 +65,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import {
+  parse,
+  textOf,
+  itemsOf,
+  tableOf,
+  quoteOf,
+} from './chapters-md.mjs';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const SRC_DIR = path.join(ROOT, '_workings', 'chapters');
@@ -110,89 +117,6 @@ for (const name of fs.readdirSync(CHAPTERS_DIR)) {
  * Reading the Markdown
  * ------------------------------------------------------------------ */
 
-const ANCHOR =
-  /^<!--\s+([a-z0-9-]+):([0-9]+|standfirst|new):([a-z]+)(?:\s+(.*?))?\s+-->$/;
-
-function parse(md) {
-  const blocks = [];
-  let current = null;
-
-  for (const line of md.split(/\r?\n/)) {
-    const m = ANCHOR.exec(line.trim());
-    if (m) {
-      if (current) blocks.push(current);
-      current = { slug: m[1], index: m[2], kind: m[3], extra: m[4] ?? '', body: [] };
-      continue;
-    }
-    /* A rule ends the chapter and with it the last block, or the block
-       would swallow the next chapter's heading. */
-    if (line.trim() === '---') {
-      if (current) blocks.push(current);
-      current = null;
-      continue;
-    }
-    if (current) current.body.push(line);
-  }
-  if (current) blocks.push(current);
-  return blocks;
-}
-
-const tidy = (lines) => {
-  const out = [...lines];
-  while (out.length && !out[0].trim()) out.shift();
-  while (out.length && !out[out.length - 1].trim()) out.pop();
-  return out;
-};
-
-const unItalic = (s) => s.replace(/^\*(.*)\*$/, '$1');
-const unQuote = (lines) => lines.map((l) => l.replace(/^>\s?/, ''));
-
-/** The prose a block carries, undone from its Markdown wrapping. */
-function textOf(block) {
-  const lines = tidy(block.body);
-  if (!lines.length) return null;
-
-  switch (block.kind) {
-    case 'p':
-      return lines.join(' ').trim();
-    case 'standfirst':
-      return unItalic(lines.join(' ').trim()).trim();
-    case 'h':
-      return lines[0].replace(/^#+\s*/, '').trim();
-    case 'descriptors':
-      return unItalic(lines[0].trim()).trim();
-    case 'note':
-    case 'unsure':
-      return unQuote(lines).join(' ').trim();
-    default:
-      return null;
-  }
-}
-
-const itemsOf = (block) =>
-  tidy(block.body)
-    .filter((l) => /^\s*(?:[-*]|\d+\.)\s+/.test(l))
-    .map((l) => l.replace(/^\s*(?:[-*]|\d+\.)\s+/, '').trim());
-
-/**
- * A Markdown table read back into `head` and `rows`.
- *
- * Returns null rather than a half-parsed table if the shape is wrong -
- * fewer than three lines, or a missing separator row. The caller checks
- * the column counts, since that is the mistake worth naming precisely.
- */
-function tableOf(block) {
-  const lines = tidy(block.body).filter((l) => l.trim().startsWith('|'));
-  if (lines.length < 3) return null;
-
-  const cells = (l) =>
-    l.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
-
-  if (!/^\|[\s|:-]+\|$/.test(lines[1].trim())) return null;
-
-  return { head: cells(lines[0]), rows: lines.slice(2).map(cells) };
-}
-
 /**
  * A table as it is written in the source: the `head` line and the `rows`
  * array together, as one literal.
@@ -208,16 +132,6 @@ function tableLiteral(head, rows, nl, pad) {
     rows.map((r) => `${pad}${arr(r)},`).join(nl) +
     `${nl}${pad.slice(2)}]`
   );
-}
-
-function quoteOf(block) {
-  const lines = unQuote(tidy(block.body));
-  const at = lines.findIndex((l) => /^\s*[-–—]\s+/.test(l));
-  if (at === -1) return null;
-  return {
-    text: lines.slice(0, at).join(' ').trim(),
-    cite: lines[at].replace(/^\s*[-–—]\s+/, '').trim(),
-  };
 }
 
 /* ------------------------------------------------------------------ *

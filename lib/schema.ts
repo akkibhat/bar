@@ -124,8 +124,13 @@ export type Block =
         | 'brands'
         | 'brew'
         | 'pour'
-        | 'shaker';
-      /** For `spiritFilter`: lock it to one category, hiding the control. */
+        | 'shaker'
+        | 'methodStep';
+      /**
+       * A parameter for the tool named above. `spiritFilter` reads it
+       * as a category to lock to; `methodStep` reads it as which of the
+       * seven methods to draw.
+       */
       only?: string;
     };
 

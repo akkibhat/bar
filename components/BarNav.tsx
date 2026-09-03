@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { GlassMark } from './Mark';
+import { HomeMark } from './Mark';
 import { PARTS } from '@/lib/content/parts';
 import { chaptersIn } from '@/lib/content/book';
 import { HALVES } from '@/lib/site';
@@ -54,16 +54,16 @@ export default function BarNav() {
         }}
       >
         <div className="mx-auto max-w-[58rem] px-6 sm:px-10 h-full flex items-center gap-1">
-          {/* The mark alone is the way home. The wordmark beside it would
-              be a third name in a row that already has two. */}
+          {/* An icon rather than the word "Home": the row already has two
+              wordmarks, and a third word reads as a third section. */}
           <Link
             href="/"
             aria-label="Home"
             aria-current={pathname === '/' ? 'page' : undefined}
-            className="mr-3 flex items-center"
-            style={{ opacity: pathname === '/' ? 1 : 0.75 }}
+            className="nav-home mr-3 flex items-center px-1 py-1.5"
+            style={{ color: pathname === '/' ? 'var(--ink)' : 'var(--ink-soft)' }}
           >
-            <GlassMark size={22} variant="shelf" />
+            <HomeMark size={20} />
           </Link>
 
           {HALVES.map((l) => {

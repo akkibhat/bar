@@ -31,12 +31,13 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Shaking' },
       {
         kind: 'p',
-        text: 'Hard, fast, and about 8–12 seconds. Shaking does four things at once: mixes ingredients of different densities, chills the drink almost to freezing, dilutes it, and beats air into it. That last one is why a shaken sour is cloudy and has a soft, slightly foamy texture.',
+        text: 'Hard, fast, and about 8–12 seconds. Shaking does four things at the same time: mixes ingredients of different densities, chills the drink almost to freezing, dilutes it, and beats air into it. That last one is why a shaken sour is cloudy and has a soft, slightly foamy texture.',
       },
       {
         kind: 'p',
         text: 'The rule: **shake anything that won\'t go clear.** Citrus, juice, cream, egg, syrup. Those need the aeration and the emulsification, and they\'re already opaque, so nothing is lost.',
       },
+      { kind: 'tool', tool: 'methodStep', only: 'shaking' },
       { kind: 'h', text: 'Stirring' },
       {
         kind: 'p',
@@ -44,8 +45,9 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The rule: **stir anything made only of spirits.** A Martini, a Manhattan, a Negroni. Clarity is part of what those drinks are, and shaking them puts air in and chips ice off, which makes them cloudy and watery at once.',
+        text: 'The rule: **stir anything made only of spirits.** A Martini, a Manhattan, a Negroni. Clarity is part of what those drinks are, and shaking them puts air in and chips ice off, which makes them cloudy and watery at the same time.',
       },
+      { kind: 'tool', tool: 'methodStep', only: 'stirring' },
       {
         kind: 'note',
         title: 'Shake or stir',
@@ -57,26 +59,31 @@ export const TECHNIQUE: Chapter[] = [
         kind: 'p',
         text: 'Pressing fruit or herbs to release what\'s in them, with a muddler, in the bottom of the glass or the shaker. Fruit takes real pressure. **Herbs don\'t** - mint should be pressed just enough to release its oil, and grinding it releases chlorophyll instead, which is bitter and grassy. A firm press and a twist is enough.',
       },
+      { kind: 'tool', tool: 'methodStep', only: 'muddling' },
       { kind: 'h', text: 'Building' },
       {
         kind: 'p',
         text: 'Assembling in the glass it\'s served in, in order, usually over ice. Highballs and anything long. Spirit first, then mixer, so the pour of the mixer does the mixing.',
       },
+      { kind: 'tool', tool: 'methodStep', only: 'building' },
       { kind: 'h', text: 'Layering' },
       {
         kind: 'p',
         text: 'Floating ingredients on each other so they stay in visible bands. It works on density, and density mostly tracks sugar: the sweetest goes in first, and each lighter layer is poured slowly over the back of a bar spoon held against the inside of the glass so it lands without breaking through.',
       },
+      { kind: 'tool', tool: 'methodStep', only: 'layering' },
       { kind: 'h', text: 'Blending' },
       {
         kind: 'p',
         text: 'For frozen drinks and for anything with whole fresh fruit in it. Use a measured amount of crushed ice rather than filling the jug, or the drink comes out as flavoured snow.',
       },
+      { kind: 'tool', tool: 'methodStep', only: 'blending' },
       { kind: 'h', text: 'Flaming' },
       {
         kind: 'p',
         text: 'Setting a high-proof spirit alight, which caramelises sugar and changes the aroma. It has one real use: flaming an orange twist over a drink changes the aroma. Beyond that it\'s display.',
       },
+      { kind: 'tool', tool: 'methodStep', only: 'flaming' },
       {
         kind: 'note',
         title: 'If you\'re going to do it',
@@ -97,11 +104,11 @@ export const TECHNIQUE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Ice is an ingredient, and by volume it\'s usually the largest one. It does two things at once, and they can\'t be separated: **there is no chilling without dilution, and no dilution without chilling.**',
+        text: 'Ice is an ingredient, and by volume it\'s usually the largest one. It does two things at the same time, and they can\'t be separated: **there is no chilling without dilution, and no dilution without chilling.**',
       },
       {
         kind: 'p',
-        text: 'That rules out a common instinct. You can\'t shake a drink "just to chill it" and avoid watering it down. The cold *comes from* the ice melting, because melting is what absorbs the heat. A shaken drink finishes at around a quarter water by volume, and that water is part of the recipe whether or not the recipe mentions it.',
+        text: 'That rules out a common instinct. You can\'t shake a drink "just to chill it" and avoid watering it down. The cold *comes from* the ice melting, because melting is what removes the heat. A shaken drink finishes at around a quarter water by volume, and that water is part of the recipe whether or not the recipe mentions it.',
       },
       { kind: 'tool', tool: 'dilution' },
       { kind: 'h', text: 'Size, and why it matters' },
@@ -125,7 +132,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Clear ice' },
       {
         kind: 'p',
-        text: 'Cloudy ice is cloudy because of dissolved air and minerals that get trapped as water freezes inwards from every side at once. Clear ice is frozen *directionally* - from one side only - so the trapped air is pushed ahead of the freezing front and ends up in the last part to freeze, which you cut off.',
+        text: 'Cloudy ice is cloudy because of dissolved air and minerals that get trapped as water freezes inwards from all sides at the same time. Clear ice is frozen *directionally* - from one side only - so the trapped air is pushed ahead of the freezing front and ends up in the last part to freeze, which you cut off.',
       },
       {
         kind: 'steps',

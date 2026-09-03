@@ -160,7 +160,7 @@ export const KIT: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Glassware within reach of the station**, so making a drink never means walking.',
+          '**Glassware within reach of the station**, so making a drink never means walking the length of the bar.',
           '**Spirits on the back bar**, facing out. They\'re the display as well as the stock, and the ones you pour most sit in the speed rail in front of you instead.',
           '**Juices and perishables chilled and close.** Anything that goes in a drink cold has to be cold before it goes in.',
           '**Garnishes at hand and covered**, prepped for the shift.',
@@ -171,7 +171,7 @@ export const KIT: Chapter[] = [
       { kind: 'h', text: 'The speed rail' },
       {
         kind: 'p',
-        text: 'The trough of bottles directly in front of the station holds the pours that make up most of the night: the house gin, vodka, rum, whisky, tequila, triple sec, and the two vermouths. They\'re arranged in the same order every shift, so you can find them without looking.',
+        text: 'The trough of bottles directly in front of the station holds the pours that make up most of the night: the house gin, vodka, rum, whisky, tequila, triple sec, and the two vermouths. They\'re arranged in the same order every shift, so you can find them without looking. (explain the nromal order of speed rail and diagram it)',
       },
       { kind: 'h', text: 'The barback' },
       {
@@ -181,7 +181,7 @@ export const KIT: Chapter[] = [
       {
         kind: 'note',
         title: 'Crushed ice needs planning',
-        text: 'A Moscow Mule, a Julep, a Caipirinha and anything blended all want crushed ice, and crushing it to order in the middle of service doesn\'t work. Crush ahead and keep it in an insulated container.',
+        text: 'A Moscow Mule, a Julep, a Caipirinha and anything blended all want crushed ice, and crushing it to order in the middle of service doesn\'t work. Crush ahead and keep it in an insulated container. (note here this is very uncommon for busy bars)',
       },
       {
         kind: 'unsure',

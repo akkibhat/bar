@@ -91,6 +91,30 @@ my own notes, or a bottle I have actually poured.
   differs, shown on the spec sheet and linked. Paused deliberately;
   do it in one pass once the writing is done.
 
+- **The book keeps explaining a course the reader cannot see.** 26
+  references to "the course", "the qualification" or "what was taught",
+  across 15 chapters, nearly all the same move: *the course covered X
+  and said nothing about Y*. The fact is always the interesting half;
+  the absence in a syllabus nobody else has read is not. Cut where it is
+  explaining that document, keep where it protects the reader - chapter
+  15 and chapter 37 both say "I have not done this, it is from reading",
+  which is worth keeping. Roughly 20 of the 26 should go.
+
+- **The `unsure` block titles are a formula.** Eighteen blocks, and
+  eleven of the titles are variations on two phrases: "Not from the
+  course" appears five times, "Mine to write / fill in / add / check"
+  another six. The dashed border already says the block is provisional,
+  so the title is spending its only line saying it twice. Each should
+  name the actual gap instead - "The ageing bands need checking", "No
+  New Zealand gin here yet", "I have not fat-washed anything".
+
+- **Copyright and permission.** Nothing in the repo states where the
+  course material stands, and the book is derived from a paid
+  qualification's teaching. Decide what the site says about it, whether
+  anything needs attributing, and what licence the writing itself
+  carries. Also covers the IBA recipes, if the IBA pass ends up quoting
+  their measures rather than just linking to them.
+
 - **Balance has to be redone in the same pass.** *(Balance)* Three
   blocks in that chapter hard-code numbers taken from the specs, and
   nothing connects them - change a spec and the prose goes quietly wrong.
