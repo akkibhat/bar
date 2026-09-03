@@ -176,12 +176,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       { kind: 'tool', tool: 'brands' },
       { kind: 'tool', tool: 'abv' },
-      {
-        kind: 'unsure',
-        title: 'Check against my notes',
-        text: 'TODO: my margin note says bourbon is "distilled at 160 proof, barrelled at 125, no colouring added, new charred oak". Those are the US legal maxima rather than what any given distiller does. Confirm both before I state them as fact. The 57% corn figure I wrote down should probably be 51%, which is the number the standard uses.',
-      },
-    ],
+],
   },
 
   /* ================================================================== */

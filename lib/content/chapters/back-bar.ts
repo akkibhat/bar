@@ -125,7 +125,7 @@ export const BACK_BAR: Chapter[] = [
       { kind: 'tool', tool: 'angelsShare' },
       {
         kind: 'p',
-        text: 'American whiskey must go into **new charred oak**, which is why bourbon is sweet, vanilla-heavy and quick to take colour. Scotch mostly goes into barrels that have already held something else - ex-bourbon casks, which the Americans can\'t legally reuse, and sherry butts, which give the dried-fruit character.',
+        text: 'American whiskey must go into **new charred oak**, which is why bourbon is sweet, vanilla-heavy and quick to take colour. Bourbon has three other numbers attached to it, all of them limits rather than recipes: a mash of at least **51 percent corn**, distilled to no more than **160 proof**, and into the barrel at no more than **125 proof**. No colouring is permitted. Scotch mostly goes into barrels that have already held something else - ex-bourbon casks, which the Americans can\'t legally reuse, and sherry butts, which give the dried-fruit character.',
       },
       {
         kind: 'table',
@@ -140,8 +140,8 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Check before quoting',
-        text: 'TODO: my notes have "barrel 760–800% of task" and "72% evaporate per year", which are both garbled. The numbers I have written down don\'t match any figure I can find. The 2%-a-year evaporation above is the standard one. Find what I meant. Also confirm what the Japanese producers do with mizunara before I write about it.',
+        title: 'Two garbled numbers, decoded',
+        text: 'Both garbled notes decode. "Barrel 760-800 percent of task" is barrel = 70-80 percent of taste, the usual industry claim that most of a whisky\'s flavour comes from the cask rather than the spirit; the range quoted elsewhere runs 60 to 80. "72 percent evaporate per year" is the 2 percent angels\' share already in the chapter. TODO: confirm that is what I meant before either goes in, and write the mizunara line - the wood is porous and hard to coop, needs about three years drying, and gives sandalwood, coconut and incense, but wants fifteen years or more in cask to do it.'
       },
     ],
   },
@@ -437,7 +437,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'A bottle of Angostura lasts for years - it\'s roughly 45% alcohol and used a few drops at a time. The distinctive oversized paper label is a printing error nobody ever corrected.',
+        text: 'A bottle of Angostura lasts for years - it\'s roughly 45% alcohol and used a few drops at a time. The distinctive oversized paper label is said to be a mistake nobody ever corrected, though that is the company\'s own account and more than one version of it is in circulation.',
       },
       {
         kind: 'note',
