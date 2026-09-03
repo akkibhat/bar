@@ -1476,3 +1476,14 @@ button.card:hover {
    not one of the two destinations beside it. */
 .nav-home { transition: color var(--m-quick) var(--ease); }
 .nav-home:hover { color: var(--ink) !important; }
+
+/* The nav's two halves: mark, then wordmark. Aligned on the baseline
+   rather than centred, then nudged - the glass is bottom-heavy and the
+   didone has long descenders, so a plain centre reads high. The exact
+   offset is measured in the browser, not guessed. */
+.nav-half { display: inline-flex; align-items: baseline; gap: 0.4rem; }
+
+/* Measured, not guessed: with the two boxes baseline-aligned, the mark's
+   ink centre sat 3.77px above the wordmark's at a 16px nav. That is
+   0.235em, so it holds if the type scale moves. */
+.nav-mark { display: inline-block; transform: translateY(0.235em); }

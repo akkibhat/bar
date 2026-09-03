@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { HomeMark } from './Mark';
+import { GlassMark, HomeMark } from './Mark';
 import { PARTS } from '@/lib/content/parts';
 import { chaptersIn } from '@/lib/content/book';
 import { HALVES } from '@/lib/site';
@@ -75,7 +75,7 @@ export default function BarNav() {
                 key={l.id}
                 href={l.at}
                 aria-current={active ? 'page' : undefined}
-                className="px-3 py-1.5"
+                className="nav-half px-3 py-1.5"
                 style={{
                   color: active ? 'var(--ink)' : 'var(--ink-soft)',
                   borderBottom: active
@@ -83,6 +83,20 @@ export default function BarNav() {
                     : '2px solid transparent',
                 }}
               >
+                {/* The mark takes the half's own accent. Aligned on the
+                    wordmark's baseline rather than centred on the line
+                    box: the glass is bottom-heavy and the didone has
+                    long descenders, so centring the two boxes leaves
+                    the mark visibly high. */}
+                <span
+                  className="nav-mark"
+                  style={{
+                    ['--logo-glass' as string]: accent,
+                    ['--logo-pour' as string]: accent,
+                  }}
+                >
+                  <GlassMark size={17} variant={l.id} decorative />
+                </span>
                 <span
                   className="wordmark"
                   style={{ fontSize: 'var(--t-ui)', color: 'inherit' }}
