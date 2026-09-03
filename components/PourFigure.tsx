@@ -8,10 +8,37 @@ import Figure from './Figure';
  * is shown four times: tilted at forty-five, filling, straightening, and
  * standing up with its head on.
  *
- * The wrong pour is drawn beside it rather than described, because the
- * fault it causes - a glass of foam - is visible in a way that "open the
- * tap fully" is not.
+ * Each glass pivots on the corner of its base rather than its centre,
+ * which is both what a tilted glass actually does in the hand and what
+ * keeps every one of them above the bar line instead of cutting through
+ * it. The pivot point is the same corner every time, so the four read as
+ * one glass moving rather than four glasses drawn.
+ *
+ * The beer is drawn as a stream from the spout into the mouth, because a
+ * tap floating unconnected above a glass is not a pour. The wrong pour
+ * beside them has the same stream broken into gouts, which is what a
+ * half-opened tap actually does.
  */
+
+/** Where a glass's mouth ends up once it has been tilted. */
+function mouth(cx: number, deg: number) {
+  const a = (deg * Math.PI) / 180;
+  const px = cx + 22;
+  const dx = -22;
+  const dy = -84;
+  return {
+    x: px + dx * Math.cos(a) - dy * Math.sin(a),
+    y: 190 + dx * Math.sin(a) + dy * Math.cos(a),
+  };
+}
+
+const STAGES = [
+  { cx: 96, deg: -45, fill: 0, head: 0, label: '1. tilt to 45°', sub: 'tap fully open' },
+  { cx: 244, deg: -30, fill: 34, head: 0, label: '2. let it run', sub: 'down the side' },
+  { cx: 392, deg: -12, fill: 52, head: 8, label: '3. straighten', sub: 'into the middle' },
+  { cx: 540, deg: 0, fill: 58, head: 20, label: '4. finish', sub: 'head on top' },
+];
+
 export default function PourFigure() {
   return (
     <Figure
@@ -19,68 +46,87 @@ export default function PourFigure() {
       caption="Forty-five degrees to start, straighten as it fills, and finish with two or three fingers of head. A half-opened tap makes foam, not beer."
     >
       <svg
-        viewBox="0 0 720 260"
+        viewBox="0 0 720 290"
         role="img"
-        aria-label="Four stages of pouring a beer: glass tilted at forty-five degrees, filling, straightening, then upright with a head. Beside them, the wrong pour producing a glass of foam."
+        aria-label="Four stages of pouring a beer: the glass tilted at forty-five degrees, filling down the side, straightening, then upright with a head. Beside them, a half-opened tap producing only foam."
       >
-        <path d="M20 196 H524" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
+        <path d="M20 190 H620" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
 
-        {/* ---- 1. tilted, tap fully open ---- */}
-        <g transform="rotate(-45 78 190)">
-          <path className="fig-ink" d="M56 190 v-84 h44 v84 z" />
-        </g>
-        <path className="fig-accent" d="M62 74 v34" strokeWidth="3" />
-        <path className="fig-ink" d="M50 62 h26 v12 h-26 z" />
-        <text className="fig-t" x="20" y="220">1. tilt to 45°</text>
-        <text className="fig-val" x="20" y="240">tap fully open</text>
+        {STAGES.map((s, i) => {
+          const m = mouth(s.cx, s.deg);
+          const last = i === STAGES.length - 1;
+          return (
+            <g key={s.label}>
+              {/* the tap, above the mouth it is pouring into */}
+              <path className="fig-ink" d={`M${m.x - 13} 34 h26 v13 h-26 z`} />
+              <path className="fig-ink" d={`M${m.x} 47 v${Math.max(10, m.y - 61)}`} strokeWidth="2.4" />
+              {!last && (
+                <path
+                  d={`M${m.x} ${m.y - 8} v${Math.min(30, 190 - m.y)}`}
+                  stroke="var(--gold)"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                  fill="none"
+                  opacity="0.75"
+                />
+              )}
 
-        {/* ---- 2. filling ---- */}
-        <g transform="rotate(-30 210 190)">
-          <path className="fig-ink" d="M188 190 v-84 h44 v84 z" />
-          <path d="M191 188 v-38 h38 v38 z" fill="var(--gold)" opacity="0.45" />
-        </g>
-        <path className="fig-accent" d="M196 74 v30" strokeWidth="3" />
-        <path className="fig-ink" d="M184 62 h26 v12 h-26 z" />
-        <text className="fig-t" x="164" y="220">2. let it run</text>
-        <text className="fig-val" x="164" y="240">down the side</text>
+              {/* the glass, pivoting on the corner of its base */}
+              <g transform={`rotate(${s.deg} ${s.cx + 22} 190)`}>
+                <path className="fig-ink" d={`M${s.cx - 22} 190 v-84 h44 v84 z`} />
+                {s.fill > 0 && (
+                  <path
+                    d={`M${s.cx - 19} 188 v-${s.fill} h38 v${s.fill} z`}
+                    fill="var(--gold)"
+                    opacity="0.5"
+                  />
+                )}
+                {s.head > 0 && (
+                  <path
+                    d={`M${s.cx - 19} ${188 - s.fill} v-${s.head} h38 v${s.head} z`}
+                    fill="var(--paper)"
+                    stroke="var(--ink)"
+                    strokeWidth="1.2"
+                  />
+                )}
+              </g>
 
-        {/* ---- 3. straightening ---- */}
-        <g transform="rotate(-12 342 190)">
-          <path className="fig-ink" d="M320 190 v-84 h44 v84 z" />
-          <path d="M323 188 v-56 h38 v56 z" fill="var(--gold)" opacity="0.45" />
-          <path d="M323 132 v-8 h38 v8 z" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1" />
-        </g>
-        <text className="fig-t" x="300" y="220">3. straighten</text>
-        <text className="fig-val" x="300" y="240">into the middle</text>
+              <text className="fig-t" x={s.cx - 30} y="216">{s.label}</text>
+              <text className="fig-val" x={s.cx - 30} y="238">{s.sub}</text>
+            </g>
+          );
+        })}
 
-        {/* ---- 4. upright, with a head ---- */}
-        <g>
-          <path className="fig-ink" d="M452 190 v-96 h48 v96 z" />
-          <path d="M456 188 v-62 h40 v62 z" fill="var(--gold)" opacity="0.5" />
-          <path d="M456 126 v-20 h40 v20 z" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1.2" />
-          {/* the head, measured in fingers */}
-          <path className="fig-accent" d="M508 106 v20" strokeWidth="1.4" />
-          <path className="fig-accent" d="M504 106 h8 M504 126 h8" strokeWidth="1.4" />
-          <text className="fig-val" x="516" y="120" fill="var(--accent-book)">2–3 fingers</text>
-        </g>
-        <text className="fig-t" x="440" y="220">4. finish</text>
-        <text className="fig-val" x="440" y="240">head on top</text>
+        {/* the head, measured */}
+        <path className="fig-accent" d="M578 148 v20" strokeWidth="1.4" />
+        <path className="fig-accent" d="M574 148 h8 M574 168 h8" strokeWidth="1.4" />
+        <text className="fig-val" x="588" y="162" fill="var(--accent-book)">2–3 fingers</text>
 
         {/* ---- the wrong pour ---- */}
-        <path d="M576 30 V232" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
-        <g>
-          <path className="fig-ink" d="M622 190 v-96 h48 v96 z" />
-          <path d="M626 188 v-24 h40 v24 z" fill="var(--gold)" opacity="0.5" />
-          <path d="M626 164 v-58 h40 v58 z" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1.2" />
-          <g className="fig-thin" strokeWidth="0.9">
-            <circle cx="638" cy="132" r="4" /><circle cx="654" cy="122" r="3.4" />
-            <circle cx="646" cy="148" r="3" /><circle cx="660" cy="142" r="3.6" />
-          </g>
-          <path d="M604 74 v26" stroke="var(--gold)" strokeWidth="3" fill="none" strokeDasharray="4 4" />
-          <path className="fig-ink" d="M592 62 h26 v12 h-26 z" />
+        <path d="M646 24 V262" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
+        <path d="M666 190 H712" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
+
+        <path className="fig-ink" d="M676 34 h26 v13 h-26 z" />
+        <path className="fig-ink" d="M689 47 v20" strokeWidth="2.4" />
+        {/* the stream, broken - which is what a half-open tap gives you */}
+        <g stroke="var(--gold)" strokeWidth="4" strokeLinecap="round" fill="none" opacity="0.75">
+          <path d="M689 70 v8" />
+          <path d="M689 84 v6" />
+          <path d="M689 96 v9" />
         </g>
-        <text className="fig-t" x="592" y="220" fill="var(--gold)">half-open tap</text>
-        <text className="fig-val" x="592" y="240">all foam</text>
+
+        <path className="fig-ink" d="M667 190 v-84 h44 v84 z" />
+        <path d="M670 188 v-16 h38 v16 z" fill="var(--gold)" opacity="0.5" />
+        <path d="M670 172 v-64 h38 v64 z" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1.2" />
+        <g className="fig-thin" strokeWidth="0.9">
+          <circle cx="681" cy="142" r="4" />
+          <circle cx="697" cy="132" r="3.4" />
+          <circle cx="689" cy="158" r="3" />
+          <circle cx="702" cy="152" r="3.6" />
+        </g>
+
+        <text className="fig-t" x="656" y="216" fill="var(--gold)">half-open tap</text>
+        <text className="fig-val" x="656" y="238">all foam</text>
       </svg>
     </Figure>
   );

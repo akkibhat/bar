@@ -87,6 +87,9 @@ export default function ChapterFooter({
                         className="spec__name"
                         style={{ color: 'var(--accent-book)' }}
                       >
+                        <span className="chapter-no nums" aria-hidden="true">
+                          {c.n}.
+                        </span>
                         {c.title}
                       </span>
                       <span className="spec__leader" aria-hidden="true" />
@@ -103,7 +106,12 @@ export default function ChapterFooter({
                       className="spec__line"
                       style={{ textDecoration: 'none' }}
                     >
-                      <span className="spec__name">{c.title}</span>
+                      <span className="spec__name">
+                        <span className="chapter-no nums" aria-hidden="true">
+                          {c.n}.
+                        </span>
+                        {c.title}
+                      </span>
                       <span className="spec__leader" aria-hidden="true" />
                       <span
                         className="spec__amount"
