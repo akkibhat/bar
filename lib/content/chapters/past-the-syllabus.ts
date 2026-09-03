@@ -86,7 +86,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Acid.** The most important lever. Citrus, vinegar, or verjuice - the juice of unripe grapes, sour without tasting of lemon. Without it a zero-proof drink is flat and sweet.',
+          '**Acid.** The most important lever. Lemon or lime, or a splash of vinegar where you want the sourness without the citrus flavour. Without it a zero-proof drink is flat and sweet.',
           '**Bitterness.** Strong tea, coffee, grapefruit, chinotto, or non-alcoholic aperitifs. This is what makes a drink read as adult.',
           '**Tannin and body.** Over-brewed black tea is the cheapest trick behind the bar and does a lot of the work.',
           '**Heat.** Ginger, chilli, pink peppercorn, or a couple of dashes of Tabasco - which brings its own acid with it. Stands in for the bite the alcohol is not providing.',
