@@ -116,6 +116,9 @@ export default function BookIndex() {
                               : 'var(--ink-soft)',
                           }}
                         >
+                          <span className="chapter-no nums" aria-hidden="true">
+                            {c.n}.
+                          </span>
                           {c.title}
                         </Link>
 

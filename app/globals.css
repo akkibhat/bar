@@ -989,7 +989,12 @@ button.card:hover {
 }
 
 .book-index__chapter {
-  display: block;
+  /* Flex rather than block so a title that wraps - and in a 15rem column
+     several do - keeps its second line in the title column instead of
+     running back under the number. */
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
   font-size: var(--t-caption);
   line-height: 1.4;
   padding: 0.18rem 0;
@@ -1496,4 +1501,24 @@ button.card:hover {
 .nav-mark {
   display: inline-block;
   transform: translateY(var(--mark-offset, 0));
+}
+
+/* Chapter numbers in the two listings. Set in the display face and held
+   in a fixed-width column so the titles line up whether the number is
+   one digit or two - a ragged left edge on a list of 37 reads as an
+   accident. Faint, because it is a locator and not part of the name. */
+.chapter-no {
+  display: inline-block;
+  width: 2.1em;
+  font-size: 0.82em;
+  color: var(--ink-faint);
+  font-family: var(--font-display);
+}
+/* In the rail the parent is a flex row, so the number is a fixed column
+   rather than an inline box and must not be squeezed by a long title. */
+.book-index__chapter .chapter-no {
+  width: auto;
+  min-width: 1.7em;
+  flex: none;
+  text-align: right;
 }

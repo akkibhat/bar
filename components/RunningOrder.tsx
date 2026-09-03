@@ -96,6 +96,12 @@ export default function Contents() {
                           color: isDone ? 'var(--ink-faint)' : 'var(--ink)',
                         }}
                       >
+                        {/* The number runs 1 to 37 across the whole book
+                            rather than restarting inside each part, so it
+                            says where you are in the thing as a whole. */}
+                        <span className="chapter-no nums" aria-hidden="true">
+                          {c.n}.
+                        </span>
                         {c.title}
                       </span>
                       <span className="spec__leader" aria-hidden="true" />

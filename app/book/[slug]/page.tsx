@@ -72,6 +72,8 @@ export default async function ChapterPage({
 
         <p className="label-ui mb-4">
           {part && `Part ${part.numeral} · ${part.title}`}
+          <span aria-hidden="true"> · </span>
+          {`Chapter ${chapter.n}`}
         </p>
 
         <h1 className="display t-h1 sm:t-display leading-[1.04] mb-4">
