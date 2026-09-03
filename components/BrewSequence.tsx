@@ -95,7 +95,7 @@ export default function BrewSequence() {
         <g>
           <path className="fig-ink" d="M624 178 v-72 h44 v72 z" />
           <path className="brew-fill" d="M628 176 v-52 h36 v52 z" fill="var(--gold)" opacity="0.5" />
-          <path className="brew-head" d="M628 124 v-14 h36 v14 z" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1.2" />
+          <path className="brew-head" d="M628 124 v-14 h36 v14 z" fill="var(--foam)" stroke="var(--ink)" strokeWidth="1.2" />
           <text className="fig-t" x="624" y="200">poured</text>
         </g>
 

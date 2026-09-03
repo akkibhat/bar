@@ -234,6 +234,17 @@
   --wash:         rgba(51, 78, 125, 0.10);
   --shadow:       rgba(26, 22, 19, 0.07);
 
+  /* ---- Substances -------------------------------------------------- *
+   * A head of foam is off-white and a pint is gold whatever the page is
+   * doing behind them, so these are set once here and never redefined
+   * per theme. Drawing a physical thing with a page token instead - the
+   * head with --paper, say - inverts it in dark mode and turns the foam
+   * black. Anything a figure draws as an object rather than as a line
+   * belongs in this block.
+   * ------------------------------------------------------------------ */
+  --foam:      #f4efe3;
+  --beer:      #e0a52c;
+
   /* ---- The mark ---------------------------------------------------- */
   --logo-glass:   var(--ink-blue);
   --logo-pour:    var(--bitters);

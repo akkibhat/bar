@@ -68,7 +68,7 @@ export default function PourFigure() {
               {!last && (
                 <path
                   d={`M${m.x} ${spout} v${Math.max(14, m.y - spout + 16)}`}
-                  stroke="var(--gold)"
+                  stroke="var(--beer)"
                   strokeWidth="4.5"
                   strokeLinecap="round"
                   fill="none"
@@ -82,14 +82,13 @@ export default function PourFigure() {
                 {s.fill > 0 && (
                   <path
                     d={`M${cx - 19} 188 v-${s.fill} h38 v${s.fill} z`}
-                    fill="var(--gold)"
-                    opacity="0.5"
+                    fill="var(--beer)"
                   />
                 )}
                 {s.head > 0 && (
                   <path
                     d={`M${cx - 19} ${188 - s.fill} v-${s.head} h38 v${s.head} z`}
-                    fill="var(--paper)"
+                    fill="var(--foam)"
                     stroke="var(--ink)"
                     strokeWidth="1.2"
                   />
@@ -114,15 +113,15 @@ export default function PourFigure() {
         <path className="fig-ink" d="M658 46 h28 v14 h-28 z" />
         <path className="fig-ink" d="M672 60 v12" strokeWidth="3" />
         {/* the stream, broken into gouts - what a half-open tap gives you */}
-        <g stroke="var(--gold)" strokeWidth="4.5" strokeLinecap="round" fill="none" opacity="0.8">
+        <g stroke="var(--beer)" strokeWidth="4.5" strokeLinecap="round" fill="none" opacity="0.8">
           <path d="M672 76 v7" />
           <path d="M672 90 v5" />
           <path d="M672 101 v6" />
         </g>
 
         <path className="fig-ink" d="M650 190 v-84 h44 v84 z" />
-        <path d="M653 188 v-16 h38 v16 z" fill="var(--gold)" opacity="0.5" />
-        <path d="M653 172 v-64 h38 v64 z" fill="var(--paper)" stroke="var(--ink)" strokeWidth="1.2" />
+        <path d="M653 188 v-16 h38 v16 z" fill="var(--beer)" />
+        <path d="M653 172 v-64 h38 v64 z" fill="var(--foam)" stroke="var(--ink)" strokeWidth="1.2" />
         <g className="fig-thin" strokeWidth="0.9">
           <circle cx="664" cy="142" r="4" />
           <circle cx="680" cy="132" r="3.4" />
@@ -130,7 +129,7 @@ export default function PourFigure() {
           <circle cx="685" cy="152" r="3.6" />
         </g>
 
-        <text className="fig-t" x="672" y="222" textAnchor="middle" fill="var(--gold)">half open</text>
+        <text className="fig-t" x="672" y="222" textAnchor="middle" fill="var(--brass-deep)">half open</text>
         <text className="fig-val" x="672" y="244" textAnchor="middle">all foam</text>
       </svg>
     </Figure>
