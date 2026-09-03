@@ -49,7 +49,7 @@ export const SERVICE: Chapter[] = [
       { kind: 'h', text: 'Named mixed drinks' },
       {
         kind: 'p',
-        text: 'A few spirit-and-mixer combinations have their own names, and using them is faster than describing them. Rum and coke with a lime wedge is a **Cuba Libre**. Vodka and orange is a **Screwdriver**. Whisky and dry ginger is a **Highball** in the specific sense. (these names are not too common so maybe rephrase?)',
+        text: 'A few spirit-and-mixer combinations have their own names. Most people will just ask for the spirit and the mixer, and that is fine - but the names turn up on menus and in older recipe books, so they are worth recognising. Rum and coke with a lime wedge is a **Cuba Libre**. Vodka and orange is a **Screwdriver**. Whisky and dry ginger is a **Highball**, in the narrow sense of the word.',
       },
       {
         kind: 'p',
@@ -88,7 +88,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'note',
         title: 'A twist is squeezed, not dropped',
-        text: 'Hold the peel skin-side down over the glass and pinch it, so the oil sprays across the surface. Then wipe it round the rim and drop it in. Dropping it in without squeezing wastes the oil. (animation)',
+        text: 'Hold the peel skin-side down over the glass and pinch it, so the oil sprays across the surface. Then wipe it round the rim and drop it in. Dropping it in without squeezing wastes the oil.',
       },
       { kind: 'h', text: 'Keeping it' },
       {
@@ -99,7 +99,7 @@ export const SERVICE: Chapter[] = [
           'Store whole fruit cold, dry, dark, and off the floor.',
           'Never leave garnishes sitting submerged in water, because it leaches them and they go limp.',
           'To refresh, cover briefly with soda water and drain immediately.',
-          'Refuse poor fruit. A tired lime makes a tired garnish, and nothing rescues it.(rephrase too flowery)',
+          'Refuse poor fruit. A soft or dried-out lime cannot be cut into anything worth putting on a glass.',
         ],
       },
       { kind: 'h', text: 'Beyond fruit' },
@@ -159,7 +159,7 @@ export const SERVICE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'That matters more now than it did when the course was written, and the zero-proof chapter in Part IX picks it up properly. (why is there a reference to the course?)',
+        text: 'That matters more than it used to, and the zero-proof chapter in Part IX picks it up properly. (why is there a reference to the course?)',
       },
     ],
   },
@@ -222,7 +222,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Most of learning to tend a bar is about pouring drinks. The part that carries legal weight is about refusing them. In New Zealand this is not house policy or judgement - it is statute, and it binds the person holding the bottle as well as the person holding the licence.',
+        text: 'Most of learning to tend a bar is about pouring drinks. The part that carries legal weight is about refusing them. In New Zealand that is not house policy or judgement - it is written into law, and it applies to the person holding the bottle as much as to the person holding the licence.',
       },
       {
         kind: 'p',
@@ -231,7 +231,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'note',
         title: 'Auckland asks for more than the Act does',
-        text: 'The Act sets a floor, and a council can ask for more on top of it. Auckland Council has started requiring bar and front-of-house staff to hold **ServeWise** certification - not only the duty manager. That is a wider net than the national rule casts, since the Act puts its qualification requirement on whoever is managing the premises rather than on everyone pouring. Check what your own council asks for: it is not the same everywhere.',
+        text: 'The Act sets a floor, and a council can ask for more on top of it. Auckland Council has started requiring bar and front-of-house staff to hold **ServeWise** certification - not only the duty manager. The Act only asks a qualification of whoever is managing the premises; this asks one of everybody pouring. Check what your own council asks for: it is not the same everywhere.',
       },
       { kind: 'h', text: 'What host responsibility asks' },
       {

@@ -171,7 +171,7 @@ export const KIT: Chapter[] = [
       { kind: 'h', text: 'The speed rail' },
       {
         kind: 'p',
-        text: 'The trough of bottles directly in front of the station holds the pours that make up most of the night: the house gin, vodka, rum, whisky, tequila, triple sec, and the two vermouths. They\'re arranged in the same order every shift, so you can find them without looking. (explain the nromal order of speed rail and diagram it)',
+        text: 'The trough of bottles directly in front of the station holds the pours that make up most of the night: the house gin, vodka, rum, whisky, tequila, triple sec, and the two vermouths. They\'re arranged in the same order every shift, so you can find them without looking. The usual order runs by how often each is poured and by category: vodka and gin first, then rum, then whisky and tequila, then the modifiers - triple sec and the two vermouths - at the far end. What matters is less which order than that it never changes.',
       },
       { kind: 'h', text: 'The barback' },
       {

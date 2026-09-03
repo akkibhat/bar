@@ -230,6 +230,11 @@ export const CLASSICS: Chapter[] = [
         text: 'These are drinks built in the serving glass rather than made in a shaker and poured out. The three muddled ones use fresh fruit for the acid instead of juice, want crushed ice, and are better with the sugar added before the ice rather than after. The last two are assembled in the glass without muddling anything.',
       },
       {
+        kind: 'note',
+        title: 'Why crushed, and what to do without it',
+        text: 'Crushed ice has far more surface area than cubes, so it chills faster and waters the drink down faster - and these are built in the glass with no shaker to do either. It also packs around muddled fruit and holds it under instead of letting it float. Cubes will do if crushed is what you have not got. The drink comes out warmer and stronger, so stir it longer and drink it sooner.',
+      },
+      {
         kind: 'spec',
         spec: {
           name: 'Caipirinha',
