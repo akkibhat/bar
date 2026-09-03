@@ -91,6 +91,24 @@ my own notes, or a bottle I have actually poured.
   differs, shown on the spec sheet and linked. Paused deliberately;
   do it in one pass once the writing is done.
 
+- **Balance has to be redone in the same pass.** *(Balance)* Three
+  blocks in that chapter hard-code numbers taken from the specs, and
+  nothing connects them - change a spec and the prose goes quietly wrong.
+
+  - `balance:3` states the template as 60 : 30 : 30, and 45 : 22.5 :
+    22.5 for a smaller drink. No spec in the book actually uses 22.5.
+  - `balance:4` cites four drinks by their measures: the Daiquiri as
+    60 / 20 / 20, the Margarita as 60 : 25 : 30, the Whiskey Sour as
+    45 : 25 : 20, the White Lady as 40 / 30 / 20. The Margarita is one
+    of the four the IBA has materially different (they pour 50 / 20 /
+    15), and the Daiquiri's third figure does not match its own spec,
+    which lists two bar spoons rather than 20 ml.
+  - `balance:5` offers 2 : 1 : 0.75 as the drier modern alternative.
+
+  So the order matters: settle the specs first, then rewrite these three
+  from whatever the specs end up saying. Doing it the other way round
+  means writing the paragraph twice.
+
 ---
 
 ## The site
