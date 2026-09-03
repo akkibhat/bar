@@ -235,7 +235,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Aquafaba' },
       {
         kind: 'p',
-        text: 'The liquid from a tin of chickpeas. It foams almost identically, and about 20–25 ml stands in for one egg white. Vegan, no allergen, and it keeps in the fridge for several days. Use unsalted if you can; it tastes of nothing in a finished drink.',
+        text: 'The liquid from a tin of chickpeas. It foams almost identically. One large egg white is about 30 ml, and a straight one-for-one swap is the usual starting point; published practice runs from 22 ml up to a full 30. Vegan, no allergen, and it keeps in the fridge for several days. Use unsalted if you can; it tastes of nothing in a finished drink.',
       },
       { kind: 'h', text: 'Safety, plainly' },
       {
@@ -249,7 +249,7 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'unsure',
         title: 'The aquafaba conversion is untested',
-        text: 'Four specs here use egg white, and I had a margin note about aquafaba, but no technique for either. TODO: I have written 20–25 ml for aquafaba from general practice and haven\'t measured it against a real egg white side by side. Test it before I state it as the conversion.',
+        text: 'Four specs here use egg white, and I had a margin note about aquafaba, but no technique for either. The 20-25 ml I first wrote down was low: the published range is 22 to 30, and a one-for-one swap for a 30 ml egg white is the common recommendation. TODO: still worth measuring the two side by side, because the range is wide enough that someone has to pick a number.'
       },
     ],
   },

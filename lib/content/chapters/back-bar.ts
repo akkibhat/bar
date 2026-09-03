@@ -178,6 +178,27 @@ export const BACK_BAR: Chapter[] = [
         title: 'What colour doesn\'t tell you',
         text: 'Rum has almost no international category law. A white rum may have been aged for years and then filtered clear; a dark rum may be a young spirit with caramel in it. Two bottles of the same shade can be different products, and no standard forces the label to admit it. Producer and country tell you more than colour does.',
       },
+      {
+        kind: 'h',
+        text: 'Added sugar, and the four traditions',
+      },
+      {
+        kind: 'p',
+        text: 'Plenty of rum is sweetened after distillation, and nothing obliges a producer to say so. The EU allows up to 20 grams a litre, which is enough to change the texture of a drink and most of its finish. Jamaica\'s geographical indication forbids it outright, Barbados works to the CARICOM standard, and much of the rest of the world permits it quietly. The Swedish and Finnish state monopolies lab-test what they stock and publish the sugar figures, which is the most reliable way to find out what is in a bottle.',
+      },
+      {
+        kind: 'p',
+        text: 'Where a rum comes from and what it was distilled in tell you far more than its colour, and the traditions split along old colonial lines.',
+      },
+      {
+        kind: 'list',
+        items: [
+          '**Jamaican** - pot still, long fermentations and deliberately high ester levels. That is the funk: overripe banana and something close to glue, in the best sense. Hampden and Worthy Park sit at the far end of it.',
+          '**Spanish-style *ron*** - column still, lighter, aged in the heat and often sweetened. Cuba, Puerto Rico, Venezuela, Guatemala.',
+          '**English-style** - Demerara from Guyana, and the Barbados blends. Pot and column together: richer than the Spanish style, drier than the sweetened ones.',
+          '**French *rhum agricole*** - distilled from fresh cane juice instead of molasses, so it starts from a different raw material rather than a different method. Grassy and vegetal, and Martinique has an AOC for it.',
+        ],
+      },
       { kind: 'h', text: 'Cachaça, which is not rum' },
       {
         kind: 'p',
@@ -197,8 +218,8 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Nothing here on added sugar',
-        text: 'TODO: the course never mentioned that plenty of rum is sweetened after distillation, sometimes heavily, and that some producers are open about it while others aren\'t. Add a line on the regional styles: Jamaican high-ester funk against Spanish-style *ron*. That distinction changes what a drink tastes like more than colour does.',
+        title: 'Written from reading, not from tasting',
+        text: 'Written up now - the sweetening, the disclosure gap and the four traditions are all in the chapter. TODO: I have not tasted Hampden or Worthy Park side by side against a Spanish-style ron, and that comparison is the one that would make the point stick.'
       },
     ],
   },
@@ -230,6 +251,8 @@ export const BACK_BAR: Chapter[] = [
           ['Reposado', 'Two months to a year in oak. Softer, faint vanilla.'],
           ['Añejo', 'One to three years. Darker, closer to a whisky in feel.'],
           ['Extra añejo', 'Over three years. Sipping territory.'],
+          ['Joven / oro / gold', 'Usually a blanco with caramel in it, coloured to look aged. Occasionally a real blend.'],
+          ['Cristalino', 'An añejo filtered back to clear. You pay for the ageing and filter out some of what it did.'],
           ['**100% agave**', '**What you want. Anything not saying this may be up to 49% other sugars.**'],
         ],
       },
@@ -244,8 +267,8 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'The ageing bands need checking',
-        text: 'My own notes cover the categories, the cooking and the ageing bands; the rest is filled out from general reading. I haven\'t visited a distillery and I am not confident enough on the sustainability argument around agave supply to write it. Verify the ageing bands against a current source before relying on them.',
+        title: 'The agave supply argument is still missing',
+        text: 'The ageing bands are checked and they hold: NOM-006 puts blanco under 60 days, reposado from 60 days, añejo from one year and extra añejo from three, in casks of 600 litres or less, all of it enforced by the CRT. My own notes cover the categories and the cooking; the rest is filled out from general reading. I haven\'t visited a distillery and I am not confident enough on the sustainability argument around agave supply to write it.'
       },
     ],
   },
