@@ -20,7 +20,7 @@ export const BACK_BAR: Chapter[] = [
     part: 'back-bar',
     n: 5,
     title: 'Vodka and gin',
-    minutes: 4,
+    minutes: 5,
     standfirst:
       'Same neutral spirit, two directions. What makes each one what it is.',
     body: [
@@ -45,11 +45,20 @@ export const BACK_BAR: Chapter[] = [
       { kind: 'h', text: 'Gin' },
       {
         kind: 'p',
-        text: 'Gin is that same neutral spirit redistilled with botanicals. **Juniper has to lead** - that\'s the legal definition, and the only thing every gin has in common. Around it sit coriander, angelica root, citrus peel, orris root, cardamom, liquorice, and whatever else the distiller chooses.',
+        text: 'Gin is that same neutral spirit, redistilled with botanicals. The law puts a floor under the base where vodka has none: it has to come off the still at 96% or higher, so whatever it was made from is gone by the time the botanicals go in. **Juniper has to lead** - that\'s the legal definition, and the only thing every gin has in common. Around it sit coriander, angelica root, citrus peel, orris root, cardamom, liquorice, and whatever else the distiller chooses.',
       },
       {
         kind: 'p',
         text: 'It\'s not aged. Once distillation and flavouring are done the gin is finished, which is why a distillery can be making sellable gin within a week of opening and why so many small producers start there.',
+      },
+      { kind: 'h', text: 'How the botanicals get in' },
+      {
+        kind: 'p',
+        text: 'There are two ways, and they make different gins. **Maceration** steeps the botanicals in the spirit and then redistils the lot; it pulls out the heavier, more resinous flavours and gives the classic juniper-forward weight. **Vapour infusion** hangs them in a basket high in the still so only the rising vapour passes through them, which takes the lighter aromatics and leaves the heavy ones behind. That is most of why a floral contemporary gin tastes the way it does.',
+      },
+      {
+        kind: 'p',
+        text: 'Either way the spirit comes off around 75% and is diluted to bottling strength with water. Nothing else may be added to a London Dry after that point.',
       },
       {
         kind: 'list',
@@ -142,13 +151,13 @@ export const BACK_BAR: Chapter[] = [
     part: 'back-bar',
     n: 7,
     title: 'Rum',
-    minutes: 4,
+    minutes: 6,
     standfirst:
-      'Cane spirit, and the loosest rules on the shelf. Colour tells you little.',
+      'Cane spirit, and the loosest rules on the shelf. Colour tells you little, and cachaça is its own thing.',
     body: [
       {
         kind: 'p',
-        text: 'Rum is distilled from sugarcane - either from molasses, the thick residue left after sugar is crystallised out, or from fresh-pressed cane juice. Molasses is the usual route and gives the deep, slightly funky character most people mean by rum. Fresh juice gives *rhum agricole*, mostly from Martinique, which tastes grassy and vegetal rather than sweet.',
+        text: 'Rum is distilled from sugarcane - either from molasses, the thick residue left after sugar is crystallised out, or from fresh-pressed cane juice. Molasses is the usual route and gives the deep, slightly funky character most people mean by rum. The cane-juice spirits are a different thing, and they are at the end of this chapter.',
       },
       { kind: 'tool', tool: 'molasses' },
       {
@@ -158,7 +167,7 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Light or white** - filtered after distillation to take the colour back out. Light aroma, clean taste. The one for mixing: Daiquiri, Mojito.',
+          '**Light or white** - filtered after distillation to take the colour back out, and in Cuba and Puerto Rico it has to be aged first, so a white rum is not necessarily an unaged one. Light aroma, clean taste. The one for mixing: Daiquiri, Mojito.',
           '**Gold or amber** - some time in wood, or caramel, or both. Medium-bodied and smoother.',
           '**Dark** - long in charred casks, often heavily caramel-coloured. Meant for drinking neat, or for a tiki drink like a Mai Tai, where it has to hold its own against a lot of juice and syrup.',
         ],
@@ -167,6 +176,23 @@ export const BACK_BAR: Chapter[] = [
         kind: 'note',
         title: 'What colour doesn\'t tell you',
         text: 'Rum has almost no international category law. A white rum may have been aged for years and then filtered clear; a dark rum may be a young spirit with caramel in it. Two bottles of the same shade can be different products, and no standard forces the label to admit it. Producer and country tell you more than colour does.',
+      },
+      { kind: 'h', text: 'Cachaça, which is not rum' },
+      {
+        kind: 'p',
+        text: 'Brazilian, made from fresh cane juice rather than molasses, and one of the oldest spirits in the New World. The law calls it its own category and it earns that three times over.',
+      },
+      {
+        kind: 'list',
+        items: [
+          '**It ferments on airborne yeast.** No pitched strain - whatever is in the air at the mill does the work, which is why one distillery does not taste like the next.',
+          '**The cane fires the still.** The crushed solids left after pressing are burned to heat the kiln, so the plant runs on its own waste.',
+          '**It is not aged in oak.** Unaged cachaça rests in steel. Aged cachaça goes into Brazilian hardwoods - amburana most famously, which gives cinnamon and vanilla, and thirty-odd others that oak has no equivalent for.',
+        ],
+      },
+      {
+        kind: 'p',
+        text: '*Rhum agricole*, from Martinique, is the other cane-juice spirit and the same idea from a French colonial direction: grassy and vegetal where a molasses rum is rich. If a recipe calls for cachaça, an agricole is the nearest thing on most shelves.',
       },
       {
         kind: 'unsure',
@@ -196,7 +222,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The sugar in agave is stored as inulin, which yeast can\'t eat, so the piñas are cooked to break it down. **How they\'re cooked is the main difference between tequila and mezcal.** Tequila steams them in ovens or autoclaves. Mezcal roasts them in a pit lined with hot rocks and covered over, which is where the smoke comes from. It is not a peat-style drying step, it is the cooking itself.',
+        text: 'The sugar in agave is stored as inulin, which yeast can\'t eat, so the piñas are cooked to break it down. **How they\'re cooked is the main difference between tequila and mezcal.** Tequila steams them in ovens or autoclaves. Mezcal roasts them in a pit lined with hot rocks and covered over, which is a hangi by another name, and which is where the smoke comes from. It is not a peat-style drying step, it is the cooking itself.',
       },
       { kind: 'tool', tool: 'agave' },
       {
@@ -363,7 +389,7 @@ export const BACK_BAR: Chapter[] = [
         kind: 'list',
         items: [
           '**Sherry** - from Jerez in Spain, and drier than its reputation. Fino and manzanilla are bone dry and want serving cold; oloroso and cream sherries are richer. Fino goes into a Bloody Mary and improves it.',
-          '**Vermouth** - aromatised wine, flavoured with botanicals. Dry (French) is pale and crisp; sweet or *rosso* (Italian) is red and spiced; bianco sits between them. It\'s wine, so **it goes off** - fridge, and finish it within a month.',
+          '**Vermouth** - aromatised wine, and it has to contain **wormwood**: the name is the German *Wermut*. Dry (French) is pale and crisp; sweet or *rosso* (Italian) is red and spiced; bianco sits between them. It\'s wine, so **it goes off** - fridge, and finish it within a month.',
           '**Port** - Portuguese and sweet. Ruby is young and fruity; tawny is wood-aged, nutty and dry-finishing; white port is made from white grapes and is good chilled with tonic. Vintage port is bottle-aged and can run thirty years.',
           '**Madeira** - from the island, and deliberately heated during maturation, which gives it a burnt, caramelised character and makes it almost indestructible once open.',
         ],
@@ -392,7 +418,7 @@ export const BACK_BAR: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Angostura appears in the Old Fashioned, the Manhattan, the Pisco Sour, the Champagne Cocktail and a dozen others. It usually gets listed beside the Tabasco and the Worcestershire sauce, and nobody says what it is. So: bitters are a high-proof spirit infused with bark, root, and aromatic botanicals to the point of being undrinkable on their own, used in dashes.',
+        text: 'Angostura appears in the Old Fashioned, the Manhattan, the Pisco Sour, the Champagne Cocktail and a dozen others. It usually gets listed beside the Tabasco and the Worcestershire sauce, and nobody says what it is. So: bitters are a high-proof spirit infused with bark, root, and aromatic botanicals to the point of being undrinkable on their own, used in dashes. The bitterness itself usually comes from gentian root, from wormwood, or from quinine - the same quinine that makes tonic bitter.',
       },
       {
         kind: 'p',
