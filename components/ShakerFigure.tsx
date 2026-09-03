@@ -3,92 +3,100 @@ import Figure from './Figure';
 /**
  * Why beer does not go in a shaker.
  *
- * Two shakers side by side, run at the same time so the comparison is
- * unavoidable. On the left, beer goes into the tin, it is sealed and
- * shaken, and it comes apart. On the right the beer is kept out: the
- * rest of the drink is shaken, strained into the glass, and the beer is
- * folded in afterwards with a bar spoon.
+ * Drawn as a Boston shaker, which is what the kit chapter says to buy
+ * and what the note beside this means: two tins that seal together under
+ * their own vacuum. That matters to the drawing, because "the tin comes
+ * apart" is literal here - the seal on a Boston is friction and pressure,
+ * so carbonation inside has one way out and it takes the small tin with
+ * it.
  *
- * The note beside this says "at worst the tin comes apart", which is a
- * sentence people read past. A tin coming apart is worth drawing.
+ * Two runs side by side, on the same clock so the comparison is
+ * unavoidable. Left: beer in, sealed, shaken, and the tins separate.
+ * Right: the beer stays out, everything else is shaken and strained, and
+ * the beer is folded through at the end with a bar spoon.
  */
 export default function ShakerFigure() {
   return (
     <Figure
-      title="Beer and a sealed shaker"
+      title="Beer and a Boston shaker"
       animated
-      caption="Left: carbonation in a sealed tin has nowhere to go. Right: shake everything else, strain, then fold the beer through at the end."
+      caption="Left: carbonation in a sealed Boston has nowhere to go, and the seal is only friction. Right: shake everything else, strain, then fold the beer through at the end."
     >
       <svg
-        viewBox="0 0 720 280"
+        viewBox="0 0 720 300"
         role="img"
-        aria-label="On the left, beer poured into a shaker which is sealed, shaken and bursts apart. On the right, a shaker used without beer, strained into a glass, with the beer folded in afterwards."
+        aria-label="On the left, beer poured into a Boston shaker which is sealed, shaken, and separates. On the right, the same shaker used without beer, strained into a glass, with the beer folded in afterwards."
       >
-        <path d="M360 16 V264" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
-        <text className="fig-name" x="20" y="30">Never</text>
-        <text className="fig-name" x="388" y="30">Instead</text>
+        <path d="M360 20 V280" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
+        <text className="fig-name" x="20" y="34">Never</text>
+        <text className="fig-name" x="388" y="34">Instead</text>
 
-        {/* ================= LEFT: beer into the tin ================= */}
-        <path d="M20 214 H336" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
+        {/* ================= LEFT: beer into the tins ================= */}
+        <path d="M20 226 H336" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
 
         {/* beer going in */}
         <g className="burst-pour">
-          <path className="fig-ink" d="M60 62 C60 78 68 82 68 92 C68 82 78 78 78 62 Z" transform="rotate(38 69 78)" />
-          <path d="M84 88 C96 104 104 116 110 128" stroke="var(--gold)" strokeWidth="3" fill="none" strokeLinecap="round" />
+          <path className="fig-ink" d="M52 66 C52 82 60 86 60 96 C60 86 70 82 70 66 Z" transform="rotate(40 61 82)" />
+          <path d="M76 92 C88 106 98 116 106 126" stroke="var(--gold)" strokeWidth="3" fill="none" strokeLinecap="round" />
         </g>
 
-        {/* the tin, intact */}
+        {/* the shaker, sealed and intact: large tin, small tin inverted in */}
         <g className="burst-tin">
-          <path className="fig-ink" d="M92 214 v-70 q0-8 8-10 h44 q8 2 8 10 v70 z" />
-          <path d="M96 212 v-40 h56 v40 z" fill="var(--gold)" opacity="0.45" />
+          {/* large tin - a cone, narrow at the base, wide at the mouth */}
+          <path className="fig-ink" d="M104 226 L98 152 L166 152 L160 226 Z" />
+          <path d="M107 224 L104 186 L160 186 L157 224 Z" fill="var(--gold)" opacity="0.45" />
           <g className="fig-thin" strokeWidth="0.9">
-            <circle cx="110" cy="160" r="3" /><circle cx="126" cy="152" r="2.6" />
-            <circle cx="142" cy="162" r="3.2" /><circle cx="118" cy="140" r="2.4" />
+            <circle cx="118" cy="172" r="3" /><circle cx="134" cy="164" r="2.6" />
+            <circle cx="150" cy="174" r="3.2" /><circle cx="126" cy="180" r="2.4" />
           </g>
-          <path className="fig-ink burst-cap" d="M88 134 h68 v-12 h-68 z" />
+          {/* small tin, mouth down, seated into the large one */}
+          <g className="burst-top">
+            <path className="fig-ink" d="M100 156 L106 96 L158 96 L164 156 Z" />
+            <path className="fig-thin" d="M100 156 L164 156" />
+          </g>
         </g>
 
-        {/* the burst */}
+        {/* the seal failing: the small tin leaves, the large one tips */}
         <g className="burst-parts">
-          <path className="fig-ink" d="M64 118 h44 v-12 h-44 z" transform="rotate(-28 86 112)" />
-          <path className="fig-ink" d="M152 112 h44 v-12 h-44 z" transform="rotate(34 174 106)" />
+          <path className="fig-ink" d="M74 104 L80 44 L132 44 L138 104 Z" transform="rotate(-32 106 74)" />
           <g className="fig-fill-gold">
-            <circle cx="86" cy="92" r="5" /><circle cx="130" cy="72" r="6" />
-            <circle cx="176" cy="94" r="4.5" /><circle cx="108" cy="60" r="4" />
-            <circle cx="158" cy="56" r="5" /><circle cx="196" cy="126" r="4" />
+            <circle cx="112" cy="112" r="5.5" /><circle cx="152" cy="86" r="6.5" />
+            <circle cx="186" cy="118" r="5" /><circle cx="132" cy="74" r="4.5" />
+            <circle cx="178" cy="66" r="5.5" /><circle cx="204" cy="146" r="4.5" />
           </g>
         </g>
-        <text className="fig-t" x="20" y="238">beer in, sealed, shaken</text>
-        <text className="fig-val" x="20" y="258">the tin comes apart</text>
+        <text className="fig-t" x="20" y="252">beer in, sealed, shaken</text>
+        <text className="fig-val" x="20" y="274">the tins come apart</text>
 
         {/* ================= RIGHT: everything else ================= */}
-        <path d="M388 214 H700" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
+        <path d="M388 226 H700" stroke="var(--rule-strong)" strokeWidth="1" fill="none" />
 
-        {/* the shaker, no beer */}
+        {/* the same Boston, no beer in it */}
         <g className="fold-shake">
-          <path className="fig-ink" d="M414 214 v-70 q0-8 8-10 h44 q8 2 8 10 v70 z" />
-          <path d="M418 212 v-36 h56 v36 z" fill="var(--accent-book)" opacity="0.3" />
-          <path className="fig-ink" d="M410 134 h68 v-12 h-68 z" />
+          <path className="fig-ink" d="M412 226 L406 152 L474 152 L468 226 Z" />
+          <path d="M415 224 L412 190 L468 190 L465 224 Z" fill="var(--accent-book)" opacity="0.3" />
+          <path className="fig-ink" d="M408 156 L414 96 L466 96 L472 156 Z" />
+          <path className="fig-thin" d="M408 156 L472 156" />
         </g>
-        <text className="fig-t" x="392" y="238">shake without it</text>
+        <text className="fig-t" x="392" y="252">shake without it</text>
 
         {/* strained across */}
-        <path className="fold-strain fig-accent" d="M494 176 h44" markerEnd="url(#fold-arrow)" strokeDasharray="4 4" />
+        <path className="fold-strain fig-accent" d="M490 188 h40" markerEnd="url(#fold-arrow)" strokeDasharray="4 4" />
 
-        {/* the glass, filling then folded */}
+        {/* the glass: the drink, then the beer on top */}
         <g>
-          <path className="fig-ink" d="M556 214 v-84 h48 v84 z" />
-          <path className="fold-base" d="M560 212 v-30 h40 v30 z" fill="var(--accent-book)" opacity="0.3" />
-          <path className="fold-beer" d="M560 182 v-40 h40 v40 z" fill="var(--gold)" opacity="0.5" />
+          <path className="fig-ink" d="M552 226 v-84 h48 v84 z" />
+          <path className="fold-base" d="M556 224 v-30 h40 v30 z" fill="var(--accent-book)" opacity="0.3" />
+          <path className="fold-beer" d="M556 194 v-40 h40 v40 z" fill="var(--gold)" opacity="0.5" />
         </g>
 
         {/* the bar spoon, folding through */}
         <g className="fold-spoon">
-          <path className="fig-ink" d="M580 126 v-52" strokeWidth="2" />
-          <ellipse className="fig-ink" cx="580" cy="130" rx="7" ry="4" />
+          <path className="fig-ink" d="M576 138 v-52" strokeWidth="2" />
+          <ellipse className="fig-ink" cx="576" cy="142" rx="7" ry="4" />
         </g>
-        <text className="fig-t" x="544" y="238">then fold the beer in</text>
-        <text className="fig-val" x="544" y="258">with a bar spoon</text>
+        <text className="fig-t" x="540" y="252">then fold the beer in</text>
+        <text className="fig-val" x="540" y="274">with a bar spoon</text>
 
         <defs>
           <marker id="fold-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">

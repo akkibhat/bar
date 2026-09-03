@@ -1314,7 +1314,7 @@ button.card:hover {
 }
 
 /* The shaker. Two outcomes, run together so the comparison is forced. */
-.burst-pour, .burst-tin, .burst-cap, .burst-parts,
+.burst-pour, .burst-tin, .burst-top, .burst-parts,
 .fold-shake, .fold-strain, .fold-base, .fold-beer, .fold-spoon {
   transform-box: fill-box;
   transform-origin: center;
