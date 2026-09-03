@@ -237,6 +237,11 @@ export const TECHNIQUE: Chapter[] = [
         kind: 'p',
         text: 'The liquid from a tin of chickpeas. It foams almost identically. One large egg white is about 30 ml, and a straight one-for-one swap is the usual starting point; published practice runs from 22 ml up to a full 30. Vegan, no allergen, and it keeps in the fridge for several days. Use unsalted if you can; it tastes of nothing in a finished drink.',
       },
+      {
+        kind: 'note',
+        title: 'The bottled foamers',
+        text: 'There is a third option that is neither egg nor chickpea. Wonderfoam, Fee Foam and Ms Better\'s Miraculous Foamer are all extracts of quillaja - soap bark - which is a natural surfactant, and they work in drops rather than millilitres: three to six drops, or two or three dashes, depending on the bottle. One bottle does several hundred drinks and keeps about two years without refrigeration, so there is nothing to squeeze and nothing to keep cold. The foam is finer and more stable than egg white but brings none of the body, which is the trade. Worth having for the guest who cannot have egg.',
+      },
       { kind: 'h', text: 'Safety, plainly' },
       {
         kind: 'p',
