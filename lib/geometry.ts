@@ -147,6 +147,33 @@ export function openHalf(side: 'left' | 'right', t: Tier): string {
  */
 export const VIEW_BOX = '0 16 120 136';
 
+/**
+ * Where each variant's weight actually sits, as a y in the viewBox.
+ *
+ * Both variants centre their *ink* on y=84, which is what lets a lockup
+ * centre them interchangeably. That is not the same as where they look
+ * centred, and the book is the one that differs.
+ *
+ * An open book's pages rise towards their outer edges - the outer corner
+ * starts at y=28 where the inner edge starts at 46 - so the top of its
+ * ink box is two thin flares rather than anything solid. The body of the
+ * mark is the band between the inner edges, 46 to 140, the same span the
+ * spine occupies when it is drawn. Centre the ink box against a line of
+ * type and that solid band hangs nine units low.
+ *
+ * The glass has no flare. It is a standing object whose foot is its base,
+ * so its ink centre is its optical centre and the correction is zero.
+ */
+export const OPTICAL_CENTRE = {
+  /** The spine band: the parallel inner edges of the two pages. */
+  book: (46 + 140) / 2,
+  /** Rim to foot, the whole glass. */
+  shelf: (24 + 144) / 2,
+} as const;
+
+/** The middle of the viewBox, which is what a plain centring aligns. */
+export const VIEW_BOX_CENTRE = 84;
+
 /* ===================================================================== *
  * The morph
  * ===================================================================== */

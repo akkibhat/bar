@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { GlassMark, HomeMark } from './Mark';
+
 import { PARTS } from '@/lib/content/parts';
 import { chaptersIn } from '@/lib/content/book';
 import { HALVES } from '@/lib/site';
@@ -23,6 +24,32 @@ import Lights from './Lights';
  * of parts, the way the inside spread of a menu is set - and the reading
  * column underneath gets the full width of the page.
  */
+
+/** Rendered height of the marks beside the wordmarks. */
+const MARK_SIZE = 15;
+
+/**
+ * How far each mark drops from where the flex row's baseline alignment
+ * leaves it. Two different rules, because the two shapes are different
+ * objects and want different things from a line of type.
+ *
+ * The book is a spread: its pages rise towards their outer edges, so the
+ * top of its ink box is two thin flares and its body is the band between
+ * the inner edges. That band is centred on the capitals, the way a
+ * lowercase-height ornament would be.
+ *
+ * The glass is a standing object. It has a foot, and a foot belongs on
+ * the line the type stands on - so its base sits on the baseline rather
+ * than being centred on anything.
+ *
+ * Both measured in the browser against the wordmark's real ink, taken
+ * from font metrics rather than the line box. In em so they survive the
+ * type scale moving.
+ */
+const MARK_OFFSET: Record<'book' | 'shelf', string> = {
+  book: '0.041em',
+  shelf: '0.065em',
+};
 
 export default function BarNav() {
   const pathname = usePathname();
@@ -93,9 +120,10 @@ export default function BarNav() {
                   style={{
                     ['--logo-glass' as string]: accent,
                     ['--logo-pour' as string]: accent,
+                    ['--mark-offset' as string]: MARK_OFFSET[l.id],
                   }}
                 >
-                  <GlassMark size={15} variant={l.id} decorative />
+                  <GlassMark size={MARK_SIZE} variant={l.id} decorative />
                 </span>
                 <span
                   className="wordmark"
