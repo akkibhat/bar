@@ -86,12 +86,7 @@ export const BALANCE: Chapter[] = [
         title: 'Taste it before it goes out',
         text: 'A straw into the shaker before straining, or the back of a bar spoon. Every professional does it and no recipe tells you to. The recipe can\'t know how ripe your limes are.',
       },
-      {
-        kind: 'unsure',
-        title: 'Not from the course',
-        text: 'None of this chapter was taught. It comes from lining up the ratios inside the classic specs, and from how balance is normally explained in bar training. It has held up every time I have used it, but it\'s a framework I went and found rather than one I was given.',
-      },
-    ],
+],
   },
 
   /* ================================================================== */
@@ -210,7 +205,7 @@ export const BALANCE: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Not from the course',
+        title: 'No spec here defines sugar syrup',
         text: 'Most specs call for sugar syrup and never define it, so this is written from outside. TODO: my note on clear ice - hot water, chilly bin, freeze 24 hours, carve - belongs in the ice chapter, but the same directional-freezing trick works for anything you want clear and I haven\'t tested that.',
       },
     ],

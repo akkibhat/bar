@@ -206,7 +206,7 @@ export const SERVICE: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Mine to add',
+        title: 'Buying local needs a proper paragraph',
         text: 'TODO: my margin note here just says "buy local?" against the upselling page. I think that was about stocking New Zealand spirits over imported ones and being able to say why. Worth writing properly: it\'s the most defensible kind of upsell there is.',
       },
     ],

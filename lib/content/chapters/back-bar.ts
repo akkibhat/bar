@@ -71,7 +71,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Mine to fill in',
+        title: 'No New Zealand gin here yet',
         text: 'TODO: New Zealand gin is having a decade and the course said nothing about it. Name the ones I would pour, and what horopito, kawakawa and manuka do to a G&T. From bottles I have poured, not from a shop list.',
       },
     ],
@@ -197,7 +197,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Worth adding',
+        title: 'Nothing here on added sugar',
         text: 'TODO: the course never mentioned that plenty of rum is sweetened after distillation, sometimes heavily, and that some producers are open about it while others aren\'t. Add a line on the regional styles: Jamaican high-ester funk against Spanish-style *ron*. That distinction changes what a drink tastes like more than colour does.',
       },
     ],
@@ -248,8 +248,8 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Not from the course',
-        text: 'This chapter is assembled from category rules and general reading. I haven\'t visited a distillery and I am not confident enough on the sustainability argument around agave supply to write it. Verify the ageing bands against a current source before relying on them.',
+        title: 'The ageing bands need checking',
+        text: 'My own notes cover the categories, the cooking and the ageing bands; the rest is filled out from general reading. I haven\'t visited a distillery and I am not confident enough on the sustainability argument around agave supply to write it. Verify the ageing bands against a current source before relying on them.',
       },
     ],
   },
@@ -450,7 +450,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Not from the course',
+        title: 'The Angostura label story is unsourced',
         text: 'TODO: the claim about the Angostura label being an unfixed mistake is the story the company itself tells, and I haven\'t seen it sourced anywhere independent. Treat it as a nice anecdote rather than a fact until I can check it.',
       },
     ],

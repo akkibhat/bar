@@ -107,7 +107,7 @@ export const BEER: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Mine to write',
+        title: 'New Zealand hops deserve better than this',
         text: 'TODO: New Zealand hops are a genuine speciality - Nelson Sauvin, Riwaka, Motueka - and NZ craft brewing deserves better than a bullet from me. Write it from breweries I have drunk, not from a list.',
       },
     ],
@@ -169,8 +169,8 @@ export const BEER: Chapter[] = [
       { kind: 'tool', tool: 'shaker' },
       {
         kind: 'unsure',
-        title: 'Not from the course, and not from experience either',
-        text: 'The whole of this part is written from outside the qualification. TODO: line cleaning intervals, keg handling and cellar temperature are things a working bar has strong opinions about and I have none, because I have never run a tap system. If this book is going to claim to cover beer service it needs someone who has.',
+        title: 'The chapter promises line cleaning and never gets there',
+        text: 'Not from the qualification - this part is from running a Belgian beer bar: kegs, wine fridges, and lines cleaned every fortnight. TODO: the standfirst says this chapter covers line cleaning and there is no section on it. Write the intervals, the keg handling and the cellar temperature from what I actually did, rather than leaving them general.',
       },
     ],
   },

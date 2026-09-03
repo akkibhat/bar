@@ -186,7 +186,7 @@ export const KIT: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Mine to fill in',
+        title: 'No opening, closing or stocktake here',
         text: 'TODO: this chapter is the course\'s general principles and my own notes from one photographed station. It has no opening or closing procedure, no par levels, no stocktake, and no wastage sheet - all of which a real bar runs on. Worth writing if this book is ever meant to be useful to someone actually working a shift.',
       },
     ],

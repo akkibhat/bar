@@ -101,7 +101,7 @@ export const FOUNDATIONS: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Mine to write',
+        title: 'Nothing here on drinking in New Zealand',
         text: 'TODO: the course notes stop at the 1980s and say nothing about New Zealand. Needs a paragraph on how drinking here went: the licensing changes, when cocktail bars turned up in Auckland and Wellington, and what a bar list looked like before that. I don\'t know this well enough to write it yet.',
       },
     ],

@@ -248,7 +248,7 @@ export const TECHNIQUE: Chapter[] = [
       },
       {
         kind: 'unsure',
-        title: 'Not from the course',
+        title: 'The aquafaba conversion is untested',
         text: 'Four specs here use egg white, and I had a margin note about aquafaba, but no technique for either. TODO: I have written 20–25 ml for aquafaba from general practice and haven\'t measured it against a real egg white side by side. Test it before I state it as the conversion.',
       },
     ],
