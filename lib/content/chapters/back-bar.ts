@@ -163,7 +163,7 @@ export const BACK_BAR: Chapter[] = [
       { kind: 'tool', tool: 'molasses' },
       {
         kind: 'p',
-        text: 'The course taught rum in three colours. The framing is worth knowing, but it doesn\'t tell you much.',
+        text: 'Rum is usually sorted into three colours. The framing is worth knowing, but it doesn\'t tell you much.',
       },
       {
         kind: 'list',
@@ -213,11 +213,7 @@ export const BACK_BAR: Chapter[] = [
     standfirst:
       'Taught on the course but never written down. Agave, tequila and mezcal.',
     body: [
-      {
-        kind: 'p',
-        text: 'Tequila was taught on the course but never written down, so this chapter is filled in from elsewhere. Weigh it accordingly.',
-      },
-      {
+{
         kind: 'p',
         text: 'Agave is not a cactus. It\'s a succulent, and the part that matters is the *piña* - the dense core left when the spines are cut away, which looks like a pineapple and weighs as much as a person. A blue agave takes six to eight years before it can be harvested. No other major spirit waits that long before fermentation even starts.',
       },

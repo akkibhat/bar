@@ -36,7 +36,7 @@ export const SERVICE: Chapter[] = [
           ['**Long**', 'Highball', 'Filled', 'Spirit first, then mixer'],
           ['**Short, on the rocks**', 'Rocks', 'Half to two-thirds full', 'Spirit first, splash of mixer'],
           ['**Neat**', 'Rocks', 'None', 'Spirit only, at room temperature'],
-          ['**On the rocks**', 'Rocks', 'Over ice(how much?)', 'Spirit only, poured over'],
+          ['**On the rocks**', 'Rocks', 'Glass filled with ice, 30 ml over it', 'Spirit only, poured over'],
           ['**Straight up** / **up**', 'Coupe or Martini', 'None in the glass', 'Chilled first, then strained in'],
           ['**Shot**', 'Shot', 'None', 'Spirit only, to the brim or the line'],
         ],
@@ -53,7 +53,7 @@ export const SERVICE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'When the order is ambiguous, ask once and remember the answer. "Gin and tonic" doesn\'t say which gin, and a guest who wanted the good one and got the rail one won\'t order a second. (add note about asking if house spirit is okay or if they want a specific one)',
+        text: 'When the order is ambiguous, ask once and remember the answer. "Gin and tonic" doesn\'t say which gin, and a guest who wanted the good one and got the rail one won\'t order a second. The quickest way to ask is to offer the house pour by name and let them trade up: say which gin you would pour and see whether they want a different one.',
       },
     ],
   },
@@ -96,7 +96,7 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          'Cut fresh before each shift. Fresh for each drink if there\'s time.(there usually isn\'t)',
+          'Cut fresh before each shift, and for each drink if there is time, which on a busy night there is not.',
           'Store cut fruit in a sealed container in the fridge.',
           'Store whole fruit cold, dry, dark, and off the floor.',
           'Never leave garnishes sitting submerged in water, because it leaches them and they go limp.',
@@ -143,12 +143,12 @@ export const SERVICE: Chapter[] = [
       { kind: 'h', text: 'Dairy' },
       {
         kind: 'p',
-        text: 'Half and half - 50/50 milk and single cream - keeps about two days, in the fridge or the ice chest. Clotting is the obvious sign it has gone; the smell is the earlier one. (check keep time)',
+        text: 'Half and half - 50/50 milk and single cream - keeps about a week in the fridge once opened. An ice well is not a fridge, so anything sitting in one is good for the shift and no longer. Clotting is the obvious sign it has gone; the smell is the earlier one.',
       },
       { kind: 'h', text: 'Minerals and mixers' },
       {
         kind: 'p',
-        text: 'Cola, lemonade, soda water, mineral water, tonic, ginger ale, ginger beer. **Check the fizz before service**, especially from large bottles, because a flat tonic is a wasted gin, and you can\'t tell by looking. (most busy bars have a soda gun)',
+        text: 'Cola, lemonade, soda water, mineral water, tonic, ginger ale, ginger beer. **Check the fizz before service**, especially from large bottles, because a flat tonic is a wasted gin, and you can\'t tell by looking. Most busy bars run a soda gun instead, which takes the problem away - the gas is live at the nozzle, so there is no bottle sitting open going flat.',
       },
       {
         kind: 'p',
@@ -157,11 +157,11 @@ export const SERVICE: Chapter[] = [
       { kind: 'h', text: 'Serving the soft drinks properly' },
       {
         kind: 'p',
-        text: 'Non-alcoholic drinks are served long, in a tall glass, with ice, and garnished to the same standard as everything else. The phrase I was taught is that even a glass of water should be **dressed**, and that\'s the right instinct. Someone not drinking should not be able to tell from the glass in their hand. (basic thing is lime/lemon in all soft drinks)',
+        text: 'Non-alcoholic drinks are served long, in a tall glass, with ice, and garnished to the same standard as everything else. Even a glass of water should be **dressed**. Someone not drinking should not be able to tell from the glass in their hand, so lime or lemon goes in the soft drinks the same as it would in anything else.',
       },
       {
         kind: 'p',
-        text: 'That matters more than it used to, and the zero-proof chapter in Part IX picks it up properly. (why is there a reference to the course?)',
+        text: 'That matters more than it used to, and the zero-proof chapter in Part IX picks it up properly.',
       },
     ],
   },
@@ -174,11 +174,11 @@ export const SERVICE: Chapter[] = [
     title: 'Being the bartender',
     minutes: 4,
     standfirst:
-      '*Six qualities off the course, and selling without being a salesman.* (course reference)',
+      '*Six qualities that make a bartender worth employing, and selling without being a salesman.*',
     body: [
       {
         kind: 'p',
-        text: 'The course listed six things that make a bartender worth employing. None of them is about making drinks. (course reference)',
+        text: 'Six things make a bartender worth employing. None of them is about making drinks.',
       },
       {
         kind: 'list',

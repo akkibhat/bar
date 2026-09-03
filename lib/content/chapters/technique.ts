@@ -183,7 +183,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'The rest of the perfect serve' },
       {
         kind: 'p',
-        text: 'The course listed five things, and they\'re all right:',
+        text: 'Five things matter:',
       },
       {
         kind: 'list',

@@ -125,7 +125,7 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'note',
         title: 'Where the six come from',
-        text: 'This is the framework set out in *Cocktail Codex* by the Death & Co team, and it has become the standard way of teaching drink structure. I didn\'t invent it and the course didn\'t teach it. It\'s here because it\'s the most useful single idea I have found on the subject.',
+        text: 'This is the framework set out in *Cocktail Codex* by the Death & Co team, and it has become the standard way of teaching drink structure. I didn\'t invent it. It\'s here because it\'s the most useful single idea I have found on the subject.',
       },
       { kind: 'h', text: 'Building something new' },
       {
@@ -178,8 +178,8 @@ export const BALANCE: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'It doesn\'t need boiling',
-        text: 'Warm water and stirring is enough. Boiling drives off water, so the syrup ends up stronger than intended and the ratio is no longer what you measured. (i have always used boiling as we usually have a boiling tap close by....)',
+        title: 'It doesn\'t need a pot',
+        text: 'Hot water and stirring is enough, and hot straight from a boiling tap is fine - water that arrives hot and gets stirred off the heat loses almost nothing. What concentrates a syrup is leaving it boiling on the heat, which drives water off and makes it stronger than the ratio you measured.',
       },
       { kind: 'h', text: 'The other syrups' },
       {
@@ -187,7 +187,7 @@ export const BALANCE: Chapter[] = [
         items: [
           '**Rich demerara** - 2 : 1 with demerara sugar. Molasses character. Goes into anything aged: Old Fashioned, tiki, rum drinks.',
           '**Honey syrup** - 3 : 1 honey to warm water, because neat honey seizes in a cold shaker.',
-          '**Agave syrup** - thin it the same way(which way there are multiple ways listed...). The default sweetener for tequila and mezcal drinks.',
+          '**Agave syrup** - 3 : 1 with warm water, like the honey. The default sweetener for tequila and mezcal drinks.',
           '**Grenadine** - pomegranate, not the red chemical sweetener sold under the name. Equal parts pomegranate juice and sugar, and much better than the bought one.',
           '**Orgeat** - almond and orange flower. Fiddly, and essential to a Mai Tai.',
           '**Oleo saccharum** - citrus peels buried in sugar for a few hours. The sugar draws the oil out of the peel and you get an intensely citrus syrup from fruit you were going to throw away.',
