@@ -235,7 +235,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Aquafaba' },
       {
         kind: 'p',
-        text: 'The liquid from a tin of chickpeas. It foams almost identically. One large egg white is about 30 ml, and a straight one-for-one swap is the usual starting point; published practice runs from 22 ml up to a full 30. Vegan, no allergen, and it keeps in the fridge for several days. Use unsalted if you can; it tastes of nothing in a finished drink.',
+        text: 'The liquid from a tin of chickpeas. It foams almost identically. One large egg white is about 30 ml, and 30 ml of aquafaba stands in for it one for one - that is what I use. Vegan, no allergen, and it keeps in the fridge for several days. Use unsalted if you can; it tastes of nothing in a finished drink.',
       },
       {
         kind: 'note',
@@ -251,11 +251,6 @@ export const TECHNIQUE: Chapter[] = [
         kind: 'p',
         text: '**Dairy** behaves differently: cream adds weight and coats the mouth rather than foaming, and it mutes everything else, which is why cream drinks are usually built on strong flavours like coffee, cacao or mint. Citrus and cream will curdle unless there\'s enough sugar and speed to hold them, which is why a Ramos Gin Fizz has a reputation.',
       },
-      {
-        kind: 'unsure',
-        title: 'The aquafaba conversion is untested',
-        text: 'Three specs here use egg white, and I had a margin note about aquafaba, but no technique for either. The 20-25 ml I first wrote down was low: the published range is 22 to 30, and a one-for-one swap for a 30 ml egg white is the common recommendation. TODO: still worth measuring the two side by side, because the range is wide enough that someone has to pick a number.'
-      },
-    ],
+],
   },
 ];

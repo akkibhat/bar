@@ -138,12 +138,12 @@ export const BACK_BAR: Chapter[] = [
       { kind: 'h', text: 'Wood, and the angels' },
       {
         kind: 'p',
-        text: 'A barrel holds around 200 litres, and roughly 2% of it evaporates every year. That loss is called the angels\' share, and it compounds: a whisky sitting for twenty years has lost a serious fraction of the cask before anyone opens it. This is most of why old whisky is expensive. The rest is that the distiller has had money tied up in a warehouse for two decades.',
+        text: 'A barrel holds around 200 litres, and roughly 2% of it evaporates every year. That loss is called the angels\' share, and it compounds: a whisky sitting for twenty years has lost a serious fraction of the cask before anyone opens it. This is most of why old whisky is expensive. The rest is that the distiller has had money tied up in a warehouse for two decades. The cask earns it: the usual figure is that 60 to 80 per cent of what you taste comes from the wood rather than the spirit, which is why one distillate in two barrels makes two whiskies.',
       },
       { kind: 'tool', tool: 'angelsShare' },
       {
         kind: 'p',
-        text: 'American whiskey must go into **new charred oak**, which is why bourbon is sweet, vanilla-heavy and quick to take colour. Bourbon has three other numbers attached to it, all of them limits rather than recipes: a mash of at least **51 percent corn**, distilled to no more than **160 proof**, and into the barrel at no more than **125 proof**. No colouring is permitted. Scotch mostly goes into barrels that have already held something else - ex-bourbon casks, which the Americans can\'t legally reuse, and sherry butts, which give the dried-fruit character.',
+        text: 'American whiskey must go into **new charred oak**, which is why bourbon is sweet, vanilla-heavy and quick to take colour. Bourbon has three other numbers attached to it, all of them limits rather than recipes: a mash of at least **51 percent corn**, distilled to no more than **160 proof**, and into the barrel at no more than **125 proof**. No colouring is permitted. Scotch mostly goes into barrels that have already held something else - ex-bourbon casks, which the Americans can\'t legally reuse, and sherry butts, which give the dried-fruit character. Japanese producers also use mizunara, a native oak so porous and hard to coop that the staves need three years\' drying and the casks still leak; what it gives - sandalwood, coconut, incense - takes fifteen years or more in the wood to show.',
       },
       {
         kind: 'table',
@@ -156,12 +156,7 @@ export const BACK_BAR: Chapter[] = [
           ['Japanese', 'Barley, corn', 'Used casks, sometimes mizunara', 'Precise, restrained'],
         ],
       },
-      {
-        kind: 'unsure',
-        title: 'Two garbled numbers, decoded',
-        text: 'Both garbled notes decode. "Barrel 760-800 percent of task" is barrel = 70-80 percent of taste, the usual industry claim that most of a whisky\'s flavour comes from the cask rather than the spirit; the range quoted elsewhere runs 60 to 80. "72 percent evaporate per year" is the 2 percent angels\' share already in the chapter. TODO: confirm that is what I meant before either goes in, and write the mizunara line - the wood is porous and hard to coop, needs about three years drying, and gives sandalwood, coconut and incense, but wants fifteen years or more in cask to do it.'
-      },
-    ],
+],
   },
 
   /* ================================================================== */
@@ -283,12 +278,7 @@ export const BACK_BAR: Chapter[] = [
         kind: 'p',
         text: 'Tequila is a denomination: it can only be made in Jalisco and a few neighbouring municipalities, and only from blue agave. Mezcal covers a much wider area and around thirty permitted agave varieties, so it\'s a far broader category. All tequila would technically qualify as mezcal if the producers wanted the label.',
       },
-      {
-        kind: 'unsure',
-        title: 'The agave supply argument is still missing',
-        text: 'The ageing bands are checked and they hold: NOM-006 puts blanco under 60 days, reposado from 60 days, añejo from one year and extra añejo from three, in casks of 600 litres or less, all of it enforced by the CRT. My own notes cover the categories and the cooking; the rest is filled out from general reading. I haven\'t visited a distillery and I am not confident enough on the sustainability argument around agave supply to write it.'
-      },
-    ],
+],
   },
 
   /* ================================================================== */
@@ -485,11 +475,6 @@ export const BACK_BAR: Chapter[] = [
         title: 'The label that never got fixed',
         text: 'The Angostura label is famously too big for its bottle - it runs past the shoulder and overlaps itself. The story the company tells is that the Siegert brothers split the job of preparing a bottle for a competition, one taking the label and one taking the bottle, and neither checked what the other had measured. By the time anyone noticed, the mismatch was how people recognised it on a shelf, so it stayed.',
       },
-      {
-        kind: 'unsure',
-        title: 'The Angostura label story is unsourced',
-        text: 'TODO: the claim about the Angostura label being an unfixed mistake is the story the company itself tells, and I haven\'t seen it sourced anywhere independent. Treat it as a nice anecdote rather than a fact until I can check it.',
-      },
-    ],
+],
   },
 ];

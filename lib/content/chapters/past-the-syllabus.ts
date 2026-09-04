@@ -143,7 +143,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Two techniques arrived in bars from restaurant kitchens and are now common enough to belong in a book like this. Both are ways of changing a liquid\'s texture or flavour without changing what\'s written on the spec.',
+        text: 'Two techniques arrived in bars from restaurant kitchens and are now common enough to belong in a book like this. Both are ways of changing a liquid\'s texture or flavour without changing what\'s written on the spec. I have not done either yet, so the quantities here are other people\'s - Dave Arnold\'s for the fat, the usual ratio for the milk - and not mine.',
       },
       { kind: 'h', text: 'Fat-washing' },
       {
@@ -186,12 +186,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
           '**Use the whole herb.** Mint stems have flavour; they can go into a syrup rather than a bin.',
         ],
       },
-      {
-        kind: 'unsure',
-        title: 'Neither of these have I done',
-        text: 'TODO: I haven\'t fat-washed or clarified anything. Both descriptions are from reading rather than practice, and the quantities above are Dave Arnold\'s and the common milk ratio, not ones I have tested. Worth doing before either is recommended with any confidence.',
-      },
-      {
+{
         kind: 'p',
         text: 'That\'s the end of the book. The other half of the site is what came out of it.',
       },

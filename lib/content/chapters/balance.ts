@@ -203,11 +203,6 @@ export const BALANCE: Chapter[] = [
         title: 'Citrus is a house ingredient too',
         text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more. Doing it properly costs real time, and there\'s no way around it. (note that bars almost exclusively use bottled juice, unless super fancy cocktail bar)',
       },
-      {
-        kind: 'unsure',
-        title: 'No spec here defines sugar syrup',
-        text: 'Most specs call for sugar syrup and never define it, so this is written from outside.',
-      },
-    ],
+],
   },
 ];
