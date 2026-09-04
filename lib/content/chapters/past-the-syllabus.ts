@@ -165,7 +165,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'The result keeps far better than the drink it came from, which is why it pairs with batching: a clarified batch can be poured for weeks. Directional freezing, the clear-ice trick from the ice chapter, is sometimes used the same way; I have not tried it.',
+        text: 'The result keeps far better than the drink it came from, which is why it pairs with batching: a clarified batch can be poured for weeks. Directional freezing, the clear-ice trick from the ice chapter, is sometimes used the same way.',
       },
       { kind: 'h', text: 'Waste' },
       {

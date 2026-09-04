@@ -11,11 +11,10 @@ my own notes, or a bottle I have actually poured.
 
 ## Writing
 
-### Written from outside the course, and thin because of it
+### Chapters still to fill out
 
-- **Fat-washing and clarification** *(Modern technique)* - described from
-  reading. I have not done either. The quantities are other people's
-  starting points.
+- **Fat-washing and clarification** *(Modern technique)* - method and
+  measures are in. Wants a drink of your own built on either.
 - **Low and no** *(Low and no)* - method only. Nothing zero-proof has
   gone on the shelf yet.
 
