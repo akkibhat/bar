@@ -376,6 +376,17 @@ body {
   color: var(--ink);
 }
 
+/* Browsers default a button to the arrow, which is right for a form
+   control on a page of forms and wrong here - every button on this site
+   is a filter, a toggle or a control that behaves like a link, and the
+   ones set as underlined text give no other affordance at all. Set once
+   rather than per component, since the seven that carried their own
+   rule were the minority. */
+button:not(:disabled),
+summary {
+  cursor: pointer;
+}
+
 /* =====================================================================
    DISPLAY TYPE
 
