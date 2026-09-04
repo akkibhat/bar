@@ -1,5 +1,21 @@
 import Figure from './Figure';
 
+/**
+ * Two highballs, ten minutes after the same pour.
+ *
+ * Four pieces of ice in the first and nine in the second, and the
+ * counter-intuitive result: the half-filled glass has melted through and
+ * is warm and watery, the full one has barely moved.
+ *
+ * The dashed "poured to here" line is what makes it read. Without it the
+ * fuller glass simply looks like a bigger drink, and the figure argues
+ * nothing; with it, the gap above the line in the first glass is visibly
+ * melt. Both lines sit at the level each glass was poured to, so the
+ * difference between them is the melt and not the serve.
+ *
+ * The ice fades and shrinks on `.a-cube`, holds on `.b-cube`, and the
+ * levels rise on `.a-lq` and `.b-lq`.
+ */
 export default function FillGlassFigure() {
   return (
     <Figure

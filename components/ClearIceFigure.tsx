@@ -1,5 +1,22 @@
 import Figure from './Figure';
 
+/**
+ * Clear ice, in three cross-sections of an insulated container.
+ *
+ * Hot water in, the slab growing down from the open top, then the cloudy
+ * remainder poured off. The hatching down the sides and base is the
+ * insulation, and it is what makes the figure legible: without it the
+ * three boxes are just boxes and nothing explains why the freeze only
+ * travels one way.
+ *
+ * The air bubbles move between panels rather than disappearing - spread
+ * through the water in the first, driven into the bottom quarter in the
+ * second, tipped out in the third. That migration is the whole argument,
+ * so the circles are placed by hand rather than scattered.
+ *
+ * Three clip paths, one per bin, and two arrow markers: `#ice-arrow` for
+ * the freezing front, `#ice-tip` for the pour-off.
+ */
 export default function ClearIceFigure() {
   return (
     <Figure

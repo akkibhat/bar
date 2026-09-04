@@ -1,5 +1,22 @@
 import Figure from './Figure';
 
+/**
+ * The angels' share, drawn twice over.
+ *
+ * A 200 litre cask on the left, and the same loss as a twenty-year curve
+ * on the right. Two per cent a year compounds, so the curve is 200 x
+ * 0.98^n and lands at 134 litres - the arithmetic is the point, because
+ * two per cent sounds like nothing until it is drawn.
+ *
+ * What has gone is hatched rather than washed. Two warm washes over the
+ * same whisky colour read as one block, so the loss needs a different
+ * texture and not just a different opacity; that is the `#gone` pattern.
+ *
+ * The reveal animates `.lvl`, `.gap`, `.band` and `.trace` - see the
+ * figure block in globals.css. The washes fade with `fill-opacity`
+ * rather than `opacity` so the group's own fade has something left to
+ * animate.
+ */
 export default function AngelsShareFigure() {
   return (
     <Figure
