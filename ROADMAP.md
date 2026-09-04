@@ -11,13 +11,6 @@ my own notes, or a bottle I have actually poured.
 
 ## Writing
 
-### Needs checking before it can be trusted
-
-- **Responsible service.** Find out whether this was taught as a separate
-  module and simply is not in the pages I photographed. If it was, my own
-  notes should replace most of that chapter.
-
-
 ### Written from outside the course, and thin because of it
 
 - **Fat-washing and clarification** *(Modern technique)* - described from
