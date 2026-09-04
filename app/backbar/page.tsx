@@ -4,12 +4,20 @@ import Rule from '@/components/Rule';
 import HalfTitle from '@/components/HalfTitle';
 import BackbarGrid from '@/components/BackbarGrid';
 import { BOOK, FORMER_NAME, SHELF_HALF } from '@/lib/site';
-import { IBA_SHELF, PULLED_AT, SHELF } from '@/lib/backbar';
+import { IBA_JOIN, IBA_PULLED_AT, PULLED_AT, SHELF } from '@/lib/backbar';
+
+/** Both snapshots carry a date, and both dates are said on the page. */
+const asDate = (iso: string) =>
+  new Date(iso).toLocaleDateString('en-NZ', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
 
 export const metadata: Metadata = {
   title: SHELF_HALF.name,
   description:
-    'Cocktails I have made up, with the full build in millilitres and a note on why each one is put together the way it is - and the IBA classics from the book, on the same shelf.',
+    'Cocktails I have made up, with the full build in millilitres and a note on why each one is put together the way it is - and the official IBA list on the same shelf, with a spec for the ones the book covers.',
 };
 
 /**
@@ -44,9 +52,10 @@ export default function BackbarPage() {
           My own creations - {SHELF.length} of them - with the full build in
           millilitres, the method as steps, and a note on why each one is put
           together the way it is. Some are riffs on a classic; some started as
-          an idea about one ingredient. Behind the switch, the {IBA_SHELF.length}{' '}
-          IBA classics from the book, on the same shelf and sorted by the
-          IBA&rsquo;s own lists.
+          an idea about one ingredient. Behind the switch, the whole official
+          IBA list, sorted onto the IBA&rsquo;s own three. The{' '}
+          {IBA_JOIN.written} the book writes up carry their spec here; the rest
+          are a name and a link out, since those recipes are theirs.
         </p>
 
         <p
@@ -61,14 +70,8 @@ export default function BackbarPage() {
       <BackbarGrid />
 
       <p className="t-caption mt-8" style={{ color: 'var(--ink-faint)' }}>
-        Mine last pulled{' '}
-        <span className="nums">
-          {new Date(PULLED_AT).toLocaleDateString('en-NZ', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-          })}
-        </span>
+        Mine last pulled <span className="nums">{asDate(PULLED_AT)}</span>, the
+        IBA list <span className="nums">{asDate(IBA_PULLED_AT)}</span>
       </p>
 
       {/* ---- Cross-link ------------------------------------------ */}
