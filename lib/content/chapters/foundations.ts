@@ -226,11 +226,6 @@ export const FOUNDATIONS: Chapter[] = [
         title: 'Water and a reset',
         text: 'Still water at room temperature between pours, and stop at four or five spirits. Your palate tires quickly at this strength, and after the fifth you\'re writing down what you remember rather than what you can taste.',
       },
-      {
-        kind: 'unsure',
-        title: 'Where this method comes from',
-        text: 'This is assembled from how spirits judging is normally run and from what carries over from wine tasting. Treat it as a working method.',
-      },
-    ],
+],
   },
 ];
