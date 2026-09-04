@@ -6,7 +6,7 @@ import SpecSheet from '@/components/SpecSheet';
 import IbaLinks from '@/components/IbaLinks';
 import { SHELF_HALF } from '@/lib/site';
 import {
-  ALL,
+  PAGED,
   builtVolume,
   lookupDrink,
   shelfOf,
@@ -14,9 +14,13 @@ import {
   type ShelfDrink,
 } from '@/lib/backbar';
 
-/** Pre-render every drink at build time, mine and the IBA classics. */
+/**
+ * Pre-render every drink that has a spec: mine, and the IBA classics the
+ * book has written up. The rest of the IBA list is names and links only,
+ * so there is nothing here to put on a page.
+ */
 export function generateStaticParams() {
-  return ALL.map((d) => ({ slug: d.slug }));
+  return PAGED.map((d) => ({ slug: d.slug }));
 }
 
 export async function generateMetadata({

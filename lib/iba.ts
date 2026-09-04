@@ -9,18 +9,29 @@
 
 export type IbaCategory = 'unforgettables' | 'contemporary' | 'new-era';
 
-/** The IBA's three lists, as they name them, and where they live. */
-export const IBA_LISTS: Record<IbaCategory, { label: string; url: string }> = {
+/**
+ * The IBA's three lists, as they name them, and where they live.
+ *
+ * `short` is the same name with the article and the noun dropped, for
+ * the places a label sits in a narrow column rather than in a sentence.
+ */
+export const IBA_LISTS: Record<
+  IbaCategory,
+  { label: string; short: string; url: string }
+> = {
   unforgettables: {
     label: 'The Unforgettables',
+    short: 'Unforgettable',
     url: 'https://iba-world.com/cocktails/the-unforgettables/',
   },
   contemporary: {
     label: 'The Contemporary Classics',
+    short: 'Contemporary',
     url: 'https://iba-world.com/cocktails/contemporary-classics/',
   },
   'new-era': {
     label: 'The New Era',
+    short: 'New Era',
     url: 'https://iba-world.com/cocktails/new-era/',
   },
 };
