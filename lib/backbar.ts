@@ -4,21 +4,83 @@ import {
   type ShelfDrink,
   type ShelfSpecLine,
 } from './content/backbar-snapshot';
+import { CLASSICS } from './content/chapters/classics';
+import type { IbaCategory } from './iba';
 
 /**
  * Reading the shelf.
  *
- * Everything here is pure derivation over a committed snapshot, so the
- * Backbar pages render statically with no client JavaScript beyond the
- * grid's own filtering.
+ * The shelf holds two kinds of drink. Mine are pulled from Bar Assistant
+ * into a committed snapshot and are never touched here - nothing in this
+ * file rewrites a name, reorders a spec or adjusts a measure. The IBA
+ * classics come from the book's own spec sheets in Part VIII, adapted
+ * onto the same shape so one grid and one drink page serve both; the
+ * book is where those specs were settled, so it stays the only copy.
  *
- * The recipes themselves are never touched. Nothing in this file
- * rewrites a name, reorders a spec or adjusts a measure - it groups,
- * filters and labels, and that is the whole remit.
+ * Everything here is pure derivation, so the Backbar pages render
+ * statically with no client JavaScript beyond the grid's own filtering.
  */
 
 export { PULLED_AT, SHELF };
 export type { ShelfDrink, ShelfSpecLine };
+
+/* ===================================================================== *
+ * The two lists
+ * ===================================================================== */
+
+/** A drink on the shelf, and which list it came from. */
+export type ShelfEntry = ShelfDrink & {
+  origin: 'mine' | 'iba';
+  /** Set on the IBA classics: the list, and the IBA's name if it differs. */
+  iba?: { category: IbaCategory; name?: string };
+};
+
+const slugify = (s: string) =>
+  s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+/** My own, exactly as pulled. */
+export const MINE: ShelfEntry[] = SHELF.map((d) => ({ ...d, origin: 'mine' }));
+
+/**
+ * The IBA classics, from the book's specs.
+ *
+ * Only specs the book has placed on the IBA list come through - the
+ * Kamikaze, the Contessa and the B52 stay in the book alone. The spec's
+ * note becomes the description, since that is what it is: one line on
+ * why the drink is worth knowing. Ids sit far above anything Bar
+ * Assistant hands out, and a slug that would collide with one of mine
+ * takes an `iba-` prefix rather than shadowing it.
+ */
+export const IBA_SHELF: ShelfEntry[] = CLASSICS.flatMap((chapter) => chapter.body)
+  .flatMap((block) => (block.kind === 'spec' && block.spec.iba ? [block.spec] : []))
+  .map((spec, i) => {
+    const bare = slugify(spec.name);
+    const taken = MINE.some((d) => d.slug === bare || d.rawSlug === bare);
+    const firstMeasured = spec.spec.find((line) => !line.optional);
+    return {
+      id: 900000 + i,
+      slug: taken ? `iba-${bare}` : bare,
+      name: spec.name,
+      description: spec.note,
+      steps: [spec.method],
+      garnish: spec.garnish,
+      glass: spec.glass,
+      method: spec.method,
+      base: firstMeasured?.name,
+      tags: [],
+      spec: spec.spec.map((line) => ({
+        name: line.name,
+        amount: line.amount ?? null,
+        optional: line.optional,
+        substitutes: line.substitutes,
+      })),
+      origin: 'iba',
+      iba: spec.iba,
+    };
+  });
+
+/** Everything on the shelf, mine first. */
+export const ALL: ShelfEntry[] = [...MINE, ...IBA_SHELF];
 
 /* ===================================================================== *
  * Shelves
@@ -41,7 +103,7 @@ const SHELF_PATTERNS: [RegExp, string][] = [
   [/rum|cacha[cç]a/, 'Rum'],
   [/whisk|bourbon|scotch|rye/, 'Whisky'],
   [/brandy|cognac|pisco|calvados/, 'Brandy'],
-  [/limoncello|liqueur|schnapps|amaretto|curacao|cointreau/, 'Liqueur'],
+  [/limoncello|liqueur|schnapps|amaretto|curacao|cointreau|menthe|cacao|kahl/, 'Liqueur'],
   [/vermouth|sherry|port|campari|aperol/, 'Aperitif'],
 ];
 
@@ -54,10 +116,10 @@ export function shelfOf(drink: ShelfDrink): string {
   return 'Other';
 }
 
-/** Every shelf present, with a count, ordered by how many are on it. */
-export function shelves(): { name: string; count: number }[] {
+/** Every shelf present in a list, with a count, ordered by how many are on it. */
+export function shelves(drinks: ShelfDrink[] = ALL): { name: string; count: number }[] {
   const counts = new Map<string, number>();
-  for (const drink of SHELF) {
+  for (const drink of drinks) {
     const name = shelfOf(drink);
     counts.set(name, (counts.get(name) ?? 0) + 1);
   }
@@ -73,7 +135,7 @@ export function shelves(): { name: string; count: number }[] {
 /**
  * Tags worth showing.
  *
- * The book tags every one of these "original", which is true and
+ * Bar Assistant tags every one of mine "original", which is true and
  * therefore says nothing - a filter where every drink matches is not a
  * filter. Tags that duplicate the shelf are dropped for the same reason:
  * a "Tequila" tag on the only tequila drink adds a second control that
@@ -92,10 +154,10 @@ export function tagsOf(drink: ShelfDrink): string[] {
   });
 }
 
-/** Every visible tag across the shelf, with counts, most common first. */
-export function tags(): { name: string; count: number }[] {
+/** Every visible tag across a list, with counts, most common first. */
+export function tags(drinks: ShelfDrink[] = ALL): { name: string; count: number }[] {
   const counts = new Map<string, number>();
-  for (const drink of SHELF) {
+  for (const drink of drinks) {
     for (const tag of tagsOf(drink)) {
       counts.set(tag, (counts.get(tag) ?? 0) + 1);
     }
@@ -116,10 +178,9 @@ export function tags(): { name: string; count: number }[] {
  * suffix, or the numeric id - so a link shared before the suffix was
  * being stripped, or from the old site, still resolves rather than 404s.
  */
-export function lookupDrink(param: string): ShelfDrink | undefined {
-  return SHELF.find(
-    (d) =>
-      d.slug === param || d.rawSlug === param || String(d.id) === param,
+export function lookupDrink(param: string): ShelfEntry | undefined {
+  return ALL.find(
+    (d) => d.slug === param || d.rawSlug === param || String(d.id) === param,
   );
 }
 

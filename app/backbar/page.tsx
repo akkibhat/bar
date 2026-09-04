@@ -4,12 +4,12 @@ import Rule from '@/components/Rule';
 import HalfTitle from '@/components/HalfTitle';
 import BackbarGrid from '@/components/BackbarGrid';
 import { BOOK, FORMER_NAME, SHELF_HALF } from '@/lib/site';
-import { PULLED_AT, SHELF } from '@/lib/backbar';
+import { IBA_SHELF, PULLED_AT, SHELF } from '@/lib/backbar';
 
 export const metadata: Metadata = {
   title: SHELF_HALF.name,
   description:
-    'Cocktails I have made up, with the full build in millilitres and a note on why each one is put together the way it is.',
+    'Cocktails I have made up, with the full build in millilitres and a note on why each one is put together the way it is - and the IBA classics from the book, on the same shelf.',
 };
 
 /**
@@ -44,7 +44,9 @@ export default function BackbarPage() {
           My own creations - {SHELF.length} of them - with the full build in
           millilitres, the method as steps, and a note on why each one is put
           together the way it is. Some are riffs on a classic; some started as
-          an idea about one ingredient.
+          an idea about one ingredient. Behind the switch, the {IBA_SHELF.length}{' '}
+          IBA classics from the book, on the same shelf and sorted by the
+          IBA&rsquo;s own lists.
         </p>
 
         <p
@@ -59,7 +61,7 @@ export default function BackbarPage() {
       <BackbarGrid />
 
       <p className="t-caption mt-8" style={{ color: 'var(--ink-faint)' }}>
-        Last pulled{' '}
+        Mine last pulled{' '}
         <span className="nums">
           {new Date(PULLED_AT).toLocaleDateString('en-NZ', {
             day: 'numeric',

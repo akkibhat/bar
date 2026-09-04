@@ -3,9 +3,10 @@ import type { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 import Rule from '@/components/Rule';
 import SpecSheet from '@/components/SpecSheet';
+import IbaLinks from '@/components/IbaLinks';
 import { SHELF_HALF } from '@/lib/site';
 import {
-  SHELF,
+  ALL,
   builtVolume,
   lookupDrink,
   shelfOf,
@@ -13,9 +14,9 @@ import {
   type ShelfDrink,
 } from '@/lib/backbar';
 
-/** Pre-render every drink at build time. */
+/** Pre-render every drink at build time, mine and the IBA classics. */
 export function generateStaticParams() {
-  return SHELF.map((d) => ({ slug: d.slug }));
+  return ALL.map((d) => ({ slug: d.slug }));
 }
 
 export async function generateMetadata({
@@ -130,6 +131,17 @@ export default async function DrinkPage({
           </p>
         )}
 
+        {/* The classics point at the IBA's own page, the same two boxes
+            the book's spec sheets carry. */}
+        {drink.iba && (
+          <IbaLinks
+            category={drink.iba.category}
+            name={drink.iba.name}
+            ownName={drink.name}
+            className="t-caption mt-4 !mb-0"
+          />
+        )}
+
         {visibleTags.length > 0 && (
           <ul className="flex flex-wrap gap-1.5 mt-4">
             {visibleTags.map((t) => (
@@ -204,17 +216,20 @@ export default async function DrinkPage({
         </div>
       )}
 
-      <p
-        className="t-caption mt-8 no-print"
-        style={{ color: 'var(--ink-soft)' }}
-      >
-        Strength is calculated by Bar Assistant and includes its own
-        assumption about dilution.{' '}
-        <Link href="/dilution" style={{ color: 'var(--accent-book)' }}>
-          Work it out yourself
-        </Link>{' '}
-        if you want to see the water separately.
-      </p>
+      {/* Only mine carry a strength, and only Bar Assistant worked it out. */}
+      {drink.origin === 'mine' && (
+        <p
+          className="t-caption mt-8 no-print"
+          style={{ color: 'var(--ink-soft)' }}
+        >
+          Strength is calculated by Bar Assistant and includes its own
+          assumption about dilution.{' '}
+          <Link href="/dilution" style={{ color: 'var(--accent-book)' }}>
+            Work it out yourself
+          </Link>{' '}
+          if you want to see the water separately.
+        </p>
+      )}
     </article>
   );
 }

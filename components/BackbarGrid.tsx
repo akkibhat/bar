@@ -3,13 +3,15 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
-  SHELF,
+  IBA_SHELF,
+  MINE,
   ingredientLine,
   shelfOf,
   shelves,
   tags,
   tagsOf,
 } from '@/lib/backbar';
+import { IBA_CATEGORIES, IBA_LISTS, type IbaCategory } from '@/lib/iba';
 
 /**
  * The shelf, set as a menu rather than as a grid of cards.
@@ -24,23 +26,35 @@ import {
  * no photograph of any of these drinks, and a card grid built around an
  * absent image is a layout waiting for content that does not exist.
  *
- * Filtering is client-side over a committed snapshot. At this size the
- * whole shelf is a few kilobytes of already-loaded data, so a network
- * round trip to narrow eight drinks would be slower and less reliable
- * than doing it here.
+ * Two lists share the page. Mine is the default; the IBA classics sit
+ * behind a switch, with the IBA's three categories as a second row that
+ * only appears once that list is showing. Base and tag filters work over
+ * whichever list is up. Filtering is client-side over committed data - a
+ * few kilobytes already loaded, so a round trip would be slower and less
+ * reliable than doing it here.
  */
 export default function BackbarGrid() {
+  const [origin, setOrigin] = useState<'mine' | 'iba'>('mine');
+  const [category, setCategory] = useState<IbaCategory | null>(null);
   const [shelf, setShelf] = useState<string | null>(null);
   const [tag, setTag] = useState<string | null>(null);
   const [query, setQuery] = useState('');
 
-  const allShelves = useMemo(() => shelves(), []);
-  const allTags = useMemo(() => tags(), []);
+  /* The list under the filters: mine, or the IBA classics narrowed to a
+     category. Base and tag rows are built from this list, so they never
+     offer a button nothing on screen would match. */
+  const list = useMemo(() => {
+    if (origin === 'mine') return MINE;
+    return category ? IBA_SHELF.filter((d) => d.iba?.category === category) : IBA_SHELF;
+  }, [origin, category]);
+
+  const allShelves = useMemo(() => shelves(list), [list]);
+  const allTags = useMemo(() => tags(list), [list]);
 
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
 
-    return SHELF.filter((d) => {
+    return list.filter((d) => {
       if (shelf && shelfOf(d) !== shelf) return false;
       if (tag && !tagsOf(d).includes(tag)) return false;
       if (!q) return true;
@@ -52,13 +66,55 @@ export default function BackbarGrid() {
         d.spec.some((line) => line.name.toLowerCase().includes(q))
       );
     });
-  }, [shelf, tag, query]);
+  }, [list, shelf, tag, query]);
 
-  const filtered = Boolean(shelf || tag || query.trim());
+  const filtered = Boolean(category || shelf || tag || query.trim());
+
+  /* Switching lists drops the narrower filters, since a base or a tag
+     chosen on one list may not exist on the other. */
+  const switchTo = (next: 'mine' | 'iba') => {
+    setOrigin(next);
+    setCategory(null);
+    setShelf(null);
+    setTag(null);
+  };
 
   return (
     <>
-      {/* ---- Filters, set as one line of small caps -------------- */}
+      {/* ---- Which list ------------------------------------------ */}
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-3">
+        <span className="label-ui" style={{ minWidth: '3rem' }}>
+          Shelf
+        </span>
+        <FilterLink on={origin === 'mine'} onClick={() => switchTo('mine')}>
+          Mine
+        </FilterLink>
+        <FilterLink on={origin === 'iba'} onClick={() => switchTo('iba')}>
+          IBA
+        </FilterLink>
+      </div>
+
+      {origin === 'iba' && (
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-3">
+          <span className="label-ui" style={{ minWidth: '3rem' }}>
+            Category
+          </span>
+          <FilterLink on={category === null} onClick={() => setCategory(null)}>
+            All
+          </FilterLink>
+          {IBA_CATEGORIES.map((c) => (
+            <FilterLink
+              key={c}
+              on={category === c}
+              onClick={() => setCategory(category === c ? null : c)}
+            >
+              {IBA_LISTS[c].label}
+            </FilterLink>
+          ))}
+        </div>
+      )}
+
+      {/* ---- Base and tag, over the list that is up ---------------- */}
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-3">
         <span className="label-ui" style={{ minWidth: '3rem' }}>
           Base
@@ -110,6 +166,7 @@ export default function BackbarGrid() {
             className="label-ui pb-2"
             style={{ color: 'var(--accent-shelf)' }}
             onClick={() => {
+              setCategory(null);
               setShelf(null);
               setTag(null);
               setQuery('');
