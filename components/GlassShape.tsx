@@ -1,0 +1,84 @@
+import type { Glass } from '@/lib/glassware';
+
+/**
+ * The silhouette of one glass, keyed by slug.
+ *
+ * Every shape is drawn in the same 40 x 64 box, standing on the same
+ * baseline at y=60 and using the same stroke weight, so seventeen of them
+ * read as one set rather than as seventeen drawings. That constraint is
+ * the whole point: the picker answers "what shape is that", and a
+ * silhouette only answers it if the next one is drawn to the same rules.
+ *
+ * Outlines only, no fill. These sit at caption size beside a few lines of
+ * text, and a filled shape at 40 px would read as a blob and pull more
+ * attention than the name beside it.
+ *
+ * Stemmed glasses share a foot and a stem so the family is visible at a
+ * glance; the difference between a Martini and a coupe is then the bowl
+ * alone, which is exactly the thing being taught.
+ */
+
+/** Stem and foot, shared by everything served up. */
+const STEM = 'M20 %TOP% v%LEN% M11 58 h18';
+
+const stem = (top: number) =>
+  STEM.replace('%TOP%', String(top)).replace('%LEN%', String(57 - top));
+
+/** The path for each glass. Add a glass here and to `lib/glassware.ts`. */
+const SHAPES: Record<string, string> = {
+  /* ---- served up: a bowl on a stem, and the bowl is the difference --- */
+  martini: `M7 12 H33 L20 33 Z ${stem(33)}`,
+  coupe: `M8 15 C8 31 32 31 32 15 Z ${stem(30)}`,
+  margarita: `M6 12 C6 20 14 21 15 26 L16 30 H24 L25 26 C26 21 34 20 34 12 Z ${stem(30)}`,
+  flute: `M15 8 L17 36 H23 L25 8 Z ${stem(36)}`,
+  wine: `M11 14 C11 33 29 33 29 14 Z ${stem(32)}`,
+  snifter: `M14 20 C7 26 9 42 20 42 C31 42 33 26 26 20 Z ${stem(42)}`,
+
+  /* ---- short and shot: no stem, and the base carries the weight ------ */
+  rocks: 'M10 28 L12 58 H28 L30 28 M12 55 H28',
+  shot: 'M14 36 L15 58 H25 L26 36 M15 55 H25',
+
+  /* ---- long: straight sided, and the width is the whole story -------- */
+  highball: 'M11 14 L12 58 H28 L29 14',
+  collins: 'M13 8 L14 58 H26 L27 8',
+  sling: `M12 12 L14 44 H26 L28 12 ${stem(44)}`,
+  hurricane: `M11 10 C6 22 13 30 16 38 H24 C27 30 34 22 29 10 ${stem(38)}`,
+
+  /* ---- the ones that are not glass ----------------------------------- */
+  julep: 'M11 24 L13 58 H27 L29 24 M11 27 H29',
+  mule: 'M11 22 L13 58 H27 L29 22 M29 30 C37 30 37 46 29 46 M11 25 H29',
+  tiki: 'M12 10 L14 58 H26 L28 10 M13 22 H27 M13 34 H27 M17 16 h2 M21 16 h2',
+  mason: 'M11 24 C11 19 13 17 15 17 H25 C27 17 29 19 29 24 L29 58 H11 Z M13 12 H27 V17 H13 Z',
+  toddy: 'M12 20 L14 58 H26 L28 20 M28 28 C35 28 35 44 28 44 M12 23 H28',
+};
+
+export default function GlassShape({
+  glass,
+  size = 46,
+}: {
+  glass: Glass;
+  size?: number;
+}) {
+  const path = SHAPES[glass.slug];
+  if (!path) return null;
+
+  return (
+    <svg
+      viewBox="0 0 40 64"
+      width={(size * 40) / 64}
+      height={size}
+      aria-hidden="true"
+      className="shrink-0"
+      style={{ display: 'block' }}
+    >
+      <path
+        d={path}
+        fill="none"
+        stroke="var(--ink-soft)"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}

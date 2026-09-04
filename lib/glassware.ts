@@ -89,6 +89,14 @@ export const GLASSES: Glass[] = [
     drinks: ['Tom Collins', 'Mojito'],
   },
   {
+    slug: 'sling',
+    name: 'Sling',
+    serve: 'long',
+    holds: [350, 400],
+    why: 'A footed tall glass. Holds a long drink with fruit juice in it without looking like a highball.',
+    drinks: ['Singapore Sling'],
+  },
+  {
     slug: 'hurricane',
     name: 'Hurricane',
     serve: 'long',
@@ -111,6 +119,22 @@ export const GLASSES: Glass[] = [
     holds: [350, 500],
     why: 'Copper, and it frosts the same way. The handle keeps your hand off the cold.',
     drinks: ['Moscow Mule'],
+  },
+  {
+    slug: 'tiki',
+    name: 'Tiki mug',
+    serve: 'long',
+    holds: [400, 600],
+    why: 'Carved, opaque and usually enormous. The mug is part of the drink rather than a container for it.',
+    drinks: ['Mai Tai', 'Zombie', 'rum drinks, mostly Pacific in style'],
+  },
+  {
+    slug: 'mason',
+    name: 'Mason jar',
+    serve: 'long',
+    holds: [350, 500],
+    why: 'A preserving jar with a handle on it. Smoothies and mocktails, and not used much.',
+    drinks: ['Smoothies', 'Mocktails'],
   },
   {
     slug: 'flute',

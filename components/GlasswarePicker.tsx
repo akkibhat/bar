@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { GLASSES, SERVE_LABEL, type Serve } from '@/lib/glassware';
+import GlassShape from './GlassShape';
 
 /**
  * Which glass.
@@ -39,26 +40,33 @@ export default function GlasswarePicker() {
         ))}
       </div>
 
+      {/* The silhouette sits left of each card, on its own baseline, and
+          the text runs beside it. A shape is faster to match against what
+          is in your hand than a name is, which is the question this
+          picker is for. */}
       <ul className="grid gap-2 sm:grid-cols-2">
         {shown.map((g) => (
-          <li key={g.slug} className="card px-4 py-3">
-            <p className="flex items-baseline justify-between gap-2">
-              <span className="t-base leading-tight">{g.name}</span>
-              <span
-                className="t-caption nums shrink-0"
-                style={{ color: 'var(--ink-faint)' }}
-              >
-                {g.holds[0] === g.holds[1]
-                  ? `${g.holds[0]} ml`
-                  : `${g.holds[0]}–${g.holds[1]} ml`}
-              </span>
-            </p>
-            <p className="t-caption mt-1" style={{ color: 'var(--ink-soft)' }}>
-              {g.why}
-            </p>
-            <p className="t-caption mt-1.5" style={{ color: 'var(--ink-faint)' }}>
-              {g.drinks.join(' · ')}
-            </p>
+          <li key={g.slug} className="card px-4 py-3 flex gap-3.5">
+            <GlassShape glass={g} />
+            <div className="min-w-0">
+              <p className="flex items-baseline justify-between gap-2">
+                <span className="t-base leading-tight">{g.name}</span>
+                <span
+                  className="t-caption nums shrink-0"
+                  style={{ color: 'var(--ink-faint)' }}
+                >
+                  {g.holds[0] === g.holds[1]
+                    ? `${g.holds[0]} ml`
+                    : `${g.holds[0]}–${g.holds[1]} ml`}
+                </span>
+              </p>
+              <p className="t-caption mt-1" style={{ color: 'var(--ink-soft)' }}>
+                {g.why}
+              </p>
+              <p className="t-caption mt-1.5" style={{ color: 'var(--ink-faint)' }}>
+                {g.drinks.join(' · ')}
+              </p>
+            </div>
           </li>
         ))}
       </ul>
