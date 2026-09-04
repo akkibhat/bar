@@ -137,16 +137,22 @@ for (const spec of specs.values()) {
 }
 
 /* ------------------------------------------------------------------ *
- * 3. A chapter that counts its own drinks
+ * 3. Prose that counts something the data already knows
  *
- * Standfirsts say things like "Eleven drinks off one template". Adding a
- * spec does not update that sentence, and three of them were wrong the
- * moment ten drinks went in. The standalone pages avoid this by
- * interpolating - `${GLASSES.length} glasses` - but a chapter standfirst
- * is data that also round-trips to Markdown by hand, so it cannot.
+ * The book says "thirty-five recipes" and "Seventeen glasses" in places
+ * nothing keeps up to date. Adding ten specs broke chapter 17, which
+ * said twenty-five three times, and the first version of this check
+ * missed it because chapter 17 holds no specs of its own.
  *
- * Only a number immediately before "drink" or "spec" is checked, which
- * keeps it away from the many other numbers in this book.
+ * So the nouns are named explicitly rather than guessed at. This is
+ * deliberately a short list: only counts that are derivable from data
+ * are worth checking, and the book is full of "four elements" and "two
+ * things" that a checker has no business reading.
+ *
+ * The standalone pages avoid the problem entirely by interpolating -
+ * `${GLASSES.length} glasses` - but a chapter standfirst is data that
+ * also round-trips to Markdown by hand, so failing loudly is the next
+ * best thing.
  * ------------------------------------------------------------------ */
 const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
   'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
@@ -157,24 +163,43 @@ const asNumber = (token) => {
   return i !== -1 ? i : Number(token);
 };
 
-const COUNTS = new RegExp(
-  `\\b(\\d+|${NUMBER_WORDS.join('|')})\\s+(?:more\\s+)?(?:drinks?|specs?)\\b`,
-  'gi',
-);
+const { GLASSES } = await import(pathToFileURL(path.join(ROOT, 'lib', 'glassware.ts')).href);
+
+/* Compounds first, so "twenty-five" is not read as the "five" inside it. */
+const NUM = `(?:\\d+|(?:twenty|thirty|forty|fifty)-\\w+|${NUMBER_WORDS.join('|')})`;
+
+/**
+ * A counted noun, what it should equal, and where to look.
+ *
+ * `scope: 'book'` means anywhere in any chapter. `scope: 'own'` means
+ * the number describes the chapter it sits in, so it is compared with
+ * that chapter's own spec count and only in chapters that have specs.
+ */
+const REGISTRY = [
+  { noun: 'recipes?|specs?', expect: () => specs.size, scope: 'book' },
+  { noun: 'glasses', expect: () => GLASSES.length, scope: 'book' },
+  { noun: 'families', expect: () => FAMILIES.length, scope: 'book' },
+  { noun: 'drinks?', expect: (c) => c.body.filter((b) => b.kind === 'spec').length, scope: 'own' },
+];
 
 for (const chapter of chapters) {
-  const total = (chapter.body ?? []).filter((b) => b.kind === 'spec').length;
-  if (total === 0) continue;
-  /* The standfirst, and the paragraph that opens the chapter - the two
-     places a chapter introduces itself by size. */
-  const opener = (chapter.body ?? []).find((b) => b.kind === 'p')?.text ?? '';
-  for (const [where, text] of [['standfirst', chapter.standfirst ?? ''], ['opening', opener]]) {
-    for (const m of text.matchAll(COUNTS)) {
-      const said = asNumber(m[1]);
-      if (Number.isFinite(said) && said !== total) {
-        failures.push(
-          `ch${chapter.n} ${chapter.title}: ${where} says "${m[0]}" but the chapter has ${total}`,
-        );
+  const ownSpecs = (chapter.body ?? []).filter((b) => b.kind === 'spec').length;
+  const places = [['standfirst', chapter.standfirst ?? '']];
+  for (const b of chapter.body ?? [])
+    places.push([b.kind, b.text ?? (b.items ?? []).join('  ')]);
+
+  for (const entry of REGISTRY) {
+    if (entry.scope === 'own' && ownSpecs === 0) continue;
+    const want = entry.expect(chapter);
+    const re = new RegExp(`\\b(${NUM})\\s+(?:more\\s+)?(${entry.noun})\\b`, 'gi');
+    for (const [where, text] of places) {
+      for (const m of String(text).matchAll(re)) {
+        const said = asNumber(m[1]);
+        if (Number.isFinite(said) && said !== want) {
+          failures.push(
+            `ch${chapter.n} ${chapter.title}: ${where} says "${m[0]}" but there are ${want}`,
+          );
+        }
       }
     }
   }

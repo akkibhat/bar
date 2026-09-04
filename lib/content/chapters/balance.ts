@@ -101,7 +101,7 @@ export const BALANCE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'The classics chapter at the end of this book holds about twenty-five recipes. As a list, that\'s twenty-five things to remember. As structures, it\'s six, and the six cover far more than twenty-five drinks.',
+        text: 'The classics chapter at the end of this book holds thirty-five recipes. As a list, that is thirty-five things to remember, and the list only ever gets longer. As structures it is six, and the six cover far more than the thirty-five.',
       },
       {
         kind: 'p',

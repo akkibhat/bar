@@ -28,7 +28,7 @@ export const CLASSICS: Chapter[] = [
     title: 'The sours',
     minutes: 7,
     standfirst:
-      'Spirit, citrus, sweet. Eleven drinks off one template.',
+      'Spirit, citrus, sweet. One template, and the drinks that come off it.',
     body: [
       {
         kind: 'p',
@@ -248,7 +248,7 @@ export const CLASSICS: Chapter[] = [
     title: 'Muddled and built',
     minutes: 5,
     standfirst:
-      'Ten drinks built in the glass. Two muddled, five lengthened with a mixer, and three that are neither.',
+      'Built in the glass. Two muddled, five lengthened with a mixer, and three that are neither.',
     body: [
       {
         kind: 'p',
@@ -455,7 +455,7 @@ export const CLASSICS: Chapter[] = [
     title: 'Stirred and spirit-forward',
     minutes: 6,
     standfirst:
-      'Spirit-forward, and mostly stirred. Seven drinks, starting with the Old Fashioned.',
+      'Spirit-forward, and mostly stirred, starting with the Old Fashioned.',
     body: [
       {
         kind: 'p',
