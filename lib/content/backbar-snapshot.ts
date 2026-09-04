@@ -47,7 +47,7 @@ export type ShelfDrink = {
 };
 
 /** When this snapshot was taken, so the page can admit its age. */
-export const PULLED_AT = "2026-09-04T16:09:59.533Z";
+export const PULLED_AT = "2026-09-04T23:30:49.321Z";
 
 /** Everything on the shelf, newest first. */
 export const SHELF: ShelfDrink[] = [
@@ -56,6 +56,7 @@ export const SHELF: ShelfDrink[] = [
     "slug": "espresso-martini",
     "rawSlug": "espresso-martini-1",
     "name": "Espresso Martini",
+    "description": "No coffee liqueur, so the bitterness is the espresso's own rather than something poured in after it. Butterscotch and vanilla vodka do the sweetening Kahlúa usually does, which leaves the roast at the front and a toffee edge behind it.",
     "steps": [
       "1. Chill a coupe glass with ice and water.",
       "2. Add all ingredients to a cocktail shaker filled with lots of ice.",
@@ -66,7 +67,7 @@ export const SHELF: ShelfDrink[] = [
     "garnish": "3 coffee beans; chocolate powder covering half the glass",
     "glass": "Cocktail",
     "method": "Shake",
-    "abv": 19.2,
+    "abv": 18.95,
     "volumeMl": 75,
     "base": "Vanilla Vodka",
     "tags": [
@@ -102,7 +103,7 @@ export const SHELF: ShelfDrink[] = [
     "slug": "christmas-rum-mule",
     "rawSlug": "christmas-rum-mule-1",
     "name": "Christmas Rum Mule",
-    "description": "A festive summer Christmas Mule with spiced rum, bright citrus and a warming ginger finish.",
+    "description": "A mule built for a summer Christmas, rather than one borrowed from winter. Spiced rum puts clove and allspice where a mule is usually just vodka, the orange softens the lime, and a hundred millilitres of ginger beer keeps it long enough to drink outside in the sun.",
     "steps": [
       "Fill a tall glass or mule mug with ice.",
       "Add spiced rum, lime juice and orange juice.",
@@ -145,7 +146,7 @@ export const SHELF: ShelfDrink[] = [
     "slug": "spiced-apple-crumble",
     "rawSlug": "spiced-apple-crumble-1",
     "name": "Spiced Apple Crumble",
-    "description": "A festive spiced rum cocktail inspired by warm apple crumble, with vanilla, citrus and cinnamon.",
+    "description": "A pudding taken apart and rebuilt as a drink. Cloudy apple carries it, vanilla syrup stands in for the custard, cinnamon does the crumble, and the lemon is the only thing stopping it going sickly sweet.",
     "steps": [
       "Add spiced rum, cloudy apple juice, vanilla syrup, lemon juice and cinnamon to a shaker.",
       "Add ice and shake until well chilled.",
@@ -156,7 +157,7 @@ export const SHELF: ShelfDrink[] = [
     "garnish": "Apple slice and cinnamon",
     "glass": "Coupe",
     "method": "Shake",
-    "abv": 10.36,
+    "abv": 10.31,
     "volumeMl": 130.31,
     "base": "Spiced Rum",
     "tags": [
@@ -195,7 +196,7 @@ export const SHELF: ShelfDrink[] = [
     "slug": "ginger-collins",
     "rawSlug": "ginger-collins-1",
     "name": "Ginger Collins",
-    "description": "A crisp, refreshing Collins with bright lemon, botanical gin and a warming ginger finish.",
+    "description": "A Collins where ginger syrup replaces the sugar, so the heat comes in with it rather than alongside. Raw and peppery next to the drier fizz of a ginger beer, with juniper underneath and soda stretching it out.",
     "steps": [
       "Add gin, ginger syrup and lemon juice to a shaker.",
       "Add ice and shake until well chilled.",
@@ -238,7 +239,7 @@ export const SHELF: ShelfDrink[] = [
     "slug": "black-magic-margarita",
     "rawSlug": "black-magic-margarita-1",
     "name": "Black Magic Margarita",
-    "description": "A dark, jewel-toned Margarita with blackcurrant depth, bright lime and a clean agave finish.",
+    "description": "A Margarita built on blackcurrant. Cassis goes where the triple sec would, so the sweetening arrives as Ribena rather than orange - the adult version of what every Kiwi kid grew up drinking. Lime holds it tart, and black salt on the rim reads differently against fruit than it does against plain agave.",
     "steps": [
       "Run a lime wedge around the rim of a rocks glass and dip in black salt.",
       "Add tequila, crème de cassis, lime juice and agave syrup to a shaker.",
@@ -282,7 +283,7 @@ export const SHELF: ShelfDrink[] = [
     "slug": "limoncello-spritz-highball",
     "rawSlug": "limoncello-spritz-highball-1",
     "name": "Limoncello Spritz Highball",
-    "description": "Bright, sparkling and refreshing, combining zesty limoncello with dry bubbles and soda.",
+    "description": "Three things and no citrus juice at all: the lemon here is all peel, which is why it lands rounder and less sharp than a spritz built on a squeeze. Prosecco dries it back out and soda gives it length.",
     "steps": [
       "Fill a tall glass with ice.",
       "Add limoncello and prosecco.",
@@ -318,10 +319,10 @@ export const SHELF: ShelfDrink[] = [
   },
   {
     "id": 614,
-    "slug": "midnight-peach-fizz",
-    "rawSlug": "midnight-peach-fizz-1",
-    "name": "Midnight Peach Fizz",
-    "description": "Elegant, bright and sparkling, with ripe peach balanced by fresh lemon and Champagne.",
+    "slug": "peach-royale",
+    "rawSlug": "peach-royale-1",
+    "name": "Peach Royale",
+    "description": "Peach and lemon over a base that stays quiet. Vodka carries the schnapps without arguing with it, the lemon keeps the peach from turning into lolly water, and champagne gives it a dry, slightly toasty finish that soda would not.",
     "steps": [
       "Add vodka, peach schnapps, lemon juice and simple syrup to a shaker.",
       "Add ice and shake until well chilled.",
@@ -338,7 +339,7 @@ export const SHELF: ShelfDrink[] = [
     "tags": [
       "original",
       "Peach",
-      "Spritz"
+      "Sparkling"
     ],
     "spec": [
       {
@@ -360,6 +361,9 @@ export const SHELF: ShelfDrink[] = [
       {
         "name": "Champagne",
         "amount": "60 ml",
+        "substitutes": [
+          "Prosecco"
+        ],
         "note": "Top gently to preserve the bubbles."
       }
     ],
