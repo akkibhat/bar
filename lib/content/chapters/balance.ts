@@ -12,9 +12,6 @@ import type { Chapter } from '../../schema';
  * said so. Once you can see the structure, the list stops being twenty-
  * five things to remember and becomes six things to understand, which is
  * the difference between following a recipe and being able to build one.
- *
- * All three chapters here are written from outside the qualification and
- * each says so.
  */
 export const BALANCE: Chapter[] = [
   /* ================================================================== */

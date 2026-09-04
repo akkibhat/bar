@@ -10,8 +10,7 @@ import type { Chapter } from '../../schema';
  *
  * Two of these were not on the course. Agave was skipped entirely despite
  * the Margarita being taught, and bitters were listed under condiments
- * and never explained, so both are written from outside the workbook and
- * say so.
+ * and never explained. Both are here in full.
  */
 export const BACK_BAR: Chapter[] = [
   /* ================================================================== */

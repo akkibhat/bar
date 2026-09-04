@@ -10,9 +10,7 @@ import type { Chapter } from '../../schema';
  *
  * A hospitality qualification taught in New Zealand sits underneath the
  * Sale and Supply of Alcohol Act, and refusing service is a legal duty
- * rather than a judgement call. That gets its own chapter at the end,
- * written from outside the course, with a standing note that I am not the
- * right person to be anyone's authority on it.
+ * rather than a judgement call. That gets its own chapter at the end.
  */
 export const SERVICE: Chapter[] = [
   /* ================================================================== */
@@ -135,8 +133,8 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Carton juice** - once opened, fridge, use within two days(not a bit too strict? usually has a best before date no?). Bubbling or fizzing means it has started fermenting; that\'s the signal to bin it.',
-          '**Fresh citrus** - squeeze as needed. Lime turns brown and dull within hours and is noticeably worse the same evening. Pre-squeeze only what a busy shift will use, in a labelled container. (note that most places use carton juice)',
+          '**Carton juice** - once opened, fridge, use within about a week; the printed date applies to the unopened carton. Bubbling or fizzing means it has started fermenting; that\'s the signal to bin it.',
+          '**Fresh citrus** - squeeze as needed. Lime turns brown and dull within hours and is noticeably worse the same evening. Pre-squeeze only what a busy shift will use, in a labelled container.',
           '**Never mix old stock into new.** It drags the whole container down to the age of the oldest thing in it.',
         ],
       },
