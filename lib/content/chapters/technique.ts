@@ -121,7 +121,7 @@ export const TECHNIQUE: Chapter[] = [
         items: [
           '**Cubes** - the default. Shaking, stirring, and filling a highball.',
           '**One large cube or sphere** - for a short drink you\'ll hold for twenty minutes. Less surface area for the same cooling, so an Old Fashioned doesn\'t turn to water halfway down.',
-          '**Crushed** - fast chilling and heavy dilution, wanted in a Julep, a Mojito, a Caipirinha and most tiki. Never in a shaker.',
+          '**Crushed** - fast chilling and heavy dilution, wanted in a Julep, a Mojito, a Caipirinha and most tiki. Never in a shaker. Cubes will do if it is all you have; the drink comes out a little warmer and stronger.',
         ],
       },
       {
@@ -169,7 +169,7 @@ export const TECHNIQUE: Chapter[] = [
       { kind: 'h', text: 'Jiggers' },
       {
         kind: 'p',
-        text: 'A jigger is a two-sided measure. New Zealand pours in millilitres, and the pairs worth owning are 30/15 and 45/22.5. Between them they cover almost every spec in this book, and the halves matter because the smaller sour template is 45 : 22.5 : 22.5.',
+        text: 'A jigger is a two-sided measure. New Zealand pours in millilitres, and the pairs worth owning are 30/15 and 60/30. Between them they cover almost every spec in this book.',
       },
       {
         kind: 'p',
@@ -254,7 +254,7 @@ export const TECHNIQUE: Chapter[] = [
       {
         kind: 'unsure',
         title: 'The aquafaba conversion is untested',
-        text: 'Four specs here use egg white, and I had a margin note about aquafaba, but no technique for either. The 20-25 ml I first wrote down was low: the published range is 22 to 30, and a one-for-one swap for a 30 ml egg white is the common recommendation. TODO: still worth measuring the two side by side, because the range is wide enough that someone has to pick a number.'
+        text: 'Three specs here use egg white, and I had a margin note about aquafaba, but no technique for either. The 20-25 ml I first wrote down was low: the published range is 22 to 30, and a one-for-one swap for a 30 ml egg white is the common recommendation. TODO: still worth measuring the two side by side, because the range is wide enough that someone has to pick a number.'
       },
     ],
   },

@@ -9,6 +9,7 @@
     "lint": "eslint",
     "pull": "node scripts/pull-backbar.mjs",
     "chapters:out": "node --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/chapters-out.mjs",
+    "check:specs": "node --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/check-specs.mjs",
     "chapters:in": "node --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/chapters-in.mjs"
   },
   "dependencies": {

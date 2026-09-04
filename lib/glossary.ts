@@ -124,7 +124,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     term: 'Jigger',
     category: 'tool',
     definition:
-      'A two-sided measure. In millilitres the useful pairs are 30/15 and 45/22.5, which cover nearly every spec in this book.',
+      'A two-sided measure. In millilitres the useful pairs are 30/15 and 60/30, which cover nearly every spec in this book.',
     seeAlso: ['dash', 'free-pour'],
   },
   {
@@ -283,7 +283,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     term: 'Sour',
     category: 'structure',
     definition:
-      'The family of spirit, citrus and sweetener, usually around 2:1:1. The most productive structure there is - Daiquiri, Margarita, Whiskey Sour and most of Part VIII.',
+      'The family of spirit, citrus and sweetener, usually around 2 : 1 : 1 and never exactly. The most productive structure there is - Daiquiri, Margarita, Whiskey Sour and most of Part VIII.',
     seeAlso: ['balance'],
   },
   {

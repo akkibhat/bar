@@ -61,6 +61,15 @@ export type ChapterSpec = {
   family?: string;
   /** One line on why this drink is worth knowing. */
   note?: string;
+  /**
+   * Where this drink sits on the IBA official list, if it is on it.
+   * Provenance, not measures: the category, and the IBA's name only
+   * where it differs from ours. Absent on drinks that are not listed.
+   */
+  iba?: {
+    category: 'unforgettables' | 'contemporary' | 'new-era';
+    name?: string;
+  };
 };
 
 /**
@@ -70,7 +79,7 @@ export type ChapterSpec = {
  * inline with prose without any HTML parsing.
  */
 export type Block =
-  /** A paragraph of body text. Supports the light markup in `lib/markup.tsx`. */
+  /** A paragraph of body text. Supports the light markup in `lib/emphasis.tsx`. */
   | { kind: 'p'; text: string }
   /** A sub-heading inside a chapter. */
   | { kind: 'h'; text: string }

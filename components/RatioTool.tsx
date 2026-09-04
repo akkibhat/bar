@@ -32,7 +32,7 @@ const TEMPLATES: Template[] = [
     spirit: 2,
     citrus: 1,
     sweet: 1,
-    note: 'The workbook default. Daiquiri, Margarita, Whiskey Sour.',
+    note: 'The workbook default. Daiquiri, Margarita and Whiskey Sour all start here, and none pours it exactly.',
   },
   {
     name: 'Dry sour',
@@ -51,9 +51,9 @@ const TEMPLATES: Template[] = [
 ];
 
 export default function RatioTool() {
-  const [spirit, setSpirit] = useState(60);
-  const [citrus, setCitrus] = useState(30);
-  const [sweet, setSweet] = useState(30);
+  const [spirit, setSpirit] = useState(45);
+  const [citrus, setCitrus] = useState(25);
+  const [sweet, setSweet] = useState(20);
 
   const result = useMemo(() => {
     if (citrus === 0 && sweet === 0) return null;

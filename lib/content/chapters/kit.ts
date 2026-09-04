@@ -117,7 +117,7 @@ export const KIT: Chapter[] = [
         kind: 'table',
         head: ['Tool', 'For'],
         rows: [
-          ['**Jigger**', 'Measuring. 30/15 and 45/22.5 cover nearly everything in this book'],
+          ['**Jigger**', 'Measuring. 30/15 and 60/30 cover nearly everything in this book'],
           ['**Hawthorne strainer**', 'The one with the spring. Sits on a shaker tin and holds back ice and fruit'],
           ['**Julep strainer**', 'The perforated spoon. Sits inside a mixing glass, for stirred drinks'],
           ['**Fine sieve**', 'Double straining - held under the hawthorne to catch ice chips, pulp and citrus seeds'],

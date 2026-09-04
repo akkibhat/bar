@@ -43,16 +43,16 @@ export const BALANCE: Chapter[] = [
       { kind: 'h', text: 'The sour ratio' },
       {
         kind: 'p',
-        text: 'The sour template is **2 : 1 : 1** - two parts spirit, one part citrus, one part sweetener. In mL that\'s 60 : 30 : 30, or the 45 : 22.5 : 22.5 that a smaller drink uses.',
+        text: 'The sour template is **2 : 1 : 1** - two parts spirit, one part citrus, one part sweetener. It is a shape to start from rather than a spec: at 60 ml of spirit that is 30 and 30, and at 45 ml it is 22.5 and 22.5. Almost nothing in Part VIII pours it exactly, and the next paragraph is about why.',
       },
       {
         kind: 'p',
-        text: 'Go back through the classic specs with that in your head and it\'s everywhere. The Daiquiri is roughly 60 rum, 20 lime, 20 sugar. The Margarita is 60 : 25 : 30. The Whiskey Sour is 45 : 25 : 20. The White Lady is 40 gin, 30 Cointreau, 20 lemon, where the Cointreau is doing the sweetening.',
+        text: 'Go back through the classic specs with that in your head and you find the shape rather than the numbers. The Whiskey Sour comes closest: 45 : 25 : 20, which is 1.8 : 1 : 0.8. The White Lady is 40 gin, 30 Cointreau, 20 lemon, where the Cointreau is doing the sweetening. The Daiquiri runs richer in spirit at 60 : 20 : 15, and the Margarita richer in everything but the lime at 50 tequila, 15 lime, 20 triple sec - which is why it wants a tequila worth tasting. Four drinks, one structure, no two the same ratio, which is the point. The template tells you what the roles are, not what to pour.',
       },
       {
         kind: 'note',
         title: 'The drier version',
-        text: 'Plenty of modern bars run 2 : 1 : 0.75 instead - the same spirit and citrus with a quarter less sugar. It makes a sharper, more spirit-forward drink. If a sour tastes soft and sweet to you, that\'s the first thing to try, before touching anything else.',
+        text: 'Plenty of modern bars run 2 : 1 : 0.75 instead - the same spirit and citrus with a quarter less sugar. It makes a sharper, more spirit-forward drink. If a sour tastes soft and sweet to you, that\'s the first thing to try, before touching anything else. The Pisco Sour is the one in Part VIII that pours this way.',
       },
       { kind: 'tool', tool: 'ratio' },
       { kind: 'h', text: 'What moves the ratio' },

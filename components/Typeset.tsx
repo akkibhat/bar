@@ -7,6 +7,13 @@ import Rule from './Rule';
 import Bench from './Bench';
 import SpecSheet from './SpecSheet';
 
+/** The IBA's three lists, as they name them. */
+const IBA_LISTS = {
+  unforgettables: 'The Unforgettables',
+  contemporary: 'The Contemporary Classics',
+  'new-era': 'The New Era',
+} as const;
+
 /**
  * Renders a chapter's body: an ordered list of blocks, each mapped to its
  * own presentation. Keeping this in one place means the authoring format
@@ -224,6 +231,26 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
                 {' '}
                 · {family.formula}
               </span>
+            </p>
+          )}
+
+          {/* The IBA list is the reference to send anyone to first; the
+              sheet says which of its three lists the drink is on, and the
+              IBA's name where it differs from ours. */}
+          {s.iba && (
+            <p className="t-caption mt-2 !mb-0">
+              <span className="label-ui" style={{ marginRight: '0.5rem' }}>
+                IBA
+              </span>
+              <a
+                href="https://iba-world.com/cocktails/all-cocktails/"
+                style={{ color: 'var(--accent-shelf)' }}
+              >
+                {IBA_LISTS[s.iba.category]}
+              </a>
+              {s.iba.name && (
+                <span style={{ color: 'var(--ink-faint)' }}> · as {s.iba.name}</span>
+              )}
             </p>
           )}
 

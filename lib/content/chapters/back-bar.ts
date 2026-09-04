@@ -456,7 +456,7 @@ export const BACK_BAR: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Angostura appears in the Old Fashioned, the Manhattan, the Pisco Sour, the Champagne Cocktail and a dozen others. It usually gets listed beside the Tabasco and the Worcestershire sauce, and nobody says what it is. So: bitters are a high-proof spirit infused with bark, root, and aromatic botanicals to the point of being undrinkable on their own, used in dashes. The bitterness itself usually comes from gentian root, from wormwood, or from quinine - the same quinine that makes tonic bitter.',
+        text: 'Angostura appears in the Old Fashioned, the Manhattan, the Champagne Cocktail, the Pisco Sour - where Amargo is the Peruvian original and Angostura the usual stand-in - and a dozen others. It usually gets listed beside the Tabasco and the Worcestershire sauce, and nobody says what it is. So: bitters are a high-proof spirit infused with bark, root, and aromatic botanicals to the point of being undrinkable on their own, used in dashes. The bitterness itself usually comes from gentian root, from wormwood, or from quinine - the same quinine that makes tonic bitter.',
       },
       {
         kind: 'p',
@@ -474,7 +474,7 @@ export const BACK_BAR: Chapter[] = [
       {
         kind: 'note',
         title: 'Bitters and amari are different things',
-        text: 'Dashing bitters and bitter liqueurs are different things that share a name. Angostura goes in by the dash, usually two to four. Campari and Aperol are *amari* - bitter liqueurs, sweetened, low enough in strength to pour by the 30 ml. Both bring bitterness; one is a seasoning and one is an ingredient.',
+        text: 'Dashing bitters and bitter liqueurs are different things that share a name. Angostura goes in by the dash - one or two, or a soaked cube in an Old Fashioned. Campari and Aperol are *amari* - bitter liqueurs, sweetened, low enough in strength to pour by the 30 ml. Both bring bitterness; one is a seasoning and one is an ingredient.',
       },
       {
         kind: 'p',

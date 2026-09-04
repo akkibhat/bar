@@ -51,7 +51,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       {
         kind: 'note',
         title: 'A Negroni for twelve',
-        text: '360 ml gin, 360 ml Campari, 360 ml sweet vermouth, plus about 220 ml water. That\'s 1.3 litres, which is twelve pours of just over 100 ml. Bottle it, keep it in the fridge, pour over a large cube and add the orange zest at the glass. Nobody can tell it was batched.',
+        text: '360 ml gin, 360 ml Campari, 360 ml sweet vermouth, plus about 270 ml water. That\'s 1.35 litres, which is twelve pours of about 110 ml. Bottle it, keep it in the fridge, pour over a large cube and add the orange zest at the glass. Nobody can tell it was batched.',
       },
       {
         kind: 'p',
