@@ -11,16 +11,6 @@ my own notes, or a bottle I have actually poured.
 
 ## Writing
 
-### Review after the IBA pass
-
-- **Margarita.** Now the IBA pour, 50 / 20 / 15, with the 45 / 30 / 15 most
-  bars use in the note. Read the spec, the note and `balance:4` together
-  and make sure the argument for the drier pour is one I would make out
-  loud.
-- **Old Fashioned.** Kept at 45 ml, the IBA figure, with the 60 most bars
-  pour in the note and the family ratio widened to 45 to 60. Decide
-  whether the sheet should lead with the number I actually pour.
-
 ### Needs checking before it can be trusted
 
 - **Responsible service.** Find out whether this was taught as a separate

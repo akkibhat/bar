@@ -47,7 +47,7 @@ export const BALANCE: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'Go back through the classic specs with that in your head and you find the shape rather than the numbers. The Whiskey Sour comes closest: 45 : 25 : 20, which is 1.8 : 1 : 0.8. The White Lady is 40 gin, 30 Cointreau, 20 lemon, where the Cointreau is doing the sweetening. The Daiquiri runs richer in spirit at 60 : 20 : 15, and the Margarita richer in everything but the lime at 50 tequila, 15 lime, 20 triple sec - which is why it wants a tequila worth tasting. Four drinks, one structure, no two the same ratio, which is the point. The template tells you what the roles are, not what to pour.',
+        text: 'Go back through the classic specs with that in your head and you find the shape rather than the numbers. The Whiskey Sour comes closest: 45 : 25 : 20, which is 1.8 : 1 : 0.8. The White Lady is 40 gin, 30 Cointreau, 20 lemon, where the Cointreau is doing the sweetening. The Daiquiri runs richer in spirit at 60 : 20 : 15, and the Margarita richer in sweet at 45 tequila, 15 lime, 30 Cointreau, which is why it is the one people find easiest to like. Four drinks, one structure, no two the same ratio, which is the point. The template tells you what the roles are, not what to pour.',
       },
       {
         kind: 'note',

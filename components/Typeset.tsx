@@ -7,11 +7,28 @@ import Rule from './Rule';
 import Bench from './Bench';
 import SpecSheet from './SpecSheet';
 
-/** The IBA's three lists, as they name them. */
+/** The IBA's three lists, as they name them, and where they live. */
 const IBA_LISTS = {
-  unforgettables: 'The Unforgettables',
-  contemporary: 'The Contemporary Classics',
-  'new-era': 'The New Era',
+  unforgettables: { label: 'The Unforgettables', url: 'https://iba-world.com/cocktails/the-unforgettables/' },
+  contemporary: { label: 'The Contemporary Classics', url: 'https://iba-world.com/cocktails/contemporary-classics/' },
+  'new-era': { label: 'The New Era', url: 'https://iba-world.com/cocktails/new-era/' },
+} as const;
+
+/** The IBA's own page for a drink, from the name it lists it under. */
+const ibaUrl = (name: string) =>
+  'https://iba-world.com/iba-cocktail/' +
+  name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') +
+  '/';
+
+/** The small boxed link both IBA references use. */
+const IBA_BOX = {
+  display: 'inline-block',
+  padding: '0.1rem 0.5rem',
+  border: '1px solid var(--rule-strong)',
+  borderRadius: '2px',
+  color: 'var(--accent-shelf)',
+  textDecoration: 'none',
+  marginRight: '0.6rem',
 } as const;
 
 /**
@@ -234,22 +251,19 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
             </p>
           )}
 
-          {/* The IBA list is the reference to send anyone to first; the
-              sheet says which of its three lists the drink is on, and the
-              IBA's name where it differs from ours. */}
+          {/* The IBA list is the reference to send anyone to first. Two
+              small boxed links: the drink's own page there, under the name
+              the IBA lists it by, and the list it sits on. */}
           {s.iba && (
             <p className="t-caption mt-2 !mb-0">
-              <span className="label-ui" style={{ marginRight: '0.5rem' }}>
-                IBA
-              </span>
-              <a
-                href="https://iba-world.com/cocktails/all-cocktails/"
-                style={{ color: 'var(--accent-shelf)' }}
-              >
-                {IBA_LISTS[s.iba.category]}
+              <a href={ibaUrl(s.iba.name ?? s.name)} className="label-ui" style={IBA_BOX}>
+                IBA link
+              </a>
+              <a href={IBA_LISTS[s.iba.category].url} className="label-ui" style={IBA_BOX}>
+                {IBA_LISTS[s.iba.category].label}
               </a>
               {s.iba.name && (
-                <span style={{ color: 'var(--ink-faint)' }}> · as {s.iba.name}</span>
+                <span style={{ color: 'var(--ink-faint)' }}>as {s.iba.name}</span>
               )}
             </p>
           )}

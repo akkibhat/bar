@@ -20,7 +20,7 @@ export const FAMILIES: Family[] = [
     slug: 'old-fashioned',
     name: 'Old Fashioned',
     formula: 'Spirit + sugar + bitters',
-    ratio: '45 to 60 ml spirit to a sugar cube and two dashes of bitters',
+    ratio: '60 ml spirit to a sugar cube and two dashes of bitters; the IBA says 45',
     about:
       'The oldest structure and the plainest: a spirit, made slightly sweet, given an edge with bitters, and diluted with ice. Nothing here hides the base, so it only works with a spirit worth tasting. This is what the 1806 definition described.',
     archetype: 'Old Fashioned',
@@ -53,7 +53,7 @@ export const FAMILIES: Family[] = [
     slug: 'sidecar',
     name: 'Sidecar',
     formula: 'Spirit + liqueur + citrus',
-    ratio: 'Roughly 1.5 : 1 : 1 to 3 : 1 : 1.5, depending on how sweet the liqueur is',
+    ratio: 'Roughly 1.5 : 1 : 1 to 3 : 1 : 2, depending on how sweet the liqueur is',
     about:
       'A sour where a liqueur does the sweetening, so the sugar arrives carrying flavour. The family people miss, because it looks like a Daiquiri on the page. If a recipe has both citrus and a liqueur and no syrup, it is this.',
     archetype: 'Sidecar',

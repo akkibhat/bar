@@ -87,7 +87,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Lime juice', amount: '30 ml' },
           ],
           garnish: 'Lime twist',
-          note: 'Equal parts, and the plainest possible Sidecar. A Margarita is the same three roles with tequila in the base and less of everything but the spirit.',
+          note: 'Equal parts, and the plainest possible Sidecar. A Margarita is the same three roles with tequila in the base, half the lime and more of the spirit.',
         },
       },
       {
@@ -135,12 +135,12 @@ export const CLASSICS: Chapter[] = [
           family: 'sidecar',
           iba: { category: 'contemporary' },
           spec: [
-            { name: 'Tequila, 100% agave', amount: '50 ml' },
-            { name: 'Triple sec', amount: '20 ml', substitutes: ['Cointreau'] },
+            { name: 'Tequila, 100% agave', amount: '45 ml' },
+            { name: 'Cointreau', amount: '30 ml', substitutes: ['Triple sec'] },
             { name: 'Lime juice', amount: '15 ml' },
           ],
           garnish: 'Salt rim and lime',
-          note: 'The IBA pour: tequila-forward, drier, and worth it with good tequila. Most bars pour 45 tequila, 30 Cointreau, 15 lime, which is sweeter and juicier. Salt the rim before chilling the glass, not after - salt will not stick to a frosted rim. Rim only half, so the guest can choose.',
+          note: 'The pour most bars use, sweeter and juicier than the IBA\'s. The IBA pours 50 tequila, 20 triple sec, 15 lime: tequila-forward, drier, and worth it with a tequila worth tasting. Salt the rim before chilling the glass, not after - salt will not stick to a frosted rim. Rim only half, so the guest can choose.',
         },
       },
       {
@@ -347,13 +347,13 @@ export const CLASSICS: Chapter[] = [
           family: 'old-fashioned',
           iba: { category: 'unforgettables' },
           spec: [
-            { name: 'Bourbon', amount: '45 ml', substitutes: ['Rye'] },
+            { name: 'Bourbon', amount: '60 ml', substitutes: ['Rye'] },
             { name: 'Sugar cube', amount: '1' },
             { name: 'Angostura bitters', amount: 'Soak the cube' },
             { name: 'Water', amount: 'A few dashes' },
           ],
           garnish: 'Orange peel and a maraschino cherry',
-          note: 'The oldest structure in the book, and the drink the 1806 definition was describing. The IBA says 45 and most bars I know pour 60. Sixty is a bigger drink with the same balance; pour it if the glass and the guest want it.',
+          note: 'The oldest structure in the book, and the drink the 1806 definition was describing. Sixty is what most bars I know pour; the IBA says 45 ml, which is the same drink and a smaller one.',
         },
       },
       {
