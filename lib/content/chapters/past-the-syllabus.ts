@@ -81,7 +81,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       { kind: 'h', text: 'What makes a zero-proof drink work' },
       {
         kind: 'p',
-        text: 'Alcohol does three things a soft drink has to replace: it carries aroma, it adds body, and it provides a slight burn that stops sweetness cloying. Miss all three and you\'ve made a cordial.',
+        text: 'Alcohol does three things a soft drink has to replace: it carries aroma, it adds body, and it provides a slight burn that stops the sweetness turning sickly. Miss all three and you\'ve made a cordial.',
       },
       {
         kind: 'list',

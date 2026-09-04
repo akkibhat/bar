@@ -445,7 +445,7 @@ export const BACK_BAR: Chapter[] = [
       },
       {
         kind: 'p',
-        text: 'They exist because bitterness is a structural element, not a flavour. Sweet and sour can balance each other into something flat and cloying; a few dashes of bitters give the drink an edge and pull the other elements into focus. The usual analogy is salt in cooking, and it\'s a good one - you don\'t taste it as itself, you notice its absence.',
+        text: 'They exist because bitterness is a structural element, not a flavour. Sweet and sour can balance each other into something flat and sickly; a few dashes of bitters give the drink an edge and pull the other elements into focus. The usual analogy is salt in cooking, and it\'s a good one - you don\'t taste it as itself, you notice its absence.',
       },
       {
         kind: 'list',
