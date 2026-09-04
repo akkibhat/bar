@@ -143,7 +143,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Two techniques arrived in bars from restaurant kitchens and are now common enough to belong in a book like this. Both are ways of changing a liquid\'s texture or flavour without changing what\'s written on the spec. I have not done either yet, so the quantities here are other people\'s - Dave Arnold\'s for the fat, the usual ratio for the milk - and not mine.',
+        text: 'Two techniques arrived in bars from restaurant kitchens and are now common enough to belong in a book like this. Both are ways of changing a liquid\'s texture or flavour without changing what\'s written on the spec.',
       },
       { kind: 'h', text: 'Fat-washing' },
       {
