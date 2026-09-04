@@ -99,12 +99,11 @@ export const FOUNDATIONS: Chapter[] = [
         kind: 'p',
         text: 'What turned it round was a return to fresh citrus, real ice and pre-Prohibition recipe books. That\'s roughly where it has stayed. A modern craft bar is, in method, a reconstruction of the 1890s with better refrigeration.',
       },
-      {
-        kind: 'unsure',
-        title: 'Nothing here on drinking in New Zealand',
-        text: 'TODO: the course notes stop at the 1980s and say nothing about New Zealand. Needs a paragraph on how drinking here went: the licensing changes, when cocktail bars turned up in Auckland and Wellington, and what a bar list looked like before that. I don\'t know this well enough to write it yet.',
-      },
-    ],
+      { kind: 'h', text: 'Drinking in New Zealand' },
+      { kind: 'p', text: 'New Zealand missed most of the cocktail\'s first century because the pubs shut at six. Six o\'clock closing came in December 1917 as a wartime measure to head off the prohibition vote, was made permanent the next year, and stayed until 1967. The hour between the end of work and closing was spent drinking beer standing up, as fast as possible. That was the six o\'clock swill, and nothing about it rewarded a slow drink or a bartender who could do more than pour.' },
+      { kind: 'p', text: 'Licensed restaurants were allowed from 1960, and the ban on barmaids ended with them. A referendum in 1967 closed the swill, with two-thirds voting for ten o\'clock. The change that mattered was the Sale of Liquor Act 1989: four licence types instead of many, no requirement that a bar be a hotel, wine in supermarkets. Several thousand bars and licensed restaurants opened in the years after it. The bar culture Auckland and Wellington have now dates from then.' },
+      { kind: 'p', text: 'So a New Zealand cocktail list is young. The bars that took cocktails seriously mostly opened after 1989, and the good ones after 2000.' },
+],
   },
 
   /* ================================================================== */

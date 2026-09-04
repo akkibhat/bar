@@ -206,7 +206,7 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'unsure',
         title: 'No spec here defines sugar syrup',
-        text: 'Most specs call for sugar syrup and never define it, so this is written from outside. TODO: my note on clear ice - hot water, chilly bin, freeze 24 hours, carve - belongs in the ice chapter, but the same directional-freezing trick works for anything you want clear and I haven\'t tested that.',
+        text: 'Most specs call for sugar syrup and never define it, so this is written from outside.',
       },
     ],
   },

@@ -179,16 +179,17 @@ export const KIT: Chapter[] = [
         kind: 'p',
         text: 'The barback restocks, cuts garnish, hauls ice, changes kegs and clears glassware. It\'s the job that decides whether a bar can survive a rush, and on a busy night it\'s more physically demanding than making the drinks.',
       },
+      { kind: 'h', text: 'Opening, closing and wastage' },
+      { kind: 'p', text: '**Opening.** The bar is set before the first guest. Ice wells full, garnish cut and covered, juice opened and dated, the speed rail checked bottle by bottle against what it should hold, the till floated, the glass washer run once empty. The test is whether the first drink is as quick as the fiftieth.' },
+      { kind: 'p', text: '**Par levels.** A par is what the bar should hold at the start of a shift - two of whatever spirit goes fastest in the rail, usually vodka, and one in reserve, a case of tonic, and so on down the list. Restocking to par is the barback\'s first job and the manager\'s last check. Without a written par the busy night is the one you run out on.' },
+      { kind: 'p', text: '**Closing.** Everything washed, everything covered, everything open dated. Pourers off and washed, because fruit flies find them overnight. Ice wells emptied, never left full. Cash counted against the till, and the wastage written down before it is forgotten.' },
+      { kind: 'p', text: '**Wastage** is drink that left the bottle or the keg and never reached a paying glass. Beer goes first, and usually at the tap: a pour that foams over because the glass was warm, the keg was warm, the tap is faulty or the person pouring does not know how, and the foam is tipped out and the glass filled again. Wine goes by the overpour. A 750 ml bottle is five 150 ml glasses and sparkling is usually poured at 120, so a heavy hand loses a glass a bottle and the bar pays for it. Cocktails go the same way, one over-measured spirit or liqueur at a time.' },
+      { kind: 'p', text: 'A stock system compares what sold against what is missing, and a good one allows for some of this. A gap is not proof that anyone is stealing. It can be the system\'s own recipes: if the Margarita is set to draw down generic triple sec when the bar actually pours Cointreau, the count is wrong every time the drink sells, and it shows up as a leak in the wrong bottle. Check the recipes in the system before you check the staff.' },
       {
         kind: 'note',
         title: 'Crushed ice needs planning',
         text: 'A Moscow Mule, a Julep, a Caipirinha and anything blended all want crushed ice, and crushing it to order in the middle of service doesn\'t work. Crush ahead and keep it in an insulated container. (note here this is very uncommon for busy bars)',
       },
-      {
-        kind: 'unsure',
-        title: 'No opening, closing or stocktake here',
-        text: 'TODO: this chapter is the course\'s general principles and my own notes from one photographed station. It has no opening or closing procedure, no par levels, no stocktake, and no wastage sheet - all of which a real bar runs on. Worth writing if this book is ever meant to be useful to someone actually working a shift.',
-      },
-    ],
+],
   },
 ];

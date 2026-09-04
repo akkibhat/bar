@@ -199,17 +199,13 @@ export const SERVICE: Chapter[] = [
       {
         kind: 'list',
         items: [
-          '**Upsell within the brand they already chose.** If someone asks for a gin and tonic, offering a gin they might like better is a service. Steering them to whatever carries the best margin isn\'t, and people can tell. (this is dependent on what kind of bar e g jw marriott bar you can upsell more whereas your local pub probably not)',
+          '**Upsell within the brand they already chose.** If someone asks for a gin and tonic, offering a gin they might like better is a service. Steering them to whatever carries the best margin isn\'t, and people can tell. How far you take it depends on the room: a local with regulars will take a better gin once you have told them why, once, and an upscale hotel bar or a cocktail bar can build a serve around it and charge for the story. The mistake is running one bar\'s approach in the other\'s room.',
+          '**Stock local, and be able to say why.** Offering a New Zealand gin over an imported one is the one upsell nobody resents, because the reason is not the margin. Sea Lovers is the example: a marine gin - North Island kelp and Waiheke oyster shells over rosemary, lime and the usual juniper and spice - and it tastes like it, lime and rosemary first, then a savoury, faintly salty depth that most gins do not have. Made on Auckland\'s North Shore with the shells brought over from the island. That is a story the guest can repeat, which is what a good upsell is: not a more expensive drink, a more interesting one.',
           '**Signature serves.** One or two drinks that only this bar makes. They\'re what people describe to someone else later.',
           '**Seasonal serves.** Hot drinks in winter, long ones with crushed ice in summer. Often the same base spirit dressed differently, which costs nothing and reads as effort.',
         ],
       },
-      {
-        kind: 'unsure',
-        title: 'Buying local needs a proper paragraph',
-        text: 'TODO: my margin note here just says "buy local?" against the upselling page. I think that was about stocking New Zealand spirits over imported ones and being able to say why. Worth writing properly: it\'s the most defensible kind of upsell there is.',
-      },
-    ],
+],
   },
 
   /* ================================================================== */

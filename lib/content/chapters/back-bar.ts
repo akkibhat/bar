@@ -69,12 +69,22 @@ export const BACK_BAR: Chapter[] = [
           '**New Western / contemporary** - juniper present but pulled back in favour of citrus or floral botanicals. Fine in its own right, and it\'ll change a Martini.',
         ],
       },
+      { kind: 'h', text: 'New Zealand gin' },
+      { kind: 'p', text: 'New Zealand gin has had a decade, and what makes it a category rather than a label is the native bush. Three botanicals turn up again and again and do different jobs. **Horopito**, the pepper tree, gives heat and a green, resinous bite - what grains of paradise do in a London Dry, but hotter and more obviously from a forest. **Kawakawa** is peppery and faintly numbing, related to kava, and is the one that most changes a G&T. **Mānuka**, usually the leaf, is tea-like and soft, and where a gin tastes of the beach rather than the bush it is often why.' },
+      { kind: 'p', text: 'I have poured Scapegrace, The Source from Cardrona, Waiheke Distilling Co and Dancing Sands. Of those, Scapegrace - the Black especially - and Dancing Sands are the two I would put in a G&T over an imported gin without thinking about it, and the Dancing Sands wasabi gin is the one I would hand someone who thinks they know what gin tastes like. Others worth knowing by what they put in the still:' },
       {
-        kind: 'unsure',
-        title: 'No New Zealand gin here yet',
-        text: 'TODO: New Zealand gin is having a decade and the course said nothing about it. Name the ones I would pour, and what horopito, kawakawa and manuka do to a G&T. From bottles I have poured, not from a shop list.',
+        kind: 'list',
+        items: [
+          '**Reid + Reid**, Martinborough - all three natives, and the most kawakawa-forward of the lot.',
+          '**Little Biddy**, West Coast - horopito with rimu and Douglas fir behind it. Spiced citrus and warm resin.',
+          '**Dancing Sands**, Golden Bay - horopito and kelp in the dry gin, and the wasabi gin off local wasabi root.',
+          '**Sea Lovers**, Auckland - the marine one: kelp and Waiheke oyster shell over rosemary and lime. Savoury and faintly salty.',
+          '**Lighthouse**, Martinborough - nine botanicals built on Yen Ben lemon rather than bush. New Zealand grown, not New Zealand bush.',
+          '**Broken Heart**, Queenstown - eleven botanicals and Mt Aspiring water. More classic than native.',
+        ],
       },
-    ],
+      { kind: 'p', text: 'A kawakawa-led gin should sit well in a Negroni - the pepper reads as spice under the Campari rather than fighting it, and the vermouth rounds off the numbing edge. Reid + Reid is the one to try it with.' },
+],
   },
 
   /* ================================================================== */

@@ -104,9 +104,29 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
         text: 'There\'s now a real shelf of non-alcoholic spirits, aperitifs and even bitters. Quality varies enormously and price doesn\'t track it. They\'re worth having for the guest who wants the ritual of a Negroni without the alcohol, and they\'re not required. Tea, citrus and a good tonic will get most of the way there.',
       },
       {
+        kind: 'spec',
+        spec: {
+          name: 'Gumboot Sour',
+          glass: 'Coupe',
+          ice: 'None in the glass',
+          method: 'Dry shake, then shake with ice and double strain',
+          family: 'daiquiri',
+          spec: [
+            { name: 'Strong black tea, cold-brewed until tannic', amount: '60 ml' },
+            { name: 'Lime juice', amount: '30 ml' },
+            { name: 'Honey syrup, 3 : 1', amount: '30 ml' },
+            { name: 'Non-alcoholic aromatic bitters', amount: '2 dash', substitutes: ['A pinch of salt, stirred in'] },
+            { name: 'Fresh ginger, muddled', amount: '1 slice', substitutes: ['2 dashes Tabasco'] },
+            { name: 'Aquafaba', amount: '15 ml' },
+          ],
+          garnish: 'As a Whiskey Sour',
+          note: 'Gumboot tea is what New Zealand calls ordinary black tea, and the drink is built on a strong brew of it. Every lever from the list above is in here once. Make it three times, dropping the ginger and then the salt, and see which one you miss.',
+        },
+      },
+      {
         kind: 'unsure',
-        title: 'Nothing zero-proof on the shelf yet',
-        text: 'TODO: I haven\'t put a proper zero-proof drink on the shelf yet. Everything here is method rather than something I have made and served. Worth building one for Backbar and finding out which of these levers actually matters most.',
+        title: 'The Gumboot Sour is not built yet',
+        text: 'The Gumboot Sour above is the recipe. TODO: build it, taste it three ways, and then put it on Backbar with the reason in the description - it would be the first drink there with one.',
       },
     ],
   },
@@ -133,7 +153,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       {
         kind: 'steps',
         items: [
-          'Combine roughly 30–50 ml of melted fat with 500 ml of spirit.',
+          'Melt the fat and stir it through the spirit. About 120 g per 750 ml for something strong like smoked bacon, about 240 g for butter, olive oil or anything mild.',
           'Leave at room temperature for a few hours, stirring occasionally. Room temperature rather than warm, because heat drives off the top notes of the spirit you\'re trying to keep.',
           'Freeze overnight.',
           'Lift off the solid cap and strain through a coffee filter.',
@@ -146,11 +166,11 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       { kind: 'h', text: 'Clarification' },
       {
         kind: 'p',
-        text: 'Milk-washing turns a cloudy drink clear while softening its acidity. Add an acidic mixture to warm whole milk and the casein proteins curdle; as the curds form they trap the particles, tannins and colour that made the drink cloudy. Strain, and what comes through is clear and noticeably silkier.',
+        text: 'Milk-washing turns a cloudy drink clear while softening its acidity. Pour the finished, acidic cocktail slowly into room-temperature milk - not the other way round - at about five parts drink to one part milk, and the casein proteins curdle; as the curds form they trap the particles, tannins and colour that made the drink cloudy. Strain, and what comes through is clear and noticeably silkier.',
       },
       {
         kind: 'p',
-        text: 'The result keeps far better than the drink it came from, which is why it pairs with batching: a clarified batch can be poured for weeks.',
+        text: 'The result keeps far better than the drink it came from, which is why it pairs with batching: a clarified batch can be poured for weeks. Directional freezing, the clear-ice trick from the ice chapter, is sometimes used the same way; I have not tried it.',
       },
       { kind: 'h', text: 'Waste' },
       {
@@ -169,7 +189,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
       {
         kind: 'unsure',
         title: 'Neither of these have I done',
-        text: 'TODO: I haven\'t fat-washed or clarified anything. Both descriptions are from reading rather than practice, and the quantities above are starting points other people use, not ones I have tested. Worth doing before either is recommended with any confidence.',
+        text: 'TODO: I haven\'t fat-washed or clarified anything. Both descriptions are from reading rather than practice, and the quantities above are Dave Arnold\'s and the common milk ratio, not ones I have tested. Worth doing before either is recommended with any confidence.',
       },
       {
         kind: 'p',
