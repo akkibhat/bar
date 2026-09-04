@@ -21,12 +21,11 @@ export const metadata: Metadata = {
 /**
  * Barbook: an opening statement, the tools, and the contents.
  *
- * The open-questions count at the foot is the honest version of a
- * progress meter. Reading progress is switched off in `lib/site.ts`
- * because this is a reference rather than a course to complete - but how
- * much of the book is still provisional is a real number and worth
- * printing, because it is what makes the gaps a feature rather than an
- * embarrassment.
+ * The open-questions count was the honest version of a progress meter
+ * while chapters still carried unresolved notes. They have all been
+ * closed, so the sentence only appears while there is a number worth
+ * printing - saying "0 of them" would be a progress bar at full, which
+ * is the opposite of what it was for.
  */
 export default function BookPage() {
   const open = chaptersStillOpen().length;
@@ -92,10 +91,15 @@ export default function BookPage() {
           className="t-base mt-4 max-w-[34rem]"
           style={{ color: 'var(--ink-soft)' }}
         >
-          <span className="nums">{CHAPTER_COUNT}</span> chapters, and{' '}
-          <span className="nums">{open}</span> of them still carry something I
-          need to check or write up from my own notes. Those are marked where they
-          sit.
+          <span className="nums">{CHAPTER_COUNT}</span> chapters.
+          {open > 0 && (
+            <>
+              {' '}
+              <span className="nums">{open}</span> of them still carry something
+              I need to check or write up from my own notes, marked where they
+              sit.
+            </>
+          )}
         </p>
       </header>
 

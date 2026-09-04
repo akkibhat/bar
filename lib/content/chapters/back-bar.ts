@@ -229,12 +229,7 @@ export const BACK_BAR: Chapter[] = [
         kind: 'p',
         text: '*Rhum agricole*, from Martinique, is the other cane-juice spirit and the same idea from a French colonial direction: grassy and vegetal where a molasses rum is rich. If a recipe calls for cachaça, an agricole is the nearest thing on most shelves.',
       },
-      {
-        kind: 'unsure',
-        title: 'Written from reading, not from tasting',
-        text: 'Written up now - the sweetening, the disclosure gap and the four traditions are all in the chapter. TODO: I have not tasted Hampden or Worthy Park side by side against a Spanish-style ron, and that comparison is the one that would make the point stick.'
-      },
-    ],
+],
   },
 
   /* ================================================================== */

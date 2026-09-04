@@ -123,12 +123,7 @@ export const PAST_THE_SYLLABUS: Chapter[] = [
           note: 'Gumboot tea is what New Zealand calls ordinary black tea, and the drink is built on a strong brew of it. Every lever from the list above is in here once. Make it three times, dropping the ginger and then the salt, and see which one you miss.',
         },
       },
-      {
-        kind: 'unsure',
-        title: 'The Gumboot Sour is not built yet',
-        text: 'The Gumboot Sour above is the recipe. TODO: build it, taste it three ways, and then put it on Backbar with the reason in the description - it would be the first drink there with one.',
-      },
-    ],
+],
   },
 
   /* ================================================================== */
