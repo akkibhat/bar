@@ -36,12 +36,11 @@ my own notes, or a bottle I have actually poured.
   not code.)* Seven of the eight need rewriting so "what I was after" is
   backed by something; the Espresso Martini has no description at all.
 
-- **Copyright and permission.** Nothing in the repo states where the
-  course material stands, and the book is derived from a paid
-  qualification's teaching. Decide what the site says about it, whether
-  anything needs attributing, and what licence the writing itself
-  carries. Also covers the IBA recipes, if the IBA pass ends up quoting
-  their measures rather than just linking to them.
+- **Attribution for the course material.** The copyright line is done -
+  every page carries it, from `COPYRIGHT_FROM` in `lib/site.ts`. What is
+  still open is narrower: the book is written up from a paid
+  qualification's teaching, and nothing in the repo says how that is
+  credited. The IBA side is settled by linking rather than quoting.
 
 ---
 

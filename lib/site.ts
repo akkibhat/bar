@@ -136,6 +136,28 @@ export const PROGRESS_ENABLED: boolean = false;
 export const OWNER = 'Akki';
 
 /**
+ * The copyright line.
+ *
+ * `COPYRIGHT_FROM` is the year the site went up and does not change.
+ * `copyrightYears()` returns just that year until a later one arrives,
+ * and a range after - "2026", then "2026-2029".
+ *
+ * The current year is read when the page is rendered, and every page here
+ * is prerendered, so the range is fixed at build time rather than in the
+ * reader's browser. That is the right trade for a static site: doing it
+ * in the browser would mean shipping JavaScript to print a number, and a
+ * hydration mismatch every New Year. The consequence is that the year
+ * only moves when the site is rebuilt, which is a reason to rebuild
+ * rather than a reason to do it client-side.
+ */
+export const COPYRIGHT_HOLDER = 'Akki Bhat';
+export const COPYRIGHT_FROM = 2026;
+
+export function copyrightYears(now: number = new Date().getFullYear()): string {
+  return now > COPYRIGHT_FROM ? `${COPYRIGHT_FROM}-${now}` : String(COPYRIGHT_FROM);
+}
+
+/**
  * What the shelf used to be called.
  *
  * The drinks were published under this name on their own site before the

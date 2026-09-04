@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Bodoni_Moda, Jost, Lora } from 'next/font/google';
 import Frame from '@/components/Frame';
+import SiteFooter from '@/components/SiteFooter';
 import './globals.css';
 
 /**
@@ -107,7 +108,13 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body>
+        {/* The footer sits outside the shell rather than inside it. The
+            shell renders three different layouts and the front door
+            renders bare, so a copyright line placed within would appear
+            on some pages and not others, or land inside the book's index
+            column. Outside, it is one line under whatever the page was. */}
         <Frame>{children}</Frame>
+        <SiteFooter />
       </body>
     </html>
   );
