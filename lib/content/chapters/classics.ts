@@ -436,7 +436,7 @@ export const CLASSICS: Chapter[] = [
             { name: 'Champagne', amount: '90 ml', substitutes: ['Prosecco'] },
           ],
           garnish: 'Orange zest, or a cherry',
-          note: 'An Old Fashioned where the water arrives carbonated: spirit, sugar and bitters, lengthened with wine instead of ice. Soak the cube, add the cognac, then pour the champagne gently down the side so it does not foam over.',
+          note: 'An Old Fashioned where the water arrives carbonated: spirit, sugar and bitters, lengthened with wine instead of ice. Soak the cube, add the cognac, then pour the champagne/prosecco gently down the side so it does not foam over.',
         },
       },
       {

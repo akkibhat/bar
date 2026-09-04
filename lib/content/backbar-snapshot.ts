@@ -47,7 +47,7 @@ export type ShelfDrink = {
 };
 
 /** When this snapshot was taken, so the page can admit its age. */
-export const PULLED_AT = "2026-09-04T23:30:49.321Z";
+export const PULLED_AT = "2026-09-04T23:37:06.891Z";
 
 /** Everything on the shelf, newest first. */
 export const SHELF: ShelfDrink[] = [
@@ -71,7 +71,6 @@ export const SHELF: ShelfDrink[] = [
     "volumeMl": 75,
     "base": "Vanilla Vodka",
     "tags": [
-      "DP",
       "original"
     ],
     "spec": [
@@ -327,7 +326,7 @@ export const SHELF: ShelfDrink[] = [
       "Add vodka, peach schnapps, lemon juice and simple syrup to a shaker.",
       "Add ice and shake until well chilled.",
       "Fine strain into a chilled flute or coupe.",
-      "Top gently with Champagne.",
+      "Top gently with Champagne/Prosecco.",
       "Garnish with a peach slice."
     ],
     "garnish": "Peach slice",
