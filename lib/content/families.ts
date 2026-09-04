@@ -24,7 +24,7 @@ export const FAMILIES: Family[] = [
     about:
       'The oldest structure and the plainest: a spirit, made slightly sweet, given an edge with bitters, and diluted with ice. Nothing here hides the base, so it only works with a spirit worth tasting. This is what the 1806 definition described.',
     archetype: 'Old Fashioned',
-    members: ['Old Fashioned', 'Sazerac', 'Rum Old Fashioned'],
+    members: ['Old Fashioned', 'Sazerac', 'Champagne Cocktail', 'Rum Old Fashioned'],
     method: 'Build and stir over ice',
   },
   {
@@ -79,7 +79,7 @@ export const FAMILIES: Family[] = [
     about:
       'The texture family: egg, cream, dairy or a fortified wine giving the drink body rather than flavour. Dessert territory, and the structure behind most of what a bar serves after the plates have gone.',
     archetype: 'Flip',
-    members: ['Brandy Alexander', 'Grasshopper', 'Espresso Martini', 'White Russian'],
+    members: ['Brandy Alexander', 'Grasshopper', 'Espresso Martini', 'Irish Coffee', 'Pina Colada', 'White Russian'],
     method: 'Shake hard, often with a dry shake first',
   },
 ];

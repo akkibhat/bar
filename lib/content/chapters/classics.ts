@@ -28,7 +28,7 @@ export const CLASSICS: Chapter[] = [
     title: 'The sours',
     minutes: 7,
     standfirst:
-      'Spirit, citrus, sweet. Ten drinks off one template.',
+      'Spirit, citrus, sweet. Eleven drinks off one template.',
     body: [
       {
         kind: 'p',
@@ -71,6 +71,24 @@ export const CLASSICS: Chapter[] = [
           ],
           garnish: 'Lemon wedge',
           note: 'The bitters go in the shaker; the workbook also has them coating the rocks glass. With egg white, dry shake first - see the texture chapter.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
+          name: 'Sidecar',
+          glass: 'Coupe',
+          ice: 'Up',
+          method: 'Shake and strain',
+          family: 'sidecar',
+          iba: { category: 'unforgettables' },
+          spec: [
+            { name: 'Cognac', amount: '50 ml' },
+            { name: 'Triple sec', amount: '20 ml', substitutes: ['Cointreau'] },
+            { name: 'Lemon juice', amount: '20 ml' },
+          ],
+          garnish: 'None, or a lemon zest. A sugar rim is traditional and optional',
+          note: 'The drink the family is named after, and the one people miss. The White Lady is this with gin, which is the cleanest proof in the book that a family is a shape rather than a list. Plenty of bars pour it 50 : 25 : 25, which is rounder and easier to like.',
         },
       },
       {
@@ -230,11 +248,11 @@ export const CLASSICS: Chapter[] = [
     title: 'Muddled and built',
     minutes: 5,
     standfirst:
-      'Four drinks built in the glass, two of them muddled over crushed ice.',
+      'Ten drinks built in the glass. Two muddled, five lengthened with a mixer, and three that are neither.',
     body: [
       {
         kind: 'p',
-        text: 'These are drinks built in the serving glass rather than made in a shaker and poured out. The two muddled ones use fresh fruit for the acid instead of juice, want crushed ice, and are better with the sugar added before the ice rather than after. The last two are assembled in the glass without muddling anything.',
+        text: 'These are drinks built in the serving glass rather than made in a shaker and poured out. The two muddled ones use fresh fruit for the acid instead of juice, want crushed ice, and are better with the sugar added before the ice rather than after. Then five highballs: a spirit and something non-alcoholic to lengthen it, where the only decisions are the ratio and how cold everything was before it went in. The last three are assembled in the glass without muddling anything.',
       },
       {
         kind: 'note',
@@ -280,6 +298,93 @@ export const CLASSICS: Chapter[] = [
       {
         kind: 'spec',
         spec: {
+          name: 'Gin and Tonic',
+          glass: 'Highball',
+          ice: 'Filled',
+          method: 'Build in the glass',
+          family: 'highball',
+          spec: [
+            { name: 'Gin', amount: '50 ml' },
+            { name: 'Tonic', amount: '150 ml' },
+          ],
+          garnish: 'Lime wedge, or whatever suits the gin',
+          note: 'The most poured drink there is, and the ratio is the whole argument: 1 : 3 is standard and a gin worth tasting wants 1 : 2. Garnish to the botanical rather than reaching for lime every time - a kawakawa gin takes citrus peel, a floral one takes cucumber.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
+          name: 'Americano',
+          glass: 'Highball',
+          ice: 'Yes',
+          method: 'Build in the glass',
+          family: 'highball',
+          iba: { category: 'unforgettables' },
+          spec: [
+            { name: 'Campari', amount: '30 ml' },
+            { name: 'Sweet red vermouth', amount: '30 ml' },
+            { name: 'Soda', amount: 'Top' },
+          ],
+          garnish: 'Orange slice',
+          note: 'Swap the soda for gin and it is a Negroni, which makes this the Negroni\'s parent and the cheapest demonstration in the book that a family is a structure. Low enough in alcohol to drink before dinner, which is what it is for.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
+          name: 'Moscow Mule',
+          glass: 'Mule mug',
+          ice: 'Yes',
+          method: 'Build in the glass',
+          family: 'highball',
+          iba: { category: 'contemporary' },
+          spec: [
+            { name: 'Vodka', amount: '45 ml' },
+            { name: 'Ginger beer', amount: '120 ml' },
+            { name: 'Lime juice', amount: '10 ml' },
+          ],
+          garnish: 'Lime wedge',
+          note: 'The copper is not decoration. It frosts on the outside the way the julep tin does, and that is most of the serve - see the glassware chapter.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
+          name: 'Cuba Libre',
+          glass: 'Highball',
+          ice: 'Yes',
+          method: 'Build in the glass',
+          family: 'highball',
+          iba: { category: 'contemporary' },
+          spec: [
+            { name: 'White rum', amount: '50 ml' },
+            { name: 'Cola', amount: '120 ml' },
+            { name: 'Lime juice', amount: '10 ml' },
+          ],
+          garnish: 'Lime wedge',
+          note: 'A rum and coke with the lime squeezed in rather than perched on the rim. That is the whole difference, and it is the difference between a mixer and a named drink.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
+          name: 'Dark and Stormy',
+          glass: 'Highball',
+          ice: 'Yes',
+          method: 'Build in the glass',
+          family: 'highball',
+          spec: [
+            { name: 'Dark rum', amount: '60 ml', substitutes: ['Gosling\'s Black Seal, strictly'] },
+            { name: 'Ginger beer', amount: '100 ml' },
+            { name: 'Lime juice', amount: '10 ml' },
+          ],
+          garnish: 'Lime wedge',
+          note: 'Ginger beer first, then the rum poured over the back of a spoon so it sits dark on top - the layering is what the name is about. Gosling\'s hold the name as a trademark and specify their own rum in it, so strictly anything else is a dark rum and ginger beer.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
           name: 'Sex on the Beach',
           glass: 'Highball',
           ice: 'Yes',
@@ -316,6 +421,25 @@ export const CLASSICS: Chapter[] = [
         },
       },
       {
+        kind: 'spec',
+        spec: {
+          name: 'Champagne Cocktail',
+          glass: 'Flute',
+          ice: 'None',
+          method: 'Build in the glass',
+          family: 'old-fashioned',
+          iba: { category: 'contemporary' },
+          spec: [
+            { name: 'Sugar cube', amount: '1', substitutes: ['10 ml sugar syrup'] },
+            { name: 'Angostura bitters', amount: '2 dash' },
+            { name: 'Cognac', amount: '10 ml', substitutes: ['Brandy'] },
+            { name: 'Champagne', amount: '90 ml' },
+          ],
+          garnish: 'Orange zest, or a cherry',
+          note: 'An Old Fashioned where the water arrives carbonated: spirit, sugar and bitters, lengthened with wine instead of ice. Soak the cube, add the cognac, then pour the champagne gently down the side so it does not foam over.',
+        },
+      },
+      {
         kind: 'note',
         title: 'Colour is a pH trick',
         text: 'Butterfly pea flower changes colour with pH, so citrus turns it from blue to violet in the glass. It is the one piece of theatre on this page that costs nothing and is not a garnish: the drink does it itself, at the table, the moment the lime goes in.',
@@ -331,7 +455,7 @@ export const CLASSICS: Chapter[] = [
     title: 'Stirred and spirit-forward',
     minutes: 6,
     standfirst:
-      'Spirit-forward, and mostly stirred. Six drinks, starting with the Old Fashioned.',
+      'Spirit-forward, and mostly stirred. Seven drinks, starting with the Old Fashioned.',
     body: [
       {
         kind: 'p',
@@ -348,12 +472,31 @@ export const CLASSICS: Chapter[] = [
           iba: { category: 'unforgettables' },
           spec: [
             { name: 'Bourbon', amount: '60 ml', substitutes: ['Rye'] },
-            { name: 'Sugar cube', amount: '1' },
+            { name: 'Sugar cube', amount: '1', substitutes: ['10 ml sugar syrup'] },
             { name: 'Angostura bitters', amount: 'Soak the cube' },
             { name: 'Water', amount: 'A few dashes' },
           ],
           garnish: 'Orange peel and a maraschino cherry',
           note: 'The oldest structure in the book, and the drink the 1806 definition was describing. Sixty is what most bars I know pour; the IBA says 45 ml, which is the same drink and a smaller one.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
+          name: 'Sazerac',
+          glass: 'Rocks',
+          ice: 'None',
+          method: 'Stir and strain',
+          family: 'old-fashioned',
+          iba: { category: 'unforgettables' },
+          spec: [
+            { name: 'Absinthe', amount: 'Rinse' },
+            { name: 'Cognac', amount: '50 ml', substitutes: ['Rye'] },
+            { name: 'Sugar cube', amount: '1', substitutes: ['10 ml sugar syrup'] },
+            { name: 'Peychaud\'s bitters', amount: '2 dash' },
+          ],
+          garnish: 'A strip of lemon peel, squeezed over the surface and thrown away',
+          note: 'An Old Fashioned with an absinthe rinse and a different bitters. The peel is the detail people skip: you want its oil on the surface and nothing floating in the drink, so it does its job in two seconds and then goes in the bin.',
         },
       },
       {
@@ -456,7 +599,7 @@ export const CLASSICS: Chapter[] = [
     title: 'After dinner',
     minutes: 4,
     standfirst:
-      'Coffee, cream and chocolate. The Flip family, plus the B52.',
+      'Coffee, cream and coconut. The Flip family, plus the B52.',
     body: [
       {
         kind: 'p',
@@ -515,6 +658,43 @@ export const CLASSICS: Chapter[] = [
           ],
           garnish: 'Chocolate powder',
           note: 'The IBA\'s 20 / 20 / 20 is the historic build. Thirty each is the modern single serve for a coupe or cocktail glass, and the same drink.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
+          name: 'Irish Coffee',
+          glass: 'Toddy',
+          ice: 'None',
+          method: 'Build in the glass and float the cream',
+          family: 'flip',
+          iba: { category: 'contemporary' },
+          spec: [
+            { name: 'Irish whiskey', amount: '50 ml' },
+            { name: 'Hot coffee', amount: '120 ml' },
+            { name: 'Sugar', amount: '1 tsp', substitutes: ['10 ml sugar syrup'] },
+            { name: 'Cream, chilled', amount: '50 ml' },
+          ],
+          garnish: 'Nothing. The cream is the garnish',
+          note: 'The cream floats because the coffee underneath is sweetened, which makes it denser. Leave the sugar out and the float sinks, which is the tidiest piece of physics in the book. Warm the glass first or the drink is lukewarm by the second mouthful.',
+        },
+      },
+      {
+        kind: 'spec',
+        spec: {
+          name: 'Pina Colada',
+          glass: 'Hurricane',
+          ice: 'Crushed',
+          method: 'Blend, or shake hard',
+          family: 'flip',
+          iba: { category: 'contemporary' },
+          spec: [
+            { name: 'White rum', amount: '50 ml' },
+            { name: 'Pineapple juice', amount: '80 ml' },
+            { name: 'Coconut cream', amount: '30 ml' },
+          ],
+          garnish: 'Pineapple wedge, and a cherry if you like',
+          note: 'The coconut cream is the something rich that makes this a Flip rather than a sour - take it out and you have a rum and pineapple juice. The only blended drink in the book, and the reason the hurricane glass is in the glassware chapter.',
         },
       },
       {
