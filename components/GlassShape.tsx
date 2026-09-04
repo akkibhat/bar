@@ -35,7 +35,7 @@ const SHAPES: Record<string, string> = {
   snifter: `M14 20 C7 26 9 42 20 42 C31 42 33 26 26 20 Z ${stem(42)}`,
 
   /* ---- short and shot: no stem, and the base carries the weight ------ */
-  rocks: 'M10 28 L12 58 H28 L30 28 M12 55 H28',
+  rocks: 'M9 36 L11 58 H29 L31 36 M11 54 H29',
   shot: 'M14 36 L15 58 H25 L26 36 M15 55 H25',
 
   /* ---- long: straight sided, and the width is the whole story -------- */
@@ -47,7 +47,12 @@ const SHAPES: Record<string, string> = {
   /* ---- the ones that are not glass ----------------------------------- */
   julep: 'M11 24 L13 58 H27 L29 24 M11 27 H29',
   mule: 'M11 22 L13 58 H27 L29 22 M29 30 C37 30 37 46 29 46 M11 25 H29',
-  tiki: 'M12 10 L14 58 H26 L28 10 M13 22 H27 M13 34 H27 M17 16 h2 M21 16 h2',
+  /* A tiki mug is a carved head, not a tumbler: wider at the brow than
+     at the foot, with a heavy rim and a face cut into it. */
+  tiki:
+    'M11 14 C11 11 29 11 29 14 L27 30 C27 44 24 52 22 58 H18 C16 52 13 44 13 30 Z '
+    + 'M11 14 C11 17 29 17 29 14 M16 24 a1.6 1.6 0 1 0 0.1 0 M24 24 a1.6 1.6 0 1 0 0.1 0 '
+    + 'M17 34 C19 37 21 37 23 34 M20 27 v4',
   mason: 'M11 24 C11 19 13 17 15 17 H25 C27 17 29 19 29 24 L29 58 H11 Z M13 12 H27 V17 H13 Z',
   toddy: 'M12 20 L14 58 H26 L28 20 M28 28 C35 28 35 44 28 44 M12 23 H28',
 };

@@ -317,8 +317,8 @@ export const CLASSICS: Chapter[] = [
       },
       {
         kind: 'note',
-        title: 'This one got built',
-        text: 'Butterfly pea flower changes colour with pH, so citrus turns it from blue to violet in the glass. That idea did get built: it\'s the Filthy Mistress on the shelf, where the lime does the work at the table.',
+        title: 'Colour is a pH trick',
+        text: 'Butterfly pea flower changes colour with pH, so citrus turns it from blue to violet in the glass. It is the one piece of theatre on this page that costs nothing and is not a garnish: the drink does it itself, at the table, the moment the lime goes in.',
       },
     ],
   },

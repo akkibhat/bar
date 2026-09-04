@@ -47,7 +47,7 @@ export type ShelfDrink = {
 };
 
 /** When this snapshot was taken, so the page can admit its age. */
-export const PULLED_AT = "2026-09-01T13:44:57.550Z";
+export const PULLED_AT = "2026-09-04T16:09:59.533Z";
 
 /** Everything on the shelf, newest first. */
 export const SHELF: ShelfDrink[] = [
@@ -370,58 +370,44 @@ export const SHELF: ShelfDrink[] = [
     "slug": "filthy-mistress",
     "rawSlug": "filthy-mistress-1",
     "name": "Filthy Mistress",
-    "description": "Smoky, sweet and quietly vicious. The butterfly pea syrup goes in blue and turns violet the moment the lime hits it. Tabasco does the rest.",
+    "description": "Smoky, dark and quietly floral. The port and the cherry give it the weight of something aged, the Italicus lifts it with bergamot, and the pinch of salt is what stops it reading as a dessert.",
     "steps": [
-      "Run a lime wedge around the rim of a coupe or rocks glass and dip in Tajín.",
-      "Add mezcal, butterfly pea flower syrup, blue curaçao, agave syrup and Tabasco to a shaker.",
+      "Add the mezcal, tawny port, cherry syrup and Italicus to a shaker.",
+      "Add a pinch of salt.",
       "Add ice and shake hard for 15 seconds until well chilled.",
-      "Fine strain into the prepared glass, then add the lime juice last and watch it shift from blue to violet.",
-      "Garnish with a dehydrated lime wheel."
+      "Fine strain into a chilled coupe.",
+      "Garnish with a maraschino cherry on a flag."
     ],
-    "garnish": "Dehydrated lime wheel, Tajín rim",
+    "garnish": "Maraschino cherry on a flag",
     "glass": "Coupe",
     "method": "Shake",
-    "abv": 16.62,
-    "volumeMl": 134.94,
+    "abv": 18.74,
+    "volumeMl": 110,
     "base": "Mezcal",
     "tags": [
       "original",
-      "mezcal",
-      "Spicy"
+      "mezcal"
     ],
     "spec": [
       {
         "name": "Mezcal",
-        "amount": "60 ml"
+        "amount": "40 ml"
       },
       {
-        "name": "Butterfly Pea Flower Syrup",
-        "amount": "22 ml",
-        "note": "Steep 1 tbsp dried butterfly pea flowers in 60 ml hot water with equal sugar for 10 minutes, then strain."
+        "name": "Tawny Port",
+        "amount": "30 ml"
       },
       {
-        "name": "Blue Curaçao",
-        "amount": "15 ml"
+        "name": "Cherry syrup",
+        "amount": "20 ml"
       },
       {
-        "name": "Lime juice",
-        "amount": "22 ml",
-        "note": "Add last, in the glass, so the colour shift happens in front of the guest."
+        "name": "Italicus Rosolio di Bergamotto",
+        "amount": "20 ml"
       },
       {
-        "name": "Agave Syrup",
-        "amount": "10 ml"
-      },
-      {
-        "name": "Tabasco",
-        "amount": "3 dash",
-        "note": "Start at 3 and taste. It builds faster than you expect."
-      },
-      {
-        "name": "Tajín",
-        "amount": "1 tsp",
-        "optional": true,
-        "note": "For the rim."
+        "name": "Salt",
+        "amount": "1 pinch"
       }
     ],
     "createdAt": "2026-08-11T04:50:46+00:00"
