@@ -76,7 +76,7 @@ export const BALANCE: Chapter[] = [
         rows: [
           ['Harsh, hot', 'Under-diluted or under-sweetened', 'Shake or stir longer, or add 5 ml syrup'],
           ['Soft, dull', 'Not enough acid', 'Add 5 ml citrus before touching anything else'],
-          ['Sickly', 'Too much sweet, or not enough bitter', 'Add citrus, or 2 dashes of bitters'],
+          ['Sickly sweet', 'Too much sweet, or not enough bitter', 'Add citrus, or 2 dashes of bitters'],
           ['Thin, watery', 'Over-diluted, or under-built', 'Less shaking, colder ice, or more of everything but water'],
           ['Sharp but hollow', 'Acid without body', 'Add syrup - sugar carries weight, not just sweetness'],
         ],

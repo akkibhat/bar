@@ -267,7 +267,7 @@ export const SPIRITS: Spirit[] = [
     sweetness: 5,
     intensity: 4,
     notes: ['Coffee', 'Vanilla', 'Molasses'],
-    note: 'Sweet enough that anything built on it needs either real espresso or citrus to stop it going sickly.',
+    note: 'Sweet enough that anything built on it needs either real espresso or citrus to stop it going sickly sweet.',
     drinkIt: 'Espresso Martini',
   },
   {
