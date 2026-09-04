@@ -106,8 +106,16 @@ export const BEER: Chapter[] = [
         ],
       },
       { kind: 'h', text: 'New Zealand hops' },
-      { kind: 'p', text: 'New Zealand hops are a genuine speciality, and one variety made them so. **Nelson Sauvin**, released in 2000 and named after the grape, tastes of Sauvignon Blanc - gooseberry, white grape, passionfruit - and nothing grown anywhere else does. Two others carry the same white-grape thread with a different fruit on top: **Motueka** is lime, the crushed mojito kind, and **Riwaka** is grapefruit and cut grass, low in bittering acid and so used late or as a dry hop for the aroma. All three come from Nelson, which grows nearly the whole crop.' },
-      { kind: 'p', text: 'What you taste in a New Zealand pale ale is usually one of those three - wine, lime or grapefruit - over a malt that stays out of the way. Emerson\'s in Dunedin was the first of the modern breweries, in 1991, and is still the one to hand someone who wants a classic style done properly. Garage Project\'s Pernicious Weed is the Nelson Sauvin showcase, a double IPA that tastes like a hop field. Panhead\'s Supercharger APA is the everyday version of the same idea, and their Port Road Pilsner shows what the hops do in a lager, where there is nothing to hide behind. I have poured all of them.' },
+      { kind: 'p', text: 'New Zealand hops are a genuine speciality, and one variety made them so. All three below come from Nelson, which grows nearly the whole crop.' },
+      {
+        kind: 'list',
+        items: [
+          '**Nelson Sauvin** - released in 2000 and named after the grape. Tastes of Sauvignon Blanc: gooseberry, white grape, passionfruit. Nothing grown anywhere else does.',
+          '**Motueka** - the same white-grape thread with lime on top, the crushed mojito kind.',
+          '**Riwaka** - grapefruit and cut grass. Low in bittering acid, so it goes in late or as a dry hop, for the aroma.',
+        ],
+      },
+      { kind: 'p', text: 'What you taste in a New Zealand pale ale is usually one of those three - wine, lime or grapefruit - over a malt that stays out of the way. Emerson\'s in Dunedin was the first of the modern breweries, in 1991, and is still the one to hand someone who wants a classic style done properly. Garage Project\'s Pernicious Weed is the Nelson Sauvin showcase, a double IPA that tastes like a hop field. Panhead\'s Supercharger APA is the everyday version of the same idea, and their Port Road Pilsner shows what the hops do in a lager, where there is nothing to hide behind. The hops travel further than the beer does: at the Marathon de la Bière in Montbrison, a small town in the middle of France, I came across a local brewery using them.' },
 ],
   },
 
@@ -147,7 +155,7 @@ export const BEER: Chapter[] = [
       },
       { kind: 'h', text: 'Line cleaning' },
       { kind: 'p', text: 'Lines grow yeast and beer stone, and a dirty line is the usual reason a good keg pours badly. Clean them every two weeks: caustic at two per cent, warm, circulated for fifteen minutes, then flushed until a pH strip says the water is clean. An acid clean every few months shifts the beer stone that caustic leaves behind. Strip and soak the taps while the lines are down.' },
-      { kind: 'p', text: 'Every clean throws away a full line of beer, plus what it takes to flush the cleaner out. A bar with long runs from the chiller to the tap wastes more beer every fortnight than one with the kegs under the bar. At the Belgian bar it came to $800 to $1,000 a fortnight at sale price, which is the number that makes short lines look cheap.' },
+      { kind: 'p', text: 'Every clean throws away a full line of beer, plus what it takes to flush the cleaner out. A bar with long runs from the chiller to the tap wastes more beer every fortnight than one with the kegs under the bar. At the bar I ran it came to $800 to $1,000 a fortnight at sale price, which is the number that makes short lines look cheap.' },
       { kind: 'h', text: 'Kegs and the cellar' },
       { kind: 'p', text: 'A keg is beer under pressure. Too much gas and it foams; too little and it pours flat and goes off in the keg. Temperature decides the rest: a warm keg foams whatever the gas is doing, and a cold keg through a warm line foams at the tap. The keg and the line want to be the same temperature.' },
       { kind: 'p', text: 'Wine has its own temperatures and the beer fridge is not one of them. Sparkling wants 6–8 degrees, white 8–12, red 14–18. A fridge set for beer and soft drink runs at 2–4, and a white served straight from it tastes of nothing until it has sat in the glass for ten minutes. I have worked in places that kept the wine in the beer fridge, and the complaint was always the same: they could not taste it.' },

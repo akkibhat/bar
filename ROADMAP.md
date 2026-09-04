@@ -50,11 +50,6 @@ my own notes, or a bottle I have actually poured.
 
 ### Written from outside the course, and thin because of it
 
-- **Beer service** *(Beer behind the bar)* - the standfirst promises the
-  pour, line cleaning and the beer cocktails. There is no line cleaning
-  section: the chapter has two headings, The pour and Beer in a cocktail.
-  Write it from the Belgian bar - kegs, wine fridges, lines every
-  fortnight - or take the promise out of the standfirst.
 - **Fat-washing and clarification** *(Modern technique)* - described from
   reading. I have not done either. The quantities are other people's
   starting points.

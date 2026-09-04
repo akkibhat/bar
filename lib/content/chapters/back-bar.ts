@@ -70,8 +70,16 @@ export const BACK_BAR: Chapter[] = [
         ],
       },
       { kind: 'h', text: 'New Zealand gin' },
-      { kind: 'p', text: 'New Zealand gin has had a decade, and what makes it a category rather than a label is the native bush. Three botanicals turn up again and again and do different jobs. **Horopito**, the pepper tree, gives heat and a green, resinous bite - what grains of paradise do in a London Dry, but hotter and more obviously from a forest. **Kawakawa** is peppery and faintly numbing, related to kava, and is the one that most changes a G&T. **Mānuka**, usually the leaf, is tea-like and soft, and where a gin tastes of the beach rather than the bush it is often why.' },
-      { kind: 'p', text: 'I have poured Scapegrace, The Source from Cardrona, Waiheke Distilling Co and Dancing Sands. Of those, Scapegrace - the Black especially - and Dancing Sands are the two I would put in a G&T over an imported gin without thinking about it, and the Dancing Sands wasabi gin is the one I would hand someone who thinks they know what gin tastes like. Others worth knowing by what they put in the still:' },
+      { kind: 'p', text: 'New Zealand gin has had a decade, and what makes it a category rather than a label is the native bush. Three botanicals turn up again and again, and they do different jobs.' },
+      {
+        kind: 'list',
+        items: [
+          '**Horopito**, the pepper tree - heat and a green, resinous bite. What grains of paradise do in a London Dry, but hotter and more obviously from a forest.',
+          '**Kawakawa** - peppery and faintly numbing, related to kava. The one that most changes a G&T.',
+          '**Mānuka**, usually the leaf - tea-like and soft. Where a gin tastes of the beach rather than the bush, this is often why.',
+        ],
+      },
+      { kind: 'p', text: 'I have poured Scapegrace, The Source from Cardrona, Waiheke Distilling Co, Dancing Sands and Sea Lovers, among others. Scapegrace - the Black especially - and Dancing Sands are the two I would put in a G&T over an imported gin without thinking about it; the Dancing Sands wasabi gin is the one I would hand someone who thinks they know what gin tastes like; and Sea Lovers is a favourite, because it tastes like the ocean in a good way. Others worth knowing by what they put in the still:' },
       {
         kind: 'list',
         items: [
