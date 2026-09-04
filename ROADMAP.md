@@ -28,10 +28,6 @@ my own notes, or a bottle I have actually poured.
 
 ### Deferred, with a decision already taken
 
-- **The glassware tool holds fourteen glasses; chapter 23 lists
-  seventeen.** *(Glassware, and lib/glassware.ts)* Three in the chapter
-  tables are not in the tool, so the standalone page is missing them.
-
 - **Write the intent into the Backbar descriptions.** *(Bar Assistant,
   not code.)* Seven of the eight need rewriting so "what I was after" is
   backed by something; the Espresso Martini has no description at all.
