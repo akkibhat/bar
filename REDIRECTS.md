@@ -6,17 +6,23 @@ already exist.
 
 ## What this repo already handles
 
-`next.config.ts` carries two permanent (308) redirects:
+`next.config.ts` carries three permanent (308) redirects:
 
 | Old path | Goes to |
 |---|---|
 | `/menu` | `/backbar` |
 | `/menu/:slug` | `/backbar/:slug` |
+| `/units` | `/dilution` |
 
 The slugs are unchanged, because both sites derive them the same way -
 Bar Assistant's slug with its trailing `-N` revision counter stripped. So
 `/menu/black-magic-margarita` lands on
 `/backbar/black-magic-margarita` and no link needs rewriting by hand.
+
+`/units` is the odd one out. It was a route in this repo, not on the old
+site, and it was folded into `/dilution` before this site was ever
+deployed - so no link to it exists anywhere. It costs nothing to keep
+and covers nothing real.
 
 `lib/backbar.ts` also resolves a drink by Bar Assistant's raw slug (with
 the `-N` still on it) or by its numeric id, so links shared before the
