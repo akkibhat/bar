@@ -15,19 +15,22 @@
   "name": "bar",
   "compatibility_date": "2026-09-05",
 
+  // One address, and no second one. Without this the same site would
+  // also answer on a *.workers.dev subdomain: a duplicate that gets
+  // indexed, shared, and then forgotten about.
+  "workers_dev": false,
+
   // The Worker is the origin for this hostname rather than sitting in
   // front of one, so it is a custom domain rather than a route:
   // Cloudflare writes the DNS record and issues the certificate itself.
   // The zone is already on the account, which is what makes that work.
-  //
-  // The workers.dev subdomain stays on alongside it, which is where to
-  // check a deploy before the real name is pointed at it.
   "routes": [
     {
       "pattern": "bar.pi.co.nz",
       "custom_domain": true
     }
   ],
+
   "assets": {
     "directory": "./out",
 
