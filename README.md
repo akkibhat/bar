@@ -27,10 +27,11 @@ printed how many chapters still carried one. All of those have since
 been answered or cut, so nothing in the book is marked provisional any
 more.
 
-The heaviest warning is on **Serving responsibly**. It covers New Zealand
-licensing law, I hold no Licence Controller Qualification, and anyone
-actually serving alcohol should do the one-day course rather than read
-mine.
+**Serving responsibly** is the exception to all of the above. It covers
+New Zealand licensing law, and it is the one chapter backed by a
+qualification rather than by notes taken and checked afterwards - I hold
+the Licence Controller Qualification and a Duty Manager's Certificate.
+It is still not legal advice: the Act is the authority, and it changes.
 
 ---
 
