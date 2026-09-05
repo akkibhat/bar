@@ -6,6 +6,8 @@ import SpecSheet from '@/components/SpecSheet';
 import IbaLinks from '@/components/IbaLinks';
 import { SHELF_HALF } from '@/lib/site';
 import { methodChapter, spiritChapter } from '@/lib/crosslinks';
+import GlassShape from '@/components/GlassShape';
+import { glassFor } from '@/lib/glassware';
 import {
   PAGED,
   builtVolume,
@@ -95,6 +97,12 @@ export default async function DrinkPage({
 
   /* The book half of the site, for the two things this page states but
      does not explain: what the base spirit is, and what the method does. */
+  /* Standing in for a photograph, which no drink has yet. The glass is
+     something the page already states, so drawing it adds a picture
+     without inventing anything - and it will not read as a missing image
+     the way an empty frame would. */
+  const glass = glassFor(drink.glass);
+
   const spirit = spiritChapter(shelfOf(drink));
   const method = methodChapter(drink.method);
   const reading = [spirit, method].filter(
@@ -127,6 +135,13 @@ export default async function DrinkPage({
 
       {/* ---- Header --------------------------------------------- */}
       <header className="mb-8">
+        {glass && (
+          <figure className="float-right ml-6 mb-4 text-center">
+            <GlassShape glass={glass} size={96} />
+            <figcaption className="label-ui mt-2">{glass.name}</figcaption>
+          </figure>
+        )}
+
         <p className="label-ui mb-2" style={{ color: 'var(--accent)' }}>
           {shelfOf(drink)}
         </p>

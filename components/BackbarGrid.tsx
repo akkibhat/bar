@@ -7,6 +7,7 @@ import {
   MINE,
   ingredientLine,
   shelfOf,
+  families,
   shelves,
   tags,
   tagsOf,
@@ -42,6 +43,7 @@ export default function BackbarGrid() {
   const [origin, setOrigin] = useState<'mine' | 'iba'>('mine');
   const [category, setCategory] = useState<IbaCategory | null>(null);
   const [shelf, setShelf] = useState<string | null>(null);
+  const [family, setFamily] = useState<string | null>(null);
   const [tag, setTag] = useState<string | null>(null);
   const [query, setQuery] = useState('');
 
@@ -54,6 +56,7 @@ export default function BackbarGrid() {
   }, [origin, category]);
 
   const allShelves = useMemo(() => shelves(list), [list]);
+  const allFamilies = useMemo(() => families(list), [list]);
   const allTags = useMemo(() => tags(list), [list]);
 
   /* The Base filter is hidden on the IBA list.
@@ -66,12 +69,14 @@ export default function BackbarGrid() {
      they use the control. So Base belongs to my own shelf, where every
      drink has one. */
   const showBase = origin === 'mine';
+  const showFamily = origin === 'mine' && allFamilies.length > 1;
 
   const shown = useMemo(() => {
     const q = query.trim().toLowerCase();
 
     return list.filter((d) => {
       if (shelf && shelfOf(d) !== shelf) return false;
+      if (family && d.family !== family) return false;
       if (tag && !tagsOf(d).includes(tag)) return false;
       if (!q) return true;
       /* Searching the spec as well as the name is the point: the common
@@ -82,9 +87,9 @@ export default function BackbarGrid() {
         d.spec.some((line) => line.name.toLowerCase().includes(q))
       );
     });
-  }, [list, shelf, tag, query]);
+  }, [list, shelf, family, tag, query]);
 
-  const filtered = Boolean(category || shelf || tag || query.trim());
+  const filtered = Boolean(category || shelf || family || tag || query.trim());
 
   /* Switching lists drops the narrower filters, since a base or a tag
      chosen on one list may not exist on the other. */
@@ -92,6 +97,7 @@ export default function BackbarGrid() {
     setOrigin(next);
     setCategory(null);
     setShelf(null);
+    setFamily(null);
     setTag(null);
   };
 
@@ -151,6 +157,26 @@ export default function BackbarGrid() {
         </div>
       )}
 
+      {showFamily && (
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-3">
+          <span className="label-ui" style={{ minWidth: '3rem' }}>
+            Family
+          </span>
+          <FilterLink on={family === null} onClick={() => setFamily(null)}>
+            All
+          </FilterLink>
+          {allFamilies.map((f) => (
+            <FilterLink
+              key={f.slug}
+              on={family === f.slug}
+              onClick={() => setFamily(family === f.slug ? null : f.slug)}
+            >
+              {f.name}
+            </FilterLink>
+          ))}
+        </div>
+      )}
+
       {allTags.length > 0 && (
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-4">
           <span className="label-ui" style={{ minWidth: '3rem' }}>
@@ -186,6 +212,7 @@ export default function BackbarGrid() {
             onClick={() => {
               setCategory(null);
               setShelf(null);
+              setFamily(null);
               setTag(null);
               setQuery('');
             }}

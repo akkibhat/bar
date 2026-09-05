@@ -169,3 +169,48 @@ export const GLASSES: Glass[] = [
     drinks: ['B52'],
   },
 ];
+
+/**
+ * The glass a free-text label refers to, or undefined if none is
+ * recognisable.
+ *
+ * Both halves of the site record glassware as prose rather than as a
+ * slug - Bar Assistant says "Cocktail", and a book spec says "Martini
+ * with a salt rim, or coupe, or rocks" - so this reads the label rather
+ * than looking it up. Where a label offers alternatives the first one
+ * wins, because that is the one the spec is actually calling for; the
+ * rest are fallbacks for a bar that does not have it.
+ */
+const GLASS_ALIASES: Record<string, string> = {
+  /* Bar Assistant's name for a stemmed cocktail glass. */
+  cocktail: 'martini',
+  /* The rocks glass is filed under its drink's name in GLASSES. */
+  rocks: 'rocks',
+  tumbler: 'rocks',
+};
+
+export function glassFor(label: string | null | undefined): Glass | undefined {
+  if (!label) return undefined;
+  const text = label.toLowerCase();
+
+  const needles: [string, string][] = [
+    ...GLASSES.flatMap((g): [string, string][] => [
+      [g.slug, g.slug],
+      [g.name.toLowerCase(), g.slug],
+    ]),
+    ...Object.entries(GLASS_ALIASES),
+  ];
+
+  /* Earliest mention wins, and a longer needle breaks a tie so "old
+     fashioned" is not beaten by a shorter accidental match inside it. */
+  let best: { at: number; length: number; slug: string } | undefined;
+  for (const [needle, slug] of needles) {
+    const at = text.indexOf(needle);
+    if (at === -1) continue;
+    if (!best || at < best.at || (at === best.at && needle.length > best.length)) {
+      best = { at, length: needle.length, slug };
+    }
+  }
+
+  return best ? GLASSES.find((g) => g.slug === best.slug) : undefined;
+}

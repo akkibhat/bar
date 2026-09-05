@@ -4,7 +4,7 @@ import { useCallback, useSyncExternalStore } from 'react';
 
 /**
  * Browser-local persistence for the things the site remembers: which
- * chapters you have finished, and the drinks you have made notes on.
+ * chapters you have finished.
  *
  * Everything lives in localStorage. Nothing is sent anywhere, there is no
  * account, and clearing site data resets it. That is a deliberate trade:
@@ -23,7 +23,6 @@ import { useCallback, useSyncExternalStore } from 'react';
  */
 
 const PROGRESS_KEY = 'bar.progress.v1';
-const JOURNAL_KEY = 'bar.journal.v1';
 
 /**
  * Fired after any write so separate components mounted at the same time
@@ -158,70 +157,6 @@ export function useRead() {
   }, []);
 
   return { progress, ready, toggleDone, recordScore, resetProgress };
-}
-
-/* ------------------------------------------------------------------ *
- * Notes on drinks made
- * ------------------------------------------------------------------ */
-
-/** One note against a drink, written after making it. */
-export type DrinkNote = {
-  id: string;
-  /** ISO timestamp of when it was saved. */
-  savedAt: string;
-  /** The drink this is about. Free text, so it can cover a drink not on
-      the shelf as well as one that is. */
-  drink: string;
-  /** 0-4 indexes into the word scales in the tasting tool. */
-  sweetness: number;
-  sourness: number;
-  strength: number;
-  bitterness: number;
-  /** Overall rating out of 5. */
-  rating: number;
-  /** What I would change next time. */
-  adjust: string;
-  /** Anything else worth writing down. */
-  comment: string;
-};
-
-/** Module-level constant, for the same stability reason as EMPTY_PROGRESS. */
-const EMPTY_JOURNAL: DrinkNote[] = [];
-
-/** The saved notes, newest first. */
-export function useNotes() {
-  const notes = useSyncExternalStore(
-    watchStored,
-    () => readStored(JOURNAL_KEY, EMPTY_JOURNAL),
-    () => EMPTY_JOURNAL,
-  );
-  const ready = useMounted();
-
-  /** Save a new note to the front of the journal. */
-  const saveNote = useCallback((note: Omit<DrinkNote, 'id' | 'savedAt'>) => {
-    const current = peek(JOURNAL_KEY, EMPTY_JOURNAL);
-    const full: DrinkNote = {
-      ...note,
-      id:
-        typeof crypto !== 'undefined' && 'randomUUID' in crypto
-          ? crypto.randomUUID()
-          : String(Date.now()),
-      savedAt: new Date().toISOString(),
-    };
-    saveStored(JOURNAL_KEY, [full, ...current]);
-    return full;
-  }, []);
-
-  /** Remove one note by id. */
-  const deleteNote = useCallback((id: string) => {
-    const current = peek(JOURNAL_KEY, EMPTY_JOURNAL);
-    saveStored(
-      JOURNAL_KEY,
-      current.filter((n) => n.id !== id),
-    );
-  }, []);
-
-  return { notes, ready, saveNote, deleteNote };
 }
 
 /* ------------------------------------------------------------------ *
