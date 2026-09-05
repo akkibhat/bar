@@ -1,19 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 16 120 136" width="120" height="136">
   <!--
     The Barbook favicon, applying to /book and everything under it.
+    Backbar has none of its own and inherits the glass from `app/icon.svg`,
+    which is the right default for the front door and the reference pages
+    too.
 
-    Same glass as the site mark in `app/icon.svg`, in Barbook's blue
-    rather than the shelf's red. The shape does not change between the
-    halves and should not: the open book state of the mark loses its
-    page split well below one pixel at 16px, so the glass is the only
-    form that survives at this size. Colour is the whole signal.
+    This is the open state of the mark - the glass split down the middle
+    and the halves swung apart into two pages - where the root icon is the
+    same shape shut.
 
-    Unlike the root icon this one has to answer the browser chrome,
-    because #334e7d is dark enough to disappear into a dark tab strip
-    the way the red does not. An SVG favicon can read
-    prefers-color-scheme even though it has no stylesheet from the page,
-    so both tokens are inlined here - the same two hexes as
-    --accent-book in `app/globals.css`, light and dark.
+    Drawn at the `micro` tier from `lib/geometry.ts`, which exists for
+    exactly this: the spine is dropped and the pages lean further apart,
+    so the valley between them is 18 units of a 120-unit viewBox and lands
+    at 2.4px in a 16px favicon rather than the sub-pixel sliver the full
+    tier would give. The paths below are `openHalf('left' | 'right',
+    TIERS.micro)` verbatim - if that geometry changes, these are stale.
+
+    Colours are literal rather than theme tokens: a favicon is fetched
+    outside the page and has no stylesheet to read them from. Unlike the
+    red, Barbook's blue is dark enough to sink into a dark tab strip, so
+    it answers prefers-color-scheme with the same two hexes the accent-book
+    token resolves to in `app/globals.css`.
   -->
   <style>
     .mark { fill: #334e7d; }
@@ -22,8 +29,7 @@
     }
   </style>
   <g class="mark">
-    <path d="M16,24 L104,24 L60,94 Z"/>
-    <rect x="56.5" y="94" width="7" height="42"/>
-    <rect x="34" y="136" width="52" height="8" rx="3"/>
+    <path d="M4,28 L51,46 L51,140 L4,122 Z"/>
+    <path d="M116,28 L69,46 L69,140 L116,122 Z"/>
   </g>
 </svg>
