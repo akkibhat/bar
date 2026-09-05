@@ -84,8 +84,8 @@ export default function BookPage() {
           className="t-base mt-4 max-w-[34rem]"
           style={{ color: 'var(--ink-soft)' }}
         >
-          Written up from a mixology qualification. In reading order, but you
-          can start anywhere.
+          Written up from a mixology qualification and four years working in
+          hospitality. In reading order, but you can start anywhere.
         </p>
 
         <p
