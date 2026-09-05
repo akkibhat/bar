@@ -23,7 +23,8 @@ export const metadata: Metadata = {
  * Apart, those two facts are trivia. Together on one page they are the
  * point: a drink gets weaker and no safer.
  *
- * `/units` redirects here, in `next.config.ts`.
+ * Standard drinks had its own page once. It was the same sum seen from
+ * the other end, so the two are one page now.
  */
 export default function DilutionPage() {
   return (

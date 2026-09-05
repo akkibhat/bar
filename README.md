@@ -150,5 +150,4 @@ Builds to 57 static routes. Quizzes and reading progress are written and
 switched off in `lib/site.ts`; this is meant to be consulted rather than
 completed.
 
-[ROADMAP.md](ROADMAP.md) has what is still owed, and
-[REDIRECTS.md](REDIRECTS.md) covers pointing the old cocktails site here.
+[ROADMAP.md](ROADMAP.md) has what is still owed.

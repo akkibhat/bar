@@ -50,10 +50,14 @@ my own notes, or a bottle I have actually poured.
 
 ### Open questions
 
-- **Deploying.** Nothing is set up. The build is fully static with no
-  runtime dependencies, so anywhere that serves files will do.
-- **Domain, and the old site.** `next.config.ts` redirects `/menu` and
-  `/menu/:slug` to their Backbar equivalents, which handles the paths.
-  What it does not handle is the old origin: if the cocktails site keeps
-  its own domain, that needs a redirect at the host, and if it does not,
-  the DNS should point here. See [REDIRECTS.md](REDIRECTS.md).
+- **Deploying.** Cloudflare Pages, at `bar.pi.co.nz`. The build is fully
+  static with no runtime dependencies and no environment variables - the
+  Bar Assistant token is only ever used by the pull script, on my
+  machine. Still to do: set `output: 'export'`, then connect the repo
+  with `npm run build` and an output directory of `out`.
+- **The old cocktails site.** `cocktails.pi.co.nz` is not going to point
+  here, so the links published under it are not being carried across.
+  If that changes, the cheapest fix is a redirect rule on that name at
+  the Cloudflare edge, mapping `/menu/*` to `/backbar/*` - both names
+  are on the same zone. Nothing in this repo can help, since a redirect
+  here only runs for a request that already arrived.
