@@ -27,22 +27,28 @@ suffix was being stripped still resolve rather than 404.
 Those redirects only fire for requests that reach **this** site. They do
 nothing for the old origin.
 
-Two options, depending on what happens to the old domain:
+Both addresses sit on the same zone, which makes this simpler than it
+would otherwise be:
 
-**If the old domain is retired.** Point its DNS at this site. The
-redirects above then catch the old paths and everything resolves.
+| | Where |
+|---|---|
+| New | `bar.pi.co.nz`, on Cloudflare Pages |
+| Old | `cocktails.pi.co.nz` |
 
-**If the old domain stays up.** Add a redirect at that host, before the
-old app gets the request:
+**Likely: the old domain is retired.** Point `cocktails.pi.co.nz` at this
+site. The redirects above then catch `/menu` and `/menu/:slug` and
+everything resolves, with nothing to configure at either end.
+
+**If it stays up instead.** The redirect has to happen at that host,
+before the old app sees the request. Both names are on the same
+Cloudflare zone, so that is a redirect rule at the edge rather than a
+change to either codebase:
 
 ```
-/menu       →  https://<new-domain>/backbar        308
-/menu/:slug →  https://<new-domain>/backbar/:slug   308
-/           →  https://<new-domain>/                308
+/menu       →  https://bar.pi.co.nz/backbar        308
+/menu/:slug →  https://bar.pi.co.nz/backbar/:slug  308
+/           →  https://bar.pi.co.nz/               308
 ```
-
-On Vercel that is a `redirects` block in the old project's
-`vercel.json`; behind a reverse proxy it is a `return 308` rule.
 
 Prefer 308 over 302 either way: these addresses are not coming back, and
 a permanent redirect is what moves the search ranking across rather than
@@ -56,4 +62,4 @@ were published before, and as the `source` field Bar Assistant stamps
 into every recipe, which is what the pull script reads to tell my own
 drinks from anything else in the book.
 
-`FORMER_NAME` in `lib/config.ts` is the single place it is spelled.
+`FORMER_NAME` in `lib/site.ts` is the single place it is spelled.

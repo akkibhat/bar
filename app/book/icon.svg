@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 16 120 136" width="120" height="136">
+  <!--
+    The Barbook favicon, applying to /book and everything under it.
+
+    Same glass as the site mark in `app/icon.svg`, in Barbook's blue
+    rather than the shelf's red. The shape does not change between the
+    halves and should not: the open book state of the mark loses its
+    page split well below one pixel at 16px, so the glass is the only
+    form that survives at this size. Colour is the whole signal.
+
+    Unlike the root icon this one has to answer the browser chrome,
+    because #334e7d is dark enough to disappear into a dark tab strip
+    the way the red does not. An SVG favicon can read
+    prefers-color-scheme even though it has no stylesheet from the page,
+    so both tokens are inlined here - the same two hexes as
+    --accent-book in `app/globals.css`, light and dark.
+  -->
+  <style>
+    .mark { fill: #334e7d; }
+    @media (prefers-color-scheme: dark) {
+      .mark { fill: #9db4e0; }
+    }
+  </style>
+  <g class="mark">
+    <path d="M16,24 L104,24 L60,94 Z"/>
+    <rect x="56.5" y="94" width="7" height="42"/>
+    <rect x="34" y="136" width="52" height="8" rx="3"/>
+  </g>
+</svg>

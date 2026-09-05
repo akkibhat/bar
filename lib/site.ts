@@ -167,3 +167,19 @@ export function copyrightYears(now: number = new Date().getFullYear()): string {
  * line of provenance. Retired as a brand, kept as a fact.
  */
 export const FORMER_NAME = 'Entre Deux Verres';
+
+/* ===================================================================== *
+ * Where the site lives
+ * ===================================================================== */
+
+/**
+ * The public origin, used to turn the relative URLs in the metadata into
+ * absolute ones - canonical links, Open Graph, the sitemap.
+ *
+ * A constant rather than an environment variable. The domain is a fact
+ * about this site rather than something that varies per deployment:
+ * there is one origin, the build is fully static, and reading it from
+ * the environment only means a wrong value fails silently at build time
+ * instead of loudly in review.
+ */
+export const SITE_ORIGIN = 'https://bar.pi.co.nz';

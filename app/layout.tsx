@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Bodoni_Moda, Jost, Lora } from 'next/font/google';
 import Frame from '@/components/Frame';
 import SiteFooter from '@/components/SiteFooter';
+import { SITE_ORIGIN } from '@/lib/site';
 import './globals.css';
 
 /**
@@ -66,6 +67,10 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
+  /* Makes every relative URL in the metadata absolute - the canonical
+     link, Open Graph, and anything a scraper reads. Without it a shared
+     link resolves against nothing and the card comes out bare. */
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
     default: "Akki's Bar - what I was taught, and what I have built",
     template: '%s - Bar',
