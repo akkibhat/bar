@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- Satori renders this to a
    PNG at build time. There is no DOM here, so next/image does not apply. */
+import fs from 'node:fs';
+import path from 'node:path';
 import { ImageResponse } from 'next/og';
 
 /**
@@ -12,18 +14,31 @@ import { ImageResponse } from 'next/og';
  * tokens in `app/globals.css` - this card is always the paper one, even
  * for a reader whose browser is dark.
  *
- * The mark is passed in as a data URI. The renderer takes a small subset
- * of SVG as an element, and an image source is the part of it that is
- * dependable.
+ * THE FONTS ARE NOT THE ONES THE SITE LOADS, AND CANNOT BE.
+ *
+ * `next/font` downloads woff2 and nothing else, and the renderer behind
+ * ImageResponse reads only ttf, otf and woff - it cannot decompress
+ * brotli, so a woff2 throws rather than falling back. There is no path
+ * from the site's own font files to this card.
+ *
+ * So the two faces are committed as ttf under `assets/fonts` and read
+ * from disk here. They sit outside `public/` deliberately: they are used
+ * once, at build time, and should never be served to a reader who is
+ * already being sent the woff2 versions. Both are SIL Open Font
+ * Licensed, and the licences are committed beside them.
+ *
+ * Jost, which sets the small line at the foot, is not among them. It
+ * would be a third file for eleven characters, so that line is set in
+ * Lora instead.
  */
-/* Under `output: export` there is no server to decide this at request
-   time, so the route has to say it is static. Without it the build
-   stops here rather than guessing. */
 export const dynamic = 'force-static';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 export const alt = "Akki's Bar - what I was taught, and what I have built";
+
+const font = (file: string) =>
+  fs.readFileSync(path.join(process.cwd(), 'assets', 'fonts', file));
 
 /* The closed state of the mark: the bowl of a glass on its stem, in the
    shelf's red. The same shape as `app/icon.svg`. */
@@ -43,6 +58,7 @@ export default function Image() {
           justifyContent: 'space-between',
           background: '#fdfcf9',
           padding: '72px 80px',
+          fontFamily: 'Lora',
           /* A rule across the top, the way the pages are set. */
           borderTop: '16px solid #9d2530',
         }}
@@ -52,7 +68,8 @@ export default function Image() {
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div
             style={{
-              fontSize: 92,
+              fontFamily: 'Bodoni Moda',
+              fontSize: 104,
               lineHeight: 1.05,
               color: '#1a1613',
               letterSpacing: '-0.02em',
@@ -60,7 +77,7 @@ export default function Image() {
           >
             Akki&apos;s Bar
           </div>
-          <div style={{ fontSize: 38, color: '#5c554c', marginTop: 18 }}>
+          <div style={{ fontSize: 36, color: '#5c554c', marginTop: 20 }}>
             what I was taught, and what I have built
           </div>
         </div>
@@ -72,6 +89,22 @@ export default function Image() {
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        {
+          name: 'Bodoni Moda',
+          data: font('BodoniModa-SemiBold.ttf'),
+          weight: 600,
+          style: 'normal',
+        },
+        {
+          name: 'Lora',
+          data: font('Lora-Regular.ttf'),
+          weight: 400,
+          style: 'normal',
+        },
+      ],
+    },
   );
 }
