@@ -18,14 +18,6 @@ my own notes, or a bottle I have actually poured.
 - **Low and no** *(Low and no)* - method only. Nothing zero-proof has
   gone on the shelf yet.
 
-### Deferred, with a decision already taken
-
-- **Attribution for the course material.** The copyright line is done -
-  every page carries it, from `COPYRIGHT_FROM` in `lib/site.ts`. What is
-  still open is narrower: the book is written up from a paid
-  qualification's teaching, and nothing in the repo says how that is
-  credited. The IBA side is settled by linking rather than quoting.
-
 ---
 
 ## The site
