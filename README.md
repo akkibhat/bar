@@ -15,26 +15,6 @@ Nothing a reader types is uploaded and there is nothing to sign in to.
 
 ---
 
-## What to distrust
-
-I did a mixology qualification in 2022 and have worked licensed shifts
-for four years since. Parts of the course were already behind by the
-time I wrote them up.
-
-Where a figure was one I wrote in a margin and could not verify, it was
-marked in place rather than quietly dropped, and the contents page
-printed how many chapters still carried one. All of those have since
-been answered or cut, so nothing in the book is marked provisional any
-more.
-
-**Serving responsibly** is the exception to all of the above. It covers
-New Zealand licensing law, and it is the one chapter backed by a
-qualification rather than by notes taken and checked afterwards - I hold
-the Licence Controller Qualification and a Duty Manager's Certificate.
-It is still not legal advice: the Act is the authority, and it changes.
-
----
-
 ## Getting it running
 
 ```bash
