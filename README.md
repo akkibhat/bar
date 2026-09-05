@@ -17,9 +17,9 @@ Nothing a reader types is uploaded and there is nothing to sign in to.
 
 ## What to distrust
 
-I did a mixology qualification in 2022. I have never worked a licensed
-shift, and parts of the course were already behind by the time I wrote
-them up.
+I did a mixology qualification in 2022 and have worked licensed shifts
+for four years since. Parts of the course were already behind by the
+time I wrote them up.
 
 Where a figure was one I wrote in a margin and could not verify, it was
 marked in place rather than quietly dropped, and the contents page
