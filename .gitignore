@@ -21,5 +21,3 @@ _workings/
 # in the history. Keep a copy somewhere backed up.
 _course/
 
-# Local editor and tooling config.
-.claude/

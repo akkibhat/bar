@@ -5,6 +5,7 @@ import Rule from '@/components/Rule';
 import SpecSheet from '@/components/SpecSheet';
 import IbaLinks from '@/components/IbaLinks';
 import { SHELF_HALF } from '@/lib/site';
+import { methodChapter, spiritChapter } from '@/lib/crosslinks';
 import {
   PAGED,
   builtVolume,
@@ -91,6 +92,15 @@ export default async function DrinkPage({
     { label: 'Strength', value: drink.abv ? `${drink.abv}%` : undefined },
     { label: 'Built', value: volume ? `${volume} ml` : undefined },
   ].filter((f) => f.value);
+
+  /* The book half of the site, for the two things this page states but
+     does not explain: what the base spirit is, and what the method does. */
+  const spirit = spiritChapter(shelfOf(drink));
+  const method = methodChapter(drink.method);
+  const reading = [spirit, method].filter(
+    (c, i, all): c is NonNullable<typeof c> =>
+      Boolean(c) && all.findIndex((o) => o?.slug === c?.slug) === i,
+  );
 
   return (
     <article
@@ -217,6 +227,26 @@ export default async function DrinkPage({
               <p className="t-base nums">{f.value}</p>
             </div>
           ))}
+        </div>
+      )}
+
+      {/* ---- In the book --------------------------------------- */}
+      {reading.length > 0 && (
+        <div className="no-print mt-10">
+          <p className="label-ui mb-2">In the book</p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
+            {reading.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={`/book/${c.slug}`}
+                  className="t-base"
+                  style={{ color: 'var(--accent-book)' }}
+                >
+                  {c.n}. {c.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
 
