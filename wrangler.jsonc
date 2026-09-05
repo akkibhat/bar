@@ -1,0 +1,29 @@
+{
+  // Cloudflare Workers, serving the static export and nothing else.
+  //
+  // There is no `main`: with no Worker script this is an assets-only
+  // deployment, which is what a site with no runtime should be. Every
+  // route in `out/` is a file written at build time.
+  //
+  //   npm run build          writes out/
+  //   npx wrangler deploy    puts it up
+  //
+  // `_headers` is read from inside the asset directory, and the build
+  // copies it there from `public/`. It is what gives the two generated
+  // PNGs a content type, since they are written without a file
+  // extension.
+  "name": "bar",
+  "compatibility_date": "2026-09-05",
+  "assets": {
+    "directory": "./out",
+
+    // Next writes `out/404.html`. Without this, an unknown path returns
+    // a bare Cloudflare error page instead of the site's own.
+    "not_found_handling": "404-page",
+
+    // The export writes `/backbar/peach-royale.html`, and the links in
+    // the pages point at `/backbar/peach-royale`. This is the setting
+    // that resolves one to the other.
+    "html_handling": "auto-trailing-slash"
+  }
+}

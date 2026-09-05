@@ -1,4 +1,5 @@
-# Cloudflare Pages reads this from the site root.
+# Read from inside the asset directory. The build copies this file from
+# public/ into out/, which is where Cloudflare Workers looks for it.
 #
 # The two generated images are written by the export with no file
 # extension - `out/opengraph-image` and `out/apple-icon` - because that is

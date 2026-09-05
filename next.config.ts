@@ -5,8 +5,9 @@ import type { NextConfig } from 'next';
  *
  * `output: 'export'` writes plain files to `out/` - no Node process, no
  * adapter, nothing to keep running. That suits the host (Cloudflare
- * Pages) and it suits the content: every route renders from data that is
- * committed to this repo, so a page can only change when the repo does.
+ * Workers, assets only) and it suits the content: every route renders
+ * from data committed to this repo, so a page can only change when the
+ * repo does.
  *
  * The one feature this gives up is redirects, which are executed by a
  * server. There are none to give up: the three that used to sit here

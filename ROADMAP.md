@@ -50,11 +50,17 @@ my own notes, or a bottle I have actually poured.
 
 ### Open questions
 
-- **Deploying.** Cloudflare Pages, at `bar.pi.co.nz`. The build is fully
-  static with no runtime dependencies and no environment variables - the
-  Bar Assistant token is only ever used by the pull script, on my
-  machine. Still to do: set `output: 'export'`, then connect the repo
-  with `npm run build` and an output directory of `out`.
+- **Deploying.** Cloudflare Workers, assets only, at `bar.pi.co.nz`.
+  `wrangler.jsonc` carries the whole configuration: no `main`, so there
+  is no Worker script and nothing runs - just the files `npm run build`
+  writes to `out/`. No environment variables either; the Bar Assistant
+  token is only ever used by the pull script, on my machine.
+
+  ```
+  npm run build
+  npx wrangler deploy
+  ```
+
 - **The old cocktails site.** `cocktails.pi.co.nz` is not going to point
   here, so the links published under it are not being carried across.
   If that changes, the cheapest fix is a redirect rule on that name at
