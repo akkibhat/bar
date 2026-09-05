@@ -11,6 +11,10 @@ import Typeset from '@/components/Typeset';
 import Colophon from '@/components/Colophon';
 import ChapterKeys from '@/components/ChapterKeys';
 import ReadingLine from '@/components/ReadingLine';
+import Link from 'next/link';
+import Rule from '@/components/Rule';
+import { drinksInChapter } from '@/lib/crosslinks';
+import { SHELF_HALF } from '@/lib/site';
 
 /** Pre-render every chapter at build time. */
 export function generateStaticParams() {
@@ -59,6 +63,9 @@ export default async function ChapterPage({
   const siblings = chaptersIn(chapter.part);
   const { prev, next } = around(slug);
 
+  /* The shelf half of the site, for a chapter that has drinks on it. */
+  const drinks = drinksInChapter(slug);
+
   return (
     <article className="mx-auto max-w-[42rem] px-6 sm:px-10 py-12 lg:py-20">
       <ReadingLine />
@@ -96,6 +103,27 @@ export default async function ChapterPage({
 
       {/* ---- Body ------------------------------------------------ */}
       <Typeset body={chapter.body} />
+
+      {/* ---- On the shelf ---------------------------------------- */}
+      {drinks.length > 0 && (
+        <section className="no-print mt-14">
+          <h2 className="display t-h3 leading-none mb-1">On the shelf</h2>
+          <Rule variant="hair" width={140} className="mb-4" />
+          <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
+            {drinks.map((d) => (
+              <li key={d.slug}>
+                <Link
+                  href={`/backbar/${d.slug}`}
+                  className="t-base"
+                  style={{ color: SHELF_HALF.accent }}
+                >
+                  {d.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* ---- Footer ---------------------------------------------- */}
       <Colophon
