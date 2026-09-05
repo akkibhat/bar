@@ -96,7 +96,7 @@ export type SearchMark = {
   text: string;
   /** Anchor within the chapter, where there is one. */
   id?: string;
-  kind: 'heading' | 'note';
+  kind: 'heading' | 'note' | 'term';
 };
 
 export type SearchEntry = {
@@ -120,6 +120,9 @@ export type SearchEntry = {
  * thing you would come looking for - "The bottled foamers", "Why the
  * head matters" - and none of those are headings.
  */
+/** Inline markup delimiters are not part of a name. */
+const strip = (s: string) => s.replace(/\*/g, '').trim();
+
 export function buildSearchIndex(): SearchEntry[] {
   return CHAPTERS.map((c) => ({
     n: c.n,
@@ -129,9 +132,29 @@ export function buildSearchIndex(): SearchEntry[] {
       ...headingsOf(c.body).map(
         (h): SearchMark => ({ text: h.text, id: h.id, kind: 'heading' }),
       ),
-      ...c.body.flatMap((b): SearchMark[] =>
-        b.kind === 'note' && b.title ? [{ text: b.title, kind: 'note' }] : [],
-      ),
+      ...c.body.flatMap((b): SearchMark[] => {
+        if (b.kind === 'note' && b.title) {
+          return [{ text: b.title, kind: 'note' }];
+        }
+        /* A list item names its subject in bold and explains it after
+           the dash - "**Oleo saccharum** - citrus peels buried in..." -
+           so the name is what goes in, not the sentence. The handful of
+           items written without one are prose and stay out. */
+        if (b.kind === 'list') {
+          return b.items.flatMap((item) => {
+            const name = /^\*\*(.+?)\*\*/.exec(item)?.[1];
+            return name ? [{ text: strip(name), kind: 'term' as const }] : [];
+          });
+        }
+        /* Every table in the book puts the thing being described in its
+           first column and the description in the rest. */
+        if (b.kind === 'table') {
+          return b.rows.flatMap((row) =>
+            row[0] ? [{ text: strip(row[0]), kind: 'term' as const }] : [],
+          );
+        }
+        return [];
+      }),
     ],
   }));
 }

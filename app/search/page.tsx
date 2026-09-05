@@ -15,7 +15,7 @@ export default function SearchPage() {
       <Masthead
         eyebrow="Reference"
         title="Search"
-        standfirst={`Across all ${CHAPTER_COUNT} chapters. Titles, headings and notes - wherever a subject gets named.`}
+        standfirst={`Across all ${CHAPTER_COUNT} chapters. Titles, headings, notes and named terms - wherever the book names something.`}
       />
       <BookSearch index={buildSearchIndex()} />
     </div>
