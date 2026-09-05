@@ -245,11 +245,6 @@ export const SERVICE: Chapter[] = [
         title: 'Refusing early is easier than refusing late',
         text: 'Cutting someone off at the point they\'re visibly drunk is a confrontation. Slowing the pace two rounds earlier - water alongside, a longer drink, food offered - usually means the confrontation never happens. Everyone who has worked a bar knows it, and it almost never gets written down.',
       },
-      {
-        kind: 'note',
-        title: 'Where this one comes from',
-        text: 'This is the one chapter here not written up from a short course. I hold the Licence Controller Qualification and a Duty Manager\'s Certificate, so it comes from a qualification rather than from notes taken and checked afterwards. It is still not legal advice - the Act is the authority, and it changes.',
-      },
     ],
   },
 ];

@@ -49,7 +49,7 @@ export const FOUNDATIONS: Chapter[] = [
       { kind: 'h', text: 'What the definition leaves out' },
       {
         kind: 'p',
-        text: 'Nothing in the definition mentions balance, and balance decides whether a drink is any good. Two bartenders can follow the same four part shape and produce one drink you want more of and a drink you can\'t finish. That gap is what Part IV is about. It\'s the biggest thing missing from a cocktail course.',
+        text: 'Nothing in the definition mentions balance, and balance decides whether a drink is any good. Two bartenders can follow the same four part shape and produce one drink you want more of and a drink you can\'t finish. That gap is what Part IV is about.',
       },
       {
         kind: 'quote',
@@ -186,7 +186,7 @@ export const FOUNDATIONS: Chapter[] = [
     title: 'Tasting spirits',
     minutes: 5,
     standfirst:
-      'Not often taught in a course. A method for tasting at 40%, and what to ask.',
+      'A method for tasting at 40%, and what to ask.',
     body: [
       {
         kind: 'p',

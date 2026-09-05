@@ -36,7 +36,7 @@ export const PARTS: Part[] = [
     slug: 'beer',
     title: 'Beer',
     blurb:
-      'The other thing a bar pours, and the one the course skipped.',
+      'The other thing a bar pours, and how to pour it.',
   },
   {
     numeral: 'IV',

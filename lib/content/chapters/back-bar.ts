@@ -239,7 +239,7 @@ export const BACK_BAR: Chapter[] = [
     title: 'Agave: tequila and mezcal',
     minutes: 5,
     standfirst:
-      'Taught on the course but never written down. Agave, tequila and mezcal.',
+      'Where tequila and mezcal come from, and the one thing to check on a label.',
     body: [
 {
         kind: 'p',
