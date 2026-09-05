@@ -84,3 +84,54 @@ export function buildContents(): ContentsChapter[] {
     headings: headingsOf(c.body),
   }));
 }
+
+/**
+ * One thing the search can find, and where it sits.
+ *
+ * A note carries no id, because notes are not `h` blocks and nothing
+ * stamps an anchor on them - so a note match opens the chapter rather
+ * than jumping inside it.
+ */
+export type SearchMark = {
+  text: string;
+  /** Anchor within the chapter, where there is one. */
+  id?: string;
+  kind: 'heading' | 'note';
+};
+
+export type SearchEntry = {
+  n: number;
+  slug: string;
+  title: string;
+  marks: SearchMark[];
+};
+
+/**
+ * The search index: chapter titles, their headings, and their note
+ * titles.
+ *
+ * Deliberately separate from `buildContents`, which the navigation uses.
+ * That one is serialised into every page on the site, so anything added
+ * to it is paid for eighty-five times over; this is read by one page and
+ * costs only that page. Notes are worth indexing and were not worth
+ * putting in the other.
+ *
+ * Note titles earn their place because a note is where the book puts the
+ * thing you would come looking for - "The bottled foamers", "Why the
+ * head matters" - and none of those are headings.
+ */
+export function buildSearchIndex(): SearchEntry[] {
+  return CHAPTERS.map((c) => ({
+    n: c.n,
+    slug: c.slug,
+    title: c.title,
+    marks: [
+      ...headingsOf(c.body).map(
+        (h): SearchMark => ({ text: h.text, id: h.id, kind: 'heading' }),
+      ),
+      ...c.body.flatMap((b): SearchMark[] =>
+        b.kind === 'note' && b.title ? [{ text: b.title, kind: 'note' }] : [],
+      ),
+    ],
+  }));
+}

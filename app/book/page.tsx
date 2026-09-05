@@ -33,6 +33,11 @@ export default function BookPage() {
 
   const tools = [
     {
+      href: '/search',
+      title: 'Search the book',
+      body: 'Find a chapter by its title, or by a heading inside it.',
+    },
+    {
       href: '/families',
       title: 'Cocktail families',
       body: `The ${FAMILIES.length} structures behind almost every drink in the book.`,
