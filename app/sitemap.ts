@@ -31,6 +31,10 @@ const FIXED: [string, number][] = [
   ['/glossary', 0.6],
 ];
 
+/* Static for the same reason the image routes are: `output: export`
+   has no server to decide it at request time. */
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 

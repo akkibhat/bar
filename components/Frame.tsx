@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation';
 import BarNav from './BarNav';
 import BookIndex from './BookIndex';
+import type { ContentsChapter } from '@/lib/contents';
 
 /**
  * The application shell.
@@ -25,7 +26,13 @@ import BookIndex from './BookIndex';
  * Backbar gets neither. The shelf is one page with its own filters, and
  * a book's contents beside it would be navigation for somewhere else.
  */
-export default function Shell({ children }: { children: React.ReactNode }) {
+export default function Shell({
+  children,
+  contents,
+}: {
+  children: React.ReactNode;
+  contents: ContentsChapter[];
+}) {
   const pathname = usePathname();
 
   if (pathname === '/') return <>{children}</>;
@@ -35,7 +42,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
   if (!withIndex) {
     return (
       <>
-        <BarNav />
+        <BarNav contents={contents} />
         <main className="min-w-0">{children}</main>
       </>
     );
@@ -43,9 +50,9 @@ export default function Shell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <BarNav />
+      <BarNav contents={contents} />
       <div className="book-layout">
-        <BookIndex />
+        <BookIndex contents={contents} />
         <main className="min-w-0">{children}</main>
       </div>
     </>

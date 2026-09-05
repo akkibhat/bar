@@ -11,6 +11,11 @@ import { ImageResponse } from 'next/og';
  * favicon it carries its own paper ground instead of standing on
  * nothing.
  */
+/* Under `output: export` there is no server to decide this at request
+   time, so the route has to say it is static. Without it the build
+   stops here rather than guessing. */
+export const dynamic = 'force-static';
+
 export const size = { width: 180, height: 180 };
 export const contentType = 'image/png';
 

@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { GlassMark, HomeMark } from './Mark';
 
 import { PARTS } from '@/lib/content/parts';
-import { chaptersIn } from '@/lib/content/book';
+import { inPart, type ContentsChapter } from '@/lib/contents';
 import { HALVES } from '@/lib/site';
 import Lights from './Lights';
 
@@ -51,7 +51,7 @@ const MARK_OFFSET: Record<'book' | 'shelf', string> = {
   shelf: '0.065em',
 };
 
-export default function BarNav() {
+export default function BarNav({ contents }: { contents: ContentsChapter[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -199,7 +199,7 @@ export default function BarNav() {
                     </p>
                     <hr className="rule-hair mb-2" />
                     <ul>
-                      {chaptersIn(part.slug).map((c) => {
+                      {inPart(contents, part.slug).map((c) => {
                         const active = pathname === `/book/${c.slug}`;
                         return (
                           <li key={c.slug}>

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { PARTS } from '@/lib/content/parts';
-import { CHAPTERS, CHAPTER_COUNT, chaptersIn } from '@/lib/content/book';
+import { inPart, type ContentsChapter } from '@/lib/contents';
 import { useRead } from '@/lib/local';
 import { PROGRESS_ENABLED } from '@/lib/site';
 
@@ -19,11 +19,11 @@ import { PROGRESS_ENABLED } from '@/lib/site';
  * tipped in, or pinned up - and it belongs to a notebook. This is
  * printed, so it is rules and space.
  */
-export default function Contents() {
+export default function Contents({ contents }: { contents: ContentsChapter[] }) {
   const { progress, ready, resetProgress } = useRead();
 
   const done = PROGRESS_ENABLED && ready ? progress.done : [];
-  const resume = CHAPTERS.find((c) => !done.includes(c.slug)) ?? CHAPTERS[0];
+  const resume = contents.find((c) => !done.includes(c.slug)) ?? contents[0];
   const started = done.length > 0;
 
   return (
@@ -32,7 +32,7 @@ export default function Contents() {
         <p className="label-ui mb-8 flex items-center gap-4">
           <span>
             <span className="nums">{done.length}</span> of{' '}
-            <span className="nums">{CHAPTER_COUNT}</span> read
+            <span className="nums">{contents.length}</span> read
           </span>
           <Link
             href={`/book/${resume.slug}`}
@@ -52,7 +52,7 @@ export default function Contents() {
       )}
 
       {PARTS.map((part) => {
-        const chapters = chaptersIn(part.slug);
+        const chapters = inPart(contents, part.slug);
 
         return (
           <section key={part.slug} className="mb-12">

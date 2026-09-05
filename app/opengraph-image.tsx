@@ -16,6 +16,11 @@ import { ImageResponse } from 'next/og';
  * of SVG as an element, and an image source is the part of it that is
  * dependable.
  */
+/* Under `output: export` there is no server to decide this at request
+   time, so the route has to say it is static. Without it the build
+   stops here rather than guessing. */
+export const dynamic = 'force-static';
+
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 export const alt = "Akki's Bar - what I was taught, and what I have built";

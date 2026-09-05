@@ -1,0 +1,14 @@
+# Cloudflare Pages reads this from the site root.
+#
+# The two generated images are written by the export with no file
+# extension - `out/opengraph-image` and `out/apple-icon` - because that is
+# the path the metadata points at. A static host picks the content type
+# off the extension, so without these they would be served as
+# application/octet-stream: the share card would not render in any
+# scraper, and the touch icon would not install.
+
+/opengraph-image
+  Content-Type: image/png
+
+/apple-icon
+  Content-Type: image/png

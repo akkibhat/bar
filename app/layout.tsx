@@ -3,6 +3,7 @@ import { Bodoni_Moda, Jost, Lora } from 'next/font/google';
 import Frame from '@/components/Frame';
 import SiteFooter from '@/components/SiteFooter';
 import { SITE_ORIGIN } from '@/lib/site';
+import { buildContents } from '@/lib/content/book';
 import './globals.css';
 
 /**
@@ -31,7 +32,7 @@ import './globals.css';
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
+  /* No italic: nothing on the site sets the display face in it. */
   variable: '--font-bodoni',
   display: 'swap',
 });
@@ -45,7 +46,7 @@ const bodoni = Bodoni_Moda({
  */
 const lora = Lora({
   subsets: ['latin'],
-  weight: ['400', '500', '600'],
+  weight: ['400', '600'],
   style: ['normal', 'italic'],
   variable: '--font-lora',
   display: 'swap',
@@ -118,7 +119,7 @@ export default function RootLayout({
             renders bare, so a copyright line placed within would appear
             on some pages and not others, or land inside the book's index
             column. Outside, it is one line under whatever the page was. */}
-        <Frame>{children}</Frame>
+        <Frame contents={buildContents()}>{children}</Frame>
         <SiteFooter />
       </body>
     </html>

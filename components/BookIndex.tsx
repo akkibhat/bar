@@ -4,8 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { PARTS } from '@/lib/content/parts';
-import { chaptersIn, lookupChapter } from '@/lib/content/book';
-import { headingsOf } from '@/lib/headings';
+import { chapterAt, inPart, type ContentsChapter } from '@/lib/contents';
 
 /**
  * The contents, always on screen.
@@ -32,14 +31,14 @@ import { headingsOf } from '@/lib/headings';
  * bar covers narrow screens, where a persistent column would eat the
  * reading width it exists to serve.
  */
-export default function BookIndex() {
+export default function BookIndex({ contents }: { contents: ContentsChapter[] }) {
   const pathname = usePathname();
 
   const currentSlug = pathname.startsWith('/book/')
     ? pathname.slice('/book/'.length)
     : null;
-  const current = currentSlug ? lookupChapter(currentSlug) : undefined;
-  const headings = current ? headingsOf(current.body) : [];
+  const current = chapterAt(contents, currentSlug ?? undefined);
+  const headings = current ? current.headings : [];
 
   /**
    * Which sections the reader has explicitly opened or closed.
@@ -102,7 +101,7 @@ export default function BookIndex() {
 
               {open && (
                 <ul>
-                  {chaptersIn(part.slug).map((c) => {
+                  {inPart(contents, part.slug).map((c) => {
                     const here = c.slug === currentSlug;
                     return (
                       <li key={c.slug}>

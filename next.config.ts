@@ -1,15 +1,20 @@
 import type { NextConfig } from 'next';
 
 /**
- * The site is entirely static: every route renders from committed
- * content, so there is nothing to configure for images, rewrites or
- * runtime.
+ * The site is entirely static, and now says so to the build as well.
  *
- * There are no redirects, and nothing here to configure at all. The
- * three that used to sit in this file were all dead: a redirect declared
- * here only runs for a request that already reached this site, and the
- * old cocktails address is not going to resolve here.
+ * `output: 'export'` writes plain files to `out/` - no Node process, no
+ * adapter, nothing to keep running. That suits the host (Cloudflare
+ * Pages) and it suits the content: every route renders from data that is
+ * committed to this repo, so a page can only change when the repo does.
+ *
+ * The one feature this gives up is redirects, which are executed by a
+ * server. There are none to give up: the three that used to sit here
+ * were all dead, since a redirect declared here only runs for a request
+ * that already reached this site.
  */
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  output: 'export',
+};
 
 export default nextConfig;

@@ -5,6 +5,7 @@ import Fold from '@/components/Fold';
 import HalfTitle from '@/components/HalfTitle';
 import { BOOK } from '@/lib/site';
 import {
+  buildContents,
   CHAPTER_COUNT,
   chaptersStillOpen,
 } from '@/lib/content/book';
@@ -156,7 +157,7 @@ export default function BookPage() {
         The book
       </h2>
 
-      <RunningOrder />
+      <RunningOrder contents={buildContents()} />
     </div>
   );
 }

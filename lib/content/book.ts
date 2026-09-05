@@ -8,6 +8,8 @@ import { KIT } from './chapters/kit';
 import { SERVICE } from './chapters/service';
 import { CLASSICS } from './chapters/classics';
 import { PAST_THE_SYLLABUS } from './chapters/past-the-syllabus';
+import { headingsOf } from '../headings';
+import type { ContentsChapter } from '../contents';
 
 /**
  * The assembled book, in reading order.
@@ -63,4 +65,22 @@ export function around(slug: string): { prev?: Chapter; next?: Chapter } {
  */
 export function chaptersStillOpen(): Chapter[] {
   return CHAPTERS.filter((c) => c.body.some((b) => b.kind === 'unsure'));
+}
+
+/**
+ * The chapters projected down to what the navigation needs.
+ *
+ * Server-side only, by construction: it reads CHAPTERS, so importing it
+ * from a client component would undo the whole point. See
+ * `lib/contents.ts` for why.
+ */
+export function buildContents(): ContentsChapter[] {
+  return CHAPTERS.map((c) => ({
+    n: c.n,
+    slug: c.slug,
+    title: c.title,
+    minutes: c.minutes,
+    part: c.part,
+    headings: headingsOf(c.body),
+  }));
 }
