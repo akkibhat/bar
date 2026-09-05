@@ -1,9 +1,9 @@
 /**
- * Three checks that the specs cannot fail quietly.
+ * Four checks that the specs cannot fail quietly.
  *
  * The book's prose restates numbers that live in the specs, and nothing
  * links the two, so a spec can move and a sentence goes wrong with no
- * error anywhere. This script catches the three cases that are cheap to
+ * error anywhere. This script catches the four cases that are cheap to
  * state exactly:
  *
  *   1. A family's `ratio` must agree with its archetype's spec. Four of
@@ -13,6 +13,9 @@
  *      "built in the glass" in the other is a real bug this found.
  *   3. A chapter that counts its own drinks must count them right. Three
  *      standfirsts were wrong the moment ten specs were added.
+ *   4. The README and the roadmap must count the book right too. They
+ *      restate the same totals as prose and drift the same way, with
+ *      nobody reading them again once written.
  *
  * It loads the chapter modules the same way chapters-out does, so it
  * reads the typed data directly and needs no parsing of its own.
@@ -158,15 +161,43 @@ const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'sev
   'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',
   'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'];
 
+/**
+ * The tens, for the compounds. Held apart from NUMBER_WORDS because
+ * that list is indexed by its own position and "thirty" is not the
+ * thirtieth entry in it.
+ */
+const TENS = {
+  twenty: 20, thirty: 30, forty: 40, fifty: 50,
+  sixty: 60, seventy: 70, eighty: 80, ninety: 90,
+};
+
+/**
+ * A written number as a number, or NaN if it is not one.
+ *
+ * Compounds are split rather than looked up, since listing every
+ * "thirty-seven" would be eighty entries to keep in step. Without this
+ * they matched the pattern and then fell to NaN, which the callers
+ * skip - so every compound in the book went unchecked, quietly.
+ */
 const asNumber = (token) => {
-  const i = NUMBER_WORDS.indexOf(token.toLowerCase());
+  const word = token.toLowerCase();
+
+  const dash = word.indexOf("-");
+  if (dash !== -1) {
+    const tens = TENS[word.slice(0, dash)];
+    const units = NUMBER_WORDS.indexOf(word.slice(dash + 1));
+    return tens !== undefined && units > 0 ? tens + units : NaN;
+  }
+
+  if (TENS[word] !== undefined) return TENS[word];
+  const i = NUMBER_WORDS.indexOf(word);
   return i !== -1 ? i : Number(token);
 };
 
 const { GLASSES } = await import(pathToFileURL(path.join(ROOT, 'lib', 'glassware.ts')).href);
 
 /* Compounds first, so "twenty-five" is not read as the "five" inside it. */
-const NUM = `(?:\\d+|(?:twenty|thirty|forty|fifty)-\\w+|${NUMBER_WORDS.join('|')})`;
+const NUM = `(?:\\d+|(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)-\\w+|${NUMBER_WORDS.join('|')})`;
 
 /**
  * A counted noun, what it should equal, and where to look.
@@ -204,6 +235,41 @@ for (const chapter of chapters) {
     }
   }
 }
+
+/**
+ * The same check against the README and the roadmap.
+ *
+ * Those two restate the book's numbers as prose - "Thirty-seven chapters"
+ * - and drift the same way a standfirst does, with nobody reading them
+ * again once they are written. The README had gone stale on two counts
+ * before this existed.
+ *
+ * Only nouns whose total is a fact about the whole book are checked here,
+ * so the per-chapter entries in REGISTRY are skipped.
+ */
+const DOCS = ['README.md', 'ROADMAP.md'];
+const DOC_COUNTS = [
+  { noun: 'chapters', want: chapters.length },
+  { noun: 'recipes?|specs?', want: specs.size },
+  { noun: 'families', want: FAMILIES.length },
+];
+
+for (const file of DOCS) {
+  const full = path.join(ROOT, file);
+  if (!fs.existsSync(full)) continue;
+  const text = fs.readFileSync(full, 'utf8');
+
+  for (const { noun, want } of DOC_COUNTS) {
+    const re = new RegExp(String.raw`\b(${NUM})\s+(?:more\s+)?(${noun})\b`, 'gi');
+    for (const m of text.matchAll(re)) {
+      const said = asNumber(m[1]);
+      if (Number.isFinite(said) && said !== want) {
+        failures.push(`${file}: says "${m[0]}" but there are ${want}`);
+      }
+    }
+  }
+}
+
 
 if (failures.length) {
   console.error(`check:specs - ${failures.length} problem(s)`);

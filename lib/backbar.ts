@@ -332,18 +332,12 @@ export function tags(drinks: ShelfDrink[] = ALL): { name: string; count: number 
 /**
  * Find one drink by the slug in the URL.
  *
- * Accepts the clean slug, Bar Assistant's raw slug with its "-N" revision
- * suffix, or the numeric id - so a link shared before the suffix was
- * being stripped, or from the old site, still resolves rather than 404s.
- *
  * Searches only the drinks with a page. The link-only IBA rows carry the
  * IBA's slug, and serving one here would render a drink page with an
  * empty build on it.
  */
 export function lookupDrink(param: string): ShelfEntry | undefined {
-  return PAGED.find(
-    (d) => d.slug === param || d.rawSlug === param || String(d.id) === param,
-  );
+  return PAGED.find((d) => d.slug === param);
 }
 
 /* ===================================================================== *

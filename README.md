@@ -21,12 +21,11 @@ I did a mixology qualification in 2022. I have never worked a licensed
 shift, and parts of the course were already behind by the time I wrote
 them up.
 
-Where a chapter goes past what I was taught it says so at the top. Where
-a figure is one I wrote in a margin and cannot verify, it is marked in
-place rather than quietly dropped - eighteen of the thirty-seven carry
-one of those. The contents page prints the count, because a book that
-hides how provisional it is has told you something false before you have
-read a word.
+Where a figure was one I wrote in a margin and could not verify, it was
+marked in place rather than quietly dropped, and the contents page
+printed how many chapters still carried one. All of those have since
+been answered or cut, so nothing in the book is marked provisional any
+more.
 
 The heaviest warning is on **Serving responsibly**. It covers New Zealand
 licensing law, I hold no Licence Controller Qualification, and anyone
@@ -146,8 +145,8 @@ altogether.
 
 ## Where it is up to
 
-Builds to 57 static routes. Quizzes and reading progress are written and
-switched off in `lib/site.ts`; this is meant to be consulted rather than
-completed.
+Every route is prerendered and there is no server. Quizzes and reading
+progress are written and switched off in `lib/site.ts`; this is meant to be
+consulted rather than completed.
 
 [ROADMAP.md](ROADMAP.md) has what is still owed.
