@@ -188,7 +188,7 @@ export const KIT: Chapter[] = [
       {
         kind: 'note',
         title: 'Crushed ice needs planning',
-        text: 'A Moscow Mule, a Julep, a Caipirinha and anything blended all want crushed ice, and crushing it to order in the middle of service doesn\'t work. Crush ahead and keep it in an insulated container. (note here this is very uncommon for busy bars)',
+        text: 'A Moscow Mule, a Julep, a Caipirinha and anything blended all want crushed ice, and crushing it to order in the middle of service doesn\'t work. If you have a crusher and somewhere insulated to keep it, crush ahead. If you don\'t, crush to order. Plenty of bars have neither and pour cubed into everything - the muddled and built chapter says what to do instead.',
       },
 ],
   },

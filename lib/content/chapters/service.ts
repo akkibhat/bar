@@ -25,7 +25,7 @@ export const SERVICE: Chapter[] = [
     body: [
       {
         kind: 'p',
-        text: 'Most guests order in a shorthand that\'s standard and almost never explained. Getting it right isn\'t pedantry(nw), because "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
+        text: 'Most guests order in a shorthand that\'s standard and almost never explained. Getting it right isn\'t being fussy, because "neat" and "straight up" are different drinks, and serving one for the other is a drink sent back.',
       },
       {
         kind: 'table',

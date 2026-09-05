@@ -257,7 +257,7 @@ export const CLASSICS: Chapter[] = [
       {
         kind: 'note',
         title: 'Why crushed, and what to do without it',
-        text: 'Crushed ice has far more surface area than cubes, so it chills faster and waters the drink down faster - and these are built in the glass with no shaker to do either. It also packs around muddled fruit and holds it under instead of letting it float. Cubes will do if crushed is what you have not got. The drink comes out warmer and stronger, so stir it longer and drink it sooner.',
+        text: 'Crushed ice has far more surface area than cubes, so it chills faster and waters the drink down faster - and these are built in the glass with no shaker to do either. It also packs around muddled fruit and holds it under instead of letting it float. Cubes will do if that is all you have. The drink comes out warmer and stronger, so stir it longer and drink it sooner.',
       },
       {
         kind: 'spec',

@@ -198,7 +198,7 @@ export const BALANCE: Chapter[] = [
       {
         kind: 'note',
         title: 'Citrus is a house ingredient too',
-        text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more. Doing it properly costs real time, and there\'s no way around it. (note that bars almost exclusively use bottled juice, unless super fancy cocktail bar)',
+        text: 'Juice oxidises fast. Lime is noticeably worse within four hours, lemon holds a little longer, and neither is any good the next day. Squeeze what a shift needs and no more. In practice bottled juice is close to universal, dedicated cocktail bars included, because squeezing to order costs time service does not have. Fresh is a difference you can taste and a cost most bars have decided against.',
       },
 ],
   },
