@@ -19,13 +19,13 @@ export default function FamiliesTable() {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <ul className="my-7 space-y-2 max-w-[40rem]">
+    <ul className="rows max-w-[40rem]">
       {FAMILIES.map((f) => {
         const isOpen = open === f.slug;
         return (
-          <li key={f.slug}>
+          <li key={f.slug} className="rows__item">
             <button
-              className="card w-full text-left px-4 py-3"
+              className="fam__line"
               aria-expanded={isOpen}
               onClick={() => setOpen(isOpen ? null : f.slug)}
             >
@@ -40,10 +40,7 @@ export default function FamiliesTable() {
               </span>
 
               {isOpen && (
-                <span
-                  className="block mt-3 pt-3"
-                  style={{ borderTop: '1px solid var(--rule)' }}
-                >
+                <span className="rows__open block pt-1">
                   <span
                     className="block t-base mb-3"
                     style={{ color: 'var(--ink)' }}

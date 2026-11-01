@@ -75,9 +75,20 @@ for (const drink of PAGED) {
   table.set(k, { href: `/backbar/${drink.slug}` });
 }
 
+/**
+ * Names a list uses that are the same drink under a different name in
+ * the destination. The IBA lists "Spritz" and the glassware list says
+ * "Aperol Spritz", which is the drink in everyone's hand; neither is
+ * wrong, so the lookup is told they are the same rather than either list
+ * being rewritten to suit it.
+ */
+const ALIASES: Record<string, string> = {
+  'Aperol Spritz': 'Spritz',
+};
+
 /** The best destination for a drink name, or undefined if there is none. */
 export function drinkHref(name: string): DrinkLink | undefined {
-  return table.get(key(name));
+  return table.get(key(name)) ?? table.get(key(ALIASES[name] ?? ''));
 }
 
 /** Resolve many names at once, keeping only the ones that have somewhere to go. */

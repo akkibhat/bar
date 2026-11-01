@@ -41,9 +41,6 @@ export default function BackbarPage() {
 
       {/* ---- Masthead -------------------------------------------- */}
       <header className="mb-8">
-        <p className="label-ui mb-3" style={{ color: 'var(--accent)' }}>
-          My own, and how they are built
-        </p>
 
         <HalfTitle half={SHELF_HALF} />
         <Rule variant="double" className="mt-3" />

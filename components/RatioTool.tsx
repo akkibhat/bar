@@ -97,7 +97,7 @@ export default function RatioTool() {
     (Math.round(n * 10) / 10).toFixed(1).replace(/\.0$/, '');
 
   return (
-    <div className="card my-7 px-5 py-5 max-w-[36rem]">
+    <div className="tool-sheet my-7 max-w-[36rem]">
       <p className="label-ui mb-3">Balance calculator</p>
 
       <Slider label="Spirit" value={spirit} onChange={setSpirit} max={90} />

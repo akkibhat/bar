@@ -103,11 +103,11 @@ export default function DilutionTool() {
         />
       </label>
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="pick-row mb-4">
         {METHODS.map((m) => (
           <button
             key={m.id}
-            className="chip"
+            className="pick"
             aria-pressed={method === m.id}
             onClick={() => setMethod(m.id)}
           >

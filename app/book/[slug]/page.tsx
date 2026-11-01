@@ -35,15 +35,15 @@ export async function generateMetadata({
 /**
  * One chapter.
  *
- * The header is set the way a menu sets a section: centred, between two
- * rules, part named in small caps above, standfirst in italic below.
- * That is the single biggest thing separating this from an article page,
- * and it is part of why there is no sidebar beside it - a centred heading
- * against a left-anchored column reads as a mistake rather than a choice.
+ * The header hangs the part's roman numeral large in the left margin,
+ * the way a printed book's part opener does, with the title and standfirst
+ * set left-aligned beside it. It replaces the centred, double-ruled
+ * header, which was the same on every one of thirty-seven chapters and
+ * said nothing about which part of the book you were in; the numeral now
+ * does that, and it changes from part to part.
  *
- * The body underneath goes back to left-aligned at a reading measure,
- * because centred prose is unreadable past about two lines and no amount
- * of art direction makes it otherwise.
+ * The body underneath is left-aligned at a reading measure, so the title
+ * and the prose share an edge.
  *
  * The reading time stays - it is a courtesy, and says what you are in
  * for. The chapter number does not: "Chapter 12" makes each one a
@@ -73,32 +73,29 @@ export default async function ChapterPage({
         prev={prev && `/book/${prev.slug}`}
         next={next && `/book/${next.slug}`}
       />
-      {/* ---- Header, set as a menu section ---------------------- */}
-      <header className="text-center mb-12">
-        <hr className="rule-double mb-6" />
-
-        <p className="label-ui mb-4">
-          {part && `Part ${part.numeral} · ${part.title}`}
-          <span aria-hidden="true"> · </span>
-          {`Chapter ${chapter.n}`}
+      {/* ---- Header --------------------------------------------- */}
+      <header className="chapter-head">
+        <p className="chapter-head__part" aria-label={part ? `Part ${part.numeral}, ${part.title}` : undefined}>
+          <span className="chapter-head__numeral">{part?.numeral}</span>
+          <span className="chapter-head__partname">{part?.title}</span>
         </p>
 
-        <h1 className="display t-h1 sm:t-display leading-[1.04] mb-4">
-          {chapter.title}
-        </h1>
+        <div className="chapter-head__main">
+          <h1 className="display t-h1 sm:t-display leading-[1.04] mb-4">
+            {chapter.title}
+          </h1>
 
-        <p
-          className="t-lead italic leading-relaxed mx-auto max-w-[30rem]"
-          style={{ color: 'var(--ink-soft)' }}
-        >
-          {chapter.standfirst}
-        </p>
+          <p
+            className="t-lead italic leading-relaxed max-w-[30rem]"
+            style={{ color: 'var(--ink-soft)' }}
+          >
+            {chapter.standfirst}
+          </p>
 
-        <p className="label-ui mt-5" style={{ color: 'var(--ink-faint)' }}>
-          <span className="nums">{chapter.minutes}</span> min
-        </p>
-
-        <hr className="rule-hair mt-6" />
+          <p className="t-caption mt-4" style={{ color: 'var(--ink-faint)' }}>
+            <span className="nums">{chapter.minutes}</span> min read
+          </p>
+        </div>
       </header>
 
       {/* ---- Body ------------------------------------------------ */}

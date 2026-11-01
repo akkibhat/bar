@@ -1929,7 +1929,7 @@ button.card:hover {
 /* The spirit ledger. */
 .rows {
   list-style: none;
-  margin: var(--s-xl) 0 0;
+  margin: var(--s-xl) 0 var(--s-3xl);
   padding: 0;
   border-top: 1px solid var(--rule-strong);
 }
@@ -2087,4 +2087,71 @@ button.card:hover {
 .drink-link--ext:hover::after,
 .drink-link--ext:focus-visible::after {
   opacity: 1;
+}
+
+
+/* A family row: the name on the left, its formula on the right. */
+.fam__line {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s-md);
+  padding: 0.7rem 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink);
+}
+.fam__line > span:first-child {
+  flex: 1;
+}
+.fam__line:hover .display {
+  color: var(--accent-book);
+}
+
+/* The chapter opener: the part's numeral hung large at the left, the
+   title and standfirst beside it, one hairline underneath. */
+.chapter-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-md);
+  padding-bottom: var(--s-3xl);
+  margin-bottom: var(--s-5xl);
+  border-bottom: 1px solid var(--rule-strong);
+}
+@media (min-width: 40rem) {
+  .chapter-head {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: var(--s-3xl);
+  }
+}
+.chapter-head__part {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2xs);
+}
+.chapter-head__numeral {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 0.9;
+  color: var(--accent-book);
+}
+.chapter-head__partname {
+  font-family: var(--font-ui);
+  font-size: var(--t-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+@media (max-width: 39.99rem) {
+  .chapter-head__part {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--s-md);
+  }
+  .chapter-head__numeral {
+    font-size: 2rem;
+  }
 }

@@ -69,6 +69,12 @@ export default function BackbarGrid() {
      they use the control. So Base belongs to my own shelf, where every
      drink has one. */
   const showBase = origin === 'mine';
+
+  /* The narrower filters (base, family, tag) sit behind one line until
+     asked for, or until one of them is in use, so the shelf itself - not
+     four rows of options - is what a reader meets first. */
+  const [more, setMore] = useState(false);
+  const narrowing = Boolean(shelf || family || tag);
   const showFamily = origin === 'mine' && allFamilies.length > 1;
 
   const shown = useMemo(() => {
@@ -136,6 +142,45 @@ export default function BackbarGrid() {
         </div>
       )}
 
+      <div className="flex flex-wrap items-end gap-3 mb-8">
+        <label className="flex-1 min-w-[14rem] max-w-[20rem]">
+          <span className="label-ui block mb-1">Find</span>
+          <input
+            type="search"
+            className="ink-input"
+            value={query}
+            placeholder="A name, or something in it"
+            onChange={(e) => setQuery(e.target.value)}
+          />
+        </label>
+        {filtered && (
+          <button
+            className="label-ui pb-2"
+            style={{ color: 'var(--accent-shelf)' }}
+            onClick={() => {
+              setCategory(null);
+              setShelf(null);
+              setFamily(null);
+              setTag(null);
+              setQuery('');
+            }}
+          >
+            Clear
+          </button>
+        )}
+      </div>
+
+      {/* ---- Base, family and tag, over the list that is up -------- */}
+      <button
+        className="pick mb-3"
+        aria-expanded={more || narrowing}
+        onClick={() => setMore(!more)}
+      >
+        {more || narrowing ? 'Fewer filters' : 'Narrow by base, family or tag'}
+      </button>
+
+      {(more || narrowing) && (
+        <div>
       {/* ---- Base and tag, over the list that is up ---------------- */}
       {showBase && (
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 mb-3">
@@ -194,33 +239,8 @@ export default function BackbarGrid() {
         </div>
       )}
 
-      <div className="flex flex-wrap items-end gap-3 mb-8">
-        <label className="flex-1 min-w-[14rem] max-w-[20rem]">
-          <span className="label-ui block mb-1">Find</span>
-          <input
-            type="search"
-            className="ink-input"
-            value={query}
-            placeholder="A name, or something in it"
-            onChange={(e) => setQuery(e.target.value)}
-          />
-        </label>
-        {filtered && (
-          <button
-            className="label-ui pb-2"
-            style={{ color: 'var(--accent-shelf)' }}
-            onClick={() => {
-              setCategory(null);
-              setShelf(null);
-              setFamily(null);
-              setTag(null);
-              setQuery('');
-            }}
-          >
-            Clear
-          </button>
-        )}
-      </div>
+        </div>
+      )}
 
       <hr className="rule-double mb-2" />
 

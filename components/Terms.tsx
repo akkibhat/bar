@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { CATEGORY_LABEL, GLOSSARY, lookupTerm } from '@/lib/glossary';
 import type { GlossaryCategory } from '@/lib/schema';
 
@@ -32,6 +32,28 @@ export default function GlossarySearch() {
 
   const categories = Object.keys(CATEGORY_LABEL) as GlossaryCategory[];
 
+  /* A "see also" link can name a term the current filter has hidden, and
+     a plain #fragment then points at nothing, so the click appears to do
+     nothing at all. Following one clears the search and the category
+     first, then scrolls once the list has re-rendered with the term in
+     it. `pending` carries the slug across that render. */
+  const [pending, setPending] = useState<string | null>(null);
+
+  const jumpTo = (slug: string) => {
+    setQuery('');
+    setCategory('all');
+    setPending(slug);
+  };
+
+  useEffect(() => {
+    if (!pending) return;
+    const el = document.getElementById(pending);
+    if (!el) return;
+    el.scrollIntoView({ block: 'start' });
+    history.replaceState(null, '', `#${pending}`);
+    setPending(null);
+  }, [pending, shown]);
+
   return (
     <>
       <label className="block mb-4 max-w-[26rem]">
@@ -45,22 +67,25 @@ export default function GlossarySearch() {
         />
       </label>
 
-      <div className="flex flex-wrap gap-2 mb-5">
+      <div className="pick-row mb-5">
         <button
-          className="chip"
+          className="pick"
           aria-pressed={category === 'all'}
           onClick={() => setCategory('all')}
         >
-          Everything <span className="nums">· {GLOSSARY.length}</span>
+          Everything <span className="nums pick__count">({GLOSSARY.length})</span>
         </button>
         {categories.map((c) => (
           <button
             key={c}
-            className="chip"
+            className="pick"
             aria-pressed={category === c}
             onClick={() => setCategory(c)}
           >
-            {CATEGORY_LABEL[c]}
+            {CATEGORY_LABEL[c]}{' '}
+            <span className="nums pick__count">
+              ({GLOSSARY.filter((t) => t.category === c).length})
+            </span>
           </button>
         ))}
       </div>
@@ -72,7 +97,7 @@ export default function GlossarySearch() {
       ) : (
         <dl className="space-y-5">
           {shown.map((t) => (
-            <div key={t.slug} id={t.slug}>
+            <div key={t.slug} id={t.slug} className="scroll-mt-24">
               <dt className="flex items-baseline gap-2 flex-wrap">
                 <span className="display t-h3 leading-none">{t.term}</span>
                 <span className="label-ui" style={{ color: 'var(--accent-book)' }}>
@@ -102,6 +127,10 @@ export default function GlossarySearch() {
                         <span key={s!.slug}>
                           <a
                             href={`#${s!.slug}`}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              jumpTo(s!.slug);
+                            }}
                             style={{ color: 'var(--accent-book)' }}
                           >
                             {s!.term.toLowerCase()}
