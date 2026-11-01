@@ -47,7 +47,7 @@ export type ShelfDrink = {
 };
 
 /** When this snapshot was taken, so the page can admit its age. */
-export const PULLED_AT = "2026-09-04T23:37:06.891Z";
+export const PULLED_AT = "2026-09-06T13:10:58.372Z";
 
 /** Everything on the shelf, newest first. */
 export const SHELF: ShelfDrink[] = [
