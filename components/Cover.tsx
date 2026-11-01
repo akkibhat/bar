@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { GlassMark } from './Mark';
 import { OWNER, HALVES } from '@/lib/site';
-import { CHAPTER_COUNT } from '@/lib/content/book';
+import { CHAPTER_COUNT, chaptersIn } from '@/lib/content/book';
+import { PARTS } from '@/lib/content/parts';
 import { SHELF } from '@/lib/backbar';
 
 /**
@@ -69,6 +70,25 @@ export default function Cover() {
     },
   } as const;
 
+  /* What is inside each half, as a printed contents list: the book by
+     part with its chapter count, the shelf by drink with its volume. They
+     sit inside the door's own link, so they are text rather than links of
+     their own - the half is the target, and the list says what is behind
+     it. Both read straight from the same data the inner pages use, so the
+     front door can never describe something that is not there. */
+  const inside = {
+    book: PARTS.map((p) => ({
+      key: p.slug,
+      name: `${p.numeral}  ${p.title}`,
+      amount: `${chaptersIn(p.slug).length}`,
+    })),
+    shelf: SHELF.map((d) => ({
+      key: d.slug,
+      name: d.name,
+      amount: d.volumeMl ? `${Math.round(d.volumeMl)} ml` : '',
+    })),
+  } as const;
+
   return (
     <div className="door-page">
       {/* The masthead. A menu cover carries the name of the place across
@@ -119,6 +139,19 @@ export default function Cover() {
                 style={{ color: 'var(--ink-soft)' }}
               >
                 {copy[half.id].line}
+              </span>
+
+              <span className="label-ui block mt-8 mb-1" style={{ color: 'var(--ink-faint)' }}>
+                {half.id === 'book' ? 'Parts, and chapters in each' : 'On the shelf, and what it makes'}
+              </span>
+              <span className="spec door-contents" role="list">
+                {inside[half.id].map((row) => (
+                  <span className="spec__line" role="listitem" key={row.key}>
+                    <span className="spec__name">{row.name}</span>
+                    <span className="spec__leader" aria-hidden="true" />
+                    <span className="spec__amount">{row.amount}</span>
+                  </span>
+                ))}
               </span>
 
               <span

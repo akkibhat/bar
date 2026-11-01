@@ -832,7 +832,7 @@ button.card:hover {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 24rem;
+  max-width: 26rem;
   margin-inline: auto;
 }
 
@@ -847,6 +847,23 @@ button.card:hover {
    longer line still wraps rather than being clipped. */
 .door-line {
   min-height: 5.9rem;
+}
+
+/* The contents list reuses the spec sheet's leader-and-measure rows. It is
+   a column of spans, not a <ul>, because it sits inside the door's link
+   and a list of its own would nest interactive structure in a link.
+   Block-level so the rows stack, and the sheet's own bottom margin is
+   dropped: the count line below already sets the spacing. */
+.door-contents {
+  display: block;
+  margin: 0;
+}
+.door-contents .spec__line {
+  padding: 0.3rem 0;
+}
+.door-contents .spec__name {
+  font-size: var(--t-caption);
+  white-space: pre;
 }
 
 @media (max-width: 47.99rem) {
