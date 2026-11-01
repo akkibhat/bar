@@ -2189,3 +2189,10 @@ button.card:hover {
     padding-inline: 0.45rem;
   }
 }
+
+/* The glass rows are tight at desktop width: the longest name plus the
+   longest capacity left no room for the leader and pushed "200-300 ml"
+   past the rule. The dots may shrink to almost nothing here. */
+.plates__item .spec__leader {
+  min-width: 0.5rem;
+}
