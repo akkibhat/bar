@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { GLASSES, SERVE_LABEL, type Serve } from '@/lib/glassware';
 import Link from 'next/link';
 import GlassShape from './GlassShape';
+import type { DrinkLink } from '@/lib/drinkLinks';
 
 /**
  * Which glass.
@@ -18,7 +19,7 @@ export default function GlasswarePicker({
   links = {},
 }: {
   /** Drink name to destination, for the names that have somewhere to go. */
-  links?: Record<string, string>;
+  links?: Record<string, DrinkLink>;
 }) {
   const [serve, setServe] = useState<Serve | 'all'>('all');
 
@@ -75,9 +76,23 @@ export default function GlasswarePicker({
                   <span key={d}>
                     {i > 0 && ' \u00b7 '}
                     {links[d] ? (
-                      <Link href={links[d]} className="drink-link">
-                        {d}
-                      </Link>
+                      links[d].external ? (
+                        <a
+                          href={links[d].href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="drink-link drink-link--ext"
+                          data-tip="The IBA's page for this one. The book hasn't written it up."
+                        >
+                          {d}
+                          <span aria-hidden="true">{' \u2197'}</span>
+                          <span className="sr-only"> (opens the IBA's site)</span>
+                        </a>
+                      ) : (
+                        <Link href={links[d].href} className="drink-link">
+                          {d}
+                        </Link>
+                      )
                     ) : (
                       d
                     )}

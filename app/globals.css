@@ -2056,3 +2056,35 @@ button.card:hover {
   color: var(--accent-book);
   text-decoration-color: currentColor;
 }
+
+
+/* An off-site link carries a short note on hover and keyboard focus. A
+   native title attribute would do it, but it is slow, unstyled and absent
+   on touch, so the note is drawn from data-tip instead. */
+.drink-link--ext {
+  position: relative;
+}
+.drink-link--ext::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.35rem);
+  width: max-content;
+  max-width: 15rem;
+  padding: 0.4rem 0.6rem;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-soft);
+  font-family: var(--font-ui);
+  font-size: var(--t-micro);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--m-quick) var(--ease);
+  z-index: 5;
+}
+.drink-link--ext:hover::after,
+.drink-link--ext:focus-visible::after {
+  opacity: 1;
+}

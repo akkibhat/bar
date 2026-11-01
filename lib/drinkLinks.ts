@@ -1,5 +1,5 @@
 import { CHAPTERS } from './content/book';
-import { PAGED } from './backbar';
+import { ALL, PAGED } from './backbar';
 import { headingsOf, specAnchor } from './headings';
 
 /**
@@ -13,9 +13,11 @@ import { headingsOf, specAnchor } from './headings';
  *   1. a Backbar page, which has the full build, method and glass;
  *   2. a spec sheet inside a book chapter, for the drinks the book writes
  *      up but the shelf has no page for (the link jumps to the sheet);
- *   3. a sub-heading in a chapter that is about the thing named, such as
+ *   3. the IBA's own page, for a drink on their official list that this
+ *      site holds no recipe for (an external link, flagged as such);
+ *   4. a sub-heading in a chapter that is about the thing named, such as
  *      "Irish coffee" or "Mulled wine";
- *   4. a chapter whose own title is the name.
+ *   5. a chapter whose own title is the name.
  *
  * Names that match none of these get no link rather than a wrong one, so
  * "Cognac and aged spirits, neat" stays plain text. Matching ignores case,
@@ -23,31 +25,43 @@ import { headingsOf, specAnchor } from './headings';
  * were written separately and disagree on those.
  */
 
-/** Case, punctuation and spacing flattened away; "&" read as "and". */
+/** Case, accents, punctuation and spacing flattened away; "&" read as "and". */
 function key(name: string): string {
   return name
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
     .toLowerCase()
     .replace(/&/g, ' and ')
     .replace(/[^a-z0-9]+/g, '');
 }
 
-const table = new Map<string, string>();
+/** Where a name leads, and whether that is off this site. */
+export type DrinkLink = { href: string; external?: boolean };
+
+const table = new Map<string, DrinkLink>();
 
 /* Lowest priority first, so a higher-priority source overwrites it. */
 for (const chapter of CHAPTERS) {
-  table.set(key(chapter.title), `/book/${chapter.slug}`);
+  table.set(key(chapter.title), { href: `/book/${chapter.slug}` });
 }
 for (const chapter of CHAPTERS) {
   for (const h of headingsOf(chapter.body)) {
-    table.set(key(h.text), `/book/${chapter.slug}#${h.id}`);
+    table.set(key(h.text), { href: `/book/${chapter.slug}#${h.id}` });
+  }
+}
+/* The IBA's own page for the official-list drinks the book has not
+   written up. Only the link-only rows: the others have a page here. */
+for (const drink of ALL) {
+  if (drink.linkOnly && drink.ibaUrl) {
+    table.set(key(drink.name), { href: drink.ibaUrl, external: true });
   }
 }
 for (const chapter of CHAPTERS) {
   for (const block of chapter.body) {
     if (block.kind !== 'spec') continue;
-    const href = `/book/${chapter.slug}#${specAnchor(block.spec.name)}`;
-    table.set(key(block.spec.name), href);
-    if (block.spec.iba?.name) table.set(key(block.spec.iba.name), href);
+    const link = { href: `/book/${chapter.slug}#${specAnchor(block.spec.name)}` };
+    table.set(key(block.spec.name), link);
+    if (block.spec.iba?.name) table.set(key(block.spec.iba.name), link);
   }
 }
 /* PAGED lists mine before the IBA's, and where both have a "Espresso
@@ -58,20 +72,20 @@ for (const drink of PAGED) {
   const k = key(drink.name);
   if (claimed.has(k)) continue;
   claimed.add(k);
-  table.set(k, `/backbar/${drink.slug}`);
+  table.set(k, { href: `/backbar/${drink.slug}` });
 }
 
 /** The best destination for a drink name, or undefined if there is none. */
-export function drinkHref(name: string): string | undefined {
+export function drinkHref(name: string): DrinkLink | undefined {
   return table.get(key(name));
 }
 
 /** Resolve many names at once, keeping only the ones that have somewhere to go. */
-export function drinkLinks(names: string[]): Record<string, string> {
-  const out: Record<string, string> = {};
+export function drinkLinks(names: string[]): Record<string, DrinkLink> {
+  const out: Record<string, DrinkLink> = {};
   for (const n of names) {
-    const href = drinkHref(n);
-    if (href) out[n] = href;
+    const link = drinkHref(n);
+    if (link) out[n] = link;
   }
   return out;
 }
