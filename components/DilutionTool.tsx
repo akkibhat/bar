@@ -65,8 +65,7 @@ export default function DilutionTool() {
   }, [volume, abv, chosen]);
 
   return (
-    <div className="card my-7 px-5 py-5 max-w-[36rem]">
-      <p className="label-ui mb-3">What the ice does</p>
+    <div className="tool-sheet my-7 max-w-[36rem]">
 
       <label className="block mb-3">
         <span className="flex items-baseline justify-between mb-1">
@@ -118,18 +117,11 @@ export default function DilutionTool() {
       </div>
 
       <div className="pt-4" style={{ borderTop: '1px solid var(--rule)' }}>
-        <div className="grid grid-cols-3 gap-3 mb-3">
-          <Figure label="Water in" value={`${Math.round(result.water)} ml`} />
-          <Figure
-            label="Finished"
-            value={`${Math.round(result.finalVolume)} ml`}
-          />
-          <Figure
-            label="Strength"
-            value={`${result.finalAbv.toFixed(1)}%`}
-            accent
-          />
-        </div>
+        <ul className="spec" style={{ marginBottom: 'var(--s-md)' }}>
+          <Line label="Water in" value={`${Math.round(result.water)} ml`} />
+          <Line label="Finished" value={`${Math.round(result.finalVolume)} ml`} />
+          <Line label="Strength" value={`${result.finalAbv.toFixed(1)}%`} />
+        </ul>
 
         <p className="t-caption" style={{ color: 'var(--ink-soft)' }}>
           {chosen.hint}
@@ -149,24 +141,13 @@ export default function DilutionTool() {
   );
 }
 
-function Figure({
-  label,
-  value,
-  accent = false,
-}: {
-  label: string;
-  value: string;
-  accent?: boolean;
-}) {
+/** One printed line of the result: the label, a leader, the figure. */
+function Line({ label, value }: { label: string; value: string }) {
   return (
-    <div>
-      <p className="label-ui mb-0.5">{label}</p>
-      <p
-        className="display t-h3 leading-none nums"
-        style={{ color: accent ? 'var(--accent-book)' : 'var(--ink)' }}
-      >
-        {value}
-      </p>
-    </div>
+    <li className="spec__line">
+      <span className="spec__name">{label}</span>
+      <span className="spec__leader" aria-hidden="true" />
+      <span className="spec__amount nums">{value}</span>
+    </li>
   );
 }

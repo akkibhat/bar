@@ -13,7 +13,6 @@ export default function SpiritsPage() {
   return (
     <div className="relative mx-auto max-w-[52rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">
       <Masthead
-        eyebrow="Reference"
         title="Spirit explorer"
         standfirst={`${SPIRITS.length} bottles worth reaching for, described in the terms that decide whether one belongs in a given drink.`}
       />

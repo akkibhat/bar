@@ -1863,3 +1863,196 @@ button.card:hover {
   .controls { display: none; }
 }
 
+
+
+/* =====================================================================
+   THE TOOL PAGES
+
+   Header, filters and rows for the standalone tools. Ruled lines instead
+   of cards and outlined chips: a printed reference prints a table, not a
+   wall of boxes.
+   ===================================================================== */
+
+.tool-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-md);
+  padding-bottom: var(--s-xl);
+  margin-bottom: var(--s-2xl);
+  border-bottom: 1px solid var(--rule-strong);
+}
+@media (min-width: 48rem) {
+  .tool-head {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    gap: var(--s-3xl);
+    align-items: end;
+  }
+}
+.tool-head__line {
+  color: var(--ink-soft);
+  max-width: 24rem;
+}
+
+/* A filter as plain text; the chosen one is lit and underlined. */
+.pick-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1.1rem;
+  margin-bottom: var(--s-md);
+}
+.pick-label {
+  font-family: var(--font-ui);
+  font-size: var(--t-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.pick {
+  font-family: var(--font-ui);
+  font-size: var(--t-caption);
+  color: var(--ink-soft);
+  background: none;
+  border: 0;
+  padding: 0.2rem 0;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+}
+.pick:hover {
+  color: var(--ink);
+}
+.pick[aria-pressed='true'] {
+  color: var(--accent, var(--accent-book));
+  border-bottom-color: currentColor;
+}
+
+/* The spirit ledger. */
+.rows {
+  list-style: none;
+  margin: var(--s-xl) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--rule-strong);
+}
+.rows__item {
+  border-bottom: 1px solid var(--rule);
+}
+.rows__line {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(10rem, 1.8fr) 4.5rem 4.5rem minmax(5.5rem, 1fr) auto auto;
+  align-items: baseline;
+  gap: var(--s-md);
+  padding: 0.7rem 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: var(--ink);
+}
+.rows__line:hover .rows__name {
+  color: var(--accent-book);
+}
+.rows__name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+.rows__shelf,
+.rows__wood {
+  font-family: var(--font-ui);
+  font-size: var(--t-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.rows__wood {
+  color: var(--ink-faint);
+}
+.rows__abv {
+  font-family: var(--font-ui);
+  font-size: var(--t-caption);
+  color: var(--ink-soft);
+}
+.rows__meter {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.rows__open {
+  padding: 0 0 var(--s-lg);
+  max-width: 38rem;
+}
+@media (max-width: 47.99rem) {
+  .rows__line {
+    grid-template-columns: 1fr auto;
+    row-gap: 0.25rem;
+  }
+  .rows__shelf { grid-column: 2; grid-row: 1; }
+  .rows__abv,
+  .rows__wood { grid-row: 2; }
+}
+
+/* The glass specimen sheet. */
+.plates {
+  list-style: none;
+  margin: var(--s-xl) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  border-top: 1px solid var(--rule-strong);
+}
+@media (min-width: 48rem) {
+  .plates {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--s-3xl);
+  }
+}
+.plates__item {
+  display: flex;
+  gap: var(--s-lg);
+  align-items: flex-end;
+  padding: var(--s-lg) 0;
+  border-bottom: 1px solid var(--rule);
+}
+.plates__item > div {
+  flex: 1;
+}
+
+/* The calculator body: no panel, only its own rules. */
+.tool-sheet {
+  border-top: 1px solid var(--rule-strong);
+  padding-top: var(--s-lg);
+}
+
+/* The tools belong to the book, so their measures take the book's blue.
+   The spec sheet's amount otherwise falls back to the shelf's red. */
+.plates,
+.tool-sheet {
+  --accent: var(--accent-book);
+}
+
+/* The count after "Everything": fainter than the word, so it reads as a
+   tally rather than part of the label. */
+.pick__count {
+  color: var(--ink-faint);
+  margin-left: 0.15em;
+}
+
+/* Only the chosen filter shows its tally: the rest stay as plain words
+   so the row reads as a list of options, not a column of numbers. */
+.pick:not([aria-pressed='true']) .pick__count {
+  display: none;
+}
+
+
+/* A drink named in a list and linked on: quiet until pointed at, so a row
+   of names still reads as a row of names. */
+.drink-link {
+  color: var(--ink-soft);
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-underline-offset: 3px;
+}
+.drink-link:hover {
+  color: var(--accent-book);
+  text-decoration-color: currentColor;
+}

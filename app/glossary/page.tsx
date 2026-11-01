@@ -13,7 +13,6 @@ export default function GlossaryPage() {
   return (
     <div className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">
       <Masthead
-        eyebrow="Reference"
         title="Glossary"
         standfirst={`${GLOSSARY.length} terms. Search the meaning as well as the word - the common case is remembering what something does and not what it is called.`}
       />

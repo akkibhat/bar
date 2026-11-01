@@ -30,7 +30,6 @@ export default function DilutionPage() {
   return (
     <div className="mx-auto max-w-[46rem] px-6 sm:px-10 py-12 lg:py-20">
       <Masthead
-        eyebrow="Tool"
         title="Strength and dilution"
         standfirst="There is no chilling without dilution and no dilution without chilling. The water is part of the recipe whether or not the recipe mentions it."
       />

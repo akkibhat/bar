@@ -51,3 +51,13 @@ export function headingsOf(body: Block[]): Heading[] {
       };
     });
 }
+
+/**
+ * The id a drink's spec sheet carries inside a chapter, so a link from
+ * elsewhere can land on the sheet itself and not just the chapter. Kept
+ * here, with the heading ids, so the sheet and every link to it call one
+ * function and cannot disagree about the spelling.
+ */
+export function specAnchor(name: string): string {
+  return 'spec-' + name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}

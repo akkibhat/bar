@@ -13,7 +13,6 @@ export default function RatioPage() {
   return (
     <div className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">
       <Masthead
-        eyebrow="Tool"
         title="Balance"
         standfirst="Two parts spirit, one part citrus, one part sweet. Move the sliders and see what a build is actually doing."
       />

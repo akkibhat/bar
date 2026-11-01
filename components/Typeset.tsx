@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Block } from '@/lib/schema';
 import { emphasise } from '@/lib/emphasis';
-import { headingsOf } from '@/lib/headings';
+import { headingsOf, specAnchor } from '@/lib/headings';
 import { lookupFamily } from '@/lib/content/families';
 import Rule from './Rule';
 import Bench from './Bench';
@@ -186,7 +186,8 @@ function BlockView({ block, id }: { block: Block; id?: string }) {
 
       return (
         <figure
-          className="card my-7 px-5 py-5 max-w-[36rem]"
+          id={specAnchor(s.name)}
+          className="card my-7 px-5 py-5 max-w-[36rem] scroll-mt-24"
           style={{ ['--accent' as string]: 'var(--accent-shelf)' }}
         >
           <figcaption className="mb-3">

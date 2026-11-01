@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { GLASSES, SERVE_LABEL, type Serve } from '@/lib/glassware';
+import Link from 'next/link';
 import GlassShape from './GlassShape';
 
 /**
@@ -13,58 +14,75 @@ import GlassShape from './GlassShape';
  */
 const SERVES: Serve[] = ['up', 'short', 'long', 'hot', 'shot'];
 
-export default function GlasswarePicker() {
+export default function GlasswarePicker({
+  links = {},
+}: {
+  /** Drink name to destination, for the names that have somewhere to go. */
+  links?: Record<string, string>;
+}) {
   const [serve, setServe] = useState<Serve | 'all'>('all');
 
   const shown = GLASSES.filter((g) => serve === 'all' || g.serve === serve);
 
   return (
     <div className="my-7">
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="pick-row">
         <button
-          className="chip"
+          className="pick"
           aria-pressed={serve === 'all'}
           onClick={() => setServe('all')}
         >
-          Everything <span className="nums">· {GLASSES.length}</span>
+          Everything <span className="nums pick__count">({GLASSES.length})</span>
         </button>
         {SERVES.map((s) => (
           <button
             key={s}
-            className="chip"
+            className="pick"
             aria-pressed={serve === s}
             onClick={() => setServe(s)}
           >
-            {SERVE_LABEL[s]}
+            {SERVE_LABEL[s]}{' '}
+            <span className="nums pick__count">
+              ({GLASSES.filter((g) => g.serve === s).length})
+            </span>
           </button>
         ))}
       </div>
 
-      {/* The silhouette sits left of each card, on its own baseline, and
-          the text runs beside it. A shape is faster to match against what
-          is in your hand than a name is, which is the question this
-          picker is for. */}
-      <ul className="grid gap-2 sm:grid-cols-2">
+      {/* A specimen sheet: each glass drawn large on its own ruled cell,
+          the way a catalogue plate shows a shape, with the name and
+          capacity on a dot leader beside it. Matching a shape against
+          what is in your hand is the whole question, so the shape leads. */}
+      <ul className="plates">
         {shown.map((g) => (
-          <li key={g.slug} className="card px-4 py-3 flex gap-3.5">
-            <GlassShape glass={g} />
+          <li key={g.slug} className="plates__item">
+            <GlassShape glass={g} size={118} />
             <div className="min-w-0">
-              <p className="flex items-baseline justify-between gap-2">
-                <span className="t-base leading-tight">{g.name}</span>
-                <span
-                  className="t-caption nums shrink-0"
-                  style={{ color: 'var(--ink-faint)' }}
-                >
+              <p className="spec__line" style={{ padding: 0 }}>
+                <span className="display t-h3 leading-tight">{g.name}</span>
+                <span className="spec__leader" aria-hidden="true" />
+                <span className="spec__amount">
                   {g.holds[0] === g.holds[1]
                     ? `${g.holds[0]} ml`
-                    : `${g.holds[0]}–${g.holds[1]} ml`}
+                    : `${g.holds[0]}\u2013${g.holds[1]} ml`}
                 </span>
               </p>
               <p className="t-caption mt-1" style={{ color: 'var(--ink-soft)' }}>
                 {g.why}
               </p>
               <p className="t-caption mt-1.5" style={{ color: 'var(--ink-faint)' }}>
-                {g.drinks.join(' · ')}
+                {g.drinks.map((d, i) => (
+                  <span key={d}>
+                    {i > 0 && ' \u00b7 '}
+                    {links[d] ? (
+                      <Link href={links[d]} className="drink-link">
+                        {d}
+                      </Link>
+                    ) : (
+                      d
+                    )}
+                  </span>
+                ))}
               </p>
             </div>
           </li>

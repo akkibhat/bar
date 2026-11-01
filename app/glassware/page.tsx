@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Masthead from '@/components/Masthead';
 import GlasswarePicker from '@/components/GlasswarePicker';
 import { GLASSES } from '@/lib/glassware';
+import { drinkLinks } from '@/lib/drinkLinks';
 
 export const metadata: Metadata = {
   title: 'Glassware',
@@ -14,12 +15,11 @@ export default function GlasswarePage() {
   return (
     <div className="relative mx-auto max-w-[52rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">
       <Masthead
-        eyebrow="Reference"
         title="Which glass"
         standfirst={`${GLASSES.length} glasses, filtered by how the drink is served - which is the thing you know first, and the thing everything else follows from.`}
       />
 
-      <GlasswarePicker />
+      <GlasswarePicker links={drinkLinks(GLASSES.flatMap((g) => g.drinks))} />
 
       <p className="t-caption max-w-[34rem]" style={{ color: 'var(--ink-soft)' }}>
         If it has a stem, hold the stem; if it does not, hold the bottom third.{' '}

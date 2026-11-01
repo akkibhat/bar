@@ -62,29 +62,32 @@ export default function SpiritExplorer({ only }: { only?: string }) {
   return (
     <div className="my-7">
       {!only && (
-        <div className="flex flex-wrap gap-2 mb-3">
+        <div className="pick-row">
           <button
-            className="chip"
+            className="pick"
             aria-pressed={category === 'all'}
             onClick={() => setCategory('all')}
           >
-            Everything <span className="nums">· {SPIRITS.length}</span>
+            Everything <span className="nums pick__count">({SPIRITS.length})</span>
           </button>
           {categories.map((c) => (
             <button
               key={c}
-              className="chip"
+              className="pick"
               aria-pressed={category === c}
               onClick={() => setCategory(c)}
             >
-              {CATEGORY_LABEL[c]}
+              {CATEGORY_LABEL[c]}{' '}
+              <span className="nums pick__count">
+                ({SPIRITS.filter((s) => s.category === c).length})
+              </span>
             </button>
           ))}
         </div>
       )}
 
-      <div className="flex flex-wrap items-baseline gap-2 mb-4">
-        <span className="label-ui">Sort</span>
+      <div className="pick-row">
+        <span className="pick-label">Sort</span>
         {(
           [
             ['name', 'Name'],
@@ -95,7 +98,7 @@ export default function SpiritExplorer({ only }: { only?: string }) {
         ).map(([id, label]) => (
           <button
             key={id}
-            className="chip"
+            className="pick"
             aria-pressed={sort === id}
             onClick={() => setSort(id)}
           >
@@ -104,70 +107,48 @@ export default function SpiritExplorer({ only }: { only?: string }) {
         ))}
       </div>
 
-      <ul className="grid gap-2 sm:grid-cols-2">
+      {/* A ledger, not a grid of cards: one ruled row per bottle, the name
+          hard left, its measures in fixed columns to the right so the eye
+          can run down a column and compare. Opening a row prints the note
+          underneath it, the way a footnote hangs from its line. */}
+      <ul className="rows">
         {shown.map((s) => {
           const isOpen = openSlug === s.slug;
           return (
-            <li key={s.slug}>
+            <li key={s.slug} className="rows__item">
               <button
-                className="card w-full text-left px-4 py-3 h-full"
+                className="rows__line"
                 aria-expanded={isOpen}
                 onClick={() => setOpenSlug(isOpen ? null : s.slug)}
               >
-                <span className="flex items-baseline justify-between gap-2">
-                  <span className="t-base leading-tight">{s.name}</span>
-                  <span
-                    className="label-ui shrink-0"
-                    style={{ color: 'var(--accent-book)' }}
-                  >
-                    {CATEGORY_LABEL[s.category]}
-                  </span>
+                <span className="rows__name">{s.name}</span>
+                <span className="rows__shelf" style={{ color: 'var(--accent-book)' }}>
+                  {CATEGORY_LABEL[s.category]}
                 </span>
-
-                <span
-                  className="block t-caption mt-0.5 nums"
-                  style={{ color: 'var(--ink-faint)' }}
-                >
+                <span className="rows__abv nums">
                   {s.abv[0] === s.abv[1]
                     ? `${s.abv[0]}%`
-                    : `${s.abv[0]}–${s.abv[1]}%`}{' '}
-                  · {WOOD_LABEL[s.wood]}
+                    : `${s.abv[0]}\u2013${s.abv[1]}%`}
                 </span>
-
-                <span className="flex gap-4 mt-2">
-                  <Meter label="Sweet" value={s.sweetness} />
-                  <Meter label="Loud" value={s.intensity} />
-                </span>
-
-                {isOpen && (
-                  <span
-                    className="block mt-3 pt-3"
-                    style={{ borderTop: '1px solid var(--rule)' }}
-                  >
-                    <span className="block t-base mb-2">{s.note}</span>
-                    <span className="flex flex-wrap gap-1.5 mb-2">
-                      {s.notes.map((n) => (
-                        <span
-                          key={n}
-                          className="t-caption px-2 py-0.5 rounded-full"
-                          style={{
-                            border: '1px solid var(--rule-strong)',
-                            color: 'var(--ink-soft)',
-                          }}
-                        >
-                          {n}
-                        </span>
-                      ))}
-                    </span>
-                    <span className="block t-caption" style={{ color: 'var(--ink-soft)' }}>
-                      <span className="label-ui" style={{ marginRight: '0.4rem' }}>
-                        Drink it
-                      </span>
-                      {s.drinkIt}
-                    </span>
-                  </span>
-                )}
+                <span className="rows__wood">{WOOD_LABEL[s.wood]}</span>
+                <Meter label="Sweet" value={s.sweetness} />
+                <Meter label="Loud" value={s.intensity} />
               </button>
+
+              {isOpen && (
+                <div className="rows__open">
+                  <p className="t-base mb-2">{s.note}</p>
+                  <p className="t-caption mb-2" style={{ color: 'var(--ink-soft)' }}>
+                    {s.notes.join(' \u00b7 ')}
+                  </p>
+                  <p className="t-caption" style={{ color: 'var(--ink-soft)' }}>
+                    <span className="label-ui" style={{ marginRight: '0.4rem' }}>
+                      Drink it
+                    </span>
+                    {s.drinkIt}
+                  </p>
+                </div>
+              )}
             </li>
           );
         })}
@@ -179,7 +160,7 @@ export default function SpiritExplorer({ only }: { only?: string }) {
 /** A five-pip bar for one of the judgement scales. */
 function Meter({ label, value }: { label: string; value: number }) {
   return (
-    <span className="flex items-center gap-1.5">
+    <span className="rows__meter">
       <span className="label-ui" style={{ letterSpacing: '0.08em' }}>
         {label}
       </span>
