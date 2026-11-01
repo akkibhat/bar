@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { SearchEntry } from '@/lib/content/book';
+import { matchesWords } from '@/lib/wordMatch';
 
 /**
  * Looking something up in the book.
@@ -36,15 +37,15 @@ export default function BookSearch({ index }: { index: SearchEntry[] }) {
   );
 
   const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = query.trim();
     if (!q) return [];
 
     return index
       .map((c) => ({
         chapter: c,
-        marks: c.marks.filter((m) => m.text.toLowerCase().includes(q)),
+        marks: c.marks.filter((m) => matchesWords(m.text, q)),
       }))
-      .filter((r) => r.chapter.title.toLowerCase().includes(q) || r.marks.length > 0);
+      .filter((r) => matchesWords(r.chapter.title, q) || r.marks.length > 0);
   }, [index, query]);
 
   const asked = query.trim().length > 0;
