@@ -786,6 +786,30 @@ button.card:hover {
   flex: 1;
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The big coupe. Sized from the split's own height so it is always
+   taller than the page it sits on and is cropped top and bottom; pushed
+   past the right edge so only its bowl and half its stem show. It is
+   behind the doors, which are given their own stacking context. */
+.door-glass {
+  height: 118%;
+  width: auto;
+  right: -17%;
+  top: -4%;
+  z-index: 0;
+}
+.door {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 47.99rem) {
+  /* Stacked, the glass would sit behind both lists. Drop it. */
+  .door-glass {
+    display: none;
+  }
 }
 
 @media (min-width: 48rem) {
@@ -796,7 +820,10 @@ button.card:hover {
 
 .door {
   display: flex;
-  align-items: center;
+  /* Top-aligned, not centred: the two lists are different lengths, and
+     centring them independently pushed every row out of register across
+     the seam. */
+  align-items: flex-start;
   padding: var(--s-6xl) var(--s-5xl);
   text-decoration: none;
   /* The seam. One rule between the halves, and it turns with them: a
@@ -1835,3 +1862,4 @@ button.card:hover {
   #dryshake .beat { opacity: 1; }
   .controls { display: none; }
 }
+

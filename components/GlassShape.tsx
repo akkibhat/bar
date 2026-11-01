@@ -57,6 +57,11 @@ const SHAPES: Record<string, string> = {
   toddy: 'M12 20 L14 58 H26 L28 20 M28 28 C35 28 35 44 28 44 M12 23 H28',
 };
 
+/** The raw path for a glass, so a larger drawing can reuse the same outline. */
+export function glassPath(slug: string): string | undefined {
+  return SHAPES[slug];
+}
+
 export default function GlassShape({
   glass,
   size = 46,

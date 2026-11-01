@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { GlassMark } from './Mark';
+import GlassPlate from './GlassPlate';
 import { OWNER, HALVES } from '@/lib/site';
 import { CHAPTER_COUNT, chaptersIn } from '@/lib/content/book';
 import { PARTS } from '@/lib/content/parts';
@@ -111,6 +112,10 @@ export default function Cover() {
       </header>
 
       <div className="door-split">
+        {/* One coupe, far too large, bleeding off the right edge behind the
+            shelf. It crosses nothing the reader needs to read: the text
+            column is centred and the glass lives in the outer margin. */}
+        <GlassPlate slug="coupe" className="door-glass" />
         {HALVES.map((half) => (
           <Link
             key={half.id}
@@ -128,9 +133,7 @@ export default function Cover() {
                 <GlassMark size={34} variant={half.id} decorative />
               </span>
 
-              <span className="label-ui block mt-6 mb-2">{copy[half.id].label}</span>
-
-              <span className="display block t-h1 sm:t-display leading-none mb-5">
+              <span className="display block t-h1 sm:t-display leading-none mt-6 mb-5">
                 {copy[half.id].name}
               </span>
 
@@ -141,9 +144,7 @@ export default function Cover() {
                 {copy[half.id].line}
               </span>
 
-              <span className="label-ui block mt-8 mb-1" style={{ color: 'var(--ink-faint)' }}>
-                {half.id === 'book' ? 'Parts, and chapters in each' : 'On the shelf, and what it makes'}
-              </span>
+              <span className="block mt-8" aria-hidden="true" />
               <span className="spec door-contents" role="list">
                 {inside[half.id].map((row) => (
                   <span className="spec__line" role="listitem" key={row.key}>

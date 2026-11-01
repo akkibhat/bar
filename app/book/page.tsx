@@ -73,8 +73,6 @@ export default function BookPage() {
     <div className="mx-auto max-w-[46rem] px-6 sm:px-10 py-12 lg:py-20">
       {/* ---- Masthead -------------------------------------------- */}
       <header className="mb-14">
-        <p className="label-ui mb-3">What I was taught, checked</p>
-
         <HalfTitle half={BOOK} />
 
         <hr className="rule-double my-6" />
@@ -158,9 +156,7 @@ export default function BookPage() {
       </section>
 
       {/* ---- Contents -------------------------------------------- */}
-      <h2 className="label-ui mb-3" style={{ fontSize: 'var(--t-caption)' }}>
-        The book
-      </h2>
+      <h2 className="sr-only">The book</h2>
 
       <RunningOrder contents={buildContents()} />
     </div>
