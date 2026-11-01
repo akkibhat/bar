@@ -1939,7 +1939,7 @@ button.card:hover {
 .rows__line {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(10rem, 1.8fr) 4.5rem 4.5rem minmax(5.5rem, 1fr) auto auto;
+  grid-template-columns: minmax(10rem, 1.8fr) 4.5rem 5.5rem minmax(5.5rem, 1fr) auto auto;
   align-items: baseline;
   gap: var(--s-md);
   padding: 0.7rem 0;
@@ -1968,6 +1968,7 @@ button.card:hover {
   color: var(--ink-faint);
 }
 .rows__abv {
+  white-space: nowrap;
   font-family: var(--font-ui);
   font-size: var(--t-caption);
   color: var(--ink-soft);
@@ -2009,7 +2010,7 @@ button.card:hover {
 .plates__item {
   display: flex;
   gap: var(--s-lg);
-  align-items: flex-end;
+  align-items: flex-start;
   padding: var(--s-lg) 0;
   border-bottom: 1px solid var(--rule);
 }
@@ -2079,14 +2080,16 @@ button.card:hover {
   font-size: var(--t-micro);
   line-height: 1.4;
   letter-spacing: 0.02em;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity var(--m-quick) var(--ease);
   z-index: 5;
+  /* Not laid out at all until wanted. Opacity 0 would hide it but leave
+     it taking up room, and a note wider than the space to the right of a
+     link made the whole page scroll sideways on a phone. */
+  display: none;
 }
 .drink-link--ext:hover::after,
 .drink-link--ext:focus-visible::after {
-  opacity: 1;
+  display: block;
 }
 
 
@@ -2153,5 +2156,36 @@ button.card:hover {
   }
   .chapter-head__numeral {
     font-size: 2rem;
+  }
+}
+
+/* A glass's name stays on one line; the leader gives way instead. Only
+   where there is room: on a phone the name has to be free to wrap or the
+   row pushes the whole page sideways. */
+@media (min-width: 48rem) {
+  .plates__item .display {
+    white-space: nowrap;
+  }
+}
+.plates__item .spec__line {
+  min-width: 0;
+}
+
+/* The top bar on a phone. Home, both halves, the theme switch and the
+   Contents button add up to a little more than 390px at their desktop
+   padding, which pushed "Contents" off the right edge. Trimming the
+   padding between them, not the items, keeps every control on screen. */
+@media (max-width: 30rem) {
+  nav.sunk > div {
+    padding-inline: 1rem;
+  }
+  .nav-home {
+    margin-right: 0;
+  }
+  .nav-half {
+    padding-inline: 0.45rem;
+  }
+  nav.sunk .ml-auto > button {
+    padding-inline: 0.45rem;
   }
 }
