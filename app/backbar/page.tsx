@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import Rule from '@/components/Rule';
-import HalfTitle from '@/components/HalfTitle';
+import PageHead from '@/components/PageHead';
 import BackbarGrid from '@/components/BackbarGrid';
 import { BOOK, FORMER_NAME, SHELF_HALF } from '@/lib/site';
 import { IBA_JOIN, IBA_PULLED_AT, PULLED_AT, SHELF } from '@/lib/backbar';
@@ -34,36 +33,33 @@ export const metadata: Metadata = {
  */
 export default function BackbarPage() {
   return (
-    <div
-      className="relative mx-auto max-w-[52rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16"
-      style={{ ['--accent' as string]: SHELF_HALF.accent }}
-    >
-
-      {/* ---- Masthead -------------------------------------------- */}
-      <header className="mb-8">
-
-        <HalfTitle half={SHELF_HALF} />
-        <Rule variant="double" className="mt-3" />
-
-        <p className="t-lead leading-relaxed mt-6 max-w-[34rem]">
+    <>
+      <PageHead
+        title={
+          <>
+            Back<span>bar</span>
+          </>
+        }
+      >
+        <p className="page-head__lead">
           My own creations - {SHELF.length} of them - with the full build in
           millilitres, the method as steps, and a note on why each one is put
-          together the way it is. Some are riffs on a classic; some started as
-          an idea about one ingredient. Behind the switch, the whole official
-          IBA list, sorted onto the IBA&rsquo;s own three. The{' '}
-          {IBA_JOIN.written} the book writes up carry their spec here; the rest
-          are a name and a link out, since those recipes are theirs.
+          together the way it is.
         </p>
-
-        <p
-          className="t-base mt-4 max-w-[34rem]"
-          style={{ color: 'var(--ink-soft)' }}
-        >
-          Published as <em>{FORMER_NAME}</em> until this site put the two
-          halves together. Same drinks, same specs.
+        <p className="page-head__sub">
+          Some are riffs on a classic; some started as an idea about one
+          ingredient. Behind the switch, the whole official IBA list, sorted
+          onto the IBA&rsquo;s own three. The {IBA_JOIN.written} the book
+          writes up carry their spec here; the rest are a name and a link out,
+          since those recipes are theirs. Published as <em>{FORMER_NAME}</em>{' '}
+          until this site put the two halves together.
         </p>
-      </header>
+      </PageHead>
 
+      <div
+        className="relative mx-auto max-w-[52rem] px-6 sm:px-10 lg:px-12 pb-12 lg:pb-16"
+        style={{ ['--accent' as string]: SHELF_HALF.accent }}
+      >
       <BackbarGrid />
 
       <p className="t-caption mt-8" style={{ color: 'var(--ink-faint)' }}>
@@ -87,6 +83,7 @@ export default function BackbarPage() {
         </Link>{' '}
         covers the structures, the ratios and what every bottle is for.
       </p>
-    </div>
+      </div>
+    </>
   );
 }

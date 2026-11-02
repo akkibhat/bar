@@ -86,7 +86,7 @@ export default function GlasswarePicker({
                         >
                           {d}
                           <span aria-hidden="true">{' \u2197'}</span>
-                          <span className="sr-only"> (opens the IBA's site)</span>
+                          <span className="sr-only"> (opens the IBA&rsquo;s site)</span>
                         </a>
                       ) : (
                         <Link href={links[d].href} className="drink-link">

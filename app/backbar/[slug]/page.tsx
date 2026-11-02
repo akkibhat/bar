@@ -4,9 +4,10 @@ import { notFound, permanentRedirect } from 'next/navigation';
 import Rule from '@/components/Rule';
 import SpecSheet from '@/components/SpecSheet';
 import IbaLinks from '@/components/IbaLinks';
+import BuildGlass from '@/components/BuildGlass';
+import { capacityOf, glassSlugFor } from '@/lib/buildGlass';
 import { SHELF_HALF } from '@/lib/site';
 import { methodChapter, spiritChapter } from '@/lib/crosslinks';
-import GlassShape from '@/components/GlassShape';
 import { glassFor } from '@/lib/glassware';
 import {
   PAGED,
@@ -135,12 +136,19 @@ export default async function DrinkPage({
 
       {/* ---- Header --------------------------------------------- */}
       <header className="mb-8">
-        {glass && (
-          <figure className="float-right ml-6 mb-4 text-center">
-            <GlassShape glass={glass} size={96} />
-            <figcaption className="label-ui mt-2">{glass.name}</figcaption>
-          </figure>
-        )}
+        {/* The drink's build, drawn in the glass it is served in: the
+            same drawing the front door shows, so a drink looks the same
+            in both places. It sits beside the title and the page's own
+            Build section below stays the reference. */}
+        <figure className="drink-glass">
+          <BuildGlass
+            spec={drink.spec.map((l) => ({ name: l.name, amount: l.amount ?? null }))}
+            glassSlug={glassSlugFor(drink.glass)}
+            capacity={capacityOf(glassSlugFor(drink.glass))}
+            drinkKey={drink.slug}
+          />
+          {glass && <figcaption className="label-ui">{glass.name}</figcaption>}
+        </figure>
 
         <p className="label-ui mb-2" style={{ color: 'var(--accent)' }}>
           {shelfOf(drink)}

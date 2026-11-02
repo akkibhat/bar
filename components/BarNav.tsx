@@ -80,7 +80,7 @@ export default function BarNav({ contents }: { contents: ContentsChapter[] }) {
           height: 'var(--nav-h)',
         }}
       >
-        <div className="mx-auto max-w-[58rem] px-6 sm:px-10 h-full flex items-center gap-1">
+        <div className="nav-frame h-full flex items-center gap-1">
           {/* An icon rather than the word "Home": the row already has two
               wordmarks, and a third word reads as a third section. */}
           <Link

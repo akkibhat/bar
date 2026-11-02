@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { CATEGORY_LABEL, GLOSSARY, lookupTerm } from '@/lib/glossary';
 import type { GlossaryCategory } from '@/lib/schema';
 
@@ -37,22 +37,26 @@ export default function GlossarySearch() {
      nothing at all. Following one clears the search and the category
      first, then scrolls once the list has re-rendered with the term in
      it. `pending` carries the slug across that render. */
-  const [pending, setPending] = useState<string | null>(null);
+  const pending = useRef<string | null>(null);
 
   const jumpTo = (slug: string) => {
+    pending.current = slug;
     setQuery('');
     setCategory('all');
-    setPending(slug);
   };
 
+  /* A ref, not state: the slug only has to survive until the list has
+     re-rendered, and storing it in state meant setting state from an
+     effect to clear it again, which renders twice for nothing. */
   useEffect(() => {
-    if (!pending) return;
-    const el = document.getElementById(pending);
+    const slug = pending.current;
+    if (!slug) return;
+    const el = document.getElementById(slug);
     if (!el) return;
     el.scrollIntoView({ block: 'start' });
-    history.replaceState(null, '', `#${pending}`);
-    setPending(null);
-  }, [pending, shown]);
+    history.replaceState(null, '', `#${slug}`);
+    pending.current = null;
+  }, [shown]);
 
   return (
     <>

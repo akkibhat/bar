@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { glassPath } from './GlassShape';
+import BuildGlass from './BuildGlass';
 
 /**
  * The front door, built around the millilitre.
@@ -49,59 +49,6 @@ export type DoorPart = {
   href: string;
 };
 
-/* The part of each glass that holds liquid, in the 40 x 64 drawing the
-   glassware picker uses, and how fast it fills: the exponent turns a
-   share of the volume into a share of the height. A straight-sided glass
-   is linear; a cone is the cube root of it. */
-const BOWL: Record<string, { d: string; top: number; bottom: number; exp: number }> = {
-  martini: { d: 'M7 12 H33 L20 33 Z', top: 12, bottom: 33, exp: 1 / 3 },
-  coupe: { d: 'M8 15 C8 31 32 31 32 15 Z', top: 15, bottom: 27, exp: 0.45 },
-  highball: { d: 'M11 14 L12 58 H28 L29 14 Z', top: 14, bottom: 58, exp: 1 },
-};
-
-/**
- * A colour for an ingredient, from its name. More specific names come
- * first ("cherry syrup" before "syrup"). Anything unrecognised takes the
- * next colour from the fallback list, so a new drink still draws.
- */
-const COLOURS: [string, string][] = [
-  ['cherry', '#a8323f'],
-  ['cassis', '#5a1a3a'],
-  ['port', '#8a2a38'],
-  ['espresso', '#5a3a22'],
-  ['coffee', '#5a3a22'],
-  ['butterscotch', '#c98a3f'],
-  ['ginger beer', '#d9a63b'],
-  ['rum', '#9a5a2b'],
-  ['limoncello', '#f1de52'],
-  ['prosecco', '#f0e1a0'],
-  ['champagne', '#f0e1a0'],
-  ['peach', '#f2b27a'],
-  ['apple', '#d9b25a'],
-  ['orange', '#f0a640'],
-  ['lime', '#c6d77a'],
-  ['lemon', '#f1e68a'],
-  ['italicus', '#c8d27a'],
-  ['mezcal', '#d6b878'],
-  ['tequila', '#e6d8a8'],
-  ['gin', '#dfe6e0'],
-  ['vodka', '#e9e2cf'],
-  ['soda', '#cfe3ea'],
-  ['syrup', '#e8d9b5'],
-];
-const FALLBACK = ['#d8b48a', '#b9805a', '#e3c9a0', '#a56a48'];
-
-function colourFor(name: string, i: number): string {
-  const n = name.toLowerCase();
-  return COLOURS.find(([k]) => n.includes(k))?.[1] ?? FALLBACK[i % FALLBACK.length];
-}
-
-/** "45 ml" -> 45. Null for a measure that is not in millilitres. */
-function mlOf(amount: string | null): number | null {
-  const m = amount?.match(/^(\d+(?:\.\d+)?)\s*ml$/i);
-  return m ? Number(m[1]) : null;
-}
-
 /** The scale down the left edge: a tick every 10 ml, a label every 50. */
 const TICKS = Array.from({ length: 31 }, (_, i) => i * 10);
 
@@ -120,25 +67,10 @@ export default function MeasureDoor({
   const [picked, setPicked] = useState(drinks[0].slug);
   const drink = drinks.find((d) => d.slug === picked) ?? drinks[0];
 
-  /* The measured lines, bottom of the glass first, each with the colour
-     it is drawn in and the cumulative volume under its top edge. */
-  const measured = drink.spec
-    .map((s, i) => ({ ...s, ml: mlOf(s.amount), colour: colourFor(s.name, i) }))
-    .filter((s): s is typeof s & { ml: number } => s.ml !== null);
-  const unmeasured = drink.spec.filter((s) => mlOf(s.amount) === null);
-
-  const bowl = BOWL[drink.glass] ?? BOWL.coupe;
-  const height = bowl.bottom - bowl.top;
-  const yAt = (volume: number) =>
-    bowl.bottom - height * Math.min(1, volume / drink.capacity) ** bowl.exp;
-
-  /* Each layer starts where the ones under it end. Summed from the
-     earlier lines each time, rather than carried in a variable that is
-     reassigned during render. */
-  const layers = measured.map((s, i) => {
-    const from = measured.slice(0, i).reduce((sum, m) => sum + m.ml, 0);
-    return { ...s, y0: yAt(from), y1: yAt(from + s.ml) };
-  });
+  const measuredText = drink.spec
+    .filter((s) => /ml$/i.test(s.amount ?? ''))
+    .map((s) => `${s.name} ${s.amount}`)
+    .join(', ');
 
   return (
     <div className="door2">
@@ -200,9 +132,7 @@ export default function MeasureDoor({
 
         <figure
           className="door2__glass"
-          aria-label={`${drink.name}, built in a ${drink.glassName.toLowerCase()} glass: ${measured
-            .map((s) => `${s.name} ${s.ml} ml`)
-            .join(', ')}`}
+          aria-label={`${drink.name}, built in a ${drink.glassName.toLowerCase()} glass: ${measuredText}`}
         >
           <figcaption className="door2__cap">
             <span className="door2__drink">{drink.name}</span>
@@ -211,55 +141,14 @@ export default function MeasureDoor({
               {drink.glassName.toLowerCase()}
             </span>
           </figcaption>
-
-          {/* key on the drink so the layers rise again when it changes */}
-          <svg viewBox="0 0 40 64" className="door2__svg" aria-hidden="true" key={drink.slug}>
-            <defs>
-              <clipPath id="door2-bowl">
-                <path d={bowl.d} />
-              </clipPath>
-            </defs>
-            <g clipPath="url(#door2-bowl)">
-              {layers.map((l, i) => (
-                <rect
-                  key={l.name + i}
-                  x="0"
-                  width="40"
-                  y={l.y1}
-                  height={Math.max(0, l.y0 - l.y1)}
-                  fill={l.colour}
-                  className="door2__layer"
-                  style={{ animationDelay: `${i * 90}ms` }}
-                />
-              ))}
-            </g>
-            <path
-              d={glassPath(drink.glass) ?? bowl.d}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.6"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              vectorEffect="non-scaling-stroke"
-            />
-          </svg>
-
-          <ul className="door2__legend">
-            {[...layers].reverse().map((l) => (
-              <li key={l.name}>
-                <i style={{ background: l.colour }} />
-                {l.name} <span>{l.ml} ml</span>
-              </li>
-            ))}
-            {unmeasured.map((s) => (
-              <li key={s.name} className="is-text">
-                <i />
-                {s.name} <span>{s.amount ?? ''}</span>
-              </li>
-            ))}
-          </ul>
+          <BuildGlass
+            spec={drink.spec}
+            glassSlug={drink.glass}
+            capacity={drink.capacity}
+            drinkKey={drink.slug}
+            className="door2__bglass"
+          />
           <p className="door2__note">
-            A schematic, not to scale.{' '}
             <Link href={`/backbar/${drink.slug}`}>Open the full spec</Link>
           </p>
         </figure>

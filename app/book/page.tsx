@@ -2,8 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import RunningOrder from '@/components/RunningOrder';
 import Fold from '@/components/Fold';
-import HalfTitle from '@/components/HalfTitle';
-import { BOOK } from '@/lib/site';
+import PageHead from '@/components/PageHead';
 import {
   buildContents,
   CHAPTER_COUNT,
@@ -70,31 +69,22 @@ export default function BookPage() {
   ];
 
   return (
-    <div className="mx-auto max-w-[46rem] px-6 sm:px-10 py-12 lg:py-20">
-      {/* ---- Masthead -------------------------------------------- */}
-      <header className="mb-14">
-        <HalfTitle half={BOOK} />
-
-        <hr className="rule-double my-6" />
-
-        <p className="t-lead leading-relaxed max-w-[34rem]">
+    <>
+      <PageHead
+        title={
+          <>
+            Bar<span>book</span>
+          </>
+        }
+      >
+        <p className="page-head__lead">
           What is behind a bar, and what to do with it. How every spirit is
           made, what beer is, the seven methods, the glassware, the service,
           and the six structures most cocktails are built on.
         </p>
-
-        <p
-          className="t-base mt-4 max-w-[34rem]"
-          style={{ color: 'var(--ink-soft)' }}
-        >
+        <p className="page-head__sub">
           Written up from a mixology qualification and four years working in
-          hospitality. In reading order, but you can start anywhere.
-        </p>
-
-        <p
-          className="t-base mt-4 max-w-[34rem]"
-          style={{ color: 'var(--ink-soft)' }}
-        >
+          hospitality. In reading order, but you can start anywhere.{' '}
           <span className="nums">{CHAPTER_COUNT}</span> chapters.
           {open > 0 && (
             <>
@@ -105,8 +95,9 @@ export default function BookPage() {
             </>
           )}
         </p>
-      </header>
+      </PageHead>
 
+      <div className="mx-auto max-w-[46rem] px-6 sm:px-10 pb-12 lg:pb-20">
       {/* ---- Behind the bar --------------------------------------
           Folded shut by default. Someone arriving at the contents is
           looking for a chapter, and seven tools with a line of
@@ -159,6 +150,7 @@ export default function BookPage() {
       <h2 className="sr-only">The book</h2>
 
       <RunningOrder contents={buildContents()} />
-    </div>
+      </div>
+    </>
   );
 }

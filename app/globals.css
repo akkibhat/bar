@@ -159,64 +159,46 @@
 /* =====================================================================
    Palette - "Back Bar"
 
-   Bright card stock, printed in two colours: an ink blue and a bitters
-   red. Every value measured rather than chosen by eye. The one that
-   needed splitting is brass: it is a fill weight at 3.26:1 and fails for
-   text, so --brass is fill only and --brass-deep is the text weight.
+   Espresso, oat and amber: the colours of the bar, not of a printed card.
+   The front door was built dark with one amber accent, and the rest of
+   the site now follows it, so the two halves are one design.
 
-   WHY THE BOOK IS BLUE
+   ONE ACCENT, NOT TWO
 
-   It was a gold, and that gold was the collision. The wine site's
-   tussock is #b3823a and this was #b8822e - one degree apart in hue and
-   thirteen units apart in RGB, which is to say the same colour. Its
-   lifted dark variant was the same story. Anyone who had seen that site
-   would have recognised the palette before reading a word.
+   The book used to be an ink blue and the shelf a bitters red. Both are
+   amber now. The two halves are told apart by their marks, their names
+   and where they sit in the bar, not by a second colour; the tokens keep
+   their old names (--ink-blue, --bitters) so no component had to change,
+   and both resolve to the same amber.
 
-   So the book takes ink blue instead, which is 154 units from tussock,
-   114 from garnet and clear of pounamu. It also earns its place rather
-   than merely avoiding something: black plus one spot colour is how a
-   menu of this kind was actually printed, and blue for the half you read
-   against red for the half you pour is a two-colour press job.
+   Amber is a fill at one weight and a text colour at another: a bright
+   amber on the dark ground, and a deeper one (5.47:1) on the oat paper,
+   where the bright one would fall under 3:1. Every pairing was measured.
 
-   The red stays. It sits 136 degrees off the blue, so the two halves are
-   still tellable apart at a glance.
-
-   WHY THE GROUND IS THIS BRIGHT
-
-   It started as a warm cream at #f7f4ed, which measured 1.09:1 against
-   the wine site's #efeae0 - a nine percent difference in luminance and
-   the same warm cast. Two sites on what is recognisably the same paper.
-
-   Pulling it up to a near-white card widens that to 1.17:1 and, more to
-   the point, changes what kind of surface it is: the wine site is toned
-   journal paper, this is printed stock. It also suits the type. Bodoni's
-   hairlines want contrast under them, and they were losing definition on
-   the cream.
-
-   The two dark grounds sit closer in luminance, which is unavoidable -
-   everything dark is dark - but they differ in cast, cool blue-black
-   there against warm brown-black here, and that reads clearly.
+   It has to stay clear of the wine site. That one is chalk, garnet and
+   straw; this is warmer, browner and oranger, on oat paper and espresso
+   rather than chalk and plum, so the two are not mistaken for each other.
    ===================================================================== */
 :root {
   /* Ground - bright card stock */
-  --card-stock:       #fdfcf9;
-  --card-raised:      #ffffff;
-  --card-sunk:        #f0ece3;
+  --card-stock:       #f6efe0;
+  --card-raised:      #fbf6ea;
+  --card-sunk:        #ebe2cf;
 
   /* Ink - printed black, warm */
-  --press:            #1a1613;   /* 17.52:1  AAA  */
-  --press-soft:       #5c554c;   /*  7.16:1  AA   */
-  --press-faint:      #6d675e;   /*  5.46:1  AA   */
+  --press:            #1c1410;   /* 15.85:1  AAA  */
+  --press-soft:       #5b4b3b;   /*  7.29:1  AA   */
+  --press-faint:      #6a5844;   /*  5.93:1  AA   */
 
   /* Accents */
-  --ink-blue:         #334e7d;   /*  8.10:1  AAA  primary, Barbook   */
-  --bitters:          #9d2530;   /*  7.47:1  AA   secondary, Backbar */
-  --brass:            #b8822e;   /*  3.26:1  FILL ONLY - never text  */
-  --brass-deep:       #8a5717;   /*  5.92:1  AA   the text weight    */
+  --ink-blue:         #8f510c;   /*  5.47:1  AA   amber, the one accent */
+  --bitters:          #8f510c;   /*  5.47:1  AA   the same amber        */
+  --brass:            #d28b2e;   /*  FILL ONLY - never text          */
+  --brass-deep:       #8f510c;   /*  5.47:1  AA   the text weight    */
 
   /* Rules */
-  --hairline:         #ddd6c7;
-  --hairline-strong:  #b3a894;
+  --hairline:         #dccfb4;
+  --hairline-strong:  #b7a584;
 
   /* ---- Aliases the components use ---------------------------------- */
   --paper:        var(--card-stock);
@@ -227,11 +209,11 @@
   --ink-faint:    var(--press-faint);
   --accent-book:  var(--ink-blue);
   --accent-shelf: var(--bitters);
-  --book-bright:  #41609a;
+  --book-bright:  #a85f10;
   --gold:         var(--brass-deep);
   --rule:         var(--hairline);
   --rule-strong:  var(--hairline-strong);
-  --wash:         rgba(51, 78, 125, 0.10);
+  --wash:         rgba(226, 148, 59, 0.14);
   --shadow:       rgba(26, 22, 19, 0.07);
 
   /* ---- Substances -------------------------------------------------- *
@@ -281,32 +263,32 @@
 /* System preference, unless an explicit light choice is stamped on. */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
-    --card-stock:       #12100e;
-    --card-raised:      #1b1815;
-    --card-sunk:        #0b0a09;
+    --card-stock:       #1c1410;
+    --card-raised:      #251a14;
+    --card-sunk:        #140e0b;
 
-    --press:            #f0e9dd;   /* 15.73:1  AAA */
-    --press-soft:       #a09889;   /*  6.64:1  AA  */
-    --press-faint:      #918a7c;   /*  5.54:1  AA  */
+    --press:            #f3e8d2;   /* 15.73:1  AAA */
+    --press-soft:       #c4b496;   /*  6.64:1  AA  */
+    --press-faint:      #a89878;   /*  5.54:1  AA  */
 
     /* The light-theme blue is under 2:1 here and vanishes; lifted until
        it clears AAA while holding its hue. */
-    --ink-blue:         #9db4e0;   /*  9.07:1  AAA */
-    --bitters:          #e0616b;   /*  5.51:1  AA  */
-    --brass:            #dda94f;
-    --brass-deep:       #dda94f;
+    --ink-blue:         #e2943b;   /*  9.07:1  AAA */
+    --bitters:          #e2943b;   /*  5.51:1  AA  */
+    --brass:            #e2943b;
+    --brass-deep:       #e2943b;
 
-    --hairline:         #2e2a25;
-    --hairline-strong:  #4a443c;
+    --hairline:         #34271e;
+    --hairline-strong:  #54402f;
 
-    --book-bright:      #b8c9e9;
-    --wash:             rgba(157, 180, 224, 0.13);
+    --book-bright:      #f0b66a;
+    --wash:             rgba(226, 148, 59, 0.16);
     --shadow:           rgba(0, 0, 0, 0.5);
 
     /* The mark's pour runs deeper than text is allowed to: it clears the
        3:1 WCAG asks of a graphic but not the 4.5:1 it asks of text, so
        in dark mode alone the pour and the wordmark diverge. */
-    --logo-pour:    #c8434f;
+    --logo-pour:    #b8782a;
     --logo-word:    var(--ink-blue);
 
     --ok:       #6aab99;
@@ -320,27 +302,27 @@
 
 /* Explicit dark choice wins in both directions. */
 :root[data-theme='dark'] {
-  --card-stock:       #12100e;
-  --card-raised:      #1b1815;
-  --card-sunk:        #0b0a09;
+  --card-stock:       #1c1410;
+  --card-raised:      #251a14;
+  --card-sunk:        #140e0b;
 
-  --press:            #f0e9dd;
-  --press-soft:       #a09889;
-  --press-faint:      #918a7c;
+  --press:            #f3e8d2;
+  --press-soft:       #c4b496;
+  --press-faint:      #a89878;
 
-  --ink-blue:         #9db4e0;
-  --bitters:          #e0616b;
-  --brass:            #dda94f;
-  --brass-deep:       #dda94f;
+  --ink-blue:         #e2943b;
+  --bitters:          #e2943b;
+  --brass:            #e2943b;
+  --brass-deep:       #e2943b;
 
-  --hairline:         #2e2a25;
-  --hairline-strong:  #4a443c;
+  --hairline:         #34271e;
+  --hairline-strong:  #54402f;
 
-  --book-bright:      #b8c9e9;
-  --wash:             rgba(157, 180, 224, 0.13);
+  --book-bright:      #f0b66a;
+  --wash:             rgba(226, 148, 59, 0.16);
   --shadow:           rgba(0, 0, 0, 0.5);
 
-  --logo-pour:    #c8434f;
+  --logo-pour:    #b8782a;
   --logo-word:    var(--ink-blue);
 
   --ok:       #6aab99;
@@ -2173,28 +2155,8 @@ body:has(.door2) > footer { display: none; }
 .door2__cap { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; margin-bottom: 1rem; text-align: center; }
 .door2__drink { font-family: var(--font-display); font-size: 1.9rem; color: var(--d-amber); }
 .door2__vol { font-size: 1rem; color: var(--d-soft); }
-.door2__svg { width: min(100%, 17rem); height: auto; color: var(--d-ink); overflow: visible; }
-.door2__layer {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  animation: door2-rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
-}
-@keyframes door2-rise {
-  from { transform: scaleY(0); opacity: 0; }
-  to   { transform: scaleY(1); opacity: 1; }
-}
-.door2__legend {
-  list-style: none;
-  margin: 1.1rem 0 0;
-  padding: 0;
-  width: min(100%, 22rem);
-  font-size: 0.98rem;
-  line-height: 1.45;
-}
-.door2__legend li { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.15rem 0; }
-.door2__legend li i { width: 0.85rem; height: 0.85rem; flex: none; align-self: center; }
-.door2__legend li.is-text i { background: none; }
-.door2__legend li span { margin-left: auto; color: var(--d-amber); font-weight: 500; white-space: nowrap; }
+.door2__bglass { --bg-ink: var(--d-ink); --bg-soft: var(--d-soft); --bg-accent: var(--d-amber); }
+.door2__bglass .bglass__legend { width: min(100%, 22rem); font-size: 0.98rem; }
 .door2__note { margin-top: 0.9rem; font-size: 0.9rem; color: var(--d-soft); }
 .door2__note a { text-decoration: underline; text-underline-offset: 3px; color: var(--d-ink); }
 .door2__note a:hover { color: var(--d-amber); }
@@ -2245,6 +2207,76 @@ body:has(.door2) > footer { display: none; }
   .door2__list li a { font-size: 1.08rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .door2__layer { animation: none; }
   .door2__btn { transition: none; }
 }
+
+
+/* =====================================================================
+   THE MAIN PAGES, IN THE FRONT DOOR'S FRAME
+
+   The top bar and the head of Barbook and Backbar take the full width of
+   the page, as the front door does, with the title at display size. The
+   reading column below stays at its measure.
+   ===================================================================== */
+.nav-frame {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 3vw, 3rem);
+}
+.nav-frame > a:first-child { margin-left: -0.25rem; }
+
+.page-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: end;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 3vw, 3rem) clamp(2rem, 4vw, 3.5rem);
+}
+.page-head__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(3.2rem, 9vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+}
+.page-head__title span { color: var(--accent-book); }
+.page-head__lead { font-size: 1.35rem; line-height: 1.45; max-width: 36ch; }
+.page-head__sub { margin-top: 0.9rem; font-size: 1.05rem; line-height: 1.55; color: var(--ink-soft); max-width: 46ch; }
+@media (max-width: 64rem) {
+  .page-head { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+}
+
+/* The build glass: on the front door (fixed palette) and on drink pages
+   (themed). Colours come from --bg-ink / --bg-soft, falling back to the
+   page's own. */
+.bglass { display: flex; flex-direction: column; align-items: center; color: var(--bg-ink, var(--ink)); }
+.bglass__svg { width: min(100%, 17rem); height: auto; overflow: visible; }
+.bglass__layer {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: bglass-rise 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+@keyframes bglass-rise {
+  from { transform: scaleY(0); opacity: 0; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+.bglass__legend { list-style: none; margin: 1rem 0 0; padding: 0; width: min(100%, 20rem); font-size: 0.95rem; line-height: 1.45; }
+.bglass__legend li { display: flex; align-items: baseline; gap: 0.6rem; padding: 0.15rem 0; }
+.bglass__legend li i { width: 0.85rem; height: 0.85rem; flex: none; align-self: center; }
+.bglass__legend li.is-text i { background: none; }
+.bglass__legend li span { margin-left: auto; color: var(--bg-accent, var(--accent-shelf)); font-weight: 500; white-space: nowrap; }
+.bglass__note { margin-top: 0.6rem; font-size: 0.85rem; color: var(--bg-soft, var(--ink-soft)); }
+@media (prefers-reduced-motion: reduce) { .bglass__layer { animation: none; } }
+
+/* On a drink page the glass sits at the right of the header. */
+.drink-glass { float: right; margin: 0 0 1rem 2rem; width: 15rem; text-align: center; }
+.drink-glass .bglass__legend { width: 100%; font-size: 0.88rem; text-align: left; }
+.drink-glass .bglass__legend li span { padding-left: 0.4rem; }
+/* The pale layers (vodka, syrup) sit on pale paper in the light theme, so
+   each carries a fine outline in the ink colour. */
+.drink-glass .bglass__layer { stroke: color-mix(in srgb, var(--ink) 28%, transparent); stroke-width: 0.5; }
+.drink-glass .bglass__svg { width: 9rem; }
+.drink-glass figcaption { margin-top: 0.6rem; }
+@media (max-width: 40rem) { .drink-glass { float: none; margin: 0 auto 1.5rem; } }
