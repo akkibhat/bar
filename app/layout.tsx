@@ -89,10 +89,11 @@ export const metadata: Metadata = {
 const THEME_SCRIPT = `
 (function () {
   try {
+    /* Dark unless the reader has chosen light. The system setting is not
+       consulted: the whole site is dark by design, and the switch is how a
+       reader opts out. */
     var saved = localStorage.getItem('bar.theme');
-    if (saved === 'dark' || saved === 'light') {
-      document.documentElement.setAttribute('data-theme', saved);
-    }
+    document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
   } catch (e) {}
 })();
 `;
@@ -107,6 +108,7 @@ export default function RootLayout({
        HTML. It suppresses the warning for this element's attributes only. */
     <html
       lang="en"
+      data-theme="dark"
       className={`${bodoni.variable} ${lora.variable} ${jost.variable}`}
       suppressHydrationWarning
     >

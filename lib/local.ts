@@ -186,17 +186,17 @@ function themeSubscribe(onChange: () => void): () => void {
 function themeSnapshot(): 'light' | 'dark' {
   const stamped = document.documentElement.getAttribute('data-theme');
   if (stamped === 'dark' || stamped === 'light') return stamped;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
+  /* No stamp means the layout's script has not run: the site is dark
+     unless the reader chose light, whatever the system setting says. */
+  return 'dark';
 }
 
 export function useLights() {
   const theme = useSyncExternalStore(
     themeSubscribe,
     themeSnapshot,
-    // The server cannot know the preference; light is the base palette.
-    () => 'light' as const,
+    // The server cannot know the preference; the site is dark by default.
+    () => 'dark' as const,
   );
 
   const toggle = useCallback(() => {

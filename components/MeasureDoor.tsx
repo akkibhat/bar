@@ -49,9 +49,6 @@ export type DoorPart = {
   href: string;
 };
 
-/** The scale down the left edge: a tick every 10 ml, a label every 50. */
-const TICKS = Array.from({ length: 31 }, (_, i) => i * 10);
-
 export default function MeasureDoor({
   drinks,
   parts,
@@ -85,18 +82,6 @@ export default function MeasureDoor({
 
       {/* ---- The measure ------------------------------------------ */}
       <section className="door2__hero">
-        <div className="door2__scale" aria-hidden="true">
-          {TICKS.map((t) => (
-            <i
-              key={t}
-              className={t % 50 === 0 ? 'is-major' : undefined}
-              style={{ top: `${(t / 300) * 100}%` }}
-            >
-              {t % 50 === 0 && <b>{t} ml</b>}
-            </i>
-          ))}
-        </div>
-
         <div className="door2__copy">
           <h1 className="door2__h1">
             Everything behind a bar, <em>to the ml.</em>
@@ -147,6 +132,7 @@ export default function MeasureDoor({
             capacity={drink.capacity}
             drinkKey={drink.slug}
             className="door2__bglass"
+            scale
           />
           <p className="door2__note">
             <Link href={`/backbar/${drink.slug}`}>Open the full spec</Link>

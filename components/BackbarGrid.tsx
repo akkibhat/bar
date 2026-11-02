@@ -381,8 +381,11 @@ function FilterLink({
     <button
       onClick={onClick}
       aria-pressed={on}
-      className="t-caption"
+      className="t-ui"
       style={{
+        minHeight: '2.75rem',
+        display: 'inline-flex',
+        alignItems: 'center',
         color: on ? 'var(--accent-shelf)' : 'var(--ink-soft)',
         borderBottom: on
           ? '1px solid var(--accent-shelf)'

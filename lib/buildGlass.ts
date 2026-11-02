@@ -90,6 +90,14 @@ export function mlOf(amount: string | null | undefined): number | null {
   return m ? Number(m[1]) : null;
 }
 
+/** Height in the 40 x 64 drawing that a given volume reaches in this glass. */
+export function yAtFor(glassSlug: string, capacity: number) {
+  const bowl = BOWL[glassSlug] ?? BOWL.coupe;
+  const height = bowl.bottom - bowl.top;
+  return (volume: number) =>
+    bowl.bottom - height * Math.min(1, volume / capacity) ** bowl.exp;
+}
+
 export type BuildLayer = { name: string; ml: number; colour: string; y0: number; y1: number };
 
 /** Everything the drawing needs: the layers, bottom first, and what is left as text. */

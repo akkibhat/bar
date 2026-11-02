@@ -5,7 +5,7 @@ import Rule from '@/components/Rule';
 import SpecSheet from '@/components/SpecSheet';
 import IbaLinks from '@/components/IbaLinks';
 import BuildGlass from '@/components/BuildGlass';
-import { capacityOf, glassSlugFor } from '@/lib/buildGlass';
+import { capacityOf, colourFor, glassSlugFor, mlOf } from '@/lib/buildGlass';
 import { SHELF_HALF } from '@/lib/site';
 import { methodChapter, spiritChapter } from '@/lib/crosslinks';
 import { glassFor } from '@/lib/glassware';
@@ -125,11 +125,7 @@ export default async function DrinkPage({
 
 
       <p className="no-print mb-6">
-        <Link
-          href="/backbar"
-          className="label-ui"
-          style={{ color: 'var(--accent)' }}
-        >
+        <Link href="/backbar" className="t-ui" style={{ color: 'var(--accent)' }}>
           ← The shelf
         </Link>
       </p>
@@ -146,12 +142,14 @@ export default async function DrinkPage({
             glassSlug={glassSlugFor(drink.glass)}
             capacity={capacityOf(glassSlugFor(drink.glass))}
             drinkKey={drink.slug}
+            scale
+            legend={false}
           />
           {glass && <figcaption className="label-ui">{glass.name}</figcaption>}
         </figure>
 
-        <p className="label-ui mb-2" style={{ color: 'var(--accent)' }}>
-          {shelfOf(drink)}
+        <p className="t-ui mb-2" style={{ color: 'var(--accent)' }}>
+          {shelfOf(drink)} base
         </p>
 
         <h1 className="display t-h1 sm:t-display leading-[1.02] mb-1">
@@ -202,7 +200,15 @@ export default async function DrinkPage({
       {/* ---- The build ------------------------------------------ */}
       <h2 className="display t-h2 leading-none mb-1">Build</h2>
       <Rule variant="hair" width={140} className="mb-4" />
-      <SpecSheet lines={drink.spec} />
+      {/* Each measured line carries the colour of its layer in the glass
+          above, so the build list is the glass's key and the glass needs
+          no separate legend repeating the same rows. */}
+      <SpecSheet
+        lines={drink.spec}
+        colours={drink.spec.map((l, i) =>
+          mlOf(l.amount ?? null) === null ? null : colourFor(l.name, i),
+        )}
+      />
 
       {/* ---- Method --------------------------------------------- */}
       {drink.steps.length > 0 && (
@@ -256,7 +262,7 @@ export default async function DrinkPage({
       {/* ---- In the book --------------------------------------- */}
       {reading.length > 0 && (
         <div className="no-print mt-10">
-          <p className="label-ui mb-2">In the book</p>
+          <p className="t-ui mb-2" style={{ color: 'var(--ink-soft)' }}>In the book</p>
           <ul className="flex flex-wrap gap-x-5 gap-y-1.5">
             {reading.map((c) => (
               <li key={c.slug}>
