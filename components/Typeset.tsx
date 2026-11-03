@@ -13,7 +13,14 @@ import IbaLinks from './IbaLinks';
  * own presentation. Keeping this in one place means the authoring format
  * stays small and every chapter looks consistent.
  */
-export default function ChapterBody({ body }: { body: Block[] }) {
+export default function ChapterBody({
+  body,
+  chapterNo,
+}: {
+  body: Block[];
+  /** The chapter's number in the book, which prefixes every clause number. */
+  chapterNo?: number;
+}) {
   /* Headings are numbered here rather than in the block loop so the ids
      match what `BookIndex` links to - both derive them from the same
      function over the same body, which is the only way two components
@@ -33,14 +40,46 @@ export default function ChapterBody({ body }: { body: Block[] }) {
     }
   });
 
+  /* Clause numbers, in the margin: 16.1, 16.2 ... down the chapter, the way
+     a manual numbers its paragraphs so one can be cited ("see 16.4"). Only
+     the blocks that make a statement are numbered. Headings, figures, spec
+     sheets and tools are not: a heading names a group of clauses and a
+     figure illustrates one. Resolved up front, like the heading ids, so
+     nothing is counted while rendering. */
+  const clauses = new Map<number, string>();
+  if (chapterNo !== undefined) {
+    let k = 0;
+    body.forEach((block, i) => {
+      if (NUMBERED.has(block.kind)) {
+        k += 1;
+        clauses.set(i, `${chapterNo}.${k}`);
+      }
+    });
+  }
+
   return (
     <div className="prose-paper">
-      {body.map((block, i) => (
-        <BlockView key={i} block={block} id={ids.get(i)} />
-      ))}
+      {body.map((block, i) => {
+        const view = <BlockView key={i} block={block} id={ids.get(i)} />;
+        const no = clauses.get(i);
+        if (!no) return view;
+        /* A wrapper only to carry the number. It is positioned in the
+           margin by CSS and hidden where there is no margin to hold it. */
+        return (
+          <div key={i} className={`clause clause--${block.kind}`} id={`c-${no.replace('.', '-')}`}>
+            <span className="clause__n nums" aria-hidden="true">
+              {no}
+            </span>
+            {view}
+          </div>
+        );
+      })}
     </div>
   );
 }
+
+/** The block kinds that get a clause number. */
+const NUMBERED = new Set<Block['kind']>(['p', 'list', 'steps', 'note', 'unsure', 'quote']);
 
 function BlockView({ block, id }: { block: Block; id?: string }) {
   switch (block.kind) {

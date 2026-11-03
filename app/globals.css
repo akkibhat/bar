@@ -2273,3 +2273,44 @@ body:has(.door2) > footer { display: none; }
 
 /* The swatch before a spec line on a drink page: the key to the glass. */
 .spec__swatch { width: 0.85rem; height: 0.85rem; flex: none; align-self: center; margin-right: 0.15rem; }
+
+/* ---------------------------------------------------------------------
+   Clause numbers
+
+   A manual numbers its paragraphs so one can be cited. The number hangs in
+   the left margin on a wide screen and is not shown where there is no
+   margin to hold it, which is every phone and most tablets: it is a way to
+   cite a paragraph, not something the text needs to be understood.
+
+   It lines up with the first line of the block. A note and a still-to-do
+   have a rule along their top edge, so theirs lines up with that rule
+   instead: the number and the line read as one mark.
+   --------------------------------------------------------------------- */
+.clause { position: relative; }
+.clause__n { display: none; }
+@media (min-width: 64rem) {
+  .clause__n {
+    display: block;
+    position: absolute;
+    right: calc(100% + 1.1rem);
+    top: 0;
+    width: 3.6rem;
+    text-align: right;
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--accent-book);
+    /* The prose line is 1.7 tall; the figure sits on that first line's
+       middle rather than its top edge. */
+    line-height: 1.7rem;
+    height: 1.7rem;
+  }
+  .clause--note .clause__n,
+  .clause--unsure .clause__n {
+    /* Level with the block's top rule, not the text inside it. */
+    line-height: 1;
+    height: auto;
+    transform: translateY(-50%);
+  }
+}

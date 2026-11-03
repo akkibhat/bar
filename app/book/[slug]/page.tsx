@@ -99,7 +99,7 @@ export default async function ChapterPage({
       </header>
 
       {/* ---- Body ------------------------------------------------ */}
-      <Typeset body={chapter.body} />
+      <Typeset body={chapter.body} chapterNo={chapter.n} />
 
       {/* ---- On the shelf ---------------------------------------- */}
       {drinks.length > 0 && (
