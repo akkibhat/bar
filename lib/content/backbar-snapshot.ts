@@ -47,7 +47,7 @@ export type ShelfDrink = {
 };
 
 /** When this snapshot was taken, so the page can admit its age. */
-export const PULLED_AT = "2026-09-06T13:10:58.372Z";
+export const PULLED_AT = "2026-11-03T05:02:30.744Z";
 
 /** Everything on the shelf, newest first. */
 export const SHELF: ShelfDrink[] = [
@@ -68,7 +68,7 @@ export const SHELF: ShelfDrink[] = [
     "glass": "Cocktail",
     "method": "Shake",
     "abv": 18.95,
-    "volumeMl": 75,
+    "volumeMl": 93.75,
     "base": "Vanilla Vodka",
     "tags": [
       "original"
@@ -113,7 +113,7 @@ export const SHELF: ShelfDrink[] = [
     "glass": "Highball",
     "method": "Build",
     "abv": 8.77,
-    "volumeMl": 175,
+    "volumeMl": 192.5,
     "base": "Spiced Rum",
     "tags": [
       "original",
@@ -157,7 +157,7 @@ export const SHELF: ShelfDrink[] = [
     "glass": "Coupe",
     "method": "Shake",
     "abv": 10.31,
-    "volumeMl": 130.31,
+    "volumeMl": 162.89,
     "base": "Spiced Rum",
     "tags": [
       "original",
@@ -207,7 +207,7 @@ export const SHELF: ShelfDrink[] = [
     "glass": "Highball",
     "method": "Shake",
     "abv": 10.29,
-    "volumeMl": 140,
+    "volumeMl": 175,
     "base": "Gin",
     "tags": [
       "original",
@@ -250,7 +250,7 @@ export const SHELF: ShelfDrink[] = [
     "glass": "Cocktail",
     "method": "Shake",
     "abv": 19.37,
-    "volumeMl": 95,
+    "volumeMl": 118.75,
     "base": "Tequila Blanco",
     "tags": [
       "original",
@@ -293,7 +293,7 @@ export const SHELF: ShelfDrink[] = [
     "glass": "Highball",
     "method": "Build",
     "abv": 12.32,
-    "volumeMl": 135,
+    "volumeMl": 148.5,
     "base": "Limoncello",
     "tags": [
       "original",
@@ -333,7 +333,7 @@ export const SHELF: ShelfDrink[] = [
     "glass": "Coupe",
     "method": "Shake",
     "abv": 13.75,
-    "volumeMl": 135,
+    "volumeMl": 168.75,
     "base": "Vodka",
     "tags": [
       "original",
@@ -385,7 +385,7 @@ export const SHELF: ShelfDrink[] = [
     "glass": "Coupe",
     "method": "Shake",
     "abv": 18.74,
-    "volumeMl": 110,
+    "volumeMl": 137.5,
     "base": "Mezcal",
     "tags": [
       "original",
