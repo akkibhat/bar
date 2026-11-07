@@ -28,8 +28,8 @@ const font = (file: string) =>
  * The card a shared link renders as, generated at build time.
  *
  * Scrapers do not run JavaScript or read stylesheets, so the colours are
- * literal hexes. They are the site's earlier paper, ink blue and bitters
- * red palette, not the current amber tokens in `app/globals.css`.
+ * literal hexes: the dark theme's espresso, oat and amber from
+ * `app/globals.css`, since dark is how the site opens.
  */
 export default function Image() {
   return new ImageResponse(
@@ -41,11 +41,11 @@ export default function Image() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: '#fdfcf9',
+          background: '#1c1410',
           padding: '72px 80px',
           fontFamily: 'Lora',
           /* A rule across the top, the way the pages are set. */
-          borderTop: '16px solid #9d2530',
+          borderTop: '16px solid #e2943b',
         }}
       >
         <img src={MARK_URI} width={104} height={118} alt="" />
@@ -56,21 +56,21 @@ export default function Image() {
               fontFamily: 'Bodoni Moda',
               fontSize: 104,
               lineHeight: 1.05,
-              color: '#1a1613',
+              color: '#f3e8d2',
               letterSpacing: '-0.02em',
             }}
           >
             Akki&apos;s Bar
           </div>
-          <div style={{ fontSize: 36, color: '#5c554c', marginTop: 20 }}>
+          <div style={{ fontSize: 36, color: '#c4b496', marginTop: 20 }}>
             what I was taught, and what I have built
           </div>
         </div>
 
-        <div style={{ display: 'flex', fontSize: 26, color: '#6d675e' }}>
-          <span style={{ color: '#334e7d' }}>Barbook</span>
+        <div style={{ display: 'flex', fontSize: 26, color: '#a89878' }}>
+          <span style={{ color: '#e2943b' }}>Barbook</span>
           <span style={{ margin: '0 14px' }}>·</span>
-          <span style={{ color: '#9d2530' }}>Backbar</span>
+          <span style={{ color: '#e2943b' }}>Backbar</span>
         </div>
       </div>
     ),

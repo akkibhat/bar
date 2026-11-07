@@ -104,11 +104,11 @@ want. Same component both times.
 
 ## The look
 
-A printed cocktail menu: bright card stock, Bodoni for the names, wide
-small caps for the labels, hairline rules, and measures running to the
-right edge behind dot leaders. Two spot colours on black - an ink blue
-for the half you read, a bitters red for the half you pour - because
-that is how a menu of this kind was actually printed.
+A back bar after hours: espresso ground, oat text and one amber accent
+for both halves, with a light oat-paper theme behind the switch. Bodoni
+for the names, wide small caps for the labels, hairline rules, and
+measures running to the right edge behind dot leaders, the way a printed
+cocktail menu sets them.
 
 Every colour is measured rather than picked. Each text weight clears
 4.5:1 on both grounds, and the six flavour fills are derived at a single

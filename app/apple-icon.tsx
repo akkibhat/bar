@@ -15,7 +15,7 @@ export const contentType = 'image/png';
  *
  * `app/icon.svg` covers the browser tab, but an SVG is not dependable as
  * an Apple touch icon, and a touch icon sits on the phone's wallpaper, so
- * this one carries its own paper ground.
+ * this one carries its own espresso ground (the site's dark theme).
  */
 export default function AppleIcon() {
   return new ImageResponse(
@@ -27,7 +27,7 @@ export default function AppleIcon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#fdfcf9',
+          background: '#1c1410',
         }}
       >
         <img src={MARK_URI} width={96} height={109} alt="" />

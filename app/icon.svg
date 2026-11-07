@@ -8,12 +8,17 @@
     that survives is the one worth shipping here.
 
     Colours are literal rather than theme tokens: a favicon is fetched
-    outside the page and has no stylesheet to read them from. It takes
-    the shelf's red, because the glass is the shelf's variant of the
-    mark, and red holds up against both a light and a dark browser
-    chrome.
+    outside the page and has no stylesheet to read them from. It answers
+    prefers-color-scheme with the two hexes --amber resolves to in
+    `app/globals.css`, so it holds on a light and a dark tab strip.
   -->
-  <g fill="#9d2530">
+  <style>
+    .mark { fill: #8f510c; }
+    @media (prefers-color-scheme: dark) {
+      .mark { fill: #e2943b; }
+    }
+  </style>
+  <g class="mark">
     <path d="M16,24 L104,24 L60,94 Z"/>
     <rect x="56.5" y="94" width="7" height="42"/>
     <rect x="34" y="136" width="52" height="8" rx="3"/>

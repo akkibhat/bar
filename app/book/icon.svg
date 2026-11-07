@@ -17,15 +17,14 @@
     TIERS.micro)` verbatim - if that geometry changes, these are stale.
 
     Colours are literal rather than theme tokens: a favicon is fetched
-    outside the page and has no stylesheet to read them from. Unlike the
-    red, Barbook's blue is dark enough to sink into a dark tab strip, so
-    it answers prefers-color-scheme with the same two hexes the accent-book
-    token resolves to in `app/globals.css`.
+    outside the page and has no stylesheet to read them from. Like the
+    root icon, it answers prefers-color-scheme with the two hexes --amber
+    resolves to in `app/globals.css`.
   -->
   <style>
-    .mark { fill: #334e7d; }
+    .mark { fill: #8f510c; }
     @media (prefers-color-scheme: dark) {
-      .mark { fill: #9db4e0; }
+      .mark { fill: #e2943b; }
     }
   </style>
   <g class="mark">
