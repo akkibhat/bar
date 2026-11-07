@@ -116,10 +116,9 @@
 /* =====================================================================
    SEMANTIC COLOUR
 
-   Kept distinct from the brand accents on purpose. The book's blue
-   carries headings, links and the mark, so it cannot also mean "info",
-   and the shelf's red cannot also mean "alert" - those readings would
-   collide on every page that used both.
+   Kept distinct from the brand accent on purpose. The amber carries
+   headings, links and the mark, so it cannot also mean "caution" or
+   "alert" - those readings would collide on every page.
    ===================================================================== */
 :root {
   --ok:       #2c5d52;   /* 6.84:1  balanced, in range     */
@@ -146,11 +145,9 @@
 /* =====================================================================
    Palette - "Back Bar"
 
-   Espresso, oat and amber, with one accent for both halves. The tokens
-   keep their older names (--ink-blue for the book, --bitters for the
-   shelf) but both resolve to the same amber: a bright one on the dark
-   ground, and a deeper one (5.47:1) on the oat paper, where the bright
-   one would fall under 3:1.
+   Espresso, oat and amber, with one accent (--amber) for both halves:
+   a bright one on the dark ground, and a deeper one (5.47:1) on the oat
+   paper, where the bright one would fall under 3:1.
    ===================================================================== */
 :root {
   /* Ground - bright card stock */
@@ -164,8 +161,7 @@
   --press-faint:      #6a5844;   /*  5.93:1  AA   */
 
   /* Accents */
-  --ink-blue:         #8f510c;   /*  5.47:1  AA   amber, the one accent */
-  --bitters:          #8f510c;   /*  5.47:1  AA   the same amber        */
+  --amber:            #8f510c;   /*  5.47:1  AA   the one accent      */
   --brass:            #d28b2e;   /*  FILL ONLY - never text          */
   --brass-deep:       #8f510c;   /*  5.47:1  AA   the text weight    */
 
@@ -180,8 +176,8 @@
   --ink:          var(--press);
   --ink-soft:     var(--press-soft);
   --ink-faint:    var(--press-faint);
-  --accent-book:  var(--ink-blue);
-  --accent-shelf: var(--bitters);
+  --accent-book:  var(--amber);
+  --accent-shelf: var(--amber);
   --book-bright:  #a85f10;
   --gold:         var(--brass-deep);
   --rule:         var(--hairline);
@@ -221,9 +217,9 @@
   --cherry:       #8e2231;
 
   /* ---- The mark ---------------------------------------------------- */
-  --logo-glass:   var(--ink-blue);
-  --logo-pour:    var(--bitters);
-  --logo-word:    var(--ink-blue);
+  --logo-glass:   var(--amber);
+  --logo-pour:    var(--amber);
+  --logo-word:    var(--amber);
 
   /* Height of the section bar. The book index column sticks directly
      beneath it, so both read this one value. */
@@ -243,10 +239,8 @@
     --press-soft:       #c4b496;   /*  6.64:1  AA  */
     --press-faint:      #a89878;   /*  5.54:1  AA  */
 
-    /* The light-theme blue is under 2:1 here and vanishes; lifted until
-       it clears AAA while holding its hue. */
-    --ink-blue:         #e2943b;   /*  9.07:1  AAA */
-    --bitters:          #e2943b;   /*  5.51:1  AA  */
+    /* The light-theme amber is too dark to read here, so it lifts. */
+    --amber:            #e2943b;   /*  9.07:1  AAA */
     --brass:            #e2943b;
     --brass-deep:       #e2943b;
 
@@ -261,7 +255,7 @@
        3:1 WCAG asks of a graphic but not the 4.5:1 it asks of text, so
        in dark mode alone the pour and the wordmark diverge. */
     --logo-pour:    #b8782a;
-    --logo-word:    var(--ink-blue);
+    --logo-word:    var(--amber);
 
     --ok:       #6aab99;
     --caution:  #d7a95e;
@@ -282,8 +276,7 @@
   --press-soft:       #c4b496;
   --press-faint:      #a89878;
 
-  --ink-blue:         #e2943b;
-  --bitters:          #e2943b;
+  --amber:            #e2943b;
   --brass:            #e2943b;
   --brass-deep:       #e2943b;
 
@@ -295,7 +288,7 @@
   --shadow:           rgba(0, 0, 0, 0.5);
 
   --logo-pour:    #b8782a;
-  --logo-word:    var(--ink-blue);
+  --logo-word:    var(--amber);
 
   --ok:       #6aab99;
   --caution:  #d7a95e;
@@ -1137,9 +1130,9 @@ button.card:hover {
 }
 
 /* The shelf. Bottles are paper until the control is pressed, then each
-   takes its owner's colour. Three categorical fills that already hold
-   contrast on both grounds: the book's blue, the brass, and the sweet
-   family purple from the flavour wheel. */
+   takes its owner's colour. Three categorical fills that hold contrast on
+   both grounds and stay apart from each other: the amber, and the botanic
+   green and sweet purple from the flavour wheel. */
 .shelf-body {
   fill: var(--paper);
   stroke: var(--ink);
@@ -1153,7 +1146,7 @@ button.card:hover {
   fill: var(--ink);
   text-anchor: middle;
 }
-.shelf.revealed [data-owner="diageo"] .shelf-body { fill: var(--accent-book); }
+.shelf.revealed [data-owner="diageo"] .shelf-body { fill: var(--flavour-botanic); }
 .shelf.revealed [data-owner="pernod"] .shelf-body { fill: var(--gold); }
 .shelf.revealed [data-owner="lvmh"]   .shelf-body { fill: var(--flavour-sweet); }
 .shelf-owner { opacity: 0; transition: opacity var(--m-settle) var(--ease); }
@@ -1812,8 +1805,8 @@ button.card:hover {
   padding-top: var(--s-lg);
 }
 
-/* The tools belong to the book, so their measures take the book's blue.
-   The spec sheet's amount otherwise falls back to the shelf's red. */
+/* The tools belong to the book, so their measures take the book's accent.
+   Both halves share the amber now, so this only matters if they split. */
 .plates,
 .tool-sheet {
   --accent: var(--accent-book);
