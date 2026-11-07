@@ -17,7 +17,7 @@
  */
 export type Half = {
   id: 'book' | 'shelf';
-  /** Route prefix. Also how `halfAt` decides where a path belongs. */
+  /** Route prefix. */
   at: string;
   /** The name, as it is set in the wordmark. */
   name: string;
@@ -63,66 +63,22 @@ export const BOOK = HALVES[0];
 /** The shelf half. */
 export const SHELF_HALF = HALVES[1];
 
-/**
- * Which half a path belongs to.
- *
- * Anything not under the shelf belongs to the book, including the
- * standalone tools and the glossary: those are things you look up while
- * reading rather than part of the shelf, and counting them as shelf
- * would light the wrong name in the top bar while you stood on a page
- * belonging to the book.
- */
-export function halfAt(pathname: string): Half {
-  return pathname.startsWith(SHELF_HALF.at) ? SHELF_HALF : BOOK;
-}
-
 /* ===================================================================== *
  * Switches
  * ===================================================================== */
 
 /**
- * Whether to show the end-of-chapter questions.
- *
- * Off. This is a reference to consult rather than a course to complete,
- * and a quiz at the foot of every chapter changes the character of the
- * thing. The questions are still authored on the chapters that have
- * them, so turning this on is the whole job.
- *
- * Typed as `boolean` rather than left to infer the literal `false`, so
- * the guarded branches do not read as statically dead code.
- */
-export const QUIZZES_ENABLED: boolean = false;
-
-/**
  * Whether to track and show reading progress.
  *
- * Off, for the same reason. Progress is a completion mechanic, and a
- * book that counts how much of itself you have finished asks to be
- * finished rather than dipped into - the wrong posture for something you
- * open one-handed while a shaker drips on the counter.
- *
- * Nothing is deleted: the hooks still work, anything already stored
- * under `bar.progress.v1` is left alone, and switching this back on
- * restores that state rather than starting from zero.
+ * Off: the book is meant to be dipped into, not completed. The hooks
+ * still work and anything stored under `bar.progress.v1` is left alone,
+ * so switching this back on restores it.
  */
 export const PROGRESS_ENABLED: boolean = false;
 
 /* ===================================================================== *
  * Provenance
  * ===================================================================== */
-
-/**
- * Whose bar this is.
- *
- * Set into the front door's masthead - "Akki's Bar" across the top above
- * a rule, the way a menu carries the name of the place. The possessive
- * is what lets a personal project put its name up in a display face
- * without reading as a company.
- *
- * It belongs to that masthead alone. Everywhere else the two halves name
- * themselves, and a third name in the row would be noise.
- */
-export const OWNER = 'Akki';
 
 /** The copyright holder, and the year the site went up. */
 export const COPYRIGHT_HOLDER = 'Akki Bhat';

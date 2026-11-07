@@ -368,8 +368,3 @@ export const CATEGORY_LABEL: Record<SpiritCategory, string> = {
   fortified: 'Fortified',
   bitter: 'Bitter',
 };
-
-/** Look up one spirit by slug. */
-export function lookupSpirit(slug: string): Spirit | undefined {
-  return SPIRITS.find((s) => s.slug === slug);
-}

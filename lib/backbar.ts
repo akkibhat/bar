@@ -334,13 +334,6 @@ export function lookupDrink(param: string): ShelfEntry | undefined {
  * Display
  * ===================================================================== */
 
-/** The line of detail under a drink's name. */
-export function summaryLine(drink: ShelfDrink): string {
-  return [drink.method, drink.glass, shelfOf(drink)]
-    .filter(Boolean)
-    .join(' · ');
-}
-
 /**
  * The measures in a build, as one line.
  *

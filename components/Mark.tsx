@@ -1,7 +1,6 @@
 import {
   closedHalf,
   FOOT,
-  LOCKUP,
   openHalf,
   STEM,
   tierAt,
@@ -123,72 +122,5 @@ export function GlassMark({
         </>
       )}
     </svg>
-  );
-}
-
-/**
- * The mark locked up with the wordmark.
- *
- * The suffix takes the accent colour, so the word acts as a key to the
- * drawing: the dark half is the root word, the coloured half is the
- * suffix. And because the accent differs per section, the same lockup
- * says which half of the site you are in twice over - by the word and by
- * the colour.
- *
- * The two halves do not share a suffix pattern the way the wine site's
- * do. `Bar` + `book` works; `Bar` + `back` would spell barback, which is
- * a real job behind a bar and a different one. So the shelf's word is
- * built the other way round - `Back` + `bar` - and the accent lands on
- * the root rather than the suffix.
- */
-export default function Logo({
-  size = 32,
-  wordmark = true,
-  suffix = 'book',
-  className = '',
-}: {
-  size?: number;
-  wordmark?: boolean;
-  /** Which half of the site this lockup names. */
-  suffix?: 'book' | 'shelf';
-  className?: string;
-}) {
-  if (!wordmark)
-    return <GlassMark size={size} variant={suffix} className={className} />;
-
-  /**
-   * The wordmark is sized from the mark, and the gap with it likewise.
-   * That is deliberate: this is a lockup, so its proportions have to hold
-   * at any size the mark is used at. The two ratios come from `LOCKUP` in
-   * lib/mark.ts, so the masthead - which builds its own lockup for the
-   * morph - cannot drift from this one. Snapping the text to a scale step
-   * would break the relationship the moment the mark changed size. It is
-   * the one sanctioned exception to the type scale.
-   */
-  return (
-    <span
-      className={className}
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: size * LOCKUP.gap,
-      }}
-    >
-      <GlassMark size={size} variant={suffix} decorative />
-      <span
-        className="wordmark"
-        style={{ fontSize: size * LOCKUP.word, lineHeight: 1 }}
-      >
-        {suffix === 'shelf' ? (
-          <>
-            <span style={{ color: 'var(--logo-word)' }}>Back</span>bar
-          </>
-        ) : (
-          <>
-            Bar<span style={{ color: 'var(--logo-word)' }}>book</span>
-          </>
-        )}
-      </span>
-    </span>
   );
 }

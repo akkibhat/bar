@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { ImageResponse } from 'next/og';
+import { MARK_URI } from '@/lib/markImage';
 
 /* Static: `output: export` has no server to decide it at request time. */
 export const dynamic = 'force-static';
@@ -22,12 +23,6 @@ export const alt = "Akki's Bar - what I was taught, and what I have built";
  */
 const font = (file: string) =>
   fs.readFileSync(path.join(process.cwd(), 'assets', 'fonts', file));
-
-/* The closed state of the mark: the bowl of a glass on its stem, in the
-   shelf's red. The same shape as `app/icon.svg`. */
-const MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 16 120 136" width="120" height="136"><g fill="#9d2530"><path d="M16,24 L104,24 L60,94 Z"/><rect x="56.5" y="94" width="7" height="42"/><rect x="34" y="136" width="52" height="8" rx="3"/></g></svg>`;
-
-const MARK_URI = `data:image/svg+xml;base64,${Buffer.from(MARK).toString('base64')}`;
 
 /**
  * The card a shared link renders as, generated at build time.

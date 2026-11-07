@@ -105,8 +105,3 @@ export const FLAVOURS: FlavourFamily[] = [
     ],
   },
 ];
-
-/** Look up one family by slug. */
-export function lookupFlavour(slug: string): FlavourFamily | undefined {
-  return FLAVOURS.find((f) => f.slug === slug);
-}

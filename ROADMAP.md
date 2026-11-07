@@ -43,10 +43,11 @@ my own notes, or a bottle I have actually poured.
 
 ### Deferred deliberately
 
-- **Quizzes.** 0 authored so far, and the flag is off. The book is meant
-  to be consulted rather than completed.
-- **Reading progress.** Written, off behind the same flag, for the same
-  reason.
+- **Quizzes.** 0 authored so far, and nothing renders them; only the
+  `quiz` field in the chapter schema is left. The book is meant to be
+  consulted rather than completed.
+- **Reading progress.** Written, off behind `PROGRESS_ENABLED` in
+  `lib/site.ts`, for the same reason.
 
 ### Open questions
 

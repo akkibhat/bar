@@ -14,10 +14,6 @@ export type MethodKey =
   | 'shaking' | 'stirring' | 'muddling' | 'building'
   | 'layering' | 'blending' | 'flaming';
 
-export const METHOD_ORDER: MethodKey[] = [
-  'shaking', 'stirring', 'muddling', 'building', 'layering', 'blending', 'flaming',
-];
-
 export const METHODS: Record<MethodKey, { label: string; note: string; draw: ReactNode }> = {
   /* ---------------------------------------------------------------- */
   shaking: {

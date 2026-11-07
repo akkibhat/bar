@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { notFound, permanentRedirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Rule from '@/components/Rule';
 import SpecSheet from '@/components/SpecSheet';
 import IbaLinks from '@/components/IbaLinks';
@@ -82,11 +82,6 @@ export default async function DrinkPage({
   const drink = lookupDrink(slug);
   if (!drink) notFound();
 
-  /* Reached by a numeric id or Bar Assistant's raw "-N" slug - send it on
-     to the canonical address rather than quietly serving the same page at
-     two of them. */
-  if (slug !== drink.slug) permanentRedirect(`/backbar/${drink.slug}`);
-
   const visibleTags = tagsOf(drink);
   const volume = builtVolume(drink);
 
@@ -121,7 +116,6 @@ export default async function DrinkPage({
           __html: JSON.stringify(recipeSchema(drink)),
         }}
       />
-
 
       <p className="no-print mb-6">
         <Link href="/backbar" className="t-ui" style={{ color: 'var(--accent)' }}>

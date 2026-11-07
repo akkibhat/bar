@@ -126,8 +126,8 @@ altogether.
 
 ## Where it is up to
 
-Every route is prerendered and there is no server. Quizzes and reading
-progress are written and switched off in `lib/site.ts`; this is meant to be
-consulted rather than completed.
+Every route is prerendered and there is no server. Reading progress is
+written and switched off in `lib/site.ts`; this is meant to be consulted
+rather than completed.
 
 [ROADMAP.md](ROADMAP.md) has what is still owed.

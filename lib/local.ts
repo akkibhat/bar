@@ -102,7 +102,7 @@ export function useMounted(): boolean {
  * Progress
  * ------------------------------------------------------------------ */
 
-/** Completion state keyed by chapter slug, plus the best quiz score seen. */
+/** Finished chapter slugs. `scores` is left over from the old quizzes and kept so stored data keeps its shape. */
 export type Progress = {
   done: string[];
   /** chapter slug -> questions answered correctly, best attempt */
@@ -112,10 +112,7 @@ export type Progress = {
 /** Module-level constant so the server snapshot stays referentially stable. */
 const EMPTY_PROGRESS: Progress = { done: [], scores: {} };
 
-/**
- * Reading progress, with helpers to mark a chapter complete and to record
- * a quiz result.
- */
+/** Reading progress, with helpers to mark a chapter complete and to reset. */
 export function useRead() {
   const progress = useSyncExternalStore(
     watchStored,
@@ -133,22 +130,12 @@ export function useRead() {
     saveStored(PROGRESS_KEY, { ...current, done });
   }, []);
 
-  /** Record a quiz result, keeping only the best score for that chapter. */
-  const recordScore = useCallback((slug: string, score: number) => {
-    const current = peek(PROGRESS_KEY, EMPTY_PROGRESS);
-    const best = Math.max(current.scores[slug] ?? 0, score);
-    saveStored(PROGRESS_KEY, {
-      ...current,
-      scores: { ...current.scores, [slug]: best },
-    });
-  }, []);
-
   /** Clear all progress. Used by the reset control on the contents page. */
   const resetProgress = useCallback(() => {
     saveStored(PROGRESS_KEY, EMPTY_PROGRESS);
   }, []);
 
-  return { progress, ready, toggleDone, recordScore, resetProgress };
+  return { progress, ready, toggleDone, resetProgress };
 }
 
 /* ------------------------------------------------------------------ *
@@ -158,15 +145,13 @@ export function useRead() {
 const THEME_KEY = 'bar.theme';
 const THEME_EVENT = 'bar:theme';
 
-/** Subscribe to theme changes made by the switch. */
+/**
+ * Subscribe to theme changes made by the switch. The system colour scheme
+ * is not watched: the theme never reads it.
+ */
 function themeSubscribe(onChange: () => void): () => void {
-  const media = window.matchMedia('(prefers-color-scheme: dark)');
   window.addEventListener(THEME_EVENT, onChange);
-  media.addEventListener('change', onChange);
-  return () => {
-    window.removeEventListener(THEME_EVENT, onChange);
-    media.removeEventListener('change', onChange);
-  };
+  return () => window.removeEventListener(THEME_EVENT, onChange);
 }
 
 /** The active theme, read from the `data-theme` attribute on the root element. */

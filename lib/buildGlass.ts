@@ -100,9 +100,7 @@ export function buildOf(
   capacity: number,
 ) {
   const bowl = BOWL[glassSlug] ?? BOWL.coupe;
-  const height = bowl.bottom - bowl.top;
-  const yAt = (volume: number) =>
-    bowl.bottom - height * Math.min(1, volume / capacity) ** bowl.exp;
+  const yAt = yAtFor(glassSlug, capacity);
 
   const measured = spec
     .map((s, i) => ({ name: s.name, ml: mlOf(s.amount), colour: colourFor(s.name, i) }))
