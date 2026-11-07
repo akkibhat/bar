@@ -10,47 +10,28 @@ import { inPart, type ContentsChapter } from '@/lib/contents';
 import { HALVES } from '@/lib/site';
 import Lights from './Lights';
 
-/**
- * The bar across the top, and the contents that fold out of it.
- *
- * There is no sidebar anywhere on this site, which is the main structural
- * decision here. A permanent rail listing 37 chapters is how a reference
- * work presents itself, and it means every page is 16rem narrower than it
- * needs to be for the sake of navigation nobody is using while reading.
- *
- * A menu does not work that way. It is folded, you open it, you find the
- * section, you close it again. So the whole contents lives behind one
- * control and drops as a full-width panel over the page - three columns
- * of parts, the way the inside spread of a menu is set - and the reading
- * column underneath gets the full width of the page.
+/*
+ * The bar across the top, and the contents that fold out of it as a
+ * full-width panel of parts. On wide screens the book pages also show the
+ * contents in the `BookIndex` column; the fold-out is how narrow screens
+ * and the shelf reach it.
  */
 
 /** Rendered height of the marks beside the wordmarks. */
 const MARK_SIZE = 15;
 
 /**
- * How far each mark drops from where the flex row's baseline alignment
- * leaves it. Two different rules, because the two shapes are different
- * objects and want different things from a line of type.
- *
- * The book is a spread: its pages rise towards their outer edges, so the
- * top of its ink box is two thin flares and its body is the band between
- * the inner edges. That band is centred on the capitals, the way a
- * lowercase-height ornament would be.
- *
- * The glass is a standing object. It has a foot, and a foot belongs on
- * the line the type stands on - so its base sits on the baseline rather
- * than being centred on anything.
- *
- * Both measured in the browser against the wordmark's real ink, taken
- * from font metrics rather than the line box. In em so they survive the
- * type scale moving.
+ * How far each mark drops from where baseline alignment leaves it. The
+ * book's solid band (between its flared page tops) is centred on the
+ * capitals; the glass stands its foot on the baseline. Measured in the
+ * browser against the wordmark's ink, in em so they follow the type scale.
  */
 const MARK_OFFSET: Record<'book' | 'shelf', string> = {
   book: '0.041em',
   shelf: '0.065em',
 };
 
+/** The top bar: home, the two halves, the contents fold-out and the theme switch. */
 export default function BarNav({ contents }: { contents: ContentsChapter[] }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -58,6 +39,7 @@ export default function BarNav({ contents }: { contents: ContentsChapter[] }) {
   /* Escape puts the panel away, the same as clicking off it. */
   useEffect(() => {
     if (!open) return;
+    /* Close the panel on Escape. */
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setOpen(false);
     };

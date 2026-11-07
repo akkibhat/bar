@@ -2,18 +2,8 @@
    PNG at build time. There is no DOM here, so next/image does not apply. */
 import { ImageResponse } from 'next/og';
 
-/**
- * The home-screen icon, generated as a PNG.
- *
- * `app/icon.svg` covers the browser tab, but an SVG is not dependable as
- * an Apple touch icon, and a touch icon is composited on whatever
- * wallpaper is behind it rather than on browser chrome - so unlike the
- * favicon it carries its own paper ground instead of standing on
- * nothing.
- */
 /* Under `output: export` there is no server to decide this at request
-   time, so the route has to say it is static. Without it the build
-   stops here rather than guessing. */
+   time, so the route has to say it is static or the build stops. */
 export const dynamic = 'force-static';
 
 export const size = { width: 180, height: 180 };
@@ -23,6 +13,13 @@ const MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 16 120 136" wid
 
 const MARK_URI = `data:image/svg+xml;base64,${Buffer.from(MARK).toString('base64')}`;
 
+/**
+ * The home-screen icon, rendered to a PNG at build time.
+ *
+ * `app/icon.svg` covers the browser tab, but an SVG is not dependable as
+ * an Apple touch icon, and a touch icon sits on the phone's wallpaper, so
+ * this one carries its own paper ground.
+ */
 export default function AppleIcon() {
   return new ImageResponse(
     (

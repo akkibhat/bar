@@ -16,28 +16,13 @@ import {
 import { IBA_CATEGORIES, IBA_LISTS, type IbaCategory } from '@/lib/iba';
 
 /**
- * The shelf, set as a menu rather than as a grid of cards.
+ * The shelf, set as a menu: one column of ruled rows, name leading and the
+ * base spirit hard right, with no pictures (no drink has a photograph).
  *
- * This is the page where the two sites diverge most. A cellar is a
- * collection and is looked at, so the wine site draws its bottles as a
- * wall of photographs. A bar list is read top to bottom, in order, with
- * the name leading and the base spirit hard right - so this is one
- * column of ruled rows, and no picture at all.
- *
- * That is also the honest presentation of the underlying data: there is
- * no photograph of any of these drinks, and a card grid built around an
- * absent image is a layout waiting for content that does not exist.
- *
- * Two lists share the page. Mine is the default; the whole official IBA
- * list sits behind a switch, with the IBA's three categories as a second
- * row that only appears once that list is showing. Filtering is
- * client-side over committed data - a few kilobytes already loaded, so a
- * round trip would be slower and less reliable than doing it here.
- *
- * The IBA list holds two kinds of row. The ones the book has written up
- * carry a spec and go to their page here; the rest are a name, a list
- * and a link out to the IBA's own page, because their recipes are theirs
- * and this site does not keep a copy.
+ * My drinks show by default; a switch shows the official IBA list, with its
+ * three categories as a second filter row. Filtering is client-side over
+ * the committed data. IBA drinks the book writes up link to their page
+ * here; the rest link out to the IBA's own page.
  */
 export default function BackbarGrid() {
   const [origin, setOrigin] = useState<'mine' | 'iba'>('mine');
@@ -263,30 +248,13 @@ export default function BackbarGrid() {
 }
 
 /**
- * One row of the list.
+ * One row of the list: a name, a value hard right behind leaders, and a
+ * caption underneath.
  *
- * Two kinds go through here and they are deliberately the same shape: a
- * name, something hard right behind leaders, and a caption underneath.
- * What changes between them is only what is true of each.
- *
- * HARD RIGHT
- *
- * On my own shelf that slot is the base spirit, read off the first line
- * of the build. The IBA list has no build for most of its rows, so there
- * is no base to put there - and a column meaning "base" on some rows and
- * something else on others means nothing at all. So on the IBA list the
- * slot is the IBA's own list for every row, written short enough to sit
- * in a column. It is the one fact we hold about all of them, and it is
- * the same kind of fact: which shelf this drink lives on.
- *
- * THE QUIET DIFFERENCE
- *
- * A link-only row sets its name in the soft ink rather than the full
- * one, and its caption says iba-world.com where a written-up row lists
- * its ingredients. Between them that is enough to tell, at a glance and
- * before clicking, that one of these has a page here and the other sends
- * you out - without a badge, which would be the loudest thing on a page
- * trying to look printed.
+ * The hard-right slot is the base spirit on my shelf, and the IBA category
+ * on the IBA list for every row (most IBA rows have no build to read a base
+ * from). A link-only row sets its name in soft ink and captions it
+ * iba-world.com, which marks it as an outbound link without a badge.
  */
 function ShelfRow({ drink }: { drink: ShelfEntry }) {
   const style = {

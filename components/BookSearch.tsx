@@ -6,27 +6,12 @@ import type { SearchEntry } from '@/lib/content/book';
 import { matchesWords } from '@/lib/wordMatch';
 
 /**
- * Looking something up in the book.
+ * Search across the book.
  *
- * The book is meant to be consulted rather than read through, and until
- * this there was no way to consult it: the glossary searched its own
- * terms and the shelf searched its own drinks, but nothing searched the
- * thirty-seven chapters. Finding the reverse dry shake meant guessing
- * which chapter held it and using find-in-page.
- *
- * What is searched is every place the book names something: chapter
- * titles, headings, note titles, the bold term a list item opens with,
- * and the first column of every table. Not the body text. That is a
- * stopping point
- * rather than a first step abandoned: those three are where the book
- * names a subject, so they answer "which chapter covers this", which is
- * the question being asked. Full text answers "where does this word
- * appear", which mostly returns the chapter you were already going to
- * open, and costs an index to generate and keep in step.
- *
- * Notes and terms matter more than they look. "The bottled foamers" is a
- * note and "Oleo saccharum" is a list item, and neither is a heading - so
- * without them, searching for foam or oleo finds nothing at all.
+ * Searches every place the book names something: chapter titles,
+ * headings, note titles, the bold term a list item opens with, and the
+ * first column of every table. Not the body text, on purpose: the question
+ * is "which chapter covers this", not "where does this word appear".
  */
 export default function BookSearch({ index }: { index: SearchEntry[] }) {
   const [query, setQuery] = useState('');

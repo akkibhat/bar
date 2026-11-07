@@ -4,17 +4,10 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 /**
- * Left and right arrow keys move between chapters.
+ * Left and right arrow keys move between chapters. Renders nothing.
  *
- * Invisible, and the point of it: someone reading straight through
- * should not have to reach for the pointer 37 times. It costs no chrome,
- * which is what makes it worth having on a site that has deliberately
- * given up its sidebar.
- *
- * Guarded so it cannot fire while someone is typing. Several pages carry
- * search fields and number inputs, and swallowing an arrow key inside one
- * of those - or worse, navigating away mid-edit - is the classic way this
- * pattern goes wrong.
+ * Guarded so it never fires while someone is typing in a search field or
+ * number input, where it would steal the key or navigate away mid-edit.
  */
 export default function ChapterKeys({
   prev,
@@ -26,6 +19,7 @@ export default function ChapterKeys({
   const router = useRouter();
 
   useEffect(() => {
+    /* Go to the previous or next chapter on a bare arrow key. */
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
 

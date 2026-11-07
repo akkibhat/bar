@@ -9,34 +9,8 @@ import {
 } from '@/lib/geometry';
 
 /**
- * The mark: a cocktail glass split down the middle, so it reads as both a
- * glass and an open book.
- *
- * The mark is *responsive*, which is the whole trick. Drawn at one fixed
- * geometry it fails below about 20px: the valley between the two pages is
- * 6 units in a 160-unit viewBox, so at 14px it lands on roughly half a
- * pixel and disappears, welding the halves into a plain triangle and
- * losing the book entirely.
- *
- * So there are three tiers. As the mark shrinks the pages lean further
- * apart and the spine thickens, until at the smallest size the spine is
- * dropped and the split is carried by a single wide gap. Each tier is
- * tuned so its narrowest feature stays near or above one rendered pixel.
- *
- * Colours come from theme tokens rather than fixed values, so the mark
- * inverts with the rest of the interface, and the gaps are transparent so
- * it sits on any surface.
- */
-/**
- * The way home, as a door rather than a word.
- *
- * The nav already carries two wordmarks; a third word beside them reads
- * as a third section rather than as the way out of both. A door also
- * says what the landing page is - the cover, with a half behind each
- * side - in a way a house or an arrow does not.
- *
- * Drawn on the same geometry as the glass mark: flat strokes, no
- * rounding, `currentColor` so it takes the nav's own state colour.
+ * The way home, drawn as a door: flat strokes in `currentColor` so it
+ * takes the nav's state colour. A word here would read as a third section.
  */
 export function HomeMark({
   size = 22,
@@ -68,6 +42,14 @@ export function HomeMark({
   );
 }
 
+/**
+ * The mark: a cocktail glass split down the middle, so it reads as both a
+ * glass and an open book (Barbook), or closed onto its stem (Backbar).
+ *
+ * At one fixed geometry the split welds shut below about 20px, so the
+ * geometry comes in three size tiers (see `TIERS` in lib/geometry.ts).
+ * Colours come from theme tokens, so the mark follows the theme.
+ */
 export function GlassMark({
   size = 32,
   variant = 'book',

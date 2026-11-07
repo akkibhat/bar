@@ -21,11 +21,8 @@ export const metadata: Metadata = {
 /**
  * Barbook: an opening statement, the tools, and the contents.
  *
- * The open-questions count was the honest version of a progress meter
- * while chapters still carried unresolved notes. They have all been
- * closed, so the sentence only appears while there is a number worth
- * printing - saying "0 of them" would be a progress bar at full, which
- * is the opposite of what it was for.
+ * The count of chapters still carrying an `unsure` block only shows while
+ * it is above zero.
  */
 export default function BookPage() {
   const open = chaptersStillOpen().length;
@@ -99,12 +96,8 @@ export default function BookPage() {
 
       <div className="mx-auto max-w-[46rem] px-6 sm:px-10 pb-12 lg:pb-20">
       {/* ---- Behind the bar --------------------------------------
-          Folded shut by default. Someone arriving at the contents is
-          looking for a chapter, and seven tools with a line of
-          description each pushed the book itself below the fold.
-
-          Ruled rows rather than a grid of boxes, matching the contents
-          under it and the spec sheets throughout. */}
+          Folded shut by default, so the tools do not push the contents
+          below the fold. */}
       <section className="mb-14">
         <Fold
           label="Behind the bar"

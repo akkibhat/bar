@@ -2,19 +2,7 @@
 
 import { useState } from 'react';
 
-/**
- * Shake or stir.
- *
- * The rule is one line long - if anything in the glass is cloudy, shake
- * it; if everything is clear and alcoholic, stir it - but it is easier to
- * believe once you have poked at it, so this asks about the build and
- * gives the answer with the reason attached.
- *
- * Deliberately not a decision tree with branches. There is one question
- * that matters and several that only look like they do, and a tree would
- * imply otherwise.
- */
-
+/** The ingredients offered, and whether each makes a drink cloudy. */
 const INGREDIENTS = [
   { id: 'citrus', label: 'Citrus juice', cloudy: true },
   { id: 'juice', label: 'Other juice', cloudy: true },
@@ -26,9 +14,15 @@ const INGREDIENTS = [
   { id: 'liqueur', label: 'Clear liqueur', cloudy: false },
 ] as const;
 
+/**
+ * Shake or stir: pick what is in the build and it gives the answer with
+ * the reason. The rule is one line: anything cloudy, shake; all clear and
+ * alcoholic, stir.
+ */
 export default function MethodChooser() {
   const [picked, setPicked] = useState<string[]>(['spirit', 'vermouth']);
 
+  /* Add or remove one ingredient from the build. */
   const toggle = (id: string) =>
     setPicked((cur) =>
       cur.includes(id) ? cur.filter((x) => x !== id) : [...cur, id],

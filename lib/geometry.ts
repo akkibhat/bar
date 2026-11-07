@@ -1,26 +1,11 @@
 /**
- * The mark's geometry, in one place.
+ * The mark's geometry, drawn by `GlassMark` in components/Mark.tsx.
  *
- * Two components draw it: `Logo` renders it statically at every size in
- * the app, and `FrontDoor` animates it between the two states on the
- * landing page. They have to agree exactly, or the masthead would settle
- * on a mark subtly different from the one in the nav - so the shapes live
- * here and neither component owns them.
- *
- * Everything is expressed on a 120x160 grid. What is actually rendered
- * is `VIEW_BOX`, a crop of it crediting each variant equal padding.
- *
- * The two marks are the same shape:
- *
- *   the book    a cocktail glass split down the middle, the halves swung
- *               apart into two leaning pages
- *   the shelf   those halves closed back into the bowl of the glass,
- *               standing on its stem
- *
- * which is why shutting the book *is* the glass, and why the morph needs
- * no path-matching. Both halves keep identical path commands in both
- * states and only their numbers move, so interpolating the mark is
- * arithmetic rather than geometry.
+ * Everything is on a 120x160 grid; `VIEW_BOX` is the crop that is
+ * rendered. The two marks are the same shape: the book is a cocktail glass
+ * split down the middle with the halves swung apart into leaning pages,
+ * and the shelf is those halves closed back into the bowl on its stem.
+ * Both halves keep the same path commands in both states.
  */
 
 /* ===================================================================== *
@@ -38,17 +23,12 @@ export type Tier = {
 };
 
 /**
- * What actually holds the split together, per tier.
+ * The split's geometry per size tier.
  *
- * The mark is drawn with `height` set and its width left to the aspect
- * ratio, so one user unit is `size / 160`.
- *
- * At small sizes the valley between the pages closes to well under a
- * rendered pixel and the two halves weld into a single triangle, which
- * loses the whole idea. So as the mark shrinks the pages draw further
- * apart and the spine thickens, and at the smallest size the spine is
- * dropped and the split is carried by one wide gap. Each tier's
- * narrowest feature clears one rendered pixel at that tier's lower bound:
+ * At small sizes the valley between the pages closes under a pixel and
+ * the halves weld into a triangle, so as the mark shrinks the pages lean
+ * further apart and the spine thickens, until the smallest tier drops the
+ * spine for one wide gap. Narrowest feature at each tier's lower bound:
  *
  *   micro     10-unit gap   @ 12px  =  0.75px  spine dropped, gap widened
  *   compact    7-unit spine @ 20px  =  0.88px
@@ -117,17 +97,10 @@ export function closedHalf(side: 'left' | 'right'): string {
 /**
  * One page of the open book.
  *
- * The outer edge sits higher than the inner one at the top, which is what
- * makes the pair read as a book rather than as a split triangle: an open
- * book dips into a valley at the spine and rises towards the outer edges.
- *
- * The page deliberately spans nearly the same vertical band as the closed
- * glass - 28 to 140 against the glass's 24 to 144 - so both variants
- * share an optical centre at y=84. An earlier version had the pages
- * sitting between 30 and 104, which left 56 units of dead space under
- * them: centred in a lockup, the book floated well above the wordmark's
- * baseline while the glass sat correctly, so the two variants of the same
- * mark did not agree with each other.
+ * The outer edge sits higher than the inner one at the top, so the pair
+ * reads as a book rather than a split triangle. The page spans nearly the
+ * same band as the closed glass (28 to 140 against 24 to 144), so both
+ * variants centre on y=84.
  */
 export function openHalf(side: 'left' | 'right', t: Tier): string {
   const dir = side === 'left' ? -1 : 1;

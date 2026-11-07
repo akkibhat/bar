@@ -1,17 +1,11 @@
 import type { Spirit, SpiritCategory } from './schema';
 
 /**
- * The back bar, as data.
+ * The back bar, as data: what each bottle is made from, whether wood is
+ * involved, how sweet it runs and how loud it is once mixed.
  *
- * One entry per thing you would actually reach for, described in the
- * terms that decide whether it belongs in a given drink: what it is made
- * from, whether wood is involved, how sweet it runs, and how loudly it
- * speaks once mixed.
- *
- * `sweetness` and `intensity` are 1-5 so the explorer can sort on them.
- * They are judgements rather than measurements, which is why they are
- * coarse - a five-point scale is about as fine as an honest judgement of
- * "how assertive is this in a drink" gets.
+ * `sweetness` and `intensity` are 1-5 judgements, not measurements, so the
+ * explorer can sort on them.
  */
 export const SPIRITS: Spirit[] = [
   /* ---- Neutral ---------------------------------------------------- */

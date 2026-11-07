@@ -69,6 +69,7 @@ export default function FamiliesTable() {
   );
 }
 
+/** A small label over a value, used for each family's facts. */
 function Fact({ label, value }: { label: string; value: string }) {
   return (
     <span className="block">

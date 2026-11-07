@@ -1,25 +1,17 @@
 import Figure from './Figure';
 
-/**
- * Agave to piña to two kinds of cooking.
- *
- * The plant takes six to eight years, the spines come off, and what is
- * left is the piña. From there the road forks, and the fork is the whole
- * difference between the two spirits: steamed in an oven or autoclave and
- * it becomes tequila; roasted in a covered pit over hot rocks and it
- * becomes mezcal. The smoke in mezcal is not a step added afterwards - it
- * is the cooking itself, which is why it is drawn coming out of the pit
- * and nowhere else.
- *
- * Glyphs are drawn at their natural size and scaled about their own
- * base so they read at plate size. Steam and smoke sit outside the
- * scaled groups because they are animated in CSS.
- */
-
 /** Scale a glyph about a point. */
 const about = (cx: number, cy: number, k: number) =>
   `translate(${cx} ${cy}) scale(${k}) translate(${-cx} ${-cy})`;
 
+/**
+ * Agave to piña, then the fork: steamed for tequila, pit-roasted for
+ * mezcal. The smoke is drawn only from the pit because it comes from the
+ * cooking, not a later step.
+ *
+ * Glyphs are scaled about their own base to read at plate size. Steam and
+ * smoke sit outside the scaled groups because they are animated in CSS.
+ */
 export default function AgaveSequence() {
   return (
     <Figure

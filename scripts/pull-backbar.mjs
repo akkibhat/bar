@@ -3,31 +3,16 @@
  *
  *   node scripts/pull-backbar.mjs
  *
- * WHY A SNAPSHOT RATHER THAN A LIVE FETCH
- *
- * Bar Assistant holds the truth, but this site is static and public.
- * Fetching at request time would mean the site could only render while a
- * private, token-protected instance was reachable from wherever it is
- * deployed - so the drinks are pulled deliberately, committed, and served
- * as part of the build. Which also means the shelf renders instantly,
- * works offline, and shows up in `git diff` when a recipe changes.
- *
- * The trade is that the shelf is only as current as the last pull. Since
- * the instance is mine and the API answers on demand, that is one command
- * whenever a drink changes rather than a scheduled export.
- *
- * HOW TO REFRESH
+ * A committed snapshot rather than a live fetch, because the site is
+ * static and public and Bar Assistant is private and token-protected.
  *
  *   1. Copy `.env.example` to `.env.local` and fill in the four BA_ values.
  *   2. npm run pull
  *   3. Commit the regenerated lib/content/backbar-snapshot.ts.
  *
- * WHAT IT KEEPS
- *
- * Names, specs, measures, instructions, garnishes, glass, method, ABV and
- * tags, exactly as Bar Assistant has them. Nothing is rewritten, reworded
- * or reordered - these are the recipes as authored, and the site's job is
- * to present them rather than to have opinions about them.
+ * Names, specs, measures, instructions, garnish, glass, method, ABV and
+ * tags are kept exactly as Bar Assistant has them. Nothing is reworded or
+ * reordered.
  */
 
 import fs from 'node:fs';
@@ -237,6 +222,7 @@ function clean(obj) {
   );
 }
 
+/** One Bar Assistant cocktail as a snapshot entry, preferring the detail record when there is one. */
 function normalise(raw, detail) {
   const full = detail ?? raw;
   return clean({

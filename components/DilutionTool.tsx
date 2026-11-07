@@ -2,21 +2,10 @@
 
 import { useMemo, useState } from 'react';
 
-/**
- * What ice does to a drink.
- *
- * Takes the volume and strength of a drink as built and reports what it
- * becomes once it has been chilled, because chilling and dilution are the
- * same event and a spec that ignores the water is describing a drink
- * nobody drinks.
- *
- * The dilution figures are typical ranges rather than a formula. There is
- * a published model for this - dilution rises with starting strength,
- * since a stronger drink has further to fall before it reaches the same
- * temperature - but it needs the finishing temperature as an input, and
- * a tool that asks a reader for the temperature of their shaker is not a
- * useful tool. These are the standard working numbers instead, and they
- * are labelled as such.
+/*
+ * The dilution figures are standard working ranges, not a formula. The
+ * published model needs the finishing temperature as an input, which is
+ * not something a reader can usefully supply.
  */
 
 const METHODS = [
@@ -48,6 +37,7 @@ const METHODS = [
 
 type MethodId = (typeof METHODS)[number]['id'];
 
+/** What ice does to a drink: its volume and strength as built, then once chilled by each method. */
 export default function DilutionTool() {
   const [volume, setVolume] = useState(90);
   const [abv, setAbv] = useState(30);

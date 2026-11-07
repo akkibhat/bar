@@ -3,29 +3,12 @@
  *
  *   node scripts/pull-iba.mjs
  *
- * WHAT IT KEEPS, AND WHAT IT DELIBERATELY DOES NOT
+ * Keeps three fields per drink: the name, the list it sits on, and its
+ * iba-world.com address. No ingredients, measures or method: those are
+ * the IBA's, not ours to copy. If this script ever reads an ingredient
+ * out of the page, that is the bug.
  *
- * Three fields per drink: the name, the list it sits on, and the address
- * of its page on iba-world.com. Nothing else. No ingredients, no
- * measures, no method, no description - none of that is ours to
- * reproduce, and the site has no use for a copy of it. The book writes
- * its own specs for the ones it covers; every other row on the shelf is
- * a name and a citation, which is what a reference to someone else's
- * list should be.
- *
- * If this script ever grows a line that reads an ingredient out of the
- * page, that is the bug.
- *
- * WHY A SNAPSHOT RATHER THAN A LIVE FETCH
- *
- * Same reason as the Bar Assistant pull next door: the site is static,
- * so a build-time fetch would make every deploy depend on someone else's
- * server being up and unchanged. Pulling deliberately and committing the
- * result means the shelf renders instantly, works offline, and shows up
- * in `git diff` when the IBA adds or renames a drink - which is the
- * change worth seeing.
- *
- * HOW TO REFRESH
+ * A committed snapshot so a deploy never depends on their server.
  *
  *   1. npm run pull:iba
  *   2. Read the diff. A drink appearing or disappearing is real news.
@@ -37,7 +20,7 @@ import path from 'node:path';
 
 const OUT = path.join('lib', 'content', 'iba-list.ts');
 
-/** The listing, and the shape its later pages take. */
+/** The listing, and the URL of page `n` of it. */
 const LIST_URL = 'https://iba-world.com/cocktails/all-cocktails/';
 const pageUrl = (n) => (n === 1 ? LIST_URL : `${LIST_URL}page/${n}/`);
 
@@ -70,6 +53,7 @@ const CATEGORIES = {
   'the new era': 'new-era',
 };
 
+/** The site's category key for an IBA list label. Throws on one it does not know. */
 function categoryOf(label) {
   const key = CATEGORIES[label.toLowerCase()];
   if (!key) {

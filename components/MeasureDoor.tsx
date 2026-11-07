@@ -4,31 +4,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import BuildGlass from './BuildGlass';
 
-/**
- * The front door, built around the millilitre.
- *
- * Every spec in this book is a list of measures, so the page is a measure:
- * a graduated scale runs down the left edge, and the glass beside the
- * headline is filled with a real drink's build, one layer for each
- * ingredient that is measured in millilitres. Pick another drink and it
- * refills with that one's own ingredients.
- *
- * The glass is a schematic, not a scale drawing, and says so. What is
- * true to the data: the layers are in the order and the proportions of
- * the spec, the glass is the one the drink is served in, and the level is
- * the built volume against what that glass holds. What is approximate:
- * the heights are corrected for the shape of the bowl (a cone fills
- * faster at the top than at the point), not measured from a real glass.
- *
- * An ingredient measured in anything but millilitres (a double shot, a
- * dash, a pinch) is listed under the glass as text and not drawn, rather
- * than being given a volume it was never given.
- *
- * Its palette is fixed on purpose: dark with amber, whatever the site's
- * light or dark setting, because it is the front door and not a page of
- * the book. It carries its own small header and no theme switch.
- */
-
 export type DoorDrink = {
   slug: string;
   name: string;
@@ -49,6 +24,14 @@ export type DoorPart = {
   href: string;
 };
 
+/**
+ * The front door, built around the millilitre: a graduated scale down the
+ * left edge, and a glass filled with a real drink's build (see
+ * `BuildGlass`). Pick another drink and it refills.
+ *
+ * Its palette is fixed, dark with amber, whatever the site's theme
+ * setting. It carries its own small header and no theme switch.
+ */
 export default function MeasureDoor({
   drinks,
   parts,

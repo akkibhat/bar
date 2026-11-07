@@ -1,22 +1,12 @@
 import Figure from './Figure';
 
 /**
- * The kiln makes the colour, and nothing else follows from it.
+ * The kiln makes the colour and nothing else: six malts, their beers, and
+ * a strength row that does not follow the colour ramp (dark is not strong).
  *
- * Six malt beds across the top, the beer each one makes below, and a row
- * of alcohol figures underneath that wanders instead of following the
- * ramp. Putting the two rows in the same figure is the argument: dark
- * does not mean strong, and the IPA at 6.5% is the second palest while
- * the stout at 4.2% is the darkest.
- *
- * The ramp is six named colours, `--m1` to `--m6`, rather than one wash
- * at rising opacity. A single wash runs pale-to-dark on the light ground
- * and dark-to-pale on the dark one, which would put black malt at the
- * pale end of the ramp for half the readers. The heads are `--foam` for
- * the same reason: drawn with a page token they go black in dark mode.
- *
- * Columns reveal left to right on `.c1` to `.c6`; the bars arrive after
- * the colour is made, on `.r1` to `.r6`.
+ * The ramp is six fixed colours, `--m1` to `--m6`, not one wash at rising
+ * opacity, which would reverse on the dark ground. Heads use `--foam` for
+ * the same reason. Columns reveal on `.c1`-`.c6`, then bars on `.r1`-`.r6`.
  */
 export default function KilnFigure() {
   return (

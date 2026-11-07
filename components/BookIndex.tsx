@@ -7,29 +7,12 @@ import { PARTS } from '@/lib/content/parts';
 import { chapterAt, inPart, type ContentsChapter } from '@/lib/contents';
 
 /**
- * The contents, always on screen.
+ * The contents column beside the book pages, set as a printed index.
  *
- * Set as a printed index rather than as application navigation, which is
- * the whole difference between this and the wine site's rail. That one is
- * a sunk grey panel carrying a status dot against every chapter and a
- * progress meter over the top - furniture. This is the same paper as the
- * page, divided from it by one hairline, with the parts numbered in the
- * display face and the chapters set as plain small type. It reads as the
- * index printed inside a cover.
- *
- * It also does something that rail cannot: the chapter you are in expands
- * to show its own sub-headings, so the same column answers "what else is
- * in this book" and "what is in this chapter". The second question is the
- * one that bites on a long chapter, and it is why there is no separate
- * in-page jump list anywhere.
- *
- * Parts collapse. Thirty-seven chapters listed flat is a column you
- * scroll rather than read, and the answer a printed index uses is to show
- * the section you are in and let the rest sit closed until wanted.
- *
- * Below the breakpoint none of it is rendered - the fold-out in the top
- * bar covers narrow screens, where a persistent column would eat the
- * reading width it exists to serve.
+ * The chapter you are in expands to show its sub-headings, which is why
+ * there is no separate in-page jump list. Parts collapse, with the one you
+ * are reading open by default. Hidden below the 64rem breakpoint (CSS),
+ * where the top bar's fold-out covers it.
  */
 export default function BookIndex({ contents }: { contents: ContentsChapter[] }) {
   const pathname = usePathname();
@@ -51,7 +34,9 @@ export default function BookIndex({ contents }: { contents: ContentsChapter[] })
    */
   const [override, setOverride] = useState<Record<string, boolean>>({});
 
+  /* A section's open state: the reader's override if any, else the default. */
   const isOpen = (key: string, fallback: boolean) => override[key] ?? fallback;
+  /* Flip a section from whatever it currently shows. */
   const toggle = (key: string, now: boolean) =>
     setOverride((o) => ({ ...o, [key]: !now }));
 

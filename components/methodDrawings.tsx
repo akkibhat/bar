@@ -1,20 +1,13 @@
 import type { ReactNode } from 'react';
 
 /**
- * The seven methods, drawn once.
+ * The seven methods, drawn once. `MethodFigure` renders one of these under
+ * the paragraph that explains it.
  *
- * Both candidate figures use these: one renders a single drawing under
- * the paragraph that explains it, the other puts all seven in one plate
- * with a selector. Writing them here means the drawings are identical
- * either way and only the framing differs.
- *
- * Every drawing shares a viewBox, a vessel centred on x=80 and a
- * baseline at y=176, so seven of them side by side read as seven
- * treatments of one drink rather than seven unrelated pictures.
- *
- * Motion is gated on `.run` from the Figure wrapper, and every animated
- * element carries its finished state in its base rule so reduced-motion
- * gets the end of the story rather than a blank vessel.
+ * Every drawing shares a viewBox, a vessel centred on x=80 and a baseline
+ * at y=176, so they read as one set. Motion is gated on `.run` from the
+ * Figure wrapper, and each animated element carries its finished state in
+ * its base rule so reduced motion shows the end state.
  */
 
 export type MethodKey =

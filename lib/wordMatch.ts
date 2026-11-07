@@ -1,18 +1,8 @@
 /**
- * Matching a typed query against a piece of text, by words.
- *
- * A plain substring test treats "ice" as present in "practice", "juice"
- * and "slice", which buries the chapter actually about ice under results
- * that merely contain the letters. This matches from the start of a word
- * instead: every word the reader typed has to open some word in the text.
- * So "ice" finds "Ice", "Iced" and "Clear ice", and "dry sh" finds "Dry
- * shake" - but neither "practice" nor "juice".
- *
- * Case and accents are ignored on both sides, so "pina" finds "Piña".
- *
- * The trade is that it will not find the end of a compound: "berry" does
- * not match "strawberry". For a book index, where the reader is looking
- * for the word a heading opens with, that is the right way round.
+ * Matching a typed query against text by word starts: every typed word
+ * must open some word in the text. So "ice" finds "Clear ice" but not
+ * "juice", and "dry sh" finds "Dry shake". Case and accents are ignored
+ * ("pina" finds "Piña"). The cost: "berry" does not match "strawberry".
  */
 
 /** Lowercase, accent-free, and split into words. */

@@ -4,63 +4,22 @@
  *   npm run chapters:in -- --dry-run   # say what would change
  *   npm run chapters:in                # do it
  *
- * The other half of `chapters-out.mjs`. Edit the prose in
+ * The other half of `chapters-out.mjs`: edit the prose in
  * `_workings/chapters/`, run this, and the strings in
- * `lib/content/chapters/` are updated in place. Nothing is retyped, so
- * nothing is mistyped.
+ * `lib/content/chapters/` are updated in place.
  *
- * Every chapter is its own Markdown file, and all of them are read on
- * each run. Editing one and leaving the rest alone is the normal case:
- * unchanged blocks are matched, found identical and skipped.
+ * It loads the chapters as they stand, so for each anchor it knows both
+ * the current string and the edited one. For each changed block it builds
+ * the exact literal the source holds, checks it appears exactly once in
+ * the file, and swaps it. A missing anchor, or a literal found zero or
+ * several times, is reported and skipped rather than guessed at.
  *
- * HOW IT KNOWS WHAT TO REPLACE
- *
- * It loads the chapters as they stand, so for any anchor it has both
- * sides: the string the source holds now, and the string the Markdown
- * says it should hold. Knowing the old text is the whole trick - without
- * it an edited paragraph could be recognised as changed but not placed.
- *
- * HOW IT IS KEPT SAFE
- *
- * It never rewrites a file wholesale. For each changed block it builds
- * the exact literal the source currently holds, checks that literal
- * appears once and only once in the file, and swaps it. A block whose
- * text has not changed is not touched, so the diff is only ever the
- * edits.
- *
- * If an anchor has gone missing, or a literal is not found, or is found
- * more than once, that block is reported and skipped rather than guessed
- * at. The failure mode is doing nothing, which is recoverable; writing a
- * paragraph into the wrong chapter is not.
- *
- * A LIST THAT CHANGES LENGTH
- *
- * Item-by-item swapping cannot express "five bullets became four", so
- * when the count differs the whole `items` array is rewritten in place.
- * The block stays where it is; only its contents change.
- *
- * WHAT IT WILL NOT TOUCH
- *
- * Anything the exporter marked READ-ONLY - specs and tools. A spec holds
- * more fields than the export shows, so importing one back would drop
- * the ones it cannot see; a tool is a component reference. Adding and
- * deleting blocks is not supported either: both renumber everything
- * after them, and getting that wrong moves prose between chapters. Do
- * those in TypeScript.
- *
- * TABLES
- *
- * Tables do come back in. Edit the cells freely; keep the pipes, the
- * header and the |---| line. Adding or removing a COLUMN is refused,
- * because a column is structure and the source array would have to
- * change shape - but adding, removing and rewriting rows all work.
- *
- * APOSTROPHES
- *
- * The chapter files are single-quoted TypeScript strings. An apostrophe
- * typed in the Markdown is escaped on the way in, so it can never break
- * a build. Backslashes are escaped first, or escaping the apostrophes
- * would then corrupt them.
+ * - A list whose item count changed has its whole `items` array rewritten.
+ * - Tables come back in: rows can change freely, columns cannot.
+ * - READ-ONLY blocks (specs, tools) are ignored, and adding or deleting
+ *   blocks is not supported. Do those in TypeScript.
+ * - Apostrophes are escaped for the single-quoted source, after
+ *   backslashes, so the escaping cannot corrupt either.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -126,6 +85,7 @@ for (const name of fs.readdirSync(CHAPTERS_DIR)) {
  * it']`, and swapping on that alone would rewrite the wrong one.
  */
 function tableLiteral(head, rows, nl, pad) {
+  /* One row as a single-line array literal. */
   const arr = (xs) => `[${xs.map((x) => `'${lit(x)}'`).join(', ')}]`;
   return (
     `head: ${arr(head)},${nl}${pad.slice(2)}rows: [${nl}` +
@@ -262,6 +222,7 @@ for (const block of parsed) {
            reported unmatchable for a reason nobody could guess at. */
         const text = files.get(file);
         const { nl, pad } = shapeOf(text, old.items[0]);
+        /* The items as a multi-line array literal, in the file's own layout. */
         const arr = (items) =>
           `[${nl}${items.map((i) => `${pad}'${lit(i)}',`).join(nl)}${nl}${pad.slice(2)}]`;
         const oldArr = arr(old.items);

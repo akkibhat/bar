@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'The six root structures behind almost every classic, sorted by what holds the drink together rather than by which spirit is in it.',
 };
 
+/** The six cocktail families as a standalone page. */
 export default function FamiliesPage() {
   return (
     <div className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">

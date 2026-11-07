@@ -1,24 +1,17 @@
 import Figure from './Figure';
 
-/**
- * What is left behind.
- *
- * Molasses is drawn as a residue rather than an ingredient, which is
- * what the sentence beside it is saying and what a static picture keeps
- * missing. The cane is pressed, the juice is boiled down, the sugar is
- * crystallised and taken away - and what stays in the pan, because
- * nobody wanted it, is what rum is made from. The dashed line is the
- * other route: juice that never goes near the pan at all.
- *
- * Each glyph is drawn at its natural size and scaled up about the point
- * where it meets the line, so it reads at plate size. The steam sits
- * outside the scaled group because it is animated in CSS.
- */
-
 const K = 1.25;
 /** Scale a glyph about the point where it sits on the baseline. */
 const up = (cx: number, base = 176) => `translate(${cx} ${base}) scale(${K}) translate(${-cx} ${-base})`;
 
+/**
+ * Molasses as a residue: cane pressed, juice boiled, sugar taken away, and
+ * what stays in the pan is what rum is made from. The dashed line is the
+ * other route, juice that never goes near the pan.
+ *
+ * Glyphs are scaled about their baseline point; the steam sits outside
+ * the scaled group because it is animated in CSS.
+ */
 export default function MolassesSequence() {
   return (
     <Figure

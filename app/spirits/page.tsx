@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'The back bar, filterable by shelf and sortable by how sweet and how assertive each bottle runs.',
 };
 
+/** The spirit explorer as a standalone page. */
 export default function SpiritsPage() {
   return (
     <div className="relative mx-auto max-w-[52rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">

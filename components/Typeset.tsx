@@ -81,6 +81,7 @@ export default function ChapterBody({
 /** The block kinds that get a clause number. */
 const NUMBERED = new Set<Block['kind']>(['p', 'list', 'steps', 'note', 'unsure', 'quote']);
 
+/** Renders one block of a chapter body by its kind. */
 function BlockView({ block, id }: { block: Block; id?: string }) {
   switch (block.kind) {
     /* -------------------------------------------------------------- */

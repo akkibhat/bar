@@ -1,22 +1,13 @@
 import Figure from './Figure';
 
 /**
- * The standard cuts, and where the fractions come from.
+ * The standard cuts: a lime in six and a lemon in eight, the cuts they
+ * produce, and a flag.
  *
- * A lime wheel divided into six and a lemon into eight across the top,
- * the cuts they produce along the bottom, and the flag beside them.
- *
- * The fruit uses its own palette - `--pith`, `--lime-rind`, `--fruit-line`
- * and the rest - which is set once and never redefined per theme. A cut
- * fruit is a pale object with a coloured rind whatever the page is doing
- * behind it, and drawing the pith with a page token turns it black in
- * dark mode. The outline is `--fruit-line` for the same reason: `--ink`
- * inverts to white and disappears on a pale lime.
- *
- * The flag is a half wheel with its cut edge bowed up into the slice, so
- * both corners come forward and the cherry sits in the notch between
- * them. The pick is drawn first and the fruit over it, so the lengths it
- * covers are hidden and it reads as threaded through both.
+ * The fruit has its own palette (`--pith`, `--lime-rind`, `--fruit-line`)
+ * that does not change per theme. Page tokens like `--ink` would invert in
+ * dark mode and turn the pith black. The flag's pick is drawn before the
+ * fruit so it reads as threaded through.
  */
 export default function CutsFigure() {
   return (

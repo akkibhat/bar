@@ -106,23 +106,16 @@ export type SearchEntry = {
   marks: SearchMark[];
 };
 
-/**
- * The search index: chapter titles, their headings, and their note
- * titles.
- *
- * Deliberately separate from `buildContents`, which the navigation uses.
- * That one is serialised into every page on the site, so anything added
- * to it is paid for eighty-five times over; this is read by one page and
- * costs only that page. Notes are worth indexing and were not worth
- * putting in the other.
- *
- * Note titles earn their place because a note is where the book puts the
- * thing you would come looking for - "The bottled foamers", "Why the
- * head matters" - and none of those are headings.
- */
 /** Inline markup delimiters are not part of a name. */
 const strip = (s: string) => s.replace(/\*/g, '').trim();
 
+/**
+ * The search index: for each chapter, its headings, note titles, list
+ * terms and table first columns.
+ *
+ * Kept separate from `buildContents`, which is serialised into every page;
+ * this is only read by the search page.
+ */
 export function buildSearchIndex(): SearchEntry[] {
   return CHAPTERS.map((c) => ({
     n: c.n,

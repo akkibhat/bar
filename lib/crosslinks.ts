@@ -3,17 +3,11 @@ import type { Chapter } from './schema';
 import { PAGED, shelfOf, type ShelfEntry } from './backbar';
 
 /**
- * Joins a drink on the shelf to the chapters that explain it.
+ * Joins a drink on the shelf to the chapters that explain its base spirit
+ * and its method.
  *
- * The two halves of the site were written separately and never pointed at
- * each other: a Backbar page states a base spirit and a method, both of
- * which have a chapter, and neither was a link. This is the join, kept
- * here rather than in the page so the mapping is one list to read instead
- * of a chain of conditionals inside JSX.
- *
- * Both lookups go through `lookupChapter`, so a chapter that gets
- * renumbered, retitled or removed shows up as a missing link rather than
- * as a wrong one. Nothing here hardcodes a chapter number or title.
+ * Lookups go through `lookupChapter` by slug, so a chapter that is
+ * renumbered or removed becomes a missing link rather than a wrong one.
  */
 
 /**

@@ -1,5 +1,6 @@
 import Figure from './Figure';
 
+/** A citrus twist in four beats, with the oil drawn leaving the peel. */
 export default function TwistFigure() {
   return (
     <Figure

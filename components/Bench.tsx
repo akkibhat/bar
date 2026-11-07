@@ -29,19 +29,6 @@ import KilnFigure from './KilnFigure';
 import MethodFigure from './MethodFigure';
 import { METHODS, type MethodKey } from './methodDrawings';
 
-/**
- * Renders a tool inside a chapter, and offers the way back out to its own
- * page where it has one.
- *
- * The tools exist twice over: embedded here, where they illustrate the
- * paragraph they sit next to, and standalone at their own route, where
- * they are something you keep open while working. Same component in both
- * places, so they cannot drift.
- *
- * The link underneath is quiet by design - it is an offer rather than an
- * instruction, and a reader mid-chapter should not be pulled out of it.
- */
-
 type ToolBlock = Extract<Block, { kind: 'tool' }>;
 
 /** Where each tool lives on its own, for the "open on its own" link. */
@@ -56,6 +43,11 @@ const HOME: Partial<Record<ToolBlock['tool'], { href: string; label: string }>> 
     glassware: { href: '/glassware', label: 'Glassware' },
   };
 
+/**
+ * Renders a tool inside a chapter, with a quiet link to its standalone
+ * page where it has one. The same component is used on both, so the two
+ * cannot drift.
+ */
 export default function EmbeddedTool({
   tool,
   only,
@@ -79,6 +71,7 @@ export default function EmbeddedTool({
   );
 }
 
+/** The component for a tool key. `only` picks one item where a tool supports it. */
 function render(tool: ToolBlock['tool'], only?: string) {
   switch (tool) {
     case 'ratio':

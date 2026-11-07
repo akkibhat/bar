@@ -170,17 +170,7 @@ export const GLASSES: Glass[] = [
   },
 ];
 
-/**
- * The glass a free-text label refers to, or undefined if none is
- * recognisable.
- *
- * Both halves of the site record glassware as prose rather than as a
- * slug - Bar Assistant says "Cocktail", and a book spec says "Martini
- * with a salt rim, or coupe, or rocks" - so this reads the label rather
- * than looking it up. Where a label offers alternatives the first one
- * wins, because that is the one the spec is actually calling for; the
- * rest are fallbacks for a bar that does not have it.
- */
+/** Words in a glass label that name a glass under a different slug. */
 const GLASS_ALIASES: Record<string, string> = {
   /* Bar Assistant's name for a stemmed cocktail glass. */
   cocktail: 'martini',
@@ -189,6 +179,11 @@ const GLASS_ALIASES: Record<string, string> = {
   tumbler: 'rocks',
 };
 
+/**
+ * The glass a free-text label refers to, or undefined if none is
+ * recognisable. Labels are prose ("Cocktail", "Martini with a salt rim, or
+ * coupe"), and where one offers alternatives the first wins.
+ */
 export function glassFor(label: string | null | undefined): Glass | undefined {
   if (!label) return undefined;
   const text = label.toLowerCase();

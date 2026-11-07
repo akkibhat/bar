@@ -3,19 +3,6 @@
 import { useState } from 'react';
 import { FLAVOURS } from '@/lib/flavours';
 
-/**
- * The flavour wheel.
- *
- * Six wedges, drawn as SVG rather than as a ring of divs, so the geometry
- * is honest and it scales without reflowing. Selecting a wedge reveals
- * what the family signals and the descriptors under it.
- *
- * The wheel is a sorting aid rather than a vocabulary test. The useful
- * move when nosing a spirit is to place it in a family first and only
- * then reach for a specific word, because "wood" is a judgement most
- * people can make and "toasted oak with a little coconut" is not.
- */
-
 const SIZE = 260;
 const CENTRE = SIZE / 2;
 const OUTER = 118;
@@ -27,7 +14,9 @@ const INNER = 46;
  * round the outer arc, back down the next radius, round the inner arc.
  */
 function wedge(from: number, to: number): string {
+  /* Degrees from twelve o'clock to radians from three o'clock. */
   const rad = (deg: number) => ((deg - 90) * Math.PI) / 180;
+  /* The point at radius `r` and angle `deg`. */
   const pt = (r: number, deg: number) => [
     CENTRE + r * Math.cos(rad(deg)),
     CENTRE + r * Math.sin(rad(deg)),
@@ -48,6 +37,10 @@ function wedge(from: number, to: number): string {
   ].join(' ');
 }
 
+/**
+ * The flavour wheel: six family wedges drawn in SVG. Selecting one shows
+ * what the family signals and the descriptors under it.
+ */
 export default function FlavourWheel() {
   const [active, setActive] = useState<string | null>(null);
   const step = 360 / FLAVOURS.length;

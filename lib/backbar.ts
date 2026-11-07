@@ -10,19 +10,13 @@ import { IBA_LIST, IBA_PULLED_AT } from './content/iba-list';
 import type { IbaCategory } from './iba';
 
 /**
- * Reading the shelf.
+ * Reading the shelf: two kinds of drink, all derived at build time.
  *
- * The shelf holds two kinds of drink. Mine are pulled from Bar Assistant
- * into a committed snapshot and are never touched here - nothing in this
- * file rewrites a name, reorders a spec or adjusts a measure. The IBA
- * side is the official list as pulled from the IBA's own site, joined to
- * the book's spec sheets in Part VIII: where the book has written a
- * drink up, the row carries that spec and gets a page here; where it has
- * not, the row is a name, a list and a link out, because the IBA's
- * recipes are theirs and are not copied into this repo.
- *
- * Everything here is pure derivation, so the Backbar pages render
- * statically with no client JavaScript beyond the grid's own filtering.
+ * Mine come from the Bar Assistant snapshot and are never altered here (no
+ * name, spec or measure is rewritten). The IBA list is joined to the
+ * book's spec sheets in Part VIII: a written-up drink gets that spec and a
+ * page; the rest are a name, a category and a link out, as the IBA's
+ * recipes are not copied into this repo.
  */
 
 export { PULLED_AT, SHELF, IBA_PULLED_AT };
@@ -56,6 +50,7 @@ export type ShelfEntry = ShelfDrink & {
   family?: string;
 };
 
+/** A name as a URL slug: lowercase, runs of anything else as one hyphen. */
 const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -107,16 +102,11 @@ const BOOK_SPECS = new Map(
 /**
  * The official IBA list, joined to the book.
  *
- * The pulled list drives the order and the count, and the IBA's own
- * category wins over the book's - they publish the list, so a
- * disagreement means the book is out of date rather than that they are.
- *
- * A joined row gets the book's spec and a page of its own. An unjoined
- * one gets a name, a category and a link out, and nothing more: no
- * measures, no method, no description, because none of that is ours to
- * hold. Ids sit far above anything Bar Assistant hands out, and a slug
- * that would collide with one of mine takes an `iba-` prefix rather than
- * shadowing it.
+ * The pulled list drives order and count, and the IBA's category wins over
+ * the book's. A joined row gets the book's spec and a page; an unjoined
+ * one gets only a name, a category and a link out. Ids sit far above Bar
+ * Assistant's, and a slug that would collide with one of mine gets an
+ * `iba-` prefix.
  */
 const IBA_JOINED: ShelfEntry[] = IBA_LIST.map((entry, i) => {
   const spec = BOOK_SPECS.get(slugify(entry.name));

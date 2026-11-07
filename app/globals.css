@@ -3,20 +3,11 @@
 /* =====================================================================
    THE MENU DESIGN SYSTEM
 
-   The visual language is a printed cocktail menu: heavy cream stock,
-   a high-contrast didone for the names, small caps set wide, hairline
-   rules, and measures running to the right edge behind dot leaders.
-
-   That is a deliberate departure from the wine site, which is a kept
-   journal - warm paper, handwriting, ring stains, tipped-in index
-   cards. The two are siblings in structure and argument, not in
-   appearance: a cellar is somewhere you write things down, and a bar is
-   somewhere things are printed, set and handed over. Nothing here is in
-   a hand, nothing is drawn wobbly, and no surface pretends to be paper
-   with a texture on it.
-
-   What the two do share is the type scale, the spacing scale and the
-   motion values, because those are engineering rather than voice.
+   The visual language is a printed cocktail menu: a high-contrast didone
+   for the names, small caps set wide, hairline rules, and measures
+   running to the right edge behind dot leaders. Unlike the wine site
+   (a handwritten journal), nothing here is in a hand. The two share only
+   the type scale, the spacing scale and the motion values.
    ===================================================================== */
 
 @theme {
@@ -102,19 +93,15 @@
 /* =====================================================================
    FLAVOUR FAMILIES
 
-   Six categorical fills for the flavour wheel and the tasting chips.
-   Each is a fill with a pale label on it, so each carries three
-   constraints at once:
+   Six categorical fills for the flavour wheel and the tasting chips,
+   each meeting three constraints at once:
 
      fill vs the light ground   >= 3:1
      fill vs the dark ground    >= 3:1
      label on the fill          >= 4.5:1
 
-   Solving those together brackets the luminance tightly, so all six are
-   derived at one target luminance and differ only in hue. That is the
-   right shape for categorical colour - a family heavier than its
-   neighbours reads as more important - and one value then serves both
-   themes, so there is no dark variant to keep in step.
+   All six share one luminance and differ only in hue, so one value
+   serves both themes.
    ===================================================================== */
 :root {
   --flavour-fruit:   #c1394a;
@@ -159,25 +146,11 @@
 /* =====================================================================
    Palette - "Back Bar"
 
-   Espresso, oat and amber: the colours of the bar, not of a printed card.
-   The front door was built dark with one amber accent, and the rest of
-   the site now follows it, so the two halves are one design.
-
-   ONE ACCENT, NOT TWO
-
-   The book used to be an ink blue and the shelf a bitters red. Both are
-   amber now. The two halves are told apart by their marks, their names
-   and where they sit in the bar, not by a second colour; the tokens keep
-   their old names (--ink-blue, --bitters) so no component had to change,
-   and both resolve to the same amber.
-
-   Amber is a fill at one weight and a text colour at another: a bright
-   amber on the dark ground, and a deeper one (5.47:1) on the oat paper,
-   where the bright one would fall under 3:1. Every pairing was measured.
-
-   It has to stay clear of the wine site. That one is chalk, garnet and
-   straw; this is warmer, browner and oranger, on oat paper and espresso
-   rather than chalk and plum, so the two are not mistaken for each other.
+   Espresso, oat and amber, with one accent for both halves. The tokens
+   keep their older names (--ink-blue for the book, --bitters for the
+   shelf) but both resolve to the same amber: a bright one on the dark
+   ground, and a deeper one (5.47:1) on the oat paper, where the bright
+   one would fall under 3:1.
    ===================================================================== */
 :root {
   /* Ground - bright card stock */
@@ -252,9 +225,8 @@
   --logo-pour:    var(--bitters);
   --logo-word:    var(--ink-blue);
 
-  /* Height of the section bar. The book sidebar sticks directly beneath
-     it and the two numbers have to agree, so there is one value here
-     rather than a guess in each file. */
+  /* Height of the section bar. The book index column sticks directly
+     beneath it, so both read this one value. */
   --nav-h: 3.7rem;
 
   color-scheme: light;
@@ -404,15 +376,11 @@ summary {
 /* =====================================================================
    RULES
 
-   A printed menu separates things with rules, and the rules mean
-   different amounts. Three weights, used consistently:
+   Three weights, used consistently:
 
      .rule-hair    a hairline. Between rows, under a sub-heading.
      .rule-double  two lines with air between. Above a section.
      .rule-stub    a short heavy stub. Under a title, as a full stop.
-
-   These replace the hand-drawn wobbly underline the wine site uses,
-   which is the single most recognisable thing about it.
    ===================================================================== */
 .rule-hair {
   border: 0;
@@ -726,15 +694,9 @@ button.card:hover {
 /* =====================================================================
    THE BOOK INDEX
 
-   The contents, permanently on screen on a wide window. Set as a printed
-   index rather than as application navigation: no panel, no sunk
-   background, no status dot against every line - the same paper as the
-   page, divided from it by one hairline, in small type.
-
-   It sits in the right margin. The same column on the left reads as
-   navigation - which is the association worth avoiding - where on the
-   right it reads as an index, and the reading column keeps the left edge
-   the eye returns to on every line.
+   The contents, on screen on a wide window, set as a printed index: the
+   same paper as the page, one hairline between, small type. It sits in
+   the right margin, where it reads as an index rather than navigation.
    ===================================================================== */
 .book-layout {
   display: block;

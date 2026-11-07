@@ -3,26 +3,17 @@ import { ALL, PAGED } from './backbar';
 import { headingsOf, specAnchor } from './headings';
 
 /**
- * Where a drink named in prose can be found on this site.
+ * Where a drink named as a plain string (in the glassware picker, say) can
+ * be found on this site, best destination first:
  *
- * Several lists name drinks as plain strings (the glassware picker, for
- * one), and a reader who sees "Cosmopolitan" wants to open it. This turns
- * a name into the best place to send them, in order of how complete the
- * destination is:
+ *   1. a Backbar page;
+ *   2. a spec sheet inside a book chapter;
+ *   3. the IBA's own page (an external link);
+ *   4. a chapter sub-heading about the thing named;
+ *   5. a chapter whose title is the name.
  *
- *   1. a Backbar page, which has the full build, method and glass;
- *   2. a spec sheet inside a book chapter, for the drinks the book writes
- *      up but the shelf has no page for (the link jumps to the sheet);
- *   3. the IBA's own page, for a drink on their official list that this
- *      site holds no recipe for (an external link, flagged as such);
- *   4. a sub-heading in a chapter that is about the thing named, such as
- *      "Irish coffee" or "Mulled wine";
- *   5. a chapter whose own title is the name.
- *
- * Names that match none of these get no link rather than a wrong one, so
- * "Cognac and aged spirits, neat" stays plain text. Matching ignores case,
- * punctuation and "&" versus "and", because the lists and the headings
- * were written separately and disagree on those.
+ * No match means no link. Matching ignores case, punctuation and "&"
+ * versus "and".
  */
 
 /** Case, accents, punctuation and spacing flattened away; "&" read as "and". */

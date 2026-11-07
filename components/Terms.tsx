@@ -5,12 +5,9 @@ import { CATEGORY_LABEL, GLOSSARY, lookupTerm } from '@/lib/glossary';
 import type { GlossaryCategory } from '@/lib/schema';
 
 /**
- * The glossary, searchable by meaning as well as by name.
- *
- * Searching the definition matters more than it sounds: the common case
- * is remembering what something does and not what it is called, which is
- * exactly the case a name-only search fails at. Typing "spring" finds the
- * hawthorne strainer.
+ * The glossary, searchable by meaning as well as by name, since readers
+ * often remember what a thing does and not what it is called ("spring"
+ * finds the hawthorne strainer).
  */
 export default function GlossarySearch() {
   const [query, setQuery] = useState('');
@@ -39,6 +36,7 @@ export default function GlossarySearch() {
      it. `pending` carries the slug across that render. */
   const pending = useRef<string | null>(null);
 
+  /* Clear the filters and remember which term to scroll to after render. */
   const jumpTo = (slug: string) => {
     pending.current = slug;
     setQuery('');

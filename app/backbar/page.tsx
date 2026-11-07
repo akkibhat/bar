@@ -20,16 +20,10 @@ export const metadata: Metadata = {
 };
 
 /**
- * Backbar: the drinks, and the whole page.
+ * Backbar: the whole shelf on one page, with no landing above it.
  *
- * There is no landing above this one. The shelf holds one kind of thing,
- * so an index page pointing at a list would be a hop with nothing to
- * choose between - and it would put the drinks two clicks from the nav
- * instead of one.
- *
- * The page carries the shelf's accent as a local custom property, taken
- * from the section table, so recolouring this half is a one-line edit in
- * `lib/site.ts` rather than a sweep through the markup.
+ * The shelf's accent is set as a local custom property from `lib/site.ts`,
+ * so recolouring this half is a one-line edit there.
  */
 export default function BackbarPage() {
   return (

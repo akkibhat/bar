@@ -1,5 +1,6 @@
 import Figure from './Figure';
 
+/** A speed rail seen from the front, with eight bottles in pouring order. */
 export default function RailFigure() {
   return (
     <Figure

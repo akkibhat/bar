@@ -1,24 +1,13 @@
 /**
- * Four checks that the specs cannot fail quietly.
+ * Checks that prose which restates numbers from the specs still agrees
+ * with them, since nothing else links the two.
  *
- * The book's prose restates numbers that live in the specs, and nothing
- * links the two, so a spec can move and a sentence goes wrong with no
- * error anywhere. This script catches the four cases that are cheap to
- * state exactly:
+ *   1. A family's `ratio` matches its archetype's spec.
+ *   2. A spec's `method` and `note` do not contradict each other.
+ *   3. A chapter that counts its own drinks counts them right.
+ *   4. The README and roadmap count the book right.
  *
- *   1. A family's `ratio` must agree with its archetype's spec. Four of
- *      the six did not when this was written.
- *   2. A spec's `method` and its `note` must not contradict each other
- *      about how the drink is made - "Shake and strain" in one field and
- *      "built in the glass" in the other is a real bug this found.
- *   3. A chapter that counts its own drinks must count them right. Three
- *      standfirsts were wrong the moment ten specs were added.
- *   4. The README and the roadmap must count the book right too. They
- *      restate the same totals as prose and drift the same way, with
- *      nobody reading them again once written.
- *
- * It loads the chapter modules the same way chapters-out does, so it
- * reads the typed data directly and needs no parsing of its own.
+ * Loads the chapter modules the same way chapters-out does.
  *
  *   npm run check:specs
  */
@@ -69,6 +58,7 @@ const UNITS = [
   [/(\d+(?:\.\d+)?)\s*tsp\b/, 5],
 ];
 
+/** A spec line's measure in ml, or null when it is not a measure. */
 function mlOf(line) {
   for (const [re, factor] of UNITS) {
     const m = re.exec(line.amount ?? '');
@@ -77,6 +67,7 @@ function mlOf(line) {
   return null;
 }
 
+/** "2 : 1 : 1" as three numbers, or null for a range or anything vaguer. */
 function parseRatio(text) {
   if (/varies|anywhere|from|to\s+\d/i.test(text)) return null;
   const m = /(\d+(?:\.\d+)?)\s*:\s*(\d+(?:\.\d+)?)\s*:\s*(\d+(?:\.\d+)?)/.exec(text);
@@ -143,19 +134,10 @@ for (const spec of specs.values()) {
  * 3. Prose that counts something the data already knows
  *
  * The book says "thirty-five recipes" and "Seventeen glasses" in places
- * nothing keeps up to date. Adding ten specs broke chapter 17, which
- * said twenty-five three times, and the first version of this check
- * missed it because chapter 17 holds no specs of its own.
- *
- * So the nouns are named explicitly rather than guessed at. This is
- * deliberately a short list: only counts that are derivable from data
- * are worth checking, and the book is full of "four elements" and "two
- * things" that a checker has no business reading.
- *
- * The standalone pages avoid the problem entirely by interpolating -
- * `${GLASSES.length} glasses` - but a chapter standfirst is data that
- * also round-trips to Markdown by hand, so failing loudly is the next
- * best thing.
+ * nothing keeps up to date. The nouns are listed explicitly, and only for
+ * counts derivable from data: the book is full of "four elements" that a
+ * checker has no business reading. Chapters with no specs of their own
+ * are checked too.
  * ------------------------------------------------------------------ */
 const NUMBER_WORDS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
   'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen',

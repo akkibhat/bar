@@ -1,17 +1,9 @@
 import Figure from './Figure';
 
 /**
- * How beer is made.
- *
- * Four vessels in a row, because that is what a brewery is: mash, boil,
- * ferment, condition. What moves along the line is the liquid changing
- * name at each step - grain and water become wort, wort becomes hopped
- * wort, hopped wort becomes beer - and naming it at each stage is most
- * of what the steps beside this are trying to teach.
- *
- * The one thing drawn rather than labelled is the hop addition, because
- * when the hops go in is the whole difference between a bitter beer and
- * an aromatic one, and the chapter says so two paragraphs earlier.
+ * How beer is made: mash, boil, ferment, condition, with the liquid named
+ * at each stage. The hop addition is drawn rather than labelled, because
+ * when the hops go in decides bitter versus aromatic.
  */
 export default function BrewSequence() {
   return (

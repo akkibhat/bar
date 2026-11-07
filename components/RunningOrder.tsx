@@ -7,17 +7,10 @@ import { useRead } from '@/lib/local';
 import { PROGRESS_ENABLED } from '@/lib/site';
 
 /**
- * The contents, set as the inside of a menu.
- *
- * Each part is a section: a numeral, a name in small caps, a rule, then
- * its chapters as ruled rows with the reading time hard right behind dot
- * leaders. It is the same device the spec sheets use, which is the point
- * - a menu runs one typographic idea through everything, and a site that
- * lists its drinks that way should list its sections that way too.
- *
- * There are no cards here. A card is a physical metaphor - something
- * tipped in, or pinned up - and it belongs to a notebook. This is
- * printed, so it is rules and space.
+ * The contents page, set as the inside of a menu: each part a numeral,
+ * a name and a rule, then its chapters as ruled rows with the reading
+ * time hard right behind dot leaders, like the spec sheets. The progress
+ * line only shows when `PROGRESS_ENABLED` is on.
  */
 export default function Contents({ contents }: { contents: ContentsChapter[] }) {
   const { progress, ready, resetProgress } = useRead();

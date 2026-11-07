@@ -2,20 +2,6 @@
 
 import { useMemo, useState } from 'react';
 
-/**
- * The balance calculator.
- *
- * Takes a spirit, a citrus and a sweetener in millilitres and reports the
- * ratio between them, then says which of the known templates it is
- * nearest and how far off it sits.
- *
- * The judgement is deliberately loose. There is no correct ratio - a
- * drier palate genuinely wants less sugar - so the tool names the
- * template a spec is closest to rather than marking it right or wrong.
- * The only thing it will actually warn about is a drink far enough
- * outside every template to be a mistake rather than a preference.
- */
-
 type Template = {
   name: string;
   /** Parts, against a citrus of 1. */
@@ -50,6 +36,11 @@ const TEMPLATES: Template[] = [
   },
 ];
 
+/**
+ * The balance calculator: spirit, citrus and sweetener in millilitres,
+ * the ratio between them, and the nearest known template. It only warns
+ * when a build is far outside every template.
+ */
 export default function RatioTool() {
   const [spirit, setSpirit] = useState(45);
   const [citrus, setCitrus] = useState(25);

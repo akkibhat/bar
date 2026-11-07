@@ -1,25 +1,10 @@
 import Figure from './Figure';
 
-/**
- * The pour, drawn as four positions.
- *
- * The steps beside this describe an angle changing over time, which is
- * the one thing prose is worst at and a drawing is best at. So the glass
- * is shown four times: tilted at forty-five, filling, straightening, and
- * standing up with its head on.
- *
- * Each glass pivots on the corner of its base, which is what a tilted
- * glass does in the hand and what keeps all four above the bar line. The
- * direction matters: rotating anticlockwise about that corner swings the
- * opposite corner down through the line, so the tilt is clockwise.
- *
- * WHERE THE COLUMNS SIT
- *
- * A tilted glass is not centred on its pivot - at 45° its ink runs from
- * cx-9 to cx+81, so `lean` carries that offset per angle and the glass
- * is placed by where it will actually land rather than by its pivot.
- * The labels are wider than the glasses, so the columns are spaced on
- * the labels and each glass is then centred over its own.
+/*
+ * Each glass pivots clockwise on the corner of its base; anticlockwise
+ * would swing the other corner down through the bar line. A tilted glass
+ * is not centred on its pivot, so `LEAN` holds that offset per angle and
+ * each glass is centred over its own label column.
  */
 
 /** How far a tilted glass's ink centre sits from its pivot. */
@@ -42,6 +27,7 @@ const STAGES = [
   { at: 455, deg: 0, fill: 58, head: 20, label: '4. finish', sub: 'head on top', w: 78 },
 ];
 
+/** Pouring a beer, as four positions: tilt, let it run, straighten, finish. */
 export default function PourFigure() {
   return (
     <Figure

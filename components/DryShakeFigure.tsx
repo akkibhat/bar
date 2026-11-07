@@ -1,22 +1,13 @@
 import Figure from './Figure';
 
 /**
- * The dry shake, as four beats on a Boston shaker.
+ * The dry shake in four beats: shake without ice, shake with ice, double
+ * strain, settle. The foam is the same height in beats one and two,
+ * because the head is made before the ice goes in.
  *
- * Shake with no ice, add ice and shake again, double strain, let it
- * settle. The foam is drawn at full height in the first tin and the same
- * height in the second, because the argument is that the head is made
- * before the ice goes anywhere near it - if beat two showed more foam
- * than beat one the drawing would say the opposite of the chapter.
- *
- * The third beat is the only one that is not a vessel: a hawthorne and a
- * fine sieve stacked, with the cord of white caught on the sieve drawn as
- * a small gold ellipse.
- *
- * Beats fade in on `.beat b1` to `b4`; the tins rock on `.shk`, the foam
- * grows on `.foam`, the ice drops in on `.icein`, and the pour runs on
- * `.stream`. Every one carries its finished state in its base rule, so a
- * reader who has asked for reduced motion sees the completed drawing.
+ * Animated classes: `.beat b1`-`b4`, `.shk`, `.foam`, `.icein`, `.stream`.
+ * Each carries its finished state in its base rule, so reduced motion
+ * shows the completed drawing.
  */
 export default function DryShakeFigure() {
   return (

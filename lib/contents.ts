@@ -3,20 +3,10 @@ import type { Heading } from './headings';
 /**
  * The contents, slimmed for the client.
  *
- * The index and the top bar are both interactive, so they are client
- * components, and both sat in the root layout importing the whole book to
- * read a slug and a title off it. That pulled all thirty-seven chapters -
- * every paragraph, table and spec - into the JavaScript bundle of every
- * page on the site, where it was duplicated against the prose already
- * rendered into the HTML and never used.
- *
- * So the server projects each chapter down to the handful of fields the
- * navigation actually reads, and passes that down as a prop. Headings
- * come along because the index lists them for the open chapter, and they
- * are a few words each rather than a body.
- *
- * This module deliberately imports no content. Anything a client
- * component reaches for has to live here, or the chapters come back.
+ * The index and the top bar are client components. Importing the book
+ * there would put every chapter's full text into every page's JavaScript,
+ * so the server projects each chapter down to these fields and passes them
+ * as a prop. This module must import no content, or the chapters come back.
  */
 export type ContentsChapter = {
   n: number;

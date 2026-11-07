@@ -19,15 +19,10 @@ import './globals.css';
 /**
  * Bodoni Moda carries the headings and the wordmark.
  *
- * A didone: very thick stems against very thin hairlines, which is the
- * ratio that makes a cocktail list look like a cocktail list. It is a
- * variable font with a real optical size axis, so it thins its own
- * hairlines as it grows instead of scaling them linearly - which is what
- * stops a 54px title looking like a blown-up 18px one.
- *
- * It is also fragile below about 20px, where those hairlines fall under
- * a rendered pixel. Hence `.display` is reserved for headings and small
- * emphasis goes to Jost instead.
+ * A didone with a real optical size axis, so it thins its own hairlines
+ * as it grows. It is fragile below about 20px, where those hairlines fall
+ * under a pixel, so `.display` is kept for headings and small emphasis
+ * goes to Jost.
  */
 const bodoni = Bodoni_Moda({
   subsets: ['latin'],
@@ -98,6 +93,7 @@ const THEME_SCRIPT = `
 })();
 `;
 
+/** The root document: fonts, the theme script, the shell and the footer. */
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {

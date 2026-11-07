@@ -6,15 +6,13 @@ import Link from 'next/link';
 import GlassShape from './GlassShape';
 import type { DrinkLink } from '@/lib/drinkLinks';
 
-/**
- * Which glass.
- *
- * Filters on how the drink is served, because that is the thing you know
- * first - long, short, up - and every other property of the glass follows
- * from it.
- */
+/** The serve filters, in the order the buttons appear. */
 const SERVES: Serve[] = ['up', 'short', 'long', 'hot', 'shot'];
 
+/**
+ * Which glass: the glassware list filtered by how the drink is served,
+ * since that is the thing you know first and the glass follows from it.
+ */
 export default function GlasswarePicker({
   links = {},
 }: {

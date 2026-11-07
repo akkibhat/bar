@@ -4,18 +4,6 @@ import { useMemo, useState } from 'react';
 import { CATEGORY_LABEL, SPIRITS } from '@/lib/spirits';
 import type { Spirit, SpiritCategory } from '@/lib/schema';
 
-/**
- * The spirit explorer.
- *
- * Filter the back bar by shelf and by whether wood is involved, sort by
- * how sweet or how assertive each one runs. It is a way of asking "what
- * else behaves like this" rather than a catalogue, which is why sorting
- * is on the two judgement scales rather than alphabetical.
- *
- * `only` locks the category filter and hides the control, so a chapter
- * can embed the explorer already narrowed to its own shelf.
- */
-
 type Sort = 'name' | 'sweetness' | 'intensity' | 'abv';
 
 const WOOD_LABEL: Record<Spirit['wood'], string> = {
@@ -24,6 +12,11 @@ const WOOD_LABEL: Record<Spirit['wood'], string> = {
   never: 'Never aged',
 };
 
+/**
+ * The spirit explorer: filter the back bar by shelf, sort by name,
+ * sweetness, intensity or ABV. `only` locks the category and hides the
+ * filter, so a chapter can embed it narrowed to its own shelf.
+ */
 export default function SpiritExplorer({ only }: { only?: string }) {
   const [category, setCategory] = useState<SpiritCategory | 'all'>(
     (only as SpiritCategory) ?? 'all',

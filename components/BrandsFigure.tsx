@@ -3,28 +3,6 @@
 import { useState } from 'react';
 import Figure from './Figure';
 
-/**
- * Who owns the shelf.
- *
- * Three rows, one company each, and every row is ordered the way a speed
- * rail is: gin, vodka, rum, whisky, tequila, liqueur, then whatever the
- * company owns that is not a spirit. So the rows read as three working
- * stations rather than three lists, and the grouping does the arguing -
- * it is not that these companies own some brands, it is that they own a
- * whole rail each.
- *
- * The silhouettes are drawn per bottle rather than per category, because
- * a shelf is recognisable by outline before it is readable by label:
- * Don Julio is a squat body under a long neck, Hennessy is a cognac
- * decanter, Absolut is an apothecary bottle. Getting those right is what
- * makes the row scan as a real back bar. They are shapes, not artwork -
- * no logos, no trade dress, nothing fetched from anywhere.
- *
- * Bottles start as paper. The control colours them and names the owner,
- * because the recognition has to come first: you should read the shelf
- * and think "I know all of these" before you are told who owns them.
- */
-
 type Owner = 'diageo' | 'pernod' | 'lvmh';
 
 type Shape =
@@ -175,6 +153,14 @@ const SHAPES: Record<Shape, { path: (x: number, b: number) => string; label: num
   },
 };
 
+/**
+ * Who owns the shelf: three rows, one company each, every row ordered like
+ * a speed rail, so each company reads as owning a whole rail.
+ *
+ * Silhouettes are per bottle (shapes only, no logos) so the shelf is
+ * recognisable by outline. Bottles start blank; the control colours them
+ * and names the owner, so recognition comes before the reveal.
+ */
 export default function BrandsFigure() {
   const [revealed, setRevealed] = useState(false);
 

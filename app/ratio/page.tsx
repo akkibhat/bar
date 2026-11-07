@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'Put a build in and see which of the sour templates it is nearest, and how sweet it will read.',
 };
 
+/** The balance calculator as a standalone page. */
 export default function RatioPage() {
   return (
     <div className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">

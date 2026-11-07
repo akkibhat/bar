@@ -3,18 +3,11 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 
 /**
- * A drawn plate embedded in a chapter.
+ * A drawn plate embedded in a chapter: the SVG children in a frame, a
+ * caption, and a Replay control for animated sequences.
  *
- * The drawing itself is SVG passed in as children, set on the page's own
- * tokens so it follows the theme. What this wrapper adds is the frame
- * the other embedded tools use, the caption, and - for the sequences -
- * the run control.
- *
- * Motion is CSS, gated on a `run` class on the plate. The class goes on
- * when the plate first scrolls into view, so a reader arrives at the
- * start of the sequence rather than partway through a loop, and Replay
- * takes it off and puts it back. The two animation frames between are
- * what lets the browser see a change and start again from zero.
+ * Motion is CSS, gated on a `run` class that goes on when the plate first
+ * scrolls into view, so the sequence starts from the beginning.
  */
 export default function Figure({
   title,
@@ -32,6 +25,8 @@ export default function Figure({
 }) {
   const plate = useRef<HTMLDivElement>(null);
 
+  /* Restart the animation. The class comes off, then back on two frames
+     later, so the browser sees a change and starts again from zero. */
   const run = () => {
     const el = plate.current;
     if (!el) return;

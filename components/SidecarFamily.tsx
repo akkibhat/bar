@@ -1,18 +1,12 @@
 import Figure from './Figure';
 
 /**
- * The Sidecar structure filled three ways.
+ * The Sidecar structure filled three ways, each column normalised to its
+ * own total and ordered by the spirit's share (White Lady 44%, Margarita
+ * 50%, Cosmopolitan 57%). Each band is 148px (y=100 to 248) times its share.
  *
- * Each column is normalised to its own total, so the bands read as
- * proportion rather than volume, and the three are ordered by the
- * spirit's share of the three roles rising left to right - White Lady
- * at 44%, Margarita at 50%, Cosmopolitan at 57% - so the drift reads as
- * a gradient rather than as one drink out of step. The interior runs
- * from y=248 to y=100, 148 px, and every band is that height times the
- * ingredient's share.
- *
- * The Margarita is the common pour, 45 / 30 / 15. Change the spec and
- * change these bands together; nothing links them.
+ * The bands are hand-computed from the specs (Margarita 45 / 30 / 15).
+ * Change a spec and change these together; nothing links them.
  */
 export default function SidecarFamily() {
   return (

@@ -4,39 +4,22 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ImageResponse } from 'next/og';
 
-/**
- * The card a shared link renders as.
- *
- * Generated at build time rather than shipped as a file, so it stays in
- * step with the title and the palette instead of being a picture someone
- * has to remember to redraw. Scrapers will not run JavaScript or read a
- * stylesheet, so the colours are the literal hexes behind the light
- * tokens in `app/globals.css` - this card is always the paper one, even
- * for a reader whose browser is dark.
- *
- * THE FONTS ARE NOT THE ONES THE SITE LOADS, AND CANNOT BE.
- *
- * `next/font` downloads woff2 and nothing else, and the renderer behind
- * ImageResponse reads only ttf, otf and woff - it cannot decompress
- * brotli, so a woff2 throws rather than falling back. There is no path
- * from the site's own font files to this card.
- *
- * So the two faces are committed as ttf under `assets/fonts` and read
- * from disk here. They sit outside `public/` deliberately: they are used
- * once, at build time, and should never be served to a reader who is
- * already being sent the woff2 versions. Both are SIL Open Font
- * Licensed, and the licences are committed beside them.
- *
- * Jost, which sets the small line at the foot, is not among them. It
- * would be a third file for eleven characters, so that line is set in
- * Lora instead.
- */
+/* Static: `output: export` has no server to decide it at request time. */
 export const dynamic = 'force-static';
 
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 export const alt = "Akki's Bar - what I was taught, and what I have built";
 
+/**
+ * Reads one of the committed ttf fonts.
+ *
+ * The site's own fonts cannot be used: `next/font` only downloads woff2,
+ * and the ImageResponse renderer reads ttf, otf and woff but throws on
+ * woff2. So the two faces live as ttf in `assets/fonts` (outside
+ * `public/`, as they are only needed at build time). Jost is not among
+ * them, so the footer line is set in Lora.
+ */
 const font = (file: string) =>
   fs.readFileSync(path.join(process.cwd(), 'assets', 'fonts', file));
 
@@ -46,6 +29,13 @@ const MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 16 120 136" wid
 
 const MARK_URI = `data:image/svg+xml;base64,${Buffer.from(MARK).toString('base64')}`;
 
+/**
+ * The card a shared link renders as, generated at build time.
+ *
+ * Scrapers do not run JavaScript or read stylesheets, so the colours are
+ * literal hexes. They are the site's earlier paper, ink blue and bitters
+ * red palette, not the current amber tokens in `app/globals.css`.
+ */
 export default function Image() {
   return new ImageResponse(
     (

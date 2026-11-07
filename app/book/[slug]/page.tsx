@@ -21,6 +21,7 @@ export function generateStaticParams() {
   return CHAPTERS.map((c) => ({ slug: c.slug }));
 }
 
+/** The page title and description, taken from the chapter. */
 export async function generateMetadata({
   params,
 }: {
@@ -35,20 +36,11 @@ export async function generateMetadata({
 /**
  * One chapter.
  *
- * The header hangs the part's roman numeral large in the left margin,
- * the way a printed book's part opener does, with the title and standfirst
- * set left-aligned beside it. It replaces the centred, double-ruled
- * header, which was the same on every one of thirty-seven chapters and
- * said nothing about which part of the book you were in; the numeral now
- * does that, and it changes from part to part.
- *
- * The body underneath is left-aligned at a reading measure, so the title
- * and the prose share an edge.
- *
- * The reading time stays - it is a courtesy, and says what you are in
- * for. The chapter number does not: "Chapter 12" makes each one a
- * scheduled unit of a syllabus rather than something written on a
- * subject.
+ * The header hangs the part's roman numeral large in the left margin, the
+ * way a printed book's part opener does, with the title and standfirst
+ * beside it. The reading time is shown; the chapter number deliberately
+ * is not, so a chapter reads as writing on a subject rather than a unit of
+ * a syllabus.
  */
 export default async function ChapterPage({
   params,

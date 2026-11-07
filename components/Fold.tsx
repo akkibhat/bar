@@ -1,20 +1,10 @@
 /**
- * A collapsible section, built on `<details>`.
+ * A collapsible section, built on `<details>`: no state and no client
+ * JavaScript, and find-in-page can open it to show a match.
  *
- * No state, no client component, no hydration. The browser has done this
- * natively for years, it works before JavaScript loads and with it
- * disabled, keyboard and screen-reader behaviour come free, and browser
- * find-in-page can open a closed section to show a match. Reaching for
- * useState here would be worse in every one of those ways.
- *
- * The index column in the margin does use state, for a reason `<details>`
- * cannot cover: which part is open there depends on which chapter you are
- * reading, and it has to change as you navigate.
- *
- * Both markers are rendered and CSS shows one, since there is no way to
- * swap text content on `details[open]` without either scripting it or
- * putting the glyph in a pseudo-element, where it would be invisible to
- * a text search.
+ * Both open/closed markers are rendered and CSS shows one, since swapping
+ * the text on `details[open]` would need a script or a pseudo-element
+ * (which find-in-page cannot see).
  */
 export default function Fold({
   label,

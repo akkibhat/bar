@@ -12,15 +12,8 @@
  * ===================================================================== */
 
 /**
- * One half of the site.
- *
- * Held as an array rather than a keyed record, because the order matters
- * in three places - the top bar, the front door, and the fold-out - and
- * an array makes that order the data rather than something each of those
- * three has to restate and keep in step.
- *
- * `at` is the route prefix and doubles as the test for which half a path
- * belongs to, so there is no separate table mapping one to the other.
+ * One half of the site. `at` is the route prefix and doubles as the test
+ * for which half a path belongs to.
  */
 export type Half = {
   id: 'book' | 'shelf';
@@ -32,19 +25,15 @@ export type Half = {
   plain: string;
   /**
    * The accent, as a CSS custom property rather than a colour, so
-   * recolouring a half is one line here rather than a sweep through the
-   * markup.
-   *
-   * Ink blue and a bitters red: black plus two spot colours, the way a
-   * menu of this kind was printed. They sit 136 degrees apart on the
-   * wheel, which is the job they are doing - you should know which half
-   * you are in before reading a word.
+   * recolouring a half is one line here. Both currently resolve to the
+   * same amber (see the palette in globals.css).
    */
   accent: string;
 };
 
 /**
- * Both halves, in the order they are always presented.
+ * Both halves, as an array because the order is the order they are always
+ * presented in.
  *
  * The names do not follow one pattern, deliberately. `Bar` + `book`
  * gives Barbook at /book, and the address bar spells the name out. The
@@ -135,24 +124,14 @@ export const PROGRESS_ENABLED: boolean = false;
  */
 export const OWNER = 'Akki';
 
-/**
- * The copyright line.
- *
- * `COPYRIGHT_FROM` is the year the site went up and does not change.
- * `copyrightYears()` returns just that year until a later one arrives,
- * and a range after - "2026", then "2026-2029".
- *
- * The current year is read when the page is rendered, and every page here
- * is prerendered, so the range is fixed at build time rather than in the
- * reader's browser. That is the right trade for a static site: doing it
- * in the browser would mean shipping JavaScript to print a number, and a
- * hydration mismatch every New Year. The consequence is that the year
- * only moves when the site is rebuilt, which is a reason to rebuild
- * rather than a reason to do it client-side.
- */
+/** The copyright holder, and the year the site went up. */
 export const COPYRIGHT_HOLDER = 'Akki Bhat';
 export const COPYRIGHT_FROM = 2026;
 
+/**
+ * "2026", or a range like "2026-2029" once a later year arrives. Read at
+ * prerender, so the year only moves when the site is rebuilt.
+ */
 export function copyrightYears(now: number = new Date().getFullYear()): string {
   return now > COPYRIGHT_FROM ? `${COPYRIGHT_FROM}-${now}` : String(COPYRIGHT_FROM);
 }

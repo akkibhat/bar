@@ -1,17 +1,9 @@
 import type { FlavourFamily } from './schema';
 
 /**
- * The flavour wheel: six families and the descriptors under them.
- *
- * Two levels rather than the four a wine wheel usually runs to, because
- * spirits give you less to work with than wine does - the ethanol carries
- * a narrower set of aromatics, and at 40% the palate tires before a
- * fourth level would pay off.
- *
- * The colours come from the flavour tokens in globals.css, which were
- * solved at one luminance so all six clear both the light and the dark
- * ground and still take a pale label. Referencing the variables rather
- * than repeating the hex means a palette change happens once.
+ * The flavour wheel: six families and the descriptors under them, two
+ * levels deep. Colours reference the flavour tokens in globals.css, which
+ * work on both the light and dark ground.
  */
 export const FLAVOURS: FlavourFamily[] = [
   {

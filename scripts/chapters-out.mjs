@@ -3,47 +3,19 @@
  *
  *   npm run chapters:out
  *
- * The prose lives as strings inside typed block arrays, which is the
- * right shape for the site and an awkward one to write in. So it comes
- * out to `_workings/chapters/`, gets edited there, and goes back in with
+ * One file per chapter in `_workings/chapters/`, numbered by reading
+ * order (`07-rum.md`). Edit there, then bring it back with
  * `npm run chapters:in`.
  *
- * ONE FILE PER CHAPTER
- *
- * Numbered by reading order so they sort the way the book does:
- * `07-rum.md`, `13-what-beer-is.md`. Thirty-seven small files rather
- * than one long one - you edit a chapter, not a book, and a diff on one
- * chapter is readable.
- *
- * WHAT THE ANCHORS ARE
- *
- * Every block is preceded by an HTML comment naming the chapter, the
- * block's index in that chapter's body, and its kind:
+ * Every block is preceded by an anchor naming the chapter, the block's
+ * index and its kind, which is how the importer finds its way home:
  *
  *     <!-- what-beer-is:4:p -->
  *
- * They do not render, and the importer finds its way home by them.
- * Leave them alone. Delete one and that block stops being editable;
- * change the index and an edit lands in the wrong place.
- *
- * WHAT IS READ-ONLY
- *
- * Drink specs and embedded tools export marked READ-ONLY and are ignored
- * on the way back in. A spec holds eight fields and this exports four of
- * them, so importing one back would drop the ice, the garnish and the
- * rest; a tool is a component reference with nothing in it to edit. Both
- * are done in TypeScript.
- *
- * Tables are NOT read-only. A table is `head` and `rows` of plain
- * strings, which is exactly what a Markdown table is, so it round-trips
- * with nothing to lose - and about a tenth of the writing in this book
- * lives inside one. Keep the pipes and the header line intact and the
- * importer handles the rest; it refuses anything whose columns stop
- * lining up.
- *
- * The chapter files are loaded rather than parsed: Node strips the types
- * and hands back the real arrays, so what is exported is exactly what
- * the site renders.
+ * Specs and tools export marked READ-ONLY (a spec has more fields than
+ * the export shows). Tables round-trip as Markdown tables. The chapter
+ * files are loaded, not parsed: Node strips the types and hands back the
+ * real arrays.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -83,6 +55,7 @@ const anchor = (slug, i, kind, extra = '') =>
 let editable = 0;
 let readOnly = 0;
 
+/** Append one block's anchor and Markdown to `out`, counting editable and read-only blocks. */
 function renderBlock(slug, i, b, out) {
   switch (b.kind) {
     case 'p':

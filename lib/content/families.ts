@@ -1,18 +1,11 @@
 import type { Family } from '../schema';
 
 /**
- * The six root structures behind almost every classic.
+ * The six root structures behind almost every classic, sorted by what
+ * holds the drink together rather than by spirit. The framework is the one
+ * from *Cocktail Codex*.
  *
- * Sorted by what holds the drink together rather than by which spirit is
- * in it. A Negroni and a Boulevardier are the same drink, and no
- * ingredient-based sorting will ever say so.
- *
- * The framework is the one set out in *Cocktail Codex*, which has become
- * the standard way of teaching drink structure. It is not mine and it was
- * not on the course; it is here because nothing else explains the
- * workbook's own recipe list as well as it does.
- *
- * `members` lists drinks that appear elsewhere in this book, so the
+ * `members` lists drinks that appear elsewhere in the book, so the
  * families page doubles as a cross-reference into Part VIII.
  */
 export const FAMILIES: Family[] = [

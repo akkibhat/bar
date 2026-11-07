@@ -1,20 +1,12 @@
 /**
- * Drawing a drink's build as a glass filled in layers.
+ * Drawing a drink's build as a glass filled in layers, one per ingredient
+ * measured in millilitres, in spec order. Shared by the front door and the
+ * drink pages.
  *
- * One layer for each ingredient measured in millilitres, in the order of
- * the spec, in the glass the drink is served in. It is a schematic and
- * says so wherever it is shown. What it states truthfully: the order and
- * the proportions of the measured lines, the glass, and the built volume
- * against what that glass holds. What it only approximates: the heights
- * are corrected for the shape of the bowl (a cone fills faster at the top
- * than at the point), not measured from a real glass.
- *
- * An ingredient measured in anything but millilitres (a double shot, a
- * dash, a pinch) is not drawn: it is listed as text, rather than being
- * given a volume it was never given.
- *
- * Shared by the front door and the drink pages, so the two cannot show the
- * same drink differently.
+ * True to the data: the order, the proportions, the glass, and the built
+ * volume against its capacity. Approximate: layer heights are corrected
+ * for the bowl's shape, not measured. Anything not in ml (a dash, a pinch)
+ * is listed as text, not drawn.
  */
 
 import { GLASSES } from './glassware';
@@ -79,6 +71,7 @@ const COLOURS: [string, string][] = [
 ];
 const FALLBACK = ['#d8b48a', '#b9805a', '#e3c9a0', '#a56a48'];
 
+/** A layer colour for an ingredient: by keyword, else from the fallback cycle by position. */
 export function colourFor(name: string, i: number): string {
   const n = name.toLowerCase();
   return COLOURS.find(([k]) => n.includes(k))?.[1] ?? FALLBACK[i % FALLBACK.length];

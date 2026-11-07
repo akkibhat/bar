@@ -1,19 +1,10 @@
 import Figure from './Figure';
 
 /**
- * Why beer does not go in a shaker.
- *
- * Drawn as a Boston shaker, which is what the kit chapter says to buy
- * and what the note beside this means: two tins that seal together under
- * their own vacuum. That matters to the drawing, because "the tin comes
- * apart" is literal here - the seal on a Boston is friction and pressure,
- * so carbonation inside has one way out and it takes the small tin with
- * it.
- *
- * Two runs side by side, on the same clock so the comparison is
- * unavoidable. Left: beer in, sealed, shaken, and the tins separate.
- * Right: the beer stays out, everything else is shaken and strained, and
- * the beer is folded through at the end with a bar spoon.
+ * Why beer does not go in a Boston shaker: the seal is only friction, so
+ * carbonation forces the tins apart. Two runs on the same clock. Left,
+ * beer shaken and the tins separate; right, everything else shaken and
+ * the beer folded through at the end.
  */
 export default function ShakerFigure() {
   return (

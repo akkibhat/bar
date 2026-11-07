@@ -1,17 +1,9 @@
 /**
- * The rules that separate things on a printed page.
- *
- * Three weights, and they mean different amounts:
+ * The rules that separate things on a printed page:
  *
  *   hair    a hairline. Between rows, under a sub-heading.
- *   double  two lines with air between. Above a section - the heaviest
- *           break on the page short of a new one.
- *   stub    a short heavy stub in the section accent. Sits under a title
- *           as a full stop rather than as a separator.
- *
- * This replaces the wine site's hand-drawn wobbly underline, which is
- * the single most recognisable thing about that site and the reason a
- * shared component would have made these two look like one project.
+ *   double  two lines with air between. Above a section.
+ *   stub    a short heavy stub in the section accent, under a title.
  */
 export default function Rule({
   variant = 'hair',

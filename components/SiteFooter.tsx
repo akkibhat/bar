@@ -1,17 +1,11 @@
 import { COPYRIGHT_HOLDER, copyrightYears } from '@/lib/site';
 
 /**
- * The copyright line, at the foot of every page.
+ * The copyright line at the foot of every page.
  *
- * A server component on purpose. The year comes from `copyrightYears()`,
- * which reads the clock - doing that in a client component would ship
- * JavaScript to print a number and would mismatch on hydration the first
- * time someone loaded a page on New Year's Day. Here it is resolved once,
- * when the page is prerendered.
- *
- * Set quietly: a hairline, small caps, faint ink. It is a legal line
- * rather than something to read, and the page it sits under has already
- * finished by the time anyone reaches it.
+ * A server component on purpose: `copyrightYears()` reads the clock, so
+ * resolving it at prerender avoids shipping JavaScript for it and a
+ * hydration mismatch at New Year.
  */
 export default function SiteFooter() {
   return (

@@ -1,26 +1,15 @@
 import type { Glass } from '@/lib/glassware';
 
-/**
- * The silhouette of one glass, keyed by slug.
- *
- * Every shape is drawn in the same 40 x 64 box, standing on the same
- * baseline at y=60 and using the same stroke weight, so seventeen of them
- * read as one set rather than as seventeen drawings. That constraint is
- * the whole point: the picker answers "what shape is that", and a
- * silhouette only answers it if the next one is drawn to the same rules.
- *
- * Outlines only, no fill. These sit at caption size beside a few lines of
- * text, and a filled shape at 40 px would read as a blob and pull more
- * attention than the name beside it.
- *
- * Stemmed glasses share a foot and a stem so the family is visible at a
- * glance; the difference between a Martini and a coupe is then the bowl
- * alone, which is exactly the thing being taught.
+/*
+ * Every shape is drawn in the same 40 x 64 box on a baseline at y=60 with
+ * the same stroke, outlines only, so the set reads as one. Stemmed glasses
+ * share a foot and stem, so only the bowl differs between them.
  */
 
 /** Stem and foot, shared by everything served up. */
 const STEM = 'M20 %TOP% v%LEN% M11 58 h18';
 
+/** The stem and foot path, with the stem starting at `top`. */
 const stem = (top: number) =>
   STEM.replace('%TOP%', String(top)).replace('%LEN%', String(57 - top));
 
@@ -62,6 +51,7 @@ export function glassPath(slug: string): string | undefined {
   return SHAPES[slug];
 }
 
+/** The outline silhouette of one glass, keyed by its slug. */
 export default function GlassShape({
   glass,
   size = 46,

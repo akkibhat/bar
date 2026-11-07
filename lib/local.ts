@@ -3,31 +3,21 @@
 import { useCallback, useSyncExternalStore } from 'react';
 
 /**
- * Browser-local persistence for the things the site remembers: which
- * chapters you have finished.
+ * Browser-local persistence: reading progress and the theme choice, in
+ * localStorage only. Nothing is sent anywhere.
  *
- * Everything lives in localStorage. Nothing is sent anywhere, there is no
- * account, and clearing site data resets it. That is a deliberate trade:
- * the site works offline and needs no backend, at the cost of not
- * following you between devices.
- *
- * localStorage is an external store, so it is read through
- * useSyncExternalStore rather than loaded into state inside an effect.
- * That gives correct hydration for free - React renders the server
- * snapshot first and swaps to the real value after hydrating, with no
- * mismatch and no cascading render.
- *
- * Every read and write is wrapped, because localStorage throws rather
- * than returning null in private browsing and when a browser is set to
- * block site data.
+ * Read through useSyncExternalStore rather than state set in an effect,
+ * which gives a clean hydration (server snapshot first, real value after).
+ * Every access is wrapped, because localStorage throws in private browsing
+ * and when site data is blocked.
  */
 
 const PROGRESS_KEY = 'bar.progress.v1';
 
 /**
  * Fired after any write so separate components mounted at the same time
- * (the sidebar and the chapter body, say) stay in agreement without
- * needing a shared context provider.
+ * (the contents page and a chapter footer, say) stay in agreement without
+ * a shared context provider.
  */
 const CHANGE_EVENT = 'bar:storage';
 
@@ -92,12 +82,14 @@ export function peek<T>(key: string, fallback: T): T {
   return typeof window === 'undefined' ? fallback : readStored(key, fallback);
 }
 
+/** A subscribe function for a store that never changes. */
+const noopSubscribe = () => () => {};
+
 /**
  * True once the component has hydrated on the client, false during server
  * rendering and the hydrating render. Lets the interface distinguish
  * "storage not loaded yet" from "storage loaded and empty".
  */
-const noopSubscribe = () => () => {};
 export function useMounted(): boolean {
   return useSyncExternalStore(
     noopSubscribe,
@@ -166,13 +158,7 @@ export function useRead() {
 const THEME_KEY = 'bar.theme';
 const THEME_EVENT = 'bar:theme';
 
-/**
- * The active theme, read from the attribute the layout's inline script
- * stamps on the root element, falling back to the system preference.
- *
- * Read as an external store for the same reason as everything else here:
- * it lives in the DOM and in localStorage, not in React.
- */
+/** Subscribe to theme changes made by the switch. */
 function themeSubscribe(onChange: () => void): () => void {
   const media = window.matchMedia('(prefers-color-scheme: dark)');
   window.addEventListener(THEME_EVENT, onChange);
@@ -183,6 +169,7 @@ function themeSubscribe(onChange: () => void): () => void {
   };
 }
 
+/** The active theme, read from the `data-theme` attribute on the root element. */
 function themeSnapshot(): 'light' | 'dark' {
   const stamped = document.documentElement.getAttribute('data-theme');
   if (stamped === 'dark' || stamped === 'light') return stamped;
@@ -191,6 +178,7 @@ function themeSnapshot(): 'light' | 'dark' {
   return 'dark';
 }
 
+/** The current theme, and a toggle that flips it, saves it and tells subscribers. */
 export function useLights() {
   const theme = useSyncExternalStore(
     themeSubscribe,

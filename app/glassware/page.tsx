@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     'Which glass a drink goes in, filtered by how it is served, with the reason the shape is doing a job.',
 };
 
+/** The glassware picker as a standalone page, with drink names linked. */
 export default function GlasswarePage() {
   return (
     <div className="relative mx-auto max-w-[52rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">

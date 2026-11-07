@@ -4,20 +4,8 @@ import { PAGED } from '@/lib/backbar';
 import { SITE_ORIGIN } from '@/lib/site';
 
 /**
- * The sitemap, built from the same data the pages are.
- *
- * Every route here is generated rather than listed, so a chapter added to
- * the book or a drink added to the shelf appears without anyone
- * remembering to come back here. The only hand-written entries are the
- * fixed pages, which are the ones a file listing would give us anyway.
- *
- * `PAGED` rather than `ALL` on the shelf: four fifths of the IBA list is
- * a name and a link out with no page of its own, and putting a URL in a
- * sitemap that returns a 404 is worse than omitting it.
- *
- * Priorities are relative and only meaningful against each other. The two
- * halves lead, then the reference tools, then the individual pages - which
- * is the order the site itself presents them in.
+ * The fixed pages and their sitemap priority. Chapters and drinks are
+ * added from data below, so new ones appear without editing this file.
  */
 const FIXED: [string, number][] = [
   ['', 1],
@@ -35,6 +23,10 @@ const FIXED: [string, number][] = [
    has no server to decide it at request time. */
 export const dynamic = 'force-static';
 
+/**
+ * The sitemap. Uses `PAGED` rather than `ALL` for the shelf, because most
+ * of the IBA list is a link out with no page here.
+ */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 

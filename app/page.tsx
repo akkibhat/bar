@@ -5,25 +5,6 @@ import { PARTS } from '@/lib/content/parts';
 import { GLASSES } from '@/lib/glassware';
 import { COPYRIGHT_HOLDER, copyrightYears } from '@/lib/site';
 
-/**
- * The front door.
- *
- * Deliberately not the contents page - that lives at /book. This page has
- * one job: show that there are two halves and let you pick one. The book
- * is a thing you read; the shelf is a thing you pour from. Landing
- * straight in the contents would make the second half invisible.
- *
- * It renders without the top bar. `Shell` checks for this route and steps
- * out of the way, because a front door wrapped in one half's own
- * navigation is not a front door. It carries its own small header, and no
- * theme switch: the front door has one fixed palette.
- *
- * Everything on it is read from the same data the inner pages use - the
- * shelf's drinks and specs, the book's parts and chapters, the glasses and
- * what they hold - so it cannot describe a drink or a part that is not
- * there.
- */
-
 /** The glass a drink is served in, as the slug the glass drawings use. */
 const GLASS_SLUG: Record<string, string> = {
   Cocktail: 'martini',
@@ -31,6 +12,13 @@ const GLASS_SLUG: Record<string, string> = {
   Highball: 'highball',
 };
 
+/**
+ * The front door: shows the two halves and lets you pick one.
+ *
+ * It renders without the top bar (the shell in `Frame.tsx` steps aside on
+ * this route). Everything on it is read from the same data the inner
+ * pages use, so it cannot describe a drink or a part that is not there.
+ */
 export default function Home() {
   const drinks: DoorDrink[] = SHELF.map((d) => {
     const slug = GLASS_SLUG[d.glass ?? ''] ?? 'coupe';

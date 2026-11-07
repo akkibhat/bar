@@ -27,6 +27,7 @@ export function generateStaticParams() {
   return PAGED.map((d) => ({ slug: d.slug }));
 }
 
+/** The page title and description, taken from the drink. */
 export async function generateMetadata({
   params,
 }: {
@@ -71,6 +72,7 @@ function recipeSchema(drink: ShelfDrink) {
   };
 }
 
+/** One drink: its build drawn in the glass, the spec, method, garnish and facts. */
 export default async function DrinkPage({
   params,
 }: {
@@ -96,14 +98,11 @@ export default async function DrinkPage({
     { label: 'Built', value: volume ? `${volume} ml` : undefined },
   ].filter((f) => f.value);
 
-  /* The book half of the site, for the two things this page states but
-     does not explain: what the base spirit is, and what the method does. */
-  /* Standing in for a photograph, which no drink has yet. The glass is
-     something the page already states, so drawing it adds a picture
-     without inventing anything - and it will not read as a missing image
-     the way an empty frame would. */
+  /* The glass's display name, for the caption under the drawing. */
   const glass = glassFor(drink.glass);
 
+  /* The book half of the site, for the two things this page states but
+     does not explain: what the base spirit is, and what the method does. */
   const spirit = spiritChapter(shelfOf(drink));
   const method = methodChapter(drink.method);
   const reading = [spirit, method].filter(

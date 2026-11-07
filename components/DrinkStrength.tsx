@@ -2,21 +2,13 @@
 
 import { useMemo, useState } from 'react';
 
-/**
- * Drink strength and standard drinks.
+/*
+ * A New Zealand standard drink is 10 g of pure alcohol:
  *
- * Add each ingredient as a volume and a strength and the tool reports the
- * combined ABV and how many New Zealand standard drinks that comes to,
- * before and after the water that ice will add.
- *
- * A New Zealand standard drink is **10 g of pure alcohol**. Ethanol has a
- * density of 0.789 g/ml, so:
- *
- *     grams = volume_ml x (abv / 100) x 0.789
+ *     grams = volume_ml x (abv / 100) x 0.789   (ethanol density, g/ml)
  *     standard drinks = grams / 10
  *
- * A 30 ml shot at 40% works out at 0.95 standard drinks, which is the
- * figure this is usually sanity-checked against.
+ * 30 ml at 40% is 0.95 standard drinks, the usual sanity check.
  */
 
 const ETHANOL_DENSITY = 0.789; // g/ml
@@ -31,6 +23,11 @@ const INITIAL: Line[] = [
   { id: 3, name: 'Sweet vermouth', volume: 30, abv: 16 },
 ];
 
+/**
+ * Strength and standard drinks: add each pour as a volume and an ABV, and
+ * it reports the combined strength and standard drinks before and after
+ * the water the ice adds.
+ */
 export default function DrinkStrength() {
   const [lines, setLines] = useState<Line[]>(INITIAL);
   const [dilution, setDilution] = useState(22);
@@ -58,12 +55,15 @@ export default function DrinkStrength() {
     };
   }, [lines, dilution]);
 
+  /* Change some fields on one line. */
   const update = (id: number, patch: Partial<Line>) =>
     setLines((cur) => cur.map((l) => (l.id === id ? { ...l, ...patch } : l)));
 
+  /* Drop one line. */
   const remove = (id: number) =>
     setLines((cur) => cur.filter((l) => l.id !== id));
 
+  /* Add an unnamed 15 ml, 20% line with the next free id. */
   const add = () =>
     setLines((cur) => [
       ...cur,
@@ -202,6 +202,7 @@ function NumberField({
   );
 }
 
+/** One result figure: a label, a big value and a small line under it. */
 function Figure({
   label,
   value,

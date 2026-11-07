@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     'Every term in the book that would stop a reader who had not met it, searchable by meaning as well as by name.',
 };
 
+/** The searchable glossary page. */
 export default function GlossaryPage() {
   return (
     <div className="relative mx-auto max-w-[46rem] px-6 sm:px-10 lg:px-12 py-12 lg:py-16">

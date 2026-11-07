@@ -1,19 +1,12 @@
 import Figure from './Figure';
 
 /**
- * Two kinds of still, in cross-section.
+ * Pot and column stills in cross-section, showing the gap between the
+ * boiling points of alcohol (78.3°C) and water (100°C). The pot uses it
+ * once per batch, the column on every plate.
  *
- * The drawing carries the argument the table beside it makes in words,
- * and adds the one thing the table cannot: the gap between two boiling
- * points. Alcohol goes at 78.3°C and water at 100°C, so a wash held
- * between them gives up its alcohol as vapour while most of the water
- * stays. The pot does that once per batch; the column does it on every
- * plate, which is why one pass through a column strips a spirit to
- * neutral.
- *
- * Each drawing sits in a group shifted down under its title, so the
- * titles have room and the labels outside the group - readings, key -
- * stay where they are set.
+ * Each drawing is in a group shifted down under its title; the readings
+ * and key outside the groups stay where they are set.
  */
 export default function StillsFigure() {
   return (

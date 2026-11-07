@@ -1,20 +1,10 @@
 import type { Part } from '../schema';
 
 /**
- * The nine parts of the book, in reading order.
- *
- * The shape follows what the qualification actually taught, in the order
- * it made sense to write it up: what a cocktail is, then the bottles,
- * then how a drink is put together, then the kit and the service, then
- * the classics themselves. Beer gets its own part because a bar pours it
- * and the course barely mentioned it.
- *
- * Part IX is the honest one. The qualification is a hospitality
- * certificate from 2022 and there are things a working bar in 2026 does
- * that were not on it - batching, low- and no-alcohol, clarification,
- * waste. Rather than smuggle those into the earlier parts as though they
- * had been taught, they sit at the end under a heading that says where
- * they came from.
+ * The nine parts of the book, in reading order, following what the
+ * qualification taught. Beer gets its own part because the course barely
+ * covered it, and Part IX holds what a working bar does now that was not
+ * on the course (batching, low- and no-alcohol, clarification, waste).
  */
 export const PARTS: Part[] = [
   {

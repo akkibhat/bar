@@ -6,17 +6,8 @@ import { useEffect, useRef } from 'react';
  * A hairline across the top of the viewport that fills as you move down
  * a chapter.
  *
- * This is the cheapest answer to "how much of this is left". The wine
- * site answers it with a sidebar that lists every chapter and marks your
- * place in the whole course; that is a different question, and it costs
- * 16rem of every page to answer. This costs two pixels and answers the
- * one you actually have while reading.
- *
- * Written straight to the DOM on scroll rather than through state. A
- * scroll handler that calls setState re-renders on every frame of every
- * scroll, which is the most expensive way to move one element's width.
- *
- * The listener is passive, so it cannot delay the scroll itself.
+ * Written straight to the DOM from a passive scroll listener rather than
+ * through state, so scrolling does not re-render React on every frame.
  */
 export default function ReadingLine() {
   const ref = useRef<HTMLDivElement>(null);
@@ -27,6 +18,7 @@ export default function ReadingLine() {
 
     let frame = 0;
 
+    /* Set the line's width from the scroll position, once per frame. */
     const paint = () => {
       frame = 0;
       const doc = document.documentElement;

@@ -1,23 +1,13 @@
 import Figure from './Figure';
 
-/**
- * Where Islay comes from.
- *
- * The sequence exists to make one claim visible: the phenols the barley
- * picks up during kilning are the same phenols in the glass. Everything
- * else on the line transforms - grain becomes wort, wort becomes wash,
- * wash becomes spirit, spirit spends years in wood - and the brass dots
- * pass through all of it untouched. That survival is what makes Islay
- * taste of Islay, and it is easier to show than to write.
- *
- * Each station is drawn at its own natural size and then scaled up about
- * the point where it meets the line, so the glyphs read at plate size
- * without every coordinate being redrawn.
- */
-
 /** Scale a station about the point where it sits on the process line. */
 const up = (cx: number, k = 1.5) => `translate(${cx} 132) scale(${k}) translate(${-cx} -132)`;
 
+/**
+ * Where Islay comes from: the phenols picked up in the kiln (the brass
+ * dots) pass untouched through every later stage into the glass.
+ * Stations are scaled about their point on the line to read at plate size.
+ */
 export default function PeatSequence() {
   return (
     <Figure

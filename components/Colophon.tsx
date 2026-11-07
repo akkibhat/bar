@@ -6,22 +6,9 @@ import { useRead } from '@/lib/local';
 import { PROGRESS_ENABLED } from '@/lib/site';
 
 /**
- * The end of a chapter.
- *
- * Not just previous and next. Finishing a chapter is the moment you are
- * most likely to want another one, so the whole of the current part is
- * listed here with your place in it marked - which is most of what a
- * sidebar is for, delivered at the point of use and costing nothing on
- * every other screen.
- *
- * That is the trade this site makes against the wine site's permanent
- * rail: navigation where you need it rather than navigation you scroll
- * past. Cross-part jumps go through the Contents fold-out in the top bar,
- * and the arrow keys move one chapter at a time without any of it.
- *
- * The rows reuse the spec-sheet leaders, so the part index at the foot of
- * a chapter is set the same way as the contents page and as a drink's
- * build. One device, used everywhere.
+ * The end of a chapter: previous and next, plus every chapter in the
+ * current part with your place marked. Rows reuse the spec-sheet leaders,
+ * the same device as the contents page and a drink's build.
  */
 export default function ChapterFooter({
   slug,

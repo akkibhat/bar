@@ -13,18 +13,9 @@ export const metadata: Metadata = {
 /**
  * Strength and dilution, on one page.
  *
- * These were two routes - `/dilution` for what the ice does, `/units` for
- * standard drinks - and splitting them was wrong, because they are one
- * calculation looked at from two ends. The water the ice adds is exactly
- * what moves a build from its mixed strength to its served strength, and
- * the number of standard drinks does not move at all, because dilution
- * adds water rather than removing alcohol.
- *
- * Apart, those two facts are trivia. Together on one page they are the
- * point: a drink gets weaker and no safer.
- *
- * Standard drinks had its own page once. It was the same sum seen from
- * the other end, so the two are one page now.
+ * What the ice does and how many standard drinks are in the glass are one
+ * calculation seen from two ends: dilution adds water but removes no
+ * alcohol, so a drink gets weaker and no safer. Hence one page, not two.
  */
 export default function DilutionPage() {
   return (
