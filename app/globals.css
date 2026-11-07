@@ -228,45 +228,8 @@
   color-scheme: light;
 }
 
-/* System preference, unless an explicit light choice is stamped on. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --card-stock:       #1c1410;
-    --card-raised:      #251a14;
-    --card-sunk:        #140e0b;
-
-    --press:            #f3e8d2;   /* 15.73:1  AAA */
-    --press-soft:       #c4b496;   /*  6.64:1  AA  */
-    --press-faint:      #a89878;   /*  5.54:1  AA  */
-
-    /* The light-theme amber is too dark to read here, so it lifts. */
-    --amber:            #e2943b;   /*  9.07:1  AAA */
-    --brass:            #e2943b;
-    --brass-deep:       #e2943b;
-
-    --hairline:         #34271e;
-    --hairline-strong:  #54402f;
-
-    --book-bright:      #f0b66a;
-    --wash:             rgba(226, 148, 59, 0.16);
-    --shadow:           rgba(0, 0, 0, 0.5);
-
-    /* The mark's pour runs deeper than text is allowed to: it clears the
-       3:1 WCAG asks of a graphic but not the 4.5:1 it asks of text, so
-       in dark mode alone the pour and the wordmark diverge. */
-    --logo-pour:    #b8782a;
-    --logo-word:    var(--amber);
-
-    --ok:       #6aab99;
-    --caution:  #d7a95e;
-    --alert:    #e8836a;
-    --info:     #7fb0d1;
-
-    color-scheme: dark;
-  }
-}
-
-/* Explicit dark choice wins in both directions. */
+/* Dark theme, the default. The inline script in app/layout.tsx always
+   stamps data-theme (dark unless the reader chose light). */
 :root[data-theme='dark'] {
   --card-stock:       #1c1410;
   --card-raised:      #251a14;
@@ -287,6 +250,8 @@
   --wash:             rgba(226, 148, 59, 0.16);
   --shadow:           rgba(0, 0, 0, 0.5);
 
+  /* The pour clears the 3:1 a graphic needs but not text's 4.5:1, so in
+     dark mode alone the pour and the wordmark diverge. */
   --logo-pour:    #b8782a;
   --logo-word:    var(--amber);
 
