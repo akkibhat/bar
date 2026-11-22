@@ -2,6 +2,8 @@
 
 A cocktail course and a shelf of my own drinks, on one site.
 
+Live at **[bar.pi.co.nz](https://bar.pi.co.nz)**.
+
 **Barbook** is everything behind a bar and what to do with it: how every
 spirit is made and what separates one from the next, what beer actually
 is, the seven methods, ice, glassware, tools, service, and the handful of
